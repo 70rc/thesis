@@ -1,0 +1,395 @@
+\chapter{Research and development of novel LArTPC detectors\label{chap:rd-lartpc}}
+
+\section{TPC\label{sec:rd-lartcp_tpc}}
+
+\section{Studies of the electric breakdown in liquid argon\label{sec:rd-lartpc_hv}}
+The difficulties involved with the necessary voltages have been highlighted by the Bern Group’s work, in which I have already played a key role\cite{breakdown_16}.
+For the first time, we took high speed footage of breakdowns in liquid argon, measured their current-voltage characterisitcs and recorded their optical spectral distribution.
+These measurements help to understand the physics of the breakdowns and develop ways to mitigate them and/or protect future detectors from catastrophic failures.
+Our HV studies have already influenced the design of MicroBooNE and will continue to impact the design of future experiments.
+
+\subsection{Setup of the HV tests\label{sec:rd-lartpc_hv_setup}}
+\begin{figure}[htb]
+	\centering	
+	\includegraphics[width=0.265\textwidth]{hv/FT.pdf}
+	\includegraphics[width=0.39\textwidth]{hv/setup1_lowres.pdf}
+	\includegraphics[width=0.295\textwidth]{hv/setup2_lowres.pdf}
+	\caption{Experimental setup. Left: high voltage feed-through with the spherical cathode. Middle: the feed-through before insertion into the cryostat. 1.~ground shield of the feed-through; 2.~ribbed PET dielectric; 3.~cathode sphere; 4.~anode plate sitting on a tripod on the grounded bottom of the cryostat; two of the tripod legs are insulated while the third one contains a \SI{50}{\ohm} shunt resistor. Right: linear translation unit used to set the cathode-anode gap width~(5).}
+	\label{fig:rd-lartpc_hv_setup1}
+\end{figure}
+
+The setup used in this study is very similar to the one described in~\cite{breakdown_14} and is shown in Figure~\ref{fig:rd-lartpc_hv_setup1}.
+A spherical cathode and a plane anode electrode form the discharge gap.
+Three different diameters of the cathode sphere were tested: \SIlist{4; 5; 8}{\centi\metre}.
+Two types of surface treatment were used in the cathode preparation, namely mechanical fine polishing and electro-polishing.
+For the anode, mechanical fine polishing was used for all measurements.
+The anode-cathode gap width can be set in the range of \SI{0}{\milli\metre} to \SI{100}{\milli\metre} with a precision of \SI{0.3}{\milli\metre}.
+An example of the field distribution in the setup is shown in Figure~\ref{fig:hv_efield}.
+The field map was calculated using the COMSOL FEM package.\footnote{\href{http://www.comsol.com}{http://www.comsol.com}}
+
+\begin{figure}[htb]
+	\centering	
+	\includegraphics[width=\textwidth]{hv/EField.pdf}
+	\caption{Calculated electric field-amplitude map for the test setup with \SI{-100}{\kilo\volt} at the cathode and cathode-anode distance of \SI{1}{\centi\metre}.}
+	\label{fig:hv_efield}
+\end{figure}
+
+The purity of the argon after filling was estimated with a small time projection chamber (according to the method described in~\cite{2photonAbs}) to be of the order of \SI{1}{ppb} of oxygen-equivalent impurity concentration.
+More details of the setup can be found in~\cite{breakdown_14}.
+
+The control circuit of the \emph{Spellman SL150}\footnote{\href{http://www.spellmanhv.com}{http://www.spellmanhv.com}} power supply unit (PSU) outputs two low voltages proportional to the voltage and the current at the output, respectively.
+These voltages are recorded with a \emph{Tektronix DPO 3054}\footnote{\href{http://www.tek.com}{http://www.tek.com}} digital oscilloscope.
+The output polarity of the PSU can be switched by replacing the output HV multiplier module.
+To measure the discharge current, a \SI{50}{\ohm} shunt resistor is placed between the anode plate and the vessel ground which is connected to the ground return of the PSU. The voltage drop across the shunt resistor is transmitted via a matched coaxial line to the oscilloscope.
+The latter is controlled by a LabVIEW program.
+The equivalent electric scheme of the setup is shown in Figure~\ref{fig:hv_scheme}. 
+The voltage at the $V_{\m{mon}}$ output of the power supply corresponds to the PSU output voltage divided by a factor $K_{\m{V}}$.
+The voltage at $I_{\m{mon}}$ is related to the PSU output current.
+However, according to the manufacturer of the PSU, an accurate reconstruction of the output current for frequencies above \SI{100}{\hertz} is not possible because of a filtering circuit in the current control loop.
+Therefore, for the measurement of the discharge current only the voltage drop across the shunt resistor is used.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.7\textwidth, angle=-90, origin=c]{hv/scheme.pdf}
+	\caption{Electric scheme of the experimental setup. The oscilloscope is connected to the control circuit of the high voltage power supply and to a shunt resistor on the ground return path. From the recorded voltages, the voltage and the current of the discharge can be derived.}
+	\label{fig:hv_scheme}
+\end{figure}
+
+The oscilloscope is triggered by the channel connected to the shunt resistor.
+The breakdown discharge current is composed of the output current of the PSU and the discharge current of the setup capacitance $C_{\m{gap}}$ as $I_{\m{gap}} = I_{\m{out}} + C_{\m{gap}}\frac{\m{d}V_{\m{gap}}}{\m{d}t}$.
+To limit the PSU output current an additional resistor R$_{lim}$ is inserted into the HV output circuit.
+The measured values for the circuit parameters are summarized in Table~\ref{tab:hv_table1}.
+The knowledge of these parameters allows to calculate the voltage across the gap during breakdown. 
+
+\begin{table}[htb]
+	\centering
+	\caption{Summary of the measured parameters of the test circuit.}
+	\label{tab:hv_table1}
+	\begin{tabular}{|l|S|}
+		\hline
+		$K_{\m{V}}$ & 		42.3e-6 \\
+		\hline
+		$R_{\m{shunt}}$ &	\SI{50}{\ohm} \\
+		\hline
+		$R_{\m{lim}}$ & 	\SI{200}{\mega\ohm} \\
+		\hline
+		$C_{\m{gap}}$ & 	\SI{370}{\pico\farad} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+In addition, the setup is equipped with an \emph{AOS Technologies S-PRI\emph{Plus}}\footnote{\href{http://www.aostechnologies.com}{http://www.aostechnologies.com}} high-speed camera to observe the development of the discharge. The camera is capable of recording \num{700 x 400}~pixel RGB images at \SI{1230}{fps}.
+The camera comprises a frame ring buffer and is triggerable by an external TTL pulse.
+This allows a synchronous recording of the visual appearance of the discharge and its volt-ampere characteristics.
+The camera is triggered from the \emph{TRIG} output of the oscilloscope.
+The luminous part of the discharge is analysed for each frame of the recorded sequence.
+
+The camera is mounted above a \SI{5}{\centi\metre} diameter glass view port, located at the top flange of the cryostat and is looking downward.
+To observe a discharge from the side, a glass mirror plate is installed at the edge of the cathode plane located \SI{20}{\centi\metre} from the cathode, in such a way as to not perturb the electric field in the discharge gap. 
+
+Finally, a custom built optical spectrometer is used to analyze the light emission of the discharges.
+The spectrometer is connected to an optical fiber entering the cryostat with its other end attached to the anode plate.
+The fiber is aligned such that its end directly faces the discharge gap resulting in a high angular acceptance.
+As will be shown later, the discharge emission spectra allow to better understand the processes at different stages of the discharge.
+This is due to the fact that the emission spectra of excited neutral atomic argon, singly-ionized and multiply-ionized atoms lay in different regions of the visible spectrum.
+
+The possibility of creating gas bubbles near the discharge gap is inhibited by keeping the pressure in the inner vessel at \SI{100}{\milli\bar} above atmospheric pressure, plus an additional \SI{100}{\milli\bar} due to the hydro-static pressure.
+The outer bath is opened to the atmosphere, thus keeping the inner vessel temperature constant and well below the boiling point.
+No boiling was detected anywhere near the discharge gap region during the measurements.
+
+\subsection{Experimental results\label{sec:rd-lartpc_hv_results}}
+
+\begin{figure}[htb]
+	\centering	
+	\includegraphics[width=\textwidth]{hv/montage.pdf}
+	\caption{Recorded camera image sequence for a breakdown from a \SI{5}{\centi\metre} diameter cathode at \SI{-100}{\kilo\volt} and \SI{8.8}{\milli\metre} apart from the anode plate. The sequence is taken at \SI{1250}{fps}, each frame takes \SI{0.8}{\milli\second}.}
+	\label{fig:hv_images}
+\end{figure}
+
+In our earlier measurements~\cite{breakdown_14}, we experienced sporadic discharges across the ribs of the dielectric of the high voltage feed-through.
+In the present study, we managed to suppress these discharges completely by rising the level of the liquid argon by about \SI{20}{\centi\metre}.
+This improved the cooling of the feed-through and reduced bubble production near the bottom of the feed-through grounded shield, placed \SI{60}{\centi\metre} below the liquid surface. 
+
+The measurement campaign comprised \num{5}~runs with a total of more than \num{5000} measured discharges, with varying sphere diameter, surface treatment and polarity.
+A summary is shown in Table~\ref{tab:hv_table2}.
+A typical recorded camera image sequence for breakdown from a \SI{5}{\centi\metre} diameter cathode at \SI{-100}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate is shown in Figure~\ref{fig:hv_images}.
+The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{breakdown_16}.\footnote{\href{http://arxiv.org/src/1512.05968v2/anc/movie1.webm}{http://arxiv.org/src/1512.05968v2/anc/movie1.webm}}
+
+
+\begin{table}[htb]
+	\centering\caption{Summary of the measurement runs.}
+	\label{tab:hv_table2}
+	\begin{tabular}{|S|S|l|l|S|S|S|}
+		\hline
+		{{Run}} &	$\oslash_{\m{Sphere}}$ &	Surface finish &	Sphere pol. &	{{Events}} &	{{$d_{\m{Gap}}$}} &					{{$V_{\m{Breakdown}}$}} \\
+		\hline
+		1   &	\SI{4}{\centi\metre} &			Mech.\ polished &	Cathode (-) &	1086 &			\SIrange{0.5}{8.0}{\milli\metre} &	\SIrange{3}{130}{\kilo\volt} \\
+		\hline
+		2   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Cathode (-) &	900 &			\SIrange{0.2}{12.0}{\milli\metre} &	\SIrange{2}{130}{\kilo\volt} \\
+		\hline
+		3   &	\SI{8}{\centi\metre} &			Mech.\ polished &	Cathode (-) &	2434 &			\SIrange{0.1}{70.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
+		\hline
+		4   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Anode (+) &		102 &			\SIrange{4.0}{5.0}{\milli\metre} &	\SIrange{5}{114}{\kilo\volt} \\
+		\hline
+		5   &	\SI{5}{\centi\metre} &			Electro-polished &	Cathode (-) &	1141 &			\SIrange{0.1}{10.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[height=0.43\textheight]{hv/IVuncorr.pdf}\\
+	\includegraphics[height=0.43\textheight]{hv/IVcorr.pdf}
+	\caption{Measured current through the gap (black) and voltage across the gap (magenta) for a typical breakdown at \SI{6.0}{\milli\metre} distance between a \SI{4}{\centi\metre} diameter cathode and the anode plate. The top plot shows the voltage obtained using the measured values of the protection resistor and the gap capacitance, while the bottom plot uses the tuned values.}
+	\label{fig:hv_iv}
+\end{figure}
+\clearpage
+
+In Figure~\ref{fig:hv_iv}, we show the current and voltage features of a similar breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{6.0}{\milli\metre} from the anode plate.
+The current was directly measured by observing the voltage drop across the shunt resistor, while the voltage was obtained by integrating the current taking into account the gap capacitance, the protection resistor and the output voltage of the power supply.
+When using the measured values of Table~\ref{tab:hv_table1} for capacitance and resistance, this results in a negative voltage at the end of most discharges.
+This is an unphysical result as can be seen in the top plot of Figure~\ref{fig:hv_iv}.
+This behavior may be attributed to poor knowledge of the effective values of the current-limiting resistor and the setup capacitance in the frequency domain of the discharge.
+In order to better approximate these parameters, they are tuned in such a way that the minimum voltage for a maximum number of discharges approaches zero.
+The best result was achieved by lowering the resistance by a factor of 1.7 and increasing the capacitance by the same factor.
+Interestingly, this result leaves the RC characteristics of the system unchanged.
+The bottom plot of Figure~\ref{fig:hv_iv} shows the result obtained by using the tuned values for capacitance and resistance.
+
+Most of the discharges are localized in the area of high field concentration between the tip of the sphere and the anode plane.
+However, in rare cases, the discharge is initiated far from that region, sometimes at the side surface of the sphere.
+An example of such a discharge is shown in Figure~\ref{fig:hv_side} and the corresponding movie can be found as \emph{movie2.webm} in the ancillary files of~\cite{breakdown_16}.\footnote{\href{http://arxiv.org/src/1512.05968v2/anc/movie2.webm}{http://arxiv.org/src/1512.05968v2/anc/movie2.webm}}
+
+\begin{figure}[htb]
+	\centering	
+	\includegraphics[width=.75\textwidth]{hv/sidespark.pdf}
+	\caption{An image of the streamer stage of the discharge, initiated at the side surface of a \SI{5}{\centi\metre} cathode sphere at \SI{-121.5}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate. The cone of electrons emitted into liquid from the streamer tip towards the anode (lower edge of the image) produces bright orange luminescence in liquid argon.}
+	\label{fig:hv_side}
+\end{figure}
+
+
+\subsection{Interpretation of the results\label{sec:rd-lartpc_hv_interpretation}}
+
+As it was shown in \cite{FNAL-hv-paper, he-breakdown}, experimental data on breakdowns in liquefied noble gases suggest the following dependence for the maximum field at the breakdown: $E_{max}=C\cdot A^p$, where $C$ is a material-dependent constant, $A$ is the stressed area with an electric field intensity above \SI{90}{\percent} of its maximum, and $p\approx-0.25$.
+In Figure \ref{fig:hv_powerplot}, we combine data available in literature with those obtained from this work.
+Each data point is the mean value of all measurements of one run taken at the same gap distance and therefore with the same stressed area.
+The global best fit gives the following values for the parameters: $C = \num{139 +- 5}$ and $p = \num{-0.22 +- 0.01}$.
+The statistical uncertainties represented by the error bars (smaller than the marker where not shown) are small compared to the unknown systematic uncertainties.
+Indications for this are the high spread of the points around the fit line and the high reduced chi-square of \num{7283}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{hv/Area90-1.pdf}
+	\caption{Breakdown field versus stressed area of the cathode. The stressed area $A$ is defined as the area with an electric field intensity greater than \SI{90}{\percent} of the maximum electric field intensity in the gap. The fit line represents the dependence $E_{max}=C\cdot A^p$ with $C = \num{139 +- 5}$ and $p = \num{-0.22 +- 0.01}$. The colours correspond to different cathode sphere diameters while the marker styles correspond to different oxygen-equivalent impurity concentrations. The data are taken from \cite{FNAL-hv-paper}~(FNAL), \cite{breakdown_14}~(LHEP), and \cite{breakdown_16}~(this work).}
+	\label{fig:hv_powerplot}
+\end{figure}
+
+
+Figure~\ref{fig:hv_spectro} shows the recorded spectra of a typical event.
+The spectra are integrated over \SI{1}{\milli\second} and approximately correspond to frames \num{3} (blue) and \num{8} (red) in Figure~\ref{fig:hv_images}.
+From the observation of the spectra of the emitted light and the discharge appearance, one can distinguish three phases of the breakdown development.
+The first phase starts with the field emission of electrons from a point of the cathode metal surface.
+The emitted electrons drift to the anode, ionizing and exciting argon atoms.
+Frames \num{2} and \num{3} of Figure \ref{fig:hv_images}, the broad current peak of the current in Figure~\ref{fig:hv_iv}, and the blue curve in Figure~\ref{fig:hv_spectro} show the development of the emission.
+Evidence for the presence of ionization comes from the analysis of the emission spectrum in the cone formed by drifting electrons.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{hv/spectro.pdf}
+	\caption{Spectra of the field emission cone (blue) and the streamer (red) for a breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{-56.2}{\kilo\volt} and \SI{3.0}{\milli\metre} apart from the anode plate. The spectra were integrated over a time of \SI{1}{\milli\second} with the spectrum of the streamer taken \SI{2}{\milli\second} after the spectrum of the cone. The blue curve is a broad continuum similar to the scintillation spectrum of liquid argon, while the red curve features a distinct peak around \SI{700}{\nano\metre} which is attributed the the 3p$^5$4p--3p$^5$4s transition of neutral argon gas.}
+	\label{fig:hv_spectro}
+\end{figure}
+
+The emission of light by charged particles drifting in noble liquids under the influence of an electric field (electro-luminescence) gained great interest in the last years.
+Recent studies in this field are well covered by~\cite{buzulutskov1, buzulutskov2, buzulutskov3} and references therein.
+The red electro-luminescence, namely the peak around \SI{700}{\nano\metre} of the red curve in Figure~\ref{fig:hv_spectro}, produced by electrons drifting in argon gas is attributed to the 3p$^5$4p--3p$^5$4s transition of neutral argon~\cite{Boffard}.
+The energy needed for the excitation of the electrons to the 3p$^5$4p states from the ground state in argon gas is \SIrange{12.9}{13.5}{\electronvolt}.
+The ionization potential of liquid argon is \SI{13.84}{\electronvolt}~\cite{2photonAbs}.
+For the condensed state, only the scintillation spectrum under ionization by high-energy charged particles has been described in literature so far~\cite{Heindl}.
+The electro-luminescence spectrum we measured (blue curve in Figure~\ref{fig:hv_spectro}) exhibits a broad continuum, similar to the scintillation spectrum.
+However, the center value at about \SI{580}{\nano\metre} does not correspond to any of the electron transitions of neutral, singly- or doubly-ionized argon atoms.
+The nearest candidate for such an emission is the residual oxygen with its strong \SI{557.7}{\nano\metre} emission line.
+However, if attributable to oxygen, this line has to also be observed at the later stages of the discharge, which does not take place in our measurements.
+
+The broad width of the spectrum could be explained by smearing the energy levels into bands due to inter-atomic interactions in liquid and by the formation of exciton clusters~\cite{Bernstorff,Foerstel}.
+If the energy band structure of excitons in liquid argon is continuous, as suggested by the scintillation spectrum, there might be a significant overlap of the band corresponding to the 3p$^5$4p atomic levels and the conduction band above \SI{13.84}{\electronvolt}.
+The presence of an observable emission at about 580~nm, in this case, is inevitably linked to a presence of ionized states.
+
+Another signature of avalanche ionization in this phase of the breakdown is the increase of the cone brightness as it develops from the cathode towards the anode.
+Figure \ref{fig:hv_conexpo} shows this increase together with the fit avalanche multiplication parameter $\alpha = \SI{0.15 +- 0.03}{\per\milli\metre}$ for the following gap conditions: voltage across the \SI{7.0}{\milli\metre} gap $V = \SI{54.0}{\kilo\volt}$, cathode sphere diameter of \SI{4}{\centi\metre}, maximum field in the gap $E_{\m{max}} = \SI{96.1}{\kilo\volt\per\centi\metre}$, mean field in the gap $<E> = \SI{87.0}{\kilo\volt\per\centi\metre}$.
+To calculate the emission intensity we summed up the raw values of all pixels of the camera image that were in a row perpendicular to the cone direction.
+The distance from the cathode can be derived from the known gap distance.
+From the fit we obtained the given statistical uncertainty of $\alpha$.
+As only one measurement was taken, it is not possible to state anything about unknown systematic uncertainties (for instance the calibration of the camera).
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{hv/ConeExpo.png}
+	\caption{Increasing brightness of the electro-luminescence cone as it develops towards the anode. The line represents the exponent with a fit avalanche multiplication parameter of $\alpha = \SI{0.15 +- 0.03}{\per\milli\metre}$ for gap conditions: voltage across the \SI{7.0}{\milli\metre} gap $V = \SI{54.0}{\kilo\volt}$, cathode sphere diameter of \SI{4}{\centi\metre}, maximum field in the gap $E_{\m{max}} = \SI{96.1}{\kilo\volt\per\centi\metre}$, mean field in the gap $<E> = \SI{87.0}{\kilo\volt\per\centi\metre}$.}
+	\label{fig:hv_conexpo}
+\end{figure}
+
+As we already suggested in~\cite{breakdown_14}, positive ions produced in this process drift towards the cathode, raising the surface field and provoking a rapid increase of the field emission current to values of the order of several \si{\milli\ampere}.
+Ions bombarding the cathode surface raise the local temperature and, after \SIrange{1}{2}{\milli\second}, the liquid near the initial discharge point transitions to a gas phase, forming a bubble.
+Both the first and the second avalanche multiplication coefficients are a few orders of magnitude higher in gas than in liquid.
+Therefore, the ionization density in the gas bubble quickly rises along with the conductivity of the formed plasma.
+This leads to a decrease of the electric field in the close vicinity of the field emission point and to the suppression of a further growth of the field emission current.
+Accelerated electrons of the gas plasma hit the gas-liquid interface, forcing the bubble to elongate and grow.
+In the region behind the head of the streamer the filament is collapsed to a diameter below \SI{200}{\micro\metre} (the spatial resolution of our camera) by surface tension and electro-striction forces.
+This second phase of the discharge is characterized by the growth of the streamer-like filament in liquid.
+In Figure~\ref{fig:hv_images} (frames \numrange{4}{10}), one can see the development of such a filament.
+Unlike the electrons in the first phase the filament does not follow the electrostatic field lines but it rather rambles around their direction, being subject to thermodynamic fluctuations at the tip of the growing streamer where the liquid-gas transition happens.
+The spectrum of the light emission from the streamer has a distinct line at about \SI{700}{\nano\metre}, a characteristic feature of the plasma in argon gas.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{hv/spectro_spark.pdf}
+	\caption{Spectrum of the spark for a breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{-39.7}{\kilo\volt} and \SI{4.0}{\milli\metre} apart from the anode plate. The spectrum was integrated over a time of \SI{1}{\milli\second}.}
+	\label{fig:hv_spectro_spark}
+\end{figure}
+
+Finally, when the streamer reaches the anode a short peak of light emission is registered (frame \num{11} in Figure~\ref{fig:hv_images}) with the blue-green spectral component dominating (Figure~\ref{fig:hv_spectro_spark}).
+This phase is characterized by an acoustic shock and a massive production of gas bubbles in the region of the discharge.
+These effects are typical for an arc discharge in argon gas.
+The spectrum of the light emission in this phase  is shown in Figure~\ref{fig:hv_spectro_spark}. 
+
+As it was demonstrated in~\cite{Heindl}, the transition from the liquid phase to the gas phase for scintillation manifests itself by the appearance of sharp spectral lines while in liquid, the emission spectrum is continuous and without features.
+This behavior is also suggested by the two spectra in Figure~\ref{fig:hv_spectro}.
+While the spectrum is continuous during the field emission phase, there is a distinct peak at around \SI{700}{\nano\metre} several \si{\milli\second} later.
+
+It is worth mentioning that not every streamer results in a third phase spark.
+For those streamers started from the side of the cathode sphere, the charge needed for streamer growth might exceed the total charge available in the system.
+Such streamers extinguish before reaching the anode without an acoustic shock or any other additional effects.
+On the other hand, in some cases the filament quickly transits to a third stage before it reaches the anode.
+One possible explanation for this is that, if the filament current exceeds a given threshold, the filament loses its thermodynamic stability and expands into a gas bubble in which the arc discharge quickly develops afterwards.
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[height=0.43\textheight]{hv/selected_chargeVsVset}
+	\includegraphics[height=0.43\textheight]{hv/allGood_chargeVsVset}
+	\caption{Correlations between integrated charge and breakdown voltage \emph{Vset} for the selected events with distinguishable slow streamer phase (top) and for all events with recorded current characteristics (bottom). The red line represents the charge stored in the gap capacitance using the tuned value of the latter.}
+	\label{fig:hv_chargeVsVset}
+\end{figure}
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[height=0.43\textheight]{hv/allGood_IPeakVsE}
+	\caption{Correlations between peak current \emph{IPeak} and maximum breakdown field \emph{E} for all events with recorded current characteristics.}
+	\label{fig:hv_IPeakVsE}
+\end{figure}
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[height=.43\textheight]{hv/selected_IPlateauVsE}
+	\caption{Correlations between plateau current \emph{IPlateau} and maximum breakdown field \emph{E} for the selected events.}
+	\label{fig:hv_IPlateauVsE}
+\end{figure}
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[height=.43\textheight]{hv/selected_IPlateauVsIPeak}
+	\caption{Correlations between plateau current \emph{IPlateau} and peak current \emph{IPeak} for the selected events.}
+	\label{fig:hv_IPlateauVsIPeak}
+\end{figure}
+
+\begin{figure}[p]
+	\centering
+	\includegraphics[height=.43\textheight]{hv/selected_vStreamerVsE}
+	\caption{Correlations between minimum streamer velocity \emph{vStreamer} and maximum breakdown field \emph{E} for the selected events with a distinguishable slow streamer phase.}
+	\label{fig:hv_vStreamerVsE}
+\end{figure}
+
+In Figures~\ref{fig:hv_chargeVsVset} to~\ref{fig:hv_vStreamerVsE}, we show several correlations of measured and calculated parameters of the breakdowns.
+For some of these plots, \num{18} events were selected with recorded current characteristics similar to Figure~\ref{fig:hv_iv}.
+As a comparison, the bottom plot of Figure~\ref{fig:hv_chargeVsVset} shows the data of all events with current characteristics including events not possessing a distinct plateau as the one visible in Figure~\ref{fig:hv_iv}.
+The discrepancy to the total number of events in Table~\ref{tab:hv_table2} arises, on the one hand, because we installed the shunt resistor only in the last run and, on the other hand, since the latter was damaged after the events shown in the bottom plot of Figure~\ref{fig:hv_chargeVsVset}.
+The low number of events in the selection is due to the fact that an automated analysis of the current characteristics can only detect very long streamers.
+This also explains the behavior of the charge in Figure~\ref{fig:hv_chargeVsVset}.
+The selected streamers last for several \si{\milli\second}, almost always consume the whole charge in the system and then cease without transitioning to a spark.
+The slight excess in charge compared to the charge in the gap capacitance (red line) is likely supplied by the PSU before tripping.
+Contrary to this, the bottom plot showing all the events contains many events that do not consume all the stored charge and result in a spark.
+The good match between the red curve and the data points serves also as a crosscheck of the tuned capacitance.
+
+Figure~\ref{fig:hv_IPeakVsE} shows the behavior of the peak current versus the breakdown field, suggesting a proportionality between the two with the coefficient of about \SI{60}{\micro\ampere\centi\metre\per\kilo\volt}.
+The field was calculated by dividing the breakdown voltage by the gap distance.
+Therefore, this is a mean value along shortest path and does not directly apply to the selected events as most of them emerged from the side of the sphere.
+
+Figures~\ref{fig:hv_IPlateauVsE} and~\ref{fig:hv_IPlateauVsIPeak} show the correlation of the current during the streamer phase (the plateau in Figure~\ref{fig:hv_iv}) with the peak current and the breakdown field.
+The plateau current clearly rises with both the breakdown field and the peak current.
+Together with Figure~\ref{fig:hv_IPeakVsE} this indicates that for higher fields, higher currents flow during both field emission as well as streamer phases.
+As mentioned above, the plateau current could only be reliably detected for the selected events which is why these plots are not shown for all events.
+
+Finally, Figure~\ref{fig:hv_vStreamerVsE} depicts the dependence of the streamer velocity on the breakdown field.
+Again, the velocity is only a lower limit as it was calculated by dividing the gap distance by the duration of the streamer, which is not correct for streamers emerging from the side of the sphere.
+There are two distinct types of events.
+While the selected streamers are rather slow (velocity $\approx \SI{300}{\milli\metre\per\second}$, independent of the field), the whole data set contains much faster events with the total time in the ns scale (not shown).
+The knowledge of the streamer velocity can be applied in the design of protection circuits for future LArTPCs.
+If a breakdown condition is detected during the streamer phase, the high voltage can be killed prior to a disruptive spark phase potentially damaging sensitive detector electronics.
+
+
+\section{A method to suppress electric breakdowns in liquid argon\label{sec:rd-lartpc_latex}}
+Besides the thorough characterisation of breakdowns in LAr, we have found a way to suppress them by coating the field cage with latex\cite{latex}.
+We were able to increase the voltage by a factor of \num{10} using this technique.
+
+
+\section{A more robust approach to TPC readout wires\label{sec:rd-lartpc_cuoka}}
+As outlined in Section~\ref{sec:lartpc_challenges}, one of the big challenges for future LArTPCs will be the mechanical stability of the classical wire readout planes for the envisioned detector sizes.
+A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
+To investigate this solution, a proof of concept was performed at LHEP at the Univeristy of Bern.
+
+\subsection{Experimental setup\label{sec:rd-lartpc_cuoka_setup}}
+In a classical wire readout plane, the induction signal is produce by drifting the charge through one or multiple induction wire grids.
+With the proposed scheme of \si{Cu} tracks on a support structure, it is no longer possible for the charge to actually drift through the induction plane(s).
+Therefore, induction is only produced by the approach of the charge.
+One consequence of this is, that induction signals will no longer bi bipolar.
+As opposed to the classic design, the collection plane will even be in front of the induction plane(s).
+This means that the charge can only approach the induction plane(s) until it is collected by the collection plane on the top layer of the support structure.
+That is why it is crucial to make the support structure as thin as possible in order to get induction signals as high as possible.
+Using an FR4 structure as in classical PCB designs is therefore not a viable option.
+Very thin support structures can be provided by using a flexible PCB made from Kapton instead of FR4.
+These can be made as thin as a few \SI{10}{\micro\metre}.
+For this test, a Kapton layer of \SI{50}{\micro\metre} was used with a single induction plane on the back (Fig.~\ref{fig:cuoka_readout-plane}).
+The Kapton layer was supported by an FR4 frame for mounting on the TPC.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{cuoka/readout_plane_bottom}
+	\caption{Copper on Kapton readout plane.}
+	\label{fig:cuoka_readout-plane}
+\end{figure}
+
+The test was performed in a small vacuum-insulated double-batch cryostat with an inner volume of \SI{30}{\centi\metre} diameter and \SI{50}{\centi\metre} height. %TODO: check dimensions!
+Prior to filling, the cryostat was evacuated using a turbo-molecular pump and then purged with argon gas and evacuated a second time.
+From earlier experiments the purity can be assumed to be of the order of \SI{1}{ppb} after filling.
+The cryostat is sealed using rubber o-rings which lose tightness at cryogenic temperatures.
+Therefore, and due to the fact that no purification system was available, the purity degraded slowly in the course of the experiment.
+The \SI{8}{\centi\metre} long field cage consists of \num{8} copper rings of \SI{8}{\centi\metre} diameter terminated by a copper plate cathode.
+A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive divider.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{cuoka/tpc}
+	\caption{TPC used for the copper on Kapton readout test.}
+	\label{fig:cuoka_tpc}
+\end{figure}
+
+The charge signal is amplified by cryogenic charge amplifiers.
+The amplified signal is then digitised by \emph{CAEN V1724}\footnote{\href{http://www.caen.it}{http://www.caen.it}} \SI{14}{bit} digitisers.
+Section~\ref{sec:rd-dune-nd_electronics} describes the readout chain in more detail.
+
+\subsection{Experimental results\label{sec:rd-lartpc_cuoka_results}}
+Using the above-described setup, cosmic muons were recorded over the course of multiple hours.
+A typical event is depicted in Figure~\ref{fig:cuoka_event}.
+It can be seen that due to the event being almost parallel to the induction strips, the induction signal is in fact stronger than the collection signal.
+The reason for the bad signal to noise ratio is improper grounding of the setup and high noise levels in the lab from the nearby train station and air conditioning.
+Due to time constraints and an upcoming test of a pixelated readout described in Chapter~\ref{chap:rd-dune-nd}, no analysis was performed on these data.
+Anyhow, the fact that cosmic muons could be seen using this setup proofs that there is no inherent problem with having the induction plane a few \SI{10}{\micro\metre} behind the collection plane.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{cuoka/muon_event}
+	\caption{Muon event recorded using the copper on Kapton readout.}
+	\label{fig:cuoka_event}
+\end{figure}
+
+While this technique can potentially solve the mechanical problems of classical wire readouts, it does not reduce the ambiguities inherent to 2D-projective readouts outlined in Section~\ref{sec:lartpc_challenges}.
+Because of this, it was decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for LArTPCs providing real 3D data.

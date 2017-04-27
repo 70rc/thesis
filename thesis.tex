@@ -1,0 +1,87 @@
+\documentclass[a4paper, 12pt, abstract=on, bibliography=totoc]{scrreprt}
+
+\newcommand*{\Title}{{A Novel Liquid Argon Time Projection Chamber Detector: The ArgonCube Concept}}
+\newcommand*{\Author}{{Damian Goeldi}}
+\newcommand*{\Supervisor}{{Prof.\ Dr.\ A.\ Ereditato}}
+\newcommand*{\Dean}{{Prof.\ Dr.\ (Initiale Name)}}
+\newcommand*{\Date}{{(Pr\"ufungsdatum)}}
+
+\usepackage[british]{babel} % set babel to british rather than american
+\usepackage[utf8]{inputenc} % utf8 support in source code
+\usepackage[T1]{fontenc} % better support for special characters in pdf but messes up title fonts, can be fixed by installing the debian package cm-super
+
+\usepackage{csquotes} % recommended by biblatex
+\usepackage{xpatch} % recommended by biblatex
+\usepackage[backend=biber, firstinits, sorting=none]{biblatex} % much more flexible than BibTeX
+
+\usepackage{fancyvrb} % advanced verbatim
+\usepackage{amsmath} % math packages
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[retainorgcmds]{IEEEtrantools} % advanced equation arrays
+\usepackage{siunitx} % write units properly
+\usepackage{listings} % list source code
+\usepackage{chngcntr} % continuous footnote numeration (in chapter)
+\usepackage{pdfpages} % insert PDF pages
+\usepackage{xcolor, graphicx} % for graphics, breaks (e)ps support
+\usepackage{pdflscape} % landscape pages
+\usepackage[pdftex, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % MUST be last \usepackage{} statement
+
+\pagestyle{headings} % instead of fancyhdr which is not recommended with KOMA script classes
+
+\VerbatimFootnotes % needed for verbatim in footnotes (obviously :)
+
+\hyphenpenalty=1000 % de/increase some formatting penalties to get nicer result
+\tolerance=5000 % tolerance for total badness without line break
+\setlength{\parskip}{0pt plus 3pt} % add some "rubber" space between paragraphs to omit widows and orphans
+
+\sisetup{separate-uncertainty = true}
+
+\addbibresource{thesis.bib} % .bib file for biblatex (.bib is required)
+
+\newcommand*{\m}{\mathrm}
+\newcommand*{\qraq}{\quad \rightarrow \quad}
+\newcommand*{\Chapter}{chapter} % used in starred chapters to store the chapter name to access it conveniently with all the commands needed there
+
+\newcommand*{\AT}{{ARGONTUBE}}
+\newcommand*{\AC}{{ArgonCube}}
+
+
+\begin{document}
+
+\graphicspath{{graphics/}}
+
+\pagenumbering{roman}
+
+\include{chapters/thesis_title}
+
+\include{chapters/thesis_abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+\cleardoublepage % without this, previous page is already arabic; pay attention to twoside layout!
+\pagenumbering{arabic}
+
+\include{chapters/thesis_introduction}
+\include{chapters/thesis_nu-detection}
+\include{chapters/thesis_lartpc}
+\include{chapters/thesis_rd-lartpc}
+\include{chapters/thesis_argoncube}
+\include{chapters/thesis_application-dune}
+\include{chapters/thesis_rd-dune-nd}
+\include{chapters/thesis_design-ac-dune}
+\include{chapters/thesis_conclusion}
+\include{chapters/thesis_acknowledgements}
+
+\printbibliography
+
+\appendix
+
+\include{chapters/thesis_appendix_a}
+
+%\includepdf[pages={{},1}]{erklaerung}
+
+\end{document}

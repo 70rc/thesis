@@ -3,3 +3,4 @@ thesis.*
 !thesis.bib
 thesis-blx.*
 chapters/*.aux
+chapters/*.log

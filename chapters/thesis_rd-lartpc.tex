@@ -8,7 +8,7 @@ For the first time, we took high speed footage of breakdowns in liquid argon, me
 These measurements help to understand the physics of the breakdowns and develop ways to mitigate them and/or protect future detectors from catastrophic failures.
 Our HV studies have already influenced the design of MicroBooNE and will continue to impact the design of future experiments.
 
-\subsection{Setup of the HV tests\label{sec:rd-lartpc_hv_setup}}
+\subsection*{Experimental setup}
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=0.265\textwidth]{hv/FT.pdf}
@@ -97,7 +97,7 @@ The possibility of creating gas bubbles near the discharge gap is inhibited by k
 The outer bath is opened to the atmosphere, thus keeping the inner vessel temperature constant and well below the boiling point.
 No boiling was detected anywhere near the discharge gap region during the measurements.
 
-\subsection{Experimental results\label{sec:rd-lartpc_hv_results}}
+\subsection*{Experimental results}
 
 \begin{figure}[htb]
 	\centering	
@@ -167,7 +167,7 @@ An example of such a discharge is shown in Figure~\ref{fig:hv_side} and the corr
 \end{figure}
 
 
-\subsection{Interpretation of the results\label{sec:rd-lartpc_hv_interpretation}}
+\subsection*{Interpretation}
 
 As it was shown in \cite{FNAL-hv-paper, he-breakdown}, experimental data on breakdowns in liquefied noble gases suggest the following dependence for the maximum field at the breakdown: $E_{max}=C\cdot A^p$, where $C$ is a material-dependent constant, $A$ is the stressed area with an electric field intensity above \SI{90}{\percent} of its maximum, and $p\approx-0.25$.
 In Figure \ref{fig:hv_powerplot}, data available in literature is combined with those obtained from the measurements performed within the scope of this thesis as well with earlier measurements performed at LHEP at the University of Bern.
@@ -329,8 +329,21 @@ If a breakdown condition is detected during the streamer phase, the high voltage
 
 
 \section{A method to suppress electric breakdowns in liquid argon\label{sec:rd-lartpc_latex}}
-Besides the thorough characterisation of breakdowns in LAr, we have found a way to suppress them by coating the field cage with latex\cite{latex}.
-We were able to increase the voltage by a factor of \num{10} using this technique.
+Besides the thorough characterisation of breakdowns in LAr, a way was found to suppress them by coating the field cage with latex\cite{latex}.
+It was possible to increase the voltage by a factor of \num{10} using this technique.
+
+The setup was the same as the one used to study the breakdowns, described in Section~\ref{sec:rd-lartpc_hv}.
+Additionally, the cathode sphere was coated by a layer of polymer.
+In order to effectively suppress electric breakdowns, the coating needs to have a high dielectric strength while at the same time staying elastic at cryogenic temperatures (\SI{87}{\kelvin} for a LAr detector).
+Furthermore, the excess electron mobility of the coating needs to be significantly lower than the one of liquid argon.
+If this is the case, electrons emitted by the cathode via field emission can accumulate inside the coating layer and in turn locally reduce high fields and thus quench the field emission.
+
+Natural polyisoprene (latex rubber) is a polymer that satisfies the above requirements.
+Its dielectric strength is reported to be in the range of \SIrange{1}{2}{\mega\volt\per\centi\metre}~\cite{sauce}, its dielectric constant is \num{2.1} which is close to the \num{1.6} of liquid argon, and its room temperature resistivity is \SI{1e16}{\ohm\centi\metre}.
+A polyisoprene layer of several \SI{100}{\micro\metre} can be doposited on the sphere by dipping the latter in purified latex milk.
+After drying at room temperature, the coating is leached in dionised water for several hours and finally vulcanised at \SI{70}{\celsius} for one hour.
+Leaching is needed to remove all soluable pollutants contained in natural latex while the vulcanisation increases the tear strength of the coating.
+Like this, the polyisoprene layer keeps its integrity and does not crack even after multiple fast cool-down and warm-up cycles to \SI{87}{\kelvin} and back to room temperature, respectively.
 
 
 \section{A more robust approach to TPC readout wires\label{sec:rd-lartpc_cuoka}}

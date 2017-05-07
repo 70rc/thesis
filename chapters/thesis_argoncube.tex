@@ -29,7 +29,7 @@ As a result, the bath surrounding the modules needs not meet as stringent purity
 Under normal operation conditions, all modules are inserted and the gaps between them are sealed off by indium seals pressed onto the top flanges.
 The schematic of an \AC\ module is shown in Figure~\ref{fig:ac_module}.
 
-To extract a module, the indium seal around the flange in question are removed and a drain pipe on the bottom of the module is opened.
+To extract a module, the indium seal around the flange in question is removed and a drain pipe on the bottom of the module is opened.
 The module is then slowly lifted up by a crane and the liquid argon is drained to the surrounding bath by means of gravity.
 On the bottom of the module, a blind flange is located with equal dimensions as the top flange but without any feedthroughs.
 When the bottom flange reaches the position of the top flange, it is sealed with indium again and then detached from the module which is now free and can be brought to its destination.
@@ -48,6 +48,12 @@ Figure~\ref{fig:ac_module-ins-ext} shows the insertion (left) and extraction (ri
 	\caption{Insertion (left) and extraction (right) of a module}
 	\label{fig:ac_module-ins-ext}
 \end{figure}
+
+Another big problem that can be solved by a modular detector design are the high electric fields required for large detectors.
+Because each module contains its own TPC independent of all other modules, the required cathode potential only depends on the module size not the detector size.
+To minimise the cathode voltage, the field is applied along one of the short edges of a module and furthermore, the module is split in half by the cathode reducing the voltage by anoter factor of two.
+Thus, for a module footprint of \SI{2 x 2}{\metre} and an electric field of \SI{1}{\kilo\volt\per\centi\metre}, a cathode potential of \SI{100}{\kilo\volt} is required.
+Operating a LArTPC at this voltage is challenging but feasible without a prohibitive loss in fiducial volume~\cite{AT}.
 
 
 \section{Cryogenics\label{sec:ac_cryo}}

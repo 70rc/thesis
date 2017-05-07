@@ -1,20 +1,36 @@
 \chapter{The liquid argon time projection chamber (LArTPC)\label{chap:lartpc}}
+The time projection chamber (TPC) is a derivative of Charpak's multi-wire proportional chamber (MWPC)\cite{mwpc} developed by Nygren in 1968~\cite{sauce}.
+Passing charged particles ionise the detection medium which was gaseous in the original design.
+To prevent the recombination of the ions and electrons, an electrif field is applied.
+In this field, the electrons are drifted towards a two-dimensional readout plane.
+Originally, the readout was an MWPC.
+The charge readout is triggered by a scintillation light readout which also provides accurate timing of an event.
+Using this, one can measure the time for the ionisation time to reach the readout plane.
+Because the drift speed of charged particles in the detection medium is constant, the coordinate in drift direction can be calculated from the drift time if the drift speed is known.
+
+While gaseous TPCs already provide very accurate tracking, the have the disadvantage, that the mass and thus the cross-section of the detection medium is quite low resulting in a low interaction rate.
+Therefore, Rubbia in 1977 proposed to use liquid argon as a detection medium~\cite{lartpc}.
+In turn, this requires a cryogenic detector while gaseous detectors can be operated at room temperature.
 
 
 \section{Liquid argon as a detection medium\label{sec:lartpc_lar}}
 \begin{itemize}
 	\item General specs
+	\item Electronegativity
 	\item Ionisation
 	\item Scintillation
 	\item Recombination
 	\item Diffusion
 	\item Dielectric strength
 \end{itemize}
+\cite{NobleGasDetectors}
 
 
 \section{Electric field generation\label{sec:lartpc_efield}}
 For charge separation and drift, an electric field of the order of \SI{1}{\kilo\volt\per\centi\metre} is needed inside the fiducial volume of a LArTPC.
-The easiest way to do this is by means of field shaping rings fed by a resistive divider,
+An easy way to achieve this is by means of field shaping rings fed by a resistive divider between cathode and anode.
+The drawback is the need for a feedthrough capable of withstanding the full cathode voltage.
+One alternative is to generate the high voltage inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the ARGONTUBE experiment at LHEP at the University of Bern~\cite{AT}.
 
 
 \section{Charge readout\label{sec:lartpc_readout}}

@@ -117,7 +117,8 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 
 
 \begin{table}[htb]
-	\centering\caption{Summary of the measurement runs.}
+	\centering
+	\caption{Summary of the breakdown measurement runs.}
 	\label{tab:hv_table2}
 	\begin{tabular}{|S|S|l|l|S|S|S|}
 		\hline
@@ -331,6 +332,7 @@ If a breakdown condition is detected during the streamer phase, the high voltage
 \section{A method to suppress electric breakdowns in liquid argon\label{sec:rd-lartpc_latex}}
 Besides the thorough characterisation of breakdowns in LAr, a way was found to suppress them by coating the field cage with latex\cite{latex}.
 It was possible to increase the voltage by a factor of \num{10} using this technique.
+This study has been published in~\cite{latex}.
 
 The setup was the same as the one used to study the breakdowns, described in Section~\ref{sec:rd-lartpc_hv}.
 Additionally, the cathode sphere was coated by a layer of polymer.
@@ -340,16 +342,43 @@ If this is the case, electrons emitted by the cathode via field emission can acc
 
 Natural polyisoprene (latex rubber) is a polymer that satisfies the above requirements.
 Its dielectric strength is reported to be in the range of \SIrange{1}{2}{\mega\volt\per\centi\metre}~\cite{sauce}, its dielectric constant is \num{2.1} which is close to the \num{1.6} of liquid argon, and its room temperature resistivity is \SI{1e16}{\ohm\centi\metre}.
-A polyisoprene layer of several \SI{100}{\micro\metre} can be doposited on the sphere by dipping the latter in purified latex milk.
-After drying at room temperature, the coating is leached in dionised water for several hours and finally vulcanised at \SI{70}{\celsius} for one hour.
-Leaching is needed to remove all soluable pollutants contained in natural latex while the vulcanisation increases the tear strength of the coating.
+A polyisoprene layer of several \SI{100}{\micro\metre} can be deposited on the sphere by dipping the latter in purified latex milk.
+After drying at room temperature, the coating is leached in deionised water for several hours and finally vulcanised at \SI{70}{\celsius} for one hour.
+Leaching is needed to remove all soluble pollutants contained in natural latex while the vulcanisation increases the tear strength of the coating.
 Like this, the polyisoprene layer keeps its integrity and does not crack even after multiple fast cool-down and warm-up cycles to \SI{87}{\kelvin} and back to room temperature, respectively.
+
+In the first measurement, a \SI{4}{\centi\metre} cathode sphere coated with \SI{450}{\micro\metre} of polyisoprene was used.
+The test was started at cathode anode gap width of \SI{5}{\milli\metre} and the voltage was ramped up from \SIrange{0}{130}{\kilo\volt} at \SI{50}{\volt\per\second}.
+After no breakdown could be observed for several hours, the gap width was decreased to \SI{4}{\milli\metre} after ramping down the voltage.
+Again, no breakdown occurred for several hours and subsequently, the gap was decreased to \SI{3}{\milli\metre}.
+During this third ramp-up, there was a breakdown at \SI{112}{\kilo\volt}.
+This corresponds to a maximum electric field intensity across the gap of \SI{412}{\kilo\volt} which is more than one order of magnitude higher than the required field intensity to provoke breakdowns from an uncoated cathode~\cite{breakdown_14, breakdown_16}.
+A summary of the results is given in Table~\ref{tab:latex_table1}.
+
+\begin{table}[htb]
+	\centering
+	\caption{Summary of the breakdown test measurements with \SI{200}{\micro\metre} and \SI{450}{\micro\metre} thick polyisoprene layers coated \SI{5}{\centi\metre} and \SI{4}{\centi\metre} diameter spheric cathodes, respectively.}
+	\label{tab:latex_table1}
+	\begin{tabular}{|S|S|S|S|S|}
+		\hline
+		{Gap width} &			{Max.\ field strength} &				{Sphere diameter} &		{Polyisoprene thickness} &	{Breakdown} \\
+		\hline
+		\SI{5}{\milli\metre} &	\SI{298}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &	\SI{450}{\micro\metre} &	{no} \\
+		\hline
+		\SI{4}{\milli\metre} &	\SI{358}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &	\SI{450}{\micro\metre} &	{no} \\
+		\hline
+		\SI{3}{\milli\metre} &	\SI{412}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &	\SI{450}{\micro\metre} &	{yes} \\
+		\hline
+		\SI{3}{\milli\metre} &	\SI{296}{\kilo\volt\per\centi\metre} &	\SI{5}{\centi\metre} &	\SI{200}{\micro\metre} &	{yes} \\
+		\hline
+	\end{tabular}
+\end{table}
 
 
 \section{A more robust approach to TPC readout wires\label{sec:rd-lartpc_cuoka}}
 As outlined in Section~\ref{sec:lartpc_challenges}, one of the big challenges for future LArTPCs will be the mechanical stability of the classical wire readout planes for the envisioned detector sizes.
 A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
-To investigate this solution, a proof of concept was performed at LHEP at the Univeristy of Bern.
+To investigate this solution, a proof of concept was performed at LHEP at the University of Bern.
 
 \subsection{Experimental setup\label{sec:rd-lartpc_cuoka_setup}}
 In a classical wire readout plane, the induction signal is produce by drifting the charge through one or multiple induction wire grids.

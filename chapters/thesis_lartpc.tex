@@ -1,14 +1,14 @@
 \chapter{The liquid argon time projection chamber (LArTPC)\label{chap:lartpc}}
 The time projection chamber (TPC) is a derivative of Charpak's multi-wire proportional chamber (MWPC)\cite{mwpc} developed by Nygren in 1968~\cite{sauce}.
 Passing charged particles ionise the detection medium which was gaseous in the original design.
-To prevent the recombination of the ions and electrons, an electrif field is applied.
-In this field, the electrons are drifted towards a two-dimensional readout plane.
+To prevent the recombination of the ions and electrons, an electric field is applied.
+In this field, the electrons drift towards a two-dimensional readout plane.
 Originally, the readout was an MWPC.
 The charge readout is triggered by a scintillation light readout which also provides accurate timing of an event.
 Using this, one can measure the time for the ionisation time to reach the readout plane.
 Because the drift speed of charged particles in the detection medium is constant, the coordinate in drift direction can be calculated from the drift time if the drift speed is known.
 
-While gaseous TPCs already provide very accurate tracking, the have the disadvantage, that the mass and thus the cross-section of the detection medium is quite low resulting in a low interaction rate.
+While gaseous TPCs already provide very accurate tracking, they have the disadvantage that the mass and thus the cross-section of the detection medium is quite low resulting in a low interaction rate.
 Therefore, Rubbia in 1977 proposed to use liquid argon as a detection medium~\cite{lartpc}.
 In turn, this requires a cryogenic detector while gaseous detectors can be operated at room temperature.
 
@@ -31,9 +31,23 @@ For charge separation and drift, an electric field of the order of \SI{1}{\kilo\
 An easy way to achieve this is by means of field shaping rings fed by a resistive divider between cathode and anode.
 The drawback is the need for a feedthrough capable of withstanding the full cathode voltage.
 One alternative is to generate the high voltage inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the ARGONTUBE experiment at LHEP at the University of Bern~\cite{AT}.
+A Greinacher multiplier works by pumping up a cascade of capacitors and diodes using a high frequency source.
+However, while the voltage generation itself worked well, this approach proofed to be impractical because the high frequency voltage needed to charge the multiplier interfered with the readout and therefore had to be turned off during data-taking.
+Recharging, in turn, caused a lot of detector down time.
 
 
 \section{Charge readout\label{sec:lartpc_readout}}
+Classically, the charge readout of a liquid argon TPC is done using wires with a diameter of the order of \SI{100}{\micro\metre}.
+One wire plane delivers a 2D projection of the ionisation tracks in the detection medium.
+This has two consequences:
+\begin{enumerate}
+	\item At least two parallel wire planes are needed to be able to reconstruct the 3D event topology.
+	\item In theory, the higher the complexity of the event, the more planes would be required to be able to fully reconstruct it.
+\end{enumerate}
+Multiple wire planes can be realised by operating only the last one (in drift direction) in charge collection mode.
+All the preceeding wire planes are biased in a such a way that they are transparent to the incoming charge but pick up an induction signal during the passage of the latter.
+A typical number of wire planes for currently operational detectors is three.
+They are tilted by \SI{60}{\degree} against each other.
 
 
 \section{Light readout\label{sec:lartpc_light}}

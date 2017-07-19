@@ -1,4 +1,5 @@
-\chapter{The liquid argon time projection chamber (LArTPC)\label{chap:lartpc}}
+\chapter{The liquid argon time projection chamber (\lartpc)\label{chap:lartpc}}
+
 The time projection chamber (TPC) is a derivative of Charpak's multi-wire proportional chamber (MWPC)\cite{mwpc} developed by Nygren in 1968~\cite{sauce}.
 Passing charged particles ionise the detection medium which was gaseous in the original design.
 To prevent the recombination of the ions and electrons, an electric field is applied.
@@ -14,6 +15,7 @@ In turn, this requires a cryogenic detector while gaseous detectors can be opera
 
 
 \section{Liquid argon as a detection medium\label{sec:lartpc_lar}}
+
 \begin{itemize}
 	\item General specs
 	\item Electronegativity
@@ -27,16 +29,18 @@ In turn, this requires a cryogenic detector while gaseous detectors can be opera
 
 
 \section{Electric field generation\label{sec:lartpc_efield}}
-For charge separation and drift, an electric field of the order of \SI{1}{\kilo\volt\per\centi\metre} is needed inside the fiducial volume of a LArTPC.
+
+For charge separation and drift, an electric field of the order of \SI{1}{\kilo\volt\per\centi\metre} is needed inside the fiducial volume of a \lartpc.
 An easy way to achieve this is by means of field shaping rings fed by a resistive divider between cathode and anode.
 The drawback is the need for a feedthrough capable of withstanding the full cathode voltage.
-One alternative is to generate the high voltage inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the ARGONTUBE experiment at LHEP at the University of Bern~\cite{AT}.
+One alternative is to generate the high voltage inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the \AT\ experiment at LHEP at the University of Bern~\cite{AT}.
 A Greinacher multiplier works by pumping up a cascade of capacitors and diodes using a high frequency source.
 However, while the voltage generation itself worked well, this approach proofed to be impractical because the high frequency voltage needed to charge the multiplier interfered with the readout and therefore had to be turned off during data-taking.
 Recharging, in turn, caused a lot of detector down time.
 
 
 \section{Charge readout\label{sec:lartpc_readout}}
+
 Classically, the charge readout of a liquid argon TPC is done using wires with a diameter of the order of \SI{100}{\micro\metre}.
 One wire plane delivers a 2D projection of the ionisation tracks in the detection medium.
 This has two consequences:
@@ -52,8 +56,41 @@ They are tilted by \SI{60}{\degree} against each other.
 
 \section{Light readout\label{sec:lartpc_light}}
 
+In order to calculate the distance, the charge has drifted along the electric field (i.e.\ the space coordinate perpendicular to the readout plane), one needs to record the drift time.
+The data acquisition can record the time of the arrival of the charge at the readout plane.
+What is missing is the time of the charge production.
+This can be acquired by registering the scintillation light produced alongside the ionisation of the detection medium.
+Contemporary detector designs employ photomultiplier tubes (PMTs) for this purpose.
+PMTs are a well established technology with a high quantum efficiency and a fast response.
+
+The light impinging upon a PMT is converted to an electron by a photo cathode coated on the sensitive window of the PMT.
+These photo cathodes have a limited absorption spectrum.
+In particular, the scintillation light of \lar\ does not fall inside this spectrum for most photo cathodes.
+That is why the vacuum UV scintillation light needs to be converted to the visible range where it can be efficiently detected by a PMT.
+A widespread wavelength-shifter capable of achieving this is tetraphenyl butadiene (TPB).
+Therefore, a common setup consists of a surface of TPB in front of a PMT.
+
 
 \section{Electronics\label{sec:lartpc_electronics}}
+
+Using the energy required to produce one electron ion pair $W_{\m{i}}$ from Section~\ref{sec:lartpc_lar} and assuming a MIP, one gets
+
+\begin{IEEEeqnarray*}{rCl}
+	\frac{\m{d}N_{\si{\elementarycharge}}}{\m{d}x}	= \frac{\left.\frac{\m{d}E}{\m{d}x}\right|_{\m{MIP}}}{W_{\m{i}}}
+												&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}}
+													\approx \SI{8500}{\elementarycharge\per\milli\metre}
+													\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
+\end{IEEEeqnarray*}
+
+as a rough estimation for the charge yield.
+This calculation does not incorporate recombination, meaning that in a real experiment the value will be even lower.
+The result is that the readout electronics need to be capable of detecting charge in the order of \si{\femto\coulomb}.
+
+That is why the charge signal needs to be amplified before digitisation.
+Early \lartpc\ designs used preamplifiers outside the cryostat at room temperature for this.
+From a noise point of view it is beneficial to put the amplifiers inside the cryostat emerged in \lar\ for two reasons.
+First off, the closer to the source the amplifier is located, the shorter the low-signal lines will be resulting in less pick-up noise.
+An additional advantage is that the temperature-dependent Johnson-Nyquist noise of the amplifiers will be reduce at cryogenic temperatures.
 
 
 \section{Challenges of future detectors\label{sec:lartpc_challenges}}

@@ -1,24 +1,23 @@
-\chapter{Research and development of novel LArTPC detectors\label{chap:rd-lartpc}}
+\chapter{High voltage studies\label{chap:hv}}
 
-\section{TPC\label{sec:rd-lartcp_tpc}}
-
-\section{Studies of the electric breakdown in liquid argon\label{sec:rd-lartpc_hv}}
 The difficulties involved with the necessary voltages have been highlighted by the Bern Group’s work, in which I have already played a key role\cite{breakdown_16}.
 For the first time, we took high speed footage of breakdowns in liquid argon, measured their current-voltage characterisitcs and recorded their optical spectral distribution.
 These measurements help to understand the physics of the breakdowns and develop ways to mitigate them and/or protect future detectors from catastrophic failures.
 Our HV studies have already influenced the design of MicroBooNE and will continue to impact the design of future experiments.
 
-\subsection*{Experimental setup}
+
+\section{Experimental setup\label{sec:hv_setup}}
+
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=0.265\textwidth]{hv/FT.pdf}
 	\includegraphics[width=0.39\textwidth]{hv/setup1_lowres.pdf}
 	\includegraphics[width=0.295\textwidth]{hv/setup2_lowres.pdf}
 	\caption{Experimental setup. Left: high voltage feed-through with the spherical cathode. Middle: the feed-through before insertion into the cryostat. 1.~ground shield of the feed-through; 2.~ribbed PET dielectric; 3.~cathode sphere; 4.~anode plate sitting on a tripod on the grounded bottom of the cryostat; two of the tripod legs are insulated while the third one contains a \SI{50}{\ohm} shunt resistor. Right: linear translation unit used to set the cathode-anode gap width~(5).}
-	\label{fig:rd-lartpc_hv_setup1}
+	\label{fig:hv_setup1}
 \end{figure}
 
-The setup used in this study is very similar to the one described in~\cite{breakdown_14} and is shown in Figure~\ref{fig:rd-lartpc_hv_setup1}.
+The setup used in this study is very similar to the one described in~\cite{breakdown_14} and is shown in Figure~\ref{fig:hv_setup1}.
 A spherical cathode and a plane anode electrode form the discharge gap.
 Three different diameters of the cathode sphere were tested: \SIlist{4; 5; 8}{\centi\metre}.
 Two types of surface treatment were used in the cathode preparation, namely mechanical fine polishing and electro-polishing.
@@ -97,7 +96,8 @@ The possibility of creating gas bubbles near the discharge gap is inhibited by k
 The outer bath is opened to the atmosphere, thus keeping the inner vessel temperature constant and well below the boiling point.
 No boiling was detected anywhere near the discharge gap region during the measurements.
 
-\subsection*{Experimental results}
+
+\section{Experimental results}
 
 \begin{figure}[htb]
 	\centering	
@@ -168,7 +168,7 @@ An example of such a discharge is shown in Figure~\ref{fig:hv_side} and the corr
 \end{figure}
 
 
-\subsection*{Interpretation}
+\section{Interpretation}
 
 As it was shown in \cite{FNAL-hv-paper, he-breakdown}, experimental data on breakdowns in liquefied noble gases suggest the following dependence for the maximum field at the breakdown: $E_{max}=C\cdot A^p$, where $C$ is a material-dependent constant, $A$ is the stressed area with an electric field intensity above \SI{90}{\percent} of its maximum, and $p\approx-0.25$.
 In Figure \ref{fig:hv_powerplot}, data available in literature is combined with those obtained from the measurements performed within the scope of this thesis as well with earlier measurements performed at LHEP at the University of Bern.
@@ -323,20 +323,19 @@ Finally, Figure~\ref{fig:hv_vStreamerVsE} depicts the dependence of the streamer
 Again, the velocity is only a lower limit as it was calculated by dividing the gap distance by the duration of the streamer, which is not correct for streamers emerging from the side of the sphere.
 There are two distinct types of events.
 While the selected streamers are rather slow (velocity $\approx \SI{300}{\milli\metre\per\second}$, independent of the field), the whole data set contains much faster events with the total time in the ns scale (not shown).
-The knowledge of the streamer velocity can be applied in the design of protection circuits for future LArTPCs.
+The knowledge of the streamer velocity can be applied in the design of protection circuits for future \lartpc s.
 If a breakdown condition is detected during the streamer phase, the high voltage can be killed prior to a disruptive spark phase potentially damaging sensitive detector electronics.
 
-\clearpage
 
+\section{A method to suppress electric breakdowns in liquid argon\label{sec:hv_latex}}
 
-\section{A method to suppress electric breakdowns in liquid argon\label{sec:rd-lartpc_latex}}
-Besides the thorough characterisation of breakdowns in LAr, a way was found to suppress them by coating the field cage with latex\cite{latex}.
+Besides the thorough characterisation of breakdowns in \lar, a way was found to suppress them by coating the field cage with latex\cite{latex}.
 It was possible to increase the voltage by a factor of \num{10} using this technique.
 This study has been published in~\cite{latex}.
 
-The setup was the same as the one used to study the breakdowns, described in Section~\ref{sec:rd-lartpc_hv}.
+The setup was the same as the one used to study the breakdowns, described in Section~\ref{sec:hv_setup}.
 Additionally, the cathode sphere was coated by a layer of polymer.
-In order to effectively suppress electric breakdowns, the coating needs to have a high dielectric strength while at the same time staying elastic at cryogenic temperatures (\SI{87}{\kelvin} for a LAr detector).
+In order to effectively suppress electric breakdowns, the coating needs to have a high dielectric strength while at the same time staying elastic at cryogenic temperatures (\SI{87}{\kelvin} for a \lar\ detector).
 Furthermore, the excess electron mobility of the coating needs to be significantly lower than the one of liquid argon.
 If this is the case, electrons emitted by the cathode via field emission can accumulate inside the coating layer and in turn locally reduce high fields and thus quench the field emission.
 
@@ -373,67 +372,3 @@ A summary of the results is given in Table~\ref{tab:latex_table1}.
 		\hline
 	\end{tabular}
 \end{table}
-
-
-\section{A more robust approach to TPC readout wires\label{sec:rd-lartpc_cuoka}}
-As outlined in Section~\ref{sec:lartpc_challenges}, one of the big challenges for future LArTPCs will be the mechanical stability of the classical wire readout planes for the envisioned detector sizes.
-A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
-To investigate this solution, a proof of concept was performed at LHEP at the University of Bern.
-
-\subsection{Experimental setup\label{sec:rd-lartpc_cuoka_setup}}
-In a classical wire readout plane, the induction signal is produce by drifting the charge through one or multiple induction wire grids.
-With the proposed scheme of \si{Cu} tracks on a support structure, it is no longer possible for the charge to actually drift through the induction plane(s).
-Therefore, induction is only produced by the approach of the charge.
-One consequence of this is, that induction signals will no longer bi bipolar.
-As opposed to the classic design, the collection plane will even be in front of the induction plane(s).
-This means that the charge can only approach the induction plane(s) until it is collected by the collection plane on the top layer of the support structure.
-That is why it is crucial to make the support structure as thin as possible in order to get induction signals as high as possible.
-Using an FR4 structure as in classical PCB designs is therefore not a viable option.
-Very thin support structures can be provided by using a flexible PCB made from Kapton instead of FR4.
-These can be made as thin as a few \SI{10}{\micro\metre}.
-For this test, a Kapton layer of \SI{50}{\micro\metre} was used with a single induction plane on the back (Fig.~\ref{fig:cuoka_readout-plane}).
-The Kapton layer was supported by an FR4 frame for mounting on the TPC.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.5\textwidth]{cuoka/readout_plane_bottom}
-	\caption{Copper on Kapton readout plane.}
-	\label{fig:cuoka_readout-plane}
-\end{figure}
-
-The test was performed in a small vacuum-insulated double-batch cryostat with an inner volume of \SI{30}{\centi\metre} diameter and \SI{50}{\centi\metre} height. %TODO: check dimensions!
-Prior to filling, the cryostat was evacuated using a turbo-molecular pump and then purged with argon gas and evacuated a second time.
-From earlier experiments the purity can be assumed to be of the order of \SI{1}{ppb} after filling.
-The cryostat is sealed using rubber o-rings which lose tightness at cryogenic temperatures.
-Therefore, and due to the fact that no purification system was available, the purity degraded slowly in the course of the experiment.
-The \SI{8}{\centi\metre} long field cage consists of \num{8} copper rings of \SI{8}{\centi\metre} diameter terminated by a copper plate cathode.
-A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive divider.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.5\textwidth]{cuoka/tpc}
-	\caption{TPC used for the copper on Kapton readout test.}
-	\label{fig:cuoka_tpc}
-\end{figure}
-
-The charge signal is amplified by cryogenic charge amplifiers.
-The amplified signal is then digitised by \emph{CAEN V1724}\footnote{\href{http://www.caen.it}{http://www.caen.it}} \SI{14}{bit} digitisers.
-Section~\ref{sec:rd-dune-nd_electronics} describes the readout chain in more detail.
-
-\subsection{Experimental results\label{sec:rd-lartpc_cuoka_results}}
-Using the above-described setup, cosmic muons were recorded over the course of multiple hours.
-A typical event is depicted in Figure~\ref{fig:cuoka_event}.
-It can be seen that due to the event being almost parallel to the induction strips, the induction signal is in fact stronger than the collection signal.
-The reason for the bad signal to noise ratio is improper grounding of the setup and high noise levels in the lab from the nearby train station and air conditioning.
-Due to time constraints and an upcoming test of a pixelated readout described in Chapter~\ref{chap:rd-dune-nd}, no analysis was performed on these data.
-Anyhow, the fact that cosmic muons could be seen using this setup proofs that there is no inherent problem with having the induction plane a few \SI{10}{\micro\metre} behind the collection plane.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{cuoka/muon_event}
-	\caption{Muon event recorded using the copper on Kapton readout.}
-	\label{fig:cuoka_event}
-\end{figure}
-
-While this technique can potentially solve the mechanical problems of classical wire readouts, it does not reduce the ambiguities inherent to 2D-projective readouts outlined in Section~\ref{sec:lartpc_challenges}.
-Because of this, it was decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for LArTPCs providing real 3D data.

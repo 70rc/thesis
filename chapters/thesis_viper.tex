@@ -1,0 +1,22 @@
+\chapter{Results from the first measurements with the \AC\ demonstrator\label{chap:viper}}
+
+
+\section{Experimental setup\label{sec:viper_setup}}
+The experiments were performed in a bath cryostat with a diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} which gives and inner volume of $\approx \SI{200}{\litre}$ of liquid argon.
+The cryostat is equipped with a recirculation pump for continous purification during operation.
+A purity of $\approx \SI{1}{ppb}$ can be reached
+Before filling, the vessel was evacuated to $\approx \SI{1e-3}{\milli\bar}$ using a roots vacuum pump, then purged with argon gas and evacuated again.
+The high voltage feedthrough is made from PET and is the same used for the breakdown experiments described in Section~\ref{chap:hv} and~\cite{breakdown_14, breakdown_16}.
+
+The newly designed TPC has a length of \SI{63}{\centi\metre} and a diameter of \SI{10}{\centi\metre}. %TODO: Check dimensions!
+For the field generation, \num{30} aluminium rings are stacked with a pitch of \SI{20}{\milli\metre}.
+In between the field shaping rings, acrylic rings are placed for light collection.
+A more detailed description of the light collection system can be found in Section~\ref{sec:rd-dune-nd_light}.
+To allow proper convection of the argon, every other acrylic ring is reduced to four small pieces attached to four support struts made from PAI.
+
+
+\section{3D reconstruction\label{sec:viper_reco}}
+To characterise the pixel readout, together with the Bern group I will implement a truly 3D reconstruction in the LArSoft framework.
+This allows the comparison of the pixel readout performance with contemporary projected wire readouts.
+To have a direct comparison, we use 2D projections of the data taken with the pixels, thus eliminating any bias not related to projection.
+This enables future experiments to reconstruct data from pixelated readouts.

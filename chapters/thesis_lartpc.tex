@@ -6,7 +6,7 @@ To prevent the recombination of the ions and electrons, an electric field is app
 In this field, the electrons drift towards a two-dimensional readout plane.
 Originally, the readout was an MWPC.
 The charge readout is triggered by a scintillation light readout which also provides accurate timing of an event.
-Using this, one can measure the time for the ionisation time to reach the readout plane.
+Using this, one can measure the time for the ionisation electrons to reach the readout plane.
 Because the drift speed of charged particles in the detection medium is constant, the coordinate in drift direction can be calculated from the drift time if the drift speed is known.
 
 While gaseous TPCs already provide very accurate tracking, they have the disadvantage that the mass and thus the cross-section of the detection medium is quite low resulting in a low interaction rate.
@@ -15,6 +15,31 @@ In turn, this requires a cryogenic detector while gaseous detectors can be opera
 
 
 \section{Liquid argon as a detection medium\label{sec:lartpc_lar}}
+
+\begin{table}[htb]
+	\centering
+	\caption{Properties of \lar~\cite{NobleGasDetectors}}
+	\label{tab:lartpc_larprop}
+	\begin{tabular}{|ll|Ss|}
+		\hline
+		{Molar mass} &									$\mu$ &					3.9948e1 &	\gram\per\mol \\
+		\hline
+		{Boiling point at} \SI{101.325}{\kilo\pascal} &	$T_{\m{S}}$ &			8.726e1 &	\kelvin \\
+		\hline
+		{Density at} $T_{\m{S}}$ &						$\rho_{\m{S}}$ &		1.399e3 &	\kilo\gram\per\cubic\metre \\
+		\hline
+		{Dielectric constant} &							$\varepsilon_{\m{r}}$ &	1.59 &		\\
+		\hline
+		{Required energy per electron-ion pair} &		$W_{\m{i}}$ &			2.36e1 &	\electronvolt \\
+		\hline
+		{Fano factor} &									$F$ &					1.07e-1 &	\\
+		\hline
+		{Radiation length} &							$X_{\m{0}}$ &			1.4e1 &		\centi\metre \\
+		\hline
+		{Interaction length} &							$\lambda$ &				8.37e1 &	\centi\metre \\
+		\hline
+	\end{tabular}
+\end{table}
 
 \begin{itemize}
 	\item General specs
@@ -87,10 +112,24 @@ This calculation does not incorporate recombination, meaning that in a real expe
 The result is that the readout electronics need to be capable of detecting charge in the order of \si{\femto\coulomb}.
 
 That is why the charge signal needs to be amplified before digitisation.
+This is achieved by means of an integrating amplifier which also converts the charge to a voltage.
 Early \lartpc\ designs used preamplifiers outside the cryostat at room temperature for this.
-From a noise point of view it is beneficial to put the amplifiers inside the cryostat emerged in \lar\ for two reasons.
-First off, the closer to the source the amplifier is located, the shorter the low-signal lines will be resulting in less pick-up noise.
-An additional advantage is that the temperature-dependent Johnson-Nyquist noise of the amplifiers will be reduce at cryogenic temperatures.
+From a noise point of view though, it is beneficial to put the amplifiers inside the cryostat emerged in \lar\ for two reasons.
+First off, the closer to the source the amplifier is located, the shorter the low-signal lines will be, resulting in less pick-up noise.
+An additional advantage is that the temperature-dependent Johnson-Nyquist noise of the amplifiers will be reduced at cryogenic temperatures.
+
+For the same reasons it might even make sense to operate the entire analogue signal chain at cryogenic temperatures.
+This would also help to eliminate ground loops which can pick-up noise inductively or provoke self-oscillation of the analog signal circuitry.
+On the other hand, in general it is not easy to operate a circuit at cryogenic temperatures.
+Usually, a complete redesign of the circuit is necessary due to most components operating outside their guaranteed temperature range.
+For some complex active components like the amplifiers and ADCs, even a redesign of the integrated circuit might be necessary.
+On the other hand, placing the digitisers too close to the readout might result in elevated noise levels due to the digital clocks coupling into the analogue signal path.
+
+The requirements on the electronics are given by the required sensitivity of the detector.
+The necessary bit depth of the ADCs is given by the required dynamic range, i.e.\ the minimum and maximum amount of charge the readout needs to be able to register.
+While the spatial resolution in the two coordinates parallel to the readout plane is given by the pitch of the electrodes, the accuracy of the third coordinate is given by the timing accuracy.
+This in turn depends on three properties: the timing accuracy of the light readout, the sampling time of the ADCs and the peaking time of the preamplifiers.
+Peaking time is the time needed until the output of the preamplifier reaches its maximum (peak) for a delta pulse input.
 
 
 \section{Challenges of future detectors\label{sec:lartpc_challenges}}

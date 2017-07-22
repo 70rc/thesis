@@ -14,7 +14,12 @@ Therefore, Rubbia in 1977 proposed to use liquid argon as a detection medium~\ci
 In turn, this requires a cryogenic detector while gaseous detectors can be operated at room temperature.
 
 
-\section{Liquid argon as a detection medium\label{sec:lartpc_lar}}
+\section{Liquid argon (\lar) as a detection medium\label{sec:lartpc_lar}}
+
+For an efficient particle detection by a TPC, its medium needs to fulfil a set of requirements.
+As it turns out, \lar\ is quite unique as it has all the necessary properties while at the same time it is comparably cheap.
+This section shall outline the most important one of those properties.
+A summary can be found in Table~\ref{tab:lartpc_larprop}.
 
 \begin{table}[htb]
 	\centering
@@ -24,7 +29,7 @@ In turn, this requires a cryogenic detector while gaseous detectors can be opera
 		\hline
 		{Molar mass} &									$\mu$ &					3.9948e1 &	\gram\per\mol \\
 		\hline
-		{Boiling point at} \SI{101.325}{\kilo\pascal} &	$T_{\m{S}}$ &			8.726e1 &	\kelvin \\
+		{Boiling point at} \SI{1.01325e5}{\pascal} &	$T_{\m{S}}$ &			8.726e1 &	\kelvin \\
 		\hline
 		{Density at} $T_{\m{S}}$ &						$\rho_{\m{S}}$ &		1.399e3 &	\kilo\gram\per\cubic\metre \\
 		\hline
@@ -34,12 +39,43 @@ In turn, this requires a cryogenic detector while gaseous detectors can be opera
 		\hline
 		{Fano factor} &									$F$ &					1.07e-1 &	\\
 		\hline
-		{Radiation length} &							$X_{\m{0}}$ &			1.4e1 &		\centi\metre \\
+		{Radiation length} &							$X_{\m{0}}$ &			1.4e-1 &		\metre \\
 		\hline
-		{Interaction length} &							$\lambda$ &				8.37e1 &	\centi\metre \\
+		{Interaction length} &							$\lambda$ &				8.37e-1 &	\metre \\
+		\hline
+		{Concentration in air by volume} &				&						9.34e-1 &	\percent \\
 		\hline
 	\end{tabular}
 \end{table}
+
+In order to register the ionisations tracks of charged particles in a TPC, two processes are crucial: production and transportation of charge.
+The charge production needs to be high enough to be detectable by the available electronics.
+This is given by the energy required to produce an electron-ion pair $W_{\m{i}}$.
+As will be shown in Section~\ref{sec:lartpc_electronics}, the value of \SI{23.6}{\electronvolt} for \lar\ is challenging but achievable with contemporary electronics.
+Naturally, this imposes a lower limit on detectable $\frac{\m{d}E}{\m{d}x}$.
+
+Charge transport is influenced by multiple factors.
+The ultimate goal is to collect as much of the produced charge as possible.
+Recombination is the main process opposing this.
+While it can be partially mitigated by increasing the electric field, it cannot be eliminated completely.
+Even if that was possible, it would not be feasible because the scintillation light needed for the drift time measurement is partly produced by recombining electron-ion pairs.
+The relation between the strength of the drift field and charge yield can be described by the \emph{box model}~\cite{box-model}.
+It assumes that the ion-electron pairs are isolated and initially uniformly populate a box of a given size.
+Furthermore, the diffusion of electrons and ions as well as the ion drift velocity (\num{1e5} time smaller than for electrons) are assumed to be negligible.
+For a produced charge $Q_{\m{0}}$ and a collected charge $Q$, the collection ratio is given by
+\begin{IEEEeqnarray}{rCl}
+	\frac{Q}{Q_{\m{0}}} & = & \frac{1}{\xi} \ln \left( 1 + \xi \right)
+\end{IEEEeqnarray}
+with a parameter $\xi$ depending on the drift field, the electron mobility, the initial number of ion-electron pairs, the chosen size of the box and the recombination coefficient.
+Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected charge in a \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
+
+\begin{figure}
+	\centering
+	\includegraphics[viewport=14 5 511 351, clip, width=\textwidth]{lartpc/box-model}
+	\caption{Collected charge in a \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
+		The lines represent box model fits.~\cite{grna-lhep}}
+	\label{fig:lartpc_box-model}
+\end{figure}
 
 \begin{itemize}
 	\item General specs
@@ -64,7 +100,7 @@ However, while the voltage generation itself worked well, this approach proofed 
 Recharging, in turn, caused a lot of detector down time.
 
 
-\section{Charge readout\label{sec:lartpc_readout}}
+\section{Charge readout\label{sec:lartpc_charge-ro}}
 
 Classically, the charge readout of a liquid argon TPC is done using wires with a diameter of the order of \SI{100}{\micro\metre}.
 One wire plane delivers a 2D projection of the ionisation tracks in the detection medium.
@@ -79,7 +115,7 @@ A typical number of wire planes for currently operational detectors is three.
 They are tilted by \SI{60}{\degree} against each other.
 
 
-\section{Light readout\label{sec:lartpc_light}}
+\section{Light readout\label{sec:lartpc_light-ro}}
 
 In order to calculate the distance, the charge has drifted along the electric field (i.e.\ the space coordinate perpendicular to the readout plane), one needs to record the drift time.
 The data acquisition can record the time of the arrival of the charge at the readout plane.

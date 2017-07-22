@@ -115,7 +115,7 @@ A summary is shown in Table~\ref{tab:hv_table2}.
 A typical recorded camera image sequence for breakdown from a \SI{5}{\centi\metre} diameter cathode at \SI{-100}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate is shown in Figure~\ref{fig:hv_images}.
 The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{breakdown_16}.\footnote{\href{http://arxiv.org/src/1512.05968v2/anc/movie1.webm}{http://arxiv.org/src/1512.05968v2/anc/movie1.webm}}
 
-
+\sisetup{range-units=brackets}
 \begin{table}[htb]
 	\centering
 	\caption{Summary of the breakdown measurement runs.}
@@ -124,18 +124,20 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 		\hline
 		{{Run}} &	$\oslash_{\m{Sphere}}$ &	Surface finish &	Sphere pol. &	{{Events}} &	{{$d_{\m{Gap}}$}} &					{{$V_{\m{Breakdown}}$}} \\
 		\hline
-		1   &	\SI{4}{\centi\metre} &			Mech.\ polished &	Cathode (-) &	1086 &			\SIrange{0.5}{8.0}{\milli\metre} &	\SIrange{3}{130}{\kilo\volt} \\
 		\hline
-		2   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Cathode (-) &	900 &			\SIrange{0.2}{12.0}{\milli\metre} &	\SIrange{2}{130}{\kilo\volt} \\
+		1   &	\SI{4}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &	1086 &			\SIrange{0.5}{8.0}{\milli\metre} &	\SIrange{3}{130}{\kilo\volt} \\
 		\hline
-		3   &	\SI{8}{\centi\metre} &			Mech.\ polished &	Cathode (-) &	2434 &			\SIrange{0.1}{70.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
+		2   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &	900 &			\SIrange{0.2}{12.0}{\milli\metre} &	\SIrange{2}{130}{\kilo\volt} \\
 		\hline
-		4   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Anode (+) &		102 &			\SIrange{4.0}{5.0}{\milli\metre} &	\SIrange{5}{114}{\kilo\volt} \\
+		3   &	\SI{8}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &	2434 &			\SIrange{0.1}{70.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
 		\hline
-		5   &	\SI{5}{\centi\metre} &			Electro-polished &	Cathode (-) &	1141 &			\SIrange{0.1}{10.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
+		4   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Anode ($+$) &	102 &			\SIrange{4.0}{5.0}{\milli\metre} &	\SIrange{5}{114}{\kilo\volt} \\
+		\hline
+		5   &	\SI{5}{\centi\metre} &			Electro-polished &	Cathode ($-$) &	1141 &			\SIrange{0.1}{10.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
 		\hline
 	\end{tabular}
 \end{table}
+\sisetup{range-units=repeat}
 
 \begin{figure}[p]
 	\centering
@@ -358,9 +360,10 @@ A summary of the results is given in Table~\ref{tab:latex_table1}.
 	\centering
 	\caption{Summary of the breakdown test measurements with \SI{200}{\micro\metre} and \SI{450}{\micro\metre} thick polyisoprene layers coated \SI{5}{\centi\metre} and \SI{4}{\centi\metre} diameter spheric cathodes, respectively.}
 	\label{tab:latex_table1}
-	\begin{tabular}{|S|S|S|S|S|}
+	\begin{tabular}{|S|S|S|S|l|}
 		\hline
 		{Gap width} &			{Max.\ field strength} &				{Sphere diameter} &		{Polyisoprene thickness} &	{Breakdown} \\
+		\hline
 		\hline
 		\SI{5}{\milli\metre} &	\SI{298}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &	\SI{450}{\micro\metre} &	{no} \\
 		\hline

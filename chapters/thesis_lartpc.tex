@@ -58,21 +58,21 @@ Charge transport is influenced by multiple factors.
 The ultimate goal is to collect as much of the produced charge as possible.
 Recombination is the main process opposing this.
 While it can be partially mitigated by increasing the electric field, it cannot be eliminated completely.
-Even if that was possible, it would not be feasible because the scintillation light needed for the drift time measurement is partly produced by recombining electron-ion pairs.
+Even if that was possible, it would not be beneficial because the scintillation light needed for the drift time measurement is partly produced by recombining electron-ion pairs.
 The relation between the strength of the drift field and charge yield can be described by the \emph{box model}~\cite{box-model}.
 It assumes that the ion-electron pairs are isolated and initially uniformly populate a box of a given size.
-Furthermore, the diffusion of electrons and ions as well as the ion drift velocity (\num{1e5} time smaller than for electrons) are assumed to be negligible.
+Furthermore, the diffusion of electrons and ions as well as the ion drift velocity (\num{1e5} times smaller than for electrons) are assumed to be negligible.
 For a produced charge $Q_{\m{0}}$ and a collected charge $Q$, the collection ratio is given by
 \begin{IEEEeqnarray}{rCl}
 	\frac{Q}{Q_{\m{0}}} & = & \frac{1}{\xi} \ln \left( 1 + \xi \right)
 \end{IEEEeqnarray}
 with a parameter $\xi$ depending on the drift field, the electron mobility, the initial number of ion-electron pairs, the chosen size of the box and the recombination coefficient.
-Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected charge in a \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
+Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected charge in an \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
 
 \begin{figure}
 	\centering
 	\includegraphics[viewport=14 5 511 351, clip, width=\textwidth]{lartpc/box-model}
-	\caption{Collected charge in a \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
+	\caption{Collected charge in an \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
 		The lines represent box model fits.~\cite{grna-lhep}}
 	\label{fig:lartpc_box-model}
 \end{figure}

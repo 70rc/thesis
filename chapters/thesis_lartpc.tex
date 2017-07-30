@@ -64,7 +64,7 @@ It assumes that the ion-electron pairs are isolated and initially uniformly popu
 Furthermore, the diffusion of electrons and ions as well as the ion drift velocity (\num{1e5} times smaller than for electrons) are assumed to be negligible.
 For a produced charge $Q_{\m{0}}$ and a collected charge $Q$, the collection ratio is given by
 \begin{IEEEeqnarray}{rCl}
-	\frac{Q}{Q_{\m{0}}} & = & \frac{1}{\xi} \ln \left( 1 + \xi \right)
+	\frac{Q}{Q_{\m{0}}} & = & \frac{1}{\xi} \ln(1 + \xi)
 \end{IEEEeqnarray}
 with a parameter $\xi$ depending on the drift field, the electron mobility, the initial number of ion-electron pairs, the chosen size of the box and the recombination coefficient.
 Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected charge in an \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
@@ -76,6 +76,33 @@ Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected c
 		The lines represent box model fits.~\cite{grna-lhep}}
 	\label{fig:lartpc_box-model}
 \end{figure}
+
+A second process affecting charge transport is electron trapping by impurities.
+The probability of an electron becoming attached to an atom in the medium.
+For the argon itself, this is highly unlikely because its outer electron shell is fully populated.
+This is one or the reasons why (liquefied) noble gases are a prime choice for TPCs.
+Nevertheless, drifting electron can be captured by impurities in the argon.
+A particularly bad one oxygen due to its high electronegativity.
+Therefore, it is very important to keep the detection medium very pure.
+
+The velocity of the charge drifting in an electric field is related to the so-called mobility by
+
+\begin{IEEEeqnarray}{rCl}
+	\va{v} & = & \mu\qty(\va{E}) \va{E}
+\end{IEEEeqnarray}
+
+where the mobility $\mu$ in general depends on the electric field.
+This means, the higher the field is, the higher the charge velocity and thus, the drift time.
+One wants to keep drift times low for multiple reasons.
+One of them are the aforementioned impurities.
+They cause the charge to posses a finite lifetime following an exponential decay with time.
+The consequence is that higher impurities can be partially compensated by a higher field.
+In a beam experiment with a given beam timing, increasing the drift time will increase pile-up, i.e. the number of events simultaneously present in the detector.
+Pile-up in turn, makes event reconstruction more complicated.
+On the other hand, the readout electronics need to be fast enough to guarantee the required spatial resolution in the drift coordinate which defines an upper limit for the drift velocity.
+A reasonable value from a purity point of view is a drift time of $\order{\SI{1}{\milli\second}}$.
+For a detector size of $\order{\SI{1}{\metre}}$, the required drift speed is $\order{\SI{1}{\milli\metre\per\micro\second}}$ which requires a field of $\order{\SI{1}{\kilo\volt\per\centi\metre}}$.
+
 
 \begin{itemize}
 	\item General specs
@@ -137,10 +164,10 @@ Therefore, a common setup consists of a surface of TPB in front of a PMT.
 Using the energy required to produce one electron ion pair $W_{\m{i}}$ from Section~\ref{sec:lartpc_lar} and assuming a MIP, one gets
 
 \begin{IEEEeqnarray*}{rCl}
-	\frac{\m{d}N_{\si{\elementarycharge}}}{\m{d}x}	= \frac{\left.\frac{\m{d}E}{\m{d}x}\right|_{\m{MIP}}}{W_{\m{i}}}
-												&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}}
-													\approx \SI{8500}{\elementarycharge\per\milli\metre}
-													\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
+	\dv{N_{\si{\elementarycharge}}}{x}	= \frac{\eval{\dv{E}{x}}_{\m{MIP}}}{W_{\m{i}}}
+									&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}}
+											\approx \SI{8500}{\elementarycharge\per\milli\metre}
+											\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
 \end{IEEEeqnarray*}
 
 as a rough estimation for the charge yield.

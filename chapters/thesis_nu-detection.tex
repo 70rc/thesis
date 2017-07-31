@@ -11,17 +11,17 @@ The main interaction of charged particles with matter happens on atomic electron
 That is why for most of these interactions, one needs to treat the interaction of electrons separately.
 For all other charged particles, the stopping power is described by the Bethe-Bloch formula
 \begin{IEEEeqnarray}{rCl}
-	- \frac{1}{\rho}\frac{\m{d}E}{\m{d}x} & = &
-	4 \pi N_{\m{A}} r_{\m{e}} ^ 2 \si{\electronmass} c ^ 2 z ^ 2 \frac{Z}{A} \frac{1}{\beta ^ 2}
-	\left(\ln\frac{2 \si{\electronmass} c ^ 2 \gamma ^ 2 \beta ^ 2}{I} - \beta ^ 2 - \frac{\delta}{2} \right) \m{,}
+	- \frac{1}{\rho} \dv{E}{x} & = &
+	4 \pi N_{\m{A}} r_{\m{e}} ^ 2 m_{\m{e}} c ^ 2 z ^ 2 \frac{Z}{A} \frac{1}{\beta ^ 2}
+	\qty[\ln(\frac{2 m_{\m{e}} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{\delta}{2}] \m{,}
 	\label{eq:bethe-bloch}
 \end{IEEEeqnarray}
 where
 \begin{itemize}
 	\item[$\rho$] is the density of the absorber material,
 	\item[$N_{\m{A}}$] is Avogadro's number,
-	\item[$r_{\m{e}}$] $= \frac{1}{4 \pi \epsilon_0} \frac{\si{\elementarycharge} ^ 2}{\si{\electronmass} c ^ 2}$ is the classical electron radius using the permittivity of free space $\epsilon_0$,
-	\item[$\si{\electronmass}$] is the electron mass,
+	\item[$r_{\m{e}}$] $= \frac{1}{4 \pi \varepsilon_{\m{0}}} \frac{\si{\elementarycharge} ^ 2}{m_{\m{e}} c ^ 2}$ is the classical electron radius using the permittivity of free space $\varepsilon_{\m{0}}$,
+	\item[$m_{\m{e}}$] is the electron mass,
 	\item[$z$] is the charge of the incident particle,
 	\item[$Z$] is the atomic number of the absorber,
 	\item[$A$] is the atomic weight of the absorber,
@@ -33,7 +33,7 @@ where
 		\end{IEEEeqnarray}
 	\item[$\delta$] is a parameter describing the screening of the extended transverse electric field of relativistic incident particles by the charge density of the atomic electrons of the absorber.
 \end{itemize}
-Equation~\eqref{eq:bethe-bloch} describes the stopping power of particles with $m_0 \gg \si{\electronmass}$ by ionisation and excitation of the atoms in the absorber material.
+Equation~\eqref{eq:bethe-bloch} describes the stopping power of particles with $m_0 \gg m_{\m{e}}$ by ionisation and excitation of the atoms in the absorber material.
 As the stopping power is proportional to the electron density and thus to the mass density of the absorber material, it is often divided by the latter.
 Thus, Equation~\eqref{eq:bethe-bloch} actually gives the so called mass stopping power.
 The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is $\approx 0.5$ for most light materials, and the mean excitation energy which only contributes logarithmically.
@@ -47,7 +47,7 @@ Particles in this momentum range are called minimum ionising particles (MIPs).
 They are important for detectors because this energy loss is a measure for the required energy resolution of a detector.
 As mentioned above, the mass stopping power only loosely depends on the absorber material and therefore, its minimum is
 \begin{IEEEeqnarray}{rCl}
-	\left. - \frac{1}{\rho}\frac{\m{d}E}{\m{d}x}\right|_{\m{min}} & \approx & \SI{2}{\mega\electronvolt\centi\meter\squared\per\gram}
+	\eval{- \frac{1}{\rho} \dv{E}{x}}_{\m{min}} & \approx & \SI{2}{\mega\electronvolt\centi\meter\squared\per\gram}
 \end{IEEEeqnarray}
 for singly charged incident particles on most (light) absorbers.
 To the left of the minimum is the \emph{Bragg peak} which is especially important for radiation therapy with heavy charged particles (e.g.\ protons).
@@ -64,12 +64,12 @@ At high velocities, further effects come into play.
 \emph{Bremsstrahlung} describes the radiation energy loss of a fast charged particle in the Coulomb field of the absorber nuclei.
 It can be described by
 \begin{IEEEeqnarray}{rCl}
-	- \frac{1}{\rho}\frac{\m{d}E}{\m{d}x} & = & \frac{E}{X_0}
+	- \frac{1}{\rho}\dv{E}{x} & = & \frac{E}{X_{\m{0}}}
 	\label{eq:bremsstrahlung}
 \end{IEEEeqnarray}
 where
 \begin{IEEEeqnarray}{rCl}
-	X_0 & = & \frac{A}{4 \alpha N_A Z \left(Z + 1\right) \left(\frac{1}{4 \pi \epsilon_0}\frac{\si{\elementarycharge} ^ 2}{m c ^ 2}\right) ^ 2 \ln \left(183 Z ^ {- \frac{1}{3}}\right)}
+	X_{\m{0}} & = & \frac{A}{4 \alpha N_A Z \qty(Z + 1) \qty(\frac{1}{4 \pi \varepsilon_{\m{0}}} \frac{\si{\elementarycharge} ^ 2}{m c ^ 2}) ^ 2 \ln(183 Z ^ {- \frac{1}{3}})}
 	\label{eq:radiationlength}
 \end{IEEEeqnarray}
 is the \emph{radiation length} of the absorber material using
@@ -84,7 +84,7 @@ By neglecting the latter, one obtains the important relation
 	X_0 ^ {- 1} & \propto & Z ^ 2
 \end{IEEEeqnarray}
 as opposed to the $\propto Z$ dependence of the Bethe-Bloch formula.
-Equation~\eqref{eq:bremsstrahlung} also holds for electrons as long as $E \gg \frac{\si{\electronmass} c ^ 2}{\alpha Z ^ {\frac{1}{3}}}$.
+Equation~\eqref{eq:bremsstrahlung} also holds for electrons as long as $E \gg \frac{m_{\m{e}} c ^ 2}{\alpha Z ^ {\frac{1}{3}}}$.
 Furthermore, looking at the dependence on the mass of the incident particle, one finds
 \begin{IEEEeqnarray}{rCl}
 	X_0 & \propto & m ^ 2
@@ -92,13 +92,13 @@ Furthermore, looking at the dependence on the mass of the incident particle, one
 using Equation~\eqref{eq:radiationlength}.
 Therefore, the radiation length of an absorber material is usually given for electrons and the relation
 \begin{IEEEeqnarray}{rCl}
-	X_0 & = & X_0^{\m{e}} \frac{m ^ 2}{\si{\electronmass} ^ 2}
+	X_0 & = & X_0^{\m{e}} \frac{m ^ 2}{m_{\m{e}} ^ 2}
 \end{IEEEeqnarray}
 can be used to get the radiation length for any charged particle of mass $m$.
 Radiation losses play a significant role only at energies much higher than the energy of MIPs.
-Using Equations~\eqref{eq:bethe-bloch} and~\eqref{eq:bremsstrahlung}, one can define a \emph{critical energy} by
+Using Equations~\eqref{eq:bethe-bloch} and~\eqref{eq:bremsstrahlung}, one can define a \emph{critical energy} $E_{\m{c}}$ by
 \begin{IEEEeqnarray}{rCl}
-	\left.\frac{\m{d}E}{\m{d}x}\left(E_{\m{c}}\right)\right|_{\m{ionisation}} & = & \left.\frac{\m{d}E}{\m{d}x}\left(E_{\m{c}}\right)\right|_{\m{bremsstrahlung}}
+	\eval{\dv{E}{x}_{\m{ion}}}_{E_{\m{c}}} & = & \eval{\dv{E}{x}_{\m{brems}}}_{E_{\m{c}}}
 \end{IEEEeqnarray}
 at which radiation losses take over from ionisation losses.
 Similar to the radiation length, the critical energy is proportional to $m ^ 2$.
@@ -135,19 +135,19 @@ At low energies (ionisation energy $\le E_{\gamma} \le \SI{100}{\kilo\electronvo
 The photon is absorbed by an atom of the absorber which in turn is ionised and thus ejects one of its shell electrons.
 The cross section is given by
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{photo}} = \left(\frac{32}{\epsilon ^ 7}\right) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\m{e}}
+	\sigma_{\m{photo}} = \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\m{e}}
 \end{IEEEeqnarray}
 where
 \begin{itemize}
-	\item[$\epsilon$] $= \frac{E_{\m{\gamma}}}{\si{\electronmass} c ^ 2}$ is the reduced photon energy and
+	\item[$\epsilon$] $= \frac{E_{\m{\gamma}}}{m_{\m{e}} c ^ 2}$ is the reduced photon energy and
 	\item[$\sigma_{\m{Th}}^{\m{e}}$] $= \frac{8}{3} \pi r_{\m{e}} ^ 2 = \SI{6.65e-25}{\centi\meter\squared}$ is the \emph{Thomson cross section} for elastic scattering of photons on electrons.
 \end{itemize}
 
 For energies $\approx \SI{1}{\mega\electronvolt}$, \emph{Compton scattering} dominates the interaction of photons with matter.
 Thereby, the photon is not absorbed by the atom but just scatters off one of its shell electrons with the cross section
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{c}} & = & 2 \pi r_{\m{e}} ^ 2 Z \left(\left(\frac{1 + \epsilon}{\epsilon ^ 2}\right) \left(\frac{2 \left(1 + \epsilon\right)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln \left(1 + 2 \epsilon\right)\right)\right.\\
-	& & \left. + \frac{1}{2 \epsilon} \ln \left(1 + 2 \epsilon\right) - \frac{1 + 3 \epsilon}{\left(1 + 2 \epsilon\right) ^ 2}\right)
+	\sigma_{\m{c}} & = & 2 \pi r_{\m{e}} ^ 2 Z \left\{\qty[\frac{1 + \epsilon}{\epsilon ^ 2}] \qty[\frac{2 \qty(1 + \epsilon)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln(1 + 2 \epsilon)]\right.\\
+	& & \left. + \frac{1}{2 \epsilon} \ln(1 + 2 \epsilon) - \frac{1 + 3 \epsilon}{\qty(1 + 2 \epsilon) ^ 2}\right\}
 \end{IEEEeqnarray}
 obtained from the Klein-Nishina formula.
 As only part of the photon's energy is absorbed while the rest is scattered, it makes sense to divide this cross section into a scattering cross section
@@ -160,18 +160,18 @@ and an absorption cross section
 \end{IEEEeqnarray}
 where $E_{\gamma}$ and $E_{\gamma}'$ is the energy of the photon before and after scattering, respectively.
 
-At $E_{\gamma} \ge 2 \si{\electronmass} c ^ 2$, photons are capable of producing pairs of $e^+ e^-$.
+At $E_{\gamma} \ge 2 m_{\m{e}} c ^ 2$, photons are capable of producing pairs of $e^+ e^-$.
 Because of momentum conservation, this process can only happen in the coulomb field of a so called spectator particle.
 As pair-production in the field of an electron is strongly suppressed, the spectator is usually a nucleus of the absorber material.
 Therefore, the cross section of pair-production depends on the shielding of the coulomb field by the shell electrons and thus on the proximity to the nucleus.
 Eventually, this results in an energy dependence.
 For $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is given by
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \left(\frac{7}{9} \ln 2 \epsilon - \frac{109}{54}\right)
+	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \qty(\frac{7}{9} \ln 2 \epsilon - \frac{109}{54})
 \end{IEEEeqnarray}
 and for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \left(\frac{7}{9} \ln \frac{183}{Z ^ {\frac{1}{3}}} - \frac{1}{54}\right) \m{.}
+	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \m{.}
 \end{IEEEeqnarray}
 
 As mentioned above, for Compton scattering, two different cross sections are defined, one for the scattered energy ($\sigma_{\m{cs}}$) and one for the absorbed one ($\sigma_{\m{ca}}$).

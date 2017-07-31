@@ -4,3 +4,4 @@ thesis.*
 thesis-blx.*
 chapters/*.aux
 chapters/*.log
+.DS_Store

@@ -103,6 +103,11 @@ On the other hand, the readout electronics need to be fast enough to guarantee t
 A reasonable value from a purity point of view is a drift time of $\order{\SI{1}{\milli\second}}$.
 For a detector size of $\order{\SI{1}{\metre}}$, the required drift speed is $\order{\SI{1}{\milli\metre\per\micro\second}}$ which requires a field of $\order{\SI{1}{\kilo\volt\per\centi\metre}}$.
 
+For detectors much larger than \SI{1}{\metre}, a drift field of \SI{1}{\kilo\volt\per\centi\metre} becomes challenging due to the required high cathode voltage.
+Soon after entering \lartpc\ R\&D, the Bern group realised that the reported dielectric strength of \lar\ is much lower~\cite{breakdown_14} than measured by Swan et al.\ in 1960~\cite{swan1, swan2}.
+It turned out, opposing the assumption of Swan et al., that the dielectric strength is not independent of the absolute dimensions of the electrodes.
+This led to a very detailed study of breakdowns in \lar\ in the course of this thesis which is presented in Chapter~\ref{chap:hv}.
+
 
 \begin{itemize}
 	\item General specs
@@ -118,7 +123,7 @@ For a detector size of $\order{\SI{1}{\metre}}$, the required drift speed is $\o
 
 \section{Electric field generation\label{sec:lartpc_efield}}
 
-For charge separation and drift, an electric field of the order of \SI{1}{\kilo\volt\per\centi\metre} is needed inside the fiducial volume of a \lartpc.
+For charge separation and drift, an electric field of $\order{\SI{1}{\kilo\volt\per\centi\metre}}$ is needed inside the fiducial volume of a \lartpc.
 An easy way to achieve this is by means of field shaping rings fed by a resistive divider between cathode and anode.
 The drawback is the need for a feedthrough capable of withstanding the full cathode voltage.
 One alternative is to generate the high voltage inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the \AT\ experiment at LHEP at the University of Bern~\cite{AT}.
@@ -164,8 +169,8 @@ Therefore, a common setup consists of a surface of TPB in front of a PMT.
 Using the energy required to produce one electron ion pair $W_{\m{i}}$ from Section~\ref{sec:lartpc_lar} and assuming a MIP, one gets
 
 \begin{IEEEeqnarray*}{rCl}
-	\dv{N_{\si{\elementarycharge}}}{x}	= \frac{\eval{\dv{E}{x}}_{\m{MIP}}}{W_{\m{i}}}
-									&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}}
+	\dv{Q}{x}	= \frac{\eval{\dv{E}{x}}_{\m{MIP}}}{W_{\m{i}}} \si{\elementarycharge}
+									&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}} \si{\elementarycharge}
 											\approx \SI{8500}{\elementarycharge\per\milli\metre}
 											\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
 \end{IEEEeqnarray*}
@@ -196,3 +201,5 @@ Peaking time is the time needed until the output of the preamplifier reaches its
 
 
 \section{Challenges of future detectors\label{sec:lartpc_challenges}}
+To accomplish the physics goals of future neutrino detectors, outlined in Chapter~\ref{chap:introduction}, much higher statistics than with today's experiments are necessary.
+There are two obvious ways to do this: Increase the flux and the detector size.

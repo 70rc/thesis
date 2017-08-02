@@ -202,4 +202,26 @@ Peaking time is the time needed until the output of the preamplifier reaches its
 
 \section{Challenges of future detectors\label{sec:lartpc_challenges}}
 To accomplish the physics goals of future neutrino detectors, outlined in Chapter~\ref{chap:introduction}, much higher statistics than with today's experiments are necessary.
-There are two obvious ways to do this: Increase the flux and the detector size.
+There are two obvious ways to do this: Increase the beam flux and detector size.
+Scaling up a \lartpc\ brings several challenges, in particular for the drift HV and wire readout planes.
+
+At the same drift field, the cathode voltage scales with the size of the detector in drift direction.
+This in turn increases the required distance of the cathode from all grounded parts.
+Where the cathode is close to the \lar\ vessel, this inevitably leads to more dead volume that cannot be used for particle detection.
+HV problems are worsened by the fact that an increased drift distance also means an increased drift time at the same field.
+This can either be compensated by increasing the charge lifetime and thus the \lar\ purity accordingly or by increasing the drift speed and thus the drift field.
+In summary, at the same \lar\ purity, the cathode voltage scales more than linearly with detector size in drift direction.
+
+Further problems are associated with the classic wire readouts employed in \lartpc s, such as mechanical construction and event pile-up.
+One of the mechanical requirements on a wire readout is that it should be as planar as possible.
+Sagging wires caused by insufficient mechanic tension lead to distortions in spatial reconstruction.
+For large detectors, possessing thousands of wires on a single frame, this becomes quite challenging.
+Every wire that has a slight deviation in tension from its neighbours will start to sag.
+This is worsened by the fact that the construction needs to withstand extreme temperature gradients during detector cool-down.
+
+The second problem of wires, event pile-up is a consequence of the increased flux required for future experiments.
+It is rooted in the way event reconstruction works for wires.
+As mentioned above, effectively, wire planes do not produce real 3D event topologies but rather multiple 2D projections.
+In order to achieve true 3D events, they need to be disentangled from the 2D projections.
+If an event is complex enough, this cannot be done unambiguously with a limited number of 2D projections.
+This problem is especially serious in case of a near detector.

@@ -1,9 +1,15 @@
 \chapter{Electronics studies\label{chap:electronics}}
+For a heavy MIP $\dv{E}{x} \approx \SI{2}{\mega\electronvolt\per\centi\metre}$, a \lartpc\ has a charge yield of $\order{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
+The readout electronics need to be able to reliably digitise this charge.
+This chapter aims to outline the challenges based on present designs and then present several tests of future approaches addressing them.
 
 
 \section{Existing chain\label{sec:electronics_existing}}
 
-The charge collected by the pixel plane is amplified by LARASIC4*~\cite{larasic} cryogenic charge amplifiers developed by Brookhaven National Laboratory (BNL) for the MicroBooNE experiment~\cite{uboone}.
+Contemporary electronics schemes shall be introduced by looking at the existing readout chain at LHEP at the University of Bern.
+It was originally designed for the \AT\ experiment and a more detailed description can be found in~\cite{AT_larasic}.
+
+The charge collected by the readout plane is amplified by LARASIC4*~\cite{larasic} cryogenic charge amplifiers developed by Brookhaven National Laboratory (BNL) for the MicroBooNE experiment~\cite{uboone}.
 A performance characterisation of these application-specific integrated circuits (ASICs) can be found in~\cite{AT_larasic}.
 Their main features include
 
@@ -23,7 +29,7 @@ Their main features include
 	\label{fig:viper_readoutChain_old}
 \end{figure}
 
-The cryogenic preamplifiers are mounted to PCBs connected to the back of the pixel readout plane.
+The cryogenic preamplifiers are mounted as close as possible to the readout in order to minimise noise pick-up on these very sensitive lines.
 Via an inter-integrated circuit (I$^2$C) bus, the LARASICs can be programmed to the different aforementioned configurations.
 For this purpose, they are connected to a bespoke NIM module housing an Arduino which generates the I$^2$C signals, a test pulse generator, and multiple low-noise voltage regulators providing power to the LARASICs.
 By means of flexible Kapton ribbon cables, the output of the preamplifiers is fed to buffer amplifiers mounted on top of the signal feedthrough.

@@ -16,8 +16,9 @@ In turn, this requires a cryogenic detector while gaseous detectors can be opera
 
 \section{Liquid argon (\lar) as a detection medium\label{sec:lartpc_lar}}
 
-For an efficient particle detection by a TPC, its medium needs to fulfil a set of requirements.
-As it turns out, \lar\ is quite unique as it has all the necessary properties while at the same time it is comparably cheap.
+For an efficient particle detection by a TPC, several properties of the sensitive medium are of interest, such as ionisation and light yield, electron-ion pair recombination and dielectric strength.
+As it turns out, \lar\ is quite unique as it has all the necessary properties while at the same time it is comparably cheap because it is readily available in the Earth's atmosphere.
+Xenon for instance slightly surpasses argon in many aspects but is prohibitively expensive to build large detectors.
 This section shall outline the most important one of those properties.
 A summary can be found in Table~\ref{tab:lartpc_larprop}.
 
@@ -170,9 +171,9 @@ Using the energy required to produce one electron ion pair $W_{\m{i}}$ from Sect
 
 \begin{IEEEeqnarray*}{rCl}
 	\dv{Q}{x}	= \frac{\eval{\dv{E}{x}}_{\m{MIP}}}{W_{\m{i}}} \si{\elementarycharge}
-									&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}} \si{\elementarycharge}
-											\approx \SI{8500}{\elementarycharge\per\milli\metre}
-											\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
+			&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}} \si{\elementarycharge}
+				\approx \SI{8500}{\elementarycharge\per\milli\metre}
+				\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
 \end{IEEEeqnarray*}
 
 as a rough estimation for the charge yield.
@@ -225,3 +226,10 @@ As mentioned above, effectively, wire planes do not produce real 3D event topolo
 In order to achieve true 3D events, they need to be disentangled from the 2D projections.
 If an event is complex enough, this cannot be done unambiguously with a limited number of 2D projections.
 This problem is especially serious in case of a near detector.
+The envisioned \dune\ near detector, for instance, is expected to see a total of \num{3.14e5} neutrino events per tonne of Ar for \SI{1e20}{POT} (protons on target).~\cite{dune2}
+Scaling down this number to one beam spill (\SI{1e14}{POT})\footnote{Assuming a \SI{2}{\mega\watt} beam reaching \SI{2e21}{POT\per a} with a spill cycle of \SI{1.2}{\second} and \SI{66.7}{\percent} beam up-time.~\cite{dune2, dune4}} leads to $\approx \num{0.3}$ neutrino events.
+For a \SI{30}{\tonne} near detector, this would result in \num{9} neutrino events per beam spill excluding any additional cosmic-induced events.
+
+On top of the event reconstruction problems, event pile-up also poses a challenge for trigger accuracy.
+In a monolithic detector, the scintillation light produced alongside the ionisation charge scatters across a large volume triggering a big portion of the light readout system.
+Thus, matching a scintillation flash to the corresponding charge to get the correct timing of the event is a non-trivial task.

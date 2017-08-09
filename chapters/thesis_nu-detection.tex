@@ -12,6 +12,22 @@ It should explain the continuous energy spectrum measured for $\beta$-decays by 
 However, the same Chadwick in 1932 discovered the particle we call neutron today.~\cite{neutron}
 Upon this, Fermi proposed the name \emph{neutrino} and a little later came up with a new theory for $\beta$-decay.~\cite{betaDecay}
 
+It took almost another quarter of a century until the neutrino was experimentally detected for the first time by Reines and Cowan in 1956.~\cite{reinesCowan}
+They built a detector for the reaction
+\begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_reinesCowan}
+	\overline{\nu}_e + p & \rightarrow & e^+ + n
+\end{IEEEeqnarray}
+and put it next to the nuclear reactor of the Savannah River Plant in South Carolina, US.
+It consisted of two water tanks sandwiched in between three scintillator tanks with photomultiplier tubes (PMTs) on the sidewalls.
+The water was the target to induce the above reaction while the scintillator tanks had the task to detect the resulting positron and neutron.
+A free positron will slow down in matter and eventually get captured by a shell electron which will produce two back-to-back $\gamma$s with an energy of \SI{511}{\kilo\electronvolt} each.
+These will produce scintillation light in the two adjacent tanks and thus can be detected by forming a coincidence of the PMTs of the two tanks.
+Neutron detection is achieved by doping the water target with cadmium which captures the free neutrons producing multiple $\gamma$s that can again be detected using the coincidence of the two adjacent scintillator tanks.
+The neutron capture is much slower than the positron one.
+Therefore, the process from Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector consisting of a lower pulse from the positron capture and a higher pulse from the neutron capture a few \si{\micro\second} later.
+Backgrounds could be efficiently rejected employing this technique.
+
 
 \section{Final state detection\label{sec:nu_detection_fs}}
 In order to be able to detect particles, they need to interact with a detection medium.

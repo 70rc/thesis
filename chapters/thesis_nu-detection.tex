@@ -5,7 +5,7 @@ This chapter shall give an overview of the history of neutrino detectors, descri
 
 \section{History}
 This section puts focus on the evolution of neutrino detection over time.
-Giunti and Kim provide a more detailed history.~\cite{giunti}
+Giunti and Kim provide a more detailed history of neutrino physics.~\cite{giunti}
 
 Wolfgang Pauli in 1930 proposed a new neutral, weakly interacting fermion to the \emph{Radioactive Ladies and Gentlemen} which he called the \emph{neutron}.
 It should explain the continuous energy spectrum measured for $\beta$-decays by Chadwick.
@@ -19,14 +19,39 @@ They built a detector for the reaction
 	\overline{\nu}_e + p & \rightarrow & e^+ + n
 \end{IEEEeqnarray}
 and put it next to the nuclear reactor of the Savannah River Plant in South Carolina, US.
-It consisted of two water tanks sandwiched in between three scintillator tanks with photomultiplier tubes (PMTs) on the sidewalls.
+It consisted of two water tanks sandwiched in between three liquid scintillator tanks with photomultiplier tubes (PMTs) on the sidewalls.
 The water was the target to induce the above reaction while the scintillator tanks had the task to detect the resulting positron and neutron.
 A free positron will slow down in matter and eventually get captured by a shell electron which will produce two back-to-back $\gamma$s with an energy of \SI{511}{\kilo\electronvolt} each.
 These will produce scintillation light in the two adjacent tanks and thus can be detected by forming a coincidence of the PMTs of the two tanks.
 Neutron detection is achieved by doping the water target with cadmium which captures the free neutrons producing multiple $\gamma$s that can again be detected using the coincidence of the two adjacent scintillator tanks.
 The neutron capture is much slower than the positron one.
 Therefore, the process from Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector consisting of a lower pulse from the positron capture and a higher pulse from the neutron capture a few \si{\micro\second} later.
-Backgrounds could be efficiently rejected employing this technique.
+Backgrounds can be efficiently rejected employing this technique.
+That drawback is that detection is limited to the $\overline{\nu}_e$ interaction in Equation~\eqref{eq:nu-detection_reinesCowan}.
+
+In 1962, Lederman et al.\ proved the existence of the $\nu_{\mu}$ at the Alternating Gradient Synchrotron (AGS) at Brookhaven National Laboratory (BNL) in New York, US.~\cite{numu}
+For the first time, they produced $\nu_{\mu}$s using an accelerator.
+The protons from the AGS were guided onto a beryllium target producing pions which in turn decay according to
+\begin{IEEEeqnarray}{rCl}
+	\pi^+ & \rightarrow & \mu^+ + \overline{\nu}_{\mu} \\
+	\pi^- & \rightarrow & \mu^- + \nu_{\mu}
+\end{IEEEeqnarray}
+producing a beam of muon (anti)neutrinos.
+Spark chambers were used to detect the neutrinos.
+They were placed behind a \SI{13.5}{\metre} wall of iron shielding used to stop the muons and remaining hadrons from the beam.
+
+A spark chamber consists of several parallel conducting plates immersed in a counting gas, typically a mixture of helium and neon.
+Every other plate is connected to a pulsed high-voltage power supply while the rest is grounded.
+At either end of the stack, triggering detectors (usually scintillators coupled to PMTs) are placed.
+When two coinciding signals from these are received, a high-voltage pulse is applied to the plates.
+If this happens fast enough ($\order{\SI{10}{\micro\second}}$), a spark forms along the electric field lines where the counting gas has been ionised by the incident particle(s).
+The amplitude and the duration of the HV pulse need to be carefully tuned in order to reach the threshold of spark formation but to prevent random sparks on sharp edges and spacers etc.
+A gas amplification of \numrange{1e8}{1e9} is required to achieve this.
+Furthermore, the rising edge of the HV pulse needs to be extremely short ($\order{\SI{1}{\nano\second}}$).
+If it was too long, it would drift the ionised track towards the electrodes before the field is high enough to initiate a discharge.
+Switching high voltages at this speed is not easy.
+Additionally, spark chambers have quite high dead times of $\order{\SI{100}{\milli\second}}$ which is needed for the ionisation charge to clear.
+A \emph{clearing field} or an electronegative quenching gas additive can be used to speed up this process.~\cite{grupen}
 
 
 \section{Final state detection\label{sec:nu_detection_fs}}

@@ -53,6 +53,44 @@ Switching high voltages at this speed is not easy.
 Additionally, spark chambers have quite high dead times of $\order{\SI{100}{\milli\second}}$ which is needed for the ionisation charge to clear.
 A \emph{clearing field} or an electronegative quenching gas additive can be used to speed up this process.~\cite{grupen}
 
+After Davis failed to measure the lepton-number-violating reaction
+\begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_homestake}
+	\overline{\nu}_e + \ce{^{37}Cl} & \rightarrow & \ce{^{37}Ar} + e^- \m{,}
+\end{IEEEeqnarray}
+he decided to replace the $\overline{\nu}_e$ by solar $\nu_e$.~\cite{homestake68, homestake98}
+Surprisingly, they measured a flux approximately on third lower than predicted by the standard solar model (SSM).
+This became famous as the solar neutrino problem only to be resolved in 2002 by the SNO experiment.
+Davis' experiment was located \SI{1478}{\metre} (\SI{4200}{\metre} water equivalent) underground in the Homestake gold mine at Lead, South Dakota, US.
+The detector consisted of a tank filled with \SI{615}{\tonne} of tetrachloroethylene, \ce{C_2Cl_4}.
+As opposed to the two experiments above, this was a \emph{radiochemical} detector which can detect neutrino interactions only offline.
+According to Equation~\eqref{eq:nu-detection_homestake}, an incident neutrino converts one of the chlorine atoms in the detector into an unstable argon isotope.
+After exposure, the tank is purged by pumping helium gas through the liquid which extracts the argon isotopes.
+In order for this to work, a certain amount of \ce{^{36}Ar} is introduced into the tank as a carrier.
+Through a sophisticated system, the argon is purified and finally, its \ce{^{37}Ar} content is measured in a proportional counter.
+By counting the number of decaying argon isotopes and extrapolating using its half-life of \num{35} days, it is possible to calculate the number of neutrino interactions during the exposure.
+
+A proportional counter is a container with two electrodes (usually a cylinder with a wire in its centre) filled with a counting medium (usually gaseous).
+Incident charged particles ionise the counting medium---neutral particles can be detected if they first produce charged particles via interaction with matter in or surrounding the detector.
+If an electric field is applied to the electrodes, the produced electron-ion pairs are separated and drift towards the corresponding electrode.
+Reading out the current on the electrodes, one can measure the amount of ionisation produced inside the detector.
+Usually, the anode is read out because the drift velocity of electrons in an electric field is much higher than the one of ions.
+In this regime, the detector is in fact an ionisation counter rather than a proportional counter.
+The problem is that the charge produced by the ionisation is very low and the current detector needs to be very sensitive.
+By increasing the voltage across the electrodes, the sensitivity can be improved.
+If the field inside the counter is above a certain threshold, the drifting ionisation electrons become energetic enough to ionise the counting medium themselves and thus, start an avalanche and produce more charge.
+In the appropriate voltage range, the produced charge is still proportional to the primary ionisation charge, thus the name proportional counter.
+The voltage can be raised further to enter the Geiger regime.
+Avalanches will now produce UV photons in addition to the ionisation.
+These UV photons travel independently of the electric field and can start new avalanches via the photoelectric effect.
+The process can only be stopped by quenching the discharge either electrically (temporary voltage reduction) or chemically (quenching additive).
+
+While the Homestake experiment provided a clean way of counting $\nu_e$ interactions, it provided no information on the timing and kinematics of the interaction.
+Only a lower energy threshold is given by the fact, that the neutrino needs to have enough energy to dissociate the chlorine atom from the tetrachloroethylene molecule.
+Due to this, it was not possible to tell which reaction chain in the sun, the detected neutrinos originated from.
+Furthermore, care needs to be taken for a very good understanding of all background processes that can produce \ce{^{37}Ar} or its signature in the counting tube.
+Finally, this experiment was only capable of detecting $\nu_e$ which proved to be crucial in the solution to the solar neutrino problem; oscillation.
+
 
 \section{Final state detection\label{sec:nu_detection_fs}}
 In order to be able to detect particles, they need to interact with a detection medium.

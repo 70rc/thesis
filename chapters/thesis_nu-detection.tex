@@ -33,6 +33,7 @@ In 1962, Lederman et al.\ proved the existence of the $\nu_{\mu}$ at the Alterna
 For the first time, they produced $\nu_{\mu}$s using an accelerator.
 The protons from the AGS were guided onto a beryllium target producing pions which in turn decay according to
 \begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_pion-decay}
 	\pi^+ & \rightarrow & \mu^+ + \overline{\nu}_{\mu} \\
 	\pi^- & \rightarrow & \mu^- + \nu_{\mu}
 \end{IEEEeqnarray}
@@ -91,7 +92,50 @@ Due to this, it was not possible to tell which reaction chain in the sun, the de
 Furthermore, care needs to be taken for a very good understanding of all background processes that can produce \ce{^{37}Ar} or its signature in the counting tube.
 Finally, this experiment was only capable of detecting $\nu_e$ which proved to be crucial in the solution to the solar neutrino problem; oscillation.
 
-In 1991, the Kamiokande II experiment confirmed the solar neutrino problem.~\cite{kamiokandeSolar}
+In 1988, the Kamioka Nucleon Decay Experiment (KamiokaNDE) and the Irvine-Michigan-Brookhaven (IMB) detector found a similar deficiency in atmospheric neutrinos which actually were a background for the original experiments looking for proton decays. %TODO: find source for IMB or remove
+Atmospheric neutrinos are produced in a similar fashion than Lederman et al.\ did in their muon neutrino beam experiment.
+Cosmic rays strike the Earth atmosphere and produce secondary particles many of which are pions, in turn, decaying according to Equation~\eqref{eq:nu-detection_pion-decay}.
+Thus, atmospheric neutrinos are mainly $\nu_{\mu}/\overline{\nu}_{\mu}$.
+However, the muon neutrino flux measured by KamiokaNDE was only \SI{59+-7}{\percent} of the one predicted by Monte Carlo simulations.~\cite{kamiokandeAtmos}
+After an upgrade (Kamiokande II), the collaboration furthermore confirmed the solar neutrino problem discovered by the Homestake experiment.~\cite{kamiokandeSolar}
+The detector was a \SI{3000}{\tonne} water tank equipped with \num{1000} PMTs to detect Cherenkov radiation produced by incoming charged particles.
+
+Upon passage of a charge particle, the atoms of the medium become electric dipoles by means of polarisation.
+If the velocity of the incident particle $v$ is greater than the the speed of light inside the medium $\frac{c}{n}$, defined by the refractive index $n$, this polarisation is not symmetric anymore, resulting in a non-vanishing dipole moment.
+A characterisitic cone-shaped radiation in the direction of the particle is the result.
+The half opening angle of the cone is given by
+\begin{IEEEeqnarray}{rCl}
+	\cos(\theta_{\m{c}}) & = & \frac{c}{n \qty(\lambda) v}
+\end{IEEEeqnarray}
+and the radiation spectrum is
+\begin{IEEEeqnarray}{rCl}
+	\dv{N}{x} & = & 2 \pi \alpha z ^ 2 \int_{\lambda_1}^{\lambda_2} \qty(\frac{\sin(\theta_{\m{c}} \qty(\lambda))}{\lambda}) ^ 2 \dd{\lambda}
+\end{IEEEeqnarray}
+with the number of Cherenkov photons $N$, path length $x$, fine-structure constant $\alpha$, and electric charge of the particle $z$.
+By recording the ring produced by this cone with light detectors, it is possible to determine the timing, direction, momentum and type of the incident charged particle within certain restrictions.
+Often employed detection media include water and oil while the photodetectors are usually PMTs.~\cite{grupen}
+
+The charged particles detectable by a Cherenkov detector can be produced by neutrinos in multiple ways.
+Here, only the two most important processes shall be introduced, a more detailed description will be given in Section~\ref{sec:nu_detection_interactions}.
+Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all three flavours can interact with nucleons according to
+\begin{IEEEeqnarray}{rCl}
+	\nu_l + n &				\rightarrow &	l^- + p \\
+	\overline{\nu}_l + p &	\rightarrow &	l^+ + n
+\end{IEEEeqnarray}
+with $l = e,\mu,\tau$.
+It should be noted however, that usually $\tau$ leptons are too short-lived to produce enough Cherenkov radiation to be detected.
+A second interaction path of neutrinos with matter is the scattering off shell electrons whose recoil can be detected by Cherenkov detectors.
+The kinematics of this process are independent of the neutrino flavour allowing for a detection of all three flavours.
+This will play an important role in the resolution of the solar and atmospheric neutrino puzzle.
+
+While registering timing and directionality in addition to being able to detect and distinguish $\nu_{\m{e}}$ and $\nu_{\m{\mu}}$ was a huge improvement over the radiochemical Homestake experiment, Cherenkov detectors still suffer from some difficiencies in particle identification.
+One of them is that they can only detect charged particles with sufficient momentum to produce Cherenkov radiation rather than detecting the whole event topology.
+The detector cannot distinguish between processes producing the same ring signature.
+An important example is a $\pi^{\m{0}}$ produced by a $\nu_{\m{\mu}}$ which produces a signal in a Cherenkov detector very similar to the one of a $\nu_{\m{e}}$.
+This is a crucial background for neutrino oscillation experiments.
+
+
+\section{Neutrino interaction with matter\label{sec:nu_detection_interactions}}
 
 
 \section{Final state detection\label{sec:nu_detection_fs}}

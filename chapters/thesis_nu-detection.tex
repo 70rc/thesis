@@ -54,14 +54,14 @@ Switching high voltages at this speed is not easy.
 Additionally, spark chambers have quite high dead times of $\order{\SI{100}{\milli\second}}$ which is needed for the ionisation charge to clear.
 A \emph{clearing field} or an electronegative quenching gas additive can be used to speed up this process.~\cite{grupen}
 
-After Davis failed to measure the lepton-number-violating reaction
+In the 1960's, after Davis failed to measure the lepton-number-violating reaction
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_homestake}
 	\overline{\nu}_e + \ce{^{37}Cl} & \rightarrow & \ce{^{37}Ar} + e^- \m{,}
 \end{IEEEeqnarray}
 he decided to replace the $\overline{\nu}_e$ by solar $\nu_e$.~\cite{homestake68, homestake98}
 Surprisingly, they measured a flux approximately on third lower than predicted by the standard solar model (SSM).
-This became famous as the solar neutrino problem only to be resolved in 2002 by the SNO experiment.
+This became famous as the solar neutrino problem only to be resolved more than \num{30} years later by the SNO experiment.
 Davis' experiment was located \SI{1478}{\metre} (\SI{4200}{\metre} water equivalent) underground in the Homestake gold mine at Lead, South Dakota, US.
 The detector consisted of a tank filled with \SI{615}{\tonne} of tetrachloroethylene, \ce{C_2Cl_4}.
 As opposed to the two experiments above, this was a \emph{radiochemical} detector which can detect neutrino interactions only offline.
@@ -92,7 +92,7 @@ Due to this, it was not possible to tell which reaction chain in the sun, the de
 Furthermore, care needs to be taken for a very good understanding of all background processes that can produce \ce{^{37}Ar} or its signature in the counting tube.
 Finally, this experiment was only capable of detecting $\nu_e$ which proved to be crucial in the solution to the solar neutrino problem; oscillation.
 
-In 1988, the Kamioka Nucleon Decay Experiment (KamiokaNDE) and the Irvine-Michigan-Brookhaven (IMB) detector found a similar deficiency in atmospheric neutrinos which actually were a background for the original experiments looking for proton decays. %TODO: find source for IMB or remove
+In 1988, the Kamioka Nucleon Decay Experiment (KamiokaNDE), in the Kamkioka mine in Japan, and the Irvine-Michigan-Brookhaven (IMB) detector found a similar deficiency in atmospheric neutrinos which actually were a background for the original experiments looking for proton decays. %TODO: find source for IMB or remove
 Atmospheric neutrinos are produced in a similar fashion than Lederman et al.\ did in their muon neutrino beam experiment.
 Cosmic rays strike the Earth atmosphere and produce secondary particles many of which are pions, in turn, decaying according to Equation~\eqref{eq:nu-detection_pion-decay}.
 Thus, atmospheric neutrinos are mainly $\nu_{\mu}/\overline{\nu}_{\mu}$.
@@ -116,17 +116,24 @@ By recording the ring produced by this cone with light detectors, it is possible
 Often employed detection media include water and oil while the photodetectors are usually PMTs.~\cite{grupen}
 
 The charged particles detectable by a Cherenkov detector can be produced by neutrinos in multiple ways.
-Here, only the two most important processes shall be introduced, a more detailed description will be given in Section~\ref{sec:nu_detection_interactions}.
+Here, only the two most important processes shall be introduced, a more detailed description will be given in Section~\ref{sec:nu-detection_interactions}.
 Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all three flavours can interact with nucleons according to
 \begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_CC-nu}
 	\nu_l + n &				\rightarrow &	l^- + p \\
+	\label{eq:nu-detection_CC-antinu}
 	\overline{\nu}_l + p &	\rightarrow &	l^+ + n
 \end{IEEEeqnarray}
 with $l = e,\mu,\tau$.
 It should be noted however, that usually $\tau$ leptons are too short-lived to produce enough Cherenkov radiation to be detected.
-A second interaction path of neutrinos with matter is the scattering off shell electrons whose recoil can be detected by Cherenkov detectors.
-The kinematics of this process are independent of the neutrino flavour allowing for a detection of all three flavours.
-This will play an important role in the resolution of the solar and atmospheric neutrino puzzle.
+A second interaction path of neutrinos with matter is the scattering off shell electrons according to
+\begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_NC-nu}
+	\nu_l + e^- & \rightarrow & \nu_l + e^- \\
+	\label{eq:nu-detection_NC-antinu}
+	\overline{\nu}_l + e^- & \rightarrow & \overline{\nu}_l + e^- \, \m{.}
+\end{IEEEeqnarray}
+If the neutrino momentum is high enough, the electron recoil can be detected by a Cherenkov detector for all three flavours.
 
 While registering timing and directionality in addition to being able to detect and distinguish $\nu_{\m{e}}$ and $\nu_{\m{\mu}}$ was a huge improvement over the radiochemical Homestake experiment, Cherenkov detectors still suffer from some difficiencies in particle identification.
 One of them is that they can only detect charged particles with sufficient momentum to produce Cherenkov radiation rather than detecting the whole event topology.
@@ -134,8 +141,26 @@ The detector cannot distinguish between processes producing the same ring signat
 An important example is a $\pi^{\m{0}}$ produced by a $\nu_{\m{\mu}}$ which produces a signal in a Cherenkov detector very similar to the one of a $\nu_{\m{e}}$.
 This is a crucial background for neutrino oscillation experiments.
 
+Super-Kamiokande, the \SI{50}{\kilo\tonne} successor of Kamiokande, solved the atmospheric neutrino problem in 1998.~\cite{superKAtmos1, superKAtmos2}
+It measured the flavour ratio of the atmospheric neutrino flux as a function of the zenith angle.
+The ratio of the number of upward to downward $\mu$-like events was found to be $\approx\SI{50}{\percent}$ while from Monte Carlo simulations it was expected to be $\approx\SI{100}{\percent}$.
+This result suggested a dissappearance of $\nu_{\mu}$ via neutrino oscillations for atmospheric neutrinos that travelled along the much longer baseline through the Earth.
 
-\section{Neutrino interaction with matter\label{sec:nu_detection_interactions}}
+The solar neutrino problem was solved in 2002 by the Sudbury Neutrino Observatory (SNO) in the INCO, Ltd.\ Creighton mine near Sudbury, Ontario, Canada.~\cite{snoSolar}
+SNO is a \SI{1}{\kilo\tonne} heavy water Cherenkov detector located \SI{2039}{\metre} below the Earth surface ($\approx\SI{6000}{\metre}$ water equivalent).
+Its use of heavy water (\ce{D_2O}) allows it to detect neutrinos flavour-independently via
+\begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_NCsno-nu}
+	\nu_l + d & \rightarrow & \nu_l + p + n \\
+	\label{eq:nu-detection_NCsno-antinu}
+	\overline{\nu}_l + d & \rightarrow & \overline{\nu}_l + p + n
+\end{IEEEeqnarray}
+in addition to the interaction channels detectable by light water Cherenkov detectors given by Equations \eqref{eq:nu-detection_CC-nu}, \eqref{eq:nu-detection_CC-antinu}, \eqref{eq:nu-detection_NC-nu}, and \eqref{eq:nu-detection_NC-antinu}.
+For this to work, the emerging neutron needs to be detected which was achieved using \ce{^3He}-filled proportional counters inside the heavy water tank.
+The additional neutrino detection channel allowed SNO to prove that only the solar $\nu_e$ flux is below the predictions by the SSM while the combined flux of all three flavours is consistent with the model, providing another strong evidence for neutrino oscillation.
+
+
+\section{Neutrino interaction with matter\label{sec:nu-detection_interactions}}
 
 
 \section{Final state detection\label{sec:nu_detection_fs}}

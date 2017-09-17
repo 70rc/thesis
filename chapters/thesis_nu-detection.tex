@@ -202,7 +202,7 @@ For all other charged particles, the stopping power is described by the Bethe-Bl
 	- \frac{1}{\rho} \dv{E}{x} & = &
 	4 \pi N_{\m{A}} r_{\m{e}} ^ 2 m_{\m{e}} c ^ 2 z ^ 2 \frac{Z}{A} \frac{1}{\beta ^ 2}
 	\qty[\ln(\frac{2 m_{\m{e}} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{\delta}{2}] \m{,}
-	\label{eq:bethe-bloch}
+	\label{eq:nu-detection_bethe-bloch}
 \end{IEEEeqnarray}
 where
 \begin{itemize}
@@ -221,15 +221,15 @@ where
 		\end{IEEEeqnarray}
 	\item[$\delta$] is a parameter describing the screening of the extended transverse electric field of relativistic incident particles by the charge density of the atomic electrons of the absorber.
 \end{itemize}
-Equation~\eqref{eq:bethe-bloch} describes the stopping power of particles with $m_0 \gg m_{\m{e}}$ by ionisation and excitation of the atoms in the absorber material.
+Equation~\eqref{eq:nu-detection_bethe-bloch} describes the stopping power of particles with $m_0 \gg m_{\m{e}}$ by ionisation and excitation of the atoms in the absorber material.
 As the stopping power is proportional to the electron density and thus to the mass density of the absorber material, it is often divided by the latter.
-Thus, Equation~\eqref{eq:bethe-bloch} actually gives the so called mass stopping power.
+Thus, Equation~\eqref{eq:nu-detection_bethe-bloch} actually gives the so called mass stopping power.
 The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is $\approx 0.5$ for most light materials, and the mean excitation energy which only contributes logarithmically.
-\begin{figure}[htbp]
+\begin{figure}[htbp] %TODO: change to LAr
 	\includegraphics[width=\textwidth]{bethe-bloch}
-	\caption{Bethe-Bloch stopping power of $\mu$ in \si{Fe}\label{fig:bethe-bloch}}
+	\caption{Bethe-Bloch stopping power of $\mu$ in \ce{Fe}\label{fig:nu-detection_bethe-bloch}}
 \end{figure}
-Figure~\ref{fig:bethe-bloch} shows the mass stopping power of $\mu$ in \si{Fe} neglecting the $\frac{\delta}{2}$ term.
+Figure~\ref{fig:nu-detection_bethe-bloch} shows the mass stopping power of $\mu$ in \ce{Fe} neglecting the $\frac{\delta}{2}$ term.
 As can be seen, there is a broad minimum which is characteristic of the Bethe-Bloch formula.
 Particles in this momentum range are called minimum ionising particles (MIPs).
 They are important for detectors because this energy loss is a measure for the required energy resolution of a detector.
@@ -243,22 +243,22 @@ The Bragg peak falls off with a strong $\frac{1}{\beta ^ 2}$ dependence.
 After the minimum, the stopping power rises again with a logarithmic dependence on $\beta$ and the mean excitation energy of the absorber $I$.
 The reason for this so called \emph{logarithmic rise} is the extension of the transverse electric field of the incident particle in the relativistic regime.
 Due to increasing shielding of the transverse electric field by the shell electrons of the absorber materials, taken into account by the $\frac{\delta}{2}$ term, the rise is only asymptotic.
-For electrons and positrons, Equation~\eqref{eq:bethe-bloch} does not hold because their mass is equal to the mass of the atomic electrons of the absorber.
+For electrons and positrons, Equation~\eqref{eq:nu-detection_bethe-bloch} does not hold because their mass is equal to the mass of the atomic electrons of the absorber.
 The stopping power changes further for electrons because the incident particle cannot be distinguished form its collision partner in that case.
 On the other hand, a positron will be annihilated upon stop by an electron which needs to be taken into account as well.
-The equivalent of Equation~\eqref{eq:bethe-bloch} for $e^{\pm}$ can be found in~\cite{grupen}.
+The equivalent of Equation~\eqref{eq:nu-detection_bethe-bloch} for $e^{\pm}$ can be found in~\cite{grupen}.
 
 At high velocities, further effects come into play.
 \emph{Bremsstrahlung} describes the radiation energy loss of a fast charged particle in the Coulomb field of the absorber nuclei.
 It can be described by
 \begin{IEEEeqnarray}{rCl}
 	- \frac{1}{\rho}\dv{E}{x} & = & \frac{E}{X_{\m{0}}}
-	\label{eq:bremsstrahlung}
+	\label{eq:nu-detection_bremsstrahlung}
 \end{IEEEeqnarray}
 where
 \begin{IEEEeqnarray}{rCl}
 	X_{\m{0}} & = & \frac{A}{4 \alpha N_A Z \qty(Z + 1) \qty(\frac{1}{4 \pi \varepsilon_{\m{0}}} \frac{\si{\elementarycharge} ^ 2}{m c ^ 2}) ^ 2 \ln(183 Z ^ {- \frac{1}{3}})}
-	\label{eq:radiationlength}
+	\label{eq:nu-detection_radiationlength}
 \end{IEEEeqnarray}
 is the \emph{radiation length} of the absorber material using
 \begin{itemize}
@@ -272,21 +272,22 @@ By neglecting the latter, one obtains the important relation
 	X_0 ^ {- 1} & \propto & Z ^ 2
 \end{IEEEeqnarray}
 as opposed to the $\propto Z$ dependence of the Bethe-Bloch formula.
-Equation~\eqref{eq:bremsstrahlung} also holds for electrons as long as $E \gg \frac{m_{\m{e}} c ^ 2}{\alpha Z ^ {\frac{1}{3}}}$.
+Equation~\eqref{eq:nu-detection_bremsstrahlung} also holds for electrons as long as $E \gg \frac{m_{\m{e}} c ^ 2}{\alpha Z ^ {\frac{1}{3}}}$.
 Furthermore, looking at the dependence on the mass of the incident particle, one finds
 \begin{IEEEeqnarray}{rCl}
 	X_0 & \propto & m ^ 2
 \end{IEEEeqnarray}
-using Equation~\eqref{eq:radiationlength}.
+using Equation~\eqref{eq:nu-detection_radiationlength}.
 Therefore, the radiation length of an absorber material is usually given for electrons and the relation
 \begin{IEEEeqnarray}{rCl}
 	X_0 & = & X_0^{\m{e}} \frac{m ^ 2}{m_{\m{e}} ^ 2}
 \end{IEEEeqnarray}
 can be used to get the radiation length for any charged particle of mass $m$.
 Radiation losses play a significant role only at energies much higher than the energy of MIPs.
-Using Equations~\eqref{eq:bethe-bloch} and~\eqref{eq:bremsstrahlung}, one can define a \emph{critical energy} $E_{\m{c}}$ by
+Using Equations~\eqref{eq:nu-detection_bethe-bloch} and~\eqref{eq:nu-detection_bremsstrahlung}, one can define a \emph{critical energy} $E_{\m{c}}$ by
 \begin{IEEEeqnarray}{rCl}
 	\eval{\dv{E}{x}_{\m{ion}}}_{E_{\m{c}}} & = & \eval{\dv{E}{x}_{\m{brems}}}_{E_{\m{c}}}
+	\label{eq:nu-detection_ec}
 \end{IEEEeqnarray}
 at which radiation losses take over from ionisation losses.
 Similar to the radiation length, the critical energy is proportional to $m ^ 2$.
@@ -297,6 +298,16 @@ At high energies, there are additional types of radiation loss taking place, for
 They shall not be described here.
 Instead, only their $\propto E$ relation similar to bremsstrahlung losses shall be mentioned.
 A description of those effects can be found in~\cite{grupen}.
+
+In addition to the processes described above, charged particles traversing matter also undergo scattering in the Coulomb field of the nuclei of the traversed medium.
+Accordingly, this process is called \emph{multiple Coulomb scattering} or MCS.
+The root mean square of the \emph{scattering-angle distribution}
+\begin{IEEEeqnarray}{rCl}
+	\Theta_{\m{RMS}} & = & \frac{\SI{13.6}{\mega\electronvolt}}{\beta c p} z \sqrt{\frac{2 x}{X_{\m{0}}}} \qty[1 + 0.038 \ln(\frac{x}{X_{\m{0}}})]
+	\label{eq:nu-detection_highland}
+\end{IEEEeqnarray}
+is defined by the momentum $p$, velocity $\beta c$ and charge $z$ of the scattered particle, and the thickness of the scattering medium $\frac{x}{X_{\m{0}}}$ in radiation lengths.
+The distinct momentum dependence of this so-called \emph{Highland formula} can be used to reconstruct the momentum of the incident particle provided the angular resolution of the detector is fine enough.
 
 Concerning the interactions of charged particles with matter, there is one important note regarding detectors.
 While charge produced in interactions (i.e.\ ionisation) can be detected directly, light (i.e.\ excitation photons and photon radiation) first needs to be converted to charge to be detected.
@@ -313,7 +324,7 @@ where $I_0$ and $I$ is the intensity before and after passing the absorber, resp
 The thickness of the absorber is given by $x$ and
 \begin{IEEEeqnarray}{rCl}
 	\mu & = & \frac{N_A}{A} \sum_i \sigma_i
-	\label{eq:mass_att_coeff}
+	\label{eq:nu-detection_mass-att-coeff}
 \end{IEEEeqnarray}
 is the \emph{mass attenuation coefficient} defined by the sum of the cross sections $\sigma_i$ of the different interaction processes.
 
@@ -343,6 +354,7 @@ As only part of the photon's energy is absorbed while the rest is scattered, it 
 and an absorption cross section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{ca}} & = & \sigma_{\m{c}} - \sigma_{\m{cs}}
+	\label{eq:nu-detection_sigma-compton}
 \end{IEEEeqnarray}
 where $E_{\gamma}$ and $E_{\gamma}'$ is the energy of the photon before and after scattering, respectively.
 
@@ -360,9 +372,50 @@ and for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is
 	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \m{.}
 \end{IEEEeqnarray}
 
-As mentioned above, for Compton scattering, two different cross sections are defined, one for the scattered energy ($\sigma_{\m{cs}}$) and one for the absorbed one ($\sigma_{\m{ca}}$).
-Consequentially, there are also different definitions of the coefficient $\mu$ in Equation~\eqref{eq:mass_att_coeff}.
-Replacing $\sigma_{\m{c}}$ by $\sigma_{\m{cs}}$, $\mu_{\m{s}}$ is the \emph{mass attenuation coefficient} and similarly, using $\sigma_{\m{ca}}$, $\mu_{\m{s}}$ is the \emph{mass absorption coefficient}.
+As mentioned above, for Compton scattering, two different cross sections are defined, $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.
+Consequentially, there are also different definitions of the coefficient $\mu$ in Equation~\eqref{eq:nu-detection_mass-att-coeff}.
+Replacing the total Compton cross section $\sigma_{\m{c}}$ by $\sigma_{\m{ca}}$ from Equation~\eqref{eq:nu-detection_sigma-compton}, one gets the \emph{mass absorption coefficient} $\mu_{\m{a}}$, only taking into account photon absorption processes.
 While $\mu$ is more precisely called the \emph{total mass attenuation coefficient}.
 
-MCS, showers, hardons.
+An interesting effect takes place for $e^{\pm}$ traversing material at energies higher than the critical energy $E_{\m{c}}$ defined by Equation~\eqref{eq:nu-detection_ec}.
+In this regime, the energy loss is dominated by bremsstrahlung for $e^{\pm}$ and by pair production for $\gamma$.
+This leads to an \emph{electromagnetic cascase} or \emph{shower} where $e^{\pm}$ and $\gamma$ produce each other alternately in a self-sustaining process.
+The mean free path of a $\gamma$ before pair production
+\begin{IEEEeqnarray}{rCl}
+	\lambda_{\m{prod}} & = & \frac{9}{7}X_{\m{0}}
+\end{IEEEeqnarray}
+is very close to the mean free path of an $e^{\pm}$ before bremsstrahlung, the radiation length $X_{\m{0}}$.
+Therefore, the number of particles participating in the shower doubles roughly every radiation length resulting in an exponential growth.
+When the average energy per paticle drops below the critical energy, ionisation losses begin to dominate over radiative losses for $e^{\pm}$ and Compton and photoelectric effect over pair production for $\gamma$.
+At this point, the shower reaches its maximum and
+\begin{IEEEeqnarray}{rCl}
+	t_{\m{max}} & = & \frac{\ln(\frac{E_{\m{0}}}{E_{\m{c}}})}{\ln(2)}
+\end{IEEEeqnarray}
+is its longitudinal extent in radiation lengths.
+The \emph{Molière radius}
+\begin{IEEEeqnarray}{rCl}
+	R_{\m{M}} & = & \frac{\SI{21}{\mega\electronvolt}}{E_{\m{c}}} X_{\m{0}}
+\end{IEEEeqnarray}
+is the transversal extent of the shower divided by the the material density.
+Both $t_{\m{max}}$ and $R_{\m{M}}$ are important benchmarks for the dimensioning of electromagnetic calorimeters.
+Naturally, a $\gamma$ in the energy range where pair production dominates will produce a shower as well.
+On the other hand, also $\mu^{\pm}$ can start electromagnetic cascades, if there energy is high enough to produce bremsstrahlung.
+
+Similarly, hadrons interacting with matter via the strong force can produce cascades as well.
+As opposed to the electromagnetic showers governed only by $e^{\pm}$ and $\gamma$, the hadronic process is much more complex because many different secondary particle can be involved.
+Hadrons start to shower because they mainly interact inelastically with matter, producing secondary strongly interacting particles.
+That is why the hadronic cross-section
+\begin{IEEEeqnarray}{rCl}
+	\sigma_{\m{total}} & = & \sigma_{\m{elastic}} + \sigma_{\m{inel}}
+\end{IEEEeqnarray}
+is usually split.
+From $\sigma_{\m{inel}}$, one can derive the \emph{interaction length}
+\begin{IEEEeqnarray}{rCl}
+	\lambda_{\m{I}} & = & \frac{A}{N_{\m{A}} \rho \sigma_{\m{inel}}}
+\end{IEEEeqnarray}
+which describes the absorption of hadrons in matter according to
+\begin{IEEEeqnarray}{rCl}
+	N & = & N_{\m{0}} e ^ {- \frac{x}{\lambda_{\m{I}}}}
+\end{IEEEeqnarray}
+with the initial number of hadrons $N_{\m{0}}$ and number of hadrons $N$ after a distance $x$ of absorber material.
+For absorbers with $Z \geq 6$, the interaction length is much larger than the radiation length $X_{\m{0}}$ meaning that hadronic calorimeters usually need to be much larger than their electromagnetic counterparts.

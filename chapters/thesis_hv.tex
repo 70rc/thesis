@@ -64,7 +64,7 @@ The knowledge of these parameters allows to calculate the voltage across the gap
 	\centering
 	\caption{Summary of the measured parameters of the test circuit.}
 	\label{tab:hv_table1}
-	\begin{tabular}{|l|S|}
+	\begin{tabu} to \textwidth {|l|S|}
 		\hline
 		$K_{\m{V}}$ & 		42.3e-6 \\
 		\hline
@@ -74,7 +74,7 @@ The knowledge of these parameters allows to calculate the voltage across the gap
 		\hline
 		$C_{\m{gap}}$ & 	\SI{370}{\pico\farad} \\
 		\hline
-	\end{tabular}
+	\end{tabu}
 \end{table}
 
 In addition, the setup is equipped with an \emph{AOS Technologies S-PRI\emph{Plus}}\footnote{\href{http://www.aostechnologies.com}{http://www.aostechnologies.com}} high-speed camera to observe the development of the discharge. The camera is capable of recording \num{700 x 400}~pixel RGB images at \SI{1230}{fps}.
@@ -120,22 +120,22 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 	\centering
 	\caption{Summary of the breakdown measurement runs.}
 	\label{tab:hv_table2}
-	\begin{tabular}{|S|S|l|l|S|S|S|}
+	\begin{tabu} to \textwidth {|S|S|X|X|S|S|S|}
 		\hline
-		{{Run}} &	$\oslash_{\m{Sphere}}$ &	Surface finish &	Sphere pol. &	{{Events}} &	{{$d_{\m{Gap}}$}} &					{{$V_{\m{Breakdown}}$}} \\
+		{{Run}} &	{{$\oslash_{\m{Sphere}}$}} &	Surface finish &	Sphere polarity &	{{Events}} &	{{$d_{\m{Gap}}$}} &					{{$V_{\m{Breakdown}}$}} \\
 		\hline
 		\hline
-		1   &	\SI{4}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &	1086 &			\SIrange{0.5}{8.0}{\milli\metre} &	\SIrange{3}{130}{\kilo\volt} \\
+		1   &		\SI{4}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &		1086 &			\SIrange{0.5}{8.0}{\milli\metre} &	\SIrange{3}{130}{\kilo\volt} \\
 		\hline
-		2   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &	900 &			\SIrange{0.2}{12.0}{\milli\metre} &	\SIrange{2}{130}{\kilo\volt} \\
+		2   &		\SI{5}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &		900 &			\SIrange{0.2}{12.0}{\milli\metre} &	\SIrange{2}{130}{\kilo\volt} \\
 		\hline
-		3   &	\SI{8}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &	2434 &			\SIrange{0.1}{70.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
+		3   &		\SI{8}{\centi\metre} &			Mech.\ polished &	Cathode ($-$) &		2434 &			\SIrange{0.1}{70.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
 		\hline
-		4   &	\SI{5}{\centi\metre} &			Mech.\ polished &	Anode ($+$) &	102 &			\SIrange{4.0}{5.0}{\milli\metre} &	\SIrange{5}{114}{\kilo\volt} \\
+		4   &		\SI{5}{\centi\metre} &			Mech.\ polished &	Anode ($+$) &		102 &			\SIrange{4.0}{5.0}{\milli\metre} &	\SIrange{5}{114}{\kilo\volt} \\
 		\hline
-		5   &	\SI{5}{\centi\metre} &			Electro-polished &	Cathode ($-$) &	1141 &			\SIrange{0.1}{10.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
+		5   &		\SI{5}{\centi\metre} &			Electro-polished &	Cathode ($-$) &		1141 &			\SIrange{0.1}{10.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
 		\hline
-	\end{tabular}
+	\end{tabu}
 \end{table}
 \sisetup{range-units=repeat}
 
@@ -360,18 +360,18 @@ A summary of the results is given in Table~\ref{tab:latex_table1}.
 	\centering
 	\caption{Summary of the breakdown test measurements with \SI{200}{\micro\metre} and \SI{450}{\micro\metre} thick polyisoprene layers coated \SI{5}{\centi\metre} and \SI{4}{\centi\metre} diameter spheric cathodes, respectively.}
 	\label{tab:latex_table1}
-	\begin{tabular}{|S|S|S|S|l|}
+	\begin{tabu} to \textwidth {|S|S|S|S|l|}
 		\hline
-		{Gap width} &			{Max.\ field strength} &				{Sphere diameter} &		{Polyisoprene thickness} &	{Breakdown} \\
+		{{$d_{\m{Gap}}$}} &		{{$E_{\m{max}}$}} &						$\oslash_{\m{Sphere}}$ &	{Polyisoprene thickness} &	{Breakdown} \\
 		\hline
 		\hline
-		\SI{5}{\milli\metre} &	\SI{298}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &	\SI{450}{\micro\metre} &	{no} \\
+		\SI{5}{\milli\metre} &	\SI{298}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &		\SI{450}{\micro\metre} &	{no} \\
 		\hline
-		\SI{4}{\milli\metre} &	\SI{358}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &	\SI{450}{\micro\metre} &	{no} \\
+		\SI{4}{\milli\metre} &	\SI{358}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &		\SI{450}{\micro\metre} &	{no} \\
 		\hline
-		\SI{3}{\milli\metre} &	\SI{412}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &	\SI{450}{\micro\metre} &	{yes} \\
+		\SI{3}{\milli\metre} &	\SI{412}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &		\SI{450}{\micro\metre} &	{yes} \\
 		\hline
-		\SI{3}{\milli\metre} &	\SI{296}{\kilo\volt\per\centi\metre} &	\SI{5}{\centi\metre} &	\SI{200}{\micro\metre} &	{yes} \\
+		\SI{3}{\milli\metre} &	\SI{296}{\kilo\volt\per\centi\metre} &	\SI{5}{\centi\metre} &		\SI{200}{\micro\metre} &	{yes} \\
 		\hline
-	\end{tabular}
+	\end{tabu}
 \end{table}

@@ -16,6 +16,9 @@
 \usepackage{xpatch} % recommended by biblatex
 \usepackage[backend=biber, firstinits, sorting=none]{biblatex} % much more flexible than BibTeX
 
+\usepackage{setspace} % make corrections easier
+\usepackage[pagewise, displaymath, mathlines]{lineno}
+
 \usepackage{fancyvrb} % advanced verbatim
 \usepackage{mathtools}
 %\usepackage{amsmath} % math packages
@@ -40,6 +43,9 @@
 \hyphenpenalty=1000 % de/increase some formatting penalties to get nicer result
 \tolerance=5000 % tolerance for total badness without line break
 \setlength{\parskip}{0pt plus 3pt} % add some "rubber" space between paragraphs to omit widows and orphans
+
+\doublespacing % make corrections easier
+\linenumbers
 
 \sisetup{separate-uncertainty=true}
 

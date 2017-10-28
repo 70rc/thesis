@@ -1,14 +1,14 @@
-\chapter{Charge readout studies\label{chap:charge-ro}}
+\chapter{Charge Readout Studies\label{chap:charge-ro}}
 
 
-\section{A more robust approach to TPC readout wires\label{sec:charge-ro_cuoka}}
+\section{A More Robust Approach to TPC Readout Wires\label{sec:charge-ro_cuoka}}
 
 As outlined in Section~\ref{sec:lartpc_challenges}, one of the big challenges for future \lartpc s will be the mechanical stability of the classical wire readout planes for the envisioned detector sizes.
 A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
 To investigate this solution, a proof of concept was performed at LHEP at the University of Bern.
 
 
-\subsection*{Experimental setup}
+\subsection*{Experimental Setup}
 
 In a classical wire readout plane, the induction signal is produce by drifting the charge through one or multiple induction wire grids.
 With the proposed scheme of \si{Cu} tracks on a support structure, it is no longer possible for the charge to actually drift through the induction plane(s).
@@ -46,11 +46,11 @@ A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive div
 \end{figure}
 
 The charge signal is amplified by cryogenic charge amplifiers.
-The amplified signal is then digitised by \emph{CAEN V1724}\footnote{\href{http://www.caen.it}{http://www.caen.it}} \SI{14}{bit} digitisers.
+The amplified signal is then digitised by \emph{CAEN V1724}\footnote{\url{http://www.caen.it}} \SI{14}{bit} digitisers.
 Section~\ref{sec:electronics_existing} describes the readout chain in more detail.
 
 
-\subsection*{Experimental results}
+\subsection*{Experimental Results}
 
 Using the above-described setup, cosmic muons were recorded over the course of multiple hours.
 A typical event is depicted in Figure~\ref{fig:cuoka_event}.
@@ -70,7 +70,7 @@ While this technique can potentially solve the mechanical problems of classical 
 Because of this, it was decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for \lartpc s providing real 3D data.
 
 
-\section{Pixel readout\label{sec:charge-ro_pixels}}
+\section{Pixel Readout\label{sec:charge-ro_pixels}}
 As outlined in Section~\ref{sec:lartpc_challenges}, wire readouts are not suitable for \lartpc s the size of the envisioned future neutrino detectors.
 The ambiguities caused by the nature of wire readouts can be eliminated by using a fully pixelated readout.
 Such a readout will record a true 2D image of the charge for every time slice and thus directly produce 3D space points of the event.
@@ -142,7 +142,7 @@ A possible solution to this is to power only that part of the readout that is ac
 This would require a means to wake up the part of the readout where the charge is arriving before it is collected.
 Provided, the wake-up time is short enough, inductive grids on regions of interest could allow precisely for this.
 
-Because it has already been successfully tested in a gas TPC, the region of interest approach was chosen for the first prototype of a pixelated \lartpc.
+As the ROI approach had already been demonstrated in a gas TPC, it was chosen for the first prototype of a pixelated \lartpc.
 A readout plane fitting the TPC described in Section~\ref{sec:viper_setup} was designed.
 Because the detector is a single-phase \lartpc, and thus no gas amplification as in Micromegas is needed, the readout plane could be realised as a conventional PCB.
 It consists of \num{28} regions of interest each one of which is made of \num{6 x 6} pixels.

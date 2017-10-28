@@ -3,7 +3,7 @@ Neutrino physics has seen massive progress from first detection \num{60}~years a
 This chapter will give an overview of the history of neutrino detectors, describe the current state of the field and then introduce the most relevant physics.
 
 \section{History}
-In 1914, Chadwick finally proved that the energy spectrum of the $\beta$-decay was continuous.~\cite{contBeta}
+In 1914, Chadwick proved that the energy spectrum of the $\beta$-decay was continuous.~\cite{contBeta}
 As an explanation for this, Wolfgang Pauli in 1930 proposed a new neutral, weakly interacting fermion to the \emph{Radioactive Ladies and Gentlemen}~\cite{pauliLetter} which he called the \emph{neutron}.
 However, the same Chadwick in 1932 discovered the particle we today call neutron.~\cite{neutron}
 Upon this, Fermi proposed the name \emph{neutrino} and a little later came up with a new theory for $\beta$-decay.~\cite{betaDecay}
@@ -16,12 +16,12 @@ They built a detector for the reaction
 \end{IEEEeqnarray}
 and put it next to the nuclear reactor of the Savannah River Plant in South Carolina, US.
 It consisted of two water tanks sandwiched in between three liquid scintillator tanks with photomultiplier tubes (PMTs) on the sidewalls.
-The water was the target to induce the above reaction while the scintillator tanks had the task to detect the resulting positron and neutron.
-A free positron will slow down in matter and eventually get captured by a shell electron which will produce two back-to-back $\gamma$s with an energy of \SI{511}{\kilo\electronvolt} each.
-These will produce scintillation light in the two adjacent tanks and thus can be detected by forming a coincidence of the PMTs of the two tanks.
+The water was the target to induce the above reaction while the scintillator tanks had the task of detecting the resulting positron and neutron.
+A free positron slows down in matter and eventually gets captured by a shell electron which produces two back-to-back $\gamma$s with an energy of \SI{511}{\kilo\electronvolt} each.
+These produce scintillation light in the two adjacent tanks and thus can be detected by forming a coincidence of the PMTs of the two tanks.
 Neutron detection is achieved by doping the water target with cadmium which captures the free neutrons producing multiple $\gamma$s that can again be detected using the coincidence of the two adjacent scintillator tanks.
 The neutron capture is much slower than the positron one.
-Therefore, the process from Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector consisting of a lower pulse from the positron capture and a higher pulse from the neutron capture a few \si{\micro\second} later.
+Therefore, the process from Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector consisting of a pulse with a lower amplitude from the positron capture and another one with a higher amplitude from the neutron capture a few \si{\micro\second} later.
 Backgrounds can be efficiently rejected employing this technique.
 That drawback is that detection is limited to the $\overline{\nu}_e$ interaction in Equation~\eqref{eq:nu-detection_reinesCowan}.
 
@@ -43,7 +43,7 @@ At either end of the stack, triggering detectors (usually scintillators coupled 
 When two coinciding signals from these are received, a high-voltage pulse is applied to the plates.
 If this happens fast enough ($\order{\SI{10}{\micro\second}}$), a spark forms along the electric field lines where the counting gas has been ionised by the incident particle(s).
 The amplitude and the duration of the HV pulse need to be carefully tuned in order to reach the threshold of spark formation but to prevent random sparks on sharp edges and spacers etc.
-A gas amplification of \numrange{1e8}{1e9} is required to achieve this.
+A gas amplification of \numrange{e8}{e9} is required to achieve this.
 Furthermore, the rising edge of the HV pulse needs to be extremely short ($\order{\SI{1}{\nano\second}}$).
 If it was too long, it would drift the ionised track towards the electrodes before the field is high enough to initiate a discharge.
 Switching high voltages at this speed is not easy.
@@ -57,10 +57,10 @@ In the 1960's, after Davis failed to measure the lepton-number-violating reactio
 \end{IEEEeqnarray}
 he decided to replace the $\overline{\nu}_e$ by solar $\nu_e$.~\cite{homestake68, homestake98}
 Surprisingly, they measured a flux approximately on third lower than predicted by the standard solar model (SSM).
-This became famous as the solar neutrino problem only to be resolved more than \num{30} years later by the SNO experiment.
+This result became famous as the solar neutrino problem only to be resolved more than \num{30} years later by the SNO experiment.
 Davis' experiment was located \SI{1478}{\metre} (\SI{4200}{\metre} water equivalent) underground in the Homestake gold mine at Lead, South Dakota, US.
 The detector consisted of a tank filled with \SI{615}{\tonne} of tetrachloroethylene, \ce{C_2Cl_4}.
-As opposed to the two experiments above, this was a \emph{radiochemical} detector which can detect neutrino interactions only offline.
+As opposed to the two experiments above, this was a \emph{radiochemical} detector which can only detect neutrino interactions offline.
 According to Equation~\eqref{eq:nu-detection_homestake}, an incident neutrino converts one of the chlorine atoms in the detector into an unstable argon isotope.
 After exposure, the tank is purged by pumping helium gas through the liquid which extracts the argon isotopes.
 In order for this to work, a certain amount of \ce{^{36}Ar} is introduced into the tank as a carrier.
@@ -70,15 +70,14 @@ By counting the number of decaying argon isotopes and extrapolating using its ha
 A proportional counter is a container with two electrodes (usually a cylinder with a wire in its centre) filled with a counting medium (usually gaseous).
 Incident charged particles ionise the counting medium---neutral particles can be detected if they first produce charged particles via interaction with matter in or surrounding the detector.
 If an electric field is applied to the electrodes, the produced electron-ion pairs are separated and drift towards the corresponding electrode.
-Reading out the current on the electrodes, one can measure the amount of ionisation produced inside the detector.
+By reading out the current on the electrodes, one can measure the amount of ionisation produced inside the detector.
 Usually, the anode is read out because the drift velocity of electrons in an electric field is much higher than the one of ions.
 In this regime, the detector is in fact an ionisation counter rather than a proportional counter.
 The problem is that the charge produced by the ionisation is very low and the current detector needs to be very sensitive.
 By increasing the voltage across the electrodes, the sensitivity can be improved.
 If the field inside the counter is above a certain threshold, the drifting ionisation electrons become energetic enough to ionise the counting medium themselves and thus, start an avalanche and produce more charge.
 In the appropriate voltage range, the produced charge is still proportional to the primary ionisation charge, thus the name proportional counter.
-The voltage can be raised further to enter the Geiger regime.
-Avalanches will now produce UV photons in addition to the ionisation.
+The voltage can be raised further to enter the Geiger regime where the avalanches produce UV photons in addition to the ionisation.
 These UV photons travel independently of the electric field and can start new avalanches via the photoelectric effect.
 The process can only be stopped by quenching the discharge either electrically (temporary voltage reduction) or chemically (quenching additive).
 

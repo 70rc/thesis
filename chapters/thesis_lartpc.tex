@@ -1,30 +1,30 @@
-\chapter{The liquid argon time projection chamber (\lartpc)\label{chap:lartpc}}
+\chapter{The Liquid Argon Time Projection Chamber (\lartpc)\label{chap:lartpc}}
 
-The time projection chamber (TPC) is a derivative of Charpak's multi-wire proportional chamber (MWPC)\cite{mwpc} developed by Nygren in the late 1970s~\cite{nygrenTPC}.
-Passing charged particles ionise the detection medium which was gaseous in the original design.
+The Time Projection Chamber (TPC) is a derivative of Charpak's Multi-Wire Proportional Chamber (MWPC)\cite{mwpc} developed by Nygren in the late 1970s~\cite{nygrenTPC}.
+Crossing charged particles ionise the detection medium which was gaseous in the original design.
 To prevent the recombination of the ions and electrons, an electric field is applied.
-In this field, the electrons drift towards a two-dimensional readout plane.
-Originally, the readout was an MWPC.
+In this field, the electrons drift towards a two-dimensional readout plane (an MWPC in the original design).
 The charge readout is triggered by a scintillation light readout which also provides accurate timing of an event.
 Using this, one can measure the time for the ionisation electrons to reach the readout plane.
-Because the drift speed of charged particles in the detection medium is constant, the coordinate in drift direction can be calculated from the drift time if the drift speed is known.
+As the drift speed of charged particles in the detection medium is constant and if it is known, the coordinate in drift direction can be calculated from the drift time.
 
-While gaseous TPCs already provide very accurate tracking, they have the disadvantage that the mass and thus the cross-section of the detection medium is quite low resulting in a low interaction rate.
-Therefore, Rubbia in 1977 proposed to use liquid argon as a detection medium~\cite{lartpc}.
-In turn, this requires a cryogenic detector while gaseous detectors can be operated at room temperature.
+While gaseous TPCs already provide very accurate tracking, they have the disadvantage that the target mass and thus, the cross-section of the detection medium is quite low resulting in a low interaction rate.
+Therefore, in 1977, Rubbia proposed to use liquid argon as a detection medium~\cite{lartpc}.
+This requires a cryogenic detector while gaseous detectors can be operated at room temperature.
 
 
-\section{Liquid argon (\lar) as a detection medium\label{sec:lartpc_lar}}
+\section{Liquid Argon (\lar) as a Detection Medium\label{sec:lartpc_lar}}
 
-For an efficient particle detection by a TPC, several properties of the sensitive medium are of interest, such as ionisation and light yield, electron-ion pair recombination and dielectric strength.
-As it turns out, \lar\ is quite unique as it has all the necessary properties while at the same time it is comparably cheap because it is readily available in the Earth's atmosphere.
+For an efficient particle detection by a TPC, several properties of the sensitive medium are of interest, such as ionisation and light yield, electron-ion pair recombination, dielectric strength, length scales of electromagnetic and hadronic interactions, density, transparency to its own scintillation light, and the boiling point.
+\lar\ is quite unique as it has all the necessary properties while at the same time it is comparably cheap because it is readily available in the Earth's atmosphere.
+A summary of its properties can be found in Table~\ref{tab:lartpc_larprop}.
 Xenon for instance slightly surpasses argon in many aspects but is prohibitively expensive to build large detectors.
-This section shall outline the most important one of those properties.
-A summary can be found in Table~\ref{tab:lartpc_larprop}.
+A boiling point of $\approx \SI{87}{\kelvin}$ raises the need for strong thermal insulation and a potent cooling system for \lar , though the requirements are far less stringent then for liquid helium.
+This section will outline the most important \lar\ properties.
 
 \begin{table}[htb]
 	\centering
-	\caption{Properties of \lar~\cite{NobleGasDetectors}}
+	\caption{Properties of \lar\ taken from~\cite{NobleGasDetectors} where not specified otherwise}
 	\label{tab:lartpc_larprop}
 	\begin{tabu} to \textwidth {|ll|Ss|}
 		\hline
@@ -34,15 +34,21 @@ A summary can be found in Table~\ref{tab:lartpc_larprop}.
 		\hline
 		{Density at} $T_{\m{S}}$ &						$\rho_{\m{S}}$ &		1.399e3 &	\kilo\gram\per\cubic\metre \\
 		\hline
-		{Dielectric constant} &							$\varepsilon_{\m{r}}$ &	1.59 &		\\
+		{Dielectric constant~\cite{dielConst}} &		$\varepsilon_{\m{r}}$ &	1.504 &		\\
 		\hline
 		{Required energy per electron-ion pair} &		$W_{\m{i}}$ &			2.36e1 &	\electronvolt \\
 		\hline
+		{Required energy per photon} &					$W_{\m{sc}}$ &			1.95e1 &	\electronvolt \\
+		\hline
 		{Fano factor} &									$F$ &					1.07e-1 &	\\
 		\hline
-		{Radiation length} &							$X_{\m{0}}$ &			1.4e-1 &		\metre \\
+		{Electromagnetic radiation length} &			$X_{\m{0}}$ &			1.4e-1 &	\metre \\
 		\hline
-		{Interaction length} &							$\lambda$ &				8.37e-1 &	\metre \\
+		{Hadronic interaction length} &					$\lambda_{\m{int}}$ &	8.37e-1 &	\metre \\
+		\hline
+		{Peak scintillation wavelength} &				$\lambda_{\m{scint}}$ &	1.28e-7 &	\metre \\
+		\hline
+		{Scintillation attenuation length} &			$\lambda_{\m{att}}$ &	6.6e-1 &	\metre \\
 		\hline
 		{Concentration in air by volume} &				&						9.34e-1 &	\percent \\
 		\hline
@@ -52,7 +58,7 @@ A summary can be found in Table~\ref{tab:lartpc_larprop}.
 In order to register the ionisations tracks of charged particles in a TPC, two processes are crucial: production and transportation of charge.
 The charge production needs to be high enough to be detectable by the available electronics.
 This is given by the energy required to produce an electron-ion pair $W_{\m{i}}$.
-As will be shown in Section~\ref{sec:lartpc_electronics}, the value of \SI{23.6}{\electronvolt} for \lar\ is challenging but achievable with contemporary electronics.
+The $W_{\m{i}}$ value of \SI{23.6}{\electronvolt} for \lar\ is challenging but manageable with contemporary electronics as shown in Section~\ref{sec:lartpc_electronics}.
 Naturally, this imposes a lower limit on detectable $\frac{\m{d}E}{\m{d}x}$.
 
 Charge transport is influenced by multiple factors.
@@ -65,41 +71,40 @@ It assumes that the ion-electron pairs are isolated and initially uniformly popu
 Furthermore, the diffusion of electrons and ions as well as the ion drift velocity (\num{1e5} times smaller than for electrons) are assumed to be negligible.
 For a produced charge $Q_{\m{0}}$ and a collected charge $Q$, the collection ratio is given by
 \begin{IEEEeqnarray}{rCl}
-	\frac{Q}{Q_{\m{0}}} & = & \frac{1}{\xi} \ln(1 + \xi)
+	\frac{Q}{Q_{\m{0}}} & = & \frac{1}{\xi} \ln(1 + \xi) \m{,}
 \end{IEEEeqnarray}
-with a parameter $\xi$ depending on the drift field, the electron mobility, the initial number of ion-electron pairs, the chosen size of the box and the recombination coefficient.
+with a parameter $\xi$ depending on the drift field, electron mobility, initial number of ion-electron pairs, chosen size of the box and recombination coefficient.
 Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected charge in an \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
 
 \begin{figure}
 	\centering
 	\includegraphics[viewport=14 5 511 351, clip, width=\textwidth]{lartpc/box-model}
-	\caption{Collected charge in an \SI{8}{\milli\metre} drift \lartpc\ for different drift field intensities and nitrogen concentrations.
-		The lines represent box model fits.~\cite{grna-lhep}}
+	\caption{Collected charge in an \SI{8}{\milli\metre} drift \lartpc\ as a function of electric field, at various levels of nitrogen concentration.
+	The lines represent box model fits.~\cite{grna-lhep}}
 	\label{fig:lartpc_box-model}
 \end{figure}
 
-A second process affecting charge transport is electron trapping by impurities.
-The probability of an electron becoming attached to an atom in the medium.
+A second process affecting charge transport is electron trapping by impurities; the probability of an electron becoming attached to an atom in the medium.
 For the argon itself, this is highly unlikely because its outer electron shell is fully populated.
 This is one or the reasons why (liquefied) noble gases are a prime choice for TPCs.
-Nevertheless, drifting electron can be captured by impurities in the argon.
-A particularly bad one oxygen due to its high electronegativity.
-Therefore, it is very important to keep the detection medium very pure.
+Nevertheless, drifting electrons can be captured by impurities in the argon.
+Oxygen is particularly bad due to its high electronegativity.
+It is, therefore, important to maintain purity of the detection medium.
 
-The velocity of the charge drifting in an electric field is related to the so-called mobility by
+The velocity of the charge drifting in an electric field is related to the so-called mobility, $\mu$, by
 
 \begin{IEEEeqnarray}{rCl}
-	\va{v} & = & \mu\qty(\va{E}) \va{E}
+	\va{v} & = & \mu\qty(\va{E}) \va{E} \m{,}
 \end{IEEEeqnarray}
 
-where the mobility $\mu$ in general depends on the electric field.
-This means, the higher the field is, the higher the charge velocity and thus, the drift time.
+where $\mu$ in general depends on the electric field.
+This means, the higher the field is, the higher the charge velocity and thus, the lower the drift time.
 One wants to keep drift times low for multiple reasons.
 One of them are the aforementioned impurities.
 They cause the charge to posses a finite lifetime following an exponential decay with time.
-The consequence is that higher impurities can be partially compensated by a higher field.
+A consequence is that higher impurities can be partially compensated by a higher field.
 In a beam experiment with a given beam timing, increasing the drift time will increase pile-up, i.e. the number of events simultaneously present in the detector.
-Pile-up in turn, makes event reconstruction more complicated.
+Pile-up in turn, complicates event reconstruction.
 On the other hand, the readout electronics need to be fast enough to guarantee the required spatial resolution in the drift coordinate which defines an upper limit for the drift velocity.
 A reasonable value from a purity point of view is a drift time of $\order{\SI{1}{\milli\second}}$.
 For a detector size of $\order{\SI{1}{\metre}}$, the required drift speed is $\order{\SI{1}{\milli\metre\per\micro\second}}$ which requires a field of $\order{\SI{1}{\kilo\volt\per\centi\metre}}$.
@@ -129,13 +134,13 @@ An easy way to achieve this is by means of field shaping rings fed by a resistiv
 The drawback is the need for a feedthrough capable of withstanding the full cathode voltage.
 One alternative is to generate the high voltage inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the \AT\ experiment at LHEP at the University of Bern~\cite{AT}.
 A Greinacher multiplier works by pumping up a cascade of capacitors and diodes using a high frequency source.
-However, while the voltage generation itself worked well, this approach proofed to be impractical because the high frequency voltage needed to charge the multiplier interfered with the readout and therefore had to be turned off during data-taking.
+However, while the voltage generation itself worked well, this approach proved to be impractical because the high frequency voltage needed to charge the multiplier interfered with the readout and therefore had to be turned off during data-taking.
 Recharging, in turn, caused a lot of detector down time.
 
 
 \section{Charge readout\label{sec:lartpc_charge-ro}}
 
-Classically, the charge readout of a liquid argon TPC is done using wires with a diameter of the order of \SI{100}{\micro\metre}.
+Classically, the charge readout of a liquid argon TPC is done using wires with a diameter of $\order{\SI{.1}{\milli\metre}}$.
 One wire plane delivers a 2D projection of the ionisation tracks in the detection medium.
 This has two consequences:
 \begin{enumerate}
@@ -144,50 +149,49 @@ This has two consequences:
 \end{enumerate}
 Multiple wire planes can be realised by operating only the last one (in drift direction) in charge collection mode.
 All the preceeding wire planes are biased in a such a way that they are transparent to the incoming charge but pick up an induction signal during the passage of the latter.
-A typical number of wire planes for currently operational detectors is three.
-They are tilted by \SI{60}{\degree} against each other.
+A typical number of wire planes for currently operational detectors is three, tilted at \SI{60}{\degree} to each other.
 
 
 \section{Light readout\label{sec:lartpc_light-ro}}
 
-In order to calculate the distance, the charge has drifted along the electric field (i.e.\ the space coordinate perpendicular to the readout plane), one needs to record the drift time.
+In order to calculate the distance the charge has drifted along the electric field (i.e.\ the space coordinate perpendicular to the readout plane), one needs to record the drift time.
 The data acquisition can record the time of the arrival of the charge at the readout plane.
 What is missing is the time of the charge production.
 This can be acquired by registering the scintillation light produced alongside the ionisation of the detection medium.
-Contemporary detector designs employ photomultiplier tubes (PMTs) for this purpose.
+Contemporary detector designs employ PhotoMultiplier Tubes (PMTs) for this purpose.
 PMTs are a well established technology with a high quantum efficiency and a fast response.
 
-The light impinging upon a PMT is converted to an electron by a photo cathode coated on the sensitive window of the PMT.
+The light impinging upon a PMT is converted to an electron by a photo cathode coated on the sensitive surface of the PMT.
 These photo cathodes have a limited absorption spectrum.
 In particular, the scintillation light of \lar\ does not fall inside this spectrum for most photo cathodes.
 That is why the vacuum UV scintillation light needs to be converted to the visible range where it can be efficiently detected by a PMT.
-A widespread wavelength-shifter capable of achieving this is tetraphenyl butadiene (TPB).
-Therefore, a common setup consists of a surface of TPB in front of a PMT.
+A widespread wavelength-shifter capable of achieving this is TetraPhenyl Butadiene (TPB).
+Therefore, a common setup consists of either coating the PMT~\cite{icarus}, or a surface in front of it~\cite{uboone} with TPB.
 
 
 \section{Electronics\label{sec:lartpc_electronics}}
 
-Using the energy required to produce one electron ion pair $W_{\m{i}}$ from Section~\ref{sec:lartpc_lar} and assuming a MIP, one gets
+Using $W_{\m{i}}$, the energy required to produce one electron ion pair, from Section~\ref{sec:lartpc_lar} and assuming a MIP, one gets
 
 \begin{IEEEeqnarray*}{rCl}
 	\dv{Q}{x}	= \frac{\eval{\dv{E}{x}}_{\m{MIP}}}{W_{\m{i}}} \si{\elementarycharge}
-			&	= & \frac{\SI{2}{\mega\electronvolt\per\centi\metre}}{\SI{23.6}{\electronvolt}} \si{\elementarycharge}
-				\approx \SI{8500}{\elementarycharge\per\milli\metre}
+			&	= & \frac{\SI{210}{\kilo\electronvolt\per\milli\metre}}{\SI{23.6}{\electronvolt}} \si{\elementarycharge}
+				\approx \SI{8900}{\elementarycharge\per\milli\metre}
 				\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
 \end{IEEEeqnarray*}
 
 as a rough estimation for the charge yield.
-This calculation does not incorporate recombination, meaning that in a real experiment the value will be even lower.
-The result is that the readout electronics need to be capable of detecting charge in the order of \si{\femto\coulomb}.
+This calculation does not incorporate recombination, diffusion and charge lifetime, meaning that in a real experiment the value will be even lower.
+The result is that the readout electronics need to be capable of detecting $\order{\si{\femto\coulomb}}$ charges.
 
 That is why the charge signal needs to be amplified before digitisation.
 This is achieved by means of an integrating amplifier which also converts the charge to a voltage.
 Early \lartpc\ designs used preamplifiers outside the cryostat at room temperature for this.
-From a noise point of view though, it is beneficial to put the amplifiers inside the cryostat emerged in \lar\ for two reasons.
-First off, the closer to the source the amplifier is located, the shorter the low-signal lines will be, resulting in less pick-up noise.
-An additional advantage is that the temperature-dependent Johnson-Nyquist noise of the amplifiers will be reduced at cryogenic temperatures.
+From a noise point of view though, it is beneficial to put the amplifiers inside the cryostat submerged in \lar\ for two reasons.
+Firstly, the closer to the source the amplifier is located, the shorter the low-signal lines will be, resulting in less pick-up noise.
+Secondly, the temperature-dependent Johnson-Nyquist noise of the amplifiers will be reduced at cryogenic temperatures.
 
-For the same reasons it might even make sense to operate the entire analogue signal chain at cryogenic temperatures.
+For the same reasons it makes sense to operate the entire analogue signal chain at cryogenic temperatures.
 This would also help to eliminate ground loops which can pick-up noise inductively or provoke self-oscillation of the analog signal circuitry.
 On the other hand, in general it is not easy to operate a circuit at cryogenic temperatures.
 Usually, a complete redesign of the circuit is necessary due to most components operating outside their guaranteed temperature range.

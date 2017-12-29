@@ -1,7 +1,7 @@
 \chapter{Feasibility Study of a Pixelated LArTPC for the \dune Near Detector}
 \label{chap:dune-nd}
 
-With \AC\ selected as  the \lar\ component of the \dune\ near detector, there were two main question that needed to be addressed:
+With \AC\ selected as  the \lar\ component of the \dune\ near detector (ND), there were two main question that needed to be addressed:
 \begin{enumerate}
 	\item Is a pixelated \lartpc\ feasible?
 	\item Can the \lar\ detector handle the high rates?
@@ -16,9 +16,10 @@ This chapter will address question number two.
 One of the main goals of \dune\ is to measure the Dirac CP violation phase $\delta_{\m{CP}}$ provided it has a non-degenerate value.
 To reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the $\delta_{\m{CP}}$ parameter space, an exposure of \SI{1320}{\kilo\tonne\mega\watt years} is required (see Figure~\ref{fig:dune-nd_cpv-sens}).~\cite{dune2}
 Assuming the reference design of a \SI{40}{\kilo\tonne} far detector and a \SI{1}{\mega\watt} beam results in a data taking time of \SI{33}{years}.
-Therefore, to make the data taking time shorter, a beam $>\SI{1}{\mega\watt}$ is required.
-On the other hand, combining the numbers of the reference design in~\cite{dune2}, the event rate in the near detector amounts to \SI{0.1}{events\per\tonne\per\mega\watt} leading to significant event pile-up.
+Therefore, to make the data taking time shorter, a beam $> \SI{1}{\mega\watt}$ is required.
+On the other hand, combining the numbers of the reference design in~\cite{dune2}, the event rate in the ND amounts to \SI{0.1}{events\per\tonne\per\mega\watt} leading to significant event pile-up.
 This number does not include rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector.
+The neutrino beam flux is depicted in Figure~\ref{fig:dune-nd_flux}.
 
 \begin{figure}[htb]
 	\centering
@@ -27,10 +28,42 @@ This number does not include rock events---secondary particles produced by beam 
 	\label{fig:dune-nd_cpv-sens}
 \end{figure}
 
-\section{Simulation}
-\label{sec:dune-nd_simulation}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.49\textwidth]{pile-up/FHC_230kA}
+	\includegraphics[width=.49\textwidth]{pile-up/RHC_230kA}
+	\caption{Neutrino fluxes for the reference beam design operating in neutrino mode (left) and antineutrino mode (right), generated with a \SI{120}{\giga\electronvolt} primary proton beam.~\cite{dune2}}
+	\label{fig:dune-nd_flux}
+\end{figure}
 
-Establishing a simulation of the pixelated readout assists its design and implementation in future detectors, which will be especially important for the physics requirements of those detectors.
-An important outcome is the influence of the module walls on reconstruction efficiencies.
-They can be regarded as missing pixels in the simulation.
-My task is to implement the actual pixel readout into existing simulations of future detectors in the beginning of 2017.
+
+\section{The Argon Box Simulation Tool}
+\label{sec:dune-nd_argon-box}
+
+Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} was developed with the goal of providing an easy-to-use simulation of particle interactions in \lar\ component of the ND.
+At the time of this writing its feature set is quite limited, in particular it does not incorporate any other detector materials except for the box of argon.
+Primary particles can either be provided by a particle gun (e.g.\ $e^-$, $n$, $p$, $\mu^+$) or in form of a \emph{HEPEVT} file---a file format standard for passage of particle events between different simulation tools.
+For this study, several million neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
+Secondary particle transport and interaction in Argon Box is performed by Geant4.\footnote{\url{http://geant4.cern.ch}}
+Finally, the energy deposition in \lar\ is voxelised and stored together with all the necessary ancillary information about the depositing particle.
+The data is stored in the tree format of the ROOT data analysis framework.\footnote{\url{https://root.cern}}
+This allows for convenient further processing using ROOT.
+
+
+\section{$\pi^0$ pile-up study}
+\label{sec:dune-nd_pi0}
+
+A significant amount of $\pi^0$ are produced in several resonant and coherent neutrino interactions (see Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
+They decay according to
+\begin{IEEEeqnarray}{rCl}
+	\pi^0 & \qraq & \gamma + \gamma
+\end{IEEEeqnarray}
+with a branching ratio of \SI{98.8}{\percent}\cite{pdg}.
+The photons subsequently produce electromagnetic showers in \lar\ (see Section~\ref{sec:nu-detection_fs}).
+At the energies of the \dune\ beam (see Figure~\ref{fig:dune-nd_flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable $e^{\pm}$ tracks.
+More importantly, there often are significatn gaps in betweend these charge clusters.
+A main challenge of shower reconstruction is to associate these well separated charge blobs to the correct event.
+Misidentiions lead to a misreconstruction of the neutrino energy.
+The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
+The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by $\pi^0$ decays a good sample to study the robustness to pile-up of a pixelated \lartpc\ in the \dune\ ND environment.
+

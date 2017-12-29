@@ -71,6 +71,7 @@ To investigate the effects of pile-up on energy reconstruction, a working recons
 However, at the time of writing, official reconstruction tools were only available for \lartpc s read out by wire planes.\footnote{\url{http://larsoft.org}}
 Therefore, a rather primitive algorithm for true 3D space points was implemented, under the assumption that a positive outcome of such a pile-up study would imply an even better performance of a more sophisticated reconstruction.
 This algorithm is explained in the following.
+All its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
 The basic underlying assumption is that a non-multiplexed pixel readout will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Furthermore, it is assumed that EM shower can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
@@ -128,3 +129,39 @@ Therefore, the acceptance volume for the reconstruction is taken as the union of
 		\hline
 	\end{tabu}
 \end{table}
+
+Argon Box propagates the neutrino interaction events it gets from GENIE through liquid argon, the output is a ROOT tree of neutrino interaction events.
+To get a realisitc simulation of beam events in the detector, these events need to be distributed randomly in time and space.
+Beam spills are simulated by drawing the number of events for each spill from a Poisson distrubition whose mean is calculated from the beam intensity and the target mass.
+The resulting number of events is taken from the Argon Box ROOT tree and their vertices are placed within the \lar\ volume at coordinates drawn from a uniform distribution.
+
+Three different argon volumes are assumed for the simulation: target, active, and fiducial volume.
+The actual detector dimensions are represented by the active volume.
+It is inside the target volume which is the volume within which the neutrino vertices are placed randomly.
+This is done as a crude emulation of rock events, secondary particles from beam neutrino interactions outside the detector volume.
+The additional target mass is \SI{1}{\metre} in all four directions transverse to the beam, and \SI{4}{\metre} in upstream beam direction.
+Finally, a fiducial volume \SI{0.3}{\metre} ($\approx 2 X_{\m{0}}$) smaller than the active volume on all six faces is defined.
+Without the latter, there is a significant number of photons produced by $pi^0$ decays inside the detector but only showering outside the detector.
+Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar\ volume dimensions.
+
+After all events of one spill are placed inside the target volume, all $pi^0$ photons produced inside the fiducial volume are reconstructed using the cone algorithm.
+All energy depositions inside the active volume are considered.
+To assess the performance of the performance of the algorithm, the following quantities are computed for each photon:
+\begin{itemize}
+	\item[Efficiency] Ratio of correctly accepted energy deposition inside the cone-cylinder union to total true energy deposition of the photon.
+		This is a measure for the performance of the reconstruction and can be used to ensure optimum tuning of the union parameters.
+	\item[Purity] Ratio of correctly accepted energy deposition inside the cone-cylinder union to total accepted energy deposition inside the union.
+		This is a measure for event pile-up.
+		The higher the amount of charge deposition from other events inside the union, the lower the purity.
+\end{itemize}
+Using this general definition of purity leads to quite mediocre results.
+However, there are some assumptions that can be taken even without knowing the actual reconstruction algorithm.
+The incorrectly accepted energy deposition inside the cone-cylinder union can be limited to energy deposited by other events; misidentified energy from the same event does not affect the total reconstructed neutrino energy.
+From results of earlier experiments~\cite{sauce}, the muon reconstruction can be assumed to be very efficient.
+Assuming \SI{100}{\percent} reconstruction efficiency for muons and \SI{0}{\percent} for all other particles can therefore serve as a lower limit for the purity.
+It can be calculated by ignoring misidentified muon energy depositions.
+On the other hand, an upper limit for the purity can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles ($\pi^0$ and $\gamma$).
+This is calculated by only taking into account misidentified energy deposited by neutral particles.
+Assuming \SI{0}{\percent} reconstruction efficieny for neutral particles might lead to a slight underestimation of purity.
+However, this effect should be more than compensated by the overestimation of the charged particle reconstruction efficiency, given the highly complex nature of reconstructing unconnected clusters from neutral particles.
+Therefore, this upper purity limit should hold at least in the near future.

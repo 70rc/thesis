@@ -23,10 +23,11 @@ Their main features include
 	\item and a power dissipation \SI{< 10}{\milli\watt} per channel.
 \end{itemize}
 
-\begin{figure}[htb] %TODO: change ASIC picture
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{viper/ReadoutChain_old}
 	\caption{Readout chain used for the pixel test. The picture of the LARASIC cryogenic front-end preamplifiers shows them installed in an older wire readout setup.~\cite{AT_larasic}}
+	\todo[inline]{better picture}
 	\label{fig:viper_readoutChain_old}
 \end{figure}
 
@@ -41,9 +42,9 @@ Finally, the digital data is read out from the VME crate via a fibre-optic link 
 Figure~\ref{fig:viper_readoutChain_old} depicts the entire readout chain.
 The complete analogue signal path from the pixel plane to the VME digitisers is single-ended and thus prone to ground loops and all associated noise problems.
 
-\begin{figure}[htb] %TODO: picture
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{placeholder}
+	\missingfigure{Event from the first measurement campaign of the pixel prototype.}
 	\caption{Event from the first measurement campaign of the pixel prototype.}
 	\label{fig:viper_noisy-event}
 \end{figure}
@@ -91,9 +92,9 @@ Investigating this, it was found that these groups correspond to channels of rou
 Also, the noise amplitude is higher on channels with higher capacitance.
 To solve this problem, the PCB design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes and increasing the thickness of the PCB.
 
-\begin{figure}[htb] %TODO: picture
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{placeholder}
+	\missingfigure{Event from the second measurement campaign of the pixel prototype after improving the readout chain.}
 	\caption{Event from the second measurement campaign of the pixel prototype after improving the readout chain.}
 	\label{fig:viper_good-event}
 \end{figure}
@@ -101,16 +102,16 @@ To solve this problem, the PCB design was optimised by removing unnecessary grou
 As can be seen from Figures~\ref{fig:viper_noisy-event} and~\ref{fig:viper_good-event}, there is a significant decrease in noise after commissioning all of the above improvements to the readout chain.
 This can also be seen from Figures~\ref{fig:viper_snr-noisy} and~\ref{fig:viper_snr-good} depicting the signal to noise ratio of the two measurement campaigns.
 
-\begin{figure}[htb] %TODO: picture
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{placeholder}
+	\missingfigure{Signal vs noise using the old readout chain.}
 	\caption{Signal vs noise using the old readout chain.}
 	\label{fig:viper_snr-noisy}
 \end{figure}
 
-\begin{figure}[htb] %TODO: picture
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{placeholder}
+	\missingfigure{Signal vs noise after imrpoving the readout chain.}
 	\caption{Signal vs noise after imrpoving the readout chain.}
 	\label{fig:viper_snr-good}
 \end{figure}

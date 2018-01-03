@@ -10,7 +10,9 @@
 
 \usepackage[british]{babel} % set babel to british rather than american
 \usepackage[utf8]{inputenc} % utf8 support in source code
-\usepackage[T1]{fontenc} % better support for special characters in pdf but messes up title fonts, can be fixed by installing the debian package cm-super
+\usepackage{lmodern} % better support for special characters in pdf
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
 
 \usepackage[autostyle]{csquotes} % recommended by biblatex
 \usepackage{xpatch} % recommended by biblatex
@@ -34,7 +36,6 @@
 \usepackage{pdfpages} % insert PDF pages
 \usepackage{xcolor, graphicx} % for graphics, breaks (e)ps support
 \usepackage{pdflscape} % landscape pages
-\usepackage[pdftex, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % MUST be last \usepackage{} statement
 
 \pagestyle{headings} % instead of fancyhdr which is not recommended with KOMA script classes
 
@@ -65,6 +66,7 @@
 \newcommand*{\lar}{{LAr}}
 \newcommand*{\lartpc}{LArTPC}
 
+\usepackage[pdftex, unicode, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % should be last command in preamble
 
 \begin{document}
 
@@ -85,6 +87,11 @@
 
 \cleardoublepage % without this, previous page is already arabic; pay attention to twoside layout!
 \pagenumbering{arabic}
+
+\todo[inline]{Check preamble.
+In particular, putting hyperref to the end of the preample as suggested by ``The not so short introduction to \LaTeX{}'' produces warnings about duplicate footnote references.
+Could it also be caused by TODOs?}
+\todo[inline]{Replace backslash space after commands by braces}
 
 \include{chapters/thesis_introduction}
 \include{chapters/thesis_nu-detection}

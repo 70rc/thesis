@@ -18,11 +18,6 @@
 \usepackage{xpatch} % recommended by biblatex
 \usepackage[backend=biber, firstinits, sorting=none, backref=true]{biblatex} % much more flexible than BibTeX
 
-\usepackage{ifdraft}
-\usepackage{setspace} % make corrections easier
-\usepackage[pagewise]{lineno}
-\usepackage[colorinlistoftodos, obeyFinal]{todonotes}
-
 \usepackage{fancyvrb} % advanced verbatim
 \usepackage{mathtools} % math packages
 \usepackage{amsfonts}
@@ -50,13 +45,6 @@
 
 \sisetup{separate-uncertainty=true}
 
-% make corrections easier
-\newcommand{\cjames}[2][]{\todo[author={James Sinclair}, color=green, #1]{#2}}
-\ifoptionfinal{}{
-	\doublespacing
-	\linenumbers
-}
-
 \newcommand*{\m}{\mathrm}
 \newcommand*{\qraq}{\quad \rightarrow \quad}
 \newcommand*{\Chapter}{chapter} % used in starred chapters to store the chapter name to access it conveniently with all the commands needed there
@@ -71,55 +59,65 @@
 \newcommand*{\lar}{{LAr}}
 \newcommand*{\lartpc}{LArTPC}
 
+% draft configuration
+\usepackage{ifdraft}
+\ifoptionfinal{}{
+	\usepackage{setspace} % make corrections easier
+	\doublespacing
+	\usepackage[pagewise]{lineno}
+	\linenumbers
+}
+\usepackage[colorinlistoftodos, obeyFinal]{todonotes}
+\newcommand{\cjames}[2][]{\todo[author={James Sinclair}, color=green, #1]{#2}}
+
 \usepackage[pdftex, unicode, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % should be last command in preamble
 
+
 \begin{document}
-
-\graphicspath{{graphics/}}
-
-\pagenumbering{roman}
-
-\include{chapters/thesis_title}
-\include{chapters/thesis_abstract}
-\include{chapters/thesis_preface}
-
-\listoftodos
-\tableofcontents
-\listoffigures
-\listoftables
-\lstlistoflistings
-
-\cleardoublepage % without this, previous page is already arabic; pay attention to twoside layout!
-\pagenumbering{arabic}
-
-\todo[inline, caption={Check preamble}]{Check preamble.
-In particular, putting hyperref to the end of the preample as suggested by ``The not so short introduction to \LaTeX{}'' produces warnings about duplicate footnote references.
-Could it also be caused by TODOs?}
-\todo[inline]{Replace backslash space after commands by braces}
-\todo[inline]{Optimise float placement, short captions for lists of floats}
-\todo[inline]{Dean, Date}
-\cjames{test}
-\cjames[inline]{inline test}
-
-\include{chapters/thesis_introduction}
-\include{chapters/thesis_nu-detection}
-\include{chapters/thesis_lartpc}
-\include{chapters/thesis_hv}
-\include{chapters/thesis_electronics}
-\include{chapters/thesis_charge-ro}
-\include{chapters/thesis_light-ro}
-\include{chapters/thesis_viper}
-\include{chapters/thesis_argoncube}
-\include{chapters/thesis_dune-nd}
-\include{chapters/thesis_conclusion}
-\include{chapters/thesis_acknowledgements}
-
-\printbibliography
-
-\appendix
-
-\include{chapters/thesis_appendix_a}
-
-%\includepdf[pages={{},1}]{erklaerung}
-
+	\graphicspath{{graphics/}}
+	
+	\pagenumbering{roman}
+	
+	\include{chapters/thesis_title}
+	\include{chapters/thesis_abstract}
+	\include{chapters/thesis_preface}
+	
+	\listoftodos
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\lstlistoflistings
+	
+	\cleardoublepage % without this, previous page is already arabic; pay attention to twoside layout!
+	\pagenumbering{arabic}
+	
+	\todo[inline, caption={Check preamble}]{Check preamble.
+	In particular, putting hyperref to the end of the preample as suggested by ``The not so short introduction to \LaTeX{}'' produces warnings about duplicate footnote references.
+	Could it also be caused by TODOs?}
+	\todo[inline]{Replace backslash space after commands by braces}
+	\todo[inline]{Optimise float placement, short captions for lists of floats}
+	\todo[inline]{Dean, Date}
+	\cjames{test}
+	\cjames[inline]{inline test}
+	
+	\include{chapters/thesis_introduction}
+	\include{chapters/thesis_nu-detection}
+	\include{chapters/thesis_lartpc}
+	\include{chapters/thesis_hv}
+	\include{chapters/thesis_electronics}
+	\include{chapters/thesis_charge-ro}
+	\include{chapters/thesis_light-ro}
+	\include{chapters/thesis_viper}
+	\include{chapters/thesis_argoncube}
+	\include{chapters/thesis_dune-nd}
+	\include{chapters/thesis_conclusion}
+	\include{chapters/thesis_acknowledgements}
+	
+	\printbibliography
+	
+	\appendix
+	
+	\include{chapters/thesis_appendix_a}
+	
+	%\includepdf[pages={{},1}]{erklaerung}
 \end{document}

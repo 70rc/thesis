@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, abstract=on, bibliography=totoc]{scrreprt}
+\documentclass[a4paper, 12pt, abstract=on, bibliography=totoc, draft]{scrreprt}
 
 \newcommand*{\Title}{{A Novel Liquid Argon Time Projection Chamber Detector: The ArgonCube Concept}}
 \newcommand*{\Author}{{Damian Goeldi}}
@@ -18,9 +18,10 @@
 \usepackage{xpatch} % recommended by biblatex
 \usepackage[backend=biber, firstinits, sorting=none, backref=true]{biblatex} % much more flexible than BibTeX
 
+\usepackage{ifdraft}
 \usepackage{setspace} % make corrections easier
 \usepackage[pagewise]{lineno}
-\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorinlistoftodos, obeyDraft]{todonotes}
 
 \usepackage{fancyvrb} % advanced verbatim
 \usepackage{mathtools} % math packages
@@ -37,6 +38,8 @@
 \usepackage{xcolor, graphicx} % for graphics, breaks (e)ps support
 \usepackage{pdflscape} % landscape pages
 
+\addbibresource{thesis.bib} % .bib file for biblatex (.bib is required)
+
 \pagestyle{headings} % instead of fancyhdr which is not recommended with KOMA script classes
 
 \VerbatimFootnotes % needed for verbatim in footnotes (obviously :)
@@ -45,12 +48,14 @@
 \tolerance=5000 % tolerance for total badness without line break
 \setlength{\parskip}{0pt plus 3pt} % add some "rubber" space between paragraphs to omit widows and orphans
 
-%\doublespacing % make corrections easier
-%\linenumbers
-
 \sisetup{separate-uncertainty=true}
 
-\addbibresource{thesis.bib} % .bib file for biblatex (.bib is required)
+% make corrections easier
+\newcommand{\cjames}[2][]{\todo[author={James Sinclair}, color=green, #1]{#2}}
+\ifdraft{
+\doublespacing
+\linenumbers
+}{}
 
 \newcommand*{\m}{\mathrm}
 \newcommand*{\qraq}{\quad \rightarrow \quad}
@@ -78,12 +83,11 @@
 \include{chapters/thesis_abstract}
 \include{chapters/thesis_preface}
 
+\listoftodos
 \tableofcontents
 \listoffigures
 \listoftables
 \lstlistoflistings
-\todototoc
-\listoftodos
 
 \cleardoublepage % without this, previous page is already arabic; pay attention to twoside layout!
 \pagenumbering{arabic}
@@ -94,6 +98,8 @@ Could it also be caused by TODOs?}
 \todo[inline]{Replace backslash space after commands by braces}
 \todo[inline]{Optimise float placement, short captions for lists of floats}
 \todo[inline]{Dean, Date}
+\cjames{test}
+\cjames[inline]{inline test}
 
 \include{chapters/thesis_introduction}
 \include{chapters/thesis_nu-detection}

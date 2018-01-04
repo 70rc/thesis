@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, abstract=on, bibliography=totoc, draft]{scrreprt}
+\documentclass[a4paper, 12pt, abstract=on, bibliography=totoc]{scrreprt}
 
 \newcommand*{\Title}{{A Novel Liquid Argon Time Projection Chamber Detector: The ArgonCube Concept}}
 \newcommand*{\Author}{{Damian Goeldi}}
@@ -21,7 +21,7 @@
 \usepackage{ifdraft}
 \usepackage{setspace} % make corrections easier
 \usepackage[pagewise]{lineno}
-\usepackage[colorinlistoftodos, obeyDraft]{todonotes}
+\usepackage[colorinlistoftodos, obeyFinal]{todonotes}
 
 \usepackage{fancyvrb} % advanced verbatim
 \usepackage{mathtools} % math packages
@@ -52,10 +52,10 @@
 
 % make corrections easier
 \newcommand{\cjames}[2][]{\todo[author={James Sinclair}, color=green, #1]{#2}}
-\ifdraft{
-\doublespacing
-\linenumbers
-}{}
+\ifoptionfinal{}{
+	\doublespacing
+	\linenumbers
+}
 
 \newcommand*{\m}{\mathrm}
 \newcommand*{\qraq}{\quad \rightarrow \quad}

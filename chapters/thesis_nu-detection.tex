@@ -14,7 +14,7 @@ It took almost another quarter of a century until the neutrino was experimentall
 They built a detector for the reaction
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_reinesCowan}
-	\overline{\nu}_e + p & \rightarrow & e^+ + n
+	\nueb + p & \rightarrow & e^+ + n
 \end{IEEEeqnarray}
 and put it next to the nuclear reactor of the Savannah River Plant in South Carolina, US.
 It consisted of two water tanks sandwiched in between three liquid scintillator tanks with photomultiplier tubes (PMTs) on the sidewalls.
@@ -25,15 +25,15 @@ Neutron detection is achieved by doping the water target with cadmium which capt
 The neutron capture is much slower than the positron one.
 Therefore, the process from Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector consisting of a pulse with a lower amplitude from the positron capture and another one with a higher amplitude from the neutron capture a few \si{\micro\second} later.
 Backgrounds can be efficiently rejected employing this technique.
-That drawback is that detection is limited to the $\overline{\nu}_e$ interaction in Equation~\eqref{eq:nu-detection_reinesCowan}.
+That drawback is that detection is limited to the \nueb{} interaction in Equation~\eqref{eq:nu-detection_reinesCowan}.
 
-In 1962, Lederman et al.\ proved the existence of the $\nu_{\mu}$ at the Alternating Gradient Synchrotron (AGS) at Brookhaven National Laboratory (BNL) in New York, US.~\cite{numu}
-For the first time, they produced $\nu_{\mu}$s using an accelerator.
+In 1962, Lederman et al.\ proved the existence of the \numu{} at the Alternating Gradient Synchrotron (AGS) at Brookhaven National Laboratory (BNL) in New York, US.~\cite{numu}
+For the first time, they produced \numu{}s using an accelerator.
 The protons from the AGS were guided onto a beryllium target producing pions which in turn decay according to
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_pion-decay}
-	\pi^+ & \rightarrow & \mu^+ + \overline{\nu}_{\mu} \\
-	\pi^- & \rightarrow & \mu^- + \nu_{\mu}
+	\pi^+ & \rightarrow & \mu^+ + \numub \\
+	\pi^- & \rightarrow & \mu^- + \numu
 \end{IEEEeqnarray}
 producing a beam of muon (anti)neutrinos.
 \emph{Spark chambers} were used to detect the neutrinos.
@@ -55,9 +55,9 @@ A \emph{clearing field} or an electronegative quenching gas additive can be used
 In the 1960's, after Davis failed to measure the lepton-number-violating reaction
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_homestake}
-	\overline{\nu}_e + \ce{^{37}Cl} & \rightarrow & \ce{^{37}Ar} + e^- \m{,}
+	\nueb + \ce{^{37}Cl} & \rightarrow & \ce{^{37}Ar} + e^- \m{,}
 \end{IEEEeqnarray}
-he decided to replace the $\overline{\nu}_e$ by solar $\nu_e$.~\cite{homestake68, homestake98}
+he decided to replace the \nueb{} by solar \nue{}.~\cite{homestake68, homestake98}
 Surprisingly, they measured a flux approximately on third lower than predicted by the standard solar model (SSM).
 This result became famous as the solar neutrino problem only to be resolved more than \num{30} years later by the SNO experiment.
 Davis' experiment was located \SI{1478}{\metre} (\SI{4200}{\metre} water equivalent) underground in the Homestake gold mine at Lead, South Dakota, US.
@@ -83,16 +83,16 @@ The voltage can be raised further to enter the Geiger regime where the avalanche
 These UV photons travel independently of the electric field and can start new avalanches via the photoelectric effect.
 The process can only be stopped by quenching the discharge either electrically (temporary voltage reduction) or chemically (quenching additive).
 
-While the Homestake experiment provided a clean way of counting $\nu_e$ interactions, it provided no information on the timing, direction and kinematics of the interaction.
+While the Homestake experiment provided a clean way of counting \nue{} interactions, it provided no information on the timing, direction and kinematics of the interaction.
 Only a lower energy threshold is given by the fact, that the neutrino needs to have enough energy to dissociate the chlorine atom from the tetrachloroethylene molecule.
 Due to this, it was not possible to tell which reaction chain in the sun, the detected neutrinos originated from.
 Furthermore, care needs to be taken for a very good understanding of all background processes that can produce \ce{^{37}Ar} or its signature in the counting tube.
-Finally, this experiment was only capable of detecting $\nu_e$ which proved to be crucial in the solution to the solar neutrino problem; oscillation.
+Finally, this experiment was only capable of detecting \nue{} which proved to be crucial in the solution to the solar neutrino problem; oscillation.
 
 In 1988, the Kamioka Nucleon Decay Experiment (KamiokaNDE), in the Kamkioka mine in Japan, and the Irvine-Michigan-Brookhaven (IMB) detector found a similar deficiency in atmospheric neutrinos which actually were a background for the original experiments looking for proton decays.\todo{find source for IMB or remove}
 Atmospheric neutrinos are produced in a similar fashion than Lederman et al.\ did in their muon neutrino beam experiment.
 Cosmic rays strike the Earth atmosphere and produce secondary particles many of which are pions, in turn, decaying according to Equation~\eqref{eq:nu-detection_pion-decay}.
-Thus, atmospheric neutrinos are mainly $\nu_{\mu}/\overline{\nu}_{\mu}$.
+Thus, atmospheric neutrinos are mainly \numu{}/\numub{}.
 However, the muon neutrino flux measured by KamiokaNDE was only \SI{59+-7}{\percent} of the one predicted by Monte Carlo simulations.~\cite{kamiokandeAtmos}
 After an upgrade (Kamiokande II), the collaboration furthermore confirmed the solar neutrino problem discovered by the Homestake experiment.~\cite{kamiokandeSolar}
 The detector was a \SI{3000}{\tonne} water tank equipped with \num{1000} PMTs to detect \emph{Cherenkov} radiation produced by incoming charged particles.
@@ -119,7 +119,7 @@ Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all th
 	\label{eq:nu-detection_CC-nu}
 	\nu_l + n &				\rightarrow &	l^- + p \\
 	\label{eq:nu-detection_CC-antinu}
-	\overline{\nu}_l + p &	\rightarrow &	l^+ + n
+	\nub_l + p &	\rightarrow &	l^+ + n
 \end{IEEEeqnarray}
 with $l = e,\mu,\tau$.
 It should be noted however, that usually $\tau$ leptons are too short-lived to produce enough Cherenkov radiation to be detected.
@@ -128,20 +128,20 @@ A second interaction path of neutrinos with matter is the scattering off shell e
 	\label{eq:nu-detection_NC-nu}
 	\nu_l + e^- & \rightarrow & \nu_l + e^- \\
 	\label{eq:nu-detection_NC-antinu}
-	\overline{\nu}_l + e^- & \rightarrow & \overline{\nu}_l + e^- \, \m{.}
+	\nub_l + e^- & \rightarrow & \nub_l + e^- \, \m{.}
 \end{IEEEeqnarray}
 If the neutrino momentum is high enough, the electron recoil can be detected by a Cherenkov detector for all three flavours.
 
-While registering timing and directionality in addition to being able to detect and distinguish $\nu_{\m{e}}$ and $\nu_{\m{\mu}}$ was a huge improvement over the radiochemical Homestake experiment, Cherenkov detectors still suffer from some difficiencies in particle identification.
+While registering timing and directionality in addition to being able to detect and distinguish \nue{} and \numu{} was a huge improvement over the radiochemical Homestake experiment, Cherenkov detectors still suffer from some difficiencies in particle identification.
 One of them is that they can only detect charged particles with sufficient momentum to produce Cherenkov radiation rather than detecting the whole event topology.
 The detector cannot distinguish between processes producing the same ring signature.
-An important example is a $\pi^{\m{0}}$ produced by a $\nu_{\m{\mu}}$ which produces a signal in a Cherenkov detector very similar to the one of a $\nu_{\m{e}}$.
+An important example is a $\pi^{\m{0}}$ produced by a \numu{} which produces a signal in a Cherenkov detector very similar to the one of a \nue{}.
 This is a crucial background for neutrino oscillation experiments.
 
 Super-Kamiokande, the \SI{50}{\kilo\tonne} successor of Kamiokande, solved the atmospheric neutrino problem in 1998.~\cite{superKAtmos1, superKAtmos2}
 It measured the flavour ratio of the atmospheric neutrino flux as a function of the zenith angle.
 The ratio of the number of upward to downward $\mu$-like events was found to be $\approx\SI{50}{\percent}$ while from Monte Carlo simulations it was expected to be $\approx\SI{100}{\percent}$.
-This result suggested a dissappearance of $\nu_{\mu}$ via neutrino oscillations for atmospheric neutrinos that travelled along the much longer baseline through the Earth.
+This result suggested a dissappearance of \numu{} via neutrino oscillations for atmospheric neutrinos that travelled along the much longer baseline through the Earth.
 
 The solar neutrino problem was solved in 2002 by the Sudbury Neutrino Observatory (SNO) in the INCO, Ltd.\ Creighton mine near Sudbury, Ontario, Canada.~\cite{snoSolar}
 SNO is a \SI{1}{\kilo\tonne} heavy water Cherenkov detector located \SI{2039}{\metre} below the Earth surface ($\approx\SI{6000}{\metre}$ water equivalent).
@@ -150,15 +150,15 @@ Its use of heavy water (\ce{D_2O}) allows it to detect neutrinos flavour-indepen
 	\label{eq:nu-detection_NCsno-nu}
 	\nu_l + d & \rightarrow & \nu_l + p + n \\
 	\label{eq:nu-detection_NCsno-antinu}
-	\overline{\nu}_l + d & \rightarrow & \overline{\nu}_l + p + n
+	\nub_l + d & \rightarrow & \nub_l + p + n
 \end{IEEEeqnarray}
 in addition to the interaction channels detectable by light water Cherenkov detectors given by Equations \eqref{eq:nu-detection_CC-nu}, \eqref{eq:nu-detection_CC-antinu}, \eqref{eq:nu-detection_NC-nu}, and \eqref{eq:nu-detection_NC-antinu}.
 For this to work, the emerging neutron needs to be detected which was achieved using \ce{^3He}-filled proportional counters inside the heavy water tank.
-The additional neutrino detection channel allowed SNO to prove that only the solar $\nu_e$ flux is below the predictions by the SSM while the combined flux of all three flavours is consistent with the model, providing another strong evidence for neutrino oscillation.
+The additional neutrino detection channel allowed SNO to prove that only the solar \nue{} flux is below the predictions by the SSM while the combined flux of all three flavours is consistent with the model, providing another strong evidence for neutrino oscillation.
 
-The $\nu_{\tau}$ was first detected by the DONUT experiment at Fermi National Accelerator Laboratory (FNAL) near Batavia, Illinois, US, in 2001.~\cite{donut}
-Similarly to the $\nu_{\mu}$ discovery, a neutrino beam was produced by shooting \SI{800}{\giga\electronvolt} protons from the Tevatron onto a tungsten beam dump.
-The $\nu_{\tau}$ were detected via the interactions described by Equations~\eqref{eq:nu-detection_CC-nu} and~\eqref{eq:nu-detection_CC-antinu} for $l = \tau$.
+The \nut{} was first detected by the DONUT experiment at Fermi National Accelerator Laboratory (FNAL) near Batavia, Illinois, US, in 2001.~\cite{donut}
+Similarly to the \numu{} discovery, a neutrino beam was produced by shooting \SI{800}{\giga\electronvolt} protons from the Tevatron onto a tungsten beam dump.
+The \nut{} were detected via the interactions described by Equations~\eqref{eq:nu-detection_CC-nu} and~\eqref{eq:nu-detection_CC-antinu} for $l = \tau$.
 Therefore, it was required to detect very short-lived $\tau$ requiring a detector with a very good spatial resolution.
 
 \emph{Nuclear emulsions} were chosen as the core component of the detector.
@@ -177,15 +177,170 @@ An external tracking detector (scintillating fibres in the case of DONUT) are re
 Its data needs to be matched to the emulsion data before the actual analysis.
 
 Nowadays, the concept of neutrino oscillation is well established and characterised by Daya~Bay~\cite{dayabayRecent}, T2K~\cite{t2kOsc}, KamLAND~\cite{kamland}, SNO, Super-Kamiokande and many other experiments.
-Daya Bay and KamLAND essentially employ the same technique as Reines and Cowan to look for disappearance of nuclear reactor $\overline{\nu}_e$.
+Daya Bay and KamLAND essentially employ the same technique as Reines and Cowan to look for disappearance of nuclear reactor \nueb{}.
 The only difference being that instead of using multiple scintillator tanks in coincidence, they use one big tank shielded and vetoed by water and/or mineral oil Cherenkov detectors.
-Tokai to Kamioka (T2K) directs a $\nu_{\mu}$ beam similar to the one of Lederman et al.\ towards Super-Kamiokande to look for $\nu_{\mu}$ disappearance and $\nu_e$ appearance over a long baseline.
+Tokai to Kamioka (T2K) directs a \numu{} beam similar to the one of Lederman et al.\ towards Super-Kamiokande to look for \numu{} disappearance and \nue{} appearance over a long baseline.
+
+
+\section{Current Status and Future Experiments}
+\label{sec:nu-detection_future-exp}
+
+\todo[inline, color=red]{current status and future experiments}
 
 
 \section{Neutrino Interaction with Matter}
 \label{sec:nu-detection_interactions}
 
-\todo[inline, color=red]{neutrino interactions}
+\todo[inline]{xsec plot}
+
+\begin{table}[htb]
+	\centering
+	\caption{Estimated number of interactions per tonne of \ce{Ar} at the \dune{} near detector for approximately one month (\num{1e20} protons on target) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}.}
+	\label{tab:nu-detection_nd-rates}
+	\begin{tabu} to \textwidth {|X|S|S|}
+		\hline
+		Production mode &																						{\numu{} beam} &	{\numub{} beam} \\
+		\hline
+		\hline
+		CC QE ($\numu n \rightarrow \mu^- p$) &																	30000 &				13000 \\
+		\hline
+		NC elastic ($\numu N \rightarrow \numu N$) & 															11000 &				6700 \\
+		\hline
+		CC resonant ($\numu p \rightarrow \mu^- p \pi^+$) &														21000 &				0 \\
+		\hline
+		CC resonant ($\numu n \rightarrow \mu^- n \pi^+ \, (p \pi^0)$) &										23000 &				0 \\
+		\hline
+		CC resonant ($\numub p \rightarrow \mu^+ p \pi^- \, (n \pi^0)$) &										0 &					8300 \\
+		\hline
+		CC resonant ($\numub n \rightarrow \mu^+ n \pi^-$) &													0 &					12000 \\
+		\hline
+		NC resonant ($\numu p \rightarrow \numu p \pi^0 \, (n \pi^+)$) &										7000 &				0 \\
+		\hline
+		NC resonant ($\numu n \rightarrow \numu n \pi^+ \, (p \pi^0)$) &										9000 &				0 \\
+		\hline
+		NC resonant ($\numub p \rightarrow \numub p \pi^- \, (n \pi^0)$) &										0 &					3900 \\
+		\hline
+		NC resonant ($\numub n \rightarrow \numub n \pi^-$) &													0 &					4700 \\
+		\hline
+		CC DIS ($\numu N \rightarrow \mu^- X$ or $\numub N \rightarrow \mu^+ X$) &								95000 &				24000 \\
+		\hline
+		NC DIS ($\numu N \rightarrow \numu X$ or $\numub N \rightarrow \numub X$) &								31000 &				10000 \\
+		\hline
+		CC coherent $\pi^+$ ($\numu A \rightarrow \mu^- A \pi^+$) &												930 &				0 \\
+		\hline
+		CC coherent $\pi^-$ ($\numub A \rightarrow \mu^+ A \pi^-$) &											0 &					800 \\
+		\hline
+		NC coherent $\pi^0$ ($\numu A \rightarrow \numu A \pi^0$ or $\numub A \rightarrow \numub A \pi^0$) &	520 &				450 \\
+		\hline
+		NC elastic electron ($\numu e^- \rightarrow \numu e^-$ or $\numub e^- \rightarrow \numub e^-$) &		16 &				11 \\
+		\hline
+		Inverse muon decay ($\numu e \rightarrow \mu^- \nue$) &													9.5 &				0 \\
+		\hline
+		\hline
+		Total CC &																								170000 &			59000 \\
+		\hline
+		Total NC+CC &																							230000 &			84000 \\
+		\hline
+	\end{tabu}
+\end{table}
+
+Neutrinos cannot be directly detected, they need to pass on some of their energy and momentum to secondary particles that can be detected, i.e.\ they need to interact with a detection medium.
+This chapter will give a brief overview of the different types of these interactions.
+In general, neutrino interactions are divided into charged (CC) and neutral current (NC) mediated by charged ($W^{\pm}$) or neutral ($Z^0$) gauge bosons.
+In a CC interaction, the neutrino is transformed into its corresponding charged lepton while it survives an NC interaction.
+Furthermore, they can be subdivided according to the type of interaction into quasi-elastic (QE), resonant (RES), deep inelastic scattering (DIS), and coherent (COH).
+
+QE is characterised by the reactions
+\begin{IEEEeqnarray}{rCl}
+	\nu_l + n & \qraq & l^- + p \\
+	\nub_l + p & \qraq & l^+ + n
+\end{IEEEeqnarray}
+and the kinematics are similar to that of an elastic collision, hence called quasi-elastic.
+Apparent from the equation above, this can only happen as a CC interaction.
+
+The NC equivalent is an actual elastic interaction of a neutrino with a target nucleon according to
+\begin{IEEEeqnarray}{rCl}
+	\nu_l + N & \qraq & \nu_l + N \m{.}
+\end{IEEEeqnarray}
+
+RES involves the excitation of the involved nucleon to a resonant state, e.g.\
+\begin{IEEEeqnarray}{rCccl}
+	\numu + p & \qraq & \mu^- + \Delta^{++} & \qraq & \mu^- + p + \pi^+
+\end{IEEEeqnarray}
+where the $\Delta^{++}$ resonance is too short-lived to be seen by the detectors.
+There are a lot of different resonant interactions which all work in a similar manner.
+
+For DIS, the momentum transfer is high enough to destroy nucleon.
+The neutrino rips a quark out which, in turn, starts to hadronise and form jets.
+The reactions are
+\begin{IEEEeqnarray}{rCl}
+	\nu_l + N & \qraq & l + X \quad \m{or} \\
+	\nu_l + N & \qraq & \nu_l + X
+\end{IEEEeqnarray}
+where $N$ is the target nucleon and $X$ a group of hadrons.
+This reaction happens in a very similar manner to $e^-$ deep inelastic scattering off nucleons.
+
+In a COH reaction, the opposite happens.
+The neutrino interacts with a target nucleus ($A$) as a whole but the latter is left intact as a spectator.
+Instead, another particle is produced alongside the corresponding lepton. An example reaction is
+\begin{IEEEeqnarray}{rCl}
+	\nu_{\mu} + A & \qraq & \mu^- + A + \pi^+
+\end{IEEEeqnarray}
+where a pion is produced from a muon neutrino interacting with a target nucleus.
+
+The inverse muon decay,
+\begin{IEEEeqnarray}{rCl}
+	\numu + e^- & \qraq & \mu^- + \nue \m{,}
+\end{IEEEeqnarray}
+requires neutrino energies above \SI{11}{\giga\electronvolt}~\cite{dune2}.
+
+Of particular importance is elastic scattering off shell electrons,
+\begin{IEEEeqnarray}{rCl}
+	\nu_l + e^- & \qraq & \nu_l + e^- \quad \m{or} \\
+	\nub_l + e^- & \qraq & \nub_l + e^- \m{,}
+\end{IEEEeqnarray}
+which is possible for all (anti)neutrino flavours.
+For \nue, the interaction is also possible in the CC channel via the exchange of a $W^{\pm}$ boson as depicted in Figure~\ref{fig:nu-detection_nuescat}.
+This gives rise to a flavour-dependent term in the oscillation probability in matter, the MSW effect (see Section~\ref{sec:nu-detection_future-exp}).
+
+\begin{figure}[htb]
+	\centering
+	\begin{fmffile}{fmf_NCscat}
+		\unitlength=.4\textwidth
+		\begin{fmfgraph*}(1,.5)
+			\fmfpen{thin}
+			\fmfstraight
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{2}
+			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
+			\fmf{fermion,label=$e^-$,label.side=left}{v1,o1}
+			\fmf{fermion,label=$\nu_l$,label.side=right}{i2,v2}
+			\fmf{fermion,label=$\nu_l$,label.side=right}{v2,o2}
+			\fmf{boson,label=$Z^0$,label.side=left}{v1,v2}
+			\fmfdot{v1,v2}
+		\end{fmfgraph*}
+	\end{fmffile}
+	\begin{fmffile}{fmf_CCscat}
+		\unitlength=.4\textwidth
+		\begin{fmfgraph*}(1,.5)
+			\fmfpen{thin}
+			\fmfstraight
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{2}
+			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
+			\fmf{fermion,label=$\nue$,label.side=left}{v1,o1}
+			\fmf{fermion,label=$\nue$,label.side=right}{i2,v2}
+			\fmf{fermion,label=$e^-$,label.side=right}{v2,o2}
+			\fmf{boson,label=$W^{\pm}$,label.side=left}{v1,v2}
+			\fmfdot{v1,v2}
+		\end{fmfgraph*}
+	\end{fmffile}
+	\caption{Neutral (left) and charged current (right) neutrino electron scattering.
+	While the NC interaction is possible for both neutrinos and antineutrinos, the CC interaction is only possible for neutrinos.}
+	\label{fig:nu-detection_nuescat}
+\end{figure}
+
+A summary of the expected rates of the different interactions in the \dune{} near detector is given in Table~\ref{tab:nu-detection_nd-rates}.
 
 
 \section{Final State Detection}
@@ -229,6 +384,7 @@ Thus, Equation~\eqref{eq:nu-detection_bethe-bloch} actually gives the so called 
 The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is $\approx 0.5$ for most light materials, and the mean excitation energy which only contributes logarithmically.
 
 \begin{figure}[htbp]
+	\centering
 	\includegraphics[width=\textwidth]{nu-detection/bethe-bloch}
 	\caption{Bethe-Bloch stopping power of $\mu$ in \ce{Ar}}
 	\todo[inline]{check}

@@ -107,7 +107,7 @@ The complexity of reconstruction paired with the potential impact on the physics
 		\hline
 		{Cone extent} &				{$10 X_{\m{0}} = \SI{1400}{\milli\metre}$} \\
 		\hline
-		{Cone half opening angle} &	\SI{15}{\degree} \\
+		{Cone half opening angle} &	\ang{15} \\
 		\hline
 		{Cylinder radius} &			\SI{25}{\milli\metre} \\
 		\hline
@@ -219,13 +219,13 @@ However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the sa
 After all events of one spill are placed inside the target volume, all $pi^0$ photons produced inside the fiducial volume are reconstructed using the cone algorithm.
 All energy depositions inside the active volume are considered.
 To assess the performance of the performance of the algorithm, the following quantities are computed for each photon:
-\begin{itemize}
-	\item[Efficiency] Ratio of correctly accepted energy deposition inside the cone-cylinder union to total true energy deposition of the photon.
+\begin{description}
+	\item[Efficiency] is the ratio of correctly accepted energy deposition inside the cone-cylinder union to total true energy deposition of the photon.
 		This is a measure for the performance of the reconstruction and can be used to ensure optimum tuning of the union parameters.
-	\item[Purity] Ratio of correctly accepted energy deposition inside the cone-cylinder union to total accepted energy deposition inside the union.
+	\item[Purity] is the ratio of correctly accepted energy deposition inside the cone-cylinder union to total accepted energy deposition inside the union.
 		This is a measure for event pile-up.
 		The higher the amount of charge deposition from other events inside the union, the lower the purity.
-\end{itemize}
+\end{description}
 Using this general definition of purity leads to quite mediocre results.
 However, there are some assumptions that can be taken even without knowing the actual reconstruction algorithm.
 The incorrectly accepted energy deposition inside the cone-cylinder union can be limited to energy deposited by other events; misidentified energy from the same event does not affect the total reconstructed neutrino energy.

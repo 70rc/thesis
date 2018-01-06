@@ -126,10 +126,10 @@ The data of \num{5000} events was combined.
 Subsequently, all pixel and ROI channels were combined separately and filled into respective amplitude distribution histograms.
 Finally, the standard deviation of the noise was calculated by fitting a Gaussian to the amplitude distribution.
 This value was used to calculate the noise for pixel and ROI channels according to
-\begin{equation}
-	\m{SNR} = \frac{S}{\sigma}\,\m{,}
+\begin{IEEEeqnarray}{rCl}
+	\m{SNR} & = & \frac{S}{\sigma} \qc
 	\label{eq:snr}
-\end{equation}
+\end{IEEEeqnarray}
 where $S$ is the signal and $\sigma$ is the noise standard deviation from the Gaussian fit.
 As can be seen in the left plot in Figure~\ref{fig:viper_unfilteredRawData}, one of the pixel channels is significantly noisier in comparison to others, likely caused by a broken preamplifier.
 Therefore, this channel was blinded for the SNR calculations.
@@ -144,16 +144,16 @@ The recombination factor was measured by ICARUS~\cite{icarusReco} and ArgoNeuT~\
 For a non-zero drift field, diffusion needs to be split into longitudinal and transverse components.
 With \AT{}~\cite{AT}, Bern measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
 Even using the more conservative value, this results~\cite{lngDet} in a transverse spread of
-\begin{equation}
-	\sigma_{\m{T}} = \sqrt{2 D_{\m{T}} t} \approx \SI{0.9}{\milli\metre}\,, 
-\end{equation}
+\begin{IEEEeqnarray}{rCl}
+	\sigma_{\m{T}} & = & \sqrt{2 D_{\m{T}} t} \approx \SI{0.9}{\milli\metre} \qc
+\end{IEEEeqnarray}
 for the pixel demonstrator drift time of $t = \SI{281}{\micro\second}$; a value well below the pixel pitch of $d_{\m{p}} = \SI{2.54}{\milli\metre}$.
 Considering that the longitudinal component is smaller than the transverse ~\cite{lngDet}, diffusion is neglected completely for these calculations.
 Finally, the lifetime of \SI{290}{\micro\second} will result in the reduction of charge by a factor of $\approx\num{0.38}$ over the full drift distance.
 Combining this, the signal is 
-\begin{equation}
-	S = \dv{E}{x}_{\m{MIP}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge}\,,
-\end{equation}
+\begin{IEEEeqnarray}{rCl}
+	S & = & \dv{E}{x}_{\m{MIP}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge} \qc
+\end{IEEEeqnarray}
 for a charge deposited adjacent to the readout plane, and $S = \SI{6004}{\elementarycharge}$ for a charge deposited adjacent to the cathode.
 
 Table~\ref{tab:viper_snr} lists the SNR values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:snr}.

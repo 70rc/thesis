@@ -32,7 +32,7 @@ For the first time, they produced \numu{}s using an accelerator.
 The protons from the AGS were guided onto a beryllium target producing pions which in turn decay according to
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_pion-decay}
-	\pi^+ & \rightarrow & \mu^+ + \numub \\
+	\pi^+ & \rightarrow & \mu^+ + \numub \qand \\
 	\pi^- & \rightarrow & \mu^- + \numu
 \end{IEEEeqnarray}
 producing a beam of muon (anti)neutrinos.
@@ -55,7 +55,7 @@ A \emph{clearing field} or an electronegative quenching gas additive can be used
 In the 1960's, after Davis failed to measure the lepton-number-violating reaction
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_homestake}
-	\nueb + \ce{^{37}Cl} & \rightarrow & \ce{^{37}Ar} + e^- \m{,}
+	\nueb + \ce{^{37}Cl} & \rightarrow & \ce{^{37}Ar} + e^- \qc
 \end{IEEEeqnarray}
 he decided to replace the \nueb{} by solar \nue{}.~\cite{homestake68, homestake98}
 Surprisingly, they measured a flux approximately on third lower than predicted by the standard solar model (SSM).
@@ -117,7 +117,7 @@ Here, only the two most important processes shall be introduced, a more detailed
 Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all three flavours can interact with nucleons according to
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_CC-nu}
-	\nu_l + n &				\rightarrow &	l^- + p \\
+	\nu_l + n &				\rightarrow &	l^- + p \qand \\
 	\label{eq:nu-detection_CC-antinu}
 	\nub_l + p &	\rightarrow &	l^+ + n
 \end{IEEEeqnarray}
@@ -126,9 +126,9 @@ It should be noted however, that usually $\tau$ leptons are too short-lived to p
 A second interaction path of neutrinos with matter is the scattering off shell electrons according to
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_NC-nu}
-	\nu_l + e^- & \rightarrow & \nu_l + e^- \\
+	\nu_l + e^- & \rightarrow & \nu_l + e^- \qand \\
 	\label{eq:nu-detection_NC-antinu}
-	\nub_l + e^- & \rightarrow & \nub_l + e^- \, \m{.}
+	\nub_l + e^- & \rightarrow & \nub_l + e^- \qq*{.}
 \end{IEEEeqnarray}
 If the neutrino momentum is high enough, the electron recoil can be detected by a Cherenkov detector for all three flavours.
 
@@ -148,7 +148,7 @@ SNO is a \SI{1}{\kilo\tonne} heavy water Cherenkov detector located \SI{2039}{\m
 Its use of heavy water (\ce{D_2O}) allows it to detect neutrinos flavour-independently via
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_NCsno-nu}
-	\nu_l + d & \rightarrow & \nu_l + p + n \\
+	\nu_l + d & \rightarrow & \nu_l + p + n \qand \\
 	\label{eq:nu-detection_NCsno-antinu}
 	\nub_l + d & \rightarrow & \nub_l + p + n
 \end{IEEEeqnarray}
@@ -182,10 +182,173 @@ The only difference being that instead of using multiple scintillator tanks in c
 Tokai to Kamioka (T2K) directs a \numu{} beam similar to the one of Lederman et al.\ towards Super-Kamiokande to look for \numu{} disappearance and \nue{} appearance over a long baseline.
 
 
-\section{Current Status and Future Experiments}
+\section{Neutrino Oscillation and \dune{}}
 \label{sec:nu-detection_future-exp}
 
 \todo[inline, color=red]{current status and future experiments}
+
+\AC{} was selected as the \lar{} component of the near detector for the \dune{} long-baseline neutrino oscillation experiment.
+Therefore, this section will give a basic introduction to neutrino oscillation and \dune{}.
+
+The root cause of neutrino oscillation is that the flavour eigenstates ($\nu_{\alpha}$, $\alpha = e, \mu, \tau$) of the three neutrinos are not equal to their three mass eigenstates ($\nu_i$, $i = 1,2,3$).
+The mass composition of the flavour eigenstates can be written as
+\begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_mixing}
+	\begin{pmatrix}
+		\nue \\
+		\numu \\
+		\nut
+	\end{pmatrix}
+	& = &
+	U_{\m{PMNS}}
+	\begin{pmatrix}
+		\nu_1 \\
+		\nu_2 \\
+		\nu_3
+	\end{pmatrix}
+\end{IEEEeqnarray}
+where
+\begin{IEEEeqnarray}{cccCccc}
+	\label{eq:nu-detection_upmns}
+	&&& U_{\m{PMNS}} &&& \\
+	&&& = &&& \nonumber \\
+	U_{\m{sol}} & \times & U_{\m{rea}} & \times & U_{\m{atm}} & \times & U_{\m{maj}} \nonumber \\
+	&&& = &&& \nonumber \\
+	\begin{bmatrix}
+		1 &	0 &			0 \\
+		0 &	C_{23} &	S_{23} \\
+		0 &	- S_{23} &	C_{23}
+	\end{bmatrix}
+	& \times &
+	\begin{bmatrix}
+		C_{13} &					0 &	S_{13} e ^ {- i \dcp} \\
+		0 &							1 &	0 \\
+		- S_{13} e ^ {- i \dcp} &	0 &	C_{13}
+	\end{bmatrix}
+	& \times &
+	\begin{bmatrix}
+		C_{12} &	S_{12} &	0 \\
+		- S_{12} &	C_{12} &	0 \\
+		0 &			0 &			1
+	\end{bmatrix}
+	& \times &
+	\begin{bmatrix}
+		e ^ {i \frac{\alpha_1}{2}} &	0 &								0 \\
+		0 &								e ^ {i \frac{\alpha_2}{2}} &	0 \\
+		0 &								0 &								1
+	\end{bmatrix}
+	\nonumber
+\end{IEEEeqnarray}
+is the Pontecorvo-Maki-Nakagawa-Sakata matrix.
+It can be written as the product of three rotation matrices corresponding to the three Euler angles in 3D space, the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
+In Eq.~\eqref{eq:nu-detection_upmns} they are represented by $S_{ij} = \sin{\theta_{ij}}$ and $C_{ij} = \cos{\theta_{ij}}$.
+Due to their first measurement with solar, reactor and atmospheric neutrinos, respectively, the matrices and angles are often named accordingly.
+In addition to the mixing angles, there is a Dirac, \dcp, and two Majorana CP-violating phases, $\alpha_1$ and $\alpha_2$.
+The Majorana phases can only be measured by experiments sensitive to a Majorana nature of the neutrinos, such as neutrinoless double beta decay experiments.
+In neutrino oscillation experiments, they cancel out.
+Therefore, they are ignored for the rest of this work.
+
+The mass eigenstates $\nu_i$ from Eq.~\eqref{eq:nu-detection_mixing} evolve in time as
+\begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_timeevol}
+	\ket{\nu_i \qty(t)} & = & e ^ {- i E_i t} \ket{\nu_i}
+\end{IEEEeqnarray}
+where $E_i$ is the energy of the mass eigenstate $\nu_i$.
+Furthermore, Eq.~\eqref{eq:nu-detection_mixing} can be solved for $\nu_i$
+\begin{IEEEeqnarray}{rCl}
+	\begin{pmatrix}
+		\nu_1 \\
+		\nu_2 \\
+		\nu_3
+	\end{pmatrix}
+	& = &
+	U_{\m{PMNS}}^{\dagger}
+	\begin{pmatrix}
+		\nue \\
+		\numu \\
+		\nut
+	\end{pmatrix}
+\end{IEEEeqnarray}
+where $U_{\m{PMNS}}^{\dagger}$ is the adjoint matrix of $U_{\m{PMNS}}$.
+This leads to
+\begin{IEEEeqnarray}{rCl}
+	\begin{pmatrix}
+		\nue \\
+		\numu \\
+		\nut
+	\end{pmatrix}
+	& = &
+	U_{\m{PMNS}} D U_{\m{PMNS}}^{\dagger}
+	\begin{pmatrix}
+		\nue \\
+		\numu \\
+		\nut
+	\end{pmatrix}
+\end{IEEEeqnarray}
+with the diagonal matrix
+\begin{IEEEeqnarray}{rCl}
+	D_{ij} & = & \delta_{ij} e ^ {- i E_i t}
+\end{IEEEeqnarray}
+where $\delta_{ij}$ is the Kronecker delta.
+For relativistic particles,
+\begin{IEEEeqnarray}{rCl}
+	E_i = \sqrt{p ^ 2 + m_i ^ 2} & \approx & p + \frac{m_i ^ 2}{2 p} \approx E + \frac{m_i ^ 2}{2 E}
+\end{IEEEeqnarray}
+can be approximated by the neutrino energy $E \approx p$ for $p \gg m_i$.
+After some further conversions, one obtains
+\begin{IEEEeqnarray}{rCl}
+	\label{eq:nu-detection_oscprob}
+	P \qty(\nu_{\alpha} \rightarrow \nu_{\beta})
+	& = &
+	\abs{\sum_i U_{\alpha i} U_{\beta i}^* e ^ {- i E_i t}} ^ 2 \\
+	& = &
+	\sum_i \abs{U_{\alpha i} U_{\beta i}^*} + 2 \Re{\sum_{i > j} U_{\alpha i} U_{\alpha j}^* U_{\beta i}^* U_{\beta j} e ^ {- i \Delta_{ij}}}
+	\nonumber
+\end{IEEEeqnarray}
+for the transition probability from $\nu_{\alpha}$ into $\nu_{\beta}$.
+The phase difference
+\begin{IEEEeqnarray}{rCl}
+	\Delta_{ij}
+	& = &
+	\qty(E_i - E_j) t \\
+	& = &
+	\frac{\dms_{ij}}{2} \frac{L}{E} \qc \nonumber
+\end{IEEEeqnarray}
+depends on the mass splitting $\dms_{ij} = m_i ^ 2 - m_j ^ 2$ and the length of the baseline $L = ct = t$.
+To improve readability, $U_{\m{PMNS}}$ was abbreviated by $U$.
+
+The second term of Eq.~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
+This implies that the frequency of the oscillation is determined by the mass splitting and the amplitude by the matrix elements of $U_{\m{PMNS}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
+In particular, the consequence of this is that the observation of neutrino oscillation between all three flavours proves a finite mass of at least two of the three neutrinos.
+It is worth noting that this derivation is based on a plain wave approximation which turns out to be wrong in a real localised experiment. A wave packet approach would be needed to address the resulting deficiencies.
+However, it can be shown that the plain wave approximation holds for most real experiments anyway as wave packet effects cancel on average.~\cite{giunti}
+
+\begin{table}[htb]
+	\centering
+	\caption{caption}
+	\label{tab:nu-detection_oscparams}
+	\begin{tabu} to \textwidth {|l|S[separate-uncertainty=false]s|}
+		\hline
+		$\theta_{12}$ &	33.2(12) &		\degree \\
+		\hline
+		$\theta_{13}$ &	8.45(15) &		\degree \\
+		\hline
+		$\theta_{13}$ &	41.6(16) &		\degree \\
+		\hline
+		\dcp &			-100(50) &		\degree \\
+		\hline
+		$\dms_{21}$ &	7.45(25)e-5 &	\electronvolt\squared \\
+		\hline
+		$\dms_{31}$ &	2.55(5)e-3 &	\electronvolt\squared \\
+		\hline	
+	\end{tabu}
+\end{table}
+
+The three-neutrino paradigm described above is well-established and has withstood tests by many experiments in the last few decades.
+So far, all three mixing angles and mass splittings could be measured.
+What remains unmeasured, as of today, are the CP-violating phases and the sign of
+
+Despite predicting neutrino mixing and oscillation, the theory does not predict the values of the oscillation parameters. They need to be measured by experiment. There are three groups of parameters that comprise the mixing angles determining the amplitude of the oscillation, the mass splitting influencing the oscillation frequency and the CP-violating phase $\delta_{\m{CP}}$. Even if the mass splitting can be determined, the order of the neutrino mass eigenstates needs to be determined as well. There are two possible such orders or \emph{mass hierarchies}. Usually they are referred to as normal (NH) and inverted (IH) hierarchy.
 
 
 \section{Neutrino Interaction with Matter}
@@ -252,7 +415,7 @@ Furthermore, they can be subdivided according to the type of interaction into qu
 
 QE is characterised by the reactions
 \begin{IEEEeqnarray}{rCl}
-	\nu_l + n & \qraq & l^- + p \\
+	\nu_l + n & \qraq & l^- + p \qand \\
 	\nub_l + p & \qraq & l^+ + n
 \end{IEEEeqnarray}
 and the kinematics are similar to that of an elastic collision, hence called quasi-elastic.
@@ -260,7 +423,7 @@ Apparent from the equation above, this can only happen as a CC interaction.
 
 The NC equivalent is an actual elastic interaction of a neutrino with a target nucleon according to
 \begin{IEEEeqnarray}{rCl}
-	\nu_l + N & \qraq & \nu_l + N \m{.}
+	\nu_l + N & \qraq & \nu_l + N \qq*{.}
 \end{IEEEeqnarray}
 
 RES involves the excitation of the involved nucleon to a resonant state, e.g.\
@@ -274,7 +437,7 @@ For DIS, the momentum transfer is high enough to destroy nucleon.
 The neutrino rips a quark out which, in turn, starts to hadronise and form jets.
 The reactions are
 \begin{IEEEeqnarray}{rCl}
-	\nu_l + N & \qraq & l + X \quad \m{or} \\
+	\nu_l + N & \qraq & l + X \qor \\
 	\nu_l + N & \qraq & \nu_l + X
 \end{IEEEeqnarray}
 where $N$ is the target nucleon and $X$ a group of hadrons.
@@ -290,22 +453,22 @@ where a pion is produced from a muon neutrino interacting with a target nucleus.
 
 The inverse muon decay,
 \begin{IEEEeqnarray}{rCl}
-	\numu + e^- & \qraq & \mu^- + \nue \m{,}
+	\numu + e^- & \qraq & \mu^- + \nue \qc
 \end{IEEEeqnarray}
 requires neutrino energies above \SI{11}{\giga\electronvolt}~\cite{dune2}.
 
 Of particular importance is elastic scattering off shell electrons,
 \begin{IEEEeqnarray}{rCl}
-	\nu_l + e^- & \qraq & \nu_l + e^- \quad \m{or} \\
-	\nub_l + e^- & \qraq & \nub_l + e^- \m{,}
+	\nu_l + e^- & \qraq & \nu_l + e^- \qor \\
+	\nub_l + e^- & \qraq & \nub_l + e^- \qc
 \end{IEEEeqnarray}
 which is possible for all (anti)neutrino flavours.
-For \nue, the interaction is also possible in the CC channel via the exchange of a $W^{\pm}$ boson as depicted in Figure~\ref{fig:nu-detection_nuescat}.
+For \nue{}/\nueb, the interaction is also possible in the CC channel via the exchange of a $W^{\pm}$ boson as depicted in Figures~\ref{fig:nu-detection_nue-scat} and~\ref{fig:nu-detection_nueb-scat}.
 This gives rise to a flavour-dependent term in the oscillation probability in matter, the MSW effect (see Section~\ref{sec:nu-detection_future-exp}).
 
 \begin{figure}[htb]
 	\centering
-	\begin{fmffile}{fmf_NCscat}
+	\begin{fmffile}{graphics/fmf/NC-nue-scat}
 		\unitlength=.4\textwidth
 		\begin{fmfgraph*}(1,.5)
 			\fmfpen{thin}
@@ -320,7 +483,7 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 			\fmfdot{v1,v2}
 		\end{fmfgraph*}
 	\end{fmffile}
-	\begin{fmffile}{fmf_CCscat}
+	\begin{fmffile}{graphics/fmf/CC-nue-scat}
 		\unitlength=.4\textwidth
 		\begin{fmfgraph*}(1,.5)
 			\fmfpen{thin}
@@ -335,12 +498,78 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 			\fmfdot{v1,v2}
 		\end{fmfgraph*}
 	\end{fmffile}
-	\caption{Neutral (left) and charged current (right) neutrino electron scattering.
-	While the NC interaction is possible for both neutrinos and antineutrinos, the CC interaction is only possible for neutrinos.}
-	\label{fig:nu-detection_nuescat}
+	\caption{Neutral (left) and charged current (right) neutrino electron scattering.}
+	\label{fig:nu-detection_nue-scat}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\begin{fmffile}{graphics/fmf/NC-nueb-scat}
+		\unitlength=.4\textwidth
+		\begin{fmfgraph*}(1,.5)
+			\fmfpen{thin}
+			\fmfstraight
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{2}
+			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
+			\fmf{fermion,label=$e^-$,label.side=left}{v1,o1}
+			\fmf{fermion,label=$\nub_l$,label.side=right}{i2,v2}
+			\fmf{fermion,label=$\nub_l$,label.side=right}{v2,o2}
+			\fmf{boson,label=$Z^0$,label.side=left}{v1,v2}
+			\fmfdot{v1,v2}
+		\end{fmfgraph*}
+	\end{fmffile}
+	\begin{fmffile}{graphics/fmf/CC-nueb-scat}
+		\unitlength=.4\textwidth
+		\begin{fmfgraph*}(1,.5)
+			\fmfpen{thin}
+			\fmfstraight
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{2}
+			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
+			\fmf{fermion,label=$e^-$,label.side=left}{v2,o1}
+			\fmf{fermion,label=$\nueb$,label.side=right}{i2,v1}
+			\fmf{fermion,label=$\nueb$,label.side=right}{v2,o2}
+			\fmf{boson,label=$W^-$,label.side=left}{v1,v2}
+			\fmfdot{v1,v2}
+		\end{fmfgraph*}
+	\end{fmffile}
+	\caption{Neutral (left) and charged current (right) antineutrino electron scattering.}
+	\label{fig:nu-detection_nueb-scat}
 \end{figure}
 
 A summary of the expected rates of the different interactions in the \dune{} near detector is given in Table~\ref{tab:nu-detection_nd-rates}.
+Figure~\ref{fig:nu-detection_xsec} depicts the cross-section (see next paragraph) of neutrino interactions as a function of neutrino energy.
+For comparison, the flux shapes of several experiments are shown (in arbitraty units).
+The cross-section is split into contributions from CC and NC interactions.
+For CC, the individual contributions from RES and 1p1h+2p2h are shown.
+$x$p$y$h refers to $x$ particles and $y$ holes, i.e.\ the target nucleus is missing $y$ nucleons after the interactions.
+1p1h corresponds to a CCQE interaction whereas in 2p2h interactions, a virtual meson is exchanged inside the target nucleus, also called Meson Exchange Current (MEC).
+Interactions involving MEC are important because they can mimic the detector response of CCQE events.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}
+	\caption{Neutrino interaction cross-section per nucleon as a function of neutrino energy in \si{\giga\electronvolt}.
+	Overlaid are the flux shapes of various beam experiments in arbitrary units.
+	The cross-section is split into contributions from charged (CC) and neutral current (NC) interactions.
+	For CC, the individual contribution from resonant interactions (RES) is shown, as well as from the sum of 1p1h and 2p2h. The latter two correspond to the quasi-elastic channel and interactions involving meson exchange currents, respectively.}
+	\todo[inline]{sauce}
+	\label{fig:nu-detection_xsec}
+\end{figure}
+
+To better understand the meaning of Figure~\ref{fig:nu-detection_xsec}, a brief explanation of the cross-section concept is given here.
+For a beam consisting of particles $A$, incident on a target made of particles $B$, the rate of the interaction $AB \rightarrow X$ is given by
+\begin{IEEEeqnarray}{rCl}
+	R_X & = & \phi_A N_B \sigma_{ABX} \qc
+\end{IEEEeqnarray}
+where $\phi_A$ is the flux of beam particles, $N_B$ is the number of target particles, and $\sigma_{ABX}$ is the cross-section.
+Therefore, the cross-section
+\begin{IEEEeqnarray}{rCl}
+	\sigma_{ABX} & = & \frac{R_X}{\phi_A N_B}
+\end{IEEEeqnarray}
+is a measure for the interaction rate $R_X$ normalised by the number of both, beam and target, particles.
+As flux is given in units of inverse time and area, and interaction rate in inverse time, the cross-section needs to have the dimension of an area.
 
 
 \section{Final State Detection}
@@ -358,26 +587,26 @@ For all other charged particles, the stopping power is described by the Bethe-Bl
 \begin{IEEEeqnarray}{rCl}
 	- \frac{1}{\rho} \dv{E}{x} & = &
 	4 \pi N_{\m{A}} r_{\m{e}} ^ 2 m_{\m{e}} c ^ 2 z ^ 2 \frac{Z}{A} \frac{1}{\beta ^ 2}
-	\qty[\ln(\frac{2 m_{\m{e}} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{\delta}{2}] \m{,}
+	\qty[\ln(\frac{2 m_{\m{e}} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{\delta}{2}] \qc
 	\label{eq:nu-detection_bethe-bloch}
 \end{IEEEeqnarray}
 where
-\begin{itemize}
+\begin{description}
 	\item[$\rho$] is the density of the absorber material,
 	\item[$N_{\m{A}}$] is Avogadro's number,
-	\item[$r_{\m{e}}$] $= \frac{1}{4 \pi \varepsilon_{\m{0}}} \frac{\si{\elementarycharge} ^ 2}{m_{\m{e}} c ^ 2}$ is the classical electron radius using the permittivity of free space $\varepsilon_{\m{0}}$,
+	\item[$r_{\m{e}} = \frac{1}{4 \pi \varepsilon_{\m{0}}} \frac{\si{\elementarycharge} ^ 2}{m_{\m{e}} c ^ 2}$] is the classical electron radius using the permittivity of free space $\varepsilon_{\m{0}}$,
 	\item[$m_{\m{e}}$] is the electron mass,
 	\item[$z$] is the charge of the incident particle,
 	\item[$Z$] is the atomic number of the absorber,
 	\item[$A$] is the atomic weight of the absorber,
-	\item[$\beta$] $= \frac{v}{c}$ with $v$ the velocity of the incident particle,
-	\item[$\gamma$] $= \frac{E}{m_0 c ^ 2}$ with $E$ the energy and $m_0$ the rest mass of the incident particle,
+	\item[$\beta = \frac{v}{c}$] with $v$ the velocity of the incident particle,
+	\item[$\gamma = \frac{E}{m_0 c ^ 2}$] with $E$ the energy and $m_0$ the rest mass of the incident particle,
 	\item[$I$] is the mean excitation energy of the absorber material which can be approximated by
 		\begin{IEEEeqnarray}{rCl}
-			I = 16 Z ^ {0.9} \si{\electronvolt} \quad \m{for} \quad Z > 1 \m{,}
+			I & = & 16 Z ^ {0.9} \si{\electronvolt} \quad \m{for} \quad Z > 1 \qc
 		\end{IEEEeqnarray}
 	\item[$\delta$] is a parameter describing the screening of the extended transverse electric field of relativistic incident particles by the charge density of the atomic electrons of the absorber.
-\end{itemize}
+\end{description}
 Equation~\eqref{eq:nu-detection_bethe-bloch} describes the stopping power of particles with $m_0 \gg m_{\m{e}}$ by ionisation and excitation of the atoms in the absorber material.
 As the stopping power is proportional to the electron density and thus to the mass density of the absorber material, it is often divided by the latter.
 Thus, Equation~\eqref{eq:nu-detection_bethe-bloch} actually gives the so called mass stopping power.
@@ -494,7 +723,7 @@ At low energies (ionisation energy $\le E_{\gamma} \le \SI{100}{\kilo\electronvo
 The photon is absorbed by an atom of the absorber which in turn is ionised and thus ejects one of its shell electrons.
 The cross section is given by
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{photo}} = \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\m{e}}
+	\sigma_{\m{photo}} & = & \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\m{e}}
 \end{IEEEeqnarray}
 where
 \begin{itemize}
@@ -531,7 +760,7 @@ For $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is 
 \end{IEEEeqnarray}
 and for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \m{.}
+	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \qq*{.}
 \end{IEEEeqnarray}
 
 As mentioned above, for Compton scattering, two different cross sections are defined, $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.

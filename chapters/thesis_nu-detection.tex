@@ -246,6 +246,7 @@ In addition to the mixing angles, there is a Dirac, \dcp, and two Majorana CP-vi
 The Majorana phases can only be measured by experiments sensitive to a Majorana nature of the neutrinos, such as neutrinoless double beta decay experiments.
 In neutrino oscillation experiments, they cancel out.
 Therefore, they are ignored for the rest of this work.
+An illustration of the relation between the mass and flavour neutrino eigenstates is shown in Figure~\ref{fig:nu-detection_mass}.
 
 The mass eigenstates $\nu_i$ from Eq.~\eqref{eq:nu-detection_mixing} evolve in time as
 \begin{IEEEeqnarray}{rCl}
@@ -320,34 +321,87 @@ The second term of Eq.~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
 This implies that the frequency of the oscillation is determined by the mass splitting and the amplitude by the matrix elements of $U_{\m{PMNS}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
 In particular, the consequence of this is that the observation of neutrino oscillation between all three flavours proves a finite mass of at least two of the three neutrinos.
 It is worth noting that this derivation is based on a plain wave approximation which turns out to be wrong in a real localised experiment. A wave packet approach would be needed to address the resulting deficiencies.
-However, it can be shown that the plain wave approximation holds for most real experiments anyway as wave packet effects cancel on average.~\cite{giunti}
+However, it can be shown that the plain wave approximation holds for most real experiments anyway as wave packet effects cancel on average.
+
+Despite predicting neutrino mixing and oscillation, the theory does not predict the values of the oscillation parameters.
+They need to be measured by experiment.
+The three-neutrino paradigm described above is well-established and has withstood tests by many experiments in the last few decades.
+Table~\ref{tab:nu-detection_oscparams} shows the results of a recent global fit.~\cite{king}
+In particular, it can be seen, that the uncertainties on \dcp{} are huge and the sign of $\dms_{31}$ is not yet known.
+The latter gives rise to two different orderings of the neutrino masses as depicted in Figure~\ref{fig:nu-detection_mass}.
+What is needed to determine these parameters, is essentially much higher statistics than were achieved in neutrino experiments so far.
 
 \begin{table}[htb]
 	\centering
-	\caption{caption}
+	\caption{Oscillation parameters obtained from a recent global fit for the normal mass ordering case.
+	The uncertainties are given for $1 \sigma$.~\cite{king}}
 	\label{tab:nu-detection_oscparams}
-	\begin{tabu} to \textwidth {|l|S[separate-uncertainty=false]s|}
+	\begin{tabu} to \textwidth {|c|S[separate-uncertainty=false]s|}
 		\hline
-		$\theta_{12}$ &	33.2(12) &		\degree \\
+		$\theta_{12}$ &		33.2(12) &		\degree \\
 		\hline
-		$\theta_{13}$ &	8.45(15) &		\degree \\
+		$\theta_{13}$ &		8.45(15) &		\degree \\
 		\hline
-		$\theta_{13}$ &	41.6(16) &		\degree \\
+		$\theta_{23}$ &		41.4(16) &		\degree \\
 		\hline
-		\dcp &			-100(50) &		\degree \\
+		\dcp &				-100(50) &		\degree \\
 		\hline
-		$\dms_{21}$ &	7.45(25)e-5 &	\electronvolt\squared \\
+		$\dms_{21}$ &		7.45(25)e-5 &	\electronvolt\squared \\
 		\hline
-		$\dms_{31}$ &	2.55(5)e-3 &	\electronvolt\squared \\
+		$\abs{\dms_{31}}$ &	2.55(5)e-3 &	\electronvolt\squared \\
 		\hline	
 	\end{tabu}
 \end{table}
 
-The three-neutrino paradigm described above is well-established and has withstood tests by many experiments in the last few decades.
-So far, all three mixing angles and mass splittings could be measured.
-What remains unmeasured, as of today, are the CP-violating phases and the sign of
+However, various effects can be exploited to enhance the oscillation proability from Equation~\eqref{eq:nu-detection_oscprob}, such as $\frac{L}{E}$ tuning, and matter effects.
+Tuning of $\frac{L}{E}$ is trivial to understand from theory but not so easy to achieve in practice.
+Originally, neutrino oscillations were discovered and characterised using solar and atmospheric neutrinos.
+While neutrinos produced in the Earth atmosphere allow for some $\frac{L}{E}$ tuning by means of a zenith angle selection, and similarly via time of year for solar neutrinos, the gain is limited.
+Much more fine-grained control is possible by directing an artificially produced neutrino beam with a well-defined energy spectrum at an underground detector at a optimised distance $L$.
 
-Despite predicting neutrino mixing and oscillation, the theory does not predict the values of the oscillation parameters. They need to be measured by experiment. There are three groups of parameters that comprise the mixing angles determining the amplitude of the oscillation, the mass splitting influencing the oscillation frequency and the CP-violating phase \dcp. Even if the mass splitting can be determined, the order of the neutrino mass eigenstates needs to be determined as well. There are two possible such orders or \emph{mass hierarchies}. Usually they are referred to as normal (NH) and inverted (IH) hierarchy.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{nu-detection/mass}
+	\caption{Mass ordering.~\cite{king}}
+	\label{fig:nu-detection_mass}
+\end{figure}
+
+In matter, neutrino oscillation is different than in vacuum.
+The neutrinos are coherently scattered off the shell electrons, similar to the propagation of light through matter.
+As will be shown in Section~\ref{sec:nu-detection_interactions}, the interactions of \Pgne and \Pagne differ from the other flavours, they are possible through an additional channel.
+Thus, the interaction probability of electron neutrinos is higher.
+From Figure~\ref{fig:nu-detection_mass}, it can be seen, that \Pgne are primarily present in \HepParticle{\nu}{1}{} and \HepParticle{\nu}{2}{}.
+Therefore, the propagation of these two is altered while \HepParticle{\nu}{3}{} is almost unaffected.
+With a proper tuning of $\frac{L}{E}$, this \emph{Mikheyev–Smirnov–Wolfenstein (MSW) effect}~\cite{mikheyevSmirnov, wolfenstein} can be exploited to determine the mass ordering.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{nu-detection/dune}
+	\caption{DUNE~\cite{dune1}}
+	\label{fig:nu-detection_dune}
+\end{figure}
+
+The Deep Underground Neutrino Experiment (\dune{})~\cite{dune1, dune2, dune3, dune4} is a long-baseline neutrino oscillation experiment planned to start data taking around 2025.
+It consist of a neutrino beamline at Fermi National Accelerator Lab (FNAL) in Illinois, USA and a \lartpc{} far detector at a baseline of \SI{1300}{\kilo\metre} in the Sanford Underground Research Facility (SURF) in South Dakota, USA.
+An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
+
+The beamline at FNAL produces pions by shooting a \SIrange{60}{120}{\giga\electronvolt} proton beam of \SIrange{1}{2}{\mega\watt} intensity onto a target (the exact values are still subject to change).
+The pions pass through several focusing horns to enter a decay pipe where they decay to \Pgm and \Pgngm accoring to Equation~\eqref{eq:nu-detection_pion-decay}.
+By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primlarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
+Alongside the pions, a small amount of kaons is produced as well.
+These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\SI{5}{\percent}$~\cite{pdg} producing a significant \Pgne (\Pagne) beam contamination.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{nu-detection/LBNE_osc}
+	\caption{caption.~\cite{qianVogel}}
+	\label{fig:nu-detection_dune-osc}
+\end{figure}
+
+The baseline and energy spectrum of \dune{} are optimised to measure \dcp{} and determine the mass ordering.
+Figure~\ref{fig:nu-detection_dune-osc} shows the (anti)neutrino oscillation probability as a function of neutrino energy at the \dune{} baseline for the normal and inverted mass ordering.
+Put into very simple terms, \dcp{} can be derived from the amplitude difference between neutrino and antineutrino oscillation.
+The MSW effect enhances either neutrino or antineutrino oscillation depending on the mass ordering, allowing for a determination of the latter.
 
 
 \section{Neutrino Interaction with Matter}

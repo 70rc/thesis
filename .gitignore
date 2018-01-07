@@ -3,5 +3,4 @@ thesis.*
 !thesis.bib
 chapters/*.aux
 chapters/*.log
-graphics/fmf
 .DS_Store

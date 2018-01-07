@@ -1,4 +1,4 @@
-\chapter{Feasibility Study of a Pixelated LArTPC for the \dune{} Near Detector}
+\chapter{Feasibility Study of a Pixelated \lartpc{} for the \dune{} Near Detector}
 \label{chap:dune-nd}
 
 \todo[inline]{More details on statistics?}
@@ -44,7 +44,7 @@ The neutrino beam flux is depicted in Figure~\ref{fig:dune-nd_flux}.
 
 Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} was developed with the goal of providing an easy-to-use simulation of particle interactions in \lar{} component of the ND.
 At the time of this writing its feature set is quite limited, in particular it does not incorporate any other detector materials except for the box of argon.
-Primary particles can either be provided by a particle gun (e.g.\ $e^-$, $n$, $p$, $\mu^+$) or in form of a \emph{HEPEVT} file---a file format standard for passage of particle events between different simulation tools.
+Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file---a file format standard for passage of particle events between different simulation tools.
 For this study, several million neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 Secondary particle transport and interaction in Argon Box is performed by Geant4.\footnote{\url{http://geant4.cern.ch}}
 Finally, the energy deposition in \lar{} is voxelised and stored together with all the necessary ancillary information about the depositing particle.
@@ -52,26 +52,26 @@ The data is stored in the tree format of the ROOT data analysis framework.\footn
 This allows for convenient further processing using ROOT.
 
 
-\section{$\pi^0$ pile-up study}
+\section{\Pgpz pile-up study}
 \label{sec:dune-nd_pile-up}
 
-A significant amount of $\pi^0$ are produced in several resonant and coherent neutrino interactions (see Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
+A significant amount of \Pgpz are produced in several resonant and coherent neutrino interactions (see Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
 They decay according to
-\begin{IEEEeqnarray}{rCl}
-	\pi^0 & \qraq & \gamma + \gamma
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgpz \to \Pgg\Pgg}
 \end{IEEEeqnarray}
 with a branching ratio of \SI{98.8}{\percent}\cite{pdg}.
 The photons subsequently produce electromagnetic showers in \lar{} (see Section~\ref{sec:nu-detection_fs}).
-At the energies of the \dune{} beam (see Figure~\ref{fig:dune-nd_flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable $e^{\pm}$ tracks.
+At the energies of the \dune{} beam (see Figure~\ref{fig:dune-nd_flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable \Pepm tracks.
 More importantly, there often are significatn gaps in betweend these charge clusters.
 A main challenge of shower reconstruction is to associate these well separated charge blobs to the correct event.
 Misidentiions lead to a misreconstruction of the neutrino energy.
 The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
-The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by $\pi^0$ decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} ND environment.
+The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} ND environment.
 
 \begin{table}[htb]
 	\centering
-	\caption{Parameters of the $\pi^0$ pile-up simulation.}
+	\caption{Parameters of the \Pgpz pile-up simulation.}
 	\label{tab:dune-nd_pile-up-params}
 	\begin{tabu} to \textwidth {|l|S|}
 		\hline
@@ -145,7 +145,7 @@ Therefore, the acceptance volume for the reconstruction is taken as the union of
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/eff_pur}
 	\caption{Efficiency (accepted true over total true energy deposition) and purity (accepted true over total accepted energy deposition) distributions of a simple cone-cylinder union EM shower reconstruction algorithm.
-	The distribution represents the fraction of photons produced by $\pi^0$ whose energy was reconstructed with the corresponding efficiency/purity.
+	The distribution represents the fraction of photons produced by \Pgpz whose energy was reconstructed with the corresponding efficiency/purity.
 	Purity is shown for four different selections of misidentified energy: total (magenta); deposited by other events only (cyan); deposited by other events only, excluding muons (red), deposited by photons and neutrons from other events only (blue).
 	The simulated beam intensity is \SI{2}{\mega\watt}.}
 	\label{fig:dune-nd_2MW-eff-pur}
@@ -171,14 +171,14 @@ It is inside the target volume which is the volume within which the neutrino ver
 This is done as a crude emulation of rock events, secondary particles from beam neutrino interactions outside the detector volume.
 The additional target mass is \SI{1}{\metre} in all four directions transverse to the beam, and \SI{4}{\metre} in upstream beam direction.
 Finally, a fiducial volume \SI{0.3}{\metre} ($\approx 2 X_{\m{0}}$) smaller than the active volume on all six faces is defined.
-Without the latter, there is a significant number of photons produced by $\pi^0$ decays inside the detector but only showering outside the detector.
+Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/eff_pur}
 	\caption{Efficiency (accepted true over total true energy deposition) and purity (accepted true over total accepted energy deposition) distributions of a simple cone-cylinder union EM shower reconstruction algorithm.
-	The distribution represents the fraction of photons produced by $\pi^0$ whose energy was reconstructed with the corresponding efficiency/purity.
+	The distribution represents the fraction of photons produced by \Pgpz whose energy was reconstructed with the corresponding efficiency/purity.
 	Purity is shown for four different selections of misidentified energy: total (magenta); deposited by other events only (cyan); deposited by other events only, excluding muons (red), deposited by photons and neutrons from other events only (blue).
 	The simulated beam intensity is \SI{2}{\mega\watt}.
 	As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
@@ -216,7 +216,7 @@ However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the sa
 	\label{fig:dune-nd_2MW-XZ-energy-error}
 \end{figure}
 
-After all events of one spill are placed inside the target volume, all $pi^0$ photons produced inside the fiducial volume are reconstructed using the cone algorithm.
+After all events of one spill are placed inside the target volume, all \Pgpz photons produced inside the fiducial volume are reconstructed using the cone algorithm.
 All energy depositions inside the active volume are considered.
 To assess the performance of the performance of the algorithm, the following quantities are computed for each photon:
 \begin{description}
@@ -232,7 +232,7 @@ The incorrectly accepted energy deposition inside the cone-cylinder union can be
 From results of earlier experiments\todo{sauce}, the muon reconstruction can be assumed to be very efficient.
 Assuming \SI{100}{\percent} reconstruction efficiency for muons and \SI{0}{\percent} for all other particles can therefore serve as a lower limit for the purity.
 It can be calculated by ignoring misidentified muon energy depositions.
-On the other hand, an upper limit for the purity can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles ($\pi^0$ and $\gamma$).
+On the other hand, an upper limit for the purity can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles (\Pgpz and \Pgg).
 This is calculated by only taking into account misidentified energy deposited by neutral particles.
 Assuming \SI{0}{\percent} reconstruction efficieny for neutral particles might lead to a slight underestimation of purity.
 However, this effect should be more than compensated by the overestimation of the charged particle reconstruction efficiency, given the highly complex nature of reconstructing unconnected clusters from neutral particles.
@@ -242,7 +242,7 @@ Therefore, this upper purity limit should hold at least in the near future.
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/10MW/eff_pur}
 	\caption{Efficiency (accepted true over total true energy deposition) and purity (accepted true over total accepted energy deposition) distributions of a simple cone-cylinder union EM shower reconstruction algorithm.
-	The distribution represents the fraction of photons produced by $\pi^0$ whose energy was reconstructed with the corresponding efficiency/purity.
+	The distribution represents the fraction of photons produced by \Pgpz whose energy was reconstructed with the corresponding efficiency/purity.
 	Purity is shown for four different selections of misidentified energy: total (magenta); deposited by other events only (cyan); deposited by other events only, excluding muons (red), deposited by photons and neutrons from other events only (blue).
 	The simulated beam intensity is \SI{10}{\mega\watt}.}
 	\label{fig:dune-nd_10MW-eff-pur}
@@ -250,7 +250,7 @@ Therefore, this upper purity limit should hold at least in the near future.
 
 The results of the pile-up study are shown in Figures~\ref{fig:dune-nd_2MW-eff-pur} through~\ref{fig:dune-nd_10MW-energy-error}.
 Figures~\ref{fig:dune-nd_2MW-eff-pur} and~\ref{fig:dune-nd_2MW-energy-error} assume optimised beam intensity of \SI{2}{\mega\watt}.
-Efficiency and purity distributions are plotted in Figure~\ref{fig:dune-nd_2MW-eff-pur} as the fraction of $\pi^0$ photons reconstructed with the respective efficiency/purity.
+Efficiency and purity distributions are plotted in Figure~\ref{fig:dune-nd_2MW-eff-pur} as the fraction of \Pgpz photons reconstructed with the respective efficiency/purity.
 It can be seen, that purity significantly improves under the assumptions described above.
 In particular, taking the mentioned lower and upper limits for pile-up, \SIrange{50}{60}{\percent} of the photons experience no pile-up at all.
 While these distributions give a general idea of pile-up, there usefulness for an assessment from a physics point of view is limited.

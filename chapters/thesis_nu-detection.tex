@@ -12,28 +12,27 @@ Upon this, Fermi proposed the name \emph{neutrino} and a little later came up wi
 
 It took almost another quarter of a century until the neutrino was experimentally detected for the first time by Reines and Cowan in 1956.~\cite{reinesCowan}
 They built a detector for the reaction
-\begin{IEEEeqnarray}{rCl}
+\begin{IEEEeqnarray}{C}
 	\label{eq:nu-detection_reinesCowan}
-	\nueb + p & \rightarrow & e^+ + n
+	\HepProcess{\Pagne\Pp \to \Pep\Pn}
 \end{IEEEeqnarray}
 and put it next to the nuclear reactor of the Savannah River Plant in South Carolina, US.
 It consisted of two water tanks sandwiched in between three liquid scintillator tanks with photomultiplier tubes (PMTs) on the sidewalls.
 The water was the target to induce the above reaction while the scintillator tanks had the task of detecting the resulting positron and neutron.
-A free positron slows down in matter and eventually gets captured by a shell electron which produces two back-to-back $\gamma$s with an energy of \SI{511}{\kilo\electronvolt} each.
+A free positron slows down in matter and eventually gets captured by a shell electron which produces two back-to-back photons with an energy of \SI{511}{\kilo\electronvolt} each.
 These produce scintillation light in the two adjacent tanks and thus can be detected by forming a coincidence of the PMTs of the two tanks.
-Neutron detection is achieved by doping the water target with cadmium which captures the free neutrons producing multiple $\gamma$s that can again be detected using the coincidence of the two adjacent scintillator tanks.
+Neutron detection is achieved by doping the water target with cadmium which captures the free neutrons producing multiple photons that can again be detected using the coincidence of the two adjacent scintillator tanks.
 The neutron capture is much slower than the positron one.
 Therefore, the process from Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector consisting of a pulse with a lower amplitude from the positron capture and another one with a higher amplitude from the neutron capture a few \si{\micro\second} later.
 Backgrounds can be efficiently rejected employing this technique.
-That drawback is that detection is limited to the \nueb{} interaction in Equation~\eqref{eq:nu-detection_reinesCowan}.
+That drawback is that detection is limited to the \Pagne interaction in Equation~\eqref{eq:nu-detection_reinesCowan}.
 
-In 1962, Lederman et al.\ proved the existence of the \numu{} at the Alternating Gradient Synchrotron (AGS) at Brookhaven National Laboratory (BNL) in New York, US.~\cite{numu}
-For the first time, they produced \numu{}s using an accelerator.
+In 1962, Lederman et al.\ proved the existence of the \Pgngm at the Alternating Gradient Synchrotron (AGS) at Brookhaven National Laboratory (BNL) in New York, US.~\cite{numu}
+For the first time, they produced \Pgngm using an accelerator.
 The protons from the AGS were guided onto a beryllium target producing pions which in turn decay according to
-\begin{IEEEeqnarray}{rCl}
+\begin{IEEEeqnarray}{C}
 	\label{eq:nu-detection_pion-decay}
-	\pi^+ & \rightarrow & \mu^+ + \numub \qand \\
-	\pi^- & \rightarrow & \mu^- + \numu
+	\HepProcess{\Pgpp \to \Pgmp\Pgngm} \qand \HepProcess{\Pgpm \to \Pgmm\Pagngm}
 \end{IEEEeqnarray}
 producing a beam of muon (anti)neutrinos.
 \emph{Spark chambers} were used to detect the neutrinos.
@@ -53,11 +52,11 @@ Additionally, spark chambers have quite high dead times of $\order{\SI{100}{\mil
 A \emph{clearing field} or an electronegative quenching gas additive can be used to speed up this process.~\cite{grupen}
 
 In the 1960's, after Davis failed to measure the lepton-number-violating reaction
-\begin{IEEEeqnarray}{rCl}
+\begin{IEEEeqnarray}{C}
 	\label{eq:nu-detection_homestake}
-	\nueb + \ce{^{37}Cl} & \rightarrow & \ce{^{37}Ar} + e^- \qc
+	\HepProcess{\Pagne\ce{^{37}Cl} \to \Pem\ce{^{37}Ar}} \qc
 \end{IEEEeqnarray}
-he decided to replace the \nueb{} by solar \nue{}.~\cite{homestake68, homestake98}
+he decided to replace the \Pagne by solar \Pgne.~\cite{homestake68, homestake98}
 Surprisingly, they measured a flux approximately on third lower than predicted by the standard solar model (SSM).
 This result became famous as the solar neutrino problem only to be resolved more than \num{30} years later by the SNO experiment.
 Davis' experiment was located \SI{1478}{\metre} (\SI{4200}{\metre} water equivalent) underground in the Homestake gold mine at Lead, South Dakota, US.
@@ -83,16 +82,16 @@ The voltage can be raised further to enter the Geiger regime where the avalanche
 These UV photons travel independently of the electric field and can start new avalanches via the photoelectric effect.
 The process can only be stopped by quenching the discharge either electrically (temporary voltage reduction) or chemically (quenching additive).
 
-While the Homestake experiment provided a clean way of counting \nue{} interactions, it provided no information on the timing, direction and kinematics of the interaction.
+While the Homestake experiment provided a clean way of counting \Pgne interactions, it provided no information on the timing, direction and kinematics of the interaction.
 Only a lower energy threshold is given by the fact, that the neutrino needs to have enough energy to dissociate the chlorine atom from the tetrachloroethylene molecule.
 Due to this, it was not possible to tell which reaction chain in the sun, the detected neutrinos originated from.
 Furthermore, care needs to be taken for a very good understanding of all background processes that can produce \ce{^{37}Ar} or its signature in the counting tube.
-Finally, this experiment was only capable of detecting \nue{} which proved to be crucial in the solution to the solar neutrino problem; oscillation.
+Finally, this experiment was only capable of detecting \Pgne which proved to be crucial in the solution to the solar neutrino problem; oscillation.
 
 In 1988, the Kamioka Nucleon Decay Experiment (KamiokaNDE), in the Kamkioka mine in Japan, and the Irvine-Michigan-Brookhaven (IMB) detector found a similar deficiency in atmospheric neutrinos which actually were a background for the original experiments looking for proton decays.\todo{find source for IMB or remove}
 Atmospheric neutrinos are produced in a similar fashion than Lederman et al.\ did in their muon neutrino beam experiment.
 Cosmic rays strike the Earth atmosphere and produce secondary particles many of which are pions, in turn, decaying according to Equation~\eqref{eq:nu-detection_pion-decay}.
-Thus, atmospheric neutrinos are mainly \numu{}/\numub{}.
+Thus, atmospheric neutrinos are mainly \Pgngm/\Pagngm.
 However, the muon neutrino flux measured by KamiokaNDE was only \SI{59+-7}{\percent} of the one predicted by Monte Carlo simulations.~\cite{kamiokandeAtmos}
 After an upgrade (Kamiokande II), the collaboration furthermore confirmed the solar neutrino problem discovered by the Homestake experiment.~\cite{kamiokandeSolar}
 The detector was a \SI{3000}{\tonne} water tank equipped with \num{1000} PMTs to detect \emph{Cherenkov} radiation produced by incoming charged particles.
@@ -115,51 +114,51 @@ Often employed detection media include water and oil while the photodetectors ar
 The charged particles detectable by a Cherenkov detector can be produced by neutrinos in multiple ways.
 Here, only the two most important processes shall be introduced, a more detailed description will be given in Section~\ref{sec:nu-detection_interactions}.
 Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all three flavours can interact with nucleons according to
-\begin{IEEEeqnarray}{rCl}
+\begin{IEEEeqnarray}{Cl}
 	\label{eq:nu-detection_CC-nu}
-	\nu_l + n &				\rightarrow &	l^- + p \qand \\
+	\HepProcess{\Pgnl\Pn \to \Plm\Pp} & \qand \\
 	\label{eq:nu-detection_CC-antinu}
-	\nub_l + p &	\rightarrow &	l^+ + n
+	\HepProcess{\Pagnl\Pp \to \Plp\Pn} &
 \end{IEEEeqnarray}
-with $l = e,\mu,\tau$.
-It should be noted however, that usually $\tau$ leptons are too short-lived to produce enough Cherenkov radiation to be detected.
+with $\Pl = \Pe, \Pgm, \Pgt$.
+It should be noted however, that usually $\Pgt$ leptons are too short-lived to produce enough Cherenkov radiation to be detected.
 A second interaction path of neutrinos with matter is the scattering off shell electrons according to
-\begin{IEEEeqnarray}{rCl}
+\begin{IEEEeqnarray}{Cl}
 	\label{eq:nu-detection_NC-nu}
-	\nu_l + e^- & \rightarrow & \nu_l + e^- \qand \\
+	\HepProcess{\Pgnl\Pem \to \Pgnl\Pem} & \qand \\
 	\label{eq:nu-detection_NC-antinu}
-	\nub_l + e^- & \rightarrow & \nub_l + e^- \qq*{.}
+	\HepProcess{\Pagnl\Pem \to \Pagnl\Pem} & \qq*{.}
 \end{IEEEeqnarray}
 If the neutrino momentum is high enough, the electron recoil can be detected by a Cherenkov detector for all three flavours.
 
-While registering timing and directionality in addition to being able to detect and distinguish \nue{} and \numu{} was a huge improvement over the radiochemical Homestake experiment, Cherenkov detectors still suffer from some difficiencies in particle identification.
+While registering timing and directionality in addition to being able to detect and distinguish \Pgne and \Pgngm was a huge improvement over the radiochemical Homestake experiment, Cherenkov detectors still suffer from some difficiencies in particle identification.
 One of them is that they can only detect charged particles with sufficient momentum to produce Cherenkov radiation rather than detecting the whole event topology.
 The detector cannot distinguish between processes producing the same ring signature.
-An important example is a $\pi^{\m{0}}$ produced by a \numu{} which produces a signal in a Cherenkov detector very similar to the one of a \nue{}.
+An important example is a \Pgpz produced by a \Pgngm which produces a signal in a Cherenkov detector very similar to the one of a \Pgne.
 This is a crucial background for neutrino oscillation experiments.
 
 Super-Kamiokande, the \SI{50}{\kilo\tonne} successor of Kamiokande, solved the atmospheric neutrino problem in 1998.~\cite{superKAtmos1, superKAtmos2}
 It measured the flavour ratio of the atmospheric neutrino flux as a function of the zenith angle.
-The ratio of the number of upward to downward $\mu$-like events was found to be $\approx\SI{50}{\percent}$ while from Monte Carlo simulations it was expected to be $\approx\SI{100}{\percent}$.
-This result suggested a dissappearance of \numu{} via neutrino oscillations for atmospheric neutrinos that travelled along the much longer baseline through the Earth.
+The ratio of the number of upward to downward muon-like events was found to be $\approx\SI{50}{\percent}$ while from Monte Carlo simulations it was expected to be $\approx\SI{100}{\percent}$.
+This result suggested a dissappearance of \Pgngm via neutrino oscillations for atmospheric neutrinos that travelled along the much longer baseline through the Earth.
 
 The solar neutrino problem was solved in 2002 by the Sudbury Neutrino Observatory (SNO) in the INCO, Ltd.\ Creighton mine near Sudbury, Ontario, Canada.~\cite{snoSolar}
 SNO is a \SI{1}{\kilo\tonne} heavy water Cherenkov detector located \SI{2039}{\metre} below the Earth surface ($\approx\SI{6000}{\metre}$ water equivalent).
 Its use of heavy water (\ce{D_2O}) allows it to detect neutrinos flavour-independently via
-\begin{IEEEeqnarray}{rCl}
+\begin{IEEEeqnarray}{Cl}
 	\label{eq:nu-detection_NCsno-nu}
-	\nu_l + d & \rightarrow & \nu_l + p + n \qand \\
+	\HepProcess{\Pgnl\HepParticle{d}{}{} \to \Pgnl\Pp\Pn} & \qand \\
 	\label{eq:nu-detection_NCsno-antinu}
-	\nub_l + d & \rightarrow & \nub_l + p + n
+	\HepProcess{\Pagnl\HepParticle{d}{}{} \to \Pagnl\Pp\Pn} &
 \end{IEEEeqnarray}
 in addition to the interaction channels detectable by light water Cherenkov detectors given by Equations \eqref{eq:nu-detection_CC-nu}, \eqref{eq:nu-detection_CC-antinu}, \eqref{eq:nu-detection_NC-nu}, and \eqref{eq:nu-detection_NC-antinu}.
 For this to work, the emerging neutron needs to be detected which was achieved using \ce{^3He}-filled proportional counters inside the heavy water tank.
-The additional neutrino detection channel allowed SNO to prove that only the solar \nue{} flux is below the predictions by the SSM while the combined flux of all three flavours is consistent with the model, providing another strong evidence for neutrino oscillation.
+The additional neutrino detection channel allowed SNO to prove that only the solar \Pgne flux is below the predictions by the SSM while the combined flux of all three flavours is consistent with the model, providing another strong evidence for neutrino oscillation.
 
-The \nut{} was first detected by the DONUT experiment at Fermi National Accelerator Laboratory (FNAL) near Batavia, Illinois, US, in 2001.~\cite{donut}
-Similarly to the \numu{} discovery, a neutrino beam was produced by shooting \SI{800}{\giga\electronvolt} protons from the Tevatron onto a tungsten beam dump.
-The \nut{} were detected via the interactions described by Equations~\eqref{eq:nu-detection_CC-nu} and~\eqref{eq:nu-detection_CC-antinu} for $l = \tau$.
-Therefore, it was required to detect very short-lived $\tau$ requiring a detector with a very good spatial resolution.
+The \Pgngt was first detected by the DONUT experiment at Fermi National Accelerator Laboratory (FNAL) near Batavia, Illinois, US, in 2001.~\cite{donut}
+Similarly to the \Pgngm discovery, a neutrino beam was produced by shooting \SI{800}{\giga\electronvolt} protons from the Tevatron onto a tungsten beam dump.
+The \Pgngt were detected via the interactions described by Equations~\eqref{eq:nu-detection_CC-nu} and~\eqref{eq:nu-detection_CC-antinu} for $\Pl = \Pgt$.
+Therefore, it was required to detect very short-lived \Pgt requiring a detector with a very good spatial resolution.
 
 \emph{Nuclear emulsions} were chosen as the core component of the detector.
 They consist of fine-grained silver-halide crystals (\ce{AgBr} and/or \ce{AgCl}) embedded in a gelatine substrate.
@@ -177,9 +176,9 @@ An external tracking detector (scintillating fibres in the case of DONUT) are re
 Its data needs to be matched to the emulsion data before the actual analysis.
 
 Nowadays, the concept of neutrino oscillation is well established and characterised by Daya~Bay~\cite{dayabayRecent}, T2K~\cite{t2kOsc}, KamLAND~\cite{kamland}, SNO, Super-Kamiokande and many other experiments.
-Daya Bay and KamLAND essentially employ the same technique as Reines and Cowan to look for disappearance of nuclear reactor \nueb{}.
+Daya Bay and KamLAND essentially employ the same technique as Reines and Cowan to look for disappearance of nuclear reactor \Pagne.
 The only difference being that instead of using multiple scintillator tanks in coincidence, they use one big tank shielded and vetoed by water and/or mineral oil Cherenkov detectors.
-Tokai to Kamioka (T2K) directs a \numu{} beam similar to the one of Lederman et al.\ towards Super-Kamiokande to look for \numu{} disappearance and \nue{} appearance over a long baseline.
+Tokai to Kamioka (T2K) directs a \Pgngm beam similar to the one of Lederman et al.\ towards Super-Kamiokande to look for \Pgngm disappearance and \Pgne appearance over a long baseline.
 
 
 \section{Neutrino Oscillation and \dune{}}
@@ -190,21 +189,21 @@ Tokai to Kamioka (T2K) directs a \numu{} beam similar to the one of Lederman et 
 \AC{} was selected as the \lar{} component of the near detector for the \dune{} long-baseline neutrino oscillation experiment.
 Therefore, this section will give a basic introduction to neutrino oscillation and \dune{}.
 
-The root cause of neutrino oscillation is that the flavour eigenstates ($\nu_{\alpha}$, $\alpha = e, \mu, \tau$) of the three neutrinos are not equal to their three mass eigenstates ($\nu_i$, $i = 1,2,3$).
+The root cause of neutrino oscillation is that the flavour eigenstates (\HepParticle{\nu}{\alpha}{} with $\alpha = \Pe, \Pgm, \Pgt$) of the three neutrinos are not equal to their three mass eigenstates (\HepParticle{\nu}{i}{} with $i = 1, 2, 3$).
 The mass composition of the flavour eigenstates can be written as
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_mixing}
 	\begin{pmatrix}
-		\nue \\
-		\numu \\
-		\nut
+		\Pgne \\
+		\Pgngm \\
+		\Pgngt
 	\end{pmatrix}
 	& = &
 	U_{\m{PMNS}}
 	\begin{pmatrix}
-		\nu_1 \\
-		\nu_2 \\
-		\nu_3
+		\HepParticle{\nu}{1}{} \\
+		\HepParticle{\nu}{2}{} \\
+		\HepParticle{\nu}{3}{}
 	\end{pmatrix}
 \end{IEEEeqnarray}
 where
@@ -251,38 +250,38 @@ Therefore, they are ignored for the rest of this work.
 The mass eigenstates $\nu_i$ from Eq.~\eqref{eq:nu-detection_mixing} evolve in time as
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_timeevol}
-	\ket{\nu_i \qty(t)} & = & e ^ {- i E_i t} \ket{\nu_i}
+	\ket{\HepParticle{\nu}{i}{} \qty(t)} & = & e ^ {- i E_i t} \ket{\HepParticle{\nu}{i}{}}
 \end{IEEEeqnarray}
 where $E_i$ is the energy of the mass eigenstate $\nu_i$.
 Furthermore, Eq.~\eqref{eq:nu-detection_mixing} can be solved for $\nu_i$
 \begin{IEEEeqnarray}{rCl}
 	\begin{pmatrix}
-		\nu_1 \\
-		\nu_2 \\
-		\nu_3
+		\HepParticle{\nu}{1}{} \\
+		\HepParticle{\nu}{2}{} \\
+		\HepParticle{\nu}{3}{}
 	\end{pmatrix}
 	& = &
 	U_{\m{PMNS}}^{\dagger}
 	\begin{pmatrix}
-		\nue \\
-		\numu \\
-		\nut
+		\Pgne \\
+		\Pgngm \\
+		\Pgngt
 	\end{pmatrix}
 \end{IEEEeqnarray}
 where $U_{\m{PMNS}}^{\dagger}$ is the adjoint matrix of $U_{\m{PMNS}}$.
 This leads to
 \begin{IEEEeqnarray}{rCl}
 	\begin{pmatrix}
-		\nue \\
-		\numu \\
-		\nut
+		\Pgne \\
+		\Pgngm \\
+		\Pgngt
 	\end{pmatrix}
 	& = &
 	U_{\m{PMNS}} D U_{\m{PMNS}}^{\dagger}
 	\begin{pmatrix}
-		\nue \\
-		\numu \\
-		\nut
+		\Pgne \\
+		\Pgngm \\
+		\Pgngt
 	\end{pmatrix}
 \end{IEEEeqnarray}
 with the diagonal matrix
@@ -298,14 +297,14 @@ can be approximated by the neutrino energy $E \approx p$ for $p \gg m_i$.
 After some further conversions, one obtains
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_oscprob}
-	P \qty(\nu_{\alpha} \rightarrow \nu_{\beta})
+	P \qty(\HepParticle{\nu}{\alpha}{} \rightarrow \HepParticle{\nu}{\beta}{})
 	& = &
 	\abs{\sum_i U_{\alpha i} U_{\beta i}^* e ^ {- i E_i t}} ^ 2 \\
 	& = &
 	\sum_i \abs{U_{\alpha i} U_{\beta i}^*} + 2 \Re{\sum_{i > j} U_{\alpha i} U_{\alpha j}^* U_{\beta i}^* U_{\beta j} e ^ {- i \Delta_{ij}}}
 	\nonumber
 \end{IEEEeqnarray}
-for the transition probability from $\nu_{\alpha}$ into $\nu_{\beta}$.
+for the transition probability from \HepParticle{\nu}{\alpha}{} into \HepParticle{\nu}{\beta}{}.
 The phase difference
 \begin{IEEEeqnarray}{rCl}
 	\Delta_{ij}
@@ -362,108 +361,105 @@ Despite predicting neutrino mixing and oscillation, the theory does not predict 
 	\label{tab:nu-detection_nd-rates}
 	\begin{tabu} to \textwidth {|X|S|S|}
 		\hline
-		Production mode &																						{\numu{} beam} &	{\numub{} beam} \\
+		Production mode &																													{\Pgngm beam} &	{\Pagngm beam} \\
 		\hline
 		\hline
-		CC QE ($\numu n \rightarrow \mu^- p$) &																	30000 &				13000 \\
+		CC QE (\HepProcess{\Pgngm\Pn \to \Pgmm\Pp}) &																						30000 &				13000 \\
 		\hline
-		NC elastic ($\numu N \rightarrow \numu N$) & 															11000 &				6700 \\
+		NC elastic (\HepProcess{\Pgngm\nucleon \to \Pgngm\nucleon}) & 																		11000 &				6700 \\
 		\hline
-		CC resonant ($\numu p \rightarrow \mu^- p \pi^+$) &														21000 &				0 \\
+		CC resonant (\HepProcess{\Pgngm\Pp \to \Pgmm\Pp\Pgpp}) &																			21000 &				0 \\
 		\hline
-		CC resonant ($\numu n \rightarrow \mu^- n \pi^+ \, (p \pi^0)$) &										23000 &				0 \\
+		CC resonant (\HepProcess{\Pgngm\Pn \to \Pgmm\Pn\Pgpp\, (\Pp\Pgpz)}) &																23000 &				0 \\
 		\hline
-		CC resonant ($\numub p \rightarrow \mu^+ p \pi^- \, (n \pi^0)$) &										0 &					8300 \\
+		CC resonant (\HepProcess{\Pagngm\Pp \to \Pgmp\Pp\Pgpm\, (\Pn\Pgpz)}) &																0 &					8300 \\
 		\hline
-		CC resonant ($\numub n \rightarrow \mu^+ n \pi^-$) &													0 &					12000 \\
+		CC resonant (\HepProcess{\Pagngm\Pn \to \Pgmp\Pn\Pgpm}) &																			0 &					12000 \\
 		\hline
-		NC resonant ($\numu p \rightarrow \numu p \pi^0 \, (n \pi^+)$) &										7000 &				0 \\
+		NC resonant (\HepProcess{\Pgngm\Pp \to \Pgngm\Pp\Pgpz\, (\Pn\Pgpp)}) &																7000 &				0 \\
 		\hline
-		NC resonant ($\numu n \rightarrow \numu n \pi^+ \, (p \pi^0)$) &										9000 &				0 \\
+		NC resonant (\HepProcess{\Pgngm\Pn \to \Pgngm\Pn\Pgpp\, (\Pp\Pgpz)}) &																9000 &				0 \\
 		\hline
-		NC resonant ($\numub p \rightarrow \numub p \pi^- \, (n \pi^0)$) &										0 &					3900 \\
+		NC resonant (\HepProcess{\Pagngm\Pp \to \Pagngm\Pp\Pgpm\, (\Pn\Pgpz)}) &															0 &					3900 \\
 		\hline
-		NC resonant ($\numub n \rightarrow \numub n \pi^-$) &													0 &					4700 \\
+		NC resonant (\HepProcess{\Pagngm\Pn \to \Pagngm\Pn\Pgpm}) &																			0 &					4700 \\
 		\hline
-		CC DIS ($\numu N \rightarrow \mu^- X$ or $\numub N \rightarrow \mu^+ X$) &								95000 &				24000 \\
+		CC DIS (\HepProcess{\Pgngm\nucleon \to \Pgmm\particles} or \HepProcess{\Pagngm\nucleon \to \Pgmp\particles}) &						95000 &				24000 \\
 		\hline
-		NC DIS ($\numu N \rightarrow \numu X$ or $\numub N \rightarrow \numub X$) &								31000 &				10000 \\
+		NC DIS (\HepProcess{\Pgngm\nucleon \to \Pgngm\particles} or \HepProcess{\Pagngm\nucleon \to \Pagngm\particles}) &					31000 &				10000 \\
 		\hline
-		CC coherent $\pi^+$ ($\numu A \rightarrow \mu^- A \pi^+$) &												930 &				0 \\
+		CC coherent \Pgpp (\HepProcess{\Pgngm\nucleus \to \Pgmm\nucleus\Pgpp}) &															930 &				0 \\
 		\hline
-		CC coherent $\pi^-$ ($\numub A \rightarrow \mu^+ A \pi^-$) &											0 &					800 \\
+		CC coherent \Pgpm (\HepProcess{\Pagngm\nucleus \to \Pgmp\nucleus\Pgpm}) &															0 &					800 \\
 		\hline
-		NC coherent $\pi^0$ ($\numu A \rightarrow \numu A \pi^0$ or $\numub A \rightarrow \numub A \pi^0$) &	520 &				450 \\
+		NC coherent \Pgpz (\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz} or \HepProcess{\Pagngm\nucleus \to \Pagngm\nucleus\Pgpz}) &	520 &				450 \\
 		\hline
-		NC elastic electron ($\numu e^- \rightarrow \numu e^-$ or $\numub e^- \rightarrow \numub e^-$) &		16 &				11 \\
+		NC elastic electron (\HepProcess{\Pgngm\Pem \to \Pgngm\Pem} or \HepProcess{\Pagngm\Pem \to \Pagngm\Pem}) &							16 &				11 \\
 		\hline
-		Inverse muon decay ($\numu e \rightarrow \mu^- \nue$) &													9.5 &				0 \\
+		Inverse muon decay (\HepProcess{\Pgngm\Pem \to \Pgmm\Pgne}) &																		9.5 &				0 \\
 		\hline
 		\hline
-		Total CC &																								170000 &			59000 \\
+		Total CC &																															170000 &			59000 \\
 		\hline
-		Total NC+CC &																							230000 &			84000 \\
+		Total NC+CC &																														230000 &			84000 \\
 		\hline
 	\end{tabu}
 \end{table}
 
 Neutrinos cannot be directly detected, they need to pass on some of their energy and momentum to secondary particles that can be detected, i.e.\ they need to interact with a detection medium.
 This chapter will give a brief overview of the different types of these interactions.
-In general, neutrino interactions are divided into charged (CC) and neutral current (NC) mediated by charged ($W^{\pm}$) or neutral ($Z^0$) gauge bosons.
+In general, neutrino interactions are divided into charged (CC) and neutral current (NC) mediated by charged (\PWpm) or neutral (\PZz) gauge bosons.
 In a CC interaction, the neutrino is transformed into its corresponding charged lepton while it survives an NC interaction.
 Furthermore, they can be subdivided according to the type of interaction into quasi-elastic (QE), resonant (RES), deep inelastic scattering (DIS), and coherent (COH).
 
 QE is characterised by the reactions
-\begin{IEEEeqnarray}{rCl}
-	\nu_l + n & \qraq & l^- + p \qand \\
-	\nub_l + p & \qraq & l^+ + n
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgnl\Pn \to \Plm\Pp} \qand \HepProcess{\Pagnl\Pp \to \Plp\Pn}
 \end{IEEEeqnarray}
 and the kinematics are similar to that of an elastic collision, hence called quasi-elastic.
 Apparent from the equation above, this can only happen as a CC interaction.
 
 The NC equivalent is an actual elastic interaction of a neutrino with a target nucleon according to
-\begin{IEEEeqnarray}{rCl}
-	\nu_l + N & \qraq & \nu_l + N \qq*{.}
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgnl\nucleon \to \Pgnl\nucleon} \qq*{.}
 \end{IEEEeqnarray}
 
 RES involves the excitation of the involved nucleon to a resonant state, e.g.\
-\begin{IEEEeqnarray}{rCccl}
-	\numu + p & \qraq & \mu^- + \Delta^{++} & \qraq & \mu^- + p + \pi^+
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgngm\Pp \to \Pgmm\HepParticle{\Delta}{}{++} \to \Pgmm\Pp\Pgpp}
 \end{IEEEeqnarray}
-where the $\Delta^{++}$ resonance is too short-lived to be seen by the detectors.
+where the \HepParticle{\Delta}{}{++} resonance is too short-lived to be seen by the detectors.
 There are a lot of different resonant interactions which all work in a similar manner.
 
 For DIS, the momentum transfer is high enough to destroy nucleon.
 The neutrino rips a quark out which, in turn, starts to hadronise and form jets.
 The reactions are
-\begin{IEEEeqnarray}{rCl}
-	\nu_l + N & \qraq & l + X \qor \\
-	\nu_l + N & \qraq & \nu_l + X
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgnl\nucleon \to \Pl\particles} \qor \HepProcess{\Pgnl\nucleon \to \Pgnl\particles}
 \end{IEEEeqnarray}
-where $N$ is the target nucleon and $X$ a group of hadrons.
-This reaction happens in a very similar manner to $e^-$ deep inelastic scattering off nucleons.
+where \nucleon is the target nucleon and \particles a group of hadrons.
+This reaction happens in a very similar manner to deep inelastic electron scattering off nucleons.
 
 In a COH reaction, the opposite happens.
 The neutrino interacts with a target nucleus ($A$) as a whole but the latter is left intact as a spectator.
 Instead, another particle is produced alongside the corresponding lepton. An example reaction is
-\begin{IEEEeqnarray}{rCl}
-	\numu + A & \qraq & \mu^- + A + \pi^+
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz}
 \end{IEEEeqnarray}
 where a pion is produced from a muon neutrino interacting with a target nucleus.
 
 The inverse muon decay,
-\begin{IEEEeqnarray}{rCl}
-	\numu + e^- & \qraq & \mu^- + \nue \qc
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgngm\Pem \to \Pgmm\Pgne} \qc
 \end{IEEEeqnarray}
 requires neutrino energies above \SI{11}{\giga\electronvolt}~\cite{dune2}.
 
 Of particular importance is elastic scattering off shell electrons,
-\begin{IEEEeqnarray}{rCl}
-	\nu_l + e^- & \qraq & \nu_l + e^- \qor \\
-	\nub_l + e^- & \qraq & \nub_l + e^- \qc
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgnl\Pem \to \Pgnl\Pem} \qor \HepProcess{\Pagnl\Pem \to \Pagnl\Pem} \qc
 \end{IEEEeqnarray}
 which is possible for all (anti)neutrino flavours.
-For \nue{}/\nueb, the interaction is also possible in the CC channel via the exchange of a $W^{\pm}$ boson as depicted in Figures~\ref{fig:nu-detection_nue-scat} and~\ref{fig:nu-detection_nueb-scat}.
+For \Pgne/\Pagne, the interaction is also possible in the CC channel via the exchange of a \PWpm boson as depicted in Figures~\ref{fig:nu-detection_nue-scat} and~\ref{fig:nu-detection_nueb-scat}.
 This gives rise to a flavour-dependent term in the oscillation probability in matter, the MSW effect (see Section~\ref{sec:nu-detection_future-exp}).
 
 \begin{figure}[htb]
@@ -475,11 +471,11 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 			\fmfstraight
 			\fmfleftn{i}{2}
 			\fmfrightn{o}{2}
-			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
-			\fmf{fermion,label=$e^-$,label.side=left}{v1,o1}
-			\fmf{fermion,label=$\nu_l$,label.side=right}{i2,v2}
-			\fmf{fermion,label=$\nu_l$,label.side=right}{v2,o2}
-			\fmf{boson,label=$Z^0$,label.side=left}{v1,v2}
+			\fmf{fermion,label=\Pem,label.side=left}{i1,v1}
+			\fmf{fermion,label=\Pem,label.side=left}{v1,o1}
+			\fmf{fermion,label=\Pgnl,label.side=right}{i2,v2}
+			\fmf{fermion,label=\Pgnl,label.side=right}{v2,o2}
+			\fmf{boson,label=\PZz,label.side=left}{v1,v2}
 			\fmfdot{v1,v2}
 		\end{fmfgraph*}
 	\end{fmffile}
@@ -490,11 +486,11 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 			\fmfstraight
 			\fmfleftn{i}{2}
 			\fmfrightn{o}{2}
-			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
-			\fmf{fermion,label=$\nue$,label.side=left}{v1,o1}
-			\fmf{fermion,label=$\nue$,label.side=right}{i2,v2}
-			\fmf{fermion,label=$e^-$,label.side=right}{v2,o2}
-			\fmf{boson,label=$W^{\pm}$,label.side=left}{v1,v2}
+			\fmf{fermion,label=\Pem,label.side=left}{i1,v1}
+			\fmf{fermion,label=\Pgne,label.side=left}{v1,o1}
+			\fmf{fermion,label=\Pgne,label.side=right}{i2,v2}
+			\fmf{fermion,label=\Pem,label.side=right}{v2,o2}
+			\fmf{boson,label=\PWpm,label.side=left}{v1,v2}
 			\fmfdot{v1,v2}
 		\end{fmfgraph*}
 	\end{fmffile}
@@ -511,11 +507,11 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 			\fmfstraight
 			\fmfleftn{i}{2}
 			\fmfrightn{o}{2}
-			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
-			\fmf{fermion,label=$e^-$,label.side=left}{v1,o1}
-			\fmf{fermion,label=$\nub_l$,label.side=right}{i2,v2}
-			\fmf{fermion,label=$\nub_l$,label.side=right}{v2,o2}
-			\fmf{boson,label=$Z^0$,label.side=left}{v1,v2}
+			\fmf{fermion,label=\Pem,label.side=left}{i1,v1}
+			\fmf{fermion,label=\Pem,label.side=left}{v1,o1}
+			\fmf{fermion,label=\Pagnl,label.side=right}{i2,v2}
+			\fmf{fermion,label=\Pagnl,label.side=right}{v2,o2}
+			\fmf{boson,label=\PZz,label.side=left}{v1,v2}
 			\fmfdot{v1,v2}
 		\end{fmfgraph*}
 	\end{fmffile}
@@ -526,11 +522,11 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 			\fmfstraight
 			\fmfleftn{i}{2}
 			\fmfrightn{o}{2}
-			\fmf{fermion,label=$e^-$,label.side=left}{i1,v1}
-			\fmf{fermion,label=$e^-$,label.side=left}{v2,o1}
-			\fmf{fermion,label=$\nueb$,label.side=right}{i2,v1}
-			\fmf{fermion,label=$\nueb$,label.side=right}{v2,o2}
-			\fmf{boson,label=$W^-$,label.side=left}{v1,v2}
+			\fmf{fermion,label=\Pem,label.side=left}{i1,v1}
+			\fmf{fermion,label=\Pem,label.side=left}{v2,o1}
+			\fmf{fermion,label=\Pagne,label.side=right}{i2,v1}
+			\fmf{fermion,label=\Pagne,label.side=right}{v2,o2}
+			\fmf{boson,label=\PWm,label.side=left}{v1,v2}
 			\fmfdot{v1,v2}
 		\end{fmfgraph*}
 	\end{fmffile}
@@ -559,16 +555,16 @@ Interactions involving MEC are important because they can mimic the detector res
 \end{figure}
 
 To better understand the meaning of Figure~\ref{fig:nu-detection_xsec}, a brief explanation of the cross-section concept is given here.
-For a beam consisting of particles $A$, incident on a target made of particles $B$, the rate of the interaction $AB \rightarrow X$ is given by
+For a beam consisting of particles \particlea, incident on a target made of particles \particleb, the rate of the interaction \HepProcess{\particlea\particleb \to \particles} is given by
 \begin{IEEEeqnarray}{rCl}
-	R_X & = & \phi_A N_B \sigma_{ABX} \qc
+	R_{\particles} & = & \phi_{\particlea} N_{\particleb} \sigma_{\particlea\particleb\particles} \qc
 \end{IEEEeqnarray}
-where $\phi_A$ is the flux of beam particles, $N_B$ is the number of target particles, and $\sigma_{ABX}$ is the cross-section.
+where $\phi_{\particlea}$ is the flux of beam particles, $N_{\particleb}$ is the number of target particles, and $\sigma_{\particlea\particleb\particles}$ is the cross-section.
 Therefore, the cross-section
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{ABX} & = & \frac{R_X}{\phi_A N_B}
+	\sigma_{\particlea\particleb\particles} & = & \frac{R_X}{\phi_{\particlea} N_{\particleb}}
 \end{IEEEeqnarray}
-is a measure for the interaction rate $R_X$ normalised by the number of both, beam and target, particles.
+is a measure for the interaction rate $R_{\particles}$ normalised by the number of both, beam and target, particles.
 As flux is given in units of inverse time and area, and interaction rate in inverse time, the cross-section needs to have the dimension of an area.
 
 
@@ -586,16 +582,16 @@ That is why for most of these interactions, one needs to treat the interaction o
 For all other charged particles, the stopping power is described by the Bethe-Bloch formula
 \begin{IEEEeqnarray}{rCl}
 	- \frac{1}{\rho} \dv{E}{x} & = &
-	4 \pi N_{\m{A}} r_{\m{e}} ^ 2 m_{\m{e}} c ^ 2 z ^ 2 \frac{Z}{A} \frac{1}{\beta ^ 2}
-	\qty[\ln(\frac{2 m_{\m{e}} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{\delta}{2}] \qc
+	4 \pi N_{\m{A}} r_{\Pe} ^ 2 m_{\Pe} c ^ 2 z ^ 2 \frac{Z}{A} \frac{1}{\beta ^ 2}
+	\qty[\ln(\frac{2 m_{\Pe} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{\delta}{2}] \qc
 	\label{eq:nu-detection_bethe-bloch}
 \end{IEEEeqnarray}
 where
 \begin{description}
 	\item[$\rho$] is the density of the absorber material,
 	\item[$N_{\m{A}}$] is Avogadro's number,
-	\item[$r_{\m{e}} = \frac{1}{4 \pi \varepsilon_{\m{0}}} \frac{\si{\elementarycharge} ^ 2}{m_{\m{e}} c ^ 2}$] is the classical electron radius using the permittivity of free space $\varepsilon_{\m{0}}$,
-	\item[$m_{\m{e}}$] is the electron mass,
+	\item[$r_{\Pe} = \frac{1}{4 \pi \varepsilon_{\m{0}}} \frac{\si{\elementarycharge} ^ 2}{m_{\Pe} c ^ 2}$] is the classical electron radius using the permittivity of free space $\varepsilon_{\m{0}}$,
+	\item[$m_{\Pe}$] is the electron mass,
 	\item[$z$] is the charge of the incident particle,
 	\item[$Z$] is the atomic number of the absorber,
 	\item[$A$] is the atomic weight of the absorber,
@@ -607,7 +603,7 @@ where
 		\end{IEEEeqnarray}
 	\item[$\delta$] is a parameter describing the screening of the extended transverse electric field of relativistic incident particles by the charge density of the atomic electrons of the absorber.
 \end{description}
-Equation~\eqref{eq:nu-detection_bethe-bloch} describes the stopping power of particles with $m_0 \gg m_{\m{e}}$ by ionisation and excitation of the atoms in the absorber material.
+Equation~\eqref{eq:nu-detection_bethe-bloch} describes the stopping power of particles with $m_0 \gg m_{\Pe}$ by ionisation and excitation of the atoms in the absorber material.
 As the stopping power is proportional to the electron density and thus to the mass density of the absorber material, it is often divided by the latter.
 Thus, Equation~\eqref{eq:nu-detection_bethe-bloch} actually gives the so called mass stopping power.
 The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is $\approx 0.5$ for most light materials, and the mean excitation energy which only contributes logarithmically.
@@ -615,12 +611,12 @@ The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\textwidth]{nu-detection/bethe-bloch}
-	\caption{Bethe-Bloch stopping power of $\mu$ in \ce{Ar}}
+	\caption{Bethe-Bloch stopping power of \Pgm in \ce{Ar}}
 	\todo[inline]{check}
 	\label{fig:nu-detection_bethe-bloch}
 \end{figure}
 
-Figure~\ref{fig:nu-detection_bethe-bloch} shows the mass stopping power of $\mu$ in \ce{Fe} neglecting the $\frac{\delta}{2}$ term.
+Figure~\ref{fig:nu-detection_bethe-bloch} shows the mass stopping power of muons in \ce{Ar} neglecting the $\frac{\delta}{2}$ term.
 As can be seen, there is a broad minimum which is characteristic of the Bethe-Bloch formula.
 Particles in this momentum range are called minimum ionising particles (MIPs).
 They are important for detectors because this energy loss is a measure for the required energy resolution of a detector.
@@ -637,7 +633,7 @@ Due to increasing shielding of the transverse electric field by the shell electr
 For electrons and positrons, Equation~\eqref{eq:nu-detection_bethe-bloch} does not hold because their mass is equal to the mass of the atomic electrons of the absorber.
 The stopping power changes further for electrons because the incident particle cannot be distinguished form its collision partner in that case.
 On the other hand, a positron will be annihilated upon stop by an electron which needs to be taken into account as well.
-The equivalent of Equation~\eqref{eq:nu-detection_bethe-bloch} for $e^{\pm}$ can be found in~\cite{grupen}.
+The equivalent of Equation~\eqref{eq:nu-detection_bethe-bloch} for \Pepm can be found in~\cite{grupen}.
 
 At high velocities, further effects come into play.
 \emph{Bremsstrahlung} describes the radiation energy loss of a fast charged particle in the Coulomb field of the absorber nuclei.
@@ -652,10 +648,10 @@ where
 	\label{eq:nu-detection_radiationlength}
 \end{IEEEeqnarray}
 is the \emph{radiation length} of the absorber material using
-\begin{itemize}
+\begin{description}
 	\item[$\alpha$] $\approx \frac{1}{137}$ the fine-structure constant and
 	\item[$m$] the mass of the incident particle.
-\end{itemize}
+\end{description}
 Again, the energy loss is proportional to the density of the absorber and for convenience, divided by the latter.
 Bremsstrahlung is emitted in interactions of the incident particle with the absorber nuclei ($\propto Z ^ 2$) as well as with the atomic electrons of the absorber ($\propto Z$).
 By neglecting the latter, one obtains the important relation
@@ -663,7 +659,7 @@ By neglecting the latter, one obtains the important relation
 	X_0 ^ {- 1} & \propto & Z ^ 2
 \end{IEEEeqnarray}
 as opposed to the $\propto Z$ dependence of the Bethe-Bloch formula.
-Equation~\eqref{eq:nu-detection_bremsstrahlung} also holds for electrons as long as $E \gg \frac{m_{\m{e}} c ^ 2}{\alpha Z ^ {\frac{1}{3}}}$.
+Equation~\eqref{eq:nu-detection_bremsstrahlung} also holds for electrons as long as $E \gg \frac{m_{\Pe} c ^ 2}{\alpha Z ^ {\frac{1}{3}}}$.
 Furthermore, looking at the dependence on the mass of the incident particle, one finds
 \begin{IEEEeqnarray}{rCl}
 	X_0 & \propto & m ^ 2
@@ -671,7 +667,7 @@ Furthermore, looking at the dependence on the mass of the incident particle, one
 using Equation~\eqref{eq:nu-detection_radiationlength}.
 Therefore, the radiation length of an absorber material is usually given for electrons and the relation
 \begin{IEEEeqnarray}{rCl}
-	X_0 & = & X_0^{\m{e}} \frac{m ^ 2}{m_{\m{e}} ^ 2}
+	X_0 & = & X_0^{\Pe} \frac{m ^ 2}{m_{\Pe} ^ 2}
 \end{IEEEeqnarray}
 can be used to get the radiation length for any charged particle of mass $m$.
 Radiation losses play a significant role only at energies much higher than the energy of MIPs.
@@ -683,7 +679,7 @@ Using Equations~\eqref{eq:nu-detection_bethe-bloch} and~\eqref{eq:nu-detection_b
 at which radiation losses take over from ionisation losses.
 Similar to the radiation length, the critical energy is proportional to $m ^ 2$.
 Thus, it is most important for electrons while for other particles it becomes significant only at very high energies.
-If we take the example of an iron absorber again for instance, we get $E_c^{\m{e}} = \SI{20.7}{\mega\electronvolt}$ and $E_c^{\mu} = \SI{890}{\giga\electronvolt}$.
+If we take the example of an iron absorber again for instance, we get $E_c^{\Pe} = \SI{20.7}{\mega\electronvolt}$ and $E_c^{\Pgm} = \SI{890}{\giga\electronvolt}$.
 
 At high energies, there are additional types of radiation loss taking place, for instance direct electron-pair production and photonuclear interactions.
 They shall not be described here.
@@ -709,7 +705,7 @@ In particular, they can be converted to charge which can be detected.
 The three most important interactions converting photons to charge shall be outlined in this section.
 All of them have in common that they attenuate photon beams exponentially according to
 \begin{IEEEeqnarray}{rCl}
-	I & = & I_0 \m{e} ^ {- \mu x}
+	I & = & I_0 \Pe ^ {- \mu x}
 \end{IEEEeqnarray}
 where $I_0$ and $I$ is the intensity before and after passing the absorber, respectively.
 The thickness of the absorber is given by $x$ and
@@ -719,48 +715,48 @@ The thickness of the absorber is given by $x$ and
 \end{IEEEeqnarray}
 is the \emph{mass attenuation coefficient} defined by the sum of the cross sections $\sigma_i$ of the different interaction processes.
 
-At low energies (ionisation energy $\le E_{\gamma} \le \SI{100}{\kilo\electronvolt}$), photons primarily undergo conversion to charge by the \emph{photoelectric effect}.
+At low energies (ionisation energy $\le E_{\Pgg} \le \SI{100}{\kilo\electronvolt}$), photons primarily undergo conversion to charge by the \emph{photoelectric effect}.
 The photon is absorbed by an atom of the absorber which in turn is ionised and thus ejects one of its shell electrons.
 The cross section is given by
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{photo}} & = & \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\m{e}}
+	\sigma_{\m{photo}} & = & \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\Pe}
 \end{IEEEeqnarray}
 where
-\begin{itemize}
-	\item[$\epsilon$] $= \frac{E_{\m{\gamma}}}{m_{\m{e}} c ^ 2}$ is the reduced photon energy and
-	\item[$\sigma_{\m{Th}}^{\m{e}}$] $= \frac{8}{3} \pi r_{\m{e}} ^ 2 = \SI{6.65e-25}{\centi\meter\squared}$ is the \emph{Thomson cross section} for elastic scattering of photons on electrons.
-\end{itemize}
+\begin{description}
+	\item[$\epsilon = \frac{E_{\Pgg}}{m_{\Pe} c ^ 2}$] is the reduced photon energy and
+	\item[$\sigma_{\m{Th}}^{\Pe} = \frac{8}{3} \pi r_{\Pe} ^ 2 = \SI{6.65e-25}{\centi\meter\squared}$] is the \emph{Thomson cross section} for elastic scattering of photons on electrons.
+\end{description}
 
 For energies $\approx \SI{1}{\mega\electronvolt}$, \emph{Compton scattering} dominates the interaction of photons with matter.
 Thereby, the photon is not absorbed by the atom but just scatters off one of its shell electrons with the cross section
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{c}} & = & 2 \pi r_{\m{e}} ^ 2 Z \left\{\qty[\frac{1 + \epsilon}{\epsilon ^ 2}] \qty[\frac{2 \qty(1 + \epsilon)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln(1 + 2 \epsilon)]\right.\\
+	\sigma_{\m{c}} & = & 2 \pi r_{\Pe} ^ 2 Z \left\{\qty[\frac{1 + \epsilon}{\epsilon ^ 2}] \qty[\frac{2 \qty(1 + \epsilon)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln(1 + 2 \epsilon)]\right.\\
 	& & \left. + \frac{1}{2 \epsilon} \ln(1 + 2 \epsilon) - \frac{1 + 3 \epsilon}{\qty(1 + 2 \epsilon) ^ 2}\right\}
 \end{IEEEeqnarray}
 obtained from the Klein-Nishina formula.
 As only part of the photon's energy is absorbed while the rest is scattered, it makes sense to divide this cross section into a scattering cross section
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{cs}} & = & \frac{E_{\gamma}'}{E_{\gamma}}
+	\sigma_{\m{cs}} & = & \frac{E_{\Pgg}'}{E_{\Pgg}}
 \end{IEEEeqnarray}
 and an absorption cross section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{ca}} & = & \sigma_{\m{c}} - \sigma_{\m{cs}}
 	\label{eq:nu-detection_sigma-compton}
 \end{IEEEeqnarray}
-where $E_{\gamma}$ and $E_{\gamma}'$ is the energy of the photon before and after scattering, respectively.
+where $E_{\Pgg}$ and $E_{\Pgg}'$ is the energy of the photon before and after scattering, respectively.
 
-At $E_{\gamma} \ge 2 m_{\m{e}} c ^ 2$, photons are capable of producing pairs of $e^+ e^-$.
+At $E_{\Pgg} \ge 2 m_{\Pe} c ^ 2$, photons are capable of producing pairs of \Pep\Pem.
 Because of momentum conservation, this process can only happen in the coulomb field of a so called spectator particle.
 As pair-production in the field of an electron is strongly suppressed, the spectator is usually a nucleus of the absorber material.
 Therefore, the cross section of pair-production depends on the shielding of the coulomb field by the shell electrons and thus on the proximity to the nucleus.
 Eventually, this results in an energy dependence.
 For $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is given by
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \qty(\frac{7}{9} \ln 2 \epsilon - \frac{109}{54})
+	\sigma_{\m{pair}} & = & 4 \alpha r_{\Pe} ^ 2 Z ^ 2 \qty(\frac{7}{9} \ln 2 \epsilon - \frac{109}{54})
 \end{IEEEeqnarray}
 and for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{pair}} & = & 4 \alpha r_{\m{e}} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \qq*{.}
+	\sigma_{\m{pair}} & = & 4 \alpha r_{\Pe} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \qq*{.}
 \end{IEEEeqnarray}
 
 As mentioned above, for Compton scattering, two different cross sections are defined, $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.
@@ -768,16 +764,16 @@ Consequentially, there are also different definitions of the coefficient $\mu$ i
 Replacing the total Compton cross section $\sigma_{\m{c}}$ by $\sigma_{\m{ca}}$ from Equation~\eqref{eq:nu-detection_sigma-compton}, one gets the \emph{mass absorption coefficient} $\mu_{\m{a}}$, only taking into account photon absorption processes.
 While $\mu$ is more precisely called the \emph{total mass attenuation coefficient}.
 
-An interesting effect takes place for $e^{\pm}$ traversing material at energies higher than the critical energy $E_{\m{c}}$ defined by Equation~\eqref{eq:nu-detection_ec}.
-In this regime, the energy loss is dominated by bremsstrahlung for $e^{\pm}$ and by pair production for $\gamma$.
-This leads to an \emph{electromagnetic (EM) cascade} or \emph{shower} where $e^{\pm}$ and $\gamma$ produce each other alternately in a self-sustaining process.
-The mean free path of a $\gamma$ before pair production
+An interesting effect takes place for \Pepm traversing material at energies higher than the critical energy $E_{\m{c}}$ defined by Equation~\eqref{eq:nu-detection_ec}.
+In this regime, the energy loss is dominated by bremsstrahlung for \Pepm and by pair production for photons.
+This leads to an \emph{electromagnetic (EM) cascade} or \emph{shower} where \Pepm and \Pgg produce each other alternately in a self-sustaining process.
+The mean free path of a photon before pair production
 \begin{IEEEeqnarray}{rCl}
 	\lambda_{\m{prod}} & = & \frac{9}{7}X_{\m{0}}
 \end{IEEEeqnarray}
-is very close to the mean free path of an $e^{\pm}$ before bremsstrahlung, the radiation length $X_{\m{0}}$.
+is very close to the mean free path of an \Pepm before bremsstrahlung, the radiation length $X_{\m{0}}$.
 Therefore, the number of particles participating in the shower doubles roughly every radiation length resulting in an exponential growth.
-When the average energy per paticle drops below the critical energy, ionisation losses begin to dominate over radiative losses for $e^{\pm}$ and Compton and photoelectric effect over pair production for $\gamma$.
+When the average energy per paticle drops below the critical energy, ionisation losses begin to dominate over radiative losses for \Pepm and Compton and photoelectric effect over pair production for photons.
 At this point, the shower reaches its maximum and
 \begin{IEEEeqnarray}{rCl}
 	t_{\m{max}} & = & \frac{\ln(\frac{E_{\m{0}}}{E_{\m{c}}})}{\ln(2)}
@@ -789,11 +785,11 @@ The \emph{Molière radius}
 \end{IEEEeqnarray}
 is the transversal extent of the shower divided by the the material density.
 Both $t_{\m{max}}$ and $R_{\m{M}}$ are important benchmarks for the dimensioning of electromagnetic calorimeters.
-Naturally, a $\gamma$ in the energy range where pair production dominates will produce a shower as well.
-On the other hand, also $\mu^{\pm}$ can start electromagnetic cascades, if there energy is high enough to produce bremsstrahlung.
+Naturally, a photon in the energy range where pair production dominates will produce a shower as well.
+On the other hand, also \Pgmpm can start electromagnetic cascades, if there energy is high enough to produce bremsstrahlung.
 
 Similarly, hadrons interacting with matter via the strong force can produce cascades as well.
-As opposed to the electromagnetic showers governed only by $e^{\pm}$ and $\gamma$, the hadronic process is much more complex because many different secondary particle can be involved.
+As opposed to the electromagnetic showers governed only by \Pepm and \Pgg, the hadronic process is much more complex because many different secondary particle can be involved.
 Hadrons start to shower because they mainly interact inelastically with matter, producing secondary strongly interacting particles.
 That is why the hadronic cross-section
 \begin{IEEEeqnarray}{rCl}

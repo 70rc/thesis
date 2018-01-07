@@ -76,7 +76,7 @@ The TPC operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre}, corre
  
 The field-cage consists of aluminium rings supported by clear acrylic rings, with a cathode formed of a brass disc. 
 The dimensions of the field-cage and cathode are shown in Figure~\ref{fig:viper_cad}.
-Alternating acrylic rings are split, to allow for the circulation of purified LAr within the TPC volume.
+Alternating acrylic rings are split, to allow for the circulation of purified \lar{} within the TPC volume.
 Four square section PolyAmide-Imide (PAI) uprights support the cathode and field cage, with PolyEther Ether Ketone (PEEK) screws fixing the pillars to the acrylic rings.
 The four PAI uprights connect to a PAI frame which supports the anode plane and the light readout Silicon PhotoMultipliers (SiPMs), see Figure~\ref{fig:viper_v1per}.   
 
@@ -98,8 +98,8 @@ The coating method is based on~\cite{TPBcoating}.
 Three layers of the coating were applied by hand, with a fine brush. 
 
 \SI{1}{\milli\metre} diameter WLS fibres (Kuraray Y11(200)M) couple the acrylic rings to the four Hamamatsu S12825-050P SiPMs mounted close to the anode, see Figure~\ref{fig:viper_v1per}. 
-The SiPMs and their front-end electronics were adapted from those developed at Bern for the cosmic ray taggers used in MicroBooNE and SBND~\cite{crt, crt_feb}.
-For operation in LAr, the SiPM bias voltages had to be reduce from $\approx$~\SI{70}{\volt} to \SI{53}{\volt}, in order to limit the gain.   
+The SiPMs and their front-end electronics were adapted from those developed at Bern for the cosmic ray taggers used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
+For operation in \lar{}, the SiPM bias voltages had to be reduce from $\approx$~\SI{70}{\volt} to \SI{53}{\volt}, in order to limit the gain.   
 In the front-end electronics, two coincidences of two out of the four SiPMs are formed and combined by means of a logic \textit{OR} operation. 
 This coincidence is used in order to improve trigger purity.
 
@@ -110,8 +110,8 @@ This coincidence is used in order to improve trigger purity.
 The pixel demonstration TPC is housed in a double-bath vacuum-insulated cryostat with the outer bath open to atmosphere.
 A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of liquid argon.
 This is the same cryostat that was used for the HV studies described in Chapter~\ref{chap:hv}.
-The LAr filtering method is the same as described in~\cite{2photonAbs}, with LAr filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
-LAr purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\order{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
+The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with \lar{} filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
+\lar{} purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\order{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
 
 The HV feedthrough remains unchanged from the breakdown studies (Chapter~\ref{chap:hv}); a PET-C polymer dielectric capable of potentials as high as \SI{-130}{\kilo\volt}.
 A low-pass filter was added between the power supply and feedthrough, which consists of an \SI{800}{\pico\farad} decoupling capacitor grounded between two \SI{100}{\mega\ohm} resistors connected in series, i.e.\ an RC low-pass filter with an additional protection resistor at the output.
@@ -140,7 +140,7 @@ Getting a clean MIP sample from experimental data requires a calibrated reconstr
 Therefore, the MIP signal was estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre}~\cite{pdg}.
 This can be converted to charge loss using the energy required to produce one electron-ion pair: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$~\cite{NobleGasDetectors}.
 Additionally, charge recombination, diffusion and lifetime need to be taken into account.
-The recombination factor was measured by ICARUS~\cite{icarusReco} and ArgoNeuT~\cite{argoneutReco} and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
+The recombination factor was measured by \icarus{}~\cite{icarusReco} and ArgoNeuT~\cite{argoneutReco} and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
 For a non-zero drift field, diffusion needs to be split into longitudinal and transverse components.
 With \AT{}~\cite{AT}, Bern measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
 Even using the more conservative value, this results~\cite{lngDet} in a transverse spread of
@@ -268,7 +268,7 @@ The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 	\includegraphics[viewport=800 0 1200 2000, clip, height=\textwidth, angle=90]{viper/event967_hits}
 	\caption{Reconstructed 3D hits from the hit finder.
 	The TPC volume is shown in faint green.
-	The passing particle is most likely a cosmic $\mu$ entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+	The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	Drift direction is from right to left.
 	The colour of the hits indicates the result of the principal components analysis: blue is accepted as the true hit while rejected ambiguous hits are plotted in red.
 	The thin white line represents the eigenvector with the largest eigenvalue of the ellipsoid formed by the 3D hit point cloud.
@@ -290,10 +290,10 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 	\includegraphics[width=\textwidth]{viper/event967_kalman}
 	\caption{Track fitted by the Kalman filter.
 	The TPC volume is shown in faint grey.
-	The passing particle is most likely a cosmic $\mu$ entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+	The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	Drift direction is from right to left.
 	The yellow points are the input to the Kalman filter, the accepted hits from the principal components analysis.
-	Blue is the output, a fitted track taking into account ionisation losses and multiple scattering in LAr.}
+	Blue is the output, a fitted track taking into account ionisation losses and multiple scattering in \lar{}.}
 	\label{fig:viper_kalman}
 \end{figure}
 

@@ -47,7 +47,7 @@
 
 \sisetup{separate-uncertainty=true}
 
-\newcommand*{\m}{\text}
+\newcommand*{\m}{\mathrm}
 \newcommand*{\Chapter}{{chapter}} % used in starred chapters to store the chapter name to access it conveniently with all the commands needed there
 
 \newcommand*{\AT}{{ARGONTUBE}}
@@ -78,7 +78,7 @@
 	\linenumbers
 }
 \usepackage[colorinlistoftodos, obeyFinal]{todonotes}
-\newcommand{\cjames}[2][]{\todo[author={James Sinclair}, color=green, #1]{#2}}
+\newcommand*{\cjames}[2][]{\todo[author={James Sinclair}, color=green, #1]{#2}}
 
 \usepackage[pdftex, unicode, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % should be last command in preamble
 

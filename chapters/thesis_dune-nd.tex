@@ -12,33 +12,6 @@ Number one is addressed in Chapter~\ref{chap:viper}.
 This chapter will address question number two.
 
 
-\section{The High-Multiplicity Environment of the \dune{} ND}
-\label{sec:dune-nd_multiplicity}
-
-One of the main goals of \dune{} is to measure the Dirac CP violation phase \dcp provided it has a non-degenerate value.
-To reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the \dcp parameter space, an exposure of \SI{1320}{\kilo\tonne\mega\watt years} is required (see Figure~\ref{fig:dune-nd_cpv-sens}).~\cite{dune2}
-Assuming the reference design of a \SI{40}{\kilo\tonne} far detector and a \SI{1}{\mega\watt} beam results in a data taking time of \SI{33}{years}.
-Therefore, to make the data taking time shorter, a beam $> \SI{1}{\mega\watt}$ is required.
-On the other hand, combining the numbers of the reference design in~\cite{dune2}, the event rate in the ND amounts to \SI{0.1}{evt\per\tonne\per\mega\watt} leading to significant event pile-up.
-This number does not include rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector.
-The neutrino beam flux is depicted in Figure~\ref{fig:dune-nd_flux}.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=.5\textwidth]{dune-nd/dune_cpv75_exp_syst}
-	\caption{Expected sensitivity of \dune{} to discovery of CP violation, i.e.\ $\dcp \neq\ 0\ \m{or} \pi$ as a function of exposure in \si{\kilo\tonne\mega\watt years}, assuming equal running in neutrino and antineutrino mode.~\cite{dune2}}
-	\label{fig:dune-nd_cpv-sens}
-\end{figure}
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=.49\textwidth]{pile-up/FHC_230kA}
-	\includegraphics[width=.49\textwidth]{pile-up/RHC_230kA}
-	\caption{Neutrino fluxes for the reference beam design operating in neutrino mode (left) and antineutrino mode (right), generated with a \SI{120}{\giga\electronvolt} primary proton beam.~\cite{dune2}}
-	\label{fig:dune-nd_flux}
-\end{figure}
-
-
 \section{The Argon Box Simulation Tool}
 \label{sec:dune-nd_argon-box}
 
@@ -55,7 +28,7 @@ This allows for convenient further processing using ROOT.
 \section{\Pgpz pile-up study}
 \label{sec:dune-nd_pile-up}
 
-A significant amount of \Pgpz are produced in several resonant and coherent neutrino interactions (see Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
+A significant amount of \Pgpz are produced in several resonant and coherent neutrino interactions (see Table~\ref{tab:nu-detection_nd-rates} Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
 They decay according to
 \begin{IEEEeqnarray}{C}
 	\HepProcess{\Pgpz \to \Pgg\Pgg}

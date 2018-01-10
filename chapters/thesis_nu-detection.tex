@@ -376,6 +376,14 @@ From Figure~\ref{fig:nu-detection_mass}, it can be seen, that \Pgne are primaril
 Therefore, the propagation of these two is altered while \HepParticle{\nu}{3}{} is almost unaffected.
 Named after its discoverers, Mikheyev, Smirnov~\cite{mikheyevSmirnov} and Wolfenstein~\cite{wolfenstein}, the MSW effect can be exploited to determine the mass ordering with a properly tuned $\frac{L}{E}$.
 
+
+\section{\dune{}}
+\label{sec:nu-detection_dune}
+
+The Deep Underground Neutrino Experiment (\dune{})~\cite{dune1, dune2, dune3, dune4} is a long-baseline neutrino oscillation experiment measuring $P \qty(\Pgngm \rightarrow \Pgne)$ and $P \qty(\Pagngm \rightarrow \Pagne)$, planned to start data taking around 2025.
+It consist of a neutrino beamline at Fermi National Accelerator Lab (FNAL) in Illinois, USA and a \lartpc{} far detector at a baseline of \SI{1300}{\kilo\metre} in the Sanford Underground Research Facility (SURF) in South Dakota, USA.
+An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{dune/dune}
@@ -383,19 +391,27 @@ Named after its discoverers, Mikheyev, Smirnov~\cite{mikheyevSmirnov} and Wolfen
 	\label{fig:nu-detection_dune}
 \end{figure}
 
-
-\section{\dune{}}
-\label{sec:nu-detection_dune}
-
-The Deep Underground Neutrino Experiment (\dune{})~\cite{dune1, dune2, dune3, dune4} is a long-baseline neutrino oscillation experiment planned to start data taking around 2025.
-It consist of a neutrino beamline at Fermi National Accelerator Lab (FNAL) in Illinois, USA and a \lartpc{} far detector at a baseline of \SI{1300}{\kilo\metre} in the Sanford Underground Research Facility (SURF) in South Dakota, USA.
-An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
-
 The beamline at FNAL produces pions by shooting a \SIrange{60}{120}{\giga\electronvolt} proton beam of \SIrange{1}{2}{\mega\watt} intensity onto a target (the exact values are still subject to change).
-The pions pass through several focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) accoring to Equation~\eqref{eq:nu-detection_pion-decay}.
+The pions pass through several electromagnetic focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) according to Equation~\eqref{eq:nu-detection_pion-decay}.
 By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primlarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
 Alongside the pions, a small amount of kaons is produced as well.
 These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\SI{5}{\percent}$~\cite{pdg} producing a significant \Pgne (\Pagne) beam contamination.
+The (anti)neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_dune-flux}.
+More information on the beamline can be found in~\cite{dune2}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.49\textwidth]{dune/FHC_230kA}
+	\includegraphics[width=.49\textwidth]{dune/RHC_230kA}
+	\caption{Neutrino fluxes for the \dune{} reference beam design operating in neutrino mode (left) and antineutrino mode (right), generated with a \SI{120}{\giga\electronvolt} primary proton beam.~\cite{dune2}}
+	\label{fig:nu-detection_dune-flux}
+\end{figure}
+
+The baseline and energy spectrum of \dune{} are optimised to measure \dcp{} and determine the mass ordering.
+Figure~\ref{fig:nu-detection_dune-osc} shows the (anti)neutrino oscillation probability as a function of neutrino energy at the \dune{} baseline for the normal and inverted mass ordering.
+Put into very simple terms, \dcp{} can be derived from the difference in oscillation probability between neutrino and antineutrino mode.
+The MSW effect enhances either neutrino or antineutrino oscillation depending on the mass ordering, allowing for a determination of the latter.
+For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVogel}.
 
 \begin{figure}[htb]
 	\centering
@@ -407,38 +423,41 @@ These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\S
 	\label{fig:nu-detection_dune-osc}
 \end{figure}
 
-The baseline and energy spectrum of \dune{} are optimised to measure \dcp{} and determine the mass ordering.
-Figure~\ref{fig:nu-detection_dune-osc} shows the (anti)neutrino oscillation probability as a function of neutrino energy at the \dune{} baseline for the normal and inverted mass ordering.
-Put into very simple terms, \dcp{} can be derived from the difference in oscillation probability between neutrino and antineutrino mode.
-The MSW effect enhances either neutrino or antineutrino oscillation depending on the mass ordering, allowing for a determination of the latter.
-
-To reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the \dcp{} parameter space, an exposure of \SI{1320}{\kilo\tonne\mega\watt.years} is required (see Figure~\ref{fig:dune-nd_cpv-sens}).~\cite{dune2}
+Figure~\ref{fig:nu-detection_dune-sens} shows the sensitivities of \dune{} to determination of the mass ordering and discovery of CP violation.
+To reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the \dcp{} parameter space, an exposure of \SI{1320}{\kilo\tonne\mega\watt.years} is required.
 Assuming the reference design of a \SI{40}{\kilo\tonne} far detector and a \SI{1}{\mega\watt} beam results in a data taking time of \SI{33}{years}.
-Therefore, to make the data taking time shorter, a beam $> \SI{1}{\mega\watt}$ is required.
-On the other hand, combining the numbers of the reference design in~\cite{dune2}, the event rate in the ND amounts to \SI{0.1}{evt\per\tonne\per\mega\watt} leading to significant event pile-up.
-This number does not include rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector.
-The neutrino beam flux is depicted in Figure~\ref{fig:dune-nd_flux}.
+Therefore, to reach the sensitivity goal earlier, a beam $> \SI{1}{\mega\watt}$ is required.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=.5\textwidth]{dune/dune_cpv75_exp_syst}
-	\caption{Expected sensitivity of \dune{} to discovery of CP violation, i.e.\ $\dcp \neq\ 0\ \m{or} \pi$ as a function of exposure in \si{\kilo\tonne\mega\watt years}, assuming equal running in neutrino and antineutrino mode.~\cite{dune2}}
-	\label{fig:dune-nd_cpv-sens}
+	\includegraphics[width=.49\textwidth]{dune/mh_exp_syst}
+	\includegraphics[width=.49\textwidth]{dune/cpv75_exp_syst}
+	\caption{Expected sensitivity of \dune{} to determination of the neutrino mass ordering (hierarchy, left) and discovery of CP violation, i.e.\ $\dcp \neq\ 0\ \m{or}\ \pi$, (right) as a function of exposure in \si{\kilo\tonne\mega\watt.years}, assuming equal running in neutrino and antineutrino mode, for a range of values for the \Pgne and \Pagne signal normalisation uncertainties from $\SI{5}{\percent}\oplus\SI{3}{\percent}$ to $\SI{5}{\percent}\oplus\SI{1}{\percent}$.
+	The sensitivities quoted are the minimum sensitivity for \SI{100}{\percent} of \dcp{} values in the case of mass ordering and \SI{75}{\percent} of \dcp{} values in the case of CP violation.
+	The two bands on each plot represent a range of potential beam designs described in \cite{dune2}: the blue hashed band is for the reference design and the solid green band is for the optimized design.
+	Sensitivities are for true normal ordering; neutrino mass ordering and $\theta_{23}$ octant are assumed to be unknown.
+	Taken from~\cite{dune2}.
+	}
+	\todo[inline]{remove octant or explain}
+	\label{fig:nu-detection_dune-sens}
 \end{figure}
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=.49\textwidth]{dune/FHC_230kA}
-	\includegraphics[width=.49\textwidth]{dune/RHC_230kA}
-	\caption{Neutrino fluxes for the reference beam design operating in neutrino mode (left) and antineutrino mode (right), generated with a \SI{120}{\giga\electronvolt} primary proton beam.~\cite{dune2}}
-	\label{fig:dune-nd_flux}
-\end{figure}
+Another important feature of Figure~\ref{fig:nu-detection_dune-sens} are the indicated signal normalisation uncertainties.
+In particular the second number has a significant influence on sensitivity, the abovementioned exposure assumes an uncertainty of $\SI{5}{\percent}\oplus\SI{2}{\percent}$.
+A detailed explanation of this is out of the scope of this work and can be found in~\cite{dune2}.
+What shall be mentioned here however is that these uncertainties can be reached by a precise constraint of the flux rate and shape by means of a near detector (ND).
+It is placed at a distance of \SI{574}{\metre} downstream of the proton beam target.
+To eliminate the introduction of further extrapolation uncertainties it is important to have a near detector component employing the same target material and detector technology as the far detector, i.e.\ a \lartpc{}.
+
+As will be explained in Chapter~\ref{chap:lartpc}, \lartpc{}s are slow detectors.
+This is problematic in the high-multiplicity ND environment of \dune{} which is the reason why~\cite{dune2} and~\cite{dune4} do not mention an ND \lar{} component.
+The aforementioned \si{\mega\watt} beam intensity leads to ND event rates $\order{0.1}$ events per tonne of \lar{} leading to significant event pile-up.\todo{sauce}
+Rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector---are not included in this estimate.
+The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component for the \dune{} ND.\todo{too bullshitty?}
 
 
 \section{Neutrino Interaction with Matter}
 \label{sec:nu-detection_interactions}
-
-\todo[inline]{xsec plot}
 
 \begin{table}[htb]
 	\centering

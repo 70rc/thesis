@@ -1,7 +1,7 @@
 \chapter{Electronics Studies}
 \label{chap:electronics}
 
-For a heavy MIP $\dv{E}{x} \approx \SI{2.1}{\mega\electronvolt\per\centi\metre}$, a \lartpc{} has a charge yield of $\order{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
+For a heavy MIP with $\dv{E}{x} \approx \SI{2.1}{\mega\electronvolt\per\centi\metre}$, a \lartpc{} has a charge yield of $\order{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
 The readout electronics need to be able to reliably digitise this charge.
 This chapter aims to outline the challenges based on present designs and then present several tests of future approaches addressing them.
 
@@ -119,6 +119,61 @@ This can also be seen from Figures~\ref{fig:viper_snr-noisy} and~\ref{fig:viper_
 
 \section{Improved Cold Electronics for Pixelated Readouts}
 \label{sec:electronics_pixels}
+
+This section describes the challenges met by electronics for pixelated \lartpc{}s and possible solutions.
+As an upgrade to the LARASIC preamplifiers developed for \uboone{}, BNL is developing cold charge readout electronics for the \dune{} far detector.
+In particular, the plan is to accompany the cryogenic charge preamplifiers by cryogenic Analogue-to-Digital Converters (ADCs).
+As mentioned in Section~\ref{sec:lartpc_electronics}, this can improved noise because of both shorter analogue signal lines and reduced thermal noise of the electronics.
+Furthermore, cold digitisation allows multiplexing of the data on high-speed digital links, reducing the number of needed signal cable feedthroughs.
+
+However, designing reliable electronics at cryogenic temperatures is not an easy task.
+ADCs in particular are very sensitive to stable reference voltages required for proper analogue to digital conversion.
+Another problem arises from the fact that digital electronics in general required clocks.
+In general, proper timing requires sharp edges and is usually realised as a square wave.
+According to Fourrier analysis, a square wave produces a high level of harmonics.
+This is particularly problematic in case of readout wires that act as antennas and can pick up theses clock signals.
+Another important aspect is power dissipation.
+All power dissipated by cryogenic electronics needs to be compensated for in order to prevent the \lar{} from boiling.
+This is particularly problematic for a pixelated readout that requires a much higher number of readout channels than a wire readout (see Chapter~\ref{chap:charge-ro}).
+
+In the course of this work, the cryogenic ADC ASICs developed by BNL were evaluated to be used in the near detector as well.
+The author joined the team at BNL in cold tests of the devices.
+One of the results of these tests is presented here to illustrate the difficulties of cryogenic ADCs.
+As a disclaimer, it should be noted that this is by no means the current status of the ADCs at the time of this writing.
+The described tests were performed in the Fall of 2016 at BNL.
+
+The tests were focused on the linearity, an important characteristic of an ADC.
+It describes the relation between the applied inpurt voltage and the calculated digital number at the output.
+In the case of the BNL ADCs, this relation is expected to be strictly linear.
+To test this, a voltage ramp is applied to the input and the converted digital values are recorded.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{bnl/bnl_adc_lin}
+	\caption{Linearity measurement of the BNL cryogenic ADC ASICs with input voltage on the x-axis and ADC value or code on the y-axis.
+	Color represents the number of measurements.
+	The measurements were performed in liquid nitrogen.}
+	\label{fig:bnl_adc_lin}
+\end{figure}
+
+A typical measurement is shown in Figure~\ref{fig:bnl_adc_lin}.
+The expected shape is one straight diagonal line from the bottom left to the top right corner, i.e.\ a linear relationship between input voltage and ADC value or \emph{code}.
+Two particular deviations from this are visible: gaps accompanied by horizontal lines and a wobbly response around zero.
+Upon close inspection, it can be seen that the gaps have the same voltage range as the horizontal lines.
+The meaning of this is that for this input voltage range, the ADC output is \emph{stuck} at the same value.
+Both these effects mean that the detector response to detected charge and thus energy deposition is not linear.
+While some non-linearities can be compensated in offline data analysis, this is not possible for the sticking ADC values because they correspond to a range of input voltages.
+This impairs the energy resolution of the detector.
+
+The explanation for the non-linearities are related to the electronic design of the ASIC.
+Additionally, the issue was not fully understood at the time of these tests.
+Therefore, it is out of the scope of this work and not given here.
+The measurements are shown to illustrate the difficulties of designing a reliable cryogenic ADC.
+
+Leaving aside the non-linear response, the BNL ADC ASICs are not suitable for use in conjunction with a pixelated \lartpc{} charge readout.
+Being designed for wire readouts, no strong focus was laid on power dissipation which is $\approx \SI{5}{\milli\watt}$ per channel.
+Combined with the one of the LARASIC (\SI{10}{\milli\watt}), a total of \SI{15}{\milli\watt} is dissipated.
+For a pixelated \dune{} ND with $\order{\num{e7}}$ channels, the resulting required cooling power would be \SI{150}{\kilo\watt}.\todo{sauce}
 
 \todo[inline, color=red]{BNL}
 \todo[inline, color=red]{LArPix}

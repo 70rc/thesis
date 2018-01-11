@@ -30,10 +30,13 @@ Combining this with the charge in the capacitor,
 	\label{eq:electronics_thermal-noise}
 	Q & = & C V = \sqrt{k T C}
 \end{IEEEeqnarray}
-is the equivalent noise charge due to the capacitors non-zero temperature.
+is the equivalent noise charge due to the capacitor's temperature.~\cite{noise}
+
 Equation~\eqref{eq:electronics_thermal-noise} has two important consequences for charge detectors: Noise scales with temperature and detector capacitance.
 The temperature dependences is one of the main reasons to operate all analogue electronics at cryogenic temperatures.
 Due to their much smaller capacitance, noise levels on pixels are significantly lower compared to wires.
+
+\todo[inline]{Add external noise sources}
 
 \section{Existing Chain}
 \label{sec:electronics_existing}
@@ -228,7 +231,7 @@ If noise levels are well below the set threshold, power dissipation becomes prim
 
 In addition to this, the digital circuitry of LArPix operates at lower frequencies than the BNL design.
 For an alternating current (AC) of frequency $f$, the resistance presented by a conductor is not simply given by its Ohmic resistance.
-There is an additional component proportional to $sqrt{f}$ caused by the \emph{skin effect}.
+There is an additional component proportional to $\sqrt{f}$ caused by the \emph{skin effect}.~\cite{horowitzHill}
 High frequency currents no longer flow in the bulk of the conductor but only in a finite layer (skin) at its surface.
 Therefore, the resistance is no longer proportional to the cross-section area but rather the surface area of the conductor.
 The result of the skin effect is more power dissipation at higher frequencies.

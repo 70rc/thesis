@@ -177,6 +177,8 @@ Therefore, a common setup consists of either coating the PMT~\cite{icarus}, or a
 \section{Electronics}
 \label{sec:lartpc_electronics}
 
+This section gives an overview of charge readout electronics from the physics perspective.
+A more detailed review is given in Chapter~\ref{chap:electronics}.
 Using $W_{\m{i}}$, the energy required to produce one electron ion pair, from Section~\ref{sec:lartpc_lar} and assuming a MIP, one gets
 
 \begin{IEEEeqnarray*}{rCl}
@@ -201,13 +203,13 @@ For the same reasons it makes sense to operate the entire analogue signal chain 
 This would also help to eliminate ground loops which can pick-up noise inductively or provoke self-oscillation of the analog signal circuitry.
 On the other hand, in general it is not easy to operate a circuit at cryogenic temperatures.
 Usually, a complete redesign of the circuit is necessary due to most components operating outside their guaranteed temperature range.
-For some complex active components like the amplifiers and ADCs, even a redesign of the integrated circuit might be necessary.
+For some complex active components like the amplifiers and digitisers, even a redesign of the integrated circuit might be necessary.
 On the other hand, placing the digitisers too close to the readout might result in elevated noise levels due to the digital clocks coupling into the analogue signal path.
 
 The requirements on the electronics are given by the required sensitivity of the detector.
-The necessary bit depth of the ADCs is given by the required dynamic range, i.e.\ the minimum and maximum amount of charge the readout needs to be able to register.
+The necessary bit depth of the digitisers is given by the required dynamic range, i.e.\ the minimum and maximum amount of charge the readout needs to be able to register.
 While the spatial resolution in the two coordinates parallel to the readout plane is given by the pitch of the electrodes, the accuracy of the third coordinate is given by the timing accuracy.
-This in turn depends on three properties: the timing accuracy of the light readout, the sampling time of the ADCs and the peaking time of the preamplifiers.
+This in turn depends on three properties: the timing accuracy of the light readout, the sampling time of the digitisers and the peaking time of the preamplifiers.
 Peaking time is the time needed until the output of the preamplifier reaches its maximum (peak) for a delta pulse input.
 
 
@@ -239,7 +241,7 @@ In order to achieve true 3D events, they need to be disentangled from the 2D pro
 If an event is complex enough, this cannot be done unambiguously with a limited number of 2D projections.
 This problem is especially serious in case of a near detector.
 The envisioned \dune{} near detector, for instance, is expected to see a total of \num{3.14e5} neutrino events per tonne of Ar for \SI{1e20}{POT} (protons on target).~\cite{dune2}
-Scaling down this number to one beam spill (\SI{1e14}{POT})\footnote{Assuming a \SI{2}{\mega\watt} beam reaching \SI{2e21}{POT\per a} with a spill cycle of \SI{1.2}{\second} and \SI{66.7}{\percent} beam up-time.~\cite{dune2, dune4}} leads to $\approx \num{0.3}$ neutrino events.
+Scaling down this number to one beam spill (\SI{1e14}{POT})\footnote{Assuming a \SI{2}{\mega\watt} beam reaching \SI{2e21}{POT\per a} with a spill cycle of \SI{1.2}{\second} and \SI{66.7}{\percent} beam up-time.~\cite{dune2, dune4}} leads to $\approx \num{0.3}$ neutrino events.\todo{fix}
 For a \SI{30}{\tonne} near detector, this would result in \num{9} neutrino events per beam spill excluding any additional cosmic-induced events.
 
 On top of the event reconstruction problems, event pile-up also poses a challenge for trigger accuracy.

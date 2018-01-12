@@ -227,7 +227,7 @@ Two key points distinguish them from the BNL design for the wire-equipped far de
 The complex shaping preamplifier required by wires for noise filtering can be replaced by a simple charge integrator.
 Additionally, the low noise levels allow for a self-triggering scheme; charge arriving at the LArPix is only digitised if it is above a prefedined thresholds.
 This, in turn, reduces the duty cycle and thus the power dissipation of the ADC.
-If noise levels are well below the set threshold, power dissipation becomes primarily a function of event rate in the detector.
+If noise levels are well below the set threshold, power dissipation becomes primarily a function of charge flux rate in the detector.
 
 In addition to this, the digital circuitry of LArPix operates at lower frequencies than the BNL design.
 For an alternating current (AC) of frequency $f$, the resistance presented by a conductor is not simply given by its Ohmic resistance.
@@ -238,14 +238,15 @@ The result of the skin effect is more power dissipation at higher frequencies.
 By operating at lower frequencies, the power dissipation of LArPix can be lowered further.
 The cost is a decrease in data transmission rates.
 
-With its power dissipation (and comsumption) dependent on the event rate and the lowered data transmission rate, LArPix is susceptible to high event rates.
+With its power dissipation (and comsumption) dependent on the charge flux and the lowered data transmission rate, LArPix is susceptible to high event rates.
 Due to the triggered digitisation, the same goes for noise levels.
 For the successful operation of LArPix, it is of paramount importance to keep event rates and noise levels low.
 The latter can be achieved by minimising detector capacitance.
 To lower the susceptibility to high event rates, the \dune{} ND design puts the TPC drift direction perpendicular to beam direction.
 This reduces the amount of charge per event arriving simultaneously at the readout.
-Furthermore, LArPix is equipped with an event buffer to cope with short peaks in event rate.\todo{explain event rate}
+Furthermore, LArPix is equipped with a First-In-First-Out (FIFO) buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
 
 To accomodate the elevated number of channels of a pixelated readout, the first LArPix prototype chip has \num{32} inputs.
 Its resolution in time and charge are \SI{2}{\micro\second} and \SI{8}{bit}, respectively.
 While currently inferior to the BNL design, these specifications are planned to be improved in the next design iteration, after a successful initial test.
+One of the goals of the first prototype is to assess the optimal size of the FIFO.~\cite{danLarpix}

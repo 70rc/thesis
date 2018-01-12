@@ -128,12 +128,12 @@ Finally, the standard deviation of the noise was calculated by fitting a Gaussia
 This value was used to calculate the noise for pixel and ROI channels according to
 \begin{IEEEeqnarray}{rCl}
 	\m{SNR} & = & \frac{S}{\sigma} \qc
-	\label{eq:snr}
+	\label{eq:viper_snr}
 \end{IEEEeqnarray}
 where $S$ is the signal and $\sigma$ is the noise standard deviation from the Gaussian fit.
 As can be seen in the left plot in Figure~\ref{fig:viper_unfilteredRawData}, one of the pixel channels is significantly noisier in comparison to others, likely caused by a broken preamplifier.
 Therefore, this channel was blinded for the SNR calculations.
-The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{981}{\elementarycharge} for the inductive ROI channels
+The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{982}{\elementarycharge} for the inductive ROI channels
 
 The signal $S$ is often taken for a Minimum-Ionising Particle (MIP) as this is at the lower end of the signal range interesting for neutrino physics.
 Getting a clean MIP sample from experimental data requires a calibrated reconstruction which was not available at the time of writing.
@@ -156,11 +156,11 @@ Combining this, the signal is
 \end{IEEEeqnarray}
 for a charge deposited adjacent to the readout plane, and $S = \SI{6004}{\elementarycharge}$ for a charge deposited adjacent to the cathode.
 
-Table~\ref{tab:viper_snr} lists the SNR values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:snr}.
+Table~\ref{tab:viper_snr} lists the SNR values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:viper_snr}.
 
 \begin{table}[htb]
 	\centering
-	\caption{SNR values obtained from Equation~\eqref{eq:snr} using the theoretical signal of a MIP at the readout plane or cathode, respectively combined with the average equivalent noise charge for pixel and ROI channels obtained from measurements.}
+	\caption{SNR values obtained from Equation~\eqref{eq:viper_snr} using the theoretical signal of a MIP at the readout plane or cathode, respectively combined with the average equivalent noise charge for pixel and ROI channels obtained from measurements.}
 	\label{tab:viper_snr}
 	\begin{tabu} to \textwidth {|l|l|S|}
 		\hline

@@ -36,10 +36,62 @@ Equation~\eqref{eq:electronics_thermal-noise} has two important consequences for
 The temperature dependences is one of the main reasons to operate all analogue electronics at cryogenic temperatures.
 Due to their much smaller capacitance, noise levels on pixels are significantly lower compared to wires.
 
-\todo[inline]{Add external noise sources}
+Another internal noise source are resonances in the signal path that can start to oscillate.
+Resonances can occur from the combination of the impedance of electronic components such as cables and input impedances.
+The main culprits are usually parasitic impedances not taken into account during the desing of the circuit.
+The resulting oscillations are superimposed on the signal.
+
+An example of such a resonance is the behaviour of the cryogenic preamplifiers described in Section~\ref{sec:electronics_existing}.
+They include a user configurable shaping filter.
+With its change, the input capacitance of the amplifier changes as well.
+Some configurations can form resonances with the circuit at the input.
+Most passive electronic components change their values more or less significantly with temperature.
+Therefore, the resonance behaviour of the detector circuit is different at room temperature and in \lar{}.
+Additionally, every deviation from the final setup potentially changes parasitic impedances.
+As a result, it is quite challenging to debug such resonances in the signal path.
+
+External sources can induce voltages on the signal path from variable magnetic fields, as predicted by Faraday's law.
+Particularly prone to this are ground loops, any closed circuit supposed to be entirely at ground potential.
+If the resistance at one place of the loop is hign enough, the induction results in a voltage difference along the loop.
+If the same part of the loop is used as reference of a signal carrying connection, a difference in the ground reference between signal source and signal sink will affect the signal.
+
+There are several possibilities to make a circuit more resilient to external noise sources.
+An obvious one is shielding all sensitive parts from external magnetic fields using a Faraday cage.
+Implementing this effectively is extremely complicated and often not practical for small experiments.
+Another approach is hardening the signal path itself by using current-coupled and/or symmetric signals.
+Current-coupled signals are much less sensitive to induced voltages, as long as they are small enough and do not result in significant current across parasitic impedances.
+An example is NIM logic from the Nuclear Instrumentation Module standard.
+
+For conventional single-ended signalling, the signal is measured as the voltage or current difference between a signal conductor and a ground common to the signal source and the signal sink.
+Using a common ground as signal return path can have several undesired effects.
+To shield the signal conductor, it is usually enclosed in a ground shield.
+If the latter is connected on both sides, a ground loop can result for instance in combination with a shared power supply ground.
+Ground loops can pick up noise through induction if the resistance along the loop is high enough.
+A second way to couple noise into a single-ended system is by shifting the potential on the common ground away from the reference voltage or current, for instance due to high currents flowing through a lossy ground connection.
+Because the signal is always measured against the common ground, it will be distorted.
+In symmetric or differential signalling, the signal is not measured between a signal conductor and ground but instead between two signal conductors.
+This works by putting an inverted (symmetric) waveform of the signal on a second conductor.
+The signal is recovered by taking the difference between to two signal conductors.
+As a result, the signal sink needs not be connected to the same ground as the signal source because the signal is independent of ground.
+Ground loops can thus be avoided in the signal path.
+Furthermore, the effects of noise pick-up on the signal lines is drastically reduced.
+Due to the completely symmetric signal path, inductive noise pick-up is equal on both signal conductors as opposed to single-ended signals where the signal path is not symmetric.
+In the signal sink, the difference between the two symmetric signal conductors is formed and everything that is present on both of them, such as the inductively picked up noise, cancels out.
+
+Disentangling the three different sources of noise (thermal noise, resonances, and external pick-up) is not easy.
+Hints can often be found in the spectrum of the noise.
+Thermal noise is equal and uncorrelated over the full frequency spectrum.
+Resonances usually occur at specific frequencies and thus produce regular patterns such as a sine at the resonance frequency.
+External sources are more difficult to identify.
+If the source produces electromagnetic fields at known frequencies (e.g.\ harmonics of a switched power supply) the noise spectrum can be scanned for these.
+On the other hand if the source is unknown, debugging is much more complex.
+
 
 \section{Existing Chain}
 \label{sec:electronics_existing}
+
+\todo[inline]{better title?}
+
 Contemporary electronics schemes shall be introduced by looking at the existing readout chain at LHEP at the University of Bern.
 It was originally designed for the \AT{} experiment and a more detailed description can be found in~\cite{AT_larasic}.
 
@@ -108,22 +160,7 @@ Furthermore, this decouples the lab grid entirely from the building ground preve
 \end{figure}
 
 The signal path from the impedance-matching buffer amplifiers to the digitisers---i.e. the warm signal path---was changed from single-ended to differential signalling.
-For conventional single-ended signalling, the signal is measured as the voltage or current difference between a signal conductor and a ground common to the signal source and the signal sink.
-Using a common ground as signal return path can have several undesired effects.
-To shield the signal conductor, it is usually enclosed in a ground shield.
-If the latter is connected on both sides, a ground loop can result for instance in combination with a shared power supply ground.
-Ground loops can pick up noise through induction if the resistance along the loop is high enough.
-A second way to couple noise into a single-ended system is by shifting the potential on the common ground away from the reference voltage or current, for instance due to high currents flowing through a lossy ground connection.
-Because the signal is always measured against the common ground, it will be distorted.
-In differential signalling, the signal is not measured between a signal conductor and ground but instead between two signal conductors.
-This works by putting an inverted waveform of the signal on a second conductor.
-The signal is recovered by taking the difference between to two signal conductors.
-As a result, the signal sink needs not be connected to the same ground as the signal source because the signal is independent of ground.
-Ground loops can thus be avoided in the signal path.
-Furthermore, the effects of noise pick-up on the signal lines is drastically reduced.
-Due to the completely symmetric signal path, inductive noise pick-up is equal on both signal conductors as opposed to single-ended signals where the signal path is not symmetric.
-In the signal sink, the difference between the two symmetric signal conductors is formed and everything that is present on both of them, such as the inductively picked up noise, cancels out.
-In the pixel prototype setup, differential signalling was realised by replacing the buffer amplifiers by single-ended to differential amplifiers and inserting another stage upstream of the digitisers to change the signal back to \SI{50}{\ohm} single-ended, matching the input of the digitisers.
+This was achieved by replacing the buffer amplifiers by single-ended to differential amplifiers and inserting another stage upstream of the digitisers to change the signal back to \SI{50}{\ohm} single-ended, matching the input of the digitisers.
 Like this, noise pick-up outside the cryostat could be reduced as well as sensitivity to ground loops between the detector and the DAQ rack.
 
 \begin{figure}[htb]
@@ -141,13 +178,16 @@ This is problematic because for high enough frequencies---determined by $RC$---,
 Through this capacitive coupling to ground, the system can start to oscillate.
 One evidence for this is that the noise is equal over multiple channels, so-called common-mode noise.
 More specifically, the noise is equal over groups of channels (see Figure~\ref{fig:electronics_event-run1}).
-Investigating this, it was found that these groups correspond to channels of roughly equal parasitic capacitance.
+Investigating this, it was found that these groups correspond to channels of roughly equal parasitic capacitance.\todo{numbers}
 Also, the noise amplitude is higher on channels with higher capacitance (see Figure~\ref{fig:electronics_noise-run1}).
 To solve this problem, the PCB design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes and increasing the thickness of the PCB.
 
 As can be seen from Figures~\ref{fig:electronics_event-run1} and~\ref{fig:electronics_event-run2}, there is a significant decrease in noise after commissioning all of the above improvements to the readout chain.
 This can also be seen from Figures~\ref{fig:electronics_noise-run1} and~\ref{fig:electronics_noise-run2} depicting the noise amplitude distribution of the two measurement campaigns.
 The data for the latter (\num{5000} events in the first and \num{2000} events in the second campaign) was taken employing a \SI{5}{\hertz} random trigger.
+A more detailed assessment of the noise after the implementation of the described noise mitigation measures can be found in Section~\ref{sec:viper_snr}.
+
+\todo{put numbers for comparison?}
 
 \begin{figure}[htb]
 	\centering

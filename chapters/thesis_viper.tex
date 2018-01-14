@@ -1,6 +1,9 @@
 \chapter{Results from the First Measurements with the \AC{} Pixel Demonstrator}
 \label{chap:viper}
 
+This chapter describes the results obtained from the first pixelated \lartpc{} prototype for the \AC{} project (see Chapter~\ref{chap:argoncube}).
+While many of the individual systems, such as the high-voltage system, light and charge readout, have been described in previous chapters, a short overview of the implementation is given here.
+
 \todo[inline, color=red]{Add PixLAr?}
 
 
@@ -22,9 +25,9 @@ There are \num{6 x 6} pixels per region, giving a total of 1008 pixels.
 \end{figure}
 
 Vias were used for pixels instead of pads in order to minimise capacitance.
-It is important that capacitance is minimised when amplifying charge as thermal noise scales with capacitance: $Q_{\mathrm{Noise}}=\sqrt{k_{\mathrm{B}}TC}$~\cite{noise}.
+As detailed in Chapter~\ref{chap:electronics}, it is important that capacitance is minimised when amplifying charge.
 To further minimise parasitic capacitance, the PCB design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes, and increasing the thickness of the PCB to \SI{3.5}{\milli\metre} from an initial \SI{1.75}{\milli\metre}. 
-Capacitance at each pixels is $\order{\SI{50}{\pico\farad}}$.
+The resulting capacitance at each pixel is $\order{\SI{50}{\pico\farad}}$.
 
 The pixels are directly connected to the preamplifiers while the inductive focusing grids are decoupled via \SI{10}{\nano\farad} capacitors.
 Additionally, the bias voltage is filtered at the input by another \SI{10}{\nano\farad} and \SI{10}{\mega\ohm}.

@@ -1,27 +1,27 @@
 \chapter{Light Readout Studies}
 \label{chap:light-ro}
 
-\todo[inline, color=red]{ArCLight}
-\todo[inline]{move to ArgonCube?}
-
-
-\section{SiPM Light Readout}
-\label{sec:rd-dune-nd_light}
-
 For the \AC{} detector concept detailed in Chapter~\ref{chap:argoncube}, a slim and efficient light readout is needed.
 Photomultiplier tubes (PMTs) are not suitable because they occupy a lot of space and thus would require mounting on top of a module which in turn would reduce their efficiency.
 That is why the photon detectors of choice for such a detector are silicon photomultipliers (SiPMs).
+The following describes the light readout used in the \AC{} pixel demonstrator described in Chapter~\ref{chap:viper}.
+After that the \AC{} Light readout, \AL{}, is introduced.
+
+
+\section{Cryogenic SiPM Light Readout}
+\label{sec:light-ro_viper}
+
 In 2016, LHEP at the University of Bern developed a novel cosmic ray tagger system for \lartpc{}s which was subsequently installed in \uboone{}~\cite{uboone} and will be installed in the \sbnd{} experiment~\cite{sbnd} in the near future.
 The tagger consists of panels made from polystyrene based scintillating bars.
 On both long edges of the strips, the light is coupled into a \emph{Kuraray Y11(200)M}\footnote{\url{http://kuraraypsf.jp}} wavelength-shifting (WLS) fibre of \SI{1}{\milli\metre} diameter.
 One end of the fibre is coated with an aluminium mirror to increase collection efficiency.
 The other end is attached to a \emph{Hamamatsu S12825-050P}\footnote{\url{http://www.hamamatsu.com}} silicon photomultiplier (SiPM).
-A bespoke front-end board (FEB) reads out the SiPM signal and provides power.
+A bespoke Front-End Board (FEB) reads out the SiPM signal and provides power.
 It was developed at LHEP at the University of Bern alongside the scintillator panels\cite{crt_feb}.
 
-For the first prototype, the CRT system was adapted to serve as the light trigger system.
+For the first pixel prototype described in Chapter~\ref{chap:viper}, the CRT system was adapted to serve as the light trigger system.
 Except for operating everything up to the SiPMs in liquid argon, the polystyrene scintillating bars were replaced by acrylic rings.
-The latter are placed in between the aluminium field shaping rings.
+The latter are placed in between the aluminium field shaping rings of the TPC.
 To allow for proper convection of the liquid argon, only every other gap is completely filled by an acrylic ring.
 Perpendicularly to the rings(i.e.\ in drift direction), four WLS fibres collect the light from the rings and guide it to the readout plane on the anode side where it is fed to the SiPMs.
 Residing on the cryostat top-flange at room temperature, the front-end board is connected to the SiPMs via Teflon insulated coaxial cables.
@@ -30,17 +30,23 @@ The peak of scintillation light emission in liquid argon lies at \SI{128}{\nano\
 Therefore, the scintillation light needs to be shifted before it can be detected by the SiPMs.
 This happens in two stages.
 For the first shift, tetraphenyl butadiene (TPB) is applied to the inside of the acrylic rings.
-Their outside is not coated to reduce the collected amount of scintillation light that originates outside the TPC.
+Their outside is not coated to reduce the collected amount of scintillation light that originates outside the TPC while their inside is machined to optimise light collection.
 TPB absorbs the \SI{128}{\nano\metre} scintillation light an re-emits with a peak at \SI{440}{\nano\metre}~\cite{tpb} which is then propagated through the acrylic and coupled into the WLS fibre.
-The latter has an absorption peak at \SI{430}{\nano\metre} and an emission peak at \SI{476}{\nano\metre}.
+The latter has an absorption peak at \SI{430}{\nano\metre} and an emission peak at \SI{476}{\nano\metre}.\todo{sauce}
 
 In the front-end board, two coincidences of two out of four SiPMs are formed and combined by means of a logic \emph{OR} operation.
 The trigger pattern is thus
-
 \begin{IEEEeqnarray}{rCl}
 	T & = & \qty(S_1 \land S_2) \lor \qty(S_3 \land S_4)
 \end{IEEEeqnarray}
-
 for SiPMs $S_1$ through $S_4$.
 The reason for this is that the same trigger logic is used for the CRT panels to have a coincidence between two fibres of one scintillation bar.
-In order to improve trigger purity, it was tried to change the firmware to trigger on the coincidence of all four fibres in the TPC but this could not be achieved due to a firmware bug.
+In order to improve trigger purity, it was tried to change the firmware to trigger on the coincidence of all four fibres in the TPC.
+Due to a firmware bug however this could not be achieved.
+
+
+\section{\AL{}}
+\label{sec:light-ro_arclight}
+
+\todo[inline, color=red]{\AL{}}
+\todo[inline]{move to ArgonCube?}

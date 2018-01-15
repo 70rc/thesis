@@ -391,13 +391,44 @@ An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 	\label{fig:nu-detection_dune}
 \end{figure}
 
-The beamline at FNAL produces pions by shooting a \SIrange{60}{120}{\giga\electronvolt} proton beam of \SIrange{1}{2}{\mega\watt} intensity onto a target (the exact values are still subject to change).
-The pions pass through several electromagnetic focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) according to Equation~\eqref{eq:nu-detection_pion-decay}.
+The beamline at FNAL produces pions by shooting a pulsed proton beam onto a graphite target.
+A variable proton energy of \SIrange{60}{120}{\giga\electronvolt} allows for the production of different neutrino fluxes.
+Each pulse has a duration of \SI{10}{\micro\second} at a period of \SIrange{0.7}{1.2}{\second}, depending on the proton energy.
+During phase one of the experiment, each pulse contains \num{7.5e13} protons resulting in an average beam power of \SIrange{1.03}{1.2}{\mega\watt}.
+In a later phase two, the number of protons per pulse will be doubled, doubling the average power as well as the average number of events per pulse in the detectors.
+A summary of the various proton beam configurations is given in Table~\ref{tab:nu-detection_beam-params}.
+The produced pions pass through several electromagnetic focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) according to Equation~\eqref{eq:nu-detection_pion-decay}.
 By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primlarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
 Alongside the pions, a small amount of kaons is produced as well.
 These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\SI{5}{\percent}$~\cite{pdg} producing a significant \Pgne (\Pagne) beam contamination.
 The (anti)neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_dune-flux}.
 More information on the beamline can be found in~\cite{dune2}.
+
+\begin{table}[htb]
+	\centering
+	\caption{Summary of the \dune{} proton beam parameters for various configurations.
+	Intially, the beamline will operate with the phase one parameters.
+	At a later stage it will be upgraded to support the phase two parameters.
+	The pulse duration is \SI{10}{\micro\second} for all configurations.~\cite{dune3, lauraNDRates}}
+	\label{tab:nu-detection_beam-params}
+	\begin{tabu} to \textwidth {|c|S|S|S|S|}
+		\hline
+		Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per pulse} &	{Pulse period $\qty[\si{\second}]$} &	{Average power $\qty[\si{\mega\watt}]$} \\
+		\hline
+		\Romannum{1} &	60 &											7.5e13 &			0.7 &									1.03 \\
+		\hline
+		\Romannum{2} &	60 &											1.5e14 &			0.7 &									2.06 \\
+		\hline
+		\Romannum{1} & 	80 &											7.5e13 &			0.9 &									1.07 \\
+		\hline
+		\Romannum{2} &	80 &											1.5e14 &			0.9 &									2.14 \\
+		\hline
+		\Romannum{1} &	120 &											7.5e13 &			1.2 &									1.20 \\
+		\hline
+		\Romannum{2} &	120 &											1.5e14 &			1.2 &									2.40 \\
+		\hline
+	\end{tabu}
+\end{table}
 
 \begin{figure}[htb]
 	\centering

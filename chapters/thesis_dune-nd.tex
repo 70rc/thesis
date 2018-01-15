@@ -10,6 +10,37 @@ With \AC{} selected as  the \lar{} component of the \dune{} near detector (ND), 
 \end{enumerate}
 Number one is addressed in Chapter~\ref{chap:viper}.
 This chapter will address question number two.
+More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the ND is described in Chapter~\ref{chap:argoncube}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{pile-up/charge_flux}
+	\caption{Average current collected by the readout for one spill as a function of time.
+	The current is given in arbitrary but equal units for both plots.
+	The upper plot assumes the whole charge is deposited instantaneously while for the lower plot, the actual spill duration from~\cite{dune2} is used.}
+	\label{fig:dune-nd_charge-flux}
+\end{figure}
+
+\lartpc{}s are intrisically slow detectors with a readout time of $\approx \SI{0.5}{\milli\second\per\metre}$ drift length for a \SI{1}{\kilo\volt\per\centi\metre} drift field (see Chapter~\ref{chap:lartpc}).
+This causes a pile-up of events in the detector; if the latter was infinitely fast, all neutrino interactions could be separated in time.
+In reality, even the \AC{} TPCs with a drift length of only \SI{0.5}{\metre}, corresponding to a full readout cycle of \SI{250}{\micro\second}, are significantly slower than the spill duration of \SI{10}{\micro\second} of the \dune{} beamline reference design.~\cite{dune2}
+Figure~\ref{fig:dune-nd_charge-flux} visualises this effect.
+The charge arriving at the readout is represented as an average current in arbitrary units (the same for top and bottom, though).
+The magnitude of this readout current is a direct measure for event pile-up in the corresponding time slice.
+For simplicity, an infinitely short spill duration was assumed for the pile-up study (top), i.e.\ the whole ionisation charge produced by one beam spill is deposited instantaneously inside the TPC volume.
+As the time in between beam spills is $\order{\SI{1}{\second}}$, all this charge can be read out within one drift time.
+In this case, the average current (pile-up) seen by the readout is constant over the whole readout cycle.
+The realistic case with the spill duration of the reference beam is depicted in the bottom plot.
+At the beginning of the readout cycle, there is no charge deposited yet, the current (pile-up) is zero.
+Over the duration of the beam spill, ionisation charge accumulates inside the TPC volume while the exisiting charge is transported towards the readout by the drift field.
+After the beam spill is over, the remainder of the initial drift volume (\SI{240}{\micro\second}) contains a uniform charge density.
+The additional \SI{10}{\micro\second}, in front of the cathode and part of the next readout cycle, again, contain a ramped charge density with zero charge at the cathode, corresponding to the end of the spill.
+In short, a spill duration shorter than but comparable to the drift time results in the shape of the ionisation current (event pile-up) seen over time to become a trapecoid rather than a square.
+The integral, i.e.\ the total ionisation charge (deposited energy) is the same but part of it is shifted from the spill time slice to the beginning of the next readout cycle.
+Similarly, the peak current (pile-up) is the same, as long as the spill duration is shorter than the drift time.
+If the spill duration becomes longer than the drift time, the charge is distributed over more then two readout cycles and the peak current (pile-up) begins to decrease.
+Therefore, the assumption of an infinitely short spill is a worst-case scenario slightly improved by the real, finite spill duration.
+However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the same.
 
 
 \section{The Argon Box Simulation Tool}
@@ -95,15 +126,6 @@ Therefore, a rather primitive algorithm for true 3D space points was implemented
 This algorithm is explained in the following.
 All its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{pile-up/charge_flux}
-	\caption{Average current collected by the readout for one spill as a function of time.
-	The current is given in arbitrary but equal units for both plots.
-	The upper plot assumes the whole charge is deposited instantaneously while for the lower plot, the actual spill duration from~\cite{dune2} is used.}
-	\label{fig:dune-nd_charge-flux}
-\end{figure}
-
 The basic underlying assumption is that a non-multiplexed pixel readout will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Furthermore, it is assumed that EM shower can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
 A cone is calculated in the direction of the shower with its tip at the first charge deposition of the initial photon.
@@ -157,27 +179,6 @@ Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volu
 	As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
 	\label{fig:dune-nd_2MW-XZ-eff-pur}
 \end{figure}
-
-Another issue of concern is the influence of drift time.
-This is the actual cause of event pile-up; if the detector was infinitely fast, all neutrino interactions could be separated in time.
-In reality, even the \AC{} TPCs with a drift length of only \SI{0.5}{\metre}, corresponding to a full readout cycle of \SI{250}{\micro\second}, are significantly slower than the spill duration of \SI{10}{\micro\second} of the \dune{} beamline reference design.~\cite{dune2}
-Figure~\ref{fig:dune-nd_charge-flux} visualises this effect.
-The charge arriving at the readout is represented as an average current in arbitrary units (the same for top and bottom, though).
-The magnitude of this readout current is a direct measure for event pile-up in the corresponding time slice.
-For simplicity, an infinitely short spill duration was assumed for the pile-up study (top), i.e.\ the whole ionisation charge produced by one beam spill is deposited instantaneously inside the TPC volume.
-As the time in between beam spills is $\order{\SI{1}{\second}}$, all this charge can be read out within one drift time.
-In this case, the average current (pile-up) seen by the readout is constant over the whole readout cycle.
-The realistic case with the spill duration of the reference beam is depicted in the bottom plot.
-At the beginning of the readout cycle, there is no charge deposited yet, the current (pile-up) is zero.
-Over the duration of the beam spill, ionisation charge accumulates inside the TPC volume while the exisiting charge is transported towards the readout by the drift field.
-After the beam spill is over, the remainder of the initial drift volume (\SI{240}{\micro\second}) contains a uniform charge density.
-The additional \SI{10}{\micro\second}, in front of the cathode and part of the next readout cycle, again, contain a ramped charge density with zero charge at the cathode, corresponding to the end of the spill.
-In short, a spill duration shorter than but comparable to the drift time results in the shape of the ionisation current (event pile-up) seen over time to become a trapecoid rather than a square.
-The integral, i.e.\ the total ionisation charge (deposited energy) is the same but part of it is shifted from the spill time slice to the beginning of the next readout cycle.
-Similarly, the peak current (pile-up) is the same, as long as the spill duration is shorter than the drift time.
-If the spill duration becomes longer than the drift time, the charge is distributed over more then two readout cycles and the peak current (pile-up) begins to decrease.
-Therefore, the assumption of an infinitely short spill is a worst-case scenario slightly improved by the real, finite spill duration.
-However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the same.
 
 \begin{figure}[htb]
 	\centering

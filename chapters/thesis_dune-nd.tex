@@ -46,10 +46,10 @@ However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the sa
 \section{The Argon Box Simulation Tool}
 \label{sec:dune-nd_argon-box}
 
-Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} was developed with the goal of providing an easy-to-use simulation of particle interactions in \lar{} component of the ND.
-At the time of this writing its feature set is quite limited, in particular it does not incorporate any other detector materials except for the box of argon.
-Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file---a file format standard for passage of particle events between different simulation tools.
-For this study, several million neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
+To simulate the expected neutrino interactions in the ND, the Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} simulation tool was used.
+The neutrino group at LBNL is developing it with the goal of providing an easy-to-use simulation of particle interactions in \lar{} component of the ND.
+Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file\footnote{A file format standard for passage of particle events between different simulation tools}.
+For this study, \num{6.6e6} neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 Secondary particle transport and interaction in Argon Box is performed by Geant4.\footnote{\url{http://geant4.cern.ch}}
 Finally, the energy deposition in \lar{} is voxelised and stored together with all the necessary ancillary information about the depositing particle.
 The data is stored in the tree format of the ROOT data analysis framework.\footnote{\url{https://root.cern}}
@@ -69,7 +69,7 @@ The photons subsequently produce electromagnetic showers in \lar{} (see Section~
 At the energies of the \dune{} beam (see Figure~\ref{fig:nu-detection_dune-flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable \Pepm tracks.
 More importantly, there often are significatn gaps in betweend these charge clusters.
 A main challenge of shower reconstruction is to associate these well separated charge blobs to the correct event.
-Misidentiions lead to a misreconstruction of the neutrino energy.
+Misidentifications lead to a misreconstruction of the neutrino energy.
 The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
 The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} ND environment.
 
@@ -127,7 +127,14 @@ This algorithm is explained in the following.
 All its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
 The basic underlying assumption is that a non-multiplexed pixel readout will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
-Furthermore, it is assumed that EM shower can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
+Chapter~\ref{chap:viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the LArPix charge readout electronics described in Section~\ref{sec:electronics_larpix}.
+The spatial resolution of the pixel readout is assumed to be \SI{3}{\milli\metre} based onthe ND design specified in Section~\ref{sec:ac_dune-nd}.
+A conservative value of \SI{3}{\milli\meter} was chosen in drift direction.
+This has several advantages.
+Chosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
+MicroBooNE has achieved a resolution in drift direction $< \SI{3}{\milli\metre}$~\cite{uboone}, making it safe to assume LArPix will have a similar performance, even though not yet fully characterised.
+Finally, a conservative value also accounts for charge diffusion.
+Furthermore, it is assumed that EM showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
 A cone is calculated in the direction of the shower with its tip at the first charge deposition of the initial photon.
 The opening angle and longituginal extent of the cone were optimised by looking at the distributions of the distance from the starting point and angle w.r.t. the direction of the shower.
 The finite resolution of the detector is emulated by voxelising the charge deposition with the corresponding resolution in all three spatial coordinates.
@@ -135,6 +142,7 @@ This leads to problems near the tip of the cone where the transversal extent is 
 In particular, it can happen that most of the initial charge is shifted outside the cone.
 Furthermore, multiple scattering at lower energies makes the cone model suboptimal near the tip.
 Therefore, the acceptance volume for the reconstruction is taken as the union of the cone with a cylinder around the direction of the shower of the same longitudinal extent as the cone.
+The cylinder radius was tuned to optimise the trade-off between increased efficiency and decreased purity as defined below.
 
 \begin{figure}[htb]
 	\centering
@@ -142,21 +150,23 @@ Therefore, the acceptance volume for the reconstruction is taken as the union of
 	\caption{Efficiency (accepted true over total true energy deposition) and purity (accepted true over total accepted energy deposition) distributions of a simple cone-cylinder union EM shower reconstruction algorithm.
 	The distribution represents the fraction of photons produced by \Pgpz whose energy was reconstructed with the corresponding efficiency/purity.
 	Purity is shown for four different selections of misidentified energy: total (magenta); deposited by other events only (cyan); deposited by other events only, excluding muons (red), deposited by photons and neutrons from other events only (blue).
-	The simulated beam intensity is \SI{2}{\mega\watt}.}
+	The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
 	\label{fig:dune-nd_2MW-eff-pur}
 \end{figure}
 
 Argon Box propagates the neutrino interaction events it gets from GENIE through liquid argon, the output is a ROOT tree of neutrino interaction events.
 To get a realisitc simulation of beam events in the detector, these events need to be distributed randomly in time and space.
-Beam spills are simulated by drawing the number of events for each spill from a Poisson distrubition whose mean is calculated from the beam intensity and the target mass.
+Beam spills are simulated by drawing the number of events for each spill from a Poisson distrubition whose mean is calculated from the beam intensity and the target mass accodring to the values in Table~\ref{tab:nu-detection_beam-params}.
 The resulting number of events is taken from the Argon Box ROOT tree and their vertices are placed within the \lar{} volume at coordinates drawn from a uniform distribution.
+Combined with the target mass given in Table~\ref{tab:dune-nd_pile-up-params}, this results in an equivalent of $\approx \num{1.5e19}$ protons on target (POT).
+The seemingly low number (compared to Table~\ref{tab:nu-detection_nd-rates} for instance) is the result of many neutrino interactions happening outside of the active detector.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/energy_error}
 	\caption{Fractional error on the reconstructed neutrino energy due to missed or misidentified energy depositions as a function of true neutrino energy.
 	Misidentified energy is shown for three different selections: total deposited by other events (cyan); deposited by other events excluding muons (red), deposited by photons and neutrons from other events only (blue).
-	The simulated beam intensity is \SI{2}{\mega\watt}.}
+	The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
 	\label{fig:dune-nd_2MW-energy-error}
 \end{figure}
 
@@ -175,7 +185,7 @@ Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volu
 	\caption{Efficiency (accepted true over total true energy deposition) and purity (accepted true over total accepted energy deposition) distributions of a simple cone-cylinder union EM shower reconstruction algorithm.
 	The distribution represents the fraction of photons produced by \Pgpz whose energy was reconstructed with the corresponding efficiency/purity.
 	Purity is shown for four different selections of misidentified energy: total (magenta); deposited by other events only (cyan); deposited by other events only, excluding muons (red), deposited by photons and neutrons from other events only (blue).
-	The simulated beam intensity is \SI{2}{\mega\watt}.
+	The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
 	As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
 	\label{fig:dune-nd_2MW-XZ-eff-pur}
 \end{figure}
@@ -185,7 +195,7 @@ Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volu
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/energy_error}
 	\caption{Fractional error on the reconstructed neutrino energy due to missed or misidentified energy depositions as a function of true neutrino energy.
 	Misidentified energy is shown for three different selections: total deposited by other events (cyan); deposited by other events excluding muons (red), deposited by photons and neutrons from other events only (blue).
-	The simulated beam intensity is \SI{2}{\mega\watt}.
+	The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
 	As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
 	\label{fig:dune-nd_2MW-XZ-energy-error}
 \end{figure}
@@ -218,7 +228,7 @@ Therefore, this upper purity limit should hold at least in the near future.
 	\caption{Efficiency (accepted true over total true energy deposition) and purity (accepted true over total accepted energy deposition) distributions of a simple cone-cylinder union EM shower reconstruction algorithm.
 	The distribution represents the fraction of photons produced by \Pgpz whose energy was reconstructed with the corresponding efficiency/purity.
 	Purity is shown for four different selections of misidentified energy: total (magenta); deposited by other events only (cyan); deposited by other events only, excluding muons (red), deposited by photons and neutrons from other events only (blue).
-	The simulated beam intensity is \SI{10}{\mega\watt}.}
+	The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
 	\label{fig:dune-nd_10MW-eff-pur}
 \end{figure}
 
@@ -240,7 +250,7 @@ The error due to misidentified energy starts at around \SI{10}{\percent} and the
 	\includegraphics[width=\textwidth]{pile-up/10MW/energy_error}
 	\caption{Fractional error on the reconstructed neutrino energy due to missed or misidentified energy depositions as a function of true neutrino energy.
 	Misidentified energy is shown for three different selections: total deposited by other events (cyan); deposited by other events excluding muons (red), deposited by photons and neutrons from other events only (blue).
-	The simulated beam intensity is \SI{10}{\mega\watt}.}
+	The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
 	\label{fig:dune-nd_10MW-energy-error}
 \end{figure}
 

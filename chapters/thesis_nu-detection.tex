@@ -394,8 +394,8 @@ An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 The beamline at FNAL produces pions by shooting a pulsed proton beam onto a graphite target.
 A variable proton energy of \SIrange{60}{120}{\giga\electronvolt} allows for the production of different neutrino fluxes.
 Each pulse has a duration of \SI{10}{\micro\second} at a period of \SIrange{0.7}{1.2}{\second}, depending on the proton energy.
-During phase one of the experiment, each pulse contains \num{7.5e13} protons resulting in an average beam power of \SIrange{1.03}{1.2}{\mega\watt}.
-In a later phase two, the number of protons per pulse will be doubled, doubling the average power as well as the average number of events per pulse in the detectors.
+During phase one of the experiment, each pulse will contain \num{7.5e13} protons resulting in an beam power of \SIrange{1.03}{1.2}{\mega\watt}.
+In a later phase two, the number of protons per pulse will be doubled, doubling the power as well as the average number of events per pulse in the detectors.
 A summary of the various proton beam configurations is given in Table~\ref{tab:nu-detection_beam-params}.
 The produced pions pass through several electromagnetic focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) according to Equation~\eqref{eq:nu-detection_pion-decay}.
 By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primlarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
@@ -405,29 +405,35 @@ The (anti)neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_dune-fl
 More information on the beamline can be found in~\cite{dune2}.
 
 \begin{table}[htb]
-	\centering
-	\caption{Summary of the \dune{} proton beam parameters for various configurations.
-	Intially, the beamline will operate with the phase one parameters.
-	At a later stage it will be upgraded to support the phase two parameters.
-	The pulse duration is \SI{10}{\micro\second} for all configurations.~\cite{dune3, lauraNDRates}}
-	\label{tab:nu-detection_beam-params}
-	\begin{tabu} to \textwidth {|c|S|S|S|S|}
-		\hline
-		Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per pulse} &	{Pulse period $\qty[\si{\second}]$} &	{Average power $\qty[\si{\mega\watt}]$} \\
-		\hline
-		\Romannum{1} &	60 &											7.5e13 &			0.7 &									1.03 \\
-		\hline
-		\Romannum{2} &	60 &											1.5e14 &			0.7 &									2.06 \\
-		\hline
-		\Romannum{1} & 	80 &											7.5e13 &			0.9 &									1.07 \\
-		\hline
-		\Romannum{2} &	80 &											1.5e14 &			0.9 &									2.14 \\
-		\hline
-		\Romannum{1} &	120 &											7.5e13 &			1.2 &									1.20 \\
-		\hline
-		\Romannum{2} &	120 &											1.5e14 &			1.2 &									2.40 \\
-		\hline
-	\end{tabu}
+	\begin{minipage}{\textwidth}
+		\centering
+		\caption[\dune{} beam parameters and ND rates]{Summary of the \dune{} proton beam parameters for various configurations.
+		Intially, the beamline will operate with the phase one parameters.
+		Later, it will be upgraded to support the phase two parameters.
+		The pulse duration is \SI{10}{\micro\second} for all configurations.
+		The last column gives the expected total number of neutrino interactions per tonne of \ce{Ar} in the ND, excluding rock events.
+		It is calculated by multiplying the expected neutrino flux with the cross-section on \ce{Ar} from the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
+		Note that these values are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params} because the latter are outdated.
+		Taken from~\cite{dune3, lauraNDRates}.}
+		\label{tab:nu-detection_beam-params}
+		\begin{tabu} to \textwidth {|c|S|S|S|S|S|}
+			\hline
+			Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per pulse} &	{Pulse period $\qty[\si{\second}]$} &	{Power $\qty[\si{\mega\watt}]$} &	{ND \si{evt\per\tonne} \ce{Ar}} \\
+			\hline
+			\Romannum{1} &	60 &											7.5e13 &			0.7 &									1.03 &								0.078 \\
+			\hline
+			\Romannum{2} &	60 &											1.5e14 &			0.7 &									2.06 &								0.16 \\
+			\hline
+			\Romannum{1} & 	80 &											7.5e13 &			0.9 &									1.07 &								0.11 \\
+			\hline
+			\Romannum{2} &	80 &											1.5e14 &			0.9 &									2.14 &								0.21 \\
+			\hline
+			\Romannum{1} &	120 &											7.5e13 &			1.2 &									1.20 &								0.17 \\
+			\hline
+			\Romannum{2} &	120 &											1.5e14 &			1.2 &									2.40 &								0.33 \\
+			\hline
+		\end{tabu}
+	\end{minipage}
 \end{table}
 
 \begin{figure}[htb]
@@ -482,7 +488,7 @@ To eliminate the introduction of further extrapolation uncertainties it is impor
 
 As will be explained in Chapter~\ref{chap:lartpc}, \lartpc{}s are slow detectors.
 This is problematic in the high-multiplicity ND environment of \dune{} which is the reason why~\cite{dune2} and~\cite{dune4} do not mention an ND \lar{} component.
-The aforementioned \si{\mega\watt} beam intensity leads to ND event rates $\order{0.1}$ events per tonne of \lar{} leading to significant event pile-up.\todo{sauce}
+The aforementioned \si{\mega\watt} beam intensity leads to ND event rates $\order{0.1}$ events per tonne of \lar{} leading to significant event pile-up (see Table~\ref{tab:nu-detection_beam-params}).
 Rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector---are not included in this estimate.
 The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component for the \dune{} ND.\todo{too bullshitty?}
 
@@ -492,7 +498,11 @@ The goal of this work is to establish the key technologies enabling the successf
 
 \begin{table}[htb]
 	\centering
-	\caption{Estimated number of interactions per tonne of \ce{Ar} at the \dune{} near detector for approximately one month (\num{1e20} protons on target) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}.}
+	\caption{Estimated number of interactions per tonne of \ce{Ar} at the \dune{} near detector for approximately one month (\num{1e20} protons on target) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}, taken from~\cite{dune2}.
+	Note that these rates are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params}.
+	The reason for this is that the values below are outdated.
+	However, their order of magnitude is correct and no such detailed breakdown is available for the more recent values.
+	Therefore, they are presented as a rough estimate for the expected rates for the different interaction channels.}
 	\label{tab:nu-detection_nd-rates}
 	\begin{tabu} to \textwidth {|X|S|S|}
 		\hline

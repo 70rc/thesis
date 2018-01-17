@@ -140,19 +140,15 @@ The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pi
 
 The signal $S$ is often taken for a Minimum-Ionising Particle (MIP) as this is at the lower end of the signal range interesting for neutrino physics.
 Getting a clean MIP sample from experimental data requires a calibrated reconstruction which was not available at the time of writing.
-Therefore, the MIP signal was estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre}~\cite{pdg}.
-This can be converted to charge loss using the energy required to produce one electron-ion pair: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$~\cite{NobleGasDetectors}.
-Additionally, charge recombination, diffusion and lifetime need to be taken into account.
+Therefore, the MIP signal was estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre} (see Section~\ref{sec:nu-detection_fs}).
+This can be converted to charge loss using the energy required to produce one electron-ion pair from Table~\ref{tab:lartpc_larprop}: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$.
+Additionally, charge recombination, diffusion and lifetime need to be taken into account (see Section~\ref{sec:lartpc_lar}).
 The recombination factor was measured by \icarus{}~\cite{icarusReco} and ArgoNeuT~\cite{argoneutReco} and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
-For a non-zero drift field, diffusion needs to be split into longitudinal and transverse components.
 With \AT{}~\cite{AT}, Bern measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
-Even using the more conservative value, this results~\cite{lngDet} in a transverse spread of
-\begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{T}} & = & \sqrt{2 D_{\m{T}} t} \approx \SI{0.9}{\milli\metre} \qc
-\end{IEEEeqnarray}
-for the pixel demonstrator drift time of $t = \SI{281}{\micro\second}$; a value well below the pixel pitch of $d_{\m{p}} = \SI{2.54}{\milli\metre}$.
+Even using the more conservative value, this results in a transverse spread of $\approx \SI{0.9}{\milli\metre}$ for the pixel demonstrator drift time of $t = \SI{281}{\micro\second}$, according to Equation~\eqref{eq:lartpc_lar-diff}.
+This value lies well below the pixel pitch of $d_{\m{p}} = \SI{2.54}{\milli\metre}$.
 Considering that the longitudinal component is smaller than the transverse ~\cite{lngDet}, diffusion is neglected completely for these calculations.
-Finally, the lifetime of \SI{290}{\micro\second} will result in the reduction of charge by a factor of $\approx\num{0.38}$ over the full drift distance.
+Finally, the lifetime of \SI{290}{\micro\second} will result in the reduction of charge by a factor of $\approx\num{0.38}$ over the full drift distance (Equation~\eqref{eq:lartpc_lar-lifetime}).
 Combining this, the signal is 
 \begin{IEEEeqnarray}{rCl}
 	S & = & \dv{E}{x}_{\m{MIP}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge} \qc

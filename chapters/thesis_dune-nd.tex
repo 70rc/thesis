@@ -1,8 +1,6 @@
 \chapter{Feasibility Study of a Pixelated \lartpc{} for the \dune{} Near Detector}
 \label{chap:dune-nd}
 
-\todo[inline]{More details on statistics?}
-
 With \AC{} selected as  the \lar{} component of the \dune{} near detector (ND), there were two main question that needed to be addressed:
 \begin{enumerate}
 	\item Is a pixelated \lartpc{} feasible?
@@ -52,7 +50,7 @@ Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp
 For this study, \num{6.6e6} neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 Secondary particle transport and interaction in Argon Box is performed by Geant4.\footnote{\url{http://geant4.cern.ch}}
 Finally, the energy deposition in \lar{} is voxelised and stored together with all the necessary ancillary information about the depositing particle.
-The data is stored in the tree format of the ROOT data analysis framework.\footnote{\url{https://root.cern}}
+The data is stored in the tree format of the ROOT data analysis framework\footnote{\url{https://root.cern}}.
 This allows for convenient further processing using ROOT.
 
 
@@ -123,10 +121,9 @@ The complexity of reconstruction paired with the potential impact on the physics
 To investigate the effects of pile-up on energy reconstruction, a working reconstruction algorithm is necessary.
 However, at the time of writing, official reconstruction tools were only available for \lartpc{}s read out by wire planes.\footnote{\url{http://larsoft.org}}
 Therefore, a rather primitive algorithm for true 3D space points was implemented, under the assumption that a positive outcome of such a pile-up study would imply an even better performance of a more sophisticated reconstruction.
-This algorithm is explained in the following.
-All its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
+This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
-The basic underlying assumption is that a non-multiplexed pixel readout will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
+The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Chapter~\ref{chap:viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the LArPix charge readout electronics described in Section~\ref{sec:electronics_larpix}.
 The spatial resolution of the pixel readout is assumed to be \SI{3}{\milli\metre} based onthe ND design specified in Section~\ref{sec:ac_dune-nd}.
 A conservative value of \SI{3}{\milli\meter} was chosen in drift direction.
@@ -175,8 +172,15 @@ The actual detector dimensions are represented by the active volume.
 It is inside the target volume which is the volume within which the neutrino vertices are placed randomly.
 This is done as a crude emulation of rock events, secondary particles from beam neutrino interactions outside the detector volume.
 The additional target mass is \SI{1}{\metre} in all four directions transverse to the beam, and \SI{4}{\metre} in upstream beam direction.
+According to Equations~\eqref{eq:nu-detection_hardon-long} and~\eqref{eq:nu-detection_hardon-trans}, hadronic showers up to \SI{10}{\giga\electronvolt} are contained $> \SI{95}{\percent}$ longitudinally and $> \SI{50}{\percent}$ transversally (because Equation~\eqref{eq:nu-detection_hardon-trans} gives the radius for \SI{95}{\percent} containment) in the additional volume.
+Or in other words, increasing the target volume further will not result in significantly more rock events entering the active volume.
+These numbers are supported by Geant4 simulations~\cite{hardonContChris}.
+As mentioned in Section~\ref{sec:nu-detection_fs}, EM interactions happen on smaller scales than hadronic interactions.
+The big exception are muons due to their high range.
+However, as will be explained below, due to the high reconstruction efficiency, it makes sense to ignore pile-up from muons anyway.
 Finally, a fiducial volume \SI{0.3}{\metre} ($\approx 2 X_{\m{0}}$) smaller than the active volume on all six faces is defined.
 Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
+This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the inital \num{6.6e6} neutrino events.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.
 
 \begin{figure}[htb]
@@ -242,7 +246,7 @@ Therefore, the actual impact on the reconstructed neutrino energy as a function 
 The y-axis represents the fractional error on the reconstructed neutrino energy and the colors correspond to the same selections as for the purity/efficiency plot in Figure~\ref{fig:dune-nd_2MW-eff-pur}.
 However, only misidentified energy from other events affects the total reconstructed energy of the neutrino which is why the magenta selection, including misidentified energy from the same event, is not applicable to this calculation.
 It can be seen, that the effect of missed energy starts at a few~\si{\percent} for the lower neutrino energies and the quickly goes down to stabilise around \SI{1}{\percent}.
-This indicates that the cone-cylinder union algorithm, eventhough quite primitive, performs reasonably well.
+This indicates that the cone-cylinder union algorithm, even though quite primitive, performs reasonably well.
 The error due to misidentified energy starts at around \SI{10}{\percent} and then, settles between \SIrange{1}{2}{\percent}.
 
 \begin{figure}[htb]
@@ -257,7 +261,7 @@ The error due to misidentified energy starts at around \SI{10}{\percent} and the
 To get a rough idea of the performance of a 2D wire readout in the same environment, the same study was performed ingoring the Y coordinate completely, leaving everything else untouched.
 Of course, this is a gross underestimation of the capabilities of existing reconstruction algorithms for 2D charge readout data.
 In particular, contemporary experiments use at least three 2D projections whereas only one was used here.
-Eventhough, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ-eff-pur} and~\ref{fig:dune-nd_2MW-XZ-energy-error}.
+Even though, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ-eff-pur} and~\ref{fig:dune-nd_2MW-XZ-energy-error}.
 The fraction of events not suffering from pile-up is below \SI{10}{\percent} while the error on energy reconstruction has increased to \SIrange{5}{10}{\percent} at high energies and event \SIrange{20}{40}{\percent} at low energies.
 Efficiency and energy error due to missed energy are comparable eventhough, the cone and cylinder dimensions are no longer correct for photons not parallel to the XZ plane.
 

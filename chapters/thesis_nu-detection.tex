@@ -73,7 +73,7 @@ Incident charged particles ionise the counting medium---neutral particles can be
 If an electric field is applied to the electrodes, the produced electron-ion pairs are separated and drift towards the corresponding electrode.
 By reading out the current on the electrodes, one can measure the amount of ionisation produced inside the detector.
 Usually, the anode is read out because the drift velocity of electrons in an electric field is much higher than the one of ions.
-In this regime, the detector is in fact an ionisation counter rather than a proportional counter.
+If the ionisation charge is simply drifted towards the electrodes, the detector is in fact an ionisation counter rather than a proportional counter.
 The problem is that the charge produced by the ionisation is very low and the current detector needs to be very sensitive.
 By increasing the voltage across the electrodes, the sensitivity can be improved.
 If the field inside the counter is above a certain threshold, the drifting ionisation electrons become energetic enough to ionise the counting medium themselves and thus, start an avalanche and produce more charge.
@@ -121,7 +121,7 @@ Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all th
 	\HepProcess{\Pagnl\Pp \to \Plp\Pn} &
 \end{IEEEeqnarray}
 with $\Pl = \Pe, \Pgm, \Pgt$.
-It should be noted however, that usually \Pgt leptons are too short-lived to produce enough Cherenkov radiation to be detected.
+It should be noted however, that usually \Pgt leptons are too short-lived and heavy to produce enough Cherenkov radiation to be detected.
 A second interaction path of neutrinos with matter is the scattering off shell electrons according to
 \begin{IEEEeqnarray}{Cl}
 	\label{eq:nu-detection_NC-nu}
@@ -712,6 +712,8 @@ Therefore, the cross-section
 is a measure for the interaction rate $R_{\particles}$ normalised by the number of both, beam and target, particles.
 As flux is given in units of inverse time and area, and interaction rate in inverse time, the cross-section needs to have the dimension of an area.
 
+\afterpage{\clearpage}
+
 
 \section{Final State Detection}
 \label{sec:nu-detection_fs}
@@ -843,11 +845,8 @@ The distinct momentum dependence of this so-called \emph{Highland formula} can b
 
 Concerning the interactions of charged particles with matter, there is one important note regarding detectors.
 While charge produced in interactions (i.e.\ ionisation) can be detected directly, light (i.e.\ excitation photons and photon radiation) first needs to be converted to charge to be detected.
-This conversion from light to electric charge is the topic of the next section.
 
-Photons can interact with matter in different ways.
-In particular, they can be converted to charge which can be detected.
-The three most important interactions converting photons to charge shall be outlined in this section.
+The three most important interactions converting photons to charge are the \emph{photoelectric effect}, \emph{Compton Scattering}, and \emph{pair production}.
 All of them have in common that they attenuate photon beams exponentially according to
 \begin{IEEEeqnarray}{rCl}
 	I & = & I_0 e ^ {- \mu x}
@@ -860,7 +859,7 @@ The thickness of the absorber is given by $x$ and
 \end{IEEEeqnarray}
 is the \emph{mass attenuation coefficient} defined by the sum of the cross sections $\sigma_i$ of the different interaction processes.
 
-At low energies (ionisation energy $\le E_{\Pgg} \le \SI{100}{\kilo\electronvolt}$), photons primarily undergo conversion to charge by the \emph{photoelectric effect}.
+At low energies (ionisation energy $\le E_{\Pgg} \le \SI{100}{\kilo\electronvolt}$), photons primarily undergo conversion to charge by the photoelectric effect.
 The photon is absorbed by an atom of the absorber which in turn is ionised and thus ejects one of its shell electrons.
 The cross section is given by
 \begin{IEEEeqnarray}{rCl}
@@ -872,7 +871,7 @@ where
 	\item[$\sigma_{\m{Th}}^{\Pe} = \frac{8}{3} \pi r_{\Pe} ^ 2 = \SI{6.65e-25}{\centi\meter\squared}$] is the \emph{Thomson cross section} for elastic scattering of photons on electrons.
 \end{description}
 
-For energies $\approx \SI{1}{\mega\electronvolt}$, \emph{Compton scattering} dominates the interaction of photons with matter.
+For energies $\approx \SI{1}{\mega\electronvolt}$, Compton scattering dominates the interaction of photons with matter.
 Thereby, the photon is not absorbed by the atom but just scatters off one of its shell electrons with the cross section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{c}} & = & 2 \pi r_{\Pe} ^ 2 Z \left\{\qty[\frac{1 + \epsilon}{\epsilon ^ 2}] \qty[\frac{2 \qty(1 + \epsilon)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln(1 + 2 \epsilon)]\right.\\
@@ -918,18 +917,19 @@ The mean free path of a photon before pair production
 \end{IEEEeqnarray}
 is very close to the mean free path of an \Pepm before bremsstrahlung, the radiation length $X_{\m{0}}$.
 Therefore, the number of particles participating in the shower doubles roughly every radiation length resulting in an exponential growth.
+This allows EM showers to be approximated by the following rather simple model.
 When the average energy per paticle drops below the critical energy, ionisation losses begin to dominate over radiative losses for \Pepm and Compton and photoelectric effect over pair production for photons.
 At this point, the shower reaches its maximum and
 \begin{IEEEeqnarray}{rCl}
-	t_{\m{max}} & = & \frac{\ln(\frac{E_{\m{0}}}{E_{\m{c}}})}{\ln(2)}
+	t_{\m{max}}^{\m{EM}} & = & \frac{\ln(\frac{E}{E_{\m{c}}})}{\ln(2)}
 \end{IEEEeqnarray}
 is its longitudinal extent in radiation lengths.
 The \emph{Molière radius}
 \begin{IEEEeqnarray}{rCl}
-	R_{\m{M}} & = & \frac{\SI{21}{\mega\electronvolt}}{E_{\m{c}}} X_{\m{0}}
+	R_{\m{M}}^{\m{EM}} & = & \frac{\SI{21}{\mega\electronvolt}}{E_{\m{c}}} X_{\m{0}}
 \end{IEEEeqnarray}
 is the transversal extent of the shower divided by the the material density.
-Both $t_{\m{max}}$ and $R_{\m{M}}$ are important benchmarks for the dimensioning of electromagnetic calorimeters.
+Both $t_{\m{max}}^{\m{EM}}$ and $R_{\m{M}}^{\m{EM}}$ are important benchmarks for the dimensioning of electromagnetic calorimeters.
 Naturally, a photon in the energy range where pair production dominates will produce a shower as well.
 On the other hand, also \Pgmpm can start electromagnetic cascades, if there energy is high enough to produce bremsstrahlung.
 
@@ -943,11 +943,29 @@ That is why the hadronic cross-section
 is usually split.
 From $\sigma_{\m{inel}}$, one can derive the \emph{interaction length}
 \begin{IEEEeqnarray}{rCl}
-	\lambda_{\m{I}} & = & \frac{A}{N_{\m{A}} \rho \sigma_{\m{inel}}}
+	\lambda_{\m{int}} & = & \frac{A}{N_{\m{A}} \rho \sigma_{\m{inel}}}
 \end{IEEEeqnarray}
 which describes the absorption of hadrons in matter according to
 \begin{IEEEeqnarray}{rCl}
-	N & = & N_{\m{0}} e ^ {- \frac{x}{\lambda_{\m{I}}}}
+	N & = & N_{\m{0}} e ^ {- \frac{x}{\lambda_{\m{int}}}}
 \end{IEEEeqnarray}
 with the initial number of hadrons $N_{\m{0}}$ and number of hadrons $N$ after a distance $x$ of absorber material.
 For absorbers with $Z \geq 6$, the interaction length is much larger than the radiation length $X_{\m{0}}$ meaning that hadronic calorimeters usually need to be much larger than their electromagnetic counterparts.
+Experimental data shows that hadronic showers from a few \si{\giga\electronvolt} to a few \SI{100}{\giga\electronvolt} can be approximated by similar parameters as EM showers.
+The shower maximum is reached at
+\begin{IEEEeqnarray}{rCl}
+	t_{\m{max}}^{\m{had}} & = & 0.2 \ln(\frac{E}{\si{\giga\electronvolt}}) + 0.7
+\end{IEEEeqnarray}
+interaction lengths.
+From this, the longitudinal extent containing \SI{95}{\percent} is given by
+\begin{IEEEeqnarray}{rCl}
+	L_{0.95}^{\m{had}} & = & t_{\m{max}}^{\m{had}} + 2.5 \qty(\frac{E}{\si{\giga\electronvolt}}) ^ {0.13} \qc
+	\label{eq:nu-detection_hardon-long}
+\end{IEEEeqnarray}
+in interaction lengths again.
+Transversally, \SI{95}{\percent} of the shower are contained within a cylinder of radius
+\begin{IEEEeqnarray}{rCl}
+	R_{0.95}^{\m{had}} & \leq & \lambda_{\m{int}}
+	\label{eq:nu-detection_hardon-trans}
+\end{IEEEeqnarray}
+which is independent of the energy and smaller for high-Z materials.~\cite{hardon}

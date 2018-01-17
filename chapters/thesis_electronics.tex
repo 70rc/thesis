@@ -173,22 +173,28 @@ Like this, noise pick-up outside the cryostat could be reduced as well as sensit
 \end{figure}
 
 A source of noise was identified in the layout of the pixel readout plane.
-It was found that due to several ground planes and long tracks in the PCB, parasitic capacitances were very high.
-Pixel channels were affected particularly due to the increased total track lengths from connecting multiple pixels to the same DAQ channel.
+It was found that due to several ground planes and long tracks in the PCB, parasitic capacitances are very high.
+Pixel channels are affected particularly due to the increased total track lengths from connecting multiple pixels to the same DAQ channel.
 This is problematic because for high enough frequencies---determined by $RC$---, the input is shorted to ground creating a ground loop again.
 Through this capacitive coupling to ground, the system can start to oscillate.
 One evidence for this is that the noise is equal over multiple channels, so-called common-mode noise.
-More specifically, the noise is equal over groups of channels (see Figure~\ref{fig:electronics_event-run1}).
-Investigating this, it was found that these groups correspond to channels of roughly equal parasitic capacitance.\todo{numbers}
-Also, the noise amplitude is higher on channels with higher capacitance (see Figure~\ref{fig:electronics_noise-run1}).
+More specifically, the noise is equal for two respective groups of channels (see Figure~\ref{fig:electronics_event-run1}).
+Investigating this, it was found that these groups correspond to channels of roughly equal parasitic capacitance: \SI{150 +- 5}{\pico\farad} and \SI{95 +- 5}{\pico\farad}.
+The noise amplitude is higher on channels with higher capacitance (see Figure~\ref{fig:electronics_noise-run1}).
 To solve this problem, the PCB design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes and increasing the thickness of the PCB.
+Pixel capacitance could be improved to \SI{65 +- 5}{\pico\farad} for all channels.
+ROI capacitance improved only slightly from \SI{25 +- 10}{\pico\farad} to \SI{20 +- 10}{\pico\farad} which confirms the hypothesis that the long tracks due to pixel multiplexing were the culprits.
+The reason for the higher spread of the ROI capacitances is the larger difference in track length between the differen ROIs.
+For the sake of completeness, it should be noted here that for the capacitance measurements, the old PCB was not populated while the new one was populated as described in Section~\ref{sec:viper_PCB}.
+However, the installed capacitors are either not connected to ground or in series with a \SI{10}{\mega\ohm} resistor.
+Therefore, their influence on the measurements is negligible.
 
 As can be seen from Figures~\ref{fig:electronics_event-run1} and~\ref{fig:electronics_event-run2}, there is a significant decrease in noise after commissioning all of the above improvements to the readout chain.
 This can also be seen from Figures~\ref{fig:electronics_noise-run1} and~\ref{fig:electronics_noise-run2} depicting the noise amplitude distribution of the two measurement campaigns.
 The data for the latter (\num{5000} events in the first and \num{2000} events in the second campaign) was taken employing a \SI{5}{\hertz} random trigger.
 A more detailed assessment of the noise after the implementation of the described noise mitigation measures can be found in Section~\ref{sec:viper_snr}.
 
-\todo{put numbers for comparison?}
+\todo[inline]{put SNR numbers for comparison?}
 
 \begin{figure}[htb]
 	\centering
@@ -199,6 +205,7 @@ A more detailed assessment of the noise after the implementation of the describe
 	\label{fig:electronics_noise-run2}
 \end{figure}
 
+\afterpage{\clearpage}
 
 \section{Improved Cold Electronics for Pixelated Readouts}
 \label{sec:electronics_pixels}

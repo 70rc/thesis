@@ -63,7 +63,7 @@ This is given by the energy required to produce an electron-ion pair $W_{\m{i}}$
 The $W_{\m{i}}$ value of \SI{23.6}{\electronvolt} for \lar{} is challenging but manageable with contemporary electronics as shown in Section~\ref{sec:lartpc_electronics}.
 Naturally, this imposes a lower limit on detectable $\frac{\m{d}E}{\m{d}x}$.
 
-Charge transport is influenced by multiple factors.
+Charge transport is mainly influenced by three processes: \emph{recombination}, \emph{diffusion}, and \emph{lifetime}.
 The ultimate goal is to collect as much of the produced charge as possible.
 Recombination is the main process opposing this.
 While it can be partially mitigated by increasing the electric field, it cannot be eliminated completely.
@@ -74,6 +74,7 @@ Furthermore, the diffusion of electrons and ions as well as the ion drift veloci
 For a produced charge $Q_{\m{0}}$ and a collected charge $Q$, the collection ratio is given by
 \begin{IEEEeqnarray}{rCl}
 	\frac{Q}{Q_{\m{0}}} & = & \frac{1}{\xi} \ln(1 + \xi) \qc
+	\label{eq:lartpc_lar-reco}
 \end{IEEEeqnarray}
 with a parameter $\xi$ depending on the drift field, electron mobility, initial number of ion-electron pairs, chosen size of the box and recombination coefficient.
 Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected charge in an \SI{8}{\milli\metre} drift \lartpc{} for different drift field intensities and nitrogen concentrations.
@@ -86,19 +87,34 @@ Figure~\ref{fig:lartpc_box-model} shows a measurement by LHEP of the collected c
 	\label{fig:lartpc_box-model}
 \end{figure}
 
-A second process affecting charge transport is electron trapping by impurities; the probability of an electron becoming attached to an atom in the medium.
+Due to thermal motion, ionisation charge clouds will start to diffuse over time.
+The process is characterised by the diffusion coefficient $D$.
+In the presence of a drift field, longitudinal ($D_{\m{L}}$) and transversal ($D_{\m{T}}$) components need to be treated separately.
+The resulting smearing of the ionisation charge cloud after drift time $t$ is given by
+\begin{IEEEeqnarray}{rCl}
+	\sigma_{\m{L/T}} & = & \sqrt{2 D_{\m{L/T}} t}
+	\label{eq:lartpc_lar-diff}
+\end{IEEEeqnarray}
+for longitudinal and transversal diffusion respectively.
+Therefore, $D$ has the dimension of area per time.~\cite{lngDet}
+
+A third process affecting charge transport is electron trapping by impurities, the probability of an electron becoming attached to an atom in the medium.
 For the argon itself, this is highly unlikely because its outer electron shell is fully populated.
-This is one or the reasons why (liquefied) noble gases are a prime choice for TPCs.
+This is one of the reasons why (liquefied) noble gases are a prime choice for TPCs.
 Nevertheless, drifting electrons can be captured by impurities in the argon.
 Oxygen is particularly bad due to its high electronegativity.
-It is, therefore, important to maintain purity of the detection medium.
+Impurities are therefore often measured in oxygen-equivalent concentration.
+Finite purity gives rise to a finite lifetime of free electrons in the medium.
+\begin{IEEEeqnarray}{rCl}
+	N_{\Pe} \qty(t) & = & N_{\Pe} \qty(0) e ^ {- \frac{t}{\tau}}
+	\label{eq:lartpc_lar-lifetime}
+\end{IEEEeqnarray}
+is the charge left after a time $t$ for an electron lifetime $\tau$.
 
 The velocity of the charge drifting in an electric field is related to the so-called mobility, $\mu$, by
-
 \begin{IEEEeqnarray}{rCl}
 	\va{v} & = & \mu\qty(\va{E}) \va{E} \qc
 \end{IEEEeqnarray}
-
 where $\mu$ in general depends on the electric field.
 This means, the higher the field is, the higher the charge velocity and thus, the lower the drift time.
 One wants to keep drift times low for multiple reasons.

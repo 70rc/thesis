@@ -5,7 +5,7 @@ The Standard Model (SM) of particle physics has proven to be remarkably precise 
 However, there are still some missing pieces.
 One of them is the intriguing nature of neutrinos.
 Not only do their mass eigenstates mix with their flavour eigenstates but also are their masses smaller than the charged leptons by several orders of magnitude.
-Measuring these effects is not simplified by the fact that the interaction rates (cross-section) of neutrinos are extremely small, raising the need for high intensity sources along with extremely massive detectors.
+Measuring these effects is not simplified by the fact that the interaction rates (cross-section) of neutrinos are extremely small, raising the need for high-intensity sources along with extremely massive detectors.
 This is the reason why it took almost \num{25} years from their proposition to the first measurement of neutrinos.
 As of today, neutrino mixing is well-understood and their masses have been proven to be non-zero.
 The basis for this was the discovery of neutrino oscillations, a consequence of neutrino flavour mixing paired with non-zero masses.
@@ -14,20 +14,20 @@ In particular, the model contains three CP-violating phases that have yet to be 
 The consequences of measuring CP-violation in neutrino oscillation could be far-reaching.
 Via certain cosmological models, it could explain the asymmetry between matter and antimatter in the universe.
 Besides, while it is certain that at least two out of the three neutrinos have non-zero masses, their ordering is still unknown.
-Its determination will help to integrate neutrino massive neutrinos into the SM where they are massless as of today.
+Its determination will help to integrate massive neutrinos into the SM where they are massless as of today.
 
-Measuring the unknown parameters of the neutrino mixing and oscillation model will required a neutrino interaction sample of unprecedented size.
+Measuring the unknown parameters of the neutrino mixing and oscillation model will require a neutrino interaction sample of unprecedented size.
 Much of today's knowledge was gained from neutrinos produced in the sun and the Earth's atmosphere.
 However, for future experiments, these and other natural sources are not intense and/or precise enough for the required measurements.
 Therefore, artificially produced neutrino beams will be employed, paired with huge detectors.
-Not only are neutrino interactions with matter very rare they are also quite manifold, giving raise to the need for detectors capable of recording complex event topologies.
+Not only are neutrino interactions with matter very rare, they are also quite manifold, giving raise to the need for detectors capable of recording complex event topologies and reconstructing energies precisely.
 
 Liquid Argon Time Projection Chambers (\lartpc{}s) are a prime candidate for the aforementioned requirements.
 They combine a high-density target material with a high-precision 3D detector.
 The incoming neutrinos interact with the \lar{}, producing charged secondary particles which in turn ionise \ce{Ar} atoms.
 By means of an electric field, the produced electron-ion pairs can be separated and drifted towards a two-dimensional charge readout.
-A small remainder of pairs recombine and produce a very prompt (\si{\nano\second}) UV light flash.
-It can used to determine the propagation time of the charge towards the readout plane.
+A small remainder of pairs recombine and produce a very prompt (\si{\nano\second}) UV light flash (scintillation).
+It can be used to determine the propagation time of the charge towards the readout plane.
 Because charge drift in a medium subject to an electric field occurs at constant velocity, the distance from the ionisation location to the readout plane can be determined.
 Combined with the 2D information from the readout, the full 3D interaction topology can be reconstructed.
 
@@ -37,44 +37,44 @@ Several implications result from the required number of neutrino interactions to
 As mentioned above, a very intense neutrino beam and a large target mass are necessary.
 However, this is not enough; at the same time, uncertainties have to be kept low.
 Statistical uncertainties can be lowered by acquiring more neutrino interactions but this is not true for systematic uncertainties which therefore will become the limiting factor at some point.
-They have various sources, some of which can be exploited to lower the systematic uncertainties.
+Systematic uncertainties have various sources, some of which can be exploited.
 Two of the biggest contributors are the neutrino beam and the interaction model of neutrinos with matter.
 Beam-related uncertainties can be eliminated partially by characterising the neutrino beam at the production location.
 A \emph{near detector} will be placed in front of the beam facility in addition to the \emph{far detector} at the end of the baseline.
 Many uncertainties cancel out by comparing the neutrino fluxes in the near and far detector.
-Uncertainties related to the interaction model cancel out as well if the same target material is used in both detectors.
-Finally, using the same technology in both detectors, cancels even more or the remaining uncertainties.
+To some extent, uncertainties related to the interaction model cancel out as well if the same target material is used in both detectors.
+Finally, using the same technology in both detectors, cancels even more of the remaining uncertainties.
 Therefore, the near detector needs to contain a \lartpc{} as well.
 
-Due to technological limitations, \lartpc{} charge readouts have been realised by means of multiple one-dimensional wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge.
-Combined with the time of the drifting charge, this results in one 2D image of the event topology per wire plane, effectively reducing the 3D capabilities of the TPC two multiple 2D projections.
+Up until now, \lartpc{} charge readouts have been realised by means of multiple one-dimensional wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge---due to technological limitations.
+Combined with the time of the drifting charge, this results in one 2D image of the event topology per wire plane, effectively reducing the 3D capabilities of the TPC to multiple 2D projections.
 Additionally, \lartpc{}s are comparatively slow detectors.
-The drift time of charge in \lar{} is $\order{\SI{1}{\milli\metre\per\micro\second}}$, resulting in readout times of several \si{milli\second} for large detectors.
-Both the above have not prevented the huge success of this detector up to now.
+The drift time of charge in \lar{} is $\order{\SI{1}{\micro\second\per\milli\metre}}$, resulting in readout times of several \si{\milli\second} for large detectors.
+Both the above have not prevented the huge success of such detectors up to now.
 Due to the low interaction cross-section, event rates in detectors built so far have been low enough to cope with.
 While this might still apply to the \dune{} far detector, it is certainly not true for the near detector.
-The high-intensity neutrino beam of \dune{} will result in event rates in the near detector significantly higher than what contemporary \lartpc{}s have been exposed to.
+The high-intensity neutrino beam will result in event rates in the near detector significantly higher than what contemporary \lartpc{}s have been exposed to.
 Even worse, the beam is delivered in very short pulses of very high intensity.
 Because these pulses are one to two orders of magnitude shorter than a typical \lartpc{} readout cycle, the detector registers several neutrino interactions simultaneously, so-called event pile-up.
 Combined with the 2D projection readout, this leads to significant difficulties in event reconstruction, the disentanglement of the interaction topologies from the recorded 2D projections.
 
-An obvious solution to this challenge is to regain true 3D information from the TPC by replacing the projective 1D wire planes with a true 3D pixelated charge readout.
+An obvious solution to this challenge is to regain true 3D information from the TPC by replacing the projective 1D wire planes with a true 2D pixelated charge readout.
 However, as mentioned above, this is linked to technological challenges.
-Replacing a two plane wire readout with pixels of the same pitch, squares the number of required readout channels.
-For a the detector the size of the \dune{} near detector this amounts to $\order{\num{1e6}}$ cables needing to be routed out of the cryogenic vessel housing the detector.
+Replacing a two plane wire readout with pixels of the same pitch squares the number of required readout channels.
+For a detector the size of the \dune{} near detector, this amounts to $\order{\num{e6}}$ cables needing to be routed out of the cryogenic vessel housing the detector.
 The number of cable feedthroughs can be reduced by digitising charge readout waveforms inside the \lar{} and using high-speed digital links to aggregate many readout channels on a single cable.
 However, this is far from trivial.
 Besides the challenge of adapting existing electronics to the cryogenic temperatures of liquid argon, heat production has to be kept to a minimum to prevent the \lar{} from boiling.
-While such electronics have already been designed for the wire-equipped far detectors, they are not suitable for a pixelated near detector due to their power dissipation.
+While such electronics have already been designed for the wire-equipped far detectors, the latter are not suitable for a pixelated near detector due to their power dissipation.
 
 In addition to these readout challenges, future large \lartpc{}s face a couple of other challenges.
-In particular for the high-voltage and light readout systems.
+In particular for the high voltage (HV) and light readout systems.
 Earlier studies at the University of Bern have shown that the dielectric strength of liquid argon is much lower than predicted from studies performed in the fifties.\todo{sause?}
 Again, this could be tolerated in contemporary detectors but will become a serious problem for future experiments.
 Electronegative impurities present in the \lar{} result in a finite charge lifetime.
 This results in a lower limit on the required drift field and therefore cathode voltage.
-Due to the finite dielectric strength of \lar{} the fraction of dead volume required around the cathode scales with detector size unless this is accounted for by a modified high voltage system of the detector.
-In order to get proper timing for the third coordinate, the UV light flashes need to be matched to the correct events.
+Due to the finite dielectric strength of \lar{}, the fraction of dead volume required around the cathode scales with detector size unless this is accounted for by a modified high voltage system of the detector.
+In order to get proper timing for the third coordinate, the scintillation light flashes need to be matched to the correct events.
 This becomes problematic in large monolithic \lartpc{} in high pile-up environments.
 
 The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component for the \dune{} ND.\todo{too bullshitty?}
@@ -85,51 +85,39 @@ In addition, a technique was developed to increase the dielectric strength of \l
 However, the latter is not suitable for physics experiments as it fails to withstand multiple thermal cycles and loses its protection after a breakdown.
 
 The aforementioned far detector electronics were evaluated and found unsuitable for a pixelated \lartpc{}.
-This is described in Chapter~\ref{chap:electronics}.
+This is described in Chapter~\ref{chap:electronics} as well as bespoke pixel electronics still under development.
 A new light readout based on Silicon PhotoMultipliers (SiPMs), \AL{}, developed by the University of Bern was tested as well.
+The active area of the SiPMs is drastically increased by coupling them to a light trap formed of a combination of a dichroic filter with a WaveLength Shifter (WLS).
+This makes it competitive to classical PM tubes for large area coverage while requiring a much reduced dead volume.
 Chapter~\ref{chap:light-ro} gives an overview of this.
 
 The main contribution to the \dune{} near detector is the demonstration of a pixelated \lartpc{}.
-Because the required digital cryogenic electronics are still under development, conventional room-temperature digitisers were combined with analogue multiplexing.
+Conventional room-temperature digitisers were combined with analogue multiplexing because the required digital cryogenic electronics are still under development.
 Several days of cosmic muon data were collected with a test stand designed and built at the University of Bern.
 A software framework was written to reconstruct 3D tracks from the data.
-Event though the employed pixelated readout yields 3D information on charge deposition in the \lartpc{}, the necessary analogue multiplexing introduced a certain amount of ambiguity.
-The latter has to be resolved by the reconstruction algorithm.
+Even though the employed pixelated readout yields 3D information on charge deposition in the \lartpc{}, the necessary analogue multiplexing introduced a certain amount of ambiguity.
+The latter had to be resolved by the reconstruction algorithm.
 Finally, the unambiguous positional information was fed to a Kalman filter.
 This propagates a cosmic muon hypothesis through all the detector measurements taking into account the various involved charge deposition mechanisms in \lar{}.
 The end result is a completely reconstructed particle track through the detector.
 All of this is described in Chapter~\ref{chap:viper}.
 
+The combination of all the R\&D presented in this thesis resulted in the development of the \AC{}, a next-generation \lartpc{} concept, at the University of Bern.
+It aims to address the most important challenges met by future \lartpc{}s.
+The problematic high fields at the cathodes as well as the scintillation light containment issue are addressed by splitting up the detector into smaller ($\order{\SI{1}{\metre}}$), self-contained TPCs sharing a common \lar{} bath.
+A pixelated charge readout makes the detector capable of true 3D event recording.
+To keep the dead volume to a minimum, \AL{} is used as the light readout system.
+\AC{} is described in Chapter~\ref{chap:argoncube}, including the design of the proposed \lar{} component of the \dune{} near detector.
+
 The thesis is completed by a study of the feasibility of a \lartpc{} in the \dune{} near detector.
-Based on the knowledge gained from the studies of pixelated \lartpc{}s a metric
-
-
-\todo[inline, color=red]{introduction}
-To measure the remaining unknown parameters of the PMNS matrix and the mass hierarchy in neutrino oscillation physics, detectors with masses of orders of magnitude larger than so far are needed.
-There are two obvious demonstrated choices.
-Water Cherenkov detectors provide a large cost-efficient target mass which makes them interesting for proton decay searches as well.
-A \lartpc{} on the other hand is an imaging detector providing precise tracking, while simultaneously acting as a homogeneous calorimeter with a precise measurement of energy deposited.
-Furthermore, the 3D resolution of these detectors allows for an efficient \Pepm-\Pgg separation, thus reducing the \Pgpz background in \Pgne identification.
-
-For a TPC to work, the detection medium needs to have a low electronegativity.
-Noble gases are an obvious choice for this.
-To provide a high target mass, they are liquified.
-The ideal choice would be LXe which therefore is used for low volume experiments such as neutrino-less double beta decay and dark matter searches.
-The drawback of xenon is that it is expensive and rare.
-Besides, \lar{} has a longer radiation length than LXe and produces a comparable number of photons per \si{\mega\electronvolt}, it is also abundant and relatively cheap.
-
-Future neutrino oscillation physics experiments aim to measure the \dcp phase and determine the neutrino mass hierarchy.
-With the recent measurement of the $\theta_{13}$ mixing angle, new experiments can be tuned to the right parameter space to be most sensitive in the most probable regions.
-Both measurements require much higher statistics than contemporary experiments have achieved.
-In turn, higher statistics require that the neutrino flux is increased, and an increase in detection efficiencies.
-Efficiency is improved by increasing the size of the detector by up to two orders of magnitude in comparison to the current generation, the increase in size also improves event containment.
-
-These imposed requirements lead to several new challenges for the detector design.
-Higher flux beams put higher demands on the precision of the trigger system to reach reasonable trigger efficiencies and purities.
-Additionally, \lartpc{}s have some intrinsic issues in high-flux particle beams, most of these issues stem from the detector volume required for the containment of events:
-The long drift-times lead to event pile-up and also require higher voltages and higher purity argon, and unconfined scintillation light makes it harder to use a light detection system as a coincidence trigger.
-Event pile-up is worsened still by the intrinsic reconstruction ambiguities of the conventional wire readout.
-The complexity of event reconstruction due to the projective nature of wires further reduces the ability of the trigger system.
-As well as being notoriously fragile, wire readouts and their associated framework are a major limiting factor in detector design.
-The most inhibitive drawback to monolithic detectors is the down-time cost involved in repair or upgrade work.
-Independent of future neutrino experiments, the solution of all those problems will lead to next generation \lartpc{}s bringing huge improvements for all future applications of such detectors.
+Combining the knowledge gained from Chapter~\ref{chap:viper} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:electronics}, enables the realisation of a true 3D \lartpc{}.
+However, it remains to be shown that such a detector is actually able to cope with the event rates expected in the near detector.
+To assess this capability, a metric was needed representative of the physics processes.
+Electromagnetic (EM) showers produced from the photons originating from \Pgpz decays are notoriously complex to reconstruct while they are present in a significant fraction of the neutrino interaction expected in \dune{}.
+On the other hand, it is important to get their energy reconstruction right in order not to skew the neutrino energy spectrum.
+At the \dune{} energies, EM showers deposit a plethora of apparently unconnected charge blobs in a \lartpc{} rather than a homogeneous cone.
+Associating all those separate charge blobs to the correct event is one of the most difficult reconstruction tasks even for a \lartpc{}.
+Therefore, this type of EM shower was chosen for this study.
+A rather rudimentary algorithm was employed to assign the deposited charge to the correct EM shower because all available \lartpc{} reconstruction algorithms are optimised for wire readouts.
+The amount of misidentified charge from other events is a suitable metric to assess the impact of pile-up on the near detector physics.
+This study is described in \ref{chap:dune-nd}.

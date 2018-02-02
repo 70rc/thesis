@@ -46,15 +46,62 @@ Uncertainties related to the interaction model cancel out as well if the same ta
 Finally, using the same technology in both detectors, cancels even more or the remaining uncertainties.
 Therefore, the near detector needs to contain a \lartpc{} as well.
 
-Due to technological limitations, \lartpc{} charge readout s have been realised by means of multiple one dimensional wire planes---the last of them collecting the charge while the previous ones record the induced voltage pulse by the passing charge.
+Due to technological limitations, \lartpc{} charge readouts have been realised by means of multiple one-dimensional wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge.
 Combined with the time of the drifting charge, this results in one 2D image of the event topology per wire plane, effectively reducing the 3D capabilities of the TPC two multiple 2D projections.
 Additionally, \lartpc{}s are comparatively slow detectors.
 The drift time of charge in \lar{} is $\order{\SI{1}{\milli\metre\per\micro\second}}$, resulting in readout times of several \si{milli\second} for large detectors.
 Both the above have not prevented the huge success of this detector up to now.
-Due to the low interaction cross-section, event rates in these detectors have been low enough to cope with given the above limitations.
-While this might still apply to the \dune{} far detector, this is certainly not true for the near detector.
-Even though, neutrino interaction rates are extremely low, combined with the high-intensity neutrino beam of \dune{}, the event rates in the near detector will be significantly higher than what contemporary \lartpc{}s have coped with.
+Due to the low interaction cross-section, event rates in detectors built so far have been low enough to cope with.
+While this might still apply to the \dune{} far detector, it is certainly not true for the near detector.
+The high-intensity neutrino beam of \dune{} will result in event rates in the near detector significantly higher than what contemporary \lartpc{}s have been exposed to.
+Even worse, the beam is delivered in very short pulses of very high intensity.
+Because these pulses are one to two orders of magnitude shorter than a typical \lartpc{} readout cycle, the detector registers several neutrino interactions simultaneously, so-called event pile-up.
+Combined with the 2D projection readout, this leads to significant difficulties in event reconstruction, the disentanglement of the interaction topologies from the recorded 2D projections.
 
+An obvious solution to this challenge is to regain true 3D information from the TPC by replacing the projective 1D wire planes with a true 3D pixelated charge readout.
+However, as mentioned above, this is linked to technological challenges.
+Replacing a two plane wire readout with pixels of the same pitch, squares the number of required readout channels.
+For a the detector the size of the \dune{} near detector this amounts to $\order{\num{1e6}}$ cables needing to be routed out of the cryogenic vessel housing the detector.
+The number of cable feedthroughs can be reduced by digitising charge readout waveforms inside the \lar{} and using high-speed digital links to aggregate many readout channels on a single cable.
+However, this is far from trivial.
+Besides the challenge of adapting existing electronics to the cryogenic temperatures of liquid argon, heat production has to be kept to a minimum to prevent the \lar{} from boiling.
+While such electronics have already been designed for the wire-equipped far detectors, they are not suitable for a pixelated near detector due to their power dissipation.
+
+In addition to these readout challenges, future large \lartpc{}s face a couple of other challenges.
+In particular for the high-voltage and light readout systems.
+Earlier studies at the University of Bern have shown that the dielectric strength of liquid argon is much lower than predicted from studies performed in the fifties.\todo{sause?}
+Again, this could be tolerated in contemporary detectors but will become a serious problem for future experiments.
+Electronegative impurities present in the \lar{} result in a finite charge lifetime.
+This results in a lower limit on the required drift field and therefore cathode voltage.
+Due to the finite dielectric strength of \lar{} the fraction of dead volume required around the cathode scales with detector size unless this is accounted for by a modified high voltage system of the detector.
+In order to get proper timing for the third coordinate, the UV light flashes need to be matched to the correct events.
+This becomes problematic in large monolithic \lartpc{} in high pile-up environments.
+
+The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component for the \dune{} ND.\todo{too bullshitty?}
+Chapter~\ref{chap:hv} contains a thorough investigation of dielectric breakdowns in \lar{}.
+These studies include high-speed footage, current-voltage characteristics and spectrometry of the breakdowns.
+As a result, a hypothesis was developed providing a conclusive explanation of the phenomenon.
+In addition, a technique was developed to increase the dielectric strength of \lar{} by an order of magnitude by means of a polymer coating.
+However, the latter is not suitable for physics experiments as it fails to withstand multiple thermal cycles and loses its protection after a breakdown.
+
+The aforementioned far detector electronics were evaluated and found unsuitable for a pixelated \lartpc{}.
+This is described in Chapter~\ref{chap:electronics}.
+A new light readout based on Silicon PhotoMultipliers (SiPMs), \AL{}, developed by the University of Bern was tested as well.
+Chapter~\ref{chap:light-ro} gives an overview of this.
+
+The main contribution to the \dune{} near detector is the demonstration of a pixelated \lartpc{}.
+Because the required digital cryogenic electronics are still under development, conventional room-temperature digitisers were combined with analogue multiplexing.
+Several days of cosmic muon data were collected with a test stand designed and built at the University of Bern.
+A software framework was written to reconstruct 3D tracks from the data.
+Event though the employed pixelated readout yields 3D information on charge deposition in the \lartpc{}, the necessary analogue multiplexing introduced a certain amount of ambiguity.
+The latter has to be resolved by the reconstruction algorithm.
+Finally, the unambiguous positional information was fed to a Kalman filter.
+This propagates a cosmic muon hypothesis through all the detector measurements taking into account the various involved charge deposition mechanisms in \lar{}.
+The end result is a completely reconstructed particle track through the detector.
+All of this is described in Chapter~\ref{chap:viper}.
+
+The thesis is completed by a study of the feasibility of a \lartpc{} in the \dune{} near detector.
+Based on the knowledge gained from the studies of pixelated \lartpc{}s a metric
 
 
 \todo[inline, color=red]{introduction}

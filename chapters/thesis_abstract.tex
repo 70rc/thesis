@@ -1,7 +1,44 @@
 \begin{abstract}
 
-\todo[inline, color=red]{abstract}
-%There is this big problem which people are trying to solve with inferior technology. Silly people. They should use the technology proposed here, it is much better.  
+Neutrino mixing and oscillations have been well studied during the last few decades.
+Nevertheless, several unanswered questions remain, in particular CP violation and the ordering of the neutrino masses.
+\dune{}, a next-generation long-baseline neutrino oscillation experiment is being built to answer them.
+Reaching the sensitivity goal will require a data sample of unprecedented size and precision.
+Therefore, a high-intensity beam and a massive detector providing excellent tracking and calorimetry are required.
+
+A Liquid Argon Time Projection Chamber (\lartpc{}) fulfils this requirements very well and was therefore chosen for the far detector.
+To bring systematic uncertainties down to an acceptable level, a \lartpc{} near detector component is required.
+The high-multiplicity \dune{} near detector environment poses significant challenges.
+
+\lartpc{}s have used projective wire readouts for charge detection since their conception in 1977.
+However, a wire readout introduces intrinsic ambiguities in event reconstruction which is problematic in high-multiplicity environments.
+To overcome these limitations, a pixelated charge readout for \lartpc{} was developed and successfully tested.
+A software framework was developed to reconstruct the recorded cosmic muon tracks employing a Kalman filter.
+Pixelated charge readout systems represent the single largest advancement in the sensitivity of LArTPCs, enabling true 3D tracking.
+They are mechanically robust and the direct 3D readout minimises reconstruction ambiguities, reducing event pile-up and improving background rejection.
+
+Due to their increased number of channels, pixelated charge readouts give raise to the need for novel readout electronics.
+Existing wire readout electronics were tested and found unsuitable for the new readout.
+Together with the successful demonstration of the readout itself, this triggered the development of bespoke pixel electronics for the \dune{} near detector.
+
+The large volumes required by the \dune{} \lartpc{}s result in longer drift distances and thus require higher drift voltages.
+Recent studies have shown the dielectric strength of \lar{} to be much lower than predicted by earlier work.
+This triggered an in-depth study of electric breakdowns including the recording of high-speed footage, current-voltage characteristics, and spectrometry.
+As a result of these studies, a method was developed to increase the dielectric strength of \lar{} by an order of magnitude.
+However, this technique is not suitable for long-running physics experiments.
+Instead, it was found, that it is required to keep fields below \SI{40}{\kilo\volt\per\centi\metre} at all points in the detector to guarantee a safe operation.
+
+The entirety of the R\&D effort lead to the development of a new fully-modular, pixelated \lartpc{} concept---ArgonCube.
+It is aimed to address the studied challenges.
+Splitting the detector volume into small self-contained TPCs sharing a common \lar{} bath, reduces the required drift voltages to a handleable level.
+A pixelated charge readout paired with bespoke electronics will exploit true 3D tracking to cope with the expected event pile-up.
+
+The work is topped off with a study of the near detector event pile-up.
+Simulated \Pgpz decays were reconstructed by a rudimentary cone-based algorithm assuming unambiguous 3D information on charge deposition with a resolution of \SI{3}{\milli\metre}.
+It was found that the impact of pile-up on the reconstructed neutrino energy is in the range of \SIrange{2}{3}{\percent} on average and below \SI{0.1}{\percent} for $> \SI{50}{\percent}$ of the neutrino events.
+
+At the time of this writing, \AC{} is the top candidate for the \lar{} component of the \dune{} near detector.
 
 \end{abstract}
-\cleardoublepage
+
+\clearpage

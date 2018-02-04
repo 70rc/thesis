@@ -11,7 +11,7 @@ After that the \AC{} Light readout, \AL{}, is introduced.
 \section{Cryogenic SiPM Light Readout}
 \label{sec:light-ro_viper}
 
-In 2016, LHEP at the University of Bern developed a novel cosmic ray tagger system for \lartpc{}s which was subsequently installed in \uboone{}~\cite{uboone} and will be installed in the \sbnd{} experiment~\cite{sbnd} in the near future.
+In 2016, the University of Bern developed a novel cosmic ray tagger system for \lartpc{}s which was subsequently installed in \uboone{}~\cite{uboone} and will be installed in the \sbnd{} experiment~\cite{sbnd} in the near future.
 The tagger consists of panels made from polystyrene based scintillating bars.
 On both long edges of the strips, the light is coupled into a \emph{Kuraray Y11(200)M}\footnote{\url{http://kuraraypsf.jp}} wavelength-shifting (WLS) fibre of \SI{1}{\milli\metre} diameter.
 One end of the fibre is coated with an aluminium mirror to increase collection efficiency.
@@ -44,9 +44,66 @@ The reason for this is that the same trigger logic is used for the CRT panels to
 In order to improve trigger purity, it was tried to change the firmware to trigger on the coincidence of all four fibres in the TPC.
 Due to a firmware bug however this could not be achieved.
 
+As will be explained in Chapter~\ref{sec:light-ro_viper}, the light readout scheme described above was successfully used to trigger and record several thousand cosmic muon interactions with the \AC{} pixel demonstrator.
+However, when compared to a measurement triggered on the charge readout directly, it became apparent that the efficiency of this light readout is very poor.
+Due to limitations in the experimental setup, no quantitative measurement of the trigger efficiency was performed.
+Triggering on the charge readout was only possible using an oscilloscope because the used DAQ system was not capable of self-triggering.
+Therefore the channel number was limited to four which would have enabled charge readout triggering only on a subset of the readout area.
+An external reference trigger source, such as a muon telescope was not available during the measurements.
+Furthermore, after warming up the experiment, it was discovered that all four fibres were damaged because the acrylic rings fell out of their mounting brackets and squeezed or even broke the corresponding fibre.
+
+Another drawback of the design is the optical coupling between the acrylic rings and the \lar{}.
+Because the refractive indices are very close, a lot of light escapes from the rings and is lost.
+Many other low-volume light readout systems based on light guides developed for \lar{}~\cite{lar_lro1, lar_lro2, lar_lro3, lar_lro4, lar_lro5, lar_lro6, lar_lro7} suffer from the same problem.
+As a solution, a dedicated light readout system for the \AC{}, \AL{}, was developed at the University of Bern.
+
 
 \section{\AL{}}
 \label{sec:light-ro_arclight}
+
+\AL{} aims to minimise the occupied volume by maximising the area coverage of SiPMs.
+This is achieve by coupling them to a passive light collector.
+As mentioned above, principles based on full reflection on a polymer-\lar{} interface are not suitable.
+Instead, \AL{} is based on the light trapping principle of the ARAPUCA sensor~\cite{arapuca}.
+The latter works by trapping the photons inside a cavity made of walls covered by a highly reflective materials.
+One of the walls is formed from a dichroic film, a material transparent to certain wavelengths while highly reflective to others.
+On the outside, this film is covered by TPB with the film transparent to the emitted blue light.
+The inside of the film is covered by a second WLS, shifting the light to green which is reflected by the dichroic film and therefore trapped inside the cavity.
+One or more SiPMs are mounted inside the cavity to collect the trapped photons.
+In contrast, \AL{} replaces the void of ARAPUCA by a solid transparent polymer sheet, doped with a WLS dye.
+This makes it substantially more robust, compact and stable, especially when scaled up to larger areas.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.5\textwidth]{arclight/prototype}
+	\caption{\SI{10 x 10}{\centi\metre} \AL{} prototype.
+		Four SiPMs can be seen at the lower side, soldered to a narrow PCB providing coaxial connectors for signal readout.
+		The rest of the sensor area is dielectric.}
+	\label{fig:arclight_prototype}
+\end{figure}
+
+A \SI{10 x 10}{\centi\metre} \AL{} prototype is shown in Figure~\ref{fig:arclight_prototype}.
+The ratio of sensitive area to total area is \SI{98}{\percent} with the remaining \SI{2}{\percent} occupied by a PCB carrying four \emph{Hamamatsu S13360-3050VE}\footnote{\url{http://www.hamamatsu.com}} SiPMs with a sensitive area of \SI{3 x 3}{\milli\metre} each.
+The inside of \AL{} is made of a \SI{4}{\milli\metre} thick \emph{Eljen Technology EJ-280}\footnote{\url{http://www.eljentechnology.com}} WLS plate.
+Its sides are laminated with reflective films.
+The back face and the edges are covered with a \emph{3M VM2000}\footnote{\url{https://www.3m.com}\label{foot:3M}} dielectric specular reflector foil having $\approx \SI{98}{\percent}$ reflectance in the visible light range.
+A \emph{3M DF-PA Chill}\textsuperscript{\ref{foot:3M}} dichroic mirror covers the front face.
+It is transparent in the blue and has a high reflectance in the green spectral range.
+Both films are held in place by thin layers of transparent adhesive.
+To shift the vacuum UV (VUV) scintillation light produced in \lar{} to the blue transparent range of the dichroic mirror, its outer surface is coated with TPB.
+A cross-section of the structure of \AL{} is depicted in Figure~\ref{fig:arclight_structure}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{arclight/structure}
+	\caption{\AL{} light collector cross-section near a corner.
+		The structure is mechanically supported by a \SI{4}{\milli\metre} thick WLS plastic.
+		Its front is covered with a dichroic mirror film while the edges and the back face are covered with a dielectric specular reflector foil.
+		The outer surface of the dichroic mirror is coated with TPB to shift the \lar{} VUV scintillation light to the blue range where the dichroic film is transparent.
+		At the bottom of the left picture, two of the four SiPMs mounted to the carrier PCB are visible.}
+	\label{fig:arclight_structure}
+\end{figure}
+
 
 \todo[inline, color=red]{\AL{}}
 \todo[inline]{move to ArgonCube?}

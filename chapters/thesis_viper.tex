@@ -306,3 +306,42 @@ Proper tuning of the reconstruction requires a full simulation chain of the dete
 Using data to tune the reconstruction is prone to the introduction of circular biases.
 On the other hand, most of the difficulties emerge from the multiplexing ambiguities and their resolution.
 While the presented almost full 3D readout has already reduced the reconstruction complexity compared to a classical wire readout, an ambiguity-free readout will make reconstruction another big step easier by completely eliminating the need to resolve ambiguities.
+
+
+\section{\pixlar{}}
+\label{sec:viper_pixlar}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{pixlar/pixlar_arclight}
+	\caption{One of the two \pixlar{} half readout planes with the \AL{} module attached.}
+	\label{fig:pixlar_arclight}
+\end{figure}
+
+After the successful test with cosmic muons at Bern, a bigger prototype of the pixel readout, employing the same multiplexing scheme, was built for a beam exposure in the \lariat{} experiment~\cite{lariat} at FNAL.
+\lariat{} consists of the former \argoneut{}~\cite{argoneut} cryostat and \lartpc{} put into a test beam.
+The tertiary beam line produces mainly pions and protons as well as electrons, muons and kaons at a lower rate.
+Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt}.
+\SI{550}{\litre} of \lar{} are contained in a cylindrical cryostat.
+It houses a TPC with \SI{47}{\centi\metre} drift length and a \SI{40 x 90}{\centi\metre} readout plane parallel to the beam direction, resulting in an active volume of \SI{170}{\litre}.
+For the pixel test, called \pixlar{}, the original wire planes were replaced by a \num{120 x 240} pixel readout.
+At \SI{3}{\milli\metre} pitch, this gives an instrumented area of \SI{36 x 72}{\centi\metre}.
+Due to constraints from the PCB manufacturer, the readout plane had to be split into two mirror-symmetric, electrically independent half planes.
+Each \num{120 x 120} pixel half plane is divided into \num{8 x 15} ROIs of \num{15 x 8} pixels each.
+The ROIs are oriented with their longer dimension parallel to the beam direction to reduce the multiplexing ambiguities.
+To trigger on scintillation light, one end of the TPC is equipped with a\todo{dimensions} \AL{} module (see Chapter~\ref{chap:light-ro}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
+Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \AL{} module attached.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.445\textwidth]{pixlar/pixlar_event_side}
+	\includegraphics[width=.545\textwidth]{pixlar/pixlar_event_top}
+	\caption{\pixlar{} beam event.}
+	\label{fig:pixlar_event}
+\end{figure}
+
+Over several weeks, beam and cosmic muon data was taken.
+At the time of this writing, no official results were available.
+Nevertheless, preliminary analyses indicate a successful scale-up of the pixelated \lartpc{} concept.
+The achieved SNR seems to be comparable to what was reach with the prototype in Bern described above.
+A recorded beam event is depicted in Figure~\ref{fig:pixlar_event}.

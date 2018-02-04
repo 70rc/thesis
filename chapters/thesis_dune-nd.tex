@@ -124,12 +124,12 @@ Therefore, a rather primitive algorithm for true 3D space points was implemented
 This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
-Chapter~\ref{chap:viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the LArPix charge readout electronics described in Section~\ref{sec:electronics_larpix}.
+Chapter~\ref{chap:viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:electronics_larpix}.
 The spatial resolution of the pixel readout is assumed to be \SI{3}{\milli\metre} based onthe ND design specified in Section~\ref{sec:ac_dune-nd}.
 A conservative value of \SI{3}{\milli\meter} was chosen in drift direction.
 This has several advantages.
 Chosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
-MicroBooNE has achieved a resolution in drift direction $< \SI{3}{\milli\metre}$~\cite{uboone}, making it safe to assume LArPix will have a similar performance, even though not yet fully characterised.
+MicroBooNE has achieved a resolution in drift direction $< \SI{3}{\milli\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
 Finally, a conservative value also accounts for charge diffusion.
 Furthermore, it is assumed that EM showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
 A cone is calculated in the direction of the shower with its tip at the first charge deposition of the initial photon.

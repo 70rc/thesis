@@ -212,7 +212,7 @@ A more detailed assessment of the noise after the implementation of the describe
 
 This section describes the challenges met by electronics for pixelated \lartpc{}s and possible solutions.
 First, the cryogenic Analogue-to-Digital Converters (ADCs) for the \dune{} far detector, developed by BNL, are introduced, and an explanation is given why they are unsuitable for a pixelated near detector.
-Therefore, the neutrino group at Lawrence Berkeley National Laboratory (LBNL) is developing bespoke pixel electronics for the near detector, called LArPix.
+Therefore, the neutrino group at Lawrence Berkeley National Laboratory (LBNL) is developing bespoke pixel electronics for the near detector, called \larpix{}.
 An overview of this effort is given in the second part of this section.
 
 As mentioned in Section~\ref{sec:lartpc_electronics}, cold digitisation can improve noise because of both shorter analogue signal lines and reduced thermal noise of the electronics.
@@ -275,35 +275,35 @@ For a pixelated \dune{} ND with $\order{\num{e7}}$ channels, the resulting requi
 In comparison, \uboone{} has a total cooling power of $\approx \SI{20}{\kilo\watt}$ for \SI{170}{\tonne} of \lar{}.~\cite{uboone}
 
 
-\subsection*{LArPix}
+\subsection*{\larpix{}}
 \label{sec:electronics_larpix}
 Due to their smaller geometric extent, pixels have a much lower capacitance than wires.
 According to Equation~\eqref{eq:electronics_thermal-noise}, this reduces the intrinsic noise present on a pixelated readout.
-The \emph{LArPix} ASICs, being developed by LBNL~\cite{larpix}, exploits this fact to significantly reduce the complexity of the cold electronics.
+The \emph{\larpix{}} ASICs, being developed by LBNL~\cite{larpix}, exploits this fact to significantly reduce the complexity of the cold electronics.
 Two key points distinguish them from the BNL design for the wire-equipped far detector.
 The complex shaping preamplifier required by wires for noise filtering can be replaced by a simple charge integrator.
-Additionally, the low noise levels allow for a self-triggering scheme; charge arriving at the LArPix is only digitised if it is above a prefedined thresholds.
+Additionally, the low noise levels allow for a self-triggering scheme; charge arriving at the \larpix{} is only digitised if it is above a prefedined thresholds.
 This, in turn, reduces the duty cycle and thus the power dissipation of the ADC.
 If noise levels are well below the set threshold, power dissipation becomes primarily a function of charge flux rate in the detector.
 
-In addition to this, the digital circuitry of LArPix operates at lower frequencies than the BNL design.
+In addition to this, the digital circuitry of \larpix{} operates at lower frequencies than the BNL design.
 For an alternating current (AC) of frequency $f$, the resistance presented by a conductor is not simply given by its Ohmic resistance.
 There is an additional component proportional to $\sqrt{f}$ caused by the \emph{skin effect}.~\cite{horowitzHill}
 High frequency currents no longer flow in the bulk of the conductor but only in a finite layer (skin) at its surface.
 Therefore, the resistance is no longer proportional to the cross-section area but rather the surface area of the conductor.
 The result of the skin effect is more power dissipation at higher frequencies.
-By operating at lower frequencies, the power dissipation of LArPix can be lowered further.
+By operating at lower frequencies, the power dissipation of \larpix{} can be lowered further.
 The cost is a decrease in data transmission rates.
 
-With its power dissipation (and comsumption) dependent on the charge flux and the lowered data transmission rate, LArPix is susceptible to high event rates.
+With its power dissipation (and comsumption) dependent on the charge flux and the lowered data transmission rate, \larpix{} is susceptible to high event rates.
 Due to the triggered digitisation, the same goes for noise levels.
-For the successful operation of LArPix, it is of paramount importance to keep event rates and noise levels low.
+For the successful operation of \larpix{}, it is of paramount importance to keep event rates and noise levels low.
 The latter can be achieved by minimising detector capacitance.
 To lower the susceptibility to high event rates, the \dune{} ND design puts the TPC drift direction perpendicular to beam direction.
 This reduces the amount of charge per event arriving simultaneously at the readout.
-Furthermore, LArPix is equipped with a First-In-First-Out (FIFO) buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
+Furthermore, \larpix{} is equipped with a First-In-First-Out (FIFO) buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
 
-To accomodate the elevated number of channels of a pixelated readout, the first LArPix prototype chip has \num{32} inputs.
+To accomodate the elevated number of channels of a pixelated readout, the first \larpix{} prototype chip has \num{32} inputs.
 Its resolution in time and charge are \SI{2}{\micro\second} and \SI{8}{bit}, respectively.
 While currently inferior to the BNL design, these specifications are planned to be improved in the next design iteration, after a successful initial test.
 One of the goals of the first prototype is to assess the optimal size of the FIFO.~\cite{danLarpix}

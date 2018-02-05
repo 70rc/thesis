@@ -180,6 +180,8 @@ Daya Bay and KamLAND essentially employ the same technique as Reines and Cowan t
 The only difference being that instead of using multiple scintillator tanks in coincidence, they use one big tank shielded and vetoed by water and/or mineral oil Cherenkov detectors.
 Tokai to Kamioka (T2K) directs a \Pgngm beam similar to the one of Lederman et al.\ towards Super-Kamiokande to look for \Pgngm disappearance and \Pgne appearance over a long baseline.
 
+\afterpage{\clearpage}
+
 
 \section{Neutrino Oscillation}
 \label{sec:nu-detection_osc}
@@ -374,6 +376,8 @@ From Figure~\ref{fig:nu-detection_mass}, it can be seen, that \Pgne are primaril
 Therefore, the propagation of these two is altered while \HepParticle{\nu}{3}{} is almost unaffected.
 Named after its discoverers, Mikheyev, Smirnov~\cite{mikheyevSmirnov} and Wolfenstein~\cite{wolfenstein}, the MSW effect can be exploited to determine the mass ordering with a properly tuned $\frac{L}{E}$.
 
+\afterpage{\clearpage}
+
 
 \section{\dune{}}
 \label{sec:nu-detection_dune}
@@ -488,6 +492,8 @@ As will be explained in Chapter~\ref{chap:lartpc}, \lartpc{}s are slow detectors
 This is problematic in the high-multiplicity ND environment of \dune{} which is the reason why~\cite{dune2} and~\cite{dune4} do not mention an ND \lar{} component.
 The aforementioned \si{\mega\watt} beam intensity leads to ND event rates $\order{0.1}$ events per tonne of \lar{} leading to significant event pile-up (see Table~\ref{tab:nu-detection_beam-params}).
 Rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector---are not included in this estimate.
+
+%\afterpage{\clearpage}
 
 
 \section{Neutrino Interaction with Matter}
@@ -854,32 +860,32 @@ The thickness of the absorber is given by $x$ and
 	\mu & = & \frac{N_A}{A} \sum_i \sigma_i
 	\label{eq:nu-detection_mass-att-coeff}
 \end{IEEEeqnarray}
-is the \emph{mass attenuation coefficient} defined by the sum of the cross sections $\sigma_i$ of the different interaction processes.
+is the \emph{mass attenuation coefficient} defined by the sum of the cross-sections $\sigma_i$ of the different interaction processes.
 
 At low energies (ionisation energy $\le E_{\Pgg} \le \SI{100}{\kilo\electronvolt}$), photons primarily undergo conversion to charge by the photoelectric effect.
 The photon is absorbed by an atom of the absorber which in turn is ionised and thus ejects one of its shell electrons.
-The cross section is given by
+The cross-section is given by
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{photo}} & = & \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\Pe}
 \end{IEEEeqnarray}
 where
 \begin{description}
 	\item[$\epsilon = \frac{E_{\Pgg}}{m_{\Pe} c ^ 2}$] is the reduced photon energy and
-	\item[$\sigma_{\m{Th}}^{\Pe} = \frac{8}{3} \pi r_{\Pe} ^ 2 = \SI{6.65e-25}{\centi\meter\squared}$] is the \emph{Thomson cross section} for elastic scattering of photons on electrons.
+	\item[$\sigma_{\m{Th}}^{\Pe} = \frac{8}{3} \pi r_{\Pe} ^ 2 = \SI{6.65e-25}{\centi\meter\squared}$] is the \emph{Thomson cross-section} for elastic scattering of photons on electrons.
 \end{description}
 
 For energies $\approx \SI{1}{\mega\electronvolt}$, Compton scattering dominates the interaction of photons with matter.
-Thereby, the photon is not absorbed by the atom but just scatters off one of its shell electrons with the cross section
+Thereby, the photon is not absorbed by the atom but just scatters off one of its shell electrons with the cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{c}} & = & 2 \pi r_{\Pe} ^ 2 Z \left\{\qty[\frac{1 + \epsilon}{\epsilon ^ 2}] \qty[\frac{2 \qty(1 + \epsilon)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln(1 + 2 \epsilon)]\right.\\
 	& & \left. + \frac{1}{2 \epsilon} \ln(1 + 2 \epsilon) - \frac{1 + 3 \epsilon}{\qty(1 + 2 \epsilon) ^ 2}\right\}
 \end{IEEEeqnarray}
 obtained from the Klein-Nishina formula.
-As only part of the photon's energy is absorbed while the rest is scattered, it makes sense to divide this cross section into a scattering cross section
+As only part of the photon's energy is absorbed while the rest is scattered, it makes sense to divide this cross -section into a scattering cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{cs}} & = & \frac{E_{\Pgg}'}{E_{\Pgg}}
 \end{IEEEeqnarray}
-and an absorption cross section
+and an absorption cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{ca}} & = & \sigma_{\m{c}} - \sigma_{\m{cs}}
 	\label{eq:nu-detection_sigma-compton}
@@ -889,20 +895,20 @@ where $E_{\Pgg}$ and $E_{\Pgg}'$ is the energy of the photon before and after sc
 At $E_{\Pgg} \ge 2 m_{\Pe} c ^ 2$, photons are capable of producing pairs of \Pep\Pem.
 Because of momentum conservation, this process can only happen in the coulomb field of a so called spectator particle.
 As pair-production in the field of an electron is strongly suppressed, the spectator is usually a nucleus of the absorber material.
-Therefore, the cross section of pair-production depends on the shielding of the coulomb field by the shell electrons and thus on the proximity to the nucleus.
+Therefore, the cross-section of pair-production depends on the shielding of the coulomb field by the shell electrons and thus on the proximity to the nucleus.
 Eventually, this results in an energy dependence.
-For $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is given by
+For $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross-section is given by
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{pair}} & = & 4 \alpha r_{\Pe} ^ 2 Z ^ 2 \qty(\frac{7}{9} \ln 2 \epsilon - \frac{109}{54})
 \end{IEEEeqnarray}
-and for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross section is
+and for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross-section is
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{pair}} & = & 4 \alpha r_{\Pe} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \qq*{.}
 \end{IEEEeqnarray}
 
-As mentioned above, for Compton scattering, two different cross sections are defined, $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.
+As mentioned above, for Compton scattering, two different cross-sections are defined, $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.
 Consequentially, there are also different definitions of the coefficient $\mu$ in Equation~\eqref{eq:nu-detection_mass-att-coeff}.
-Replacing the total Compton cross section $\sigma_{\m{c}}$ by $\sigma_{\m{ca}}$ from Equation~\eqref{eq:nu-detection_sigma-compton}, one gets the \emph{mass absorption coefficient} $\mu_{\m{a}}$, only taking into account photon absorption processes.
+Replacing the total Compton cross-section $\sigma_{\m{c}}$ by $\sigma_{\m{ca}}$ from Equation~\eqref{eq:nu-detection_sigma-compton}, one gets the \emph{mass absorption coefficient} $\mu_{\m{a}}$, only taking into account photon absorption processes.
 While $\mu$ is more precisely called the \emph{total mass attenuation coefficient}.
 
 An interesting effect takes place for \Pepm traversing material at energies higher than the critical energy $E_{\m{c}}$ defined by Equation~\eqref{eq:nu-detection_ec}.

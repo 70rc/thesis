@@ -57,6 +57,8 @@ Because the refractive indices are very close, a lot of light escapes from the r
 Many other low-volume light readout systems based on light guides developed for \lar{}~\cite{lar_lro1, lar_lro2, lar_lro3, lar_lro4, lar_lro5, lar_lro6, lar_lro7} suffer from the same problem.
 As a solution, a dedicated light readout system for the \AC{}, \AL{}, was developed at the University of Bern.
 
+\afterpage{\clearpage}
+
 
 \section{\AL{}}
 \label{sec:light-ro_arclight}
@@ -110,7 +112,6 @@ Figure~\ref{fig:arclight_pde} shows PDE as a function of the position inside the
 The increase in PDE near the SiPMs is likely caused by photons hitting the SiPMs directly with no prior reflection off the dichoic mirror.
 Due to the angular dependence of the reflectance of the dichroic mirror, about \SI{30}{\percent} of the light is lost during the first reflection on the dichroic mirror.
 Once reflected, a photon is trapped inside the \AL{} because of the specular nature of the reflection on all surfaces.
-
 In addition, the average PDE was calculated from theory to be \SI{0.7 +- 0.4}{\percent} in agreement with the measurements.
 More details on the calculations and the calibration of the measurement can be found in~\cite{arclight}.\todo{proper sauce}
 
@@ -121,6 +122,21 @@ More details on the calculations and the calibration of the measurement can be f
 		The PDE is given in \si{\percent}.
 		Near the SiPMs at the bottom, the PDE is increased due to an increased fraction of direct photons, avoiding the initial loss at the first reflection from the dichroic mirror.}
 	\label{fig:arclight_pde}
+\end{figure}
+
+The measurements described above were performed at room temperature.
+A \SI{43 x 15}{\centi\metre} \AL{} module was successfully operated at \lar{} temperatures in the \pixlar{} test beam demonstrator at FNAL described in Section~\ref{sec:viper_pixlar}.
+Figure~\ref{fig:arclight_pixlar} shows the time evolution of the average photo-electron yield per event in beam (red) and cosmic ray (blue) mode.
+It can be seen that the yield is approximately constant over several weeks.
+The jumps in the beam curve can be explained by the switching between different beam configurations (e.g.\ momentum and intensity).
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{arclight/stability_cosm_beam}
+	\caption{Average observed number of photo-electrons (N p.e.) per event by the \AL{} module in the \pixlar{} test beam demonstrator at FNAL over several weeks.
+		In addition to the beam response in red, the response to cosmic rays is shown in blue.}
+	\label{fig:arclight_pixlar}
 \end{figure}
 
 

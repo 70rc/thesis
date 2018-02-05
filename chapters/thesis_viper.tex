@@ -63,6 +63,8 @@ Due to the limited accuracy of this method, measurements were not taken up to th
 	\label{fig:viper_transparency}
 \end{figure}
 
+\afterpage{\clearpage}
+
 
 \section{TPC}
 \label{sec:viper_tpc}
@@ -106,6 +108,8 @@ For operation in \lar{}, the SiPM bias voltages had to be reduce from $\approx$~
 In the front-end electronics, two coincidences of two out of the four SiPMs are formed and combined by means of a logic \textit{OR} operation. 
 This coincidence is used in order to improve trigger purity.
 
+\afterpage{\clearpage}
+
 
 \section{Ancillary Infrastructure}
 \label{sec:viper_infrastructure}
@@ -119,6 +123,8 @@ The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with 
 The HV feedthrough remains unchanged from the breakdown studies (Chapter~\ref{chap:hv}); a PET-C polymer dielectric capable of potentials as high as \SI{-130}{\kilo\volt}.
 A low-pass filter was added between the power supply and feedthrough, which consists of an \SI{800}{\pico\farad} decoupling capacitor grounded between two \SI{100}{\mega\ohm} resistors connected in series, i.e.\ an RC low-pass filter with an additional protection resistor at the output.
 For proper insulation, the whole assembly is submerged in transformer oil.
+
+\afterpage{\clearpage}
 
 
 \section{Signal to noise ratio}
@@ -176,6 +182,8 @@ Table~\ref{tab:viper_snr} lists the SNR values obtained from these signal values
 		\hline
 	\end{tabu}
 \end{table}
+
+\afterpage{\clearpage}
 
 
 \section{3D track reconstruction}
@@ -307,6 +315,8 @@ Using data to tune the reconstruction is prone to the introduction of circular b
 On the other hand, most of the difficulties emerge from the multiplexing ambiguities and their resolution.
 While the presented almost full 3D readout has already reduced the reconstruction complexity compared to a classical wire readout, an ambiguity-free readout will make reconstruction another big step easier by completely eliminating the need to resolve ambiguities.
 
+\afterpage{\clearpage}
+
 
 \section{\pixlar{}}
 \label{sec:viper_pixlar}
@@ -314,7 +324,7 @@ While the presented almost full 3D readout has already reduced the reconstructio
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pixlar/pixlar_arclight}
-	\caption{One of the two \pixlar{} half readout planes with the \AL{} module attached.}
+	\caption{One of the two \pixlar{} readout half planes with the \AL{} module attached.}
 	\label{fig:pixlar_arclight}
 \end{figure}
 
@@ -329,7 +339,9 @@ At \SI{3}{\milli\metre} pitch, this gives an instrumented area of \SI{36 x 72}{\
 Due to constraints from the PCB manufacturer, the readout plane had to be split into two mirror-symmetric, electrically independent half planes.
 Each \num{120 x 120} pixel half plane is divided into \num{8 x 15} ROIs of \num{15 x 8} pixels each.
 The ROIs are oriented with their longer dimension parallel to the beam direction to reduce the multiplexing ambiguities.
-To trigger on scintillation light, one end of the TPC is equipped with a\todo{dimensions} \AL{} module (see Chapter~\ref{chap:light-ro}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
+One of the noise mitigation measures implemented for the Bern pixel demonstrator was to use the same differential warm signal path as used by \lariat{}.
+Therefore, the charge readout electronics used in \pixlar{} are quite similar to the chain described in Section~\ref{sec:electronics_AT} after the upgrades.
+To trigger on scintillation light, one end of the TPC is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Chapter~\ref{chap:light-ro}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
 Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \AL{} module attached.
 
 \begin{figure}[htb]
@@ -343,5 +355,5 @@ Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \
 Over several weeks, beam and cosmic muon data was taken.
 At the time of this writing, no official results were available.
 Nevertheless, preliminary analyses indicate a successful scale-up of the pixelated \lartpc{} concept.
-The achieved SNR seems to be comparable to what was reach with the prototype in Bern described above.
+The achieved SNR seems to be comparable to what was reached with the prototype in Bern described above.
 A recorded beam event is depicted in Figure~\ref{fig:pixlar_event}.

@@ -41,7 +41,7 @@ Resonances can occur from the combination of the impedance of electronic compone
 The main culprits are usually parasitic impedances not taken into account during the desing of the circuit.
 The resulting oscillations are superimposed on the signal.
 
-An example of such a resonance is the behaviour of the cryogenic preamplifiers described in Section~\ref{sec:electronics_existing}.
+An example of such a resonance is the behaviour of the cryogenic preamplifiers described in Section~\ref{sec:electronics_AT}.
 They include a user configurable shaping filter.
 With its change, the input capacitance of the amplifier changes as well.
 Some configurations can form resonances with the circuit at the input.
@@ -61,6 +61,13 @@ Implementing this effectively is extremely complicated and often not practical f
 Another approach is hardening the signal path itself by using current-coupled and/or symmetric signals.
 Current-coupled signals are much less sensitive to induced voltages, as long as they are small enough and do not result in significant current across parasitic impedances.
 An example is NIM logic from the Nuclear Instrumentation Module standard.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{electronics/DiffSignaling}
+	\caption{Noise reduction using differential signalling.~\cite{diff_signal}}
+	\label{fig:electronics_diff-signal}
+\end{figure}
 
 For conventional single-ended signalling, the signal is measured as the voltage or current difference between a signal conductor and a ground common to the signal source and the signal sink.
 Using a common ground as signal return path can have several undesired effects.
@@ -87,10 +94,8 @@ If the source produces electromagnetic fields at known frequencies (e.g.\ harmon
 On the other hand if the source is unknown, debugging is much more complex.
 
 
-\section{Existing Chain}
-\label{sec:electronics_existing}
-
-\todo[inline]{better title?}
+\section{\AT Chain}
+\label{sec:electronics_AT}
 
 Contemporary electronics schemes shall be introduced by looking at the existing readout chain at LHEP at the University of Bern.
 It was originally designed for the \AT{} experiment and a more detailed description can be found in~\cite{AT_larasic}.
@@ -110,21 +115,21 @@ Their main features include
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{viper/ReadoutChain_old}
-	\caption{Readout chain used for the pixel test. The picture of the LARASIC cryogenic front-end preamplifiers shows them installed in an older wire readout setup.~\cite{AT_larasic}}
-	\todo[inline]{better ASIC picture}
-	\label{fig:viper_readoutChain_old}
+	\includegraphics[width=\textwidth]{electronics/ReadoutChain_AT}
+	\caption{Readout chain used for the pixel test.
+		The picture of the LARASIC cryogenic front-end preamplifiers shows them installed in the \AT{} wire readout setup.~\cite{AT_larasic}}
+	\label{fig:viper_readoutChain_AT}
 \end{figure}
 
 The cryogenic preamplifiers are mounted as close as possible to the readout in order to minimise noise pick-up on these very sensitive lines.
-Via an inter-integrated circuit (I$^2$C) bus, LARASICs can be programmed to the different aforementioned configurations.
-For this purpose, they are connected to a bespoke NIM module housing an Arduino which generates the I$^2$C signals, a test pulse generator, and multiple low-noise voltage regulators providing power to the LARASICs.
+Via an inter-integrated circuit (I\textsuperscript{2}C) bus, LARASICs can be programmed to the different aforementioned configurations.
+For this purpose, they are connected to a bespoke NIM module housing an Arduino which generates the I\textsuperscript{2}C signals, a test pulse generator, and multiple low-noise voltage regulators providing power to the LARASICs.
 The output of the preamplifiers is fed to buffer amplifiers mounted on top of the signal feedthrough by means of flexible Kapton ribbon cables.
 The buffers operate at room temperature, have a unity gain, and match the output impedance of the LARASICs to the \SI{50}{\ohm} input impedance of the downstream digitisers.
 From the buffers, the signals are routed via \SI{50}{\ohm} unbalanced coaxial lines to \emph{CAEN V1724}\footnote{\url{http://www.caen.it}} \SI{14}{bit} digitisers mounted in a VME crate.
 For debugging purposes, the output of the buffers can be routed to an oscilloscope via a coaxial T-piece.
 Finally, the digital data is read out from the VME crate via a fibre-optic link by a standard PC.
-Figure~\ref{fig:viper_readoutChain_old} depicts the entire readout chain.
+Figure~\ref{fig:viper_readoutChain_AT} depicts the entire readout chain.
 The complete analogue signal path from the pixel plane to the VME digitisers is single-ended and thus prone to ground loops and all associated noise problems.
 
 \begin{figure}[htb]
@@ -162,6 +167,7 @@ Furthermore, this decouples the lab grid entirely from the building ground preve
 The signal path from the impedance-matching buffer amplifiers to the digitisers---i.e. the warm signal path---was changed from single-ended to differential signalling.
 This was achieved by replacing the buffer amplifiers by single-ended to differential amplifiers and inserting another stage upstream of the digitisers to change the signal back to \SI{50}{\ohm} single-ended, matching the input of the digitisers.
 Like this, noise pick-up outside the cryostat could be reduced as well as sensitivity to ground loops between the detector and the DAQ rack.
+The design for the two buffer stages was kindly provided by the \lariat{} collaboration (see Section~\ref{sec:viper_pixlar} and~\cite{lariat}).
 
 \begin{figure}[htb]
 	\centering
@@ -194,8 +200,6 @@ This can also be seen from Figures~\ref{fig:electronics_noise-run1} and~\ref{fig
 The data for the latter (\num{5000} events in the first and \num{2000} events in the second campaign) was taken employing a \SI{5}{\hertz} random trigger.
 A more detailed assessment of the noise after the implementation of the described noise mitigation measures can be found in Section~\ref{sec:viper_snr}.
 
-\todo[inline]{put SNR numbers for comparison?}
-
 \begin{figure}[htb]
 	\centering
 	\includegraphics[page=4, width=\textwidth]{noise/noise_run2} \\
@@ -206,6 +210,7 @@ A more detailed assessment of the noise after the implementation of the describe
 \end{figure}
 
 \afterpage{\clearpage}
+
 
 \section{Improved Cold Electronics for Pixelated Readouts}
 \label{sec:electronics_pixels}

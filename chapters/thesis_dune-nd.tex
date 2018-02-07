@@ -79,43 +79,45 @@ The complexity of reconstruction paired with the potential impact on the physics
 	\label{tab:dune-nd_pile-up-params}
 	\begin{tabu} to \textwidth {|l|S|}
 		\hline
-		{Beam direction} &			{$Z$ (positive)} \\
+		{$X$-axis} &					{Drift} \\
 		\hline
-		{Gravitation} &				{$Y$ (negative)} \\
+		{$Y$-axis} &					{Vertical} \\
 		\hline
-		{Resolution $X$} &			\SI{3}{\milli\metre} \\
+		{$Z$-axis} &					{Beam} \\
 		\hline
-		{Resolution $Y$} &			\SI{3}{\milli\metre} \\
+		{Resolution $X$} &				\SI{0.3}{\centi\metre} \\
 		\hline
-		{Resolution $Z$} &			\SI{3}{\milli\metre} \\
+		{Resolution $Y$} &				\SI{0.3}{\centi\metre} \\
 		\hline
-		{Target volume $X$} &		\SIrange{-1000}{5000}{\milli\metre} \\
+		{Resolution $Z$} &				\SI{0.3}{\centi\metre} \\
 		\hline
-		{Active volume $X$} &		\SIrange{0}{4000}{\milli\metre} \\
+		{Target volume $X$} &			\SIrange{-100}{500}{\centi\metre} \\
 		\hline
-		{Fiducial volume $X$} &		\SIrange{300}{3700}{\milli\metre} \\
+		{Active volume $X$} &			\SIrange{0}{400}{\centi\metre} \\
 		\hline
-		{Target volume $Y$} &		\SIrange{-1000}{3500}{\milli\metre} \\
+		{Fiducial volume $X$} &			\SIrange{30}{370}{\centi\metre} \\
 		\hline
-		{Active volume $Y$} &		\SIrange{0}{2500}{\milli\metre} \\
+		{Target volume $Y$} &			\SIrange{-100}{350}{\centi\metre} \\
 		\hline
-		{Fiducial volume $Y$} &		\SIrange{300}{2200}{\milli\metre} \\
+		{Active volume $Y$} &			\SIrange{0}{250}{\centi\metre} \\
 		\hline
-		{Target volume $Z$} &		\SIrange{-4000}{5000}{\milli\metre} \\
+		{Fiducial volume $Y$} &			\SIrange{30}{220}{\centi\metre} \\
 		\hline
-		{Active volume $Z$} &		\SIrange{0}{5000}{\milli\metre} \\
+		{Target volume $Z$} &			\SIrange{-400}{500}{\centi\metre} \\
 		\hline
-		{Fiducial volume $Z$} &		\SIrange{300}{4700}{\milli\metre} \\
+		{Active volume $Z$} &			\SIrange{0}{500}{\centi\metre} \\
 		\hline
-		{Detection threshold} &		\SI{0.1}{\mega\electronvolt} \\
+		{Fiducial volume $Z$} &			\SIrange{30}{470}{\centi\metre} \\
 		\hline
-		{Cone extent} &				{$10 X_{\m{0}} = \SI{1400}{\milli\metre}$} \\
+		{Detection threshold} &			\SI{0.1}{\mega\electronvolt} \\
 		\hline
-		{Cone half opening angle} &	\ang{15} \\
+		{Cone extent} &					{$10 X_{\m{0}} = \SI{140}{\centi\metre}$} \\
 		\hline
-		{Cylinder radius} &			\SI{25}{\milli\metre} \\
+		{Cone aperture (full angle)} &	\ang{30} \\
 		\hline
-		{Beam intensity} &			{$\SI{2}{\mega\watt} \widehat{=} \SI{0.2}{evt\per\tonne}$} \\
+		{Cylinder diameter} &			\SI{5}{\centi\metre} \\
+		\hline
+		{Beam intensity} &				{$\SI{2}{\mega\watt} \widehat{=} \SI{0.2}{evt\per\tonne}$} \\
 		\hline
 	\end{tabu}
 \end{table}
@@ -127,10 +129,10 @@ This algorithm is explained in the following, its parameters are listed in Table
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Chapter~\ref{chap:viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:electronics_larpix}.
-The spatial resolution of the pixel readout is assumed to be \SI{3}{\milli\metre} based onthe ND design specified in Section~\ref{sec:ac_dune-nd}.
-A conservative value of \SI{3}{\milli\meter} was chosen in drift direction.
+The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:ac_dune-nd}.
+A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
-Chosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
+Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
 MicroBooNE has achieved a resolution in drift direction $< \SI{3}{\milli\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
 Finally, a conservative value also accounts for charge diffusion.
 Furthermore, it is assumed that EM showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
@@ -154,8 +156,8 @@ The cylinder radius was tuned to optimise the trade-off between increased effici
 \end{figure}
 
 Argon Box propagates the neutrino interaction events it gets from GENIE through liquid argon, the output is a ROOT tree of neutrino interaction events.
-To get a realisitc simulation of beam events in the detector, these events need to be distributed randomly in time and space.
-Beam spills are simulated by drawing the number of events for each spill from a Poisson distrubition whose mean is calculated from the beam intensity and the target mass accodring to the values in Table~\ref{tab:nu-detection_beam-params}.
+To get a realistic simulation of beam events in the detector, these events need to be distributed randomly in time and space.
+Beam spills are simulated by drawing the number of events for each spill from a Poisson distribution whose mean is calculated from the beam intensity and the target mass according to the values in Table~\ref{tab:nu-detection_beam-params}.
 The resulting number of events is taken from the Argon Box ROOT tree and their vertices are placed within the \lar{} volume at coordinates drawn from a uniform distribution.
 Combined with the target mass given in Table~\ref{tab:dune-nd_pile-up-params}, this results in an equivalent of $\approx \num{1.5e19}$ protons on target (POT).
 The seemingly low number (compared to Table~\ref{tab:nu-detection_nd-rates} for instance) is the result of many neutrino interactions happening outside of the active detector.
@@ -180,9 +182,9 @@ These numbers are supported by Geant4 simulations~\cite{hardonContChris}.
 As mentioned in Section~\ref{sec:nu-detection_fs}, EM interactions happen on smaller scales than hadronic interactions.
 The big exception are muons due to their high range.
 However, as will be explained below, due to the high reconstruction efficiency, it makes sense to ignore pile-up from muons anyway.
-Finally, a fiducial volume \SI{0.3}{\metre} ($\approx 2 X_{\m{0}}$) smaller than the active volume on all six faces is defined.
+Finally, a fiducial volume \SI{30}{\centi\metre} ($\approx 2 X_{\m{0}}$) smaller than the active volume on all six faces is defined.
 Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
-This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the inital \num{6.6e6} neutrino events.
+This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.
 
 \begin{figure}[htb]
@@ -210,23 +212,31 @@ After all events of one spill are placed inside the target volume, all \Pgpz pho
 All energy depositions inside the active volume are considered.
 To assess the performance of the performance of the algorithm, the following quantities are computed for each photon:
 \begin{description}
-	\item[Efficiency] is the ratio of correctly accepted energy deposition inside the cone-cylinder union to total true energy deposition of the photon.
-		This is a measure for the performance of the reconstruction and can be used to ensure optimum tuning of the union parameters.
-	\item[Purity] is the ratio of correctly accepted energy deposition inside the cone-cylinder union to total accepted energy deposition inside the union.
-		This is a measure for event pile-up.
-		The higher the amount of charge deposition from other events inside the union, the lower the purity.
+	\item[Missed energy] is the energy deposited by the corresponding \Pgpz photon (or its descendants) that is outside of the cone-cylinder union and therefore ``missed'' by the algorithm.
+		This is a measure of the reconstruction performance and can be used to ensure optimum tuning of the union parameters.
+	\item[Misidentified energy] is the energy inside the cone-cylinder union deposited by descendants of a different (``wrong'') parent neutrino.
+		This is a measure of event pile-up: the higher the charge deposition by other events inside the union, the higher the event pile-up.
 \end{description}
-Using this general definition of purity leads to quite mediocre results.
+Using this general definition of misidentified energy leads to quite mediocre results.
 However, there are some assumptions that can be taken even without knowing the actual reconstruction algorithm.
-The incorrectly accepted energy deposition inside the cone-cylinder union can be limited to energy deposited by other events; misidentified energy from the same event does not affect the total reconstructed neutrino energy.
 From results of earlier experiments\todo{sauce}, the muon reconstruction can be assumed to be very efficient.
-Assuming \SI{100}{\percent} reconstruction efficiency for muons and \SI{0}{\percent} for all other particles can therefore serve as a lower limit for the purity.
-It can be calculated by ignoring misidentified muon energy depositions.
-On the other hand, an upper limit for the purity can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles (\Pgpz and \Pgg).
+Assuming \SI{100}{\percent} reconstruction efficiency for muons and \SI{0}{\percent} for all other particles can therefore serve as an upper limit for misidentified energy.
+It can be calculated by ignoring energy deposited by muons originating from other parent neutrinos.
+On the other hand, a lower limit for misidentified energy can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles (\Pgpz and \Pgg).
 This is calculated by only taking into account misidentified energy deposited by neutral particles.
-Assuming \SI{0}{\percent} reconstruction efficieny for neutral particles might lead to a slight underestimation of purity.
-However, this effect should be more than compensated by the overestimation of the charged particle reconstruction efficiency, given the highly complex nature of reconstructing unconnected clusters from neutral particles.
-Therefore, this upper purity limit should hold at least in the near future.
+Even assuming \SI{0}{\percent} reconstruction efficiency for neutral particles is potentially too pessimistic.
+Future, more sophisticated reconstruction algorithms (e.g. based on machine learning) might be able to partially reconstruct the topology of charge depositions originating from neutral particles and thus prevent their misidentification.
+Therefore, it can be assumed that the actual pile-up-related energy reconstruction error is closer to the lower limit and potentially even below.
+
+To make the interpretation of the results as intuitive as possible, missed and misidentified energy are plotted as a function of true photon and neutrino energy, respectively.
+As mentioned above, the missed energy is used to measure the performance of the employed photon reconstruction algorithm.
+Therefore, it is sensible to compare it to the true photon energy rather than the true energy of its parent neutrino.
+On the other hand, the primary goal of this study is to assess the effect of event pile-up on the neutrino energy spectrum.
+The misidentified energy is thus compared to the true neutrino energy.
+Additionally, it is illustrative to look at the fraction of events with a certain misidentified (missed) energy.
+All the aforementioned information is contained in 2D histograms of all events with the true neutrino (photon) energy on one axis and the misidentified (missed) energy on the other axis.
+The energy dependence of the error can be obtained by looking at the true energy axis and calculating the mean misidentified (missed) energy for each bin (a profile of the 2D histogram).
+Looking at the misidentified (missed) energy axis and summing over all true energies yields the number (fraction) of events with the corresponding misidentified (missed) energy (a projection of the 2D histogram).
 
 \begin{figure}[htb]
 	\centering

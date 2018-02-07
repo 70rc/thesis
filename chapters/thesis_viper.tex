@@ -273,14 +273,20 @@ The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[viewport=800 0 1200 2000, clip, height=\textwidth, angle=90]{viper/event967_hits}
+	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_q} \\
+	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_pca} \\
+	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_det}
 	\caption{Reconstructed 3D hits from the hit finder.
-	The TPC volume is shown in faint green.
-	The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
-	Drift direction is from right to left.
-	The colour of the hits indicates the result of the principal components analysis: blue is accepted as the true hit while rejected ambiguous hits are plotted in red.
-	The thin white line represents the eigenvector with the largest eigenvalue of the ellipsoid formed by the 3D hit point cloud.
-	As this is a quite clean track with only few short $\delta$ rays, there are no outliers rejected other than the multiplexing ambiguities.}
+		The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+		Drift direction is from right to left.
+		Pulse shape is encoded as thickness.
+		In the top plot, colour codes the amount of collected charge.
+		The middle plot illustrates the ambiguity resolution employing a principal component analysis.
+		Green hits are accepted while dark red ones are rejected.
+		This is achieved by selecting the ambiguity closest to the eigenvector of the point cloud with the largest eigenvalue, represented by the blue line.
+		In the bottom plot, the degree of ambiguity is colour-coded: Light green are unambiguous hits while dark green are selected solutions of ambiguous hits.
+		Dark red through black are rejected solutions of ambiguous hits where darker colour represents a higher degree of ambiguity.
+		As this is a quite clean track with only few short $\delta$ rays, there are no outliers rejected other than the multiplexing ambiguities.}
 	\label{fig:viper_pca}
 \end{figure}
 

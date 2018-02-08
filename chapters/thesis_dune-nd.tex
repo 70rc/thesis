@@ -144,7 +144,8 @@ The cylinder radius was tuned to optimise the trade-off between increased effici
 	\includegraphics[width=\textwidth]{pile-up/2MW/rel_2d_missed}
 	\caption{2D histogram of missed energy fraction versus true photon energy for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
+		Under the number of entries, a detailed list of the number of entries inside (centre) and outside (edges and corners) the depicted area of the histogram is given.}
 	\label{fig:dune-nd_2MW_rel-2d-missed}
 \end{figure}
 
@@ -199,7 +200,7 @@ The cylinder radius was tuned to optimise the trade-off between increased effici
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/misid_rel_y}
-	\caption{Cumulatetive fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
+	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
 		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
@@ -231,7 +232,7 @@ Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volu
 
 After all events of one spill are placed inside the target volume, all \Pgpz photons produced inside the fiducial volume are reconstructed using the cone algorithm.
 All energy depositions inside the active volume are considered.
-To assess the performance of the performance of the algorithm, the following quantities are computed for each photon:
+To assess the performance of the algorithm and the influence of pile-up on neutrino energy reconstruction, the following two errors on the reconstructed energy are calculated for each \Pgpz photon:
 \begin{description}
 	\item[Missed energy] is the energy deposited by the corresponding \Pgpz photon (or its descendants) that is outside of the cone-cylinder union and therefore ``missed'' by the algorithm.
 		This is a measure of the reconstruction performance and can be used to ensure optimum tuning of the union parameters.
@@ -240,7 +241,7 @@ To assess the performance of the performance of the algorithm, the following qua
 \end{description}
 Using this general definition of misidentified energy leads to quite mediocre results.
 However, there are some assumptions that can be taken even without knowing the actual reconstruction algorithm.
-From results of earlier experiments\todo{sauce}, the muon reconstruction can be assumed to be very efficient.
+From results of earlier experiments~\cite{pandora}, the muon reconstruction can be assumed to be very efficient.
 Assuming \SI{100}{\percent} reconstruction efficiency for muons and \SI{0}{\percent} for all other particles can therefore serve as an upper limit for misidentified energy.
 It can be calculated by ignoring energy deposited by muons originating from other parent neutrinos.
 On the other hand, a lower limit for misidentified energy can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles (\Pgpz and \Pgg).
@@ -248,6 +249,8 @@ This is calculated by only taking into account misidentified energy deposited by
 Even assuming \SI{0}{\percent} reconstruction efficiency for neutral particles is potentially too pessimistic.
 Future, more sophisticated reconstruction algorithms (e.g. based on machine learning) might be able to partially reconstruct the topology of charge depositions originating from neutral particles and thus prevent their misidentification.
 Therefore, it can be assumed that the actual pile-up-related energy reconstruction error is closer to the lower limit and potentially even below.
+It should be noted that the upper limit excludes only energy deposited by muons directly and not by their descendants (e.g.\ $\delta$ rays or Michel electrons).
+Whereas the lower limit excludes charge deposited by photons, neutrons, and any of their descendants.
 
 \section{Results}
 \label{sec:dune-nd_results}
@@ -287,7 +290,7 @@ Therefore, it can be assumed that the actual pile-up-related energy reconstructi
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/misid_rel_y}
-	\caption{Cumulatetive fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
+	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
 		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
@@ -327,22 +330,32 @@ Therefore, it can be assumed that the actual pile-up-related energy reconstructi
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/10MW/misid_rel_y}
-	\caption{Cumulatetive fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
+	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
 		The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
 	\label{fig:dune-nd_10MW_misid-rel-y}
 \end{figure}
 
-Missed and misidentified energy are plotted as a function of true photon and neutrino energy, respectively.
+One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
+In the simulation, the quantities to be measured by the experiment are known a priori.
+They are called truth information and can be compared to the output of the analysis run on the simulated dataset.
+
+Missed and misidentified energy by the cone-cylinder union are plotted as a function of true photon and neutrino energy, respectively.
 As mentioned above, the missed energy is used to measure the performance of the employed photon reconstruction algorithm.
 Therefore, it is sensible to compare it to the true photon energy rather than the true energy of its parent neutrino.
 On the other hand, the primary goal of this study is to assess the effect of event pile-up on the neutrino energy spectrum.
 The misidentified energy is thus compared to the true neutrino energy.
+For this, the total missed energy of each neutrino event is first calculated by summing up the contributions of all descending \Pgpz photons.
 Additionally, it is illustrative to look at the fraction of events with a certain misidentified (missed) energy.
 All the aforementioned information is contained in 2D histograms of all events with the true neutrino (photon) energy on one axis and the misidentified (missed) energy on the other axis.
 The energy dependence of the error can be obtained by looking at the true energy axis and calculating the mean misidentified (missed) energy for each bin (a profile of the 2D histogram).
 Looking at the misidentified (missed) energy axis and summing over all true energies yields the number (fraction) of events with the corresponding misidentified (missed) energy (a projection of the 2D histogram).
+It should be noted that for the projections all values in the corresponding y-bin are taken into account, including the ones outside the boundaries of the histogram (under- and overflow).
+For the profiles, only events between \SIrange{0}{6}{\giga\electronvolt} absolute and \numrange{0}{1} fractional are taken into account.
+
+The results for a \SI{2}{\mega\watt} beam at \SI{80}{\giga\electronvolt} proton energy are shown in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_misid-rel-y}.
+
 
 The results of the pile-up study are shown in Figures~\ref{fig:dune-nd_2MW-eff-pur} through~\ref{fig:dune-nd_10MW-energy-error}.
 Figures~\ref{fig:dune-nd_2MW-eff-pur} and~\ref{fig:dune-nd_2MW-energy-error} assume optimised beam intensity of \SI{2}{\mega\watt}.

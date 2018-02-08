@@ -293,7 +293,7 @@ The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 The final step consists of a Kalman filter.
 For this, the well-established GENFIT track fitting package~\cite{genfit1, genfit2} was used.
 Ionisation losses and multiple scattering are taken into account.
-The particle is assumed to be a minimum-ionising muon with an initial momentum of \SI{260}{\mega\electronvolt} in the direction of the track estimate from the PCA.
+The particle is assumed to be a minimum-ionising muon with an initial momentum of \SI{260}{\mega\electronvolt\per\clight} in the direction of the track estimate from the PCA.
 A recursive algorithm capable of dealing with outliers was chosen, a so-called \emph{deterministic annealing filter}.
 This works by assigning successively lower weights to outliers with each recursion step.
 For more details, see the respective publications~\cite{genfit1, genfit2}.
@@ -313,7 +313,7 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 
 Technically, the Kalman filter would be capable of fitting the particle momentum or even particle type to the data.
 At the time of this writing, this is not implemented yet.
-In particular, the momentum stays roughly at the initial guess of \SI{260}{\mega\electronvolt}, assuming a minimum ionising muon in liquid argon.
+In particular, the momentum stays roughly at the initial guess of \SI{260}{\mega\electronvolt\per\clight}, assuming a minimum ionising muon in liquid argon.
 A potential explanation for this is that the resolution of the detector is too low to estimate momentum from multiple scattering.
 Another explanation might be the hit finder missing hits due to non-optimal tuning.
 Proper tuning of the reconstruction requires a full simulation chain of the detector which is not yet available.
@@ -337,7 +337,7 @@ While the presented almost full 3D readout has already reduced the reconstructio
 After the successful test with cosmic muons at Bern, a bigger prototype of the pixel readout, employing the same multiplexing scheme, was built for a beam exposure in the \lariat{} experiment~\cite{lariat} at FNAL.
 \lariat{} consists of the former \argoneut{}~\cite{argoneut} cryostat and \lartpc{} put into a test beam.
 The tertiary beam line produces mainly pions and protons as well as electrons, muons and kaons at a lower rate.
-Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt}.
+Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt\per\clight}.
 \SI{550}{\litre} of \lar{} are contained in a cylindrical cryostat.
 It houses a TPC with \SI{47}{\centi\metre} drift length and a \SI{40 x 90}{\centi\metre} readout plane parallel to the beam direction, resulting in an active volume of \SI{170}{\litre}.
 For the pixel test, called \pixlar{}, the original wire planes were replaced by a \num{120 x 240} pixel readout.

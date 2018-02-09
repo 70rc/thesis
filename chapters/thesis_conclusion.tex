@@ -4,8 +4,8 @@
 \dune{}, a planned long-baseline neutrino oscillation experiment, aims to discover CP violation in the lepton sector and determine the neutrino mass ordering.
 Due to its excellent tracking and calorimetry, a \lartpc{} will be deployed for the far detector.
 To bring beam-related systematic uncertainties below the required \SI{2}{\percent}, a \lartpc{} component is required in the near detector complex.
-This environment will be very challenging due to the slow readout ($\approx \SI{1}{\milli\second\per\metre}$) of \lartpc{}s compared to the beam pulse duration (\SI{10}{\micro\second}).
-The high beam intensity will therefore lead to significant event pile-up.
+This environment will be very challenging due to the slow readout (\SI{0.5}{\milli\second\per\metre}) of \lartpc{}s compared to the beam pulse duration (\SI{10}{\micro\second}).
+The high beam intensity will therefore lead to an event pile-up of up to \SI{0.2}{evt\per\tonne_{\lar}}.
 
 In this thesis, all relevant challenges for such a near detector \lartpc{} were studied, namely the dielectric strength of \lar{}, new charge and light readout methods, as well as the required next-generation charge readout electronics.
 After the \AT{} experiment at the University of Bern had suffered from serious HV problems, a systematic study of dielectric breakdowns in \lar{} was undertaken.
@@ -15,14 +15,14 @@ From this, a conclusive theory of dielectric breakdowns in \lar{} at the centime
 The phenomenon is governed by three distinct phases: field emission, streamer, and breakdown.
 Understanding the process enabled the development of a technique to mitigate the breakdowns.
 However, this solution proved to be unreliable.
-Only keeping fields below \SI{40}{\kilo\volt\per\centi\metre} (as opposed to $\approx \SI{1}{\mega\volt\per\centi\metre}$) everywhere in the detector guarantees a safe operation.
+Only keeping fields below \SI{40}{\kilo\volt\per\centi\metre} (as opposed to $\approx \SI{1}{\mega\volt\per\centi\metre}$ predicted by studies in the fifties) everywhere in the detector guarantees a safe operation.
 
-Classical wire plane readouts of \lartpc{} have significant drawbacks.
+Classical wire plane readouts of \lartpc{}s have significant drawbacks.
 Besides their mechanical fragility, they cripple the excellent 3D tracking capabilities of a TPC by reducing it two multiple 2D projections.
 This is highly problematic in high-multiplicity environments such as the \dune{} near detector.
 In a preliminary study, it was shown that the mechanical challenges can be alleviated by replacing the wires with copper tracks printed on a thin Kapton layer.
 However, this does not solve the ambiguities.
-For this, a true 2D readout in form of pixels is needed.
+Instead, a true 2D readout in form of pixels is needed.
 Realising a pixelated \lartpc{} is complicated because of the high number of channels.
 Cold digitisation can help by aggregating many pixels on a single high-speed digital link, reducing the number of required cable feedthroughs out of the cryostat.
 The cold digitisers foreseen for the \dune{} far detector were evaluated and found unsuitable for a pixelated near detector.
@@ -36,7 +36,7 @@ Besides, it was also used to test the operation of SiPMs in \lar{} for the light
 Several thousand cosmic muon tracks were recorded in two measurement campaigns.
 The first measurement campaign suffered from high noise levels on the charge readout.
 Subsequently, the ARGONTUBE readout electronics were extended by a differential warm signal path, and the parasitic capacitances in the pixel readout PCB were reduced.
-In the second run, a SNR of \num{14} on the pixel channels could be reached, proving a sufficient performance of pixels for operation in a real physics experiment.
+In the second run, a SNR of \num{14} (neglecting lifetime) on the pixel channels could be reached, proving a sufficient performance of pixels for operation in a real physics experiment.
 These results triggered the development of bespoke cold pixel electronics, \larpix{}, by Lawrence Berkeley National Laboratory, aimed to eventually enable an ambiguity-free pixelated \lartpc{} charge readout.
 
 To reconstruct the cosmic muon tracks, a new software framework was developed.
@@ -48,14 +48,14 @@ Therewith, fully reconstructed cosmic muon tracks were obtained.
 The work is concluded by an event pile-up study of the \dune{} near detector using \Pgpz decay photons.
 At \dune{} energies, these photons produce EM showers consisting of a plethora of small disconnected charge depositions in the detector.
 Correctly associating these to the right neutrino event is one of the most difficult reconstruction tasks.
-At the same time, failure to reconstruct them properly, significantly impedes the reconstructed neutrino energy spectrum.
+At the same time, failure to reconstruct them properly significantly impedes the reconstructed neutrino energy spectrum.
 Based on the results from the pixel prototype test, unambiguous 3D position information for the charge depositions was assumed.
 A simple cone-based algorithm was employed to associate the charge to the corresponding photon.
 The mean deposited energy missed by the algorithm was found to be less than \SI{3}{\percent}.
-More importantly, the mean pile-up-related misidentification of energy depositions from other events was found to be \SIrange{2}{3}{\percent}.
+More importantly, the pile-up-related misidentification of energy depositions from other events was found to have a mean of \SIrange{2}{3}{\percent}.
 For more than \SI{50}{\percent} of the neutrino events, this error is even smaller than \SI{0.1}{\percent}.
 
-The combination the results from all of this work builds the groundwork for the \AC{}, a novel, fully modular \lartpc{} concept, addressing the most important challenges of future neutrino detectors, in particular the \dune{} near detector.
+The combination of results from all of this work builds the groundwork for the \AC{}, a novel, fully modular \lartpc{} concept, addressing the most important challenges of future neutrino detectors, in particular the \dune{} near detector.
 High cathode voltages are prevented by splitting the detector into several small, self-contained TPCs requiring only a moderate \SI{50}{\kilo\volt} cathode voltage.
 A pixelated readout enables the true 3D tracking required to cope with the high event rates resulting from the high-intensity neutrino beam.
 The \AL{} light readout minimises the dead volume in between the modules, resulting in a similar performance to a monolithic detector while containing the scintillation light within the modules, simplifying association to the correct ionisation signals.

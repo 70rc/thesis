@@ -16,7 +16,7 @@ Besides, while it is certain that at least two out of the three neutrinos have n
 Its determination will help to integrate massive neutrinos into the SM where they are currently massless.
 
 Measuring the unknown parameters of the neutrino mixing and oscillation model will require a neutrino interaction sample of unprecedented size.
-Much of today's knowledge was gained from neutrinos produced in the sun and the Earth's atmosphere.
+Much of today's knowledge was gained from neutrinos produced in the Sun and the Earth's atmosphere.
 However, for future experiments, these and other natural sources are not intense and/or precise enough for the required measurements.
 Therefore, artificially produced neutrino beams will be employed, paired with huge detectors.
 Not only are neutrino interactions with matter very rare, they are also quite manifold, giving raise to the need for detectors capable of recording complex event topologies and reconstructing energies precisely.
@@ -29,7 +29,7 @@ A small remainder of pairs recombine and produce very prompt (\si{\nano\second})
 Due to the constant drift velocity of charge in a medium subject to an electric field, the distance from the ionisation location to the readout plane can be precisely determined.
 Combined with the 2D information from the readout, the full 3D interaction topology can be reconstructed.
 
-The Deep Underground Neutrino Experiment (\dune{}) is a next generation long-baseline beam neutrino oscillation experiment placing \lartpc{}s in an accelerator-produced muon neutrino beam.
+The Deep Underground Neutrino Experiment (\dune{}) is a next generation long-baseline beam neutrino oscillation experiment, placing \lartpc{}s in an accelerator-produced muon neutrino beam.
 Neutrino oscillations will be observed over a baseline of \SI{1300}{\kilo\metre}.
 Several implications result from the required number of neutrino interactions to be sensitive to CP violation and neutrino mass ordering.
 As mentioned above, a very intense neutrino beam and a large target mass are necessary.
@@ -54,7 +54,7 @@ While this still applies to the \dune{} far detector, it is certainly not true f
 The high-intensity neutrino beam will result in event rates in the near detector significantly higher than what contemporary \lartpc{}s have been exposed to.
 Even worse, the beam is delivered in very short pulses of very high intensity.
 Because these pulses are one to two orders of magnitude shorter than a typical \lartpc{} readout cycle, the detector registers several neutrino interactions simultaneously, so-called event pile-up.
-Combined with the 2D projection readout, this leads to significant difficulties in event reconstruction: disentangling the interaction topologies from the recorded 2D projections.
+Combined with the 2D projection readout, this leads to significant difficulties in event reconstruction: disentangling the 3D interaction topologies from the recorded 2D projections.
 
 An obvious solution to this challenge is to regain true 3D information from the TPC by replacing the projective 1D wire planes with a true 2D pixelated charge readout.
 However, as mentioned above, this is linked to technological challenges.
@@ -63,7 +63,7 @@ For the \lartpc{} in the \dune{} near detector complex with a size of \SI{4 x 5 
 The number of cable feedthroughs can be reduced by digitising charge readout waveforms inside the \lar{} and using high-speed digital links to aggregate many readout channels on a single cable.
 However, this is far from trivial.
 Besides the challenge of adapting existing electronics to the cryogenic temperatures of liquid argon, heat production has to be kept to a minimum to prevent the \lar{} from boiling.
-While such electronics have already been designed for the wire-equipped far detectors, the latter are not suitable for a pixelated near detector due to their power dissipation.
+While such electronics have already been designed for the wire-equipped far detectors, the former are not suitable for a pixelated near detector due to their power dissipation.
 
 In addition to these readout issues, future large \lartpc{}s face several other challenges.
 In particular for the high voltage (HV) and light readout systems.
@@ -74,9 +74,9 @@ This results in a lower limit on the required drift field and therefore cathode 
 Due to the finite dielectric strength of \lar{}, the fraction of dead volume required around the cathode scales with detector size unless this is accounted for by a modified high voltage system of the detector.
 
 In order to get proper timing for the third coordinate, the scintillation light flashes need to be matched to the correct events.
-This becomes problematic in large monolithic \lartpc{} in high pile-up environments.
+This becomes problematic in large monolithic \lartpc{} in high-pile-up environments.
 
-The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component for the \dune{} ND.\todo{too bullshitty?}
+The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component in the \dune{} near detector complex.
 Chapter~\ref{chap:hv} contains a thorough investigation of dielectric breakdowns in \lar{}.
 These studies include high-speed footage, current-voltage characteristics and spectrometry of the breakdowns.
 As a result, a hypothesis was developed providing a conclusive explanation of the phenomenon.
@@ -91,7 +91,7 @@ The active area of the SiPMs is drastically increased by coupling them to a ligh
 This makes it competitive to classical PM tubes for large area coverage while requiring a much reduced dead volume.
 Chapter~\ref{chap:light-ro} gives an overview of this.
 
-The main contribution to the \dune{} near detector is the demonstration of a pixelated \lartpc{}.
+The main contribution to the \dune{} near detector complex is the demonstration of a pixelated \lartpc{}.
 Conventional room-temperature digitisers were combined with analogue multiplexing due to the as yet lacking cryogenic electronics.
 Several days of cosmic muon data were collected with a test stand designed and built at the University of Bern.
 A software framework was written to reconstruct 3D tracks from the data.
@@ -100,7 +100,7 @@ The latter had to be resolved by the reconstruction algorithm.
 Finally, the unambiguous positional information was fed to a Kalman filter.
 This propagates a cosmic muon hypothesis through all the detector measurements taking into account the various involved charge deposition mechanisms in \lar{}.
 The end result is a completely reconstructed particle track through the detector.
-All of this is described in Chapter~\ref{chap:viper}.
+All of this is described in Chapters~\ref{chap:charge-ro} and~\ref{chap:viper}.
 
 The combination of all the R\&D presented in this thesis resulted in the development of the \AC{}, a next-generation \lartpc{} concept, at the University of Bern.
 It aims to address the most important challenges met by future \lartpc{}s.
@@ -113,11 +113,11 @@ The thesis is completed by a study of the feasibility of a \lartpc{} in the \dun
 Combining the knowledge gained from Chapter~\ref{chap:viper} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:electronics}, enables the realisation of a true 3D \lartpc{}.
 However, it remains to be shown that such a detector is actually able to cope with the event rates expected in the near detector.
 To assess this capability, a metric was needed representative of the physics processes.
-Electromagnetic (EM) showers produced from the photons originating from \Pgpz decays are notoriously complex to reconstruct while they are present in a significant fraction of the neutrino interaction expected in \dune{}.
-On the other hand, it is important to get their energy reconstruction right in order not to skew the neutrino energy spectrum.
+Electromagnetic (EM) showers produced from the photons originating from \Pgpz decays are notoriously complex to reconstruct.
+On the other hand, it is important to get their energy reconstruction right in order not to skew the neutrino energy spectrum because they are present in a significant fraction of the neutrino interaction expected in \dune{}.
 At the \dune{} energies, EM showers deposit a plethora of apparently unconnected charge clusters in a \lartpc{} rather than a homogeneous cone.
-Associating all those separate charge blobs to the correct event is one of the most difficult reconstruction tasks even for a \lartpc{}.
+Associating all those separate charge blobs to the correct event is one of the most difficult reconstruction tasks, even for a \lartpc{}.
 Therefore, this type of EM shower was chosen for this study.
 A rather rudimentary algorithm was employed to assign the deposited charge to the correct EM shower because all available \lartpc{} reconstruction algorithms are optimised for wire readouts.
 The amount of misidentified charge from other events is a suitable metric to assess the impact of pile-up on the near detector physics.
-This study is described in \ref{chap:dune-nd}.
+This study is described in Chapter~\ref{chap:dune-nd}.

@@ -15,16 +15,18 @@ More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} whil
 	\includegraphics[width=\textwidth]{pile-up/charge_flux}
 	\caption{Average current collected by the readout for one spill as a function of time.
 	The current is given in arbitrary but equal units for both plots.
+	Anode and cathode are represented by the vertical red lines, relative to the trigger timestamp.
 	The upper plot assumes the whole charge is deposited instantaneously while for the lower plot, the actual spill duration from~\cite{dune2} is used.}
 	\label{fig:dune-nd_charge-flux}
 \end{figure}
 
-\lartpc{}s are intrisically slow detectors with a readout time of $\approx \SI{0.5}{\milli\second\per\metre}$ drift length for a \SI{1}{\kilo\volt\per\centi\metre} drift field (see Chapter~\ref{chap:lartpc}).
+\lartpc{}s are intrinsically slow detectors with a readout time of $\approx \SI{0.5}{\milli\second\per\metre}$ drift length for a \SI{1}{\kilo\volt\per\centi\metre} drift field (see Chapter~\ref{chap:lartpc}).
 This causes a pile-up of events in the detector; if the latter was infinitely fast, all neutrino interactions could be separated in time.
 In reality, even the \AC{} TPCs with a drift length of only \SI{0.5}{\metre}, corresponding to a full readout cycle of \SI{250}{\micro\second}, are significantly slower than the spill duration of \SI{10}{\micro\second} of the \dune{} beamline reference design.~\cite{dune2}
 Figure~\ref{fig:dune-nd_charge-flux} visualises this effect.
 The charge arriving at the readout is represented as an average current in arbitrary units (the same for top and bottom, though).
-The magnitude of this readout current is a direct measure for event pile-up in the corresponding time slice.
+Anode and cathode are represented by the vertical red lines, relative to the trigger timestamp.
+The magnitude of the readout current is a direct measure for event pile-up in the corresponding time slice.
 For simplicity, an infinitely short spill duration was assumed for the pile-up study (top), i.e.\ the whole ionisation charge produced by one beam spill is deposited instantaneously inside the TPC volume.
 As the time in between beam spills is $\order{\SI{1}{\second}}$, all this charge can be read out within one drift time.
 In this case, the average current (pile-up) seen by the readout is constant over the whole readout cycle.
@@ -32,7 +34,7 @@ The realistic case with the spill duration of the reference beam is depicted in 
 At the beginning of the readout cycle, there is no charge deposited yet, the current (pile-up) is zero.
 Over the duration of the beam spill, ionisation charge accumulates inside the TPC volume while the exisiting charge is transported towards the readout by the drift field.
 After the beam spill is over, the remainder of the initial drift volume (\SI{240}{\micro\second}) contains a uniform charge density.
-The additional \SI{10}{\micro\second}, in front of the cathode and part of the next readout cycle, again, contain a ramped charge density with zero charge at the cathode, corresponding to the end of the spill.
+The additional \SI{10}{\micro\second}, now in front of the cathode and part of the next readout cycle, again, contain a ramped charge density with zero charge at the cathode, corresponding to the end of the spill.
 In short, a spill duration shorter than but comparable to the drift time results in the shape of the ionisation current (event pile-up) seen over time to become a trapecoid rather than a square.
 The integral, i.e.\ the total ionisation charge (deposited energy) is the same but part of it is shifted from the spill time slice to the beginning of the next readout cycle.
 Similarly, the peak current (pile-up) is the same, as long as the spill duration is shorter than the drift time.
@@ -44,6 +46,10 @@ However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the sa
 \section{\Pgpz pile-up simulation}
 \label{sec:dune-nd_simulation}
 
+One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
+In the simulation, the quantities to be measured by the experiment are known a priori.
+They are called truth information and can be compared to the output of the analysis run on the simulated dataset.
+
 A significant amount of \Pgpz are produced in several resonant and coherent neutrino interactions (see Table~\ref{tab:nu-detection_nd-rates} Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
 They decay according to
 \begin{IEEEeqnarray}{C}
@@ -53,13 +59,13 @@ with a branching ratio of \SI{98.8}{\percent}\cite{pdg}.
 The photons subsequently produce electromagnetic showers in \lar{} (see Section~\ref{sec:nu-detection_fs}).
 At the energies of the \dune{} beam (see Figure~\ref{fig:nu-detection_dune-flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable \Pepm tracks.
 More importantly, there often are significant gaps in betweend these charge clusters.
-A main challenge of shower reconstruction is to associate these well separated charge blobs to the correct event.
+A main challenge of shower reconstruction is to associate these well-separated charge blobs to the correct event.
 Misidentifications lead to a misreconstruction of the neutrino energy.
 The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
 The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} ND environment.
 
 To simulate the expected neutrino interactions in the ND, the Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} simulation tool was used.
-The neutrino group at LBNL is developing it with the goal of providing an easy-to-use simulation of particle interactions in \lar{} component of the ND.
+The neutrino group at LBNL is developing it with the goal of providing an easy-to-use simulation of particle interactions in the \lar{} component of the ND.
 Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file\footnote{A file format standard for passage of particle events between different simulation tools}.
 For this study, \num{6.6e6} neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 Secondary particle transport and interaction in Argon Box is performed by Geant4.\footnote{\url{http://geant4.cern.ch}}
@@ -127,17 +133,18 @@ The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\met
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
-MicroBooNE has achieved a resolution in drift direction $< \SI{3}{\milli\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
+MicroBooNE has achieved a resolution in drift direction $< \SI{0.3}{\centi\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
 Finally, a conservative value also accounts for charge diffusion.
 Furthermore, it is assumed that EM showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
+In reality, the direction and starting point can be derived from the vertex producing the \Pgpz, and a rough shower direction obtained from a pattern recognition.
 A cone is calculated in the direction of the shower with its tip at the first charge deposition of the initial photon.
-The opening angle and longituginal extent of the cone were optimised by looking at the distributions of the distance from the starting point and angle w.r.t. the direction of the shower.
-The finite resolution of the detector is emulated by voxelising the charge deposition with the corresponding resolution in all three spatial coordinates.
+The opening angle and longituginal extent of the cone were optimised by looking at the distributions of the distance from the starting point and angle w.r.t.\ the direction of the shower.
+The finite resolution of the detector is emulated by voxelising (via rounding) the charge deposition with the corresponding resolution in all three spatial coordinates.
 This leads to problems near the tip of the cone where the transversal extent is lower than the voxel dimensions.
 In particular, it can happen that most of the initial charge is shifted outside the cone.
 Furthermore, multiple scattering at lower energies makes the cone model suboptimal near the tip.
 Therefore, the acceptance volume for the reconstruction is taken as the union of the cone with a cylinder around the direction of the shower of the same longitudinal extent as the cone.
-The cylinder radius was tuned to optimise the trade-off between increased efficiency and decreased purity as defined below.
+The cylinder radius was tuned to optimise the trade-off between missed and misidentified energy deposition as defined below.
 
 \begin{figure}[htb]
 	\centering
@@ -145,7 +152,7 @@ The cylinder radius was tuned to optimise the trade-off between increased effici
 	\caption{2D histogram of missed energy fraction versus true photon energy for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
 		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
-		Under the number of entries, a detailed list of the number of entries inside (centre) and outside (edges and corners) the depicted area of the histogram is given.}
+		Under the number of entries, a detailed list of the number of entries inside (centre) and outside (edges and corners) the depicted area of the histogram is given (under- and overflow).}
 	\label{fig:dune-nd_2MW_rel-2d-missed}
 \end{figure}
 
@@ -202,6 +209,7 @@ The cylinder radius was tuned to optimise the trade-off between increased effici
 	\includegraphics[width=\textwidth]{pile-up/2MW/misid_rel_y}
 	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
 		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
 	\label{fig:dune-nd_2MW_misid-rel-y}
@@ -221,10 +229,11 @@ This is done as a crude emulation of rock events, secondary particles from beam 
 The additional target mass is \SI{1}{\metre} in all four directions transverse to the beam, and \SI{4}{\metre} in upstream beam direction.
 According to Equations~\eqref{eq:nu-detection_hardon-long} and~\eqref{eq:nu-detection_hardon-trans}, hadronic showers up to \SI{10}{\giga\electronvolt} are contained $> \SI{95}{\percent}$ longitudinally and $> \SI{50}{\percent}$ transversally (because Equation~\eqref{eq:nu-detection_hardon-trans} gives the radius for \SI{95}{\percent} containment) in the additional volume.
 Or in other words, increasing the target volume further will not result in significantly more rock events entering the active volume.
+For transversal containment, it is enough to use the radius for \SI{95}{\percent} containment because the location of the shower is defined by its centre, i.e.\ showers further away than one \SI{95}{\percent} radius from the detector only deposit a minimal amount of energy inside the latter.
 These numbers are supported by Geant4 simulations~\cite{hardonContChris}.
 As mentioned in Section~\ref{sec:nu-detection_fs}, EM interactions happen on smaller scales than hadronic interactions.
 The big exception are muons due to their high range.
-However, as will be explained below, due to the high reconstruction efficiency, it makes sense to ignore pile-up from muons anyway.
+However, as will be explained below, it makes sense to ignore pile-up from muons anyway due to their high reconstruction efficiency.
 Finally, a fiducial volume \SI{30}{\centi\metre} ($\approx 2 X_{\m{0}}$) smaller than the active volume on all six faces is defined.
 Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
@@ -292,6 +301,7 @@ Whereas the lower limit excludes charge deposited by photons, neutrons, and any 
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/misid_rel_y}
 	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
 		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
 		As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
@@ -332,14 +342,11 @@ Whereas the lower limit excludes charge deposited by photons, neutrons, and any 
 	\includegraphics[width=\textwidth]{pile-up/10MW/misid_rel_y}
 	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced EM shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
 		The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
 	\label{fig:dune-nd_10MW_misid-rel-y}
 \end{figure}
-
-One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
-In the simulation, the quantities to be measured by the experiment are known a priori.
-They are called truth information and can be compared to the output of the analysis run on the simulated dataset.
 
 Missed and misidentified energy by the cone-cylinder union are plotted as a function of true photon and neutrino energy, respectively.
 As mentioned above, the missed energy is used to measure the performance of the employed photon reconstruction algorithm.
@@ -356,7 +363,7 @@ It should be noted that for the projections all values in the corresponding y-bi
 For the profiles, only events between \SIrange{0}{6}{\giga\electronvolt} absolute and \numrange{0}{1} fractional are taken into account.
 
 The results for a \SI{2}{\mega\watt} beam at \SI{80}{\giga\electronvolt} proton energy are shown in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_misid-rel-y}.
-To illustrate the relation between the different histograms, all of them are shown for the absolute missed energy in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_missed-rel-y}.
+To illustrate the relation between the different histograms, all of them are shown for the missed energy in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_missed-rel-y}.
 The initial 2D histogram is shown in Figure~\ref{fig:dune-nd_2MW_rel-2d-missed}.
 Note that it actually depicts the missed photon energy as a fraction of the true photon energy rather than an absolute value.
 Figure~\ref{fig:dune-nd_2MW_missed-rel-x} is the profile of the x-axis, i.e.\ the mean missed energy fraction for each true energy bin.
@@ -366,8 +373,8 @@ It is drawn as a cumulative fraction which means that the curve represents the f
 A consequence of this is that the curve monotonically approaches one towards the right, \SI{100}{\percent} of the reconstructed photons have a missed energy fraction of \SI{100}{\percent} or less.
 For reference, Figure~\ref{fig:dune-nd_2MW_missed-abs-x} shows the mean absolute missed energy per true energy bin.
 
-I can be seen that the absolute missed energy rises more or less linearly with the true energy (Figure~\ref{fig:dune-nd_2MW_missed-abs-x}).
-This indicates that the cone models the shower well as expected from theory (see Section~\ref{sec:nu-detection_fs}).
+It can be seen that the absolute missed energy rises more or less linearly with the true energy (Figure~\ref{fig:dune-nd_2MW_missed-abs-x}).
+This indicates that the cone models the shower well, as expected from theory (see Section~\ref{sec:nu-detection_fs}).
 Indeed, it can be seen from Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x} that the missed energy stays almost constant at \SI{3}{\percent} from \SIrange{1}{6}{\giga\electronvolt}.
 Below, it rises up to \SI{10}{\percent} in the lowest energy bin (\SIrange{0}{125}{\mega\electronvolt}).
 This can be explained by the increase in multiple Coulomb scattering at lower momenta.
@@ -378,15 +385,15 @@ From Figure~\ref{fig:dune-nd_2MW_missed-rel-y}, it can be seen that for roughly 
 It should be noted that energy deposited outside the detector, so-called leakage, is included in the missed energy.
 Despite the fiducial volume, some events still exit the detector.
 
-The behaviour of the misidentified energy is almost opposite to the missed energy: The absolute energy is almost constant with the true neutrino energy (Figure~\ref{fig:dune-nd_2MW_misid-abs-x}), while the fraction of the total energy is inversely proportional to the true energy accordingly (Figure~\ref{fig:dune-nd_2MW_misid-rel-x}).
-Again this is expected as the amount of charge deposited inside the cone originating from other neutrinos should only depend on the geometry of the acceptance volume (i.e.\ the parameters of the cone-cylinder union) and not on the true energy of the reconstructed photon or its parent neutrino.
-Also, the effect of the different selection can be seen well.
-As mentioned above, the actual error on the reconstructed neutrino energy is probably somewhere in between the red curve only rejecting misidentified energy deposited by muons, and the dark blue curve rejecting all but misidentified energy deposited by photons and neutrons or any of their descendants.
+The behaviour of the misidentified energy is almost opposite to the missed energy: The absolute energy is almost constant with the true neutrino energy (Figure~\ref{fig:dune-nd_2MW_misid-abs-x}), while the fraction of the total energy is inversely proportional to the true energy, accordingly (Figure~\ref{fig:dune-nd_2MW_misid-rel-x}).
+Again this is expected as the amount of charge deposited inside the cone originating from other neutrinos should only depend on the geometry of the acceptance volume (i.e.\ the parameters of the cone-cylinder union) and on the event rate but not on the true energy of the reconstructed photon or its parent neutrino.
+Also, the effect of the different selections can be seen well.
+As mentioned above, the actual error on the reconstructed neutrino energy is probably somewhere in between the red curve, only rejecting misidentified energy deposited by muons, and the dark blue curve, rejecting all but misidentified energy deposited by photons and neutrons or any of their descendants.
 From Figure~\ref{fig:dune-nd_2MW_misid-rel-x}, this can be determined to be about \SI{2}{\percent} at the flux peak ($\approx \SI{3}{\giga\electronvolt}$, see Figure~\ref{fig:nu-detection_dune-flux}).
 The cumulative neutrino fraction versus the misidentified energy fraction reveals another interesting fact.
 It can be seen that about \SI{70}{\percent} of the events experience a pile-up-related error on reconstructed neutrino energy of \SI{1}{\percent} or less.
-For roughly \SI{50}{\percent} of the events, it is event below \SI{0.1}{\percent}.
-If it was possible to identify the other \SI{50}{\percent} somehow, they could be ignored, giving an essentially pile-up-free sample.
+For roughly \SI{50}{\percent} of the events, it is even below \SI{0.1}{\percent}.
+If it was possible to identify the other \SI{50}{\percent} somehow in the real experiment, they could be ignored, giving an essentially pile-up-free sample.
 Given the high event rates in the near detector, this would be easily affordable.
 Using the cone-base algorithm described here, EM shower pile-up could be detected via overlapping cones for instance.
 
@@ -394,10 +401,10 @@ To get a rough idea of the performance of a 2D wire readout in an identical envi
 Of course, this is a gross underestimation of the capabilities of existing reconstruction algorithms for 2D charge readout data.
 In particular, contemporary experiments use at least three 2D projections whereas only one was used here.
 Even though, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ_missed-rel-x} through~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}.
-The fraction of events not suffering from pile-up is below \SI{10}{\percent} and \SI{50}{\percent} have \SI{10}{\percent} or more misidentified energy (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}).
+The fraction of events not suffering from pile-up is below \SI{10}{\percent}, and \SI{50}{\percent} have \SI{10}{\percent} or more misidentified energy (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}).
 Similarly, the error on energy reconstruction has increased to \SIrange{10}{20}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x}).
-On the other hand, the error due to missed energy has improved from \SIrange{3}{2}{\percent} compared to 3D.
-An explanation for this is that all the energy in Y direction was summed up, due to the projection on XZ.
+On the other hand, the error due to missed energy has improved from \SIrange{3}{2}{\percent} compared to 3D (Figure~\ref{fig:dune-nd_2MW-XZ_missed-rel-x}).
+An explanation for this is that all the energy in y-direction was summed up, due to the projection on XZ.
 Therefore, the cone (or rather triangle) cannot miss energy in the former direction.
 
 Finally, as a cross-check, the (3D) pile-up study was performed for a hypothetical \SI{10}{\mega\watt} beam in Figures~\ref{fig:dune-nd_10MW_missed-rel-x} through~\ref{fig:dune-nd_10MW_misid-rel-y}.

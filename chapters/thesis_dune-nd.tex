@@ -347,38 +347,64 @@ Therefore, it is sensible to compare it to the true photon energy rather than th
 On the other hand, the primary goal of this study is to assess the effect of event pile-up on the neutrino energy spectrum.
 The misidentified energy is thus compared to the true neutrino energy.
 For this, the total missed energy of each neutrino event is first calculated by summing up the contributions of all descending \Pgpz photons.
-Additionally, it is illustrative to look at the fraction of events with a certain misidentified (missed) energy.
+Additionally, it is illustrative to look at the fraction of events with a certain misidentified or missed energy.
 All the aforementioned information is contained in 2D histograms of all events with the true neutrino (photon) energy on one axis and the misidentified (missed) energy on the other axis.
 The energy dependence of the error can be obtained by looking at the true energy axis and calculating the mean misidentified (missed) energy for each bin (a profile of the 2D histogram).
-Looking at the misidentified (missed) energy axis and summing over all true energies yields the number (fraction) of events with the corresponding misidentified (missed) energy (a projection of the 2D histogram).
+Looking at the misidentified (missed) energy axis and summing over all true energy bins yields the number of events with the corresponding misidentified (missed) energy (a projection of the 2D histogram).
+The corresponding fraction of events is obtained by normalising the histogram, i.e.\ dividing every bin by the total number of entries.
 It should be noted that for the projections all values in the corresponding y-bin are taken into account, including the ones outside the boundaries of the histogram (under- and overflow).
 For the profiles, only events between \SIrange{0}{6}{\giga\electronvolt} absolute and \numrange{0}{1} fractional are taken into account.
 
 The results for a \SI{2}{\mega\watt} beam at \SI{80}{\giga\electronvolt} proton energy are shown in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_misid-rel-y}.
+To illustrate the relation between the different histograms, all of them are shown for the absolute missed energy in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_missed-rel-y}.
+The initial 2D histogram is shown in Figure~\ref{fig:dune-nd_2MW_rel-2d-missed}.
+Note that it actually depicts the missed photon energy as a fraction of the true photon energy rather than an absolute value.
+Figure~\ref{fig:dune-nd_2MW_missed-rel-x} is the profile of the x-axis, i.e.\ the mean missed energy fraction for each true energy bin.
+The projection of the y-axis is depicted in Figure~\ref{fig:dune-nd_2MW_missed-rel-y}.
+This is the fraction of photons with a certain missed energy.
+It is drawn as a cumulative fraction which means that the curve represents the fraction of photons on the y-axis with a missed energy fraction equal to or lower than the corresponding value on the x-axis.
+A consequence of this is that the curve monotonically approaches one towards the right, \SI{100}{\percent} of the reconstructed photons have a missed energy fraction of \SI{100}{\percent} or less.
+For reference, Figure~\ref{fig:dune-nd_2MW_missed-abs-x} shows the mean absolute missed energy per true energy bin.
 
+I can be seen that the absolute missed energy rises more or less linearly with the true energy (Figure~\ref{fig:dune-nd_2MW_missed-abs-x}).
+This indicates that the cone models the shower well as expected from theory (see Section~\ref{sec:nu-detection_fs}).
+Indeed, it can be seen from Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x} that the missed energy stays almost constant at \SI{3}{\percent} from \SIrange{1}{6}{\giga\electronvolt}.
+Below, it rises up to \SI{10}{\percent} in the lowest energy bin (\SIrange{0}{125}{\mega\electronvolt}).
+This can be explained by the increase in multiple Coulomb scattering at lower momenta.
+Similarly, the Compton scattering cross-section increases as well.
+Both these effects lead to a higher angular distribution of the energy depositions by electrons (and positrons) and photons, respectively.
+Consequentially, more energy is missed because the cone angle is independent of energy.
+From Figure~\ref{fig:dune-nd_2MW_missed-rel-y}, it can be seen that for roughly half of the photons, \SI{3}{\percent} of the energy is missed, indicating a symmetric distribution of missed energy around the mean value.
+It should be noted that energy deposited outside the detector, so-called leakage, is included in the missed energy.
+Despite the fiducial volume, some events still exit the detector.
 
-The results of the pile-up study are shown in Figures~\ref{fig:dune-nd_2MW-eff-pur} through~\ref{fig:dune-nd_10MW-energy-error}.
-Figures~\ref{fig:dune-nd_2MW-eff-pur} and~\ref{fig:dune-nd_2MW-energy-error} assume optimised beam intensity of \SI{2}{\mega\watt}.
-Efficiency and purity distributions are plotted in Figure~\ref{fig:dune-nd_2MW-eff-pur} as the fraction of \Pgpz photons reconstructed with the respective efficiency/purity.
-It can be seen, that purity significantly improves under the assumptions described above.
-In particular, taking the mentioned lower and upper limits for pile-up, \SIrange{50}{60}{\percent} of the photons experience no pile-up at all.
-While these distributions give a general idea of pile-up, there usefulness for an assessment from a physics point of view is limited.
-Therefore, the actual impact on the reconstructed neutrino energy as a function of the true neutrino energy was calculated and plotted in Figure~\ref{fig:dune-nd_2MW-energy-error}.
-The y-axis represents the fractional error on the reconstructed neutrino energy and the colors correspond to the same selections as for the purity/efficiency plot in Figure~\ref{fig:dune-nd_2MW-eff-pur}.
-However, only misidentified energy from other events affects the total reconstructed energy of the neutrino which is why the magenta selection, including misidentified energy from the same event, is not applicable to this calculation.
-It can be seen, that the effect of missed energy starts at a few~\si{\percent} for the lower neutrino energies and the quickly goes down to stabilise around \SI{1}{\percent}.
-This indicates that the cone-cylinder union algorithm, even though quite primitive, performs reasonably well.
-The error due to misidentified energy starts at around \SI{10}{\percent} and then, settles between \SIrange{1}{2}{\percent}.
+The behaviour of the misidentified energy is almost opposite to the missed energy: The absolute energy is almost constant with the true neutrino energy (Figure~\ref{fig:dune-nd_2MW_misid-abs-x}), while the fraction of the total energy is inversely proportional to the true energy accordingly (Figure~\ref{fig:dune-nd_2MW_misid-rel-x}).
+Again this is expected as the amount of charge deposited inside the cone originating from other neutrinos should only depend on the geometry of the acceptance volume (i.e.\ the parameters of the cone-cylinder union) and not on the true energy of the reconstructed photon or its parent neutrino.
+Also, the effect of the different selection can be seen well.
+As mentioned above, the actual error on the reconstructed neutrino energy is probably somewhere in between the red curve only rejecting misidentified energy deposited by muons, and the dark blue curve rejecting all but misidentified energy deposited by photons and neutrons or any of their descendants.
+From Figure~\ref{fig:dune-nd_2MW_misid-rel-x}, this can be determined to be about \SI{2}{\percent} at the flux peak ($\approx \SI{3}{\giga\electronvolt}$, see Figure~\ref{fig:nu-detection_dune-flux}).
+The cumulative neutrino fraction versus the misidentified energy fraction reveals another interesting fact.
+It can be seen that about \SI{70}{\percent} of the events experience a pile-up-related error on reconstructed neutrino energy of \SI{1}{\percent} or less.
+For roughly \SI{50}{\percent} of the events, it is event below \SI{0.1}{\percent}.
+If it was possible to identify the other \SI{50}{\percent} somehow, they could be ignored, giving an essentially pile-up-free sample.
+Given the high event rates in the near detector, this would be easily affordable.
+Using the cone-base algorithm described here, EM shower pile-up could be detected via overlapping cones for instance.
 
-To get a rough idea of the performance of a 2D wire readout in the same environment, the same study was performed ingoring the Y coordinate completely, leaving everything else untouched.
+To get a rough idea of the performance of a 2D wire readout in an identical environment, the same study was performed ignoring the y-coordinate completely, leaving everything else untouched.
 Of course, this is a gross underestimation of the capabilities of existing reconstruction algorithms for 2D charge readout data.
 In particular, contemporary experiments use at least three 2D projections whereas only one was used here.
-Even though, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ-eff-pur} and~\ref{fig:dune-nd_2MW-XZ-energy-error}.
-The fraction of events not suffering from pile-up is below \SI{10}{\percent} while the error on energy reconstruction has increased to \SIrange{5}{10}{\percent} at high energies and event \SIrange{20}{40}{\percent} at low energies.
-Efficiency and energy error due to missed energy are comparable eventhough, the cone and cylinder dimensions are no longer correct for photons not parallel to the XZ plane.
+Even though, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ_missed-rel-x} through~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}.
+The fraction of events not suffering from pile-up is below \SI{10}{\percent} and \SI{50}{\percent} have \SI{10}{\percent} or more misidentified energy (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}).
+Similarly, the error on energy reconstruction has increased to \SIrange{10}{20}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x}).
+On the other hand, the error due to missed energy has improved from \SIrange{3}{2}{\percent} compared to 3D.
+An explanation for this is that all the energy in Y direction was summed up, due to the projection on XZ.
+Therefore, the cone (or rather triangle) cannot miss energy in the former direction.
 
-Finally, as a cross-check, the (3D) pile-up study was performed for a hypotheticel \SI{10}{\mega\watt} beam.
-As expected, pile-up increases drastically while efficiency does not change much as can be seen in Figures~\ref{fig:dune-nd_10MW-eff-pur} and~\ref{fig:dune-nd_10MW-energy-error}.
+Finally, as a cross-check, the (3D) pile-up study was performed for a hypothetical \SI{10}{\mega\watt} beam in Figures~\ref{fig:dune-nd_10MW_missed-rel-x} through~\ref{fig:dune-nd_10MW_misid-rel-y}.
+As explained above the missed energy only depends on the geometry of the acceptance volume, in particular, it should be independent of beam intensity.
+Therefore it is expected to be very similar to the \SI{2}{\mega\watt} case as can be confirmed by comparing Figure~\ref{fig:dune-nd_10MW_missed-rel-x} to Figure~\ref{fig:dune-nd_2MW_missed-rel-x}.
+As expected, the error due to misidentified energy is increased to \SIrange{7}{15}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_10MW_misid-rel-x}) but still better than for the XZ projection.
+Similarly, only about \SI{10}{\percent} of the neutrino events remain pile-up free, and \SI{50}{\percent} suffer from more than \SI{4}{\percent} misidentified energy (Figure~\ref{fig:dune-nd_10MW_misid-rel-y}).
 
 In summary, this study shows that even a very primitive EM shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} ND, when fed with unambiguous 3D spatial coordinates of energy depositions.
 It clearly fails when reduced to two dimensions or presented with a much higher beam intensity.

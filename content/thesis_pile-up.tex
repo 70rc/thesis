@@ -1,14 +1,14 @@
-\chapter{Feasibility Study of a Pixelated \lartpc{} for the \dune{} Near Detector}
-\label{chap:dune-nd}
+\section{Feasibility Study of a Pixelated \lartpc{} for the \dune{} Near Detector}
+\label{sec:dune-nd_pile-up}
 
 With \AC{} selected as  the \lar{} component of the \dune{} near detector (ND), there were two main question that needed to be addressed:
 \begin{enumerate}
 	\item Is a pixelated \lartpc{} feasible?
 	\item Can the \lar{} detector handle the high rates?
 \end{enumerate}
-Number one is addressed in Chapter~\ref{chap:viper}.
+Number one is addressed in Section~\ref{sec:ac_viper}.
 This chapter will address question number two.
-More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the ND is described in Chapter~\ref{chap:argoncube}.
+More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the ND is described in Section~\ref{sec:dune-nd_ac}.
 
 \begin{figure}[htb]
 	\centering
@@ -43,8 +43,7 @@ Therefore, the assumption of an infinitely short spill is a worst-case scenario 
 However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the same.
 
 
-\section{\Pgpz pile-up simulation}
-\label{sec:dune-nd_simulation}
+\subsection*{\Pgpz pile-up simulation}
 
 One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
 In the simulation, the quantities to be measured by the experiment are known a priori.
@@ -128,8 +127,8 @@ Therefore, a rather primitive algorithm for true 3D space points was implemented
 This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
-Chapter~\ref{chap:viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:electronics_larpix}.
-The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:ac_dune-nd}.
+Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics}.
+The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:dune-nd_ac}.
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
@@ -261,8 +260,7 @@ Therefore, it can be assumed that the actual pile-up-related energy reconstructi
 It should be noted that the upper limit excludes only energy deposited by muons directly and not by their descendants (e.g.\ $\delta$ rays or Michel electrons).
 Whereas the lower limit excludes charge deposited by photons, neutrons, and any of their descendants.
 
-\section{Results}
-\label{sec:dune-nd_results}
+\subsection*{Results}
 
 \begin{figure}[htb]
 	\centering
@@ -415,3 +413,5 @@ Similarly, only about \SI{10}{\percent} of the neutrino events remain pile-up fr
 
 In summary, this study shows that even a very primitive EM shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} ND, when fed with unambiguous 3D spatial coordinates of energy depositions.
 It clearly fails when reduced to two dimensions or presented with a much higher beam intensity.
+
+\afterpage{\clearpage}

@@ -1,5 +1,5 @@
-\chapter{Charge Readout Studies}
-\label{chap:charge-ro}
+\section{Charge Readout}
+\label{sec:studies_charge-ro}
 
 As outlined in Section~\ref{sec:lartpc_challenges}, classical wire readouts pose two big challenges to future \lartpc{}s: ambiguities and mechanical stability.
 Two new charge readout concepts were tested for this work.
@@ -7,14 +7,10 @@ Wires implemented as printed circuits solve the mechanical problems but not the 
 A pixelated charge readout solves both problems but introduces a new one of a drastically increased number of reaodut channels.
 
 
-\section{A More Robust Approach to TPC Readout Wires}
-\label{sec:charge-ro_cuoka}
+\subsection*{A More Robust Approach to TPC Readout Wires}
 
 A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
 To investigate this solution, a proof of concept was performed at LHEP at the University of Bern.
-
-
-\subsection*{Experimental Setup}
 
 In a classical wire readout plane, the induction signal is produce by drifting the charge through one or multiple induction wire grids.
 With the proposed scheme of copper tracks on a support structure, it is no longer possible for the charge to actually drift through the induction plane(s).
@@ -51,9 +47,9 @@ A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive div
 	\label{fig:cuoka_tpc}
 \end{figure}
 
-The charge signal is amplified by cryogenic charge amplifiers.
-The amplified signal is then digitised at room temperature.
-The complete readout electronics chain is the one described in Section~\ref{sec:electronics_AT} before the modifications to reduce noise.
+The charge readout electronics were adopted from \AT{} without modifications.
+Charge signals are amplified by cryogenic charge amplifiers and then digitised at room temperature.
+More details can be found in Section~\ref{sec:studies_electronics}.
 
 Because of the limited space inside the cryostat, no internal light triggering system could be used.
 Instead, the digitisers were either triggered on one of the charge collection channels or by an external muon telescope.
@@ -61,9 +57,6 @@ The latter was formed of two scintillator panels with photomultiplier tubes abov
 Triggering directly on charge collection channels has the potential disadvantage of recording events only partially.
 If the triggering channel does not receive the first charge pulse of the event, all earlier pulses are lost, unless the data acquisition (DAQ) implements a pretrigger ring buffer of sufficient size.
 It is therefore preferable to trigger on the external muon telescope.
-
-
-\subsection*{Experimental Results}
 
 Using the above-described setup, cosmic muons were recorded over the course of multiple hours.
 A typical event is depicted in Figure~\ref{fig:cuoka_event}.
@@ -85,8 +78,7 @@ Because of this, it was decided not to further investigate copper on Kapton read
 \afterpage{\clearpage}
 
 
-\section{Pixel Readout}
-\label{sec:charge-ro_pixels}
+\subsection*{Pixel Readout}
 
 As outlined in Section~\ref{sec:lartpc_challenges}, wire readouts are not suitable for \lartpc{}s the size of the envisioned future neutrino detectors.
 The ambiguities caused by the nature of wire readouts can be eliminated by using a fully pixelated readout.
@@ -122,7 +114,7 @@ Digital multiplexing means digitising all channels as close as possible to the r
 An advantage of this technique is that the technology for this already exists and is well established in information technology.
 Ideally, one would feed the data stream into an optical fibre which additionally would provide galvanic isolation of the readout from the DAQ.
 The challenging part is that all of this needs to happen at cryogenic temperatures which is far from trivial because most off-the-shelf components are not made for this.
-A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Chapter~\ref{chap:electronics}.
+A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Section~\ref{sec:studies_electronics}.
 In contrast, genetic multiplexing and regions of interest are forms of analogue multiplexing.
 The difference to digital multiplexing is that multiple readout channels are combined into a single analogue link before digitising them at room temperature outside the cryostat.
 In the two schemes described here, this happens by connecting multiple readout channels to a single DAQ channel.
@@ -162,4 +154,6 @@ Provided, the wake-up time is short enough, inductive grids on regions of intere
 As the ROI approach had already been demonstrated in a gas TPC, it was chosen for the first prototype of a pixelated \lartpc{}.
 Because the detector is a single-phase \lartpc{}, and thus no gas amplification as in Micromegas is needed, the readout plane could be realised as a conventional Printed Circuit Board PCB.
 Alongside the PCB, a new TPC was designed which can be reused for future prototyping efforts.
-The design of PCB and TPC as well as the results from the first tests are described in Chapter~\ref{chap:viper}.
+The design of PCB and TPC as well as the results from the first tests are described in Section~\ref{sec:ac_viper}.
+
+\afterpage{\clearpage}

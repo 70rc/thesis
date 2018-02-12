@@ -1,15 +1,14 @@
-\chapter{Light Readout Studies}
-\label{chap:light-ro}
+\section{Light Collection}
+\label{sec:studies_light-col}
 
-For the \AC{} detector concept detailed in Chapter~\ref{chap:argoncube}, a slim and efficient light readout is needed.
+For the \AC{} detector concept detailed in Section~\ref{sec:ac_argoncube}, a slim and efficient light readout is needed.
 Photomultiplier tubes (PMTs) are not suitable because they occupy a lot of space and thus would require mounting on top of a module which in turn would reduce their efficiency.
 That is why the photon detectors of choice for such a detector are silicon photomultipliers (SiPMs).
-The following describes the light readout used in the \AC{} pixel demonstrator described in Chapter~\ref{chap:viper}.
+The following describes the light readout used in the \AC{} pixel demonstrator described in Section~\ref{sec:ac_viper}.
 After that the \AC{} Light readout, \AL{}, is introduced.
 
 
-\section{Cryogenic SiPM Light Readout}
-\label{sec:light-ro_viper}
+\subsection*{Cryogenic SiPM Light Readout}
 
 In 2016, the University of Bern developed a novel cosmic ray tagger system for \lartpc{}s which was subsequently installed in \uboone{}~\cite{uboone} and will be installed in the \sbnd{} experiment~\cite{sbnd} in the near future.
 The tagger consists of panels made from polystyrene based scintillating bars.
@@ -19,7 +18,7 @@ The other end is attached to a \emph{Hamamatsu S12825-050P}\footnote{\url{http:/
 A bespoke Front-End Board (FEB) reads out the SiPM signal and provides power.
 It was developed at LHEP at the University of Bern alongside the scintillator panels\cite{crt_feb}.
 
-For the first pixel prototype described in Chapter~\ref{chap:viper}, the CRT system was adapted to serve as the light trigger system.
+For the first pixel prototype described in Section~\ref{sec:ac_viper}, the CRT system was adapted to serve as the light trigger system.
 Except for operating everything up to the SiPMs in liquid argon, the polystyrene scintillating bars were replaced by acrylic rings.
 The latter are placed in between the aluminium field shaping rings of the TPC.
 To allow for proper convection of the liquid argon, only every other gap is completely filled by an acrylic ring.
@@ -44,7 +43,7 @@ The reason for this is that the same trigger logic is used for the CRT panels to
 In order to improve trigger purity, it was tried to change the firmware to trigger on the coincidence of all four fibres in the TPC.
 Due to a firmware bug however this could not be achieved.
 
-As will be explained in Chapter~\ref{sec:light-ro_viper}, the light readout scheme described above was successfully used to trigger and record several thousand cosmic muon interactions with the \AC{} pixel demonstrator.
+As will be explained in Section~\ref{sec:ac_viper}, the light readout scheme described above was successfully used to trigger and record several thousand cosmic muon interactions with the \AC{} pixel demonstrator.
 However, when compared to a measurement triggered on the charge readout directly, it became apparent that the efficiency of this light readout is very poor.
 Due to limitations in the experimental setup, no quantitative measurement of the trigger efficiency was performed.
 Triggering on the charge readout was only possible using an oscilloscope because the used DAQ system was not capable of self-triggering.
@@ -60,8 +59,7 @@ As a solution, a dedicated light readout system for the \AC{}, \AL{}, was develo
 \afterpage{\clearpage}
 
 
-\section{\AL{}}
-\label{sec:light-ro_arclight}
+\subsection*{\AL{}}
 
 \AL{} aims to minimise the occupied volume by maximising the area coverage of SiPMs.
 This is achieve by coupling them to a passive light collector.
@@ -113,7 +111,7 @@ The increase in PDE near the SiPMs is likely caused by photons hitting the SiPMs
 Due to the angular dependence of the reflectance of the dichroic mirror, about \SI{30}{\percent} of the light is lost during the first reflection on the dichroic mirror.
 Once reflected, a photon is trapped inside the \AL{} because of the specular nature of the reflection on all surfaces.
 In addition, the average PDE was calculated from theory to be \SI{0.7 +- 0.4}{\percent} in agreement with the measurements.
-More details on the calculations and the calibration of the measurement can be found in~\cite{arclight}.\todo{proper sauce}
+More details on the calculations and the calibration of the measurement can be found in~\cite{arclight}.
 
 \begin{figure}[htb]
 	\centering
@@ -125,7 +123,7 @@ More details on the calculations and the calibration of the measurement can be f
 \end{figure}
 
 The measurements described above were performed at room temperature.
-A \SI{43 x 15}{\centi\metre} \AL{} module was successfully operated at \lar{} temperatures in the \pixlar{} test beam demonstrator at FNAL described in Section~\ref{sec:viper_pixlar}.
+A \SI{43 x 15}{\centi\metre} \AL{} module was successfully operated at \lar{} temperatures in the \pixlar{} test beam demonstrator at FNAL described in Section~\ref{sec:ac_pixlar}.
 Figure~\ref{fig:arclight_pixlar} shows the time evolution of the average photo-electron yield per event in beam (red) and cosmic ray (blue) mode.
 It can be seen that the yield is approximately constant over several weeks.
 The jumps in the beam curve can be explained by the switching between different beam configurations (e.g.\ momentum and intensity).
@@ -139,6 +137,4 @@ The jumps in the beam curve can be explained by the switching between different 
 	\label{fig:arclight_pixlar}
 \end{figure}
 
-
-\todo[inline, color=red]{\AL{}}
-\todo[inline]{move to ArgonCube?}
+\afterpage{\clearpage}

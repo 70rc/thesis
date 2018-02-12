@@ -77,19 +77,18 @@ In order to get proper timing for the third coordinate, the scintillation light 
 This becomes problematic in large monolithic \lartpc{} in high-pile-up environments.
 
 The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component in the \dune{} near detector complex.
-Chapter~\ref{chap:hv} contains a thorough investigation of dielectric breakdowns in \lar{}.
-These studies include high-speed footage, current-voltage characteristics and spectrometry of the breakdowns.
+A introduction to the history and theory of neutrino detection, as well as an overview of \dune{} are given in Chapter~\ref{chap:nu-detection}.
+
+Chapter~\ref{chap:studies} contains several studies addressing the challenges met by future \lartpc{}s.
+These include a thorough investigation of dielectric breakdowns in \lar{}, the development of new charge and light readout methods, as well as the evaluation of electronics for pixelated charge readouts.
+
+The high voltage studies include high-speed footage, current-voltage characteristics and spectrometry of the breakdowns.
 As a result, a hypothesis was developed providing a conclusive explanation of the phenomenon.
 In addition, a technique was developed to increase the dielectric strength of \lar{} by an order of magnitude by means of a polymer coating.
 However, the latter is not suitable for physics experiments as it fails to withstand multiple thermal cycles and loses its protection after a breakdown.
-
-The aforementioned far detector electronics were evaluated and found unsuitable for a pixelated \lartpc{}.
-This is described in Chapter~\ref{chap:electronics} as well as bespoke pixel electronics still under development.
-
 A new light readout based on Silicon PhotoMultipliers (SiPMs), \AL{}, developed by the University of Bern was tested as well.
 The active area of the SiPMs is drastically increased by coupling them to a light trap formed of a combination of a dichroic filter with a WaveLength Shifter (WLS).
 This makes it competitive to classical PM tubes for large area coverage while requiring a much reduced dead volume.
-Chapter~\ref{chap:light-ro} gives an overview of this.
 
 The main contribution to the \dune{} near detector complex is the demonstration of a pixelated \lartpc{}.
 Conventional room-temperature digitisers were combined with analogue multiplexing due to the as yet lacking cryogenic electronics.
@@ -100,17 +99,15 @@ The latter had to be resolved by the reconstruction algorithm.
 Finally, the unambiguous positional information was fed to a Kalman filter.
 This propagates a cosmic muon hypothesis through all the detector measurements taking into account the various involved charge deposition mechanisms in \lar{}.
 The end result is a completely reconstructed particle track through the detector.
-All of this is described in Chapters~\ref{chap:charge-ro} and~\ref{chap:viper}.
-
 The combination of all the R\&D presented in this thesis resulted in the development of the \AC{}, a next-generation \lartpc{} concept, at the University of Bern.
 It aims to address the most important challenges met by future \lartpc{}s.
 The problematic high fields at the cathodes as well as the scintillation light containment issue are addressed by splitting up the detector into smaller ($\order{\SI{1}{\metre}}$), self-contained TPCs sharing a common \lar{} bath.
 A pixelated charge readout makes the detector capable of true 3D event recording.
 To keep the dead volume to a minimum, \AL{} is used as the light readout system.
-\AC{} is described in Chapter~\ref{chap:argoncube}, including the design of the proposed \lar{} component of the \dune{} near detector.
+All of this is described in Chapters~\ref{chap:ac}.
 
-The thesis is completed by a study of the feasibility of a \lartpc{} in the \dune{} near detector.
-Combining the knowledge gained from Chapter~\ref{chap:viper} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:electronics}, enables the realisation of a true 3D \lartpc{}.
+Chapter~\ref{chap:dune-nd} introduces the proposed \AC{} \lartpc{} component for the \dune{} near detector complex together with a feasibility study of a \lartpc{} in such an environment.
+Combining the knowledge gained from Chapter~\ref{chap:ac} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:studies}, enables the realisation of a true 3D \lartpc{}.
 However, it remains to be shown that such a detector is actually able to cope with the event rates expected in the near detector.
 To assess this capability, a metric was needed representative of the physics processes.
 Electromagnetic (EM) showers produced from the photons originating from \Pgpz decays are notoriously complex to reconstruct.
@@ -120,4 +117,5 @@ Associating all those separate charge blobs to the correct event is one of the m
 Therefore, this type of EM shower was chosen for this study.
 A rather rudimentary algorithm was employed to assign the deposited charge to the correct EM shower because all available \lartpc{} reconstruction algorithms are optimised for wire readouts.
 The amount of misidentified charge from other events is a suitable metric to assess the impact of pile-up on the near detector physics.
-This study is described in Chapter~\ref{chap:dune-nd}.
+
+Chapter~\ref{chap:conclusion} concludes the thesis.

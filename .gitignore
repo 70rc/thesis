@@ -1,6 +1,4 @@
 thesis.*
 !thesis.tex
 !thesis.bib
-chapters/*.aux
-chapters/*.log
 .DS_Store

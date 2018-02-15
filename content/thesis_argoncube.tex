@@ -27,9 +27,11 @@ Finally, also trigger purity profits from a modular approach because scintillati
 \end{figure}
 
 A module is made of a rectangular box with a square footprint and the height required by the detector design.
-The top and bottom sides of the box are made from stainless steel while the side walls are made from \SI{1}{\centi\metre} FR-4 sheets.
-FR-4 is a glass-reinforced epoxy composite widely used for printed circuit boards (PCBs).
+The top and bottom sides of the box are made from stainless steel while the side walls are made from \SI{1}{\centi\metre} G10 sheets.
+G10 is a glass-reinforced epoxy composite formerly used for printed circuit boards (PCBs).
+Its low density makes it more transparent for passing particles allowing for a performance comparable to a monolithic detector.
 The modules are placed side-by-side in a bath of liquid argon where they can be extracted and reinserted when needed.
+Pressure inside the modules is kept close to the bath pressure putting almost no hydrostatic force on the module walls.
 Purity of the liquid argon is maintained within each module using an integrated recirculation system in the bottom of the module (see below).
 As a result, the bath surrounding the modules needs not meet as stringent purity requirements as the argon inside.
 Under normal operation conditions, all modules are inserted and the gaps between them are sealed off by indium seals pressed onto the top flanges.
@@ -108,7 +110,7 @@ To achieve unambiguous 3D information, the bespoke \pixlar{} cryogenic electroni
 One of the main challenges for the light readout are again the high rates faced by a near detector.
 To get proper timing for the third coordinate, scintillation signals need to be correctly matched to charge signals (flash matching).
 Furthermore attenuation due to Rayleigh scattering becomes a problem for large detectors (see Table~\ref{tab:lartpc_larprop}).
-Both problems are greatly alleviated by opaque module walls containing the scintillation light inside a single module.
+Both problems are greatly alleviated by using an opaque cathode and module walls, containing the scintillation light inside a single module half.
 Therein, pile-up is reduced due to the smaller volume.
 Having a position-resolving light readout helps as well.
 However, a modular TPC introduces a new challenge: The dead spaces in between adjacent TPCs have to be kept to a minimum because they introduce gaps in the recorded event topologies accompanied by lost energy.
@@ -118,6 +120,7 @@ Finally, due to their operating principle, PMTs do not work well in high electri
 Therefore, \AC{} modules are instrumented with the \AL{} light collection system described in Section~\ref{sec:studies_light-col}.
 With its light trap design, it  allows to collect light from a large area with a minimum dead volume.
 The location of the SiPMs at the edges of a dielectric sheet makes most of the light detector immune to electric fields.
+Splitting \AL{} into several vertical modules gives some spatial resolution in that direction.
 \AL{} sheets are mounted in between cathode and anode, parallel to the field cage, with the SiPMs directly attaching to the charge readout PCB.
 The additional dead volume of a few \si{\milli\metre} is similar to the one caused by the charge readout PCBs in perpendicular direction.
 

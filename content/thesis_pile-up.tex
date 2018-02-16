@@ -128,7 +128,7 @@ This algorithm is explained in the following, its parameters are listed in Table
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics}.
-The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:dune-nd_ac}.
+The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:dune-nd_ac}\todo{justify!}.
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
@@ -237,6 +237,15 @@ Finally, a fiducial volume \SI{30}{\centi\metre} ($\approx 2 X_{\m{0}}$) smaller
 Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.
+
+Active volume dimensions are taken from the preliminary \dune{} near detector design described in Section~\ref{sec:dune-nd_ac}.
+Note that the height was taken as \SI{2.5}{\metre} as opposed to the \SI{3}{\metre} of the near detector design.
+The reason is that another \SI{0.5}{\metre} safety margin were added after this pile-up simulation had been completed.
+However, the influence on the pile-up study should be negligible.
+The hadron containment studies described in Section~\ref{sec:dune-nd_ac} indicated that \SI{2.5}{\metre} height is the bare minimum.
+A safety margin was added to account for unknown uncertainties in the simulation.
+However, the same simulation framework was used for both the containment and the pile-up study.
+Therefore, the \SI{2.5}{\metre} height is sufficient for the pile-up study.
 
 After all events of one spill are placed inside the target volume, all \Pgpz photons produced inside the fiducial volume are reconstructed using the cone algorithm.
 All energy depositions inside the active volume are considered.

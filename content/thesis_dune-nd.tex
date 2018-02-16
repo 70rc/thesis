@@ -29,19 +29,19 @@ Finally, the current status of an \AC{} \lartpc{} component for the \dune{} near
 	\label{fig:2x2_mod}
 \end{figure}
 
+The goals of this prototype are testing the mechanical design and cryogenic systems, comparing different charge and light readout systems, and studying module insertion and extraction procedures with a focus their influence on purity.
+For comparison, one of the four modules will be equipped with a classic wire readout.
+To investigate purity, first tests will be performed with the \AC{} demonstrator TPC described in Section~\ref{sec:ac_viper}.
+The TPC will be mounted inside an otherwise empty module, hanging from an intermediate support layer.
+This will also serve as a first cryogenic stress-test of the module structure.
+
 The four modules will be housed in an existing cylindrical, vacuum-insulated cryostat at the University of Bern.
 With its approximately \SI{2}{\metre} diameter by \SI{2}{\metre} height it provides a \lar{} bath volume of roughly \SI{6}{\metre\cubed}.
 To fit inside the bath, the modules are scaled down to a footprint of \SI{0.67 x 0.67}{\metre} and a height of \SI{1.81}{\metre}.
 Due to the split-TPC design, the resulting cathode voltage required for a \SI{1}{\kilo\volt\per\centi\metre} field is below \SI{35}{\kilo\volt}.
-Cooling to the bath is provided by two liquid nitrogen turbo-cooling circuits attached to the inner cryostat wall inside the insulation vacuum.
+Instead of service modules, cooling is provided by two liquid nitrogen turbo-cooling circuits attached to the inner cryostat wall inside the insulation vacuum.
 They cool the \lar{} bath via evaporation of the liquid nitrogen.
 The nitrogen flow has to be regulated precisely to keep the \lar{} stable and prevent it from boiling or freezing.
-
-The goals of this prototype are testing the mechanical design and cryogenic systems, comparing different charge and light readout systems, and studying module insertion and extraction procedures with a focus their influence on purity.
-For comparison, one of the four modules will be equipped with a classic wire readout.
-To investigate purity, first tests will be performed with the \AC{} demonstrator TPC described in Section~\ref{sec:ac_viper}.
-The TPC will be mounted inside an otherwise empty module, hanging from the top flange.
-This will also serve as a first cryogenic stress-test of the module structure.
 
 The height of the actual TPC in a fully equipped module is \SI{1235}{\milli\metre}.
 On the bottom, \SI{160}{\milli\metre} are occupied by the heat exchanger and check valves for \lar{} exchange with the bath upon insertion and extraction.
@@ -53,15 +53,45 @@ It depicts the first module that will be equipped with the demonstrator TPC.
 For this test, an internal pump salvaged from \AT{} will be used in combination with oxygen traps mounted on top of the module.
 Engineering drawings of this module are given in Figure~\ref{fig:ac_module}.
 
+Table~\ref{tab:dune-nd_dim} gives an overview of the most important dimensions of the \num{2 x 2} Bern prototype and the preliminary near detector design (see below).
+In particular the table contains a rough estimate of dead space caused by the modular design and the corresponding active volume fraction.
+For these calculations, a total charge readout thickness of \SI{20}{\milli\metre} and a total light readout thickness of \SI{5}{\milli\metre} were assumed.
+The difference is caused by the fact that charge readout electronics are located directly behind the readout while the SiPMs are only mounted on the edges of \AL{}.
+Additionally, a few \si{\milli\metre} clearance between the anode plane and the module wall are required for convection cooling of the \pixlar{} electronics.
+Readout thicknesses also include the clearance required between adjacent modules ($\order{\SI{1}{\milli\metre}}$).
+The resulting total fraction of active volume is \SI{87.0}{\percent} for the \num{2 x 2} prototype.
 
-\subsection*{Status of the Near Detector Design}
+In a first phase, the \num{2 x 2} prototype will be operated in the Grosslabor of LHEP at the University of Bern, taking cosmic ray data.
+After a successful test of all subsystems, it is planned to be installed in a charged particle test beam at CERN to investigate the influence of the module walls on calorimetry and tracking.\todo{Is this still valid?}
 
-\begin{figure}[htb]
+\begin{table}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{dune_nd/DUNE-ND-2018}
-	\caption{\dune{} ND \AC{}}
-	\label{fig:dune-nd_ac}
-\end{figure}
+	\caption{\AC{} dimensions for the \num{2 x 2} prototype in Bern and preliminary \dune{} near detector (ND) design.
+		Charge and light readout thicknesses are given per wall, i.e.\ the resulting dead space per module is twice as big.
+		Both are preliminary estimates.
+		For simplicity, clearance between adjacent modules is included in these numbers.}
+	\label{tab:dune-nd_dim}
+	\begin{tabu} to \textwidth {lSSs}
+		\toprule
+		Dimension &						{\num{2 x 2}} &			{ND} &					{Unit} \\
+		\midrule
+		Detector size &					\num{2 x 2} &			\num{4 x 5} &			mod \\
+		Module footprint &				\num{0.670 x 0.670} &	\num{1.000 x 1.000} &	\metre\squared \\
+		Module height &					1.810 &					3.500 &					\metre \\
+		TPC height &					1.235 &					3.000 &					\metre \\
+		Total TPC volume &				2.218 &					60.000 &				\metre\cubed \\
+		Flange thickness &	0.020 &		0.020 &					\metre \\
+		Side wall thickness &			0.010 &					0.010 &					\metre \\
+		Charge readout thickness &		0.020 &					0.020 &					\metre \\
+		Light readout thickness &		0.005 &					0.005 & 				\metre \\
+		Total dead volume &				0.289 &					5.292 &					\metre\cubed \\
+		Active volume fraction &		87.0 &					91.2 &					\percent \\
+		\bottomrule
+	\end{tabu}
+\end{table}
+
+
+\subsection*{Preliminary Near Detector Design}
 
 \begin{figure}[htb]
 	\centering
@@ -74,6 +104,16 @@ Engineering drawings of this module are given in Figure~\ref{fig:ac_module}.
 	\label{fig:dune-nd_lartpc-size}
 \end{figure}
 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{dune_nd/DUNE-ND-2018}
+	\caption{Artistic view of the \dune{} near detector \AC{} component.
+		Shown with individual pump and oxygen traps for each module.
+		On two sides, the half-width service modules are visible.
+		Cabling for HV as well as charge and light readout is not shown.}
+	\label{fig:dune-nd_ac}
+\end{figure}
+
 The \AC{} near detector design is based on a scaled-up version of the \num{2 x 2} module design described above.
 Modules will have a footprint of \SI{1 x 1}{\metre} and a height of \SI{3.5}{\metre}.
 Again, \SI{0.1}{\metre} at the bottom are occupied by the heat exchanger and valves while \SI{0.4}{\metre} at the top are taken up by feedthroughs and the gas phase.
@@ -81,13 +121,13 @@ This results in a TPC size of \SI{1 x 1 x 3}{\metre}, split into two halves by t
 The full detector will consist of \num{4 x 5} modules with the longer dimension in beam direction.
 These dimensions were optimised for maximum hadron containment by means of simulations done by the neutrino group at Lawrence Berkeley National Laboratory (LBNL)~\cite{lartpcSizeChris}.
 While horizontal dimensions are unproblematic, the vertical \SI{3}{\metre} are at the lower limit.
-According to the simulations, \SI{2.5}{\metre} would be sufficient but provide not safety margin at all.
+According to the simulations, \SI{2.5}{\metre} would be sufficient but provide no safety margin at all.
 Reducing the height by \SI{0.25}{\metre} results in a significant loss of hadron containment already.
 Figure~\ref{fig:dune-nd_lartpc-size} illustrates this by means of the cross-section coverage as a function of neutrino energy.
 Cross-section coverage is similar to containment efficiency but should not be confused with the latter.
 To assess the efficiency, a detector of the corresponding size in the neutrino beam is simulated.
 While this indeed provides a good measure of the efficiency of the detector to contain different events, it is not necessarily a good quantity to assess the required detector size.
-Many events are simply not contained because of their specific location inside the detector.
+Many events are simply not contained because of their specific location and/or orientation inside the detector.
 Cross-section coverage remedies this deficiency by looking at the actual extent of the event instead of its containment at a random position inside a realistic detector.
 On the other hand, an event extending through the full detector will very likely never be contained in a real detector due to the low probability of exactly happening in the right location.
 Therefore, the maximum event size needs to be selected smaller than the full detector size.
@@ -96,10 +136,21 @@ Like this, cross-section coverage allows to probe for phase space regions inacce
 In Figure~\ref{fig:dune-nd_lartpc-size}, it can be seen that cross-section coverage decreases rapidly for detector heights below \SI{2.5}{\metre}.
 A height of \SI{3}{\metre} is therefore preferable to have some buffer for yet unknown uncertainties in the simulation.
 
-Inspired by the design of the \dune{} \SI{35}{tonne} prototype at Fermilab~\cite{dune4}, the \lar{} bath is held in a foam-insulated membrane cryostat.
+Inspired by the design of the \dune{} \SI{35}{\tonne} prototype at Fermilab~\cite{dune4}, the \lar{} bath is held in a foam-insulated membrane cryostat.
 The outer support structure is a \SI{0.3}{\metre} thick steel-reinforced concrete layer, followed by a \SI{0.4}{\metre} thick polyurethane foam layer for thermal insulation.
 Inside of this is a \SI{2}{\milli\metre} thick stainless steel membrane sealing the \lar{} bath from the environment.
 There are several other support layers, all of which with a thickness of $\order{\SI{1}{\milli\metre}}$, with a more detailed description in~\cite{dune4}.
 The total thickness of the cryostat wall amounts to \num{2.88} radiation lengths.
+Cooling is provided by \num{10} uninstrumented \SI{0.5 x 1}{\metre} service modules equipped with cryocoolers arranged on the two detector faces parallel to beam direction.
+The total required cryostat footprint is therefore \SI{5 x 5}{\metre}.
+
+Table~\ref{tab:dune-nd_dim} gives an overview of the most important \AC{} near detector dimensions, in comparison to the \num{2 x 2} Bern prototype.
+Due to the bigger modules, the total fraction of active volume is increased to \SI{91.2}{\percent}.
+Drift direction is perpendicular to beam direction.
+The reason for this is to reduce the rate on single pixels.
+If drift direction was parallel to beam direction, particle tracks highly parallel to drift direction would lead to a very high rate on single channels potentially leading to a buffer overflow and thus data loss in the \larpix{} chip.
+Another advantage is that dead space in beam direction between adjacent modules will only be \SI{30}{\milli\metre} due to the very slim dimensions of \AL{}.
+Figure~\ref{fig:dune-nd_ac} shows an artistic view of the \AC{} near detector component.
+
 
 \afterpage{\clearpage}

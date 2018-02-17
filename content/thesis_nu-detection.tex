@@ -336,20 +336,17 @@ What is needed to determine these parameters, is essentially much higher statist
 	\caption{Oscillation parameters obtained from a recent global fit for the normal mass ordering case.
 	The uncertainties are given for $1 \sigma$.~\cite{king}}
 	\label{tab:nu-detection_oscparams}
-	\begin{tabu} to \textwidth {|c|S[separate-uncertainty=false]s|}
-		\hline
+	\begin{tabu} to \textwidth {cS[separate-uncertainty=false]s}
+		\toprule
+		Parameter &			{Value} &		{Unit} \\
+		\midrule
 		$\theta_{12}$ &		33.2(12) &		\degree \\
-		\hline
 		$\theta_{13}$ &		8.45(15) &		\degree \\
-		\hline
 		$\theta_{23}$ &		41.4(16) &		\degree \\
-		\hline
 		\dcp &				-100(50) &		\degree \\
-		\hline
 		$\dms_{21}$ &		7.45(25)e-5 &	\electronvolt\squared \\
-		\hline
 		$\abs{\dms_{31}}$ &	2.55(5)e-3 &	\electronvolt\squared \\
-		\hline	
+		\bottomrule	
 	\end{tabu}
 \end{table}
 
@@ -418,22 +415,17 @@ More information on the beamline can be found in~\cite{dune2}.
 		Note that these values are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params} because the latter are outdated.
 		Taken from~\cite{dune3, lauraNDRates}.}
 		\label{tab:nu-detection_beam-params}
-		\begin{tabu} to \textwidth {|c|S|S|S|S|S|}
-			\hline
+		\begin{tabu} to \textwidth {cSSSSS}
+			\toprule
 			Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per pulse} &	{Pulse period $\qty[\si{\second}]$} &	{Power $\qty[\si{\mega\watt}]$} &	{ND \si{evt\per\tonne} \ce{Ar}} \\
-			\hline
+			\midrule
 			\Romannum{1} &	60 &											7.5e13 &			0.7 &									1.03 &								0.078 \\
-			\hline
 			\Romannum{2} &	60 &											1.5e14 &			0.7 &									2.06 &								0.16 \\
-			\hline
 			\Romannum{1} & 	80 &											7.5e13 &			0.9 &									1.07 &								0.11 \\
-			\hline
 			\Romannum{2} &	80 &											1.5e14 &			0.9 &									2.14 &								0.21 \\
-			\hline
 			\Romannum{1} &	120 &											7.5e13 &			1.2 &									1.20 &								0.17 \\
-			\hline
 			\Romannum{2} &	120 &											1.5e14 &			1.2 &									2.40 &								0.33 \\
-			\hline
+			\bottomrule
 		\end{tabu}
 	\end{minipage}
 \end{table}
@@ -507,50 +499,31 @@ Rock events---secondary particles produced by beam neutrino interactions in the 
 	However, their order of magnitude is correct and no such detailed breakdown is available for the more recent values.
 	Therefore, they are presented as a rough estimate for the expected rates for the different interaction channels.}
 	\label{tab:nu-detection_nd-rates}
-	\begin{tabu} to \textwidth {|X|S|S|}
-		\hline
-		Production mode &																													{\Pgngm beam} &	{\Pagngm beam} \\
-		\hline
-		\hline
-		CC QE (\HepProcess{\Pgngm\Pn \to \Pgmm\Pp}) &																						30000 &				13000 \\
-		\hline
-		NC elastic (\HepProcess{\Pgngm\nucleon \to \Pgngm\nucleon}) & 																		11000 &				6700 \\
-		\hline
-		CC resonant (\HepProcess{\Pgngm\Pp \to \Pgmm\Pp\Pgpp}) &																			21000 &				0 \\
-		\hline
-		CC resonant (\HepProcess{\Pgngm\Pn \to \Pgmm\Pn\Pgpp\, (\Pp\Pgpz)}) &																23000 &				0 \\
-		\hline
-		CC resonant (\HepProcess{\Pagngm\Pp \to \Pgmp\Pp\Pgpm\, (\Pn\Pgpz)}) &																0 &					8300 \\
-		\hline
-		CC resonant (\HepProcess{\Pagngm\Pn \to \Pgmp\Pn\Pgpm}) &																			0 &					12000 \\
-		\hline
-		NC resonant (\HepProcess{\Pgngm\Pp \to \Pgngm\Pp\Pgpz\, (\Pn\Pgpp)}) &																7000 &				0 \\
-		\hline
-		NC resonant (\HepProcess{\Pgngm\Pn \to \Pgngm\Pn\Pgpp\, (\Pp\Pgpz)}) &																9000 &				0 \\
-		\hline
-		NC resonant (\HepProcess{\Pagngm\Pp \to \Pagngm\Pp\Pgpm\, (\Pn\Pgpz)}) &															0 &					3900 \\
-		\hline
-		NC resonant (\HepProcess{\Pagngm\Pn \to \Pagngm\Pn\Pgpm}) &																			0 &					4700 \\
-		\hline
-		CC DIS (\HepProcess{\Pgngm\nucleon \to \Pgmm\particles} or \HepProcess{\Pagngm\nucleon \to \Pgmp\particles}) &						95000 &				24000 \\
-		\hline
-		NC DIS (\HepProcess{\Pgngm\nucleon \to \Pgngm\particles} or \HepProcess{\Pagngm\nucleon \to \Pagngm\particles}) &					31000 &				10000 \\
-		\hline
-		CC coherent \Pgpp (\HepProcess{\Pgngm\nucleus \to \Pgmm\nucleus\Pgpp}) &															930 &				0 \\
-		\hline
-		CC coherent \Pgpm (\HepProcess{\Pagngm\nucleus \to \Pgmp\nucleus\Pgpm}) &															0 &					800 \\
-		\hline
-		NC coherent \Pgpz (\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz} or \HepProcess{\Pagngm\nucleus \to \Pagngm\nucleus\Pgpz}) &	520 &				450 \\
-		\hline
-		NC elastic electron (\HepProcess{\Pgngm\Pem \to \Pgngm\Pem} or \HepProcess{\Pagngm\Pem \to \Pagngm\Pem}) &							16 &				11 \\
-		\hline
-		Inverse muon decay (\HepProcess{\Pgngm\Pem \to \Pgmm\Pgne}) &																		9.5 &				0 \\
-		\hline
-		\hline
-		Total CC &																															170000 &			59000 \\
-		\hline
-		Total NC+CC &																														230000 &			84000 \\
-		\hline
+	\begin{tabu} to \textwidth {llSS}
+		\toprule
+		Production mode &		Reaction &																										{\Pgngm beam} &		{\Pagngm beam} \\
+		\midrule
+		CC QE &					\HepProcess{\Pgngm\Pn \to \Pgmm\Pp} &																			30000 &				13000 \\
+		NC elastic &			\HepProcess{\Pgngm\nucleon \to \Pgngm\nucleon} & 																11000 &				6700 \\
+		CC resonant &			\HepProcess{\Pgngm\Pp \to \Pgmm\Pp\Pgpp} &																		21000 &				0 \\
+		CC resonant &			\HepProcess{\Pgngm\Pn \to \Pgmm\Pn\Pgpp\, (\Pp\Pgpz)} &															23000 &				0 \\
+		CC resonant &			\HepProcess{\Pagngm\Pp \to \Pgmp\Pp\Pgpm\, (\Pn\Pgpz)} &														0 &					8300 \\
+		CC resonant &			\HepProcess{\Pagngm\Pn \to \Pgmp\Pn\Pgpm} &																		0 &					12000 \\
+		NC resonant &			\HepProcess{\Pgngm\Pp \to \Pgngm\Pp\Pgpz\, (\Pn\Pgpp)} &														7000 &				0 \\
+		NC resonant &			\HepProcess{\Pgngm\Pn \to \Pgngm\Pn\Pgpp\, (\Pp\Pgpz)} &														9000 &				0 \\
+		NC resonant &			\HepProcess{\Pagngm\Pp \to \Pagngm\Pp\Pgpm\, (\Pn\Pgpz)} &														0 &					3900 \\
+		NC resonant &			\HepProcess{\Pagngm\Pn \to \Pagngm\Pn\Pgpm} &																	0 &					4700 \\
+		CC DIS &				\HepProcess{\Pgngm\nucleon \to \Pgmm\particles} or \HepProcess{\Pagngm\nucleon \to \Pgmp\particles} &			95000 &				24000 \\
+		NC DIS &				\HepProcess{\Pgngm\nucleon \to \Pgngm\particles} or \HepProcess{\Pagngm\nucleon \to \Pagngm\particles} &		31000 &				10000 \\
+		CC coherent \Pgpp &		\HepProcess{\Pgngm\nucleus \to \Pgmm\nucleus\Pgpp} &															930 &				0 \\
+		CC coherent \Pgpm &		\HepProcess{\Pagngm\nucleus \to \Pgmp\nucleus\Pgpm} &															0 &					800 \\
+		NC coherent \Pgpz &		\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz} or \HepProcess{\Pagngm\nucleus \to \Pagngm\nucleus\Pgpz} &	520 &				450 \\
+		NC elastic electron &	\HepProcess{\Pgngm\Pem \to \Pgngm\Pem} or \HepProcess{\Pagngm\Pem \to \Pagngm\Pem} &							16 &				11 \\
+		Inverse muon decay &	\HepProcess{\Pgngm\Pem \to \Pgmm\Pgne} &																		9.5 &				0 \\
+		\midrule
+		Total CC &				&																												170000 &			59000 \\
+		Total NC+CC &			&																												230000 &			84000 \\
+		\bottomrule
 	\end{tabu}
 \end{table}
 

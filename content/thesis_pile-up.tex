@@ -76,48 +76,31 @@ This allows for convenient further processing using ROOT.
 	\centering
 	\caption{Parameters of the \Pgpz pile-up simulation.}
 	\label{tab:dune-nd_pile-up-params}
-	\begin{tabu} to \textwidth {|l|S|}
-		\hline
-		{$X$-axis} &					{Drift} \\
-		\hline
-		{$Y$-axis} &					{Vertical} \\
-		\hline
-		{$Z$-axis} &					{Beam} \\
-		\hline
-		{Resolution $X$} &				\SI{0.3}{\centi\metre} \\
-		\hline
-		{Resolution $Y$} &				\SI{0.3}{\centi\metre} \\
-		\hline
-		{Resolution $Z$} &				\SI{0.3}{\centi\metre} \\
-		\hline
-		{Target volume $X$} &			\SIrange{-100}{500}{\centi\metre} \\
-		\hline
-		{Active volume $X$} &			\SIrange{0}{400}{\centi\metre} \\
-		\hline
-		{Fiducial volume $X$} &			\SIrange{30}{370}{\centi\metre} \\
-		\hline
-		{Target volume $Y$} &			\SIrange{-100}{350}{\centi\metre} \\
-		\hline
-		{Active volume $Y$} &			\SIrange{0}{250}{\centi\metre} \\
-		\hline
-		{Fiducial volume $Y$} &			\SIrange{30}{220}{\centi\metre} \\
-		\hline
-		{Target volume $Z$} &			\SIrange{-400}{500}{\centi\metre} \\
-		\hline
-		{Active volume $Z$} &			\SIrange{0}{500}{\centi\metre} \\
-		\hline
-		{Fiducial volume $Z$} &			\SIrange{30}{470}{\centi\metre} \\
-		\hline
-		{Detection threshold} &			\SI{0.1}{\mega\electronvolt} \\
-		\hline
-		{Cone extent} &					{$10 X_{\m{0}} = \SI{140}{\centi\metre}$} \\
-		\hline
-		{Cone aperture (full angle)} &	\ang{30} \\
-		\hline
-		{Cylinder diameter} &			\SI{5}{\centi\metre} \\
-		\hline
-		{Beam intensity} &				{$\SI{2}{\mega\watt} \widehat{=} \SI{0.2}{evt\per\tonne}$} \\
-		\hline
+	\begin{tabu} to \textwidth {lSs}
+		\toprule
+		Parameter &						{Value} &				{Unit} \\
+		\midrule
+		{X-axis} &						{Drift} &				\\
+		{Y-axis} &						{Vertical} &			\\
+		{Z-axis} &						{Beam} &				\\
+		{Resolution X} &				3 &						\milli\metre \\
+		{Resolution Y} &				3 &						\milli\metre \\
+		{Resolution Z} &				3 &						\milli\metre \\
+		{Target volume X} &				\numrange{-100}{500} &	\centi\metre \\
+		{Active volume X} &				\numrange{0}{400} &		\centi\metre \\
+		{Fiducial volume X} &			\numrange{30}{370} &	\centi\metre \\
+		{Target volume Y} &				\numrange{-100}{350} &	\centi\metre \\
+		{Active volume Y} &				\numrange{0}{250} &		\centi\metre \\
+		{Fiducial volume Y} &			\numrange{30}{220} &	\centi\metre \\
+		{Target volume Z} &				\numrange{-400}{500} &	\centi\metre \\
+		{Active volume Z} &				\numrange{0}{500} &		\centi\metre \\
+		{Fiducial volume Z} &			\numrange{30}{470} &	\centi\metre \\
+		{Detection threshold} &			0.1 &					\mega\electronvolt \\
+		{Cone extent} &					10 &				 	X_0 \\
+		{Cone aperture (full angle)} &	30 &					\degree \\
+		{Cylinder diameter} &			5 &						\centi\metre \\
+		{Beam intensity} &				2 &						\mega\watt \\
+		\bottomrule
 	\end{tabu}
 \end{table}
 
@@ -404,14 +387,14 @@ If it was possible to identify the other \SI{50}{\percent} somehow in the real e
 Given the high event rates in the near detector, this would be easily affordable.
 Using the cone-base algorithm described here, EM shower pile-up could be detected via overlapping cones for instance.
 
-To get a rough idea of the performance of a 2D wire readout in an identical environment, the same study was performed ignoring the y-coordinate completely, leaving everything else untouched.
+To get a rough idea of the performance of a 2D wire readout in an identical environment, the same study was performed ignoring the Y-coordinate completely, leaving everything else untouched.
 Of course, this is a gross underestimation of the capabilities of existing reconstruction algorithms for 2D charge readout data.
 In particular, contemporary experiments use at least three 2D projections whereas only one was used here.
 Even though, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ_missed-rel-x} through~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}.
 The fraction of events not suffering from pile-up is below \SI{10}{\percent}, and \SI{50}{\percent} have \SI{10}{\percent} or more misidentified energy (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}).
 Similarly, the error on energy reconstruction has increased to \SIrange{10}{20}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x}).
 On the other hand, the error due to missed energy has improved from \SIrange{3}{2}{\percent} compared to 3D (Figure~\ref{fig:dune-nd_2MW-XZ_missed-rel-x}).
-An explanation for this is that all the energy in y-direction was summed up, due to the projection on XZ.
+An explanation for this is that all the energy in Y-direction was summed up, due to the projection on XZ.
 Therefore, the cone (or rather triangle) cannot miss energy in the former direction.
 
 Finally, as a cross-check, the (3D) pile-up study was performed for a hypothetical \SI{10}{\mega\watt} beam in Figures~\ref{fig:dune-nd_10MW_missed-rel-x} through~\ref{fig:dune-nd_10MW_misid-rel-y}.

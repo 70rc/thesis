@@ -69,16 +69,15 @@ The knowledge of these parameters allows to calculate the voltage across the gap
 	\centering
 	\caption{Summary of the measured parameters of the test circuit.}
 	\label{tab:hv_table1}
-	\begin{tabu} to \textwidth {|l|S|}
-		\hline
-		$K_{\m{V}}$ & 		42.3e-6 \\
-		\hline
-		$R_{\m{shunt}}$ &	\SI{50}{\ohm} \\
-		\hline
-		$R_{\m{lim}}$ & 	\SI{200}{\mega\ohm} \\
-		\hline
-		$C_{\m{gap}}$ & 	\SI{370}{\pico\farad} \\
-		\hline
+	\begin{tabu} to \textwidth {lSs}
+		\toprule
+		Parameter &			{Value} &	{Unit} \\
+		\midrule
+		$K_{\m{V}}$ & 		42.3e-6 &	\\
+		$R_{\m{shunt}}$ &	50 &		\ohm \\
+		$R_{\m{lim}}$ & 	200 &		\mega\ohm \\
+		$C_{\m{gap}}$ & 	370 &		\pico\farad \\
+		\bottomrule
 	\end{tabu}
 \end{table}
 
@@ -126,21 +125,16 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 	\centering
 	\caption{Summary of the breakdown measurement runs.}
 	\label{tab:hv_table2}
-	\begin{tabu} to \textwidth {|S|S|X|X|S|S[range-units=brackets]|S[range-units=brackets]|}
-		\hline
-		{{Run}} &	{{$\varnothing_{\m{Sphere}}$}} &	Surface finish &	Sphere polarity &	{{Events}} &	{{$d_{\m{Gap}}$}} &					{{$V_{\m{Breakdown}}$}} \\
-		\hline
-		\hline
-		1   &		\SI{4}{\centi\metre} &				Mech.\ polished &	Cathode ($-$) &		1086 &			\SIrange{0.5}{8.0}{\milli\metre} &	\SIrange{3}{130}{\kilo\volt} \\
-		\hline
-		2   &		\SI{5}{\centi\metre} &				Mech.\ polished &	Cathode ($-$) &		900 &			\SIrange{0.2}{12.0}{\milli\metre} &	\SIrange{2}{130}{\kilo\volt} \\
-		\hline
-		3   &		\SI{8}{\centi\metre} &				Mech.\ polished &	Cathode ($-$) &		2434 &			\SIrange{0.1}{70.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
-		\hline
-		4   &		\SI{5}{\centi\metre} &				Mech.\ polished &	Anode ($+$) &		102 &			\SIrange{4.0}{5.0}{\milli\metre} &	\SIrange{5}{114}{\kilo\volt} \\
-		\hline
-		5   &		\SI{5}{\centi\metre} &				Electro-polished &	Cathode ($-$) &		1141 &			\SIrange{0.1}{10.0}{\milli\metre} &	\SIrange{1}{130}{\kilo\volt} \\
-		\hline
+	\begin{tabu} to \textwidth {SSXXSSS}
+		\toprule
+		{Run} &	{$\varnothing_{\m{Sphere}} \qty[\si{\centi\metre}]$} &	Surface finish &	Sphere polarity &	{Events} &	{$d_{\m{Gap}} \qty[\si{\milli\metre}]$} &	{$V_{\m{Breakdown}} \qty[\si{\kilo\volt}]$} \\
+		\midrule
+		1   &	4 &														Mech.\ polished &	Cathode ($-$) &		1086 &		\numrange{0.5}{8.0} &						\numrange{3}{130} \\
+		2   &	5 &														Mech.\ polished &	Cathode ($-$) &		900 &		\numrange{0.2}{12.0} &						\numrange{2}{130} \\
+		3   &	8 &														Mech.\ polished &	Cathode ($-$) &		2434 &		\numrange{0.1}{70.0} &						\numrange{1}{130} \\
+		4   &	5 &														Mech.\ polished &	Anode ($+$) &		102 &		\numrange{4.0}{5.0} &						\numrange{5}{114} \\
+		5   &	5 &														Electro-polished &	Cathode ($-$) &		1141 &		\numrange{0.1}{10.0} &						\numrange{1}{130} \\
+		\bottomrule
 	\end{tabu}
 \end{table}
 
@@ -368,19 +362,15 @@ A summary of the results is given in Table~\ref{tab:latex_table1}.
 	\centering
 	\caption{Summary of the breakdown test measurements with \SI{200}{\micro\metre} and \SI{450}{\micro\metre} thick polyisoprene layers coated \SI{5}{\centi\metre} and \SI{4}{\centi\metre} diameter spheric cathodes, respectively.}
 	\label{tab:latex_table1}
-	\begin{tabu} to \textwidth {|S|S|S|S|l|}
-		\hline
-		{{$d_{\m{Gap}}$}} &		{{$E_{\m{max}}$}} &						$\varnothing_{\m{Sphere}}$ &	{Polyisoprene thickness} &	{Breakdown} \\
-		\hline
-		\hline
-		\SI{5}{\milli\metre} &	\SI{298}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &		\SI{450}{\micro\metre} &	{no} \\
-		\hline
-		\SI{4}{\milli\metre} &	\SI{358}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &		\SI{450}{\micro\metre} &	{no} \\
-		\hline
-		\SI{3}{\milli\metre} &	\SI{412}{\kilo\volt\per\centi\metre} &	\SI{4}{\centi\metre} &		\SI{450}{\micro\metre} &	{yes} \\
-		\hline
-		\SI{3}{\milli\metre} &	\SI{296}{\kilo\volt\per\centi\metre} &	\SI{5}{\centi\metre} &		\SI{200}{\micro\metre} &	{yes} \\
-		\hline
+	\begin{tabu} to \textwidth {SSSSl}
+		\toprule
+		{$d_{\m{Gap}} \qty[\si{\milli\metre}]$} &	{$E_{\m{max}} \qty[\si{\kilo\volt\per\centi\metre}]$} &	{$\varnothing_{\m{Sphere}} \qty[\si{\centi\metre}]$} &	{Polyisoprene thickness $\qty[\si{\micro\metre}]$} &	Breakdown \\
+		\midrule
+		5.0 &	298 &	4 &	450 &	no \\
+		4.0 &	358 &	4 &	450 &	no \\
+		3.0 &	412 &	4 &	450 &	yes \\
+		3.0 &	296 &	5 &	200 &	yes \\
+		\bottomrule
 	\end{tabu}
 \end{table}
 

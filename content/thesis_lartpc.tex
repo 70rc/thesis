@@ -1,7 +1,7 @@
-\chapter{The Liquid Argon Time Projection Chamber (\lartpc{})}
+\chapter{The \acrfull{ac:lartpc}}
 \label{chap:lartpc}
 
-The Time Projection Chamber (TPC) is a derivative of Charpak's Multi-Wire Proportional Chamber (MWPC)\cite{mwpc} developed by Nygren in the late 1970s~\cite{nygrenTPC}.
+The \gls{ac:tpc} is a derivative of Charpak's Multi-Wire Proportional Chamber (MWPC)\cite{mwpc} developed by Nygren in the late 1970s~\cite{nygrenTPC}.
 Crossing charged particles ionise the detection medium which was gaseous in the original design.
 To prevent the recombination of the ions and electrons, an electric field is applied.
 In this field, the electrons drift towards a two-dimensional readout plane (an MWPC in the original design).
@@ -9,15 +9,15 @@ The charge readout is triggered by a scintillation light readout which also prov
 Using this, one can measure the time for the ionisation electrons to reach the readout plane.
 As the drift speed of charged particles in the detection medium is constant and if it is known, the coordinate in drift direction can be calculated from the drift time.
 
-While gaseous TPCs already provide very accurate tracking, they have the disadvantage that the target mass and thus, the cross-section of the detection medium is quite low resulting in a low interaction rate.
+While gaseous \glspl{ac:tpc} already provide very accurate tracking, they have the disadvantage that the target mass and thus, the cross-section of the detection medium is quite low resulting in a low interaction rate.
 Therefore, in 1977, Rubbia proposed to use liquid argon as a detection medium~\cite{lartpc}.
 This requires a cryogenic detector while gaseous detectors can be operated at room temperature.
 
 
-\section{Liquid Argon (\lar{}) as a Detection Medium}
+\section{\acrfull{ac:lar} as a Detection Medium}
 \label{sec:lartpc_lar}
 
-For an efficient particle detection by a TPC, several properties of the sensitive medium are of interest, such as ionisation and light yield, electron-ion pair recombination, dielectric strength, length scales of electromagnetic and hadronic interactions, density, transparency to its own scintillation light, and the boiling point.
+For an efficient particle detection by a \gls{ac:tpc}, several properties of the sensitive medium are of interest, such as ionisation and light yield, electron-ion pair recombination, dielectric strength, length scales of electromagnetic and hadronic interactions, density, transparency to its own scintillation light, and the boiling point.
 \lar{} is quite unique as it has all the necessary properties while at the same time it is comparably cheap because it is readily available in the Earth's atmosphere.
 A summary of its properties can be found in Table~\ref{tab:lartpc_larprop}.
 Xenon for instance slightly surpasses argon in many aspects but is prohibitively expensive to build large detectors.
@@ -48,7 +48,7 @@ This section will outline the most important \lar{} properties.
 	\end{tabu}
 \end{table}
 
-In order to register the ionisations tracks of charged particles in a TPC, two processes are crucial: production and transportation of charge.
+In order to register the ionisations tracks of charged particles in a \gls{ac:tpc}, two processes are crucial: production and transportation of charge.
 The charge production needs to be high enough to be detectable by the available electronics.
 This is given by the energy required to produce an electron-ion pair $W_{\m{i}}$.
 The $W_{\m{i}}$ value of \SI{23.6}{\electronvolt} for \lar{} is challenging but manageable with contemporary electronics as shown in Section~\ref{sec:lartpc_electronics}.
@@ -91,7 +91,7 @@ Therefore, $D$ has the dimension of area per time.~\cite{lngDet}
 
 A third process affecting charge transport is electron trapping by impurities, the probability of an electron becoming attached to an atom in the medium.
 For the argon itself, this is highly unlikely because its outer electron shell is fully populated.
-This is one of the reasons why (liquefied) noble gases are a prime choice for TPCs.
+This is one of the reasons why (liquefied) noble gases are a prime choice for \glspl{ac:tpc}.
 Nevertheless, drifting electrons can be captured by impurities in the argon.
 Oxygen is particularly bad due to its high electronegativity.
 Impurities are therefore often measured in oxygen-equivalent concentration.
@@ -157,7 +157,7 @@ Recharging, in turn, caused a lot of detector down time.
 \section{Charge Readout}
 \label{sec:lartpc_charge-ro}
 
-Classically, the charge readout of a liquid argon TPC is done using wires with a diameter of $\order{\SI{.1}{\milli\metre}}$.
+Classically, the charge readout of a liquid argon \gls{ac:tpc} is done using wires with a diameter of $\order{\SI{.1}{\milli\metre}}$.
 One wire plane delivers a 2D projection of the ionisation tracks in the detection medium.
 This has two consequences:
 \begin{enumerate}

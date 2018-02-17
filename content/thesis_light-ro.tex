@@ -21,7 +21,7 @@ It was developed at LHEP at the University of Bern alongside the scintillator pa
 
 For the first pixel prototype described in Section~\ref{sec:ac_viper}, the CRT system was adapted to serve as the light trigger system.
 Except for operating everything up to the SiPMs in liquid argon, the polystyrene scintillating bars were replaced by acrylic rings.
-The latter are placed in between the aluminium field shaping rings of the TPC.
+The latter are placed in between the aluminium field shaping rings of the \gls{ac:tpc}.
 To allow for proper convection of the liquid argon, only every other gap is completely filled by an acrylic ring.
 Perpendicularly to the rings(i.e.\ in drift direction), four WLS fibres collect the light from the rings and guide it to the readout plane on the anode side where it is fed to the SiPMs.
 Residing on the cryostat top-flange at room temperature, the front-end board is connected to the SiPMs via Teflon insulated coaxial cables.
@@ -30,7 +30,7 @@ The peak of scintillation light emission in liquid argon lies at \SI{128}{\nano\
 Therefore, the scintillation light needs to be shifted before it can be detected by the SiPMs.
 This happens in two stages.
 For the first shift, tetraphenyl butadiene (TPB) is applied to the inside of the acrylic rings.
-Their outside is not coated to reduce the collected amount of scintillation light that originates outside the TPC while their inside is machined to optimise light collection.
+Their outside is not coated to reduce the collected amount of scintillation light that originates outside the \gls{ac:tpc} while their inside is machined to optimise light collection.
 TPB absorbs the \SI{128}{\nano\metre} scintillation light an re-emits with a peak at \SI{440}{\nano\metre}~\cite{tpb} which is then propagated through the acrylic and coupled into the WLS fibre.
 The latter has an absorption peak at \SI{430}{\nano\metre} and an emission peak at \SI{476}{\nano\metre}.\todo{sauce}
 
@@ -41,7 +41,7 @@ The trigger pattern is thus
 \end{IEEEeqnarray}
 for SiPMs $S_1$ through $S_4$.
 The reason for this is that the same trigger logic is used for the CRT panels to have a coincidence between two fibres of one scintillation bar.
-In order to improve trigger purity, it was tried to change the firmware to trigger on the coincidence of all four fibres in the TPC.
+In order to improve trigger purity, it was tried to change the firmware to trigger on the coincidence of all four fibres in the \gls{ac:tpc}.
 Due to a firmware bug however this could not be achieved.
 
 As will be explained in Section~\ref{sec:ac_viper}, the light readout scheme described above was successfully used to trigger and record several thousand cosmic muon interactions with the \AC{} pixel demonstrator.

@@ -58,18 +58,18 @@
 
 \newcommand*{\AT}{{ARGONTUBE}}
 \newcommand*{\AC}{{ArgonCube}}
-\newcommand*{\AL}{{ArCLight}}
-\newcommand*{\dune}{{DUNE}}
-\newcommand*{\uboone}{{MicroBooNE}}
-\newcommand*{\sbnd}{{SBND}}
-\newcommand*{\icarus}{{ICARUS}}
-\newcommand*{\lariat}{{LArIAT}}
+\newcommand*{\AL}{\gls{ac:arclight}}
+\newcommand*{\dune}{\gls{ac:dune}}
+\newcommand*{\uboone}{\gls{ac:uboone}}
+\newcommand*{\sbnd}{\gls{ac:sbnd}}
+\newcommand*{\icarus}{\gls{ac:icarus}}
+\newcommand*{\lariat}{\gls{ac:lariat}}
 \newcommand*{\larpix}{{LArPix}}
 \newcommand*{\pixlar}{{PixLAr}}
-\newcommand*{\argoneut}{{ArgoNeuT}}
+\newcommand*{\argoneut}{\gls{ac:argoneut}}
 
-\newcommand*{\lar}{{LAr}}
-\newcommand*{\lartpc}{{LArTPC}}
+\newcommand*{\lar}{\gls{ac:lar}}
+\newcommand*{\lartpc}{\gls{ac:lartpc}}
 
 \newcommand*{\nucleon}{\HepGenParticle{N}{}{}}
 \newcommand*{\nucleus}{\HepGenParticle{A}{}{}}
@@ -92,15 +92,22 @@
 
 \usepackage[pdftex, unicode, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % should be last command in preamble
 
+\usepackage[xindy, toc]{glossaries} % glossary according go latex wikibooks
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+\makeindex
+\loadglsentries{content/thesis_glossary}
+
 
 \begin{document}
 	\graphicspath{{graphics/}}
+	\glsunsetall % disable expansion of acrynoms
 	
 	\pagenumbering{roman}
 	
-	\include{content/thesis_title}
-	\include{content/thesis_abstract}
-	\include{content/thesis_preface}
+	\input{content/thesis_title}
+	\input{content/thesis_abstract}
+	\input{content/thesis_preface}
 	
 	\listoftodos
 	\tableofcontents
@@ -122,25 +129,28 @@
 	\cjames{test}
 	\cjames[inline]{inline test}
 	
-	\include{content/thesis_introduction}
-	\include{content/thesis_nu-detection}
-	\include{content/thesis_lartpc}
-	\include{content/thesis_hv}
-	\include{content/thesis_charge-ro}
-	\include{content/thesis_electronics}
-	\include{content/thesis_light-ro}
-	\include{content/thesis_viper}
-	\include{content/thesis_argoncube}
-	\include{content/thesis_dune-nd}
-	\include{content/thesis_pile-up}
-	\include{content/thesis_conclusion}
-	\include{content/thesis_acknowledgements}
+	\glsresetall % enable expansion of acronyms
+	
+	\input{content/thesis_introduction}
+	\input{content/thesis_nu-detection}
+	\input{content/thesis_lartpc}
+	\input{content/thesis_hv}
+	\input{content/thesis_charge-ro}
+	\input{content/thesis_electronics}
+	\input{content/thesis_light-ro}
+	\input{content/thesis_viper}
+	\input{content/thesis_argoncube}
+	\input{content/thesis_dune-nd}
+	\input{content/thesis_pile-up}
+	\input{content/thesis_conclusion}
+	\input{content/thesis_acknowledgements}
 	
 	\printbibliography
+	\printglossaries
 	
 	\appendix
 	
-	\include{content/thesis_appendix_pile-up-data}
+	\input{content/thesis_appendix_pile-up-data}
 	
 	%\includepdf[pages={{},1}]{erklaerung}
 \end{document}

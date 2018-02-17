@@ -233,7 +233,7 @@ This is particularly problematic for a pixelated readout that requires a much hi
 
 BNL is developing cold charge readout electronics for the \dune{} far detector.~\cite{protodune-sp}
 In particular, the plan is to accompany the cryogenic LARASIC charge preamplifiers by cryogenic ADCs.
-They have \num{16} inputs, each capable of digitising the TPC signals at \SI{2}{\mega{}S\per\second} and \SI{12}{bit} with input characteristics optimised for the LARASIC output.
+They have \num{16} inputs, each capable of digitising the \gls{ac:tpc} signals at \SI{2}{\mega{}S\per\second} and \SI{12}{bit} with input characteristics optimised for the LARASIC output.
 A more detailed description is given in~\cite{bnl_adc}.
 
 In the course of this work, the cryogenic ADC ASICs developed by BNL were evaluated to be used in the near detector as well.
@@ -298,7 +298,7 @@ With its power dissipation (and comsumption) dependent on the charge flux and th
 Due to the triggered digitisation, the same goes for noise levels.
 For the successful operation of \larpix{}, it is of paramount importance to keep event rates and noise levels low.
 The latter can be achieved by minimising detector capacitance.
-To lower the susceptibility to high event rates, the \dune{} ND design puts the TPC drift direction perpendicular to beam direction.
+To lower the susceptibility to high event rates, the \dune{} ND design puts the \gls{ac:tpc} drift direction perpendicular to beam direction.
 This reduces the amount of charge per event arriving simultaneously at the readout.
 Furthermore, \larpix{} is equipped with a First-In-First-Out (FIFO) buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
 

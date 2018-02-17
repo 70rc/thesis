@@ -1,12 +1,15 @@
 \begin{abstract}
 
+\glsreset{ac:lartpc}
+\glsreset{ac:dune}
+
 Neutrino mixing and oscillations have been extensively studied during the last few decades.
 Nevertheless, several unanswered questions remain, in particular CP violation in the lepton sector and the ordering of the neutrino masses.
-A next-generation Deep Underground Neutrino Experiment, \dune{}, is being built to answer them via observation of long-baseline neutrino oscillations.
+A next-generation \dune{} is being built to answer them via observation of long-baseline neutrino oscillations.
 Achieving sensitivity to CP violation and mass ordering will require a data sample of unprecedented size and precision.
 Therefore, a high-intensity beam (\SI{2}{\mega\watt}) and a massive detector (\SI{40}{\kilo\tonne}) providing excellent tracking and calorimetry are required.
 
-Liquid Argon Time Projection Chambers (\lartpc{}s) fulfil these requirements excellently and were therefore chosen as far detectors.
+\glspl{ac:lartpc} fulfil these requirements excellently and were therefore chosen as far detectors.
 To bring systematic uncertainties down to the required level of a few percent, a \lartpc{} component in the near detector complex is desirable.
 The high-rate near detector environment poses significant challenges to traditional \lartpc{} designs.
 
@@ -17,7 +20,7 @@ Paired with the high beam intensity, this leads to several neutrino interactions
 Disentangling such an event pile-up only from 2D projections will be extremely challenging.
 To overcome these limitations, a pixelated charge readout for \lartpc{} was developed and successfully tested.
 A software framework was established to reconstruct recorded cosmic muon tracks employing a Kalman filter.
-Pixelated charge readout systems represent the single largest advancement in the sensitivity of LArTPCs, enabling true 3D tracking, thereby reducing event pile-up and improving background rejection.
+Pixelated charge readout systems represent the single largest advancement in the sensitivity of \lartpc{}s, enabling true 3D tracking, thereby reducing event pile-up and improving background rejection.
 
 Due to their increased number of channels (roughly squared compared to wires), pixelated charge readouts give raise to the need for novel readout electronics.
 Existing wire readout electronics were tested and found unsuitable for the new readout.
@@ -29,9 +32,9 @@ This triggered an in-depth study of electric breakdowns including the recording 
 As a result of these studies, a method was developed to increase the dielectric strength of \lar{} by an order of magnitude.
 It was found however that it is safer to keep fields below \SI{40}{\kilo\volt\per\centi\metre} at all points in the detector to guarantee a safe operation.
 
-The entirety of the R\&D effort lead to the development of a new fully-modular, pixelated \lartpc{} concept---ArgonCube.
+The entirety of the R\&D effort lead to the development of a new fully-modular, pixelated \lartpc{} concept---\AC{}.
 It is aimed to address the studied challenges.
-Splitting the detector volume into small self-contained TPCs sharing a common \lar{} bath, reduces the required drift voltages to a handleable level.
+Splitting the detector volume into small self-contained \gls{ac:tpc} sharing a common \lar{} bath, reduces the required drift voltages to a handleable level.
 A pixelated charge readout paired with bespoke electronics will exploit true 3D tracking to cope with the expected event pile-up.
 
 The work is topped off with a study of the near detector event pile-up.

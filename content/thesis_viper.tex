@@ -68,22 +68,22 @@ Due to the limited accuracy of this method, measurements were not taken up to th
 \afterpage{\clearpage}
 
 
-\subsection{TPC}
+\subsection{\gls{ac:tpc}}
 \label{sec:ac_viper_tpc}
 
-The pixel demonstration TPC, shown in Figures~\ref{fig:viper_cad}~and~\ref{fig:viper_v1per}, is cylindrical with an inner diameter of \SI{101}{\milli\metre} and a \SI{590}{\milli\metre} drift length. 
-The TPC operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre}, corresponding to a total drift time of \SI{281}{\micro\second} at \SI{2.1}{\milli\metre\per\micro\second}.~\cite{protoLASER}
+The pixel demonstration \gls{ac:tpc}, shown in Figures~\ref{fig:viper_cad}~and~\ref{fig:viper_v1per}, is cylindrical with an inner diameter of \SI{101}{\milli\metre} and a \SI{590}{\milli\metre} drift length. 
+The \gls{ac:tpc} operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre}, corresponding to a total drift time of \SI{281}{\micro\second} at \SI{2.1}{\milli\metre\per\micro\second}.~\cite{protoLASER}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.9\linewidth]{viper/tpc_cad}
-	\caption{\small Engineering drawing of the pixel demonstration TPC; \SI{590}{\milli\metre} drift length; \SI{6.25}{\milli\metre} field cage spacing; \SI{101}{\milli\metre} internal diameter.}
+	\caption{\small Engineering drawing of the pixel demonstration \gls{ac:tpc}; \SI{590}{\milli\metre} drift length; \SI{6.25}{\milli\metre} field cage spacing; \SI{101}{\milli\metre} internal diameter.}
 	\label{fig:viper_cad}
 \end{figure}
  
 The field-cage consists of aluminium rings supported by clear acrylic rings, with a cathode formed of a brass disc. 
 The dimensions of the field-cage and cathode are shown in Figure~\ref{fig:viper_cad}.
-Alternating acrylic rings are split, to allow for the circulation of purified \lar{} within the TPC volume.
+Alternating acrylic rings are split, to allow for the circulation of purified \lar{} within the \gls{ac:tpc} volume.
 Four square section PolyAmide-Imide (PAI) uprights support the cathode and field cage, with PolyEther Ether Ketone (PEEK) screws fixing the pillars to the acrylic rings.
 The four PAI uprights connect to a PAI frame which supports the anode plane and the light readout Silicon PhotoMultipliers (SiPMs), see Figure~\ref{fig:viper_v1per}.   
 
@@ -94,7 +94,7 @@ Each resistor is soldered to its neighbour, and fixed to the field cage at each 
 	\centering
 	\includegraphics[width=0.26\linewidth]{viper/viper_original}
 	\includegraphics[width=0.62\linewidth]{viper/viper_sipm}
-	\caption{\small  Left: Photograph of the  pixel demonstration TPC at Bern, with the HV feedthrough.
+	\caption{\small  Left: Photograph of the  pixel demonstration \gls{ac:tpc} at Bern, with the HV feedthrough.
 	Right: Close-up of the light collection system, showing wavelength shifting fibres coupling SiPMs to the TPB-coated light guides.}
 	\label{fig:viper_v1per}
 \end{figure}
@@ -116,7 +116,7 @@ This coincidence is used in order to improve trigger purity.
 \subsection{Ancillary Infrastructure}
 \label{sec:ac_viper_infrastructure}
 
-The pixel demonstration TPC is housed in a double-bath vacuum-insulated cryostat with the outer bath open to atmosphere.
+The pixel demonstration \gls{ac:tpc} is housed in a double-bath vacuum-insulated cryostat with the outer bath open to atmosphere.
 A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of liquid argon.
 This is the same cryostat that was used for the HV studies described in Section~\ref{sec:studies_hv}.
 The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with \lar{} filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
@@ -129,10 +129,10 @@ For proper insulation, the whole assembly is submerged in transformer oil.
 \afterpage{\clearpage}
 
 
-\subsection{Signal to noise ratio}
+\subsection{Signal-to-noise ratio}
 \label{sec:ac_viper_snr}
 
-To assess the Signal to Noise Ratio (SNR), dedicated noise data was taken employing a \SI{5}{\hertz} random trigger.
+To assess the \gls{ac:snr}, dedicated noise data was taken employing a \SI{5}{\hertz} random trigger.
 The data of \num{5000} events was combined.
 Subsequently, all pixel and ROI channels were combined separately and filled into respective amplitude distribution histograms.
 Finally, the standard deviation of the noise was calculated by fitting a Gaussian to the amplitude distribution.
@@ -298,7 +298,7 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_kalman}
 	\caption{Track fitted by the Kalman filter.
-	The TPC volume is shown in faint grey.
+	The \gls{ac:tpc} volume is shown in faint grey.
 	The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	Drift direction is from right to left.
 	The yellow points are the input to the Kalman filter, the accepted hits from the principal components analysis.
@@ -334,7 +334,7 @@ After the successful test with cosmic muons at Bern, a bigger prototype of the p
 The tertiary beam line produces mainly pions and protons as well as electrons, muons and kaons at a lower rate.
 Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt\per\clight}.
 \SI{550}{\litre} of \lar{} are contained in a cylindrical cryostat.
-It houses a TPC with \SI{47}{\centi\metre} drift length and a \SI{40 x 90}{\centi\metre} readout plane parallel to the beam direction, resulting in an active volume of \SI{170}{\litre}.
+It houses a \gls{ac:tpc} with \SI{47}{\centi\metre} drift length and a \SI{40 x 90}{\centi\metre} readout plane parallel to the beam direction, resulting in an active volume of \SI{170}{\litre}.
 For the pixel test, called \pixlar{}, the original wire planes were replaced by a \num{120 x 240} pixel readout.
 At \SI{3}{\milli\metre} pitch, this gives an instrumented area of \SI{36 x 72}{\centi\metre}.
 Due to constraints from the PCB manufacturer, the readout plane had to be split into two mirror-symmetric, electrically independent half planes.
@@ -342,7 +342,7 @@ Each \num{120 x 120} pixel half plane is divided into \num{8 x 15} ROIs of \num{
 The ROIs are oriented with their longer dimension parallel to the beam direction to reduce the multiplexing ambiguities.
 One of the noise mitigation measures implemented for the Bern pixel demonstrator was to use the same differential warm signal path as used by \lariat{}.
 Therefore, the charge readout electronics used in \pixlar{} are quite similar to the \AT{} chain described in Section~\ref{sec:studies_electronics_at} after the upgrades.
-To trigger on scintillation light, one end of the TPC is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_light-col_al}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
+To trigger on scintillation light, one end of the \gls{ac:tpc} is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_light-col_al}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
 Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \AL{} module attached.
 
 \begin{figure}[htb]

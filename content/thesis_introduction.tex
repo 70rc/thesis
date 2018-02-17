@@ -21,7 +21,7 @@ However, for future experiments, these and other natural sources are not intense
 Therefore, artificially produced neutrino beams will be employed, paired with huge detectors.
 Not only are neutrino interactions with matter very rare, they are also quite manifold, giving raise to the need for detectors capable of recording complex event topologies and reconstructing energies precisely.
 
-Liquid Argon Time Projection Chambers (\lartpc{}s) are a prime candidate for the aforementioned requirements.
+\glspl{ac:lartpc} are a prime candidate for the aforementioned requirements.
 They combine a high-density target material with a high-precision 3D tracker and calorimeter.
 The incoming neutrinos interact with the \lar{}, producing charged secondary particles which in turn ionise \ce{Ar} atoms.
 By means of an electric field, the produced electron-ion pairs can be separated and drifted towards a two-dimensional charge readout.
@@ -29,7 +29,7 @@ A small remainder of pairs recombine and produce very prompt (\si{\nano\second})
 Due to the constant drift velocity of charge in a medium subject to an electric field, the distance from the ionisation location to the readout plane can be precisely determined.
 Combined with the 2D information from the readout, the full 3D interaction topology can be reconstructed.
 
-The Deep Underground Neutrino Experiment (\dune{}) is a next generation long-baseline beam neutrino oscillation experiment, placing \lartpc{}s in an accelerator-produced muon neutrino beam.
+The \dune{} is a next generation long-baseline beam neutrino oscillation experiment, placing \lartpc{}s in an accelerator-produced muon neutrino beam.
 Neutrino oscillations will be observed over a baseline of \SI{1300}{\kilo\metre}.
 Several implications result from the required number of neutrino interactions to be sensitive to CP violation and neutrino mass ordering.
 As mentioned above, a very intense neutrino beam and a large target mass are necessary.
@@ -45,7 +45,7 @@ Finally, using the same technology in both detectors, cancels even more of the r
 Therefore, the near detector complex needs to contain a \lartpc{} component.
 
 Up until now, \lartpc{} charge readouts have been realised by means of multiple one-dimensional wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge---due to technological limitations.
-Combined with the time of the drifting charge, this results in one 2D image of the event topology per wire plane, effectively reducing the 3D capabilities of the TPC to multiple 2D projections.
+Combined with the time of the drifting charge, this results in one 2D image of the event topology per wire plane, effectively reducing the 3D capabilities of the \gls{ac:tpc} to multiple 2D projections.
 Additionally, \lartpc{}s are comparatively slow detectors.
 The minimum drift time of charge in \lar{} (and thus the readout time) is limited to $\order{\SI{1}{\milli\second\per\metre}}$ by constraints on the maximum cathode voltage.
 Both the above have not prevented the huge success of \lartpc{}s up to now.
@@ -56,7 +56,7 @@ Even worse, the beam is delivered in very short pulses of very high intensity.
 Because these pulses are one to two orders of magnitude shorter than a typical \lartpc{} readout cycle, the detector registers several neutrino interactions simultaneously, so-called event pile-up.
 Combined with the 2D projection readout, this leads to significant difficulties in event reconstruction: disentangling the 3D interaction topologies from the recorded 2D projections.
 
-An obvious solution to this challenge is to regain true 3D information from the TPC by replacing the projective 1D wire planes with a true 2D pixelated charge readout.
+An obvious solution to this challenge is to regain true 3D information from the \gls{ac:tpc} by replacing the projective 1D wire planes with a true 2D pixelated charge readout.
 However, as mentioned above, this is linked to technological challenges.
 Replacing a two plane wire readout with pixels of the same pitch squares the number of required readout channels.
 For the \lartpc{} in the \dune{} near detector complex with a size of \SI{4 x 5 x 2.5}{\metre}, this amounts to $\order{\num{e6}}$ cables needing to be routed out of the cryogenic vessel housing the detector.
@@ -101,7 +101,7 @@ This propagates a cosmic muon hypothesis through all the detector measurements t
 The end result is a completely reconstructed particle track through the detector.
 The combination of all the R\&D presented in this thesis resulted in the development of the \AC{}, a next-generation \lartpc{} concept, at the University of Bern.
 It aims to address the most important challenges met by future \lartpc{}s.
-The problematic high fields at the cathodes as well as the scintillation light containment issue are addressed by splitting up the detector into smaller ($\order{\SI{1}{\metre}}$), self-contained TPCs sharing a common \lar{} bath.
+The problematic high fields at the cathodes as well as the scintillation light containment issue are addressed by splitting up the detector into smaller ($\order{\SI{1}{\metre}}$), self-contained \glspl{ac:tpc} sharing a common \lar{} bath.
 A pixelated charge readout makes the detector capable of true 3D event recording.
 To keep the dead volume to a minimum, \AL{} is used as the light readout system.
 All of this is described in Chapters~\ref{chap:ac}.

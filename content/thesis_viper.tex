@@ -9,7 +9,8 @@ This chapter describes the results obtained from the first pixelated \lartpc{} p
 While many of the individual systems, such as the high-voltage system, light and charge readout, have been described in previous chapters, a short overview of the implementation is given here.
 
 
-\subsection*{Pixel PCB Design}
+\subsection{Pixel PCB Design}
+\label{sec:ac_viper_pcb}
  
 The pixelated anode plane, shown in Figure~\ref{fig:viper_pixies}, was produced as a conventional Printed Circuit Board (PCB). 
 The pixelated area is \SI{100}{\milli\metre} across, the pixels are formed of \SI{900}{\micro\metre} vias with a pitch of \SI{2.54}{\milli\metre}.
@@ -67,7 +68,8 @@ Due to the limited accuracy of this method, measurements were not taken up to th
 \afterpage{\clearpage}
 
 
-\subsection*{TPC}
+\subsection{TPC}
+\label{sec:ac_viper_tpc}
 
 The pixel demonstration TPC, shown in Figures~\ref{fig:viper_cad}~and~\ref{fig:viper_v1per}, is cylindrical with an inner diameter of \SI{101}{\milli\metre} and a \SI{590}{\milli\metre} drift length. 
 The TPC operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre}, corresponding to a total drift time of \SI{281}{\micro\second} at \SI{2.1}{\milli\metre\per\micro\second}.~\cite{protoLASER}
@@ -111,7 +113,8 @@ This coincidence is used in order to improve trigger purity.
 \afterpage{\clearpage}
 
 
-\subsection*{Ancillary Infrastructure}
+\subsection{Ancillary Infrastructure}
+\label{sec:ac_viper_infrastructure}
 
 The pixel demonstration TPC is housed in a double-bath vacuum-insulated cryostat with the outer bath open to atmosphere.
 A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of liquid argon.
@@ -126,7 +129,8 @@ For proper insulation, the whole assembly is submerged in transformer oil.
 \afterpage{\clearpage}
 
 
-\subsection*{Signal to noise ratio}
+\subsection{Signal to noise ratio}
+\label{sec:ac_viper_snr}
 
 To assess the Signal to Noise Ratio (SNR), dedicated noise data was taken employing a \SI{5}{\hertz} random trigger.
 The data of \num{5000} events was combined.
@@ -147,7 +151,7 @@ Getting a clean MIP sample from experimental data requires a calibrated reconstr
 Therefore, the MIP signal was estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre} (see Section~\ref{sec:nu-detection_fs}).
 This can be converted to charge loss using the energy required to produce one electron-ion pair from Table~\ref{tab:lartpc_larprop}: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$.
 Additionally, charge recombination, diffusion and lifetime need to be taken into account (see Section~\ref{sec:lartpc_lar}).
-The recombination factor was measured by \icarus{}~\cite{icarusReco} and ArgoNeuT~\cite{argoneutReco} and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
+The recombination factor was measured by \icarus{}~\cite{icarusReco} and \argoneut{}~\cite{argoneutReco} and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
 With \AT{}~\cite{AT}, Bern measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
 Even using the more conservative value, this results in a transverse spread of $\approx \SI{0.9}{\milli\metre}$ for the pixel demonstrator drift time of $t = \SI{281}{\micro\second}$, according to Equation~\eqref{eq:lartpc_lar-diff}.
 This value lies well below the pixel pitch of $d_{\m{p}} = \SI{2.54}{\milli\metre}$.
@@ -180,7 +184,8 @@ Table~\ref{tab:viper_snr} lists the SNR values obtained from these signal values
 \afterpage{\clearpage}
 
 
-\subsection*{3D track reconstruction}
+\subsection{3D track reconstruction}
+\label{sec:ac_viper_3d}
 
 To demonstrate 3D track reconstruction, several thousand cosmic ray events were collected, many of which are MIPs, mostly muons.
 The charge readout was triggered by the light readout described above.
@@ -336,8 +341,8 @@ Due to constraints from the PCB manufacturer, the readout plane had to be split 
 Each \num{120 x 120} pixel half plane is divided into \num{8 x 15} ROIs of \num{15 x 8} pixels each.
 The ROIs are oriented with their longer dimension parallel to the beam direction to reduce the multiplexing ambiguities.
 One of the noise mitigation measures implemented for the Bern pixel demonstrator was to use the same differential warm signal path as used by \lariat{}.
-Therefore, the charge readout electronics used in \pixlar{} are quite similar to the \AT{} chain described in Section~\ref{sec:studies_electronics} after the upgrades.
-To trigger on scintillation light, one end of the TPC is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_light-col}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
+Therefore, the charge readout electronics used in \pixlar{} are quite similar to the \AT{} chain described in Section~\ref{sec:studies_electronics_at} after the upgrades.
+To trigger on scintillation light, one end of the TPC is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_light-col_al}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
 Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \AL{} module attached.
 
 \begin{figure}[htb]

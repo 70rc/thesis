@@ -7,7 +7,8 @@ Wires implemented as printed circuits solve the mechanical problems but not the 
 A pixelated charge readout solves both problems but introduces a new one of a drastically increased number of reaodut channels.
 
 
-\subsection*{A More Robust Approach to TPC Readout Wires}
+\subsection{A More Robust Approach to TPC Readout Wires}
+\label{sec:studies_charge-ro_cuoka}
 
 A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
 To investigate this solution, a proof of concept was performed at LHEP at the University of Bern.
@@ -49,11 +50,11 @@ A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive div
 
 The charge readout electronics were adopted from \AT{} without modifications.
 Charge signals are amplified by cryogenic charge amplifiers and then digitised at room temperature.
-More details can be found in Section~\ref{sec:studies_electronics}.
+More details can be found in Section~\ref{sec:studies_electronics_at}.
 
 Because of the limited space inside the cryostat, no internal light triggering system could be used.
 Instead, the digitisers were either triggered on one of the charge collection channels or by an external muon telescope.
-The latter was formed of two scintillator panels with photomultiplier tubes above and below the crystat, respectively.
+The latter was formed of two scintillator panels with photomultiplier tubes above and below the cryostat, respectively.
 Triggering directly on charge collection channels has the potential disadvantage of recording events only partially.
 If the triggering channel does not receive the first charge pulse of the event, all earlier pulses are lost, unless the data acquisition (DAQ) implements a pretrigger ring buffer of sufficient size.
 It is therefore preferable to trigger on the external muon telescope.
@@ -78,7 +79,8 @@ Because of this, it was decided not to further investigate copper on Kapton read
 \afterpage{\clearpage}
 
 
-\subsection*{Pixel Readout}
+\subsection{Pixel Readout}
+\label{sec:studies_charge-ro_pixel}
 
 As outlined in Section~\ref{sec:lartpc_challenges}, wire readouts are not suitable for \lartpc{}s the size of the envisioned future neutrino detectors.
 The ambiguities caused by the nature of wire readouts can be eliminated by using a fully pixelated readout.
@@ -114,7 +116,7 @@ Digital multiplexing means digitising all channels as close as possible to the r
 An advantage of this technique is that the technology for this already exists and is well established in information technology.
 Ideally, one would feed the data stream into an optical fibre which additionally would provide galvanic isolation of the readout from the DAQ.
 The challenging part is that all of this needs to happen at cryogenic temperatures which is far from trivial because most off-the-shelf components are not made for this.
-A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Section~\ref{sec:studies_electronics}.
+A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Section~\ref{sec:studies_electronics_pixel}.
 In contrast, genetic multiplexing and regions of interest are forms of analogue multiplexing.
 The difference to digital multiplexing is that multiple readout channels are combined into a single analogue link before digitising them at room temperature outside the cryostat.
 In the two schemes described here, this happens by connecting multiple readout channels to a single DAQ channel.

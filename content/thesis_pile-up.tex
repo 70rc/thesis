@@ -8,7 +8,7 @@ With \AC{} selected as  the \lar{} component of the \dune{} near detector (ND), 
 \end{enumerate}
 Number one is addressed in Section~\ref{sec:ac_viper}.
 This chapter will address question number two.
-More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the ND is described in Section~\ref{sec:dune-nd_ac}.
+More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the ND is described in Section~\ref{sec:dune-nd_ac_nd}.
 
 \begin{figure}[htb]
 	\centering
@@ -43,7 +43,8 @@ Therefore, the assumption of an infinitely short spill is a worst-case scenario 
 However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the same.
 
 
-\subsection*{\Pgpz pile-up simulation}
+\subsection{\Pgpz pile-up simulation}
+\label{sec:dune-nd_pile-up_simulation}
 
 One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
 In the simulation, the quantities to be measured by the experiment are known a priori.
@@ -110,12 +111,12 @@ Therefore, a rather primitive algorithm for true 3D space points was implemented
 This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
-Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics}.
-The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:dune-nd_ac}\todo{justify!}.
+Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics_pixel}.
+The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the TPC.
-MicroBooNE has achieved a resolution in drift direction $< \SI{0.3}{\centi\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
+\uboone{} has achieved a resolution in drift direction $< \SI{0.3}{\centi\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
 Finally, a conservative value also accounts for charge diffusion.
 Furthermore, it is assumed that EM showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
 In reality, the direction and starting point can be derived from the vertex producing the \Pgpz, and a rough shower direction obtained from a pattern recognition.
@@ -221,11 +222,11 @@ Without the latter, there is a significant number of photons produced by \Pgpz d
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.
 
-Active volume dimensions are taken from the preliminary \dune{} near detector design described in Section~\ref{sec:dune-nd_ac}.
+Active volume dimensions are taken from the preliminary \dune{} near detector design described in Section~\ref{sec:dune-nd_ac_nd}.
 Note that the height was taken as \SI{2.5}{\metre} as opposed to the \SI{3}{\metre} of the near detector design.
 The reason is that another \SI{0.5}{\metre} safety margin were added after this pile-up simulation had been completed.
 However, the influence on the pile-up study should be negligible.
-The hadron containment studies described in Section~\ref{sec:dune-nd_ac} indicated that \SI{2.5}{\metre} height is the bare minimum.
+The hadron containment studies described in Section~\ref{sec:dune-nd_ac_nd} indicated that \SI{2.5}{\metre} height is the bare minimum.
 A safety margin was added to account for unknown uncertainties in the simulation.
 However, the same simulation framework was used for both the containment and the pile-up study.
 Therefore, the \SI{2.5}{\metre} height is sufficient for the pile-up study.
@@ -252,7 +253,8 @@ Therefore, it can be assumed that the actual pile-up-related energy reconstructi
 It should be noted that the upper limit excludes only energy deposited by muons directly and not by their descendants (e.g.\ $\delta$ rays or Michel electrons).
 Whereas the lower limit excludes charge deposited by photons, neutrons, and any of their descendants.
 
-\subsection*{Results}
+\subsection{Results}
+\label{sec:dune-nd_pile-up_results}
 
 \begin{figure}[htb]
 	\centering

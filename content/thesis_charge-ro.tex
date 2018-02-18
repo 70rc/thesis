@@ -7,7 +7,7 @@ Wires implemented as printed circuits solve the mechanical problems but not the 
 A pixelated charge readout solves both problems but introduces a new one of a drastically increased number of reaodut channels.
 
 
-\subsection{A More Robust Approach to \gls{ac:tpc} Readout Wires}
+\subsection{A More Robust Approach to \glsentryshort{tpc} Readout Wires}
 \label{sec:studies_charge-ro_cuoka}
 
 A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
@@ -24,7 +24,7 @@ Using an FR4 (Flame Retardant) structure as in classical PCB designs is therefor
 Very thin support structures can be provided by using a flexible PCB made from Kapton instead of FR4.
 These can be made as thin as a few \SI{10}{\micro\metre}.
 For this test, a Kapton layer of \SI{50}{\micro\metre} was used with a single induction plane on the back (Fig.~\ref{fig:cuoka_readout-plane}).
-The Kapton layer was supported by an FR4 frame for mounting on the \gls{ac:tpc}.
+The Kapton layer was supported by an FR4 frame for mounting on the \gls{tpc}.
 
 \begin{figure}[htb]
 	\centering
@@ -44,7 +44,7 @@ A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive div
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{cuoka/tpc}
-	\caption{\gls{ac:tpc} used for the copper on Kapton readout test.}
+	\caption{\gls{tpc} used for the copper on Kapton readout test.}
 	\label{fig:cuoka_tpc}
 \end{figure}
 
@@ -127,7 +127,7 @@ In any case, if the event is too complex, it cannot be reconstructed properly.
 While genetic multiplexing has been shown to work for one-dimensional readouts (wires), there is no known solution for two dimensions (pixels).\todo{sauce}
 
 A third technique is to subdivide a pixelated readout plane in so-called regions of interest or ROIs.
-This scheme was tested for an earlier PhD thesis at LHEP at the University of Bern using a \gls{ac:micromegas} in a xenon gas \gls{ac:tpc}~\cite{maplesyrup}.
+This scheme was tested for an earlier PhD thesis at LHEP at the University of Bern using a \gls{micromegas} in a xenon gas \gls{tpc}~\cite{maplesyrup}.
 All pixels at the same position inside the ROIs are connected to the same DAQ channel.
 For instance, let us assume squared regions of interest.
 One DAQ channel would connect to all the pixels in the top left corners of the ROIs.
@@ -151,7 +151,7 @@ A possible solution to this is to power only that part of the readout that is ac
 This would require a means to wake up the part of the readout where the charge is arriving before it is collected.
 Provided, the wake-up time is short enough, inductive grids on regions of interest could allow precisely for this.
 
-As the ROI approach had already been demonstrated in a gas \gls{ac:tpc}, it was chosen for the first prototype of a pixelated \lartpc{}.
+As the ROI approach had already been demonstrated in a gas \gls{tpc}, it was chosen for the first prototype of a pixelated \lartpc{}.
 Because the detector is a single-phase \lartpc{}, and thus no gas amplification as in Micromegas is needed, the readout plane could be realised as a conventional Printed Circuit Board PCB.
-Alongside the PCB, a new \gls{ac:tpc} was designed which can be reused for future prototyping efforts.
-The design of PCB and \gls{ac:tpc} as well as the results from the first tests are described in Section~\ref{sec:ac_viper}.
+Alongside the PCB, a new \gls{tpc} was designed which can be reused for future prototyping efforts.
+The design of PCB and \gls{tpc} as well as the results from the first tests are described in Section~\ref{sec:ac_viper}.

@@ -31,7 +31,7 @@
 \usepackage{tabu} % much better than tabular
 \usepackage{booktabs} % fancy tables
 \usepackage{listings} % list source code
-\usepackage{chngcntr} % continuous footnote numeration (in chapter)
+\usepackage{chngcntr} % modify counter reset behaviour
 \usepackage{pdfpages} % insert PDF pages
 \usepackage{graphicx} % for graphics, breaks (e)ps support
 \usepackage{xcolor} % colour
@@ -61,18 +61,18 @@
 
 \newcommand*{\AT}{{ARGONTUBE}}
 \newcommand*{\AC}{{ArgonCube}}
-\newcommand*{\AL}{\gls{ac:arclight}}
-\newcommand*{\dune}{\gls{ac:dune}}
-\newcommand*{\uboone}{\gls{ac:uboone}}
-\newcommand*{\sbnd}{\gls{ac:sbnd}}
-\newcommand*{\icarus}{\gls{ac:icarus}}
-\newcommand*{\lariat}{\gls{ac:lariat}}
+\newcommand*{\AL}{\gls{arclight}}
+\newcommand*{\dune}{\gls{dune}}
+\newcommand*{\uboone}{\gls{uboone}}
+\newcommand*{\sbnd}{\gls{sbnd}}
+\newcommand*{\icarus}{\gls{icarus}}
+\newcommand*{\lariat}{\gls{lariat}}
 \newcommand*{\larpix}{{LArPix}}
 \newcommand*{\pixlar}{{PixLAr}}
-\newcommand*{\argoneut}{\gls{ac:argoneut}}
+\newcommand*{\argoneut}{\gls{argoneut}}
 
-\newcommand*{\lar}{\gls{ac:lar}}
-\newcommand*{\lartpc}{\gls{ac:lartpc}}
+\newcommand*{\lar}{\gls{lar}}
+\newcommand*{\lartpc}{\gls{lartpc}}
 
 \newcommand*{\nucleon}{\HepGenParticle{N}{}{}}
 \newcommand*{\nucleus}{\HepGenParticle{A}{}{}}
@@ -95,7 +95,7 @@
 
 \usepackage[pdftex, unicode, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % should be last command in preamble
 
-\usepackage[xindy, toc]{glossaries} % glossary according go latex wikibooks
+\usepackage[xindy, acronym, nomain]{glossaries} % glossary according go latex wikibooks
 \makeglossaries
 \usepackage[xindy]{imakeidx}
 \makeindex
@@ -117,6 +117,7 @@
 	\listoffigures
 	\listoftables
 	\lstlistoflistings
+	\printacronyms
 	
 	\clearpage % without this, previous page is already arabic; pay attention to twoside layout!
 	\pagenumbering{arabic}
@@ -149,7 +150,6 @@
 	\input{content/thesis_acknowledgements}
 	
 	\printbibliography
-	\printglossaries
 	
 	\appendix
 	

@@ -1,11 +1,12 @@
-\chapter{Towards the \dune{} Near Detector}
+\chapter{Towards the \glsentryshort{dune} \glsentrylong{nd}}
 \label{chap:dune-nd}
+\glsreset{nd}
 
-The \AC{} concept, described in Section~\ref{sec:ac_argoncube}, is aimed at enabling a \lartpc{} component in the \dune{} near detector complex.
+The \AC{} concept, described in Section~\ref{sec:ac_argoncube}, is aimed at enabling a \lartpc{} component in the \dune{} \gls{nd} complex.
 This chapter will present a more detailed design for the near detector, together with a feasibility study of a \lartpc{} at the expected rates.
 
 
-\section{\AC{} in the \dune{} Near Detector}
+\section{\AC{} in the \glsentryshort{dune} \glsentrylong{nd}}
 \label{sec:dune-nd_ac}
 
 While Section~\ref{sec:ac_argoncube} gave a general overview of the \AC{} concept, this section focusses on the detailed implementation for the \dune{} near detector.
@@ -32,25 +33,25 @@ Finally, the current status of an \AC{} \lartpc{} component for the \dune{} near
 
 The goals of this prototype are testing the mechanical design and cryogenic systems, comparing different charge and light readout systems, and studying module insertion and extraction procedures with a focus their influence on purity.
 For comparison, one of the four modules will be equipped with a classic wire readout.
-To investigate purity, first tests will be performed with the \AC{} demonstrator \gls{ac:tpc} described in Section~\ref{sec:ac_viper}.
-The \gls{ac:tpc} will be mounted inside an otherwise empty module, hanging from an intermediate support layer.
+To investigate purity, first tests will be performed with the \AC{} demonstrator \gls{tpc} described in Section~\ref{sec:ac_viper}.
+The \gls{tpc} will be mounted inside an otherwise empty module, hanging from an intermediate support layer.
 This will also serve as a first cryogenic stress-test of the module structure.
 
 The four modules will be housed in an existing cylindrical, vacuum-insulated cryostat at the University of Bern.
 With its approximately \SI{2}{\metre} diameter by \SI{2}{\metre} height it provides a \lar{} bath volume of roughly \SI{6}{\metre\cubed}.
 To fit inside the bath, the modules are scaled down to a footprint of \SI{0.67 x 0.67}{\metre} and a height of \SI{1.81}{\metre}.
-Due to the split-\gls{ac:tpc} design, the resulting cathode voltage required for a \SI{1}{\kilo\volt\per\centi\metre} field is below \SI{35}{\kilo\volt}.
+Due to the split-\gls{tpc} design, the resulting cathode voltage required for a \SI{1}{\kilo\volt\per\centi\metre} field is below \SI{35}{\kilo\volt}.
 Instead of service modules, cooling is provided by two liquid nitrogen turbo-cooling circuits attached to the inner cryostat wall inside the insulation vacuum.
 They cool the \lar{} bath via evaporation of the liquid nitrogen.
 The nitrogen flow has to be regulated precisely to keep the \lar{} stable and prevent it from boiling or freezing.
 
-The height of the actual \gls{ac:tpc} in a fully equipped module is \SI{1235}{\milli\metre}.
+The height of the actual \gls{tpc} in a fully equipped module is \SI{1235}{\milli\metre}.
 On the bottom, \SI{160}{\milli\metre} are occupied by the heat exchanger and check valves for \lar{} exchange with the bath upon insertion and extraction.
-The remaining room on top of the \gls{ac:tpc} is filled up by the HV feedthrough, a buffer gas phase, and a potential recirculation pump.
+The remaining room on top of the \gls{tpc} is filled up by the HV feedthrough, a buffer gas phase, and a potential recirculation pump.
 All support structures except for the flanges at the module top and bottom are made from G10, including most of the screws.
 The thickness of the side walls is \SI{10}{\milli\metre} while the flanges are made of \SI{20}{\milli\metre} stainless steel plates.
 Figure~\ref{fig:2x2_dim} gives the detailed dimensions of a prototype module.
-It depicts the first module that will be equipped with the demonstrator \gls{ac:tpc}.
+It depicts the first module that will be equipped with the demonstrator \gls{tpc}.
 For this test, an internal pump salvaged from \AT{} will be used in combination with oxygen traps mounted on top of the module.
 Engineering drawings of this module are given in Figure~\ref{fig:ac_module}.
 
@@ -79,8 +80,8 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 		Detector size &					\num{2 x 2} &			\num{4 x 5} &			mod \\
 		Module footprint &				\num{0.670 x 0.670} &	\num{1.000 x 1.000} &	\metre\squared \\
 		Module height &					1.810 &					3.500 &					\metre \\
-		\gls{ac:tpc} height &			1.235 &					3.000 &					\metre \\
-		Total \gls{ac:tpc} volume &		2.218 &					60.000 &				\metre\cubed \\
+		\gls{tpc} height &				1.235 &					3.000 &					\metre \\
+		Total \gls{tpc} volume &		2.218 &					60.000 &				\metre\cubed \\
 		Flange thickness &				0.020 &					0.020 &					\metre \\
 		Side wall thickness &			0.010 &					0.010 &					\metre \\
 		Charge readout thickness &		0.020 &					0.020 &					\metre \\
@@ -92,7 +93,7 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 \end{table}
 
 
-\subsection{Preliminary Near Detector Design}
+\subsection{Preliminary \glsentrylong{nd} Design}
 \label{sec:dune-nd_ac_nd}
 
 \begin{figure}[htb]
@@ -119,7 +120,7 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 The \AC{} near detector design is based on a scaled-up version of the \num{2 x 2} module design described above.
 Modules will have a footprint of \SI{1 x 1}{\metre} and a height of \SI{3.5}{\metre}.
 Again, \SI{0.1}{\metre} at the bottom are occupied by the heat exchanger and valves while \SI{0.4}{\metre} at the top are taken up by feedthroughs and the gas phase.
-This results in a \gls{ac:tpc} size of \SI{1 x 1 x 3}{\metre}, split into two halves by the cathode.
+This results in a \gls{tpc} size of \SI{1 x 1 x 3}{\metre}, split into two halves by the cathode.
 The full detector will consist of \num{4 x 5} modules with the longer dimension in beam direction.
 These dimensions were optimised for maximum hadron containment by means of simulations done by the neutrino group at Lawrence Berkeley National Laboratory (LBNL)~\cite{lartpcSizeChris}.
 While horizontal dimensions are unproblematic, the vertical \SI{3}{\metre} are at the lower limit.

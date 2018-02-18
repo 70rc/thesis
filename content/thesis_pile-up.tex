@@ -1,4 +1,4 @@
-\section{Feasibility Study of a Pixelated \lartpc{} for the \dune{} Near Detector}
+\section{Feasibility Study of a Pixelated \glsentryshort{lartpc} for the \glsentryshort{dune} \glsentrylong{nd}}
 \label{sec:dune-nd_pile-up}
 
 With \AC{} selected as  the \lar{} component of the \dune{} near detector (ND), there were two main question that needed to be addressed:
@@ -22,17 +22,17 @@ More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} whil
 
 \lartpc{}s are intrinsically slow detectors with a readout time of $\approx \SI{0.5}{\milli\second\per\metre}$ drift length for a \SI{1}{\kilo\volt\per\centi\metre} drift field (see Chapter~\ref{chap:lartpc}).
 This causes a pile-up of events in the detector; if the latter was infinitely fast, all neutrino interactions could be separated in time.
-In reality, even the \AC{} \glspl{ac:tpc} with a drift length of only \SI{0.5}{\metre}, corresponding to a full readout cycle of \SI{250}{\micro\second}, are significantly slower than the spill duration of \SI{10}{\micro\second} of the \dune{} beamline reference design.~\cite{dune2}
+In reality, even the \AC{} \glspl{tpc} with a drift length of only \SI{0.5}{\metre}, corresponding to a full readout cycle of \SI{250}{\micro\second}, are significantly slower than the spill duration of \SI{10}{\micro\second} of the \dune{} beamline reference design.~\cite{dune2}
 Figure~\ref{fig:dune-nd_charge-flux} visualises this effect.
 The charge arriving at the readout is represented as an average current in arbitrary units (the same for top and bottom, though).
 Anode and cathode are represented by the vertical red lines, relative to the trigger timestamp.
 The magnitude of the readout current is a direct measure for event pile-up in the corresponding time slice.
-For simplicity, an infinitely short spill duration was assumed for the pile-up study (top), i.e.\ the whole ionisation charge produced by one beam spill is deposited instantaneously inside the \gls{ac:tpc} volume.
+For simplicity, an infinitely short spill duration was assumed for the pile-up study (top), i.e.\ the whole ionisation charge produced by one beam spill is deposited instantaneously inside the \gls{tpc} volume.
 As the time in between beam spills is $\order{\SI{1}{\second}}$, all this charge can be read out within one drift time.
 In this case, the average current (pile-up) seen by the readout is constant over the whole readout cycle.
 The realistic case with the spill duration of the reference beam is depicted in the bottom plot.
 At the beginning of the readout cycle, there is no charge deposited yet, the current (pile-up) is zero.
-Over the duration of the beam spill, ionisation charge accumulates inside the \gls{ac:tpc} volume while the exisiting charge is transported towards the readout by the drift field.
+Over the duration of the beam spill, ionisation charge accumulates inside the \gls{tpc} volume while the exisiting charge is transported towards the readout by the drift field.
 After the beam spill is over, the remainder of the initial drift volume (\SI{240}{\micro\second}) contains a uniform charge density.
 The additional \SI{10}{\micro\second}, now in front of the cathode and part of the next readout cycle, again, contain a ramped charge density with zero charge at the cathode, corresponding to the end of the spill.
 In short, a spill duration shorter than but comparable to the drift time results in the shape of the ionisation current (event pile-up) seen over time to become a trapecoid rather than a square.
@@ -43,7 +43,7 @@ Therefore, the assumption of an infinitely short spill is a worst-case scenario 
 However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the same.
 
 
-\subsection{\Pgpz pile-up simulation}
+\subsection{\texorpdfstring{\Pgpz}{Pi0} pile-up simulation}
 \label{sec:dune-nd_pile-up_simulation}
 
 One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
@@ -115,7 +115,7 @@ Section~\ref{sec:ac_viper} proves that this is feasible provided the current rec
 The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
-Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the \gls{ac:tpc}.
+Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the \gls{tpc}.
 \uboone{} has achieved a resolution in drift direction $< \SI{0.3}{\centi\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
 Finally, a conservative value also accounts for charge diffusion.
 Furthermore, it is assumed that EM showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.

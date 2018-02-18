@@ -9,7 +9,7 @@
 The difficulties involved with the necessary voltages have been highlighted by the Bern Group’s work, in which I have already played a key role\cite{breakdown_16}.
 For the first time, we took high speed footage of breakdowns in \lar{}, measured their current-voltage characterisitcs and recorded their optical spectral distribution.
 These measurements help to understand the physics of the breakdowns and develop ways to mitigate them and/or protect future detectors from catastrophic failures.
-Our HV studies have already influenced the design of \uboone{} and will continue to impact the design of future experiments.
+Our \gls{hv} studies have already influenced the design of \uboone{} and will continue to impact the design of future experiments.
 
 
 \subsection{Experimental Setup}
@@ -20,7 +20,7 @@ Our HV studies have already influenced the design of \uboone{} and will continue
 	\includegraphics[width=0.265\textwidth]{hv/FT}
 	\includegraphics[width=0.39\textwidth]{hv/setup1_lowres}
 	\includegraphics[width=0.295\textwidth]{hv/setup2_lowres}
-	\caption{Experimental setup. Left: high voltage feed-through with the spherical cathode. Middle: the feed-through before insertion into the cryostat. 1.~ground shield of the feed-through; 2.~ribbed PET dielectric; 3.~cathode sphere; 4.~anode plate sitting on a tripod on the grounded bottom of the cryostat; two of the tripod legs are insulated while the third one contains a \SI{50}{\ohm} shunt resistor. Right: linear translation unit used to set the cathode-anode gap width~(5).}
+	\caption{Experimental setup. Left: \gls{hv} feed-through with the spherical cathode. Middle: the feed-through before insertion into the cryostat. 1.~ground shield of the feed-through; 2.~ribbed PET dielectric; 3.~cathode sphere; 4.~anode plate sitting on a tripod on the grounded bottom of the cryostat; two of the tripod legs are insulated while the third one contains a \SI{50}{\ohm} shunt resistor. Right: linear translation unit used to set the cathode-anode gap width~(5).}
 	\label{fig:hv_setup1}
 \end{figure}
 
@@ -45,7 +45,7 @@ More details of the setup can be found in~\cite{breakdown_14}.
 
 The control circuit of the \emph{Spellman SL150}\footnote{\url{http://www.spellmanhv.com}} power supply unit (PSU) outputs two low voltages proportional to the voltage and the current at the output, respectively.
 These voltages are recorded with a \emph{Tektronix DPO 3054}\footnote{\url{http://www.tek.com}} digital oscilloscope.
-The output polarity of the PSU can be switched by replacing the output HV multiplier module.
+The output polarity of the PSU can be switched by replacing the output \gls{hv} multiplier module.
 To measure the discharge current, a \SI{50}{\ohm} shunt resistor is placed between the anode plate and the vessel ground which is connected to the ground return of the PSU. The voltage drop across the shunt resistor is transmitted via a matched coaxial line to the oscilloscope.
 The latter is controlled by a LabVIEW program.
 The equivalent electric scheme of the setup is shown in Figure~\ref{fig:hv_scheme}. 
@@ -57,13 +57,13 @@ Therefore, for the measurement of the discharge current only the voltage drop ac
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{hv/scheme}
-	\caption{Electric scheme of the experimental setup. The oscilloscope is connected to the control circuit of the high voltage power supply and to a shunt resistor on the ground return path. From the recorded voltages, the voltage and the current of the discharge can be derived.}
+	\caption{Electric scheme of the experimental setup. The oscilloscope is connected to the control circuit of the \gls{hv} power supply and to a shunt resistor on the ground return path. From the recorded voltages, the voltage and the current of the discharge can be derived.}
 	\label{fig:hv_scheme}
 \end{figure}
 
 The oscilloscope is triggered by the channel connected to the shunt resistor.
 The breakdown discharge current is composed of the output current of the PSU and the discharge current of the setup capacitance $C_{\m{gap}}$ as $I_{\m{gap}} = I_{\m{out}} + C_{\m{gap}}\frac{\m{d}V_{\m{gap}}}{\m{d}t}$.
-To limit the PSU output current an additional resistor R$_{lim}$ is inserted into the HV output circuit.
+To limit the PSU output current an additional resistor R$_{lim}$ is inserted into the \gls{hv} output circuit.
 The measured values for the circuit parameters are summarized in Table~\ref{tab:hv_table1}.
 The knowledge of these parameters allows to calculate the voltage across the gap during breakdown. 
 
@@ -113,7 +113,7 @@ No boiling was detected anywhere near the discharge gap region during the measur
 	\label{fig:hv_images}
 \end{figure}
 
-In earlier measurements~\cite{breakdown_14}, sporadic discharges were experienced across the ribs of the dielectric of the high voltage feed-through.
+In earlier measurements~\cite{breakdown_14}, sporadic discharges were experienced across the ribs of the dielectric of the \gls{hv} feed-through.
 By rising the level of the \lar{} by about \SI{20}{\centi\metre}, it was possible to suppress these discharges completely.
 This improved the cooling of the feed-through and reduced bubble production near the bottom of the feed-through grounded shield, placed \SI{60}{\centi\metre} below the liquid surface. 
 
@@ -326,7 +326,7 @@ Again, the velocity is only a lower limit as it was calculated by dividing the g
 There are two distinct types of events.
 While the selected streamers are rather slow (velocity $\approx \SI{300}{\milli\metre\per\second}$, independent of the field), the whole data set contains much faster events with the total time in the ns scale (not shown).
 The knowledge of the streamer velocity can be applied in the design of protection circuits for future \lartpc{}s.
-If a breakdown condition is detected during the streamer phase, the high voltage can be killed prior to a disruptive spark phase potentially damaging sensitive detector electronics.
+If a breakdown condition is detected during the streamer phase, the \gls{hv} can be killed prior to a disruptive spark phase potentially damaging sensitive detector electronics.
 
 
 \subsection{A Method to Suppress Electric Breakdowns in \glsentrylong{lar}}

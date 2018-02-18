@@ -39,7 +39,7 @@ The full schematic of the bias circuit is depicted in Figure~\ref{fig:viper_pcb_
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixel_pcb_schematic}
 	\caption{Schematic of the bias circuit for the \AC{} pixel demonstrator PCB.
-	On the left, the pinheader connected to the bias HV power suplly is shown. In the middle and on the right are the connections to the pixels and inductive ROI grids.
+	On the left, the pinheader connected to the bias \gls{hv} power suplly is shown. In the middle and on the right are the connections to the pixels and inductive ROI grids.
 	The connections to the preamplifier inputs are located at the positions of numbers P1--P36 (pixels) and I1--I28 (ROIs).
 	For simplicity and universality, the same circuit was used for both pixels and ROIs eventhough for the measurements described in this work, only the inductive ROI grids were biased.
 	Therefore, the ROIs are connected as depicted (R2 and R39--R66, C2 and C39--C66).
@@ -92,7 +92,7 @@ Each resistor is soldered to its neighbour, and fixed to the field cage at each 
 	\centering
 	\includegraphics[width=0.26\linewidth]{viper/viper_original}
 	\includegraphics[width=0.62\linewidth]{viper/viper_sipm}
-	\caption{\small  Left: Photograph of the  pixel demonstration \gls{tpc} at Bern, with the HV feedthrough.
+	\caption{\small  Left: Photograph of the  pixel demonstration \gls{tpc} at Bern, with the \gls{hv} feedthrough.
 	Right: Close-up of the light collection system, showing wavelength shifting fibres coupling \glspl{sipm} to the TPB-coated light guides.}
 	\label{fig:viper_v1per}
 \end{figure}
@@ -114,11 +114,11 @@ This coincidence is used in order to improve trigger purity.
 
 The pixel demonstration \gls{tpc} is housed in a double-bath vacuum-insulated cryostat with the outer bath open to atmosphere.
 A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of \lar{}.
-This is the same cryostat that was used for the HV studies described in Section~\ref{sec:studies_hv}.
+This is the same cryostat that was used for the \gls{hv} studies described in Section~\ref{sec:studies_hv}.
 The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with \lar{} filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
 \lar{} purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\order{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
 
-The HV feedthrough remains unchanged from the breakdown studies (Section~\ref{sec:studies_hv}); a PET-C polymer dielectric capable of potentials as high as \SI{-130}{\kilo\volt}.
+The \gls{hv} feedthrough remains unchanged from the breakdown studies (Section~\ref{sec:studies_hv}); a PET-C polymer dielectric capable of potentials as high as \SI{-130}{\kilo\volt}.
 A low-pass filter was added between the power supply and feedthrough, which consists of an \SI{800}{\pico\farad} decoupling capacitor grounded between two \SI{100}{\mega\ohm} resistors connected in series, i.e.\ an RC low-pass filter with an additional protection resistor at the output.
 For proper insulation, the whole assembly is submerged in transformer oil.
 

@@ -7,7 +7,7 @@
 \label{sec:studies_hv}
 
 The difficulties involved with the necessary voltages have been highlighted by the Bern Group’s work, in which I have already played a key role\cite{breakdown_16}.
-For the first time, we took high speed footage of breakdowns in liquid argon, measured their current-voltage characterisitcs and recorded their optical spectral distribution.
+For the first time, we took high speed footage of breakdowns in \lar{}, measured their current-voltage characterisitcs and recorded their optical spectral distribution.
 These measurements help to understand the physics of the breakdowns and develop ways to mitigate them and/or protect future detectors from catastrophic failures.
 Our HV studies have already influenced the design of \uboone{} and will continue to impact the design of future experiments.
 
@@ -40,7 +40,7 @@ The field map was calculated using the COMSOL FEM package.\footnote{\url{http://
 	\label{fig:hv_efield}
 \end{figure}
 
-The purity of the argon after filling was estimated with a small time projection chamber (according to the method described in~\cite{2photonAbs}) to be of the order of \SI{1}{ppb} of oxygen-equivalent impurity concentration.
+The purity of the argon after filling was estimated with a small \gls{tpc} chamber (according to the method described in~\cite{2photonAbs}) to be of the order of \SI{1}{ppb} of oxygen-equivalent impurity concentration.
 More details of the setup can be found in~\cite{breakdown_14}.
 
 The control circuit of the \emph{Spellman SL150}\footnote{\url{http://www.spellmanhv.com}} power supply unit (PSU) outputs two low voltages proportional to the voltage and the current at the output, respectively.
@@ -114,7 +114,7 @@ No boiling was detected anywhere near the discharge gap region during the measur
 \end{figure}
 
 In earlier measurements~\cite{breakdown_14}, sporadic discharges were experienced across the ribs of the dielectric of the high voltage feed-through.
-By rising the level of the liquid argon by about \SI{20}{\centi\metre}, it was possible to suppress these discharges completely.
+By rising the level of the \lar{} by about \SI{20}{\centi\metre}, it was possible to suppress these discharges completely.
 This improved the cooling of the feed-through and reduced bubble production near the bottom of the feed-through grounded shield, placed \SI{60}{\centi\metre} below the liquid surface. 
 
 The measurement campaign comprised \num{5}~runs with a total of more than \num{5000} measured discharges, with varying sphere diameter, surface treatment and polarity.
@@ -164,7 +164,7 @@ An example of such a discharge is shown in Figure~\ref{fig:hv_side} and the corr
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=.75\textwidth]{hv/sidespark}
-	\caption{An image of the streamer stage of the discharge, initiated at the side surface of a \SI{5}{\centi\metre} cathode sphere at \SI{-121.5}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate. The cone of electrons emitted into liquid from the streamer tip towards the anode (lower edge of the image) produces bright orange luminescence in liquid argon.}
+	\caption{An image of the streamer stage of the discharge, initiated at the side surface of a \SI{5}{\centi\metre} cathode sphere at \SI{-121.5}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate. The cone of electrons emitted into liquid from the streamer tip towards the anode (lower edge of the image) produces bright orange luminescence in \lar{}.}
 	\label{fig:hv_side}
 \end{figure}
 
@@ -198,7 +198,7 @@ Evidence for the presence of ionization comes from the analysis of the emission 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{hv/spectro}
-	\caption{Spectra of the field emission cone (blue) and the streamer (red) for a breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{-56.2}{\kilo\volt} and \SI{3.0}{\milli\metre} apart from the anode plate. The spectra were integrated over a time of \SI{1}{\milli\second} with the spectrum of the streamer taken \SI{2}{\milli\second} after the spectrum of the cone. The blue curve is a broad continuum similar to the scintillation spectrum of liquid argon, while the red curve features a distinct peak around \SI{700}{\nano\metre} which is attributed the the 3p$^5$4p--3p$^5$4s transition of neutral argon gas.}
+	\caption{Spectra of the field emission cone (blue) and the streamer (red) for a breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{-56.2}{\kilo\volt} and \SI{3.0}{\milli\metre} apart from the anode plate. The spectra were integrated over a time of \SI{1}{\milli\second} with the spectrum of the streamer taken \SI{2}{\milli\second} after the spectrum of the cone. The blue curve is a broad continuum similar to the scintillation spectrum of \lar{}, while the red curve features a distinct peak around \SI{700}{\nano\metre} which is attributed the the 3p$^5$4p--3p$^5$4s transition of neutral argon gas.}
 	\label{fig:hv_spectro}
 \end{figure}
 
@@ -206,7 +206,7 @@ The emission of light by charged particles drifting in noble liquids under the i
 Recent studies in this field are well covered by~\cite{buzulutskov1, buzulutskov2, buzulutskov3} and references therein.
 The red electro-luminescence, namely the peak around \SI{700}{\nano\metre} of the red curve in Figure~\ref{fig:hv_spectro}, produced by electrons drifting in argon gas is attributed to the 3p$^5$4p--3p$^5$4s transition of neutral argon~\cite{Boffard}.
 The energy needed for the excitation of the electrons to the 3p$^5$4p states from the ground state in argon gas is \SIrange{12.9}{13.5}{\electronvolt}.
-The ionization potential of liquid argon is \SI{13.84}{\electronvolt}~\cite{2photonAbs}.
+The ionization potential of \lar{} is \SI{13.84}{\electronvolt}~\cite{2photonAbs}.
 For the condensed state, only the scintillation spectrum under ionization by high-energy charged particles has been described in literature so far~\cite{Heindl}.
 The electro-luminescence spectrum measured (blue curve in Figure~\ref{fig:hv_spectro}) exhibits a broad continuum, similar to the scintillation spectrum.
 However, the center value at about \SI{580}{\nano\metre} does not correspond to any of the electron transitions of neutral, singly- or doubly-ionized argon atoms.
@@ -214,7 +214,7 @@ The nearest candidate for such an emission is the residual oxygen with its stron
 However, if attributable to oxygen, this line has to also be observed at the later stages of the discharge, which does not take place in the measurements.
 
 The broad width of the spectrum could be explained by smearing the energy levels into bands due to inter-atomic interactions in liquid and by the formation of exciton clusters~\cite{Bernstorff, Foerstel}.
-If the energy band structure of excitons in liquid argon is continuous, as suggested by the scintillation spectrum, there might be a significant overlap of the band corresponding to the 3p$^5$4p atomic levels and the conduction band above \SI{13.84}{\electronvolt}.
+If the energy band structure of excitons in \lar{} is continuous, as suggested by the scintillation spectrum, there might be a significant overlap of the band corresponding to the 3p$^5$4p atomic levels and the conduction band above \SI{13.84}{\electronvolt}.
 The presence of an observable emission at about \SI{580}{\nano\metre}, in this case, is inevitably linked to a presence of ionized states.
 
 Another signature of avalanche ionization in this phase of the breakdown is the increase of the cone brightness as it develops from the cathode towards the anode.
@@ -339,11 +339,11 @@ This study has been published in~\cite{latex}.
 The setup was the same as the one used to study the breakdowns, described in Section~\ref{sec:studies_hv_setup}.
 Additionally, the cathode sphere was coated by a layer of polymer.
 In order to effectively suppress electric breakdowns, the coating needs to have a high dielectric strength while at the same time staying elastic at cryogenic temperatures (\SI{87}{\kelvin} for a \lar{} detector).
-Furthermore, the excess electron mobility of the coating needs to be significantly lower than the one of liquid argon.
+Furthermore, the excess electron mobility of the coating needs to be significantly lower than the one of \lar{}.
 If this is the case, electrons emitted by the cathode via field emission can accumulate inside the coating layer and in turn locally reduce high fields and thus quench the field emission.
 
 Natural polyisoprene (latex rubber) is a polymer that satisfies the above requirements.
-Its dielectric strength is reported to be in the range of \SIrange{1}{2}{\mega\volt\per\centi\metre}~\cite{fizikaDielektrikov}, its dielectric constant is \num{2.1} which is close to the \num{1.6} of liquid argon, and its room temperature resistivity is \SI{1e16}{\ohm\centi\metre}.
+Its dielectric strength is reported to be in the range of \SIrange{1}{2}{\mega\volt\per\centi\metre}~\cite{fizikaDielektrikov}, its dielectric constant is \num{2.1} which is close to the \num{1.6} of \lar{}, and its room temperature resistivity is \SI{1e16}{\ohm\centi\metre}.
 A polyisoprene layer of several \SI{100}{\micro\metre} can be deposited on the sphere by dipping the latter in purified latex milk.
 After drying at room temperature, the coating is leached in deionised water for several hours and finally vulcanised at \SI{70}{\celsius} for one hour.
 Leaching is needed to remove all soluble pollutants contained in natural latex while the vulcanisation increases the tear strength of the coating.

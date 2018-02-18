@@ -198,7 +198,7 @@ The cylinder radius was tuned to optimise the trade-off between missed and misid
 	\label{fig:dune-nd_2MW_misid-rel-y}
 \end{figure}
 
-Argon Box propagates the neutrino interaction events it gets from GENIE through liquid argon, the output is a ROOT tree of neutrino interaction events.
+Argon Box propagates the neutrino interaction events it gets from GENIE through \lar{}, the output is a ROOT tree of neutrino interaction events.
 To get a realistic simulation of beam events in the detector, these events need to be distributed randomly in time and space.
 Beam spills are simulated by drawing the number of events for each spill from a Poisson distribution whose mean is calculated from the beam intensity and the target mass according to the values in Table~\ref{tab:nu-detection_beam-params}.
 The resulting number of events is taken from the Argon Box ROOT tree and their vertices are placed within the \lar{} volume at coordinates drawn from a uniform distribution.

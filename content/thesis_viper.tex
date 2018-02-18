@@ -83,7 +83,7 @@ The field-cage consists of aluminium rings supported by clear acrylic rings, wit
 The dimensions of the field-cage and cathode are shown in Figure~\ref{fig:viper_cad}.
 Alternating acrylic rings are split, to allow for the circulation of purified \lar{} within the \gls{tpc} volume.
 Four square section PolyAmide-Imide (PAI) uprights support the cathode and field cage, with PolyEther Ether Ketone (PEEK) screws fixing the pillars to the acrylic rings.
-The four PAI uprights connect to a PAI frame which supports the anode plane and the light readout Silicon PhotoMultipliers (SiPMs), see Figure~\ref{fig:viper_v1per}.   
+The four PAI uprights connect to a PAI frame which supports the anode plane and the light readout \glspl{sipm}, see Figure~\ref{fig:viper_v1per}.   
 
 The resistive divider consists of a chain of \SI{100}{\mega\ohm} Vishay Rox metal oxide resistors (ROX100100MFKEL).
 Each resistor is soldered to its neighbour, and fixed to the field cage at each joint with an M3 screw.   
@@ -93,7 +93,7 @@ Each resistor is soldered to its neighbour, and fixed to the field cage at each 
 	\includegraphics[width=0.26\linewidth]{viper/viper_original}
 	\includegraphics[width=0.62\linewidth]{viper/viper_sipm}
 	\caption{\small  Left: Photograph of the  pixel demonstration \gls{tpc} at Bern, with the HV feedthrough.
-	Right: Close-up of the light collection system, showing wavelength shifting fibres coupling SiPMs to the TPB-coated light guides.}
+	Right: Close-up of the light collection system, showing wavelength shifting fibres coupling \glspl{sipm} to the TPB-coated light guides.}
 	\label{fig:viper_v1per}
 \end{figure}
 
@@ -102,10 +102,10 @@ The coating method is based on~\cite{TPBcoating}.
 \SI{0.5}{\gram} of TPB and \SI{0.5}{\gram} of acrylic flakes were dissolved in \SI{50}{\milli\liter} of toluene and then mixed with \SI{12}{\milli\liter} of ethanol, which serves to increase the coating homogeneity. 
 Three layers of the coating were applied by hand, with a fine brush. 
 
-\SI{1}{\milli\metre} diameter WLS fibres (Kuraray Y11(200)M) couple the acrylic rings to the four Hamamatsu S12825-050P SiPMs mounted close to the anode, see Figure~\ref{fig:viper_v1per}. 
-The SiPMs and their front-end electronics were adapted from those developed at Bern for the cosmic ray taggers used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
-For operation in \lar{}, the SiPM bias voltages had to be reduce from $\approx$~\SI{70}{\volt} to \SI{53}{\volt}, in order to limit the gain.   
-In the front-end electronics, two coincidences of two out of the four SiPMs are formed and combined by means of a logic \textit{OR} operation. 
+\SI{1}{\milli\metre} diameter WLS fibres (Kuraray Y11(200)M) couple the acrylic rings to the four Hamamatsu S12825-050P \glspl{sipm} mounted close to the anode, see Figure~\ref{fig:viper_v1per}. 
+The \glspl{sipm} and their front-end electronics were adapted from those developed at Bern for the cosmic ray taggers used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
+For operation in \lar{}, the \gls{sipm} bias voltages had to be reduce from $\approx$~\SI{70}{\volt} to \SI{53}{\volt}, in order to limit the gain.   
+In the front-end electronics, two coincidences of two out of the four \glspl{sipm} are formed and combined by means of a logic \textit{OR} operation. 
 This coincidence is used in order to improve trigger purity.
 
 
@@ -113,7 +113,7 @@ This coincidence is used in order to improve trigger purity.
 \label{sec:ac_viper_infrastructure}
 
 The pixel demonstration \gls{tpc} is housed in a double-bath vacuum-insulated cryostat with the outer bath open to atmosphere.
-A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of liquid argon.
+A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of \lar{}.
 This is the same cryostat that was used for the HV studies described in Section~\ref{sec:studies_hv}.
 The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with \lar{} filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
 \lar{} purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\order{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
@@ -301,7 +301,7 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 
 Technically, the Kalman filter would be capable of fitting the particle momentum or even particle type to the data.
 At the time of this writing, this is not implemented yet.
-In particular, the momentum stays roughly at the initial guess of \SI{260}{\mega\electronvolt\per\clight}, assuming a minimum ionising muon in liquid argon.
+In particular, the momentum stays roughly at the initial guess of \SI{260}{\mega\electronvolt\per\clight}, assuming a minimum ionising muon in \lar{}.
 A potential explanation for this is that the resolution of the detector is too low to estimate momentum from multiple scattering.
 Another explanation might be the hit finder missing hits due to non-optimal tuning.
 Proper tuning of the reconstruction requires a full simulation chain of the detector which is not yet available.

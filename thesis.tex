@@ -13,6 +13,7 @@
 \usepackage{lmodern} % better support for special characters in pdf
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
+\usepackage{microtype} % optimise microtypography
 
 \usepackage[autostyle]{csquotes} % recommended by biblatex
 \usepackage{xpatch} % recommended by biblatex
@@ -38,6 +39,8 @@
 \usepackage{feynmp-auto} % feyman graphs
 \usepackage{romannum} % roman numbers
 \usepackage{afterpage} % flush floats in a smarter way
+\usepackage[above, below, section]{placeins} % provides FloatBarrier, option section puts one after each section
+\usepackage{refcheck} % make sure all labels are referenced
 
 \setcounter{tocdepth}{1} % only 2 levels in ToC
 

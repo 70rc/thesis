@@ -107,7 +107,7 @@ There are multiple options, one could imagine for this:
 \begin{itemize}
 	\item Digital multiplexing
 	\item Genetic multiplexing
-	\item Regions of interest
+	\item \glspl{roi}
 \end{itemize}
 
 Digital multiplexing means digitising all channels as close as possible to the readout plane and then mutliplexing the digital data onto a high-speed digital link.
@@ -115,7 +115,7 @@ An advantage of this technique is that the technology for this already exists an
 Ideally, one would feed the data stream into an optical fibre which additionally would provide galvanic isolation of the readout from the DAQ.
 The challenging part is that all of this needs to happen at cryogenic temperatures which is far from trivial because most off-the-shelf components are not made for this.
 A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Section~\ref{sec:studies_electronics_pixel}.
-In contrast, genetic multiplexing and regions of interest are forms of analogue multiplexing.
+In contrast, genetic multiplexing and \glspl{roi} are forms of analogue multiplexing.
 The difference to digital multiplexing is that multiple readout channels are combined into a single analogue link before digitising them at room temperature outside the cryostat.
 In the two schemes described here, this happens by connecting multiple readout channels to a single DAQ channel.
 
@@ -126,32 +126,32 @@ Depending on the complexity of the event topology and the degree of multiplexing
 In any case, if the event is too complex, it cannot be reconstructed properly.
 While genetic multiplexing has been shown to work for one-dimensional readouts (wires), there is no known solution for two dimensions (pixels).\todo{sauce}
 
-A third technique is to subdivide a pixelated readout plane in so-called regions of interest or ROIs.
+A third technique is to subdivide a pixelated readout plane in so-called \glspl{roi}.
 This scheme was tested for an earlier PhD thesis at LHEP at the University of Bern using a \gls{micromegas} in a xenon gas \gls{tpc}~\cite{maplesyrup}.
-All pixels at the same position inside the ROIs are connected to the same DAQ channel.
-For instance, let us assume squared regions of interest.
-One DAQ channel would connect to all the pixels in the top left corners of the ROIs.
+All pixels at the same position inside the \glspl{roi} are connected to the same DAQ channel.
+For instance, let us assume squared \glspl{roi}.
+One DAQ channel would connect to all the pixels in the top left corners of the \glspl{roi}.
 Another channel would connect to all the pixels in the top right corner and so on.
 To explain this a little better, let us assume a square pixel plane of $N \times N$ pixels where $N = n ^ 2$ with an arbitrary integer $n$.
 Now, we divide the plane into $n \times n = N$, each consisting again of $n \times n = N$ pixels.
-For such a readout, we require $N$ DAQ channels for the ROIs and another $N$ channels for the pixels.
-We need only as many pixel channels as we have pixels per ROI because all the pixels at the same relative position inside the ROIs are connected together to one DAQ channel.
+For such a readout, we require $N$ DAQ channels for the \glspl{roi} and another $N$ channels for the pixels.
+We need only as many pixel channels as we have pixels per tpc because all the pixels at the same relative position inside the \glspl{roi} are connected together to one DAQ channel.
 This means that we can read out a $N \times N$ pixel plane using only $2 N$ DAQ channels; the same number required by a conventional 2-plane wire readout of the same size and pitch.
-If there is a signal on a certain DAQ channel, the position inside the ROI is known but not the ROI.
-To determine the full position, each ROI has its own inductive grid in between the pixels.
+If there is a signal on a certain DAQ channel, the position inside the tpc is known but not the tpc.
+To determine the full position, each tpc has its own inductive grid in between the pixels.
 The grid is biased such that the charge is fully focussed onto the pixels and does not collect any charge.
-Combining the bipolar pulse on the ROI grid with the collection pulse from the pixels, it is possible to disentangle the true position.
+Combining the bipolar pulse on the tpc grid with the collection pulse from the pixels, it is possible to disentangle the true position.
 Again, the drawback of this approach is that it is not free of ambiguities.
-It fails for multiple simultaneous hits when it is impossible to say which pixel pulse belongs to which ROI pulse.
+It fails for multiple simultaneous hits when it is impossible to say which pixel pulse belongs to which tpc pulse.
 
 Independently of the amount of data one needs to bring out of the detector, a second problem is heat dissipation.
 The more of the readout chain is sitting inside of the detector, the more serious this problem becomes.
 It is especially problematic for digital multiplexing which requires a lot of cryogenic electronics.
 A possible solution to this is to power only that part of the readout that is actually needed.
 This would require a means to wake up the part of the readout where the charge is arriving before it is collected.
-Provided, the wake-up time is short enough, inductive grids on regions of interest could allow precisely for this.
+Provided, the wake-up time is short enough, inductive grids on \glspl{roi} could allow precisely for this.
 
-As the ROI approach had already been demonstrated in a gas \gls{tpc}, it was chosen for the first prototype of a pixelated \lartpc{}.
-Because the detector is a single-phase \lartpc{}, and thus no gas amplification as in Micromegas is needed, the readout plane could be realised as a conventional Printed Circuit Board \gls{pcb}.
+As the tpc approach had already been demonstrated in a gas \gls{tpc}, it was chosen for the first prototype of a pixelated \lartpc{}.
+Because the detector is a single-phase \lartpc{}, and thus no gas amplification as in \gls{micromegas} is needed, the readout plane could be realised as a conventional Printed Circuit Board \gls{pcb}.
 Alongside the \gls{pcb}, a new \gls{tpc} was designed which can be reused for future prototyping efforts.
 The design of \gls{pcb} and \gls{tpc} as well as the results from the first tests are described in Section~\ref{sec:ac_viper}.

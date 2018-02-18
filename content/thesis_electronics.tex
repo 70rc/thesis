@@ -137,7 +137,7 @@ The complete analogue signal path from the pixel plane to the VME digitisers is 
 	\includegraphics[width=\textwidth]{noise/event500_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{noise/event500_rawUnfilteredROI}
 	\caption{Event from the first measurement campaign of the pixel prototype.
-	The top plot shows pixel data while the bottom plot shows ROI data.}
+	The top plot shows pixel data while the bottom plot shows tpc data.}
 	\label{fig:electronics_event-run1}
 \end{figure}
 
@@ -159,7 +159,7 @@ Furthermore, this decouples the lab grid entirely from the building ground preve
 	\centering
 	\includegraphics[page=4, width=\textwidth]{noise/noise_run1} \\
 	\includegraphics[page=1, width=\textwidth]{noise/noise_run1}
-	\caption{Noise amplitude distributions of pixel (top) and ROI (bottom) channels of the first measurement campaign.
+	\caption{Noise amplitude distributions of pixel (top) and tpc (bottom) channels of the first measurement campaign.
 	\num{5000} events with \num{1000} \SI{410}{\nano\second} samples each from a \SI{5}{\hertz} random trigger were combined.}
 	\label{fig:electronics_noise-run1}
 \end{figure}
@@ -174,7 +174,7 @@ The design for the two buffer stages was kindly provided by the \lariat{} collab
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredROI}
 	\caption{Event from the second measurement campaign of the pixel prototype after improving the readout chain.
-	The top plot shows pixel data while the bottom plot shows ROI data.}
+	The top plot shows pixel data while the bottom plot shows tpc data.}
 	\label{fig:electronics_event-run2}
 \end{figure}
 
@@ -189,8 +189,8 @@ Investigating this, it was found that these groups correspond to channels of rou
 The noise amplitude is higher on channels with higher capacitance (see Figure~\ref{fig:electronics_noise-run1}).
 To solve this problem, the \gls{pcb} design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes and increasing the thickness of the \gls{pcb}.
 Pixel capacitance could be improved to \SI{65 +- 5}{\pico\farad} for all channels.
-ROI capacitance improved only slightly from \SI{25 +- 10}{\pico\farad} to \SI{20 +- 10}{\pico\farad} which confirms the hypothesis that the long tracks due to pixel multiplexing were the culprits.
-The reason for the higher spread of the ROI capacitances is the larger difference in track length between the differen ROIs.
+tpc capacitance improved only slightly from \SI{25 +- 10}{\pico\farad} to \SI{20 +- 10}{\pico\farad} which confirms the hypothesis that the long tracks due to pixel multiplexing were the culprits.
+The reason for the higher spread of the tpc capacitances is the larger difference in track length between the different \glspl{roi}.
 For the sake of completeness, it should be noted here that for the capacitance measurements, the old \gls{pcb} was not populated while the new one was populated as described in Section~\ref{sec:ac_viper_pcb}.
 However, the installed capacitors are either not connected to ground or in series with a \SI{10}{\mega\ohm} resistor.
 Therefore, their influence on the measurements is negligible.
@@ -204,7 +204,7 @@ A more detailed assessment of the noise after the implementation of the describe
 	\centering
 	\includegraphics[page=4, width=\textwidth]{noise/noise_run2} \\
 	\includegraphics[page=1, width=\textwidth]{noise/noise_run2}
-	\caption{Noise amplitude distributions of pixel (top) and ROI (bottom) channels of the second measurement campaign, after implementing hardware noise mitigation measures.
+	\caption{Noise amplitude distributions of pixel (top) and tpc (bottom) channels of the second measurement campaign, after implementing hardware noise mitigation measures.
 	\num{2000} events with \num{2000} \SI{210}{\nano\second} samples each from a \SI{5}{\hertz} random trigger were combined.}
 	\label{fig:electronics_noise-run2}
 \end{figure}

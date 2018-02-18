@@ -13,7 +13,7 @@ After that the \AC{} Light readout, \AL{}, is introduced.
 
 In 2016, the University of Bern developed a novel \gls{crt} system for \lartpc{}s which was subsequently installed in \uboone{}~\cite{uboone} and will be installed in the \sbnd{} experiment~\cite{sbnd} in the near future.
 The tagger consists of panels made from polystyrene based scintillating bars.
-On both long edges of the strips, the light is coupled into a \emph{Kuraray Y11(200)M}\footnote{\url{http://kuraraypsf.jp}} wavelength-shifting (WLS) fibre of \SI{1}{\milli\metre} diameter.
+On both long edges of the strips, the light is coupled into a \emph{Kuraray Y11(200)M}\footnote{\url{http://kuraraypsf.jp}} \gls{wls} fibre of \SI{1}{\milli\metre} diameter.
 One end of the fibre is coated with an aluminium mirror to increase collection efficiency.
 The other end is attached to a \emph{Hamamatsu S12825-050P}\footnote{\url{http://www.hamamatsu.com}} \gls{sipm}.
 A bespoke \gls{feb} reads out the \gls{sipm} signal and provides power.
@@ -23,15 +23,15 @@ For the first pixel prototype described in Section~\ref{sec:ac_viper}, the \gls{
 Except for operating everything up to the \glspl{sipm} in \lar{}, the polystyrene scintillating bars were replaced by acrylic rings.
 The latter are placed in between the aluminium field shaping rings of the \gls{tpc}.
 To allow for proper convection of the \lar{}, only every other gap is completely filled by an acrylic ring.
-Perpendicularly to the rings(i.e.\ in drift direction), four WLS fibres collect the light from the rings and guide it to the readout plane on the anode side where it is fed to the \glspl{sipm}.
+Perpendicularly to the rings(i.e.\ in drift direction), four \gls{wls} fibres collect the light from the rings and guide it to the readout plane on the anode side where it is fed to the \glspl{sipm}.
 Residing on the cryostat top-flange at room temperature, the \gls{feb} is connected to the \glspl{sipm} via Teflon insulated coaxial cables.
 
 The peak of scintillation light emission in \lar{} lies at \SI{128}{\nano\metre}\todo{sauce} while the sensitivity wavelength peak of the \gls{sipm} is at \SI{450}{\nano\metre}.
 Therefore, the scintillation light needs to be shifted before it can be detected by the \glspl{sipm}.
 This happens in two stages.
-For the first shift, tetraphenyl butadiene (TPB) is applied to the inside of the acrylic rings.
+For the first shift, \gls{tpb} is applied to the inside of the acrylic rings.
 Their outside is not coated to reduce the collected amount of scintillation light that originates outside the \gls{tpc} while their inside is machined to optimise light collection.
-TPB absorbs the \SI{128}{\nano\metre} scintillation light an re-emits with a peak at \SI{440}{\nano\metre}~\cite{tpb} which is then propagated through the acrylic and coupled into the WLS fibre.
+\gls{tpb} absorbs the \SI{128}{\nano\metre} scintillation light an re-emits with a peak at \SI{440}{\nano\metre}~\cite{tpb} which is then propagated through the acrylic and coupled into the \gls{wls} fibre.
 The latter has an absorption peak at \SI{430}{\nano\metre} and an emission peak at \SI{476}{\nano\metre}.\todo{sauce}
 
 In the \gls{feb}, two coincidences of two out of four \glspl{sipm} are formed and combined by means of a logic \emph{OR} operation.
@@ -68,10 +68,10 @@ As mentioned above, principles based on full reflection on a polymer-\lar{} inte
 Instead, \AL{} is based on the light trapping principle of the ARAPUCA sensor~\cite{arapuca}.
 The latter works by trapping the photons inside a cavity made of walls covered by a highly reflective materials.
 One of the walls is formed from a dichroic film, a material transparent to certain wavelengths while highly reflective to others.
-On the outside, this film is covered by TPB with the film transparent to the emitted blue light.
-The inside of the film is covered by a second WLS, shifting the light to green which is reflected by the dichroic film and therefore trapped inside the cavity.
+On the outside, this film is covered by \gls{tpb} with the film transparent to the emitted blue light.
+The inside of the film is covered by a second \gls{wls}, shifting the light to green which is reflected by the dichroic film and therefore trapped inside the cavity.
 One or more \glspl{sipm} are mounted inside the cavity to collect the trapped photons.
-In contrast, \AL{} replaces the void of ARAPUCA by a solid transparent polymer sheet, doped with a WLS dye.
+In contrast, \AL{} replaces the void of ARAPUCA by a solid transparent polymer sheet, doped with a \gls{wls} dye.
 This makes it substantially more robust, compact and stable, especially when scaled up to larger areas.
 
 \begin{figure}[htb]
@@ -85,22 +85,22 @@ This makes it substantially more robust, compact and stable, especially when sca
 
 A \SI{10 x 10}{\centi\metre} \AL{} prototype is shown in Figure~\ref{fig:arclight_prototype}.
 The ratio of sensitive area to total area is \SI{98}{\percent} with the remaining \SI{2}{\percent} occupied by a \gls{pcb} carrying four \emph{Hamamatsu S13360-3050VE}\footnote{\url{http://www.hamamatsu.com}} \glspl{sipm} with a sensitive area of \SI{3 x 3}{\milli\metre} each.
-The inside of \AL{} is made of a \SI{4}{\milli\metre} thick \emph{Eljen Technology EJ-280}\footnote{\url{http://www.eljentechnology.com}} WLS plate.
+The inside of \AL{} is made of a \SI{4}{\milli\metre} thick \emph{Eljen Technology EJ-280}\footnote{\url{http://www.eljentechnology.com}} \gls{wls} plate.
 Its sides are laminated with reflective films.
 The back face and the edges are covered with a \emph{3M VM2000}\footnote{\url{https://www.3m.com}\label{foot:3M}} dielectric specular reflector foil having $\approx \SI{98}{\percent}$ reflectance in the visible light range.
 A \emph{3M DF-PA Chill}\textsuperscript{\ref{foot:3M}} dichroic mirror covers the front face.
 It is transparent in the blue and has a high reflectance in the green spectral range.
 Both films are held in place by thin layers of transparent adhesive.
-To shift the vacuum UV (VUV) scintillation light produced in \lar{} to the blue transparent range of the dichroic mirror, its outer surface is coated with TPB.
+To shift the vacuum UV (VUV) scintillation light produced in \lar{} to the blue transparent range of the dichroic mirror, its outer surface is coated with \gls{tpb}.
 A cross-section of the structure of \AL{} is depicted in Figure~\ref{fig:arclight_structure}.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{arclight/structure}
 	\caption{\AL{} light collector cross-section near a corner.
-		The structure is mechanically supported by a \SI{4}{\milli\metre} thick WLS plastic.
+		The structure is mechanically supported by a \SI{4}{\milli\metre} thick \gls{wls} plastic.
 		Its front is covered with a dichroic mirror film while the edges and the back face are covered with a dielectric specular reflector foil.
-		The outer surface of the dichroic mirror is coated with TPB to shift the \lar{} VUV scintillation light to the blue range where the dichroic film is transparent.
+		The outer surface of the dichroic mirror is coated with \gls{tpb} to shift the \lar{} VUV scintillation light to the blue range where the dichroic film is transparent.
 		At the bottom of the left picture, two of the four \glspl{sipm} mounted to the carrier \gls{pcb} are visible.}
 	\label{fig:arclight_structure}
 \end{figure}

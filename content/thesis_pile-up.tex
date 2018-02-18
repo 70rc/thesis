@@ -1,14 +1,14 @@
 \section{Feasibility Study of a Pixelated \glsentryshort{lartpc} for the \glsentryshort{dune} \glsentrylong{nd}}
 \label{sec:dune-nd_pile-up}
 
-With \AC{} selected as  the \lar{} component of the \dune{} near detector (ND), there were two main question that needed to be addressed:
+With \AC{} selected as  the \lar{} component of the \dune{} \gls{nd}, there were two main question that needed to be addressed:
 \begin{enumerate}
 	\item Is a pixelated \lartpc{} feasible?
 	\item Can the \lar{} detector handle the high rates?
 \end{enumerate}
 Number one is addressed in Section~\ref{sec:ac_viper}.
 This chapter will address question number two.
-More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the ND is described in Section~\ref{sec:dune-nd_ac_nd}.
+More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the \gls{nd} is described in Section~\ref{sec:dune-nd_ac_nd}.
 
 \begin{figure}[htb]
 	\centering
@@ -62,10 +62,10 @@ More importantly, there often are significant gaps in betweend these charge clus
 A main challenge of shower reconstruction is to associate these well-separated charge blobs to the correct event.
 Misidentifications lead to a misreconstruction of the neutrino energy.
 The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
-The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} ND environment.
+The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} \gls{nd} environment.
 
-To simulate the expected neutrino interactions in the ND, the Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} simulation tool was used.
-The neutrino group at LBNL is developing it with the goal of providing an easy-to-use simulation of particle interactions in the \lar{} component of the ND.
+To simulate the expected neutrino interactions in the \gls{nd}, the Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} simulation tool was used.
+The neutrino group at LBNL is developing it with the goal of providing an easy-to-use simulation of particle interactions in the \lar{} component of the \gls{nd}.
 Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file\footnote{A file format standard for passage of particle events between different simulation tools}.
 For this study, \num{6.6e6} neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 Secondary particle transport and interaction in Argon Box is performed by Geant4.\footnote{\url{http://geant4.cern.ch}}
@@ -112,7 +112,7 @@ This algorithm is explained in the following, its parameters are listed in Table
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics_pixel}.
-The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the ND design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
+The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the \gls{tpc}.
@@ -222,8 +222,8 @@ Without the latter, there is a significant number of photons produced by \Pgpz d
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.
 
-Active volume dimensions are taken from the preliminary \dune{} near detector design described in Section~\ref{sec:dune-nd_ac_nd}.
-Note that the height was taken as \SI{2.5}{\metre} as opposed to the \SI{3}{\metre} of the near detector design.
+Active volume dimensions are taken from the preliminary \dune{} \gls{nd} design described in Section~\ref{sec:dune-nd_ac_nd}.
+Note that the height was taken as \SI{2.5}{\metre} as opposed to the \SI{3}{\metre} of the \gls{nd} design.
 The reason is that another \SI{0.5}{\metre} safety margin were added after this pile-up simulation had been completed.
 However, the influence on the pile-up study should be negligible.
 The hadron containment studies described in Section~\ref{sec:dune-nd_ac_nd} indicated that \SI{2.5}{\metre} height is the bare minimum.
@@ -386,7 +386,7 @@ The cumulative neutrino fraction versus the misidentified energy fraction reveal
 It can be seen that about \SI{70}{\percent} of the events experience a pile-up-related error on reconstructed neutrino energy of \SI{1}{\percent} or less.
 For roughly \SI{50}{\percent} of the events, it is even below \SI{0.1}{\percent}.
 If it was possible to identify the other \SI{50}{\percent} somehow in the real experiment, they could be ignored, giving an essentially pile-up-free sample.
-Given the high event rates in the near detector, this would be easily affordable.
+Given the high event rates in the \gls{nd}, this would be easily affordable.
 Using the cone-base algorithm described here, EM shower pile-up could be detected via overlapping cones for instance.
 
 To get a rough idea of the performance of a 2D wire readout in an identical environment, the same study was performed ignoring the Y-coordinate completely, leaving everything else untouched.
@@ -405,5 +405,5 @@ Therefore it is expected to be very similar to the \SI{2}{\mega\watt} case as ca
 As expected, the error due to misidentified energy is increased to \SIrange{7}{15}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_10MW_misid-rel-x}) but still better than for the XZ projection.
 Similarly, only about \SI{10}{\percent} of the neutrino events remain pile-up free, and \SI{50}{\percent} suffer from more than \SI{4}{\percent} misidentified energy (Figure~\ref{fig:dune-nd_10MW_misid-rel-y}).
 
-In summary, this study shows that even a very primitive EM shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} ND, when fed with unambiguous 3D spatial coordinates of energy depositions.
+In summary, this study shows that even a very primitive EM shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} \gls{nd}, when fed with unambiguous 3D spatial coordinates of energy depositions.
 It clearly fails when reduced to two dimensions or presented with a much higher beam intensity.

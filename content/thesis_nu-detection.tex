@@ -184,7 +184,7 @@ Tokai to Kamioka (T2K) directs a \Pgngm beam similar to the one of Lederman et a
 \section{Neutrino Oscillation}
 \label{sec:nu-detection_osc}
 
-\AC{} was selected as the \lar{} component of the near detector for the \dune{} long-baseline neutrino oscillation experiment.
+\AC{} was selected as the \lar{} component of the \gls{nd} for the \dune{} long-baseline neutrino oscillation experiment.
 Therefore, this section will give a basic introduction to neutrino oscillation and \dune{}.
 
 The root cause of neutrino oscillation is that the flavour eigenstates (\HepParticle{\nu}{\alpha}{} with $\alpha = \Pe, \Pgm, \Pgt$) of the three neutrinos are not equal to their three mass eigenstates (\HepParticle{\nu}{i}{} with $i = 1, 2, 3$).
@@ -375,9 +375,11 @@ Named after its discoverers, Mikheyev, Smirnov~\cite{mikheyevSmirnov} and Wolfen
 \section{\glsentryshort{dune}}
 \label{sec:nu-detection_dune}
 \glsreset{dune}
+\glsreset{nd}
+\glsreset{fd}
 
 The \dune{}~\cite{dune1, dune2, dune3, dune4} is a long-baseline neutrino oscillation experiment measuring $P \qty(\Pgngm \rightarrow \Pgne)$ and $P \qty(\Pagngm \rightarrow \Pagne)$, planned to start data taking around 2025.
-It consist of a neutrino beamline at Fermi National Accelerator Lab (FNAL) in Illinois, USA and a \lartpc{} far detector at a baseline of \SI{1300}{\kilo\metre} in the Sanford Underground Research Facility (SURF) in South Dakota, USA.
+It consist of a neutrino beamline at Fermi National Accelerator Lab (FNAL) in Illinois, USA and a \lartpc{} \gls{fd} at a baseline of \SI{1300}{\kilo\metre} in the Sanford Underground Research Facility (SURF) in South Dakota, USA.
 An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 
 \begin{figure}[htb]
@@ -403,18 +405,18 @@ More information on the beamline can be found in~\cite{dune2}.
 \begin{table}[htb]
 	\begin{minipage}{\textwidth}
 		\centering
-		\caption[\dune{} beam parameters and ND rates]{Summary of the \dune{} proton beam parameters for various configurations.
-		Intially, the beamline will operate with the phase one parameters.
+		\caption[\dune{} beam parameters and \gls{nd} rates]{Summary of the \dune{} proton beam parameters for various configurations.
+		Initially, the beamline will operate with the phase one parameters.
 		Later, it will be upgraded to support the phase two parameters.
 		The pulse duration is \SI{10}{\micro\second} for all configurations.
-		The last column gives the expected total number of neutrino interactions per tonne of \ce{Ar} in the ND, excluding rock events.
+		The last column gives the expected total number of neutrino interactions per tonne of \ce{Ar} in the \gls{nd}, excluding rock events.
 		It is calculated by multiplying the expected neutrino flux with the cross-section on \ce{Ar} from the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 		Note that these values are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params} because the latter are outdated.
 		Taken from~\cite{dune3, lauraNDRates}.}
 		\label{tab:nu-detection_beam-params}
 		\begin{tabu} to \textwidth {cSSSSS}
 			\toprule
-			Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per pulse} &	{Pulse period $\qty[\si{\second}]$} &	{Power $\qty[\si{\mega\watt}]$} &	{ND \si{evt\per\tonne} \ce{Ar}} \\
+			Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per pulse} &	{Pulse period $\qty[\si{\second}]$} &	{Power $\qty[\si{\mega\watt}]$} &	{\gls{nd} \si{evt\per\tonne} \ce{Ar}} \\
 			\midrule
 			\Romannum{1} &	60 &											7.5e13 &			0.7 &									1.03 &								0.078 \\
 			\Romannum{2} &	60 &											1.5e14 &			0.7 &									2.06 &								0.16 \\
@@ -453,7 +455,7 @@ For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVoge
 
 Figure~\ref{fig:nu-detection_dune-sens} shows the sensitivities of \dune{} to determination of the mass ordering and discovery of CP violation.
 To reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the \dcp{} parameter space, an exposure of \SI{1320}{\kilo\tonne\mega\watt.years} is required.
-Assuming the reference design of a \SI{40}{\kilo\tonne} far detector and a \SI{1}{\mega\watt} beam results in a data taking time of \SI{33}{years}.
+Assuming the reference design of a \SI{40}{\kilo\tonne} \gls{fd} and a \SI{1}{\mega\watt} beam results in a data taking time of \SI{33}{years}.
 Therefore, to reach the sensitivity goal earlier, a beam $> \SI{1}{\mega\watt}$ is required.
 
 \begin{figure}[htb]
@@ -473,13 +475,13 @@ Therefore, to reach the sensitivity goal earlier, a beam $> \SI{1}{\mega\watt}$ 
 Another important feature of Figure~\ref{fig:nu-detection_dune-sens} are the indicated signal normalisation uncertainties.
 In particular the second number has a significant influence on sensitivity, the aforementioned exposure assumes an uncertainty of $\SI{5}{\percent}\oplus\SI{2}{\percent}$.
 A detailed explanation of this is out of the scope of this work and can be found in~\cite{dune2}.
-What shall be mentioned here however is that these uncertainties can be reached by a precise constraint of the flux rate and shape by means of a near detector (ND).
+What shall be mentioned here however is that these uncertainties can be reached by a precise constraint of the flux rate and shape by means of a \gls{nd}.
 It is placed at a distance of \SI{574}{\metre} downstream of the proton beam target.
-To eliminate the introduction of further extrapolation uncertainties it is important to have a near detector component employing the same target material and detector technology as the far detector, i.e.\ a \lartpc{}.
+To eliminate the introduction of further extrapolation uncertainties it is important to have a \gls{nd} component employing the same target material and detector technology as the \gls{fd}, i.e.\ a \lartpc{}.
 
 As will be explained in Chapter~\ref{chap:lartpc}, \lartpc{}s are slow detectors.
-This is problematic in the high-multiplicity ND environment of \dune{} which is the reason why~\cite{dune2} and~\cite{dune4} do not mention an ND \lar{} component.
-The aforementioned \si{\mega\watt} beam intensity leads to ND event rates $\order{0.1}$ events per tonne of \lar{} leading to significant event pile-up (see Table~\ref{tab:nu-detection_beam-params}).
+This is problematic in the high-multiplicity \gls{nd} environment of \dune{} which is the reason why~\cite{dune2} and~\cite{dune4} do not mention an \gls{nd} \lar{} component.
+The aforementioned \si{\mega\watt} beam intensity leads to \gls{nd} event rates $\order{0.1}$ events per tonne of \lar{} leading to significant event pile-up (see Table~\ref{tab:nu-detection_beam-params}).
 Rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector---are not included in this estimate.
 
 
@@ -488,7 +490,7 @@ Rock events---secondary particles produced by beam neutrino interactions in the 
 
 \begin{table}[htb]
 	\centering
-	\caption{Estimated number of interactions per tonne of \ce{Ar} at the \dune{} near detector for approximately one month (\num{1e20} protons on target) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}, taken from~\cite{dune2}.
+	\caption{Estimated number of interactions per tonne of \ce{Ar} at the \dune{} \gls{nd} for approximately one month (\num{1e20} protons on target) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}, taken from~\cite{dune2}.
 	Note that these rates are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params}.
 	The reason for this is that the values below are outdated.
 	However, their order of magnitude is correct and no such detailed breakdown is available for the more recent values.
@@ -650,7 +652,7 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 	\label{fig:nu-detection_nueb-scat}
 \end{figure}
 
-A summary of the expected rates of the different interactions in the \dune{} near detector is given in Table~\ref{tab:nu-detection_nd-rates}.
+A summary of the expected rates of the different interactions in the \dune{} \gls{nd} is given in Table~\ref{tab:nu-detection_nd-rates}.
 Figure~\ref{fig:nu-detection_xsec} depicts the cross-section (see next paragraph) of neutrino interactions as a function of neutrino energy.
 For comparison, the flux shapes of several experiments are shown (in arbitraty units).
 The cross-section is split into contributions from CC and NC interactions.

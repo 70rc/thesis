@@ -38,11 +38,11 @@ Statistical uncertainties can be lowered by acquiring more neutrino interactions
 Systematic uncertainties have various sources, some of which can be exploited.
 Two of the biggest contributors are the neutrino beam and the interaction model of neutrinos with matter.
 Beam-related uncertainties can be eliminated partially by characterising the neutrino beam at the production location (in addition to replica targe experiments).
-A \emph{near detector} will be placed in front of the beam facility in addition to the \emph{far detector} at the end of the baseline.
-Many uncertainties cancel out by comparing the neutrino fluxes in the near and far detector.
+A \emph{\gls{nd}} will be placed in front of the beam facility in addition to the \emph{\gls{fd}} at the end of the baseline.
+Many uncertainties cancel out by comparing the neutrino fluxes in the near and \gls{fd}.
 To some extent, uncertainties related to the interaction model cancel out as well if the same target material is used in both detectors.
 Finally, using the same technology in both detectors, cancels even more of the remaining uncertainties.
-Therefore, the near detector complex needs to contain a \lartpc{} component.
+Therefore, the \gls{nd} complex needs to contain a \lartpc{} component.
 
 Up until now, \lartpc{} charge readouts have been realised by means of multiple one-dimensional wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge---due to technological limitations.
 Combined with the time of the drifting charge, this results in one 2D image of the event topology per wire plane, effectively reducing the 3D capabilities of the \gls{tpc} to multiple 2D projections.
@@ -50,8 +50,8 @@ Additionally, \lartpc{}s are comparatively slow detectors.
 The minimum drift time of charge in \lar{} (and thus the readout time) is limited to $\order{\SI{1}{\milli\second\per\metre}}$ by constraints on the maximum cathode voltage.
 Both the above have not prevented the huge success of \lartpc{}s up to now.
 Due to the low interaction cross-section, event rates in current-generation \lartpc{}s have been low enough to cope with.
-While this still applies to the \dune{} far detector, it is certainly not true for the near detector.
-The high-intensity neutrino beam will result in event rates in the near detector significantly higher than what contemporary \lartpc{}s have been exposed to.
+While this still applies to the \dune{} \gls{fd}, it is certainly not true for the \gls{nd}.
+The high-intensity neutrino beam will result in event rates in the \gls{nd} significantly higher than what contemporary \lartpc{}s have been exposed to.
 Even worse, the beam is delivered in very short pulses of very high intensity.
 Because these pulses are one to two orders of magnitude shorter than a typical \lartpc{} readout cycle, the detector registers several neutrino interactions simultaneously, so-called event pile-up.
 Combined with the 2D projection readout, this leads to significant difficulties in event reconstruction: disentangling the 3D interaction topologies from the recorded 2D projections.
@@ -59,11 +59,11 @@ Combined with the 2D projection readout, this leads to significant difficulties 
 An obvious solution to this challenge is to regain true 3D information from the \gls{tpc} by replacing the projective 1D wire planes with a true 2D pixelated charge readout.
 However, as mentioned above, this is linked to technological challenges.
 Replacing a two plane wire readout with pixels of the same pitch squares the number of required readout channels.
-For the \lartpc{} in the \dune{} near detector complex with a size of \SI{4 x 5 x 2.5}{\metre}, this amounts to $\order{\num{e6}}$ cables needing to be routed out of the cryogenic vessel housing the detector.
+For the \lartpc{} in the \dune{} \gls{nd} complex with a size of \SI{4 x 5 x 2.5}{\metre}, this amounts to $\order{\num{e6}}$ cables needing to be routed out of the cryogenic vessel housing the detector.
 The number of cable feedthroughs can be reduced by digitising charge readout waveforms inside the \lar{} and using high-speed digital links to aggregate many readout channels on a single cable.
 However, this is far from trivial.
 Besides the challenge of adapting existing electronics to the cryogenic temperatures of \lar{}, heat production has to be kept to a minimum to prevent the \lar{} from boiling.
-While such electronics have already been designed for the wire-equipped far detectors, the former are not suitable for a pixelated near detector due to their power dissipation.
+While such electronics have already been designed for the wire-equipped \glspl{fd}, the former are not suitable for a pixelated \gls{nd} due to their power dissipation.
 
 In addition to these readout issues, future large \lartpc{}s face several other challenges.
 In particular for the \gls{hv} and light readout systems.
@@ -76,7 +76,7 @@ Due to the finite dielectric strength of \lar{}, the fraction of dead volume req
 In order to get proper timing for the third coordinate, the scintillation light flashes need to be matched to the correct events.
 This becomes problematic in large monolithic \lartpc{} in high-pile-up environments.
 
-The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component in the \dune{} near detector complex.
+The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component in the \dune{} \gls{nd} complex.
 A introduction to the history and theory of neutrino detection, as well as an overview of \dune{} are given in Chapter~\ref{chap:nu-detection}.
 
 Chapter~\ref{chap:studies} contains several studies addressing the challenges met by future \lartpc{}s.
@@ -90,7 +90,7 @@ A new light readout based on \glspl{sipm}, \AL{}, developed by the University of
 The active area of the \glspl{sipm} is drastically increased by coupling them to a light trap formed of a combination of a dichroic filter with a \gls{wls}.
 This makes it competitive to classical PM tubes for large area coverage while requiring a much reduced dead volume.
 
-The main contribution to the \dune{} near detector complex is the demonstration of a pixelated \lartpc{}.
+The main contribution to the \dune{} \gls{nd} complex is the demonstration of a pixelated \lartpc{}.
 Conventional room-temperature digitisers were combined with analogue multiplexing due to the as yet lacking cryogenic electronics.
 Several days of cosmic muon data were collected with a test stand designed and built at the University of Bern.
 A software framework was written to reconstruct 3D tracks from the data.
@@ -106,9 +106,9 @@ A pixelated charge readout makes the detector capable of true 3D event recording
 To keep the dead volume to a minimum, \AL{} is used as the light readout system.
 All of this is described in Chapters~\ref{chap:ac}.
 
-Chapter~\ref{chap:dune-nd} introduces the proposed \AC{} \lartpc{} component for the \dune{} near detector complex together with a feasibility study of a \lartpc{} in such an environment.
+Chapter~\ref{chap:dune-nd} introduces the proposed \AC{} \lartpc{} component for the \dune{} \gls{nd} complex together with a feasibility study of a \lartpc{} in such an environment.
 Combining the knowledge gained from Chapter~\ref{chap:ac} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:studies}, enables the realisation of a true 3D \lartpc{}.
-However, it remains to be shown that such a detector is actually able to cope with the event rates expected in the near detector.
+However, it remains to be shown that such a detector is actually able to cope with the event rates expected in the \gls{nd}.
 To assess this capability, a metric was needed representative of the physics processes.
 Electromagnetic (EM) showers produced from the photons originating from \Pgpz decays are notoriously complex to reconstruct.
 On the other hand, it is important to get their energy reconstruction right in order not to skew the neutrino energy spectrum because they are present in a significant fraction of the neutrino interaction expected in \dune{}.
@@ -116,6 +116,6 @@ At the \dune{} energies, EM showers deposit a plethora of apparently unconnected
 Associating all those separate charge blobs to the correct event is one of the most difficult reconstruction tasks, even for a \lartpc{}.
 Therefore, this type of EM shower was chosen for this study.
 A rather rudimentary algorithm was employed to assign the deposited charge to the correct EM shower because all available \lartpc{} reconstruction algorithms are optimised for wire readouts.
-The amount of misidentified charge from other events is a suitable metric to assess the impact of pile-up on the near detector physics.
+The amount of misidentified charge from other events is a suitable metric to assess the impact of pile-up on the \gls{nd} physics.
 
 Chapter~\ref{chap:conclusion} concludes the thesis.

@@ -3,15 +3,15 @@
 \glsreset{nd}
 
 The \AC{} concept, described in Section~\ref{sec:ac_argoncube}, is aimed at enabling a \lartpc{} component in the \dune{} \gls{nd} complex.
-This chapter will present a more detailed design for the near detector, together with a feasibility study of a \lartpc{} at the expected rates.
+This chapter will present a more detailed design for the \gls{nd}, together with a feasibility study of a \lartpc{} at the expected rates.
 
 
 \section{\AC{} in the \glsentryshort{dune} \glsentrylong{nd}}
 \label{sec:dune-nd_ac}
 
-While Section~\ref{sec:ac_argoncube} gave a general overview of the \AC{} concept, this section focusses on the detailed implementation for the \dune{} near detector.
+While Section~\ref{sec:ac_argoncube} gave a general overview of the \AC{} concept, this section focusses on the detailed implementation for the \dune{} \gls{nd}.
 After the establishment of the key technologies described in this work, the next step will be a \num{2 x 2} module prototype at the university of Bern.
-Finally, the current status of an \AC{} \lartpc{} component for the \dune{} near detector complex is given.
+Finally, the current status of an \AC{} \lartpc{} component for the \dune{} \gls{nd} complex is given.
 
 \subsection{\num{2 x 2} Module Prototype}
 \label{sec:dune-nd_ac_2x2}
@@ -55,7 +55,7 @@ It depicts the first module that will be equipped with the demonstrator \gls{tpc
 For this test, an internal pump salvaged from \AT{} will be used in combination with oxygen traps mounted on top of the module.
 Engineering drawings of this module are given in Figure~\ref{fig:ac_module}.
 
-Table~\ref{tab:dune-nd_dim} gives an overview of the most important dimensions of the \num{2 x 2} Bern prototype and the preliminary near detector design (see Section~\ref{sec:dune-nd_ac_nd}).
+Table~\ref{tab:dune-nd_dim} gives an overview of the most important dimensions of the \num{2 x 2} Bern prototype and the preliminary \gls{nd} design (see Section~\ref{sec:dune-nd_ac_nd}).
 In particular the table contains a rough estimate of dead space caused by the modular design and the corresponding active volume fraction.
 For these calculations, a total charge readout thickness of \SI{20}{\milli\metre} and a total light readout thickness of \SI{5}{\milli\metre} were assumed.
 The difference is caused by the fact that charge readout electronics are located directly behind the readout while the \glspl{sipm} are only mounted on the edges of \AL{}.
@@ -68,14 +68,14 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 
 \begin{table}[htb]
 	\centering
-	\caption{\AC{} dimensions for the \num{2 x 2} prototype in Bern and preliminary \dune{} near detector (ND) design.
+	\caption{\AC{} dimensions for the \num{2 x 2} prototype in Bern and preliminary \dune{} \gls{nd} design.
 		Charge and light readout thicknesses are given per wall, i.e.\ the resulting dead space per module is twice as big.
 		Both are preliminary estimates.
 		For simplicity, clearance between adjacent modules is included in these numbers.}
 	\label{tab:dune-nd_dim}
 	\begin{tabu} to \textwidth {lSSs}
 		\toprule
-		Dimension &						{\num{2 x 2}} &			{ND} &					{Unit} \\
+		Dimension &						{\num{2 x 2}} &			{\gls{nd}} &					{Unit} \\
 		\midrule
 		Detector size &					\num{2 x 2} &			\num{4 x 5} &			mod \\
 		Module footprint &				\num{0.670 x 0.670} &	\num{1.000 x 1.000} &	\metre\squared \\
@@ -99,7 +99,7 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{dune_nd/lartpc_size_vertical}
-	\caption{Influence of the \lartpc{} size in the \dune{} near detector complex on hadron containment.
+	\caption{Influence of the \lartpc{} size in the \dune{} \gls{nd} complex on hadron containment.
 		Given in cross-section coverage as a function of neutrino energy.
 		Horizontal dimensions are held constant at their nominal values of \SI{4 x 5}{\metre}.
 		Height is indicated by colour.
@@ -110,14 +110,14 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{dune_nd/DUNE-ND-2018}
-	\caption{Artistic view of the \dune{} near detector \AC{} component.
+	\caption{Artistic view of the \dune{} \gls{nd} \AC{} component.
 		Shown with individual pump and oxygen traps for each module.
 		On two sides, the half-width service modules are visible.
 		Cabling for \gls{hv} as well as charge and light readout is not shown.}
 	\label{fig:dune-nd_ac}
 \end{figure}
 
-The \AC{} near detector design is based on a scaled-up version of the \num{2 x 2} module design described above.
+The \AC{} \gls{nd} design is based on a scaled-up version of the \num{2 x 2} module design described above.
 Modules will have a footprint of \SI{1 x 1}{\metre} and a height of \SI{3.5}{\metre}.
 Again, \SI{0.1}{\metre} at the bottom are occupied by the heat exchanger and valves while \SI{0.4}{\metre} at the top are taken up by feedthroughs and the gas phase.
 This results in a \gls{tpc} size of \SI{1 x 1 x 3}{\metre}, split into two halves by the cathode.
@@ -134,7 +134,7 @@ Many events are simply not contained because of their specific location and/or o
 Cross-section coverage remedies this deficiency by looking at the actual extent of the event instead of its containment at a random position inside a realistic detector.
 On the other hand, an event extending through the full detector will very likely never be contained in a real detector due to the low probability of exactly happening in the right location.
 Therefore, the maximum event size needs to be selected smaller than the full detector size.
-For the near detector simulation, this was chosen as \SI{0.5}{\metre} on all edges.
+For the \gls{nd} simulation, this was chosen as \SI{0.5}{\metre} on all edges.
 Like this, cross-section coverage allows to probe for phase space regions inaccessible to a particular detector configuration.
 In Figure~\ref{fig:dune-nd_lartpc-size}, it can be seen that cross-section coverage decreases rapidly for detector heights below \SI{2.5}{\metre}.
 A height of \SI{3}{\metre} is therefore preferable to have some buffer for yet unknown uncertainties in the simulation.
@@ -147,10 +147,10 @@ The total thickness of the cryostat wall amounts to \num{2.88} radiation lengths
 Cooling is provided by \num{10} uninstrumented \SI{0.5 x 1}{\metre} service modules equipped with cryocoolers arranged on the two detector faces parallel to beam direction.
 The total required cryostat footprint is therefore \SI{5 x 5}{\metre}.
 
-Table~\ref{tab:dune-nd_dim} gives an overview of the most important \AC{} near detector dimensions, in comparison to the \num{2 x 2} Bern prototype.
+Table~\ref{tab:dune-nd_dim} gives an overview of the most important \AC{} \gls{nd} dimensions, in comparison to the \num{2 x 2} Bern prototype.
 Due to the bigger modules, the total fraction of active volume is increased to \SI{91.2}{\percent}.
 Drift direction is perpendicular to beam direction.
 The reason for this is to reduce the rate on single pixels.
 If drift direction was parallel to beam direction, particle tracks highly parallel to drift direction would lead to a very high rate on single channels potentially leading to a buffer overflow and thus data loss in the \larpix{} chip.
 Another advantage is that dead space in beam direction between adjacent modules will only be \SI{30}{\milli\metre} due to the very slim dimensions of \AL{}.
-Figure~\ref{fig:dune-nd_ac} shows an artistic view of the \AC{} near detector component.
+Figure~\ref{fig:dune-nd_ac} shows an artistic view of the \AC{} \gls{nd} component.

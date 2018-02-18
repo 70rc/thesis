@@ -56,13 +56,13 @@ Because of the limited space inside the cryostat, no internal light triggering s
 Instead, the digitisers were either triggered on one of the charge collection channels or by an external muon telescope.
 The latter was formed of two scintillator panels with \glspl{pmt}s above and below the cryostat, respectively.
 Triggering directly on charge collection channels has the potential disadvantage of recording events only partially.
-If the triggering channel does not receive the first charge pulse of the event, all earlier pulses are lost, unless the data acquisition (DAQ) implements a pretrigger ring buffer of sufficient size.
+If the triggering channel does not receive the first charge pulse of the event, all earlier pulses are lost, unless the \gls{daq} implements a pretrigger ring buffer of sufficient size.
 It is therefore preferable to trigger on the external muon telescope.
 
 Using the above-described setup, cosmic muons were recorded over the course of multiple hours.
 A typical event is depicted in Figure~\ref{fig:cuoka_event}.
 It can be seen that due to the event being almost parallel to the induction strips, the induction signal is in fact stronger than the collection signal.
-The reason for the bad signal to noise ratio is improper grounding of the setup and high noise levels in the lab from the nearby train station and air conditioning.
+The reason for the bad \gls{snr} is improper grounding of the setup and high noise levels in the lab from the nearby train station and air conditioning.
 Due to time constraints and an upcoming test of a pixelated readout described in Chapter~\ref{chap:dune-nd}, no analysis was performed on this data.
 Anyhow, the fact that cosmic muons could be seen using this setup proves that there is no inherent problem with having the induction plane a few \SI{10}{\micro\metre} behind the collection plane.
 
@@ -83,7 +83,7 @@ Because of this, it was decided not to further investigate copper on Kapton read
 As outlined in Section~\ref{sec:lartpc_challenges}, wire readouts are not suitable for \lartpc{}s the size of the envisioned future neutrino detectors.
 The ambiguities caused by the nature of wire readouts can be eliminated by using a fully pixelated readout.
 Such a readout will record a true 2D image of the charge for every time slice and thus directly produce 3D space points of the event.
-On the other hand, this will increase the required number of DAQ channels and therefore the data throughput.
+On the other hand, this will increase the required number of \gls{daq} channels and therefore the data throughput.
 To illustrate this, let us imagine a readout plane of \SI{1 x 1}{\metre} and a desired resolution of \SI{5}{\milli\metre}.
 For a conventional wire readout with two planes, this results in
 
@@ -91,7 +91,7 @@ For a conventional wire readout with two planes, this results in
 	\qty(\frac{\SI{1}{\metre}}{\SI{5}{\milli\metre}}) \times 2 & = & 40
 \end{IEEEeqnarray}
 
-wires and thus DAQ channels.
+wires and thus \gls{daq} channels.
 In order to reduce ambiguities, one can use more than two planes which will increase the number of channels linearly with the number of planes.
 For a pixelated readout,
 
@@ -99,8 +99,8 @@ For a pixelated readout,
 	\qty(\frac{\SI{1}{\metre}}{\SI{5}{\milli\metre}}) ^ 2 & = & 400
 \end{IEEEeqnarray}
 
-DAQ channels are required.
-Scaling this up to the needed detector size, this leads to an enormous number of DAQ channels and data throughput.
+\gls{daq} channels are required.
+Scaling this up to the needed detector size, this leads to an enormous number of \gls{daq} channels and data throughput.
 
 It is possible to reduce the number of channel by employing some form of multiplexing.
 There are multiple options, one could imagine for this:
@@ -112,14 +112,14 @@ There are multiple options, one could imagine for this:
 
 Digital multiplexing means digitising all channels as close as possible to the readout plane and then mutliplexing the digital data onto a high-speed digital link.
 An advantage of this technique is that the technology for this already exists and is well established in information technology.
-Ideally, one would feed the data stream into an optical fibre which additionally would provide galvanic isolation of the readout from the DAQ.
+Ideally, one would feed the data stream into an optical fibre which additionally would provide galvanic isolation of the readout from the \gls{daq}.
 The challenging part is that all of this needs to happen at cryogenic temperatures which is far from trivial because most off-the-shelf components are not made for this.
 A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Section~\ref{sec:studies_electronics_pixel}.
 In contrast, genetic multiplexing and \glspl{roi} are forms of analogue multiplexing.
 The difference to digital multiplexing is that multiple readout channels are combined into a single analogue link before digitising them at room temperature outside the cryostat.
-In the two schemes described here, this happens by connecting multiple readout channels to a single DAQ channel.
+In the two schemes described here, this happens by connecting multiple readout channels to a single \gls{daq} channel.
 
-In genetic multiplexing, the connections are done in a way that a certain event type (a single straight track for instance) forms a distinct pattern of DAQ channels activated.
+In genetic multiplexing, the connections are done in a way that a certain event type (a single straight track for instance) forms a distinct pattern of \gls{daq} channels activated.
 For simple events, it is possible to recover the full event from the pattern.
 Naturally, this reintroduces new ambiguities.
 Depending on the complexity of the event topology and the degree of multiplexing, they can potentially be resolved during reconstruction.
@@ -128,21 +128,21 @@ While genetic multiplexing has been shown to work for one-dimensional readouts (
 
 A third technique is to subdivide a pixelated readout plane in so-called \glspl{roi}.
 This scheme was tested for an earlier PhD thesis at LHEP at the University of Bern using a \gls{micromegas} in a xenon gas \gls{tpc}~\cite{maplesyrup}.
-All pixels at the same position inside the \glspl{roi} are connected to the same DAQ channel.
+All pixels at the same position inside the \glspl{roi} are connected to the same \gls{daq} channel.
 For instance, let us assume squared \glspl{roi}.
-One DAQ channel would connect to all the pixels in the top left corners of the \glspl{roi}.
+One \gls{daq} channel would connect to all the pixels in the top left corners of the \glspl{roi}.
 Another channel would connect to all the pixels in the top right corner and so on.
 To explain this a little better, let us assume a square pixel plane of $N \times N$ pixels where $N = n ^ 2$ with an arbitrary integer $n$.
 Now, we divide the plane into $n \times n = N$, each consisting again of $n \times n = N$ pixels.
-For such a readout, we require $N$ DAQ channels for the \glspl{roi} and another $N$ channels for the pixels.
-We need only as many pixel channels as we have pixels per tpc because all the pixels at the same relative position inside the \glspl{roi} are connected together to one DAQ channel.
-This means that we can read out a $N \times N$ pixel plane using only $2 N$ DAQ channels; the same number required by a conventional 2-plane wire readout of the same size and pitch.
-If there is a signal on a certain DAQ channel, the position inside the tpc is known but not the tpc.
-To determine the full position, each tpc has its own inductive grid in between the pixels.
+For such a readout, we require $N$ \gls{daq} channels for the \glspl{roi} and another $N$ channels for the pixels.
+We need only as many pixel channels as we have pixels per \gls{roi} because all the pixels at the same relative position inside the \glspl{roi} are connected together to one \gls{daq} channel.
+This means that we can read out a $N \times N$ pixel plane using only $2 N$ \gls{daq} channels; the same number required by a conventional 2-plane wire readout of the same size and pitch.
+If there is a signal on a certain \gls{daq} channel, the position inside the \gls{roi} is known but not the \gls{roi}.
+To determine the full position, each \gls{roi} has its own inductive grid in between the pixels.
 The grid is biased such that the charge is fully focussed onto the pixels and does not collect any charge.
-Combining the bipolar pulse on the tpc grid with the collection pulse from the pixels, it is possible to disentangle the true position.
+Combining the bipolar pulse on the \gls{roi} grid with the collection pulse from the pixels, it is possible to disentangle the true position.
 Again, the drawback of this approach is that it is not free of ambiguities.
-It fails for multiple simultaneous hits when it is impossible to say which pixel pulse belongs to which tpc pulse.
+It fails for multiple simultaneous hits when it is impossible to say which pixel pulse belongs to which \gls{roi} pulse.
 
 Independently of the amount of data one needs to bring out of the detector, a second problem is heat dissipation.
 The more of the readout chain is sitting inside of the detector, the more serious this problem becomes.
@@ -151,7 +151,7 @@ A possible solution to this is to power only that part of the readout that is ac
 This would require a means to wake up the part of the readout where the charge is arriving before it is collected.
 Provided, the wake-up time is short enough, inductive grids on \glspl{roi} could allow precisely for this.
 
-As the tpc approach had already been demonstrated in a gas \gls{tpc}, it was chosen for the first prototype of a pixelated \lartpc{}.
+As the \gls{roi} approach had already been demonstrated in a gas \gls{tpc}, it was chosen for the first prototype of a pixelated \lartpc{}.
 Because the detector is a single-phase \lartpc{}, and thus no gas amplification as in \gls{micromegas} is needed, the readout plane could be realised as a conventional Printed Circuit Board \gls{pcb}.
 Alongside the \gls{pcb}, a new \gls{tpc} was designed which can be reused for future prototyping efforts.
 The design of \gls{pcb} and \gls{tpc} as well as the results from the first tests are described in Section~\ref{sec:ac_viper}.

@@ -39,9 +39,9 @@ The full schematic of the bias circuit is depicted in Figure~\ref{fig:viper_pcb_
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixel_pcb_schematic}
 	\caption{Schematic of the bias circuit for the \AC{} pixel demonstrator \gls{pcb}.
-	On the left, the pinheader connected to the bias \gls{hv} power suplly is shown. In the middle and on the right are the connections to the pixels and inductive tpc grids.
+	On the left, the pinheader connected to the bias \gls{hv} power suplly is shown. In the middle and on the right are the connections to the pixels and inductive \gls{roi} grids.
 	The connections to the preamplifier inputs are located at the positions of numbers P1--P36 (pixels) and I1--I28 (\glspl{roi}).
-	For simplicity and universality, the same circuit was used for both pixels and \glspl{roi} eventhough for the measurements described in this work, only the inductive tpc grids were biased.
+	For simplicity and universality, the same circuit was used for both pixels and \glspl{roi} eventhough for the measurements described in this work, only the inductive \gls{roi} grids were biased.
 	Therefore, the \glspl{roi} are connected as depicted (R2 and R39--R66, C2 and C39--C66).
 	As the pixels need not be biased, they are directly connected to the preamplifiers by leaving R3--R38 unpopulated and replacing C3--C38 by \SI{0}{\ohm} resistors.
 	Additionally, R1 is \SI{0}{\ohm} and C1 unpopulated, and by connecting pin 1 of J1 to ground, all unused \gls{pcb} traces are grounded.}
@@ -129,17 +129,17 @@ For proper insulation, the whole assembly is submerged in transformer oil.
 
 To assess the \gls{snr}, dedicated noise data was taken employing a \SI{5}{\hertz} random trigger.
 The data of \num{5000} events was combined.
-Subsequently, all pixel and tpc channels were combined separately and filled into respective amplitude distribution histograms.
+Subsequently, all pixel and \gls{roi} channels were combined separately and filled into respective amplitude distribution histograms.
 Finally, the standard deviation of the noise was calculated by fitting a Gaussian to the amplitude distribution.
-This value was used to calculate the noise for pixel and tpc channels according to
+This value was used to calculate the noise for pixel and \gls{roi} channels according to
 \begin{IEEEeqnarray}{rCl}
 	\m{SNR} & = & \frac{S}{\sigma} \qc
 	\label{eq:viper_snr}
 \end{IEEEeqnarray}
 where $S$ is the signal and $\sigma$ is the noise standard deviation from the Gaussian fit.
 As can be seen in the left plot in Figure~\ref{fig:viper_unfilteredRawData}, one of the pixel channels is significantly noisier in comparison to others, likely caused by a broken preamplifier.
-Therefore, this channel was blinded for the SNR calculations.
-The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{982}{\elementarycharge} for the inductive tpc channels
+Therefore, this channel was blinded for the \gls{snr} calculations.
+The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{982}{\elementarycharge} for the inductive \gls{roi} channels
 
 The signal $S$ is often taken for a Minimum-Ionising Particle (MIP) as this is at the lower end of the signal range interesting for neutrino physics.
 Getting a clean MIP sample from experimental data requires a calibrated reconstruction which was not available at the time of writing.
@@ -158,20 +158,20 @@ Combining this, the signal is
 \end{IEEEeqnarray}
 for a charge deposited adjacent to the readout plane, and $S = \SI{6004}{\elementarycharge}$ for a charge deposited adjacent to the cathode.
 
-Table~\ref{tab:viper_snr} lists the SNR values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:viper_snr}.
+Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:viper_snr}.
 
 \begin{table}[htb]
 	\centering
-	\caption{SNR values obtained from Equation~\eqref{eq:viper_snr} using the theoretical signal of a MIP at the readout plane or cathode, respectively combined with the average equivalent noise charge for pixel and tpc channels obtained from measurements.}
+	\caption{\gls{snr} values obtained from Equation~\eqref{eq:viper_snr} using the theoretical signal of a MIP at the readout plane or cathode, respectively combined with the average equivalent noise charge for pixel and \gls{roi} channels obtained from measurements.}
 	\label{tab:viper_snr}
 	\begin{tabu} to \textwidth {llS}
 		\toprule
-		Channel &	MIP at &		{SNR} \\
+		Channel &	MIP at &		{\gls{snr}} \\
 		\midrule
 		Pixel &		Readout plane &	14 \\
 		Pixel &		Cathode &		5.5 \\
-		tpc &		Readout plane &	16 \\
-		tpc &		Cathode &		6.1 \\
+		\gls{roi} &		Readout plane &	16 \\
+		\gls{roi} &		Cathode &		6.1 \\
 		\bottomrule
 	\end{tabu}
 \end{table}
@@ -190,8 +190,8 @@ In the first step, a noise-filtering algorithm is applied to the raw data.
 As can be seen from Figure~\ref{fig:viper_unfilteredRawData}, the noise is largely correlated across all the channels.
 \footnote{Due to the much higher signal levels, the noise is barely visible on the pixel channels on the left.}
 This common-mode correlation can be exploited by the noise filter algorithm.
-The following is done separately for the all pixel and tpc channels of each event.
-Similarly to the SNR calculation, all samples are filled into an amplitude distribution histogram for each channel, and subsequently fitted with a Gaussian.
+The following is done separately for the all pixel and \gls{roi} channels of each event.
+Similarly to the \gls{snr} calculation, all samples are filled into an amplitude distribution histogram for each channel, and subsequently fitted with a Gaussian.
 A noise band is defined per channel with its centre equal to the mean of the Gaussian and its width equal to the standard deviation multiplied by a tunable scaling factor.
 The amplitudes of all channels within the corresponding noise band are then averaged for each sample.
 Finally, this average is subtracted from each channel at the corresponding sample.
@@ -203,7 +203,7 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredROI}
-	\caption{Unfiltered raw data of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}). The top plot shows pixel data while the bottom plot shows tpc data.}
+	\caption{Unfiltered raw data of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}). The top plot shows pixel data while the bottom plot shows \gls{roi} data.}
 	\label{fig:viper_unfilteredRawData}
 \end{figure}
 
@@ -212,7 +212,7 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredROI}
 	\caption{Filtered data of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
-	The top plot shows pixel data while the bottom plot shows tpc data}
+	The top plot shows pixel data while the bottom plot shows \gls{roi} data}
 	\label{fig:viper_filteredRawData}
 \end{figure}
 
@@ -226,23 +226,23 @@ If it is below threshold, the process stops and proceeds to the next channel.
 Otherwise, the pulse is scanned in positive and negative directions until it crosses respective lower noise thresholds.
 After this, the whole pulse is deleted from the data and the process starts over with finding the new maximum sample and checking it against the peak threshold.
 For stability reasons, the peak threshold relative to noise levels is compared against an absolute threshold and the higher of the two is applied.
-The search is extended to the negative pulse for the bipolar tpc pulses.
+The search is extended to the negative pulse for the bipolar \gls{roi} pulses.
 The different thresholds employed and samples found by this process are illustrated in Figure~\ref{fig:viper_hitFinder}.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth, page=1]{viper/event967_pixel2_hit8}\\
 	\includegraphics[width=\textwidth, page=3]{viper/event967_pixel2_hit8}
-	\caption{Pulse shapes of a single pixel (top) and tpc (bottom) hit of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+	\caption{Pulse shapes of a single pixel (top) and \gls{roi} (bottom) hit of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	Superimposed are the thresholds of the hit finder algorithm. Horizontal lines represent thresholds: the solid is the minimum threshold required to be crossed for a pulse to be detected, and dashed are the thresholds used to detect the pulse edges.
 	Vertical lines represent the corresponding detected peak/edge samples.
 	Colour indicates a positive (green) or negative (red) pulse, or a zero crossing (yellow).}
 	\label{fig:viper_hitFinder}
 \end{figure}
 
-Identified pulses are then combined into 3D hits by matching pixels pulses to tpc pulses.
+Identified pulses are then combined into 3D hits by matching pixels pulses to \gls{roi} pulses.
 For this proof of concept, this is done rather primitively by matching any pulses coinciding in time.
-In Figure~\ref{fig:viper_hitFinder}, a pixel and tpc pulse are matched if their time slices, defined by the vertical dashed lines, overlap.
+In Figure~\ref{fig:viper_hitFinder}, a pixel and \gls{roi} pulse are matched if their time slices, defined by the vertical dashed lines, overlap.
 This third step results in a rather high amount of ambiguities but assures that no hits are missed.
 
 To resolve the ambiguities, a Principal Component Analysis (PCA) is applied to the 3D space points in a fourth step.
@@ -347,5 +347,5 @@ Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \
 Over several weeks, beam and cosmic muon data was taken.
 At the time of this writing, no official results were available.
 Nevertheless, preliminary analyses indicate a successful scale-up of the pixelated \lartpc{} concept.
-The achieved SNR seems to be comparable to what was reached with the prototype in Bern described above.
+The achieved \gls{snr} seems to be comparable to what was reached with the prototype in Bern described above.
 A recorded beam event is depicted in Figure~\ref{fig:pixlar_event}.

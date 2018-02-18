@@ -179,7 +179,7 @@ The design for the two buffer stages was kindly provided by the \lariat{} collab
 \end{figure}
 
 A source of noise was identified in the layout of the pixel readout plane.
-It was found that due to several ground planes and long tracks in the PCB, parasitic capacitances are very high.
+It was found that due to several ground planes and long tracks in the \gls{pcb}, parasitic capacitances are very high.
 Pixel channels are affected particularly due to the increased total track lengths from connecting multiple pixels to the same DAQ channel.
 This is problematic because for high enough frequencies---determined by $RC$---, the input is shorted to ground creating a ground loop again.
 Through this capacitive coupling to ground, the system can start to oscillate.
@@ -187,11 +187,11 @@ One evidence for this is that the noise is equal over multiple channels, so-call
 More specifically, the noise is equal for two respective groups of channels (see Figure~\ref{fig:electronics_event-run1}).
 Investigating this, it was found that these groups correspond to channels of roughly equal parasitic capacitance: \SI{150 +- 5}{\pico\farad} and \SI{95 +- 5}{\pico\farad}.
 The noise amplitude is higher on channels with higher capacitance (see Figure~\ref{fig:electronics_noise-run1}).
-To solve this problem, the PCB design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes and increasing the thickness of the PCB.
+To solve this problem, the \gls{pcb} design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes and increasing the thickness of the \gls{pcb}.
 Pixel capacitance could be improved to \SI{65 +- 5}{\pico\farad} for all channels.
 ROI capacitance improved only slightly from \SI{25 +- 10}{\pico\farad} to \SI{20 +- 10}{\pico\farad} which confirms the hypothesis that the long tracks due to pixel multiplexing were the culprits.
 The reason for the higher spread of the ROI capacitances is the larger difference in track length between the differen ROIs.
-For the sake of completeness, it should be noted here that for the capacitance measurements, the old PCB was not populated while the new one was populated as described in Section~\ref{sec:ac_viper_pcb}.
+For the sake of completeness, it should be noted here that for the capacitance measurements, the old \gls{pcb} was not populated while the new one was populated as described in Section~\ref{sec:ac_viper_pcb}.
 However, the installed capacitors are either not connected to ground or in series with a \SI{10}{\mega\ohm} resistor.
 Therefore, their influence on the measurements is negligible.
 

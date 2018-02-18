@@ -12,7 +12,7 @@ While many of the individual systems, such as the high-voltage system, light and
 \subsection{Pixel \glsentryshort{pcb} Design}
 \label{sec:ac_viper_pcb}
  
-The pixelated anode plane, shown in Figure~\ref{fig:viper_pixies}, was produced as a conventional Printed Circuit Board (PCB). 
+The pixelated anode plane, shown in Figure~\ref{fig:viper_pixies}, was produced as a conventional \gls{pcb}. 
 The pixelated area is \SI{100}{\milli\metre} across, the pixels are formed of \SI{900}{\micro\metre} vias with a pitch of \SI{2.54}{\milli\metre}.
 An inductive focusing grid surrounds the pixels, it is made from \SI{152.4}{\micro\metre} copper traces split into 28 regions.
 There are \num{6 x 6} pixels per region, giving a total of 1008 pixels. 
@@ -20,7 +20,7 @@ There are \num{6 x 6} pixels per region, giving a total of 1008 pixels.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.65\linewidth]{viper/pixies}
-	\caption{Initial (July 2016) pixelated anode PCB. The pixelated readout area is \SI{100}{\milli\metre} in diameter.
+	\caption{Initial (July 2016) pixelated anode \gls{pcb}. The pixelated readout area is \SI{100}{\milli\metre} in diameter.
 	Each charge collection pixel is a \SI{900}{\micro\metre}, at a pitch of \SI{2.54}{\milli\metre}, inductive focusing grids formed of \SI{152.4}{\micro\metre} copper traces surround the pixels.
 	There are 28 inductive focusing grids with 36 pixels per region, a total of 1008 pixels.}
 	\label{fig:viper_pixies}
@@ -28,7 +28,7 @@ There are \num{6 x 6} pixels per region, giving a total of 1008 pixels.
 
 Vias were used for pixels instead of pads in order to minimise capacitance.
 As detailed in Section~\ref{sec:studies_electronics}, it is important that capacitance is minimised when amplifying charge.
-To further minimise parasitic capacitance, the PCB design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes, and increasing the thickness of the PCB to \SI{3.5}{\milli\metre} from an initial \SI{1.75}{\milli\metre}. 
+To further minimise parasitic capacitance, the \gls{pcb} design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes, and increasing the thickness of the \gls{pcb} to \SI{3.5}{\milli\metre} from an initial \SI{1.75}{\milli\metre}. 
 The resulting capacitance at each pixel is $\order{\SI{50}{\pico\farad}}$.
 
 The pixels are directly connected to the preamplifiers while the inductive focusing grids are decoupled via \SI{10}{\nano\farad} capacitors.
@@ -38,13 +38,13 @@ The full schematic of the bias circuit is depicted in Figure~\ref{fig:viper_pcb_
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixel_pcb_schematic}
-	\caption{Schematic of the bias circuit for the \AC{} pixel demonstrator PCB.
+	\caption{Schematic of the bias circuit for the \AC{} pixel demonstrator \gls{pcb}.
 	On the left, the pinheader connected to the bias \gls{hv} power suplly is shown. In the middle and on the right are the connections to the pixels and inductive ROI grids.
 	The connections to the preamplifier inputs are located at the positions of numbers P1--P36 (pixels) and I1--I28 (ROIs).
 	For simplicity and universality, the same circuit was used for both pixels and ROIs eventhough for the measurements described in this work, only the inductive ROI grids were biased.
 	Therefore, the ROIs are connected as depicted (R2 and R39--R66, C2 and C39--C66).
 	As the pixels need not be biased, they are directly connected to the preamplifiers by leaving R3--R38 unpopulated and replacing C3--C38 by \SI{0}{\ohm} resistors.
-	Additionally, R1 is \SI{0}{\ohm} and C1 unpopulated, and by connecting pin 1 of J1 to ground, all unused PCB traces are grounded.}
+	Additionally, R1 is \SI{0}{\ohm} and C1 unpopulated, and by connecting pin 1 of J1 to ground, all unused \gls{pcb} traces are grounded.}
 	\label{fig:viper_pcb_schematic}
 \end{figure}
 
@@ -328,7 +328,7 @@ Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt\
 It houses a \gls{tpc} with \SI{47}{\centi\metre} drift length and a \SI{40 x 90}{\centi\metre} readout plane parallel to the beam direction, resulting in an active volume of \SI{170}{\litre}.
 For the pixel test, called \pixlar{}, the original wire planes were replaced by a \num{120 x 240} pixel readout.
 At \SI{3}{\milli\metre} pitch, this gives an instrumented area of \SI{36 x 72}{\centi\metre}.
-Due to constraints from the PCB manufacturer, the readout plane had to be split into two mirror-symmetric, electrically independent half planes.
+Due to constraints from the \gls{pcb} manufacturer, the readout plane had to be split into two mirror-symmetric, electrically independent half planes.
 Each \num{120 x 120} pixel half plane is divided into \num{8 x 15} ROIs of \num{15 x 8} pixels each.
 The ROIs are oriented with their longer dimension parallel to the beam direction to reduce the multiplexing ambiguities.
 One of the noise mitigation measures implemented for the Bern pixel demonstrator was to use the same differential warm signal path as used by \lariat{}.

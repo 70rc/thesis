@@ -1,7 +1,7 @@
 \section{Charge Readout Electronics}
 \label{sec:studies_electronics}
 
-For a heavy MIP with $\dv{E}{x} \approx \SI{2.1}{\mega\electronvolt\per\centi\metre}$, a \lartpc{} has a charge yield of $\sim{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
+For a heavy \gls{mip} with $\dv{E}{x} \approx \SI{2.1}{\mega\electronvolt\per\centi\metre}$, a \lartpc{} has a charge yield of $\sim{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
 The readout electronics need to be able to reliably digitise this charge.
 This chapter aims to outline the challenges based on present designs and then present several tests of future approaches addressing them.
 
@@ -284,7 +284,7 @@ This, in turn, reduces the duty cycle and thus the power dissipation of the \gls
 If noise levels are well below the set threshold, power dissipation becomes primarily a function of charge flux rate in the detector.
 
 In addition to this, the digital circuitry of \larpix{} operates at lower frequencies than the \gls{bnl} design.
-For an alternating current (AC) of frequency $f$, the resistance presented by a conductor is not simply given by its Ohmic resistance.
+For an \gls{ac} of frequency $f$, the resistance presented by a conductor is not simply given by its Ohmic resistance.
 There is an additional component proportional to $\sqrt{f}$ caused by the \emph{skin effect}.~\cite{horowitzHill}
 High frequency currents no longer flow in the bulk of the conductor but only in a finite layer (skin) at its surface.
 Therefore, the resistance is no longer proportional to the cross-section area but rather the surface area of the conductor.
@@ -298,9 +298,9 @@ For the successful operation of \larpix{}, it is of paramount importance to keep
 The latter can be achieved by minimising detector capacitance.
 To lower the susceptibility to high event rates, the \dune{} \gls{nd} design puts the \gls{tpc} drift direction perpendicular to beam direction.
 This reduces the amount of charge per event arriving simultaneously at the readout.
-Furthermore, \larpix{} is equipped with a First-In-First-Out (FIFO) buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
+Furthermore, \larpix{} is equipped with a \gls{fifo} buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
 
 To accomodate the elevated number of channels of a pixelated readout, the first \larpix{} prototype chip has \num{32} inputs.
 Its resolution in time and charge are \SI{2}{\micro\second} and \SI{8}{bit}, respectively.
 While currently inferior to the \gls{bnl} design, these specifications are planned to be improved in the next design iteration, after a successful initial test.
-One of the goals of the first prototype is to assess the optimal size of the FIFO.~\cite{danLarpix}
+One of the goals of the first prototype is to assess the optimal size of the \gls{fifo}.~\cite{danLarpix}

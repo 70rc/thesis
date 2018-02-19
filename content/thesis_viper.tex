@@ -141,9 +141,9 @@ As can be seen in the left plot in Figure~\ref{fig:viper_unfilteredRawData}, one
 Therefore, this channel was blinded for the \gls{snr} calculations.
 The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{982}{\elementarycharge} for the inductive \gls{roi} channels
 
-The signal $S$ is often taken for a Minimum-Ionising Particle (MIP) as this is at the lower end of the signal range interesting for neutrino physics.
-Getting a clean MIP sample from experimental data requires a calibrated reconstruction which was not available at the time of writing.
-Therefore, the MIP signal was estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre} (see Section~\ref{sec:nu-detection_fs}).
+The signal $S$ is often taken for a \gls{mip} as this is at the lower end of the signal range interesting for neutrino physics.
+Getting a clean \gls{mip} sample from experimental data requires a calibrated reconstruction which was not available at the time of writing.
+Therefore, the \gls{mip} signal was estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre} (see Section~\ref{sec:nu-detection_fs}).
 This can be converted to charge loss using the energy required to produce one electron-ion pair from Table~\ref{tab:lartpc_larprop}: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$.
 Additionally, charge recombination, diffusion and lifetime need to be taken into account (see Section~\ref{sec:lartpc_lar}).
 The recombination factor was measured by \icarus{}~\cite{icarusReco} and \argoneut{}~\cite{argoneutReco} and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
@@ -162,11 +162,11 @@ Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal 
 
 \begin{table}[htb]
 	\centering
-	\caption{\gls{snr} values obtained from Equation~\eqref{eq:viper_snr} using the theoretical signal of a MIP at the readout plane or cathode, respectively combined with the average equivalent noise charge for pixel and \gls{roi} channels obtained from measurements.}
+	\caption{\gls{snr} values obtained from Equation~\eqref{eq:viper_snr} using the theoretical signal of a \gls{mip} at the readout plane or cathode, respectively combined with the average equivalent noise charge for pixel and \gls{roi} channels obtained from measurements.}
 	\label{tab:viper_snr}
 	\begin{tabu} to \textwidth {llS}
 		\toprule
-		Channel &	MIP at &		{\gls{snr}} \\
+		Channel &	\gls{mip} at &		{\gls{snr}} \\
 		\midrule
 		Pixel &		Readout plane &	14 \\
 		Pixel &		Cathode &		5.5 \\
@@ -180,11 +180,11 @@ Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal 
 \subsection{3D track reconstruction}
 \label{sec:ac_viper_3d}
 
-To demonstrate 3D track reconstruction, several thousand cosmic ray events were collected, many of which are MIPs, mostly muons.
+To demonstrate 3D track reconstruction, several thousand cosmic ray events were collected, many of which are \glspl{mip}, mostly muons.
 The charge readout was triggered by the light readout described above.
 
 The reconstruction procedure comprises five steps: noise filtering, hit finding, hit matching, ambiguity rejection, and track fitting.
-These steps are explained in the following and depicted in Figures~\ref{fig:viper_unfilteredRawData} through~\ref{fig:viper_kalman}, all taken from the same MIP (cosmic muon) event.
+These steps are explained in the following and depicted in Figures~\ref{fig:viper_unfilteredRawData} through~\ref{fig:viper_kalman}, all taken from the same \gls{mip} (cosmic muon) event.
 
 In the first step, a noise-filtering algorithm is applied to the raw data.
 As can be seen from Figure~\ref{fig:viper_unfilteredRawData}, the noise is largely correlated across all the channels.
@@ -203,7 +203,7 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredROI}
-	\caption{Unfiltered raw data of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}). The top plot shows pixel data while the bottom plot shows \gls{roi} data.}
+	\caption{Unfiltered raw data of a typical \gls{mip} event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}). The top plot shows pixel data while the bottom plot shows \gls{roi} data.}
 	\label{fig:viper_unfilteredRawData}
 \end{figure}
 
@@ -211,7 +211,7 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredROI}
-	\caption{Filtered data of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+	\caption{Filtered data of a typical \gls{mip} event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	The top plot shows pixel data while the bottom plot shows \gls{roi} data}
 	\label{fig:viper_filteredRawData}
 \end{figure}
@@ -233,7 +233,7 @@ The different thresholds employed and samples found by this process are illustra
 	\centering
 	\includegraphics[width=\textwidth, page=1]{viper/event967_pixel2_hit8}\\
 	\includegraphics[width=\textwidth, page=3]{viper/event967_pixel2_hit8}
-	\caption{Pulse shapes of a single pixel (top) and \gls{roi} (bottom) hit of a typical MIP event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+	\caption{Pulse shapes of a single pixel (top) and \gls{roi} (bottom) hit of a typical \gls{mip} event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	Superimposed are the thresholds of the hit finder algorithm. Horizontal lines represent thresholds: the solid is the minimum threshold required to be crossed for a pulse to be detected, and dashed are the thresholds used to detect the pulse edges.
 	Vertical lines represent the corresponding detected peak/edge samples.
 	Colour indicates a positive (green) or negative (red) pulse, or a zero crossing (yellow).}

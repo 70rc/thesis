@@ -202,7 +202,7 @@ Argon Box propagates the neutrino interaction events it gets from GENIE through 
 To get a realistic simulation of beam events in the detector, these events need to be distributed randomly in time and space.
 Beam spills are simulated by drawing the number of events for each spill from a Poisson distribution whose mean is calculated from the beam intensity and the target mass according to the values in Table~\ref{tab:nu-detection_beam-params}.
 The resulting number of events is taken from the Argon Box ROOT tree and their vertices are placed within the \lar{} volume at coordinates drawn from a uniform distribution.
-Combined with the target mass given in Table~\ref{tab:dune-nd_pile-up-params}, this results in an equivalent of $\approx \num{1.5e19}$ protons on target (POT).
+Combined with the target mass given in Table~\ref{tab:dune-nd_pile-up-params}, this results in an equivalent of $\approx \num{1.5e19}$~\gls{pot}.
 The seemingly low number (compared to Table~\ref{tab:nu-detection_nd-rates} for instance) is the result of many neutrino interactions happening outside of the active detector.
 
 Three different argon volumes are assumed for the simulation: target, active, and fiducial volume.

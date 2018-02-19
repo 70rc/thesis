@@ -125,7 +125,7 @@ The opening angle and longituginal extent of the cone were optimised by looking 
 The finite resolution of the detector is emulated by voxelising (via rounding) the charge deposition with the corresponding resolution in all three spatial coordinates.
 This leads to problems near the tip of the cone where the transversal extent is lower than the voxel dimensions.
 In particular, it can happen that most of the initial charge is shifted outside the cone.
-Furthermore, multiple scattering at lower energies makes the cone model suboptimal near the tip.
+Furthermore, \gls{mcs} at lower energies makes the cone model suboptimal near the tip.
 Therefore, the acceptance volume for the reconstruction is taken as the union of the cone with a cylinder around the direction of the shower of the same longitudinal extent as the cone.
 The cylinder radius was tuned to optimise the trade-off between missed and misidentified energy deposition as defined below.
 
@@ -369,7 +369,7 @@ It can be seen that the absolute missed energy rises more or less linearly with 
 This indicates that the cone models the shower well, as expected from theory (see Section~\ref{sec:nu-detection_fs}).
 Indeed, it can be seen from Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x} that the missed energy stays almost constant at \SI{3}{\percent} from \SIrange{1}{6}{\giga\electronvolt}.
 Below, it rises up to \SI{10}{\percent} in the lowest energy bin (\SIrange{0}{125}{\mega\electronvolt}).
-This can be explained by the increase in multiple Coulomb scattering at lower momenta.
+This can be explained by the increase in \gls{mcs} at lower momenta.
 Similarly, the Compton scattering cross-section increases as well.
 Both these effects lead to a higher angular distribution of the energy depositions by electrons (and positrons) and photons, respectively.
 Consequentially, more energy is missed because the cone angle is independent of energy.

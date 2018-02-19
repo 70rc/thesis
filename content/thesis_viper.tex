@@ -280,7 +280,7 @@ The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 
 The final step consists of a Kalman filter.
 For this, the well-established \gls{genfit} package~\cite{genfit1, genfit2} was used.
-Ionisation losses and multiple scattering are taken into account.
+Ionisation losses and \gls{mcs} are taken into account.
 The particle is assumed to be a minimum-ionising muon with an initial momentum of \SI{260}{\mega\electronvolt\per\clight} in the direction of the track estimate from the PCA.
 A recursive algorithm capable of dealing with outliers was chosen, a so-called \emph{deterministic annealing filter}.
 This works by assigning successively lower weights to outliers with each recursion step.
@@ -295,14 +295,14 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 	The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	Drift direction is from right to left.
 	The yellow points are the input to the Kalman filter, the accepted hits from the principal components analysis.
-	Blue is the output, a fitted track taking into account ionisation losses and multiple scattering in \lar{}.}
+	Blue is the output, a fitted track taking into account ionisation losses and \gls{mcs} in \lar{}.}
 	\label{fig:viper_kalman}
 \end{figure}
 
 Technically, the Kalman filter would be capable of fitting the particle momentum or even particle type to the data.
 At the time of this writing, this is not implemented yet.
 In particular, the momentum stays roughly at the initial guess of \SI{260}{\mega\electronvolt\per\clight}, assuming a minimum ionising muon in \lar{}.
-A potential explanation for this is that the resolution of the detector is too low to estimate momentum from multiple scattering.
+A potential explanation for this is that the resolution of the detector is too low to estimate momentum from \gls{mcs}.
 Another explanation might be the hit finder missing hits due to non-optimal tuning.
 Proper tuning of the reconstruction requires a full simulation chain of the detector which is not yet available.
 Using data to tune the reconstruction is prone to the introduction of circular biases.

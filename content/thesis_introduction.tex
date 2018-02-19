@@ -22,12 +22,12 @@ Therefore, artificially produced neutrino beams will be employed, paired with hu
 Not only are neutrino interactions with matter very rare, they are also quite manifold, giving raise to the need for detectors capable of recording complex event topologies and reconstructing energies precisely.
 
 \glspl{lartpc} are a prime candidate for the aforementioned requirements.
-They combine a high-density target material with a high-precision 3D tracker and calorimeter.
+They combine a high-density target material with a high-precision \gls{3d} tracker and calorimeter.
 The incoming neutrinos interact with the \lar{}, producing charged secondary particles which in turn ionise \ce{Ar} atoms.
-By means of an electric field, the produced electron-ion pairs can be separated and drifted towards a two-dimensional charge readout.
-A small remainder of pairs recombine and produce very prompt (\si{\nano\second}) UV scintillation light which can be used to determine the propagation time of the charge drifted towards the readout plane.
+By means of an electric field, the produced electron-ion pairs can be separated and drifted towards a \gls{2d} charge readout.
+A small remainder of pairs recombine and produce very prompt (\si{\nano\second}) \gls{uv} scintillation light which can be used to determine the propagation time of the charge drifted towards the readout plane.
 Due to the constant drift velocity of charge in a medium subject to an electric field, the distance from the ionisation location to the readout plane can be precisely determined.
-Combined with the 2D information from the readout, the full 3D interaction topology can be reconstructed.
+Combined with the \gls{2d} information from the readout, the full \gls{3d} interaction topology can be reconstructed.
 
 The \dune{} is a next generation long-baseline beam neutrino oscillation experiment, placing \lartpc{}s in an accelerator-produced muon neutrino beam.
 Neutrino oscillations will be observed over a baseline of \SI{1300}{\kilo\metre}.
@@ -44,8 +44,8 @@ To some extent, uncertainties related to the interaction model cancel out as wel
 Finally, using the same technology in both detectors, cancels even more of the remaining uncertainties.
 Therefore, the \gls{nd} complex needs to contain a \lartpc{} component.
 
-Up until now, \lartpc{} charge readouts have been realised by means of multiple one-dimensional wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge---due to technological limitations.
-Combined with the time of the drifting charge, this results in one 2D image of the event topology per wire plane, effectively reducing the 3D capabilities of the \gls{tpc} to multiple 2D projections.
+Up until now, \lartpc{} charge readouts have been realised by means of multiple \gls{1d} wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge---due to technological limitations.
+Combined with the time of the drifting charge, this results in one \gls{2d} image of the event topology per wire plane, effectively reducing the \gls{3d} capabilities of the \gls{tpc} to multiple \gls{2d} projections.
 Additionally, \lartpc{}s are comparatively slow detectors.
 The minimum drift time of charge in \lar{} (and thus the readout time) is limited to $\sim{\SI{1}{\milli\second\per\metre}}$ by constraints on the maximum cathode voltage.
 Both the above have not prevented the huge success of \lartpc{}s up to now.
@@ -54,9 +54,9 @@ While this still applies to the \dune{} \gls{fd}, it is certainly not true for t
 The high-intensity neutrino beam will result in event rates in the \gls{nd} significantly higher than what contemporary \lartpc{}s have been exposed to.
 Even worse, the beam is delivered in very short pulses of very high intensity.
 Because these pulses are one to two orders of magnitude shorter than a typical \lartpc{} readout cycle, the detector registers several neutrino interactions simultaneously, so-called event pile-up.
-Combined with the 2D projection readout, this leads to significant difficulties in event reconstruction: disentangling the 3D interaction topologies from the recorded 2D projections.
+Combined with the \gls{2d} projection readout, this leads to significant difficulties in event reconstruction: disentangling the \gls{3d} interaction topologies from the recorded \gls{2d} projections.
 
-An obvious solution to this challenge is to regain true 3D information from the \gls{tpc} by replacing the projective 1D wire planes with a true 2D pixelated charge readout.
+An obvious solution to this challenge is to regain true \gls{3d} information from the \gls{tpc} by replacing the projective \gls{1d} wire planes with a true \gls{2d} pixelated charge readout.
 However, as mentioned above, this is linked to technological challenges.
 Replacing a two plane wire readout with pixels of the same pitch squares the number of required readout channels.
 For the \lartpc{} in the \dune{} \gls{nd} complex with a size of \SI{4 x 5 x 2.5}{\metre}, this amounts to $\sim{\num{e6}}$ cables needing to be routed out of the cryogenic vessel housing the detector.
@@ -93,8 +93,8 @@ This makes it competitive to classical PM tubes for large area coverage while re
 The main contribution to the \dune{} \gls{nd} complex is the demonstration of a pixelated \lartpc{}.
 Conventional room-temperature digitisers were combined with analogue multiplexing due to the as yet lacking cryogenic electronics.
 Several days of cosmic muon data were collected with a test stand designed and built at \gls{help}.
-A software framework was written to reconstruct 3D tracks from the data.
-Even though the employed pixelated readout yields 3D information on charge deposition in the \lartpc{}, the necessary analogue multiplexing introduced a certain amount of ambiguity.
+A software framework was written to reconstruct \gls{3d} tracks from the data.
+Even though the employed pixelated readout yields \gls{3d} information on charge deposition in the \lartpc{}, the necessary analogue multiplexing introduced a certain amount of ambiguity.
 The latter had to be resolved by the reconstruction algorithm.
 Finally, the unambiguous positional information was fed to a Kalman filter.
 This propagates a cosmic muon hypothesis through all the detector measurements taking into account the various involved charge deposition mechanisms in \lar{}.
@@ -102,12 +102,12 @@ The end result is a completely reconstructed particle track through the detector
 The combination of all the R\&D presented in this thesis resulted in the development of the \AC{}, a next-generation \lartpc{} concept, at \gls{help}.
 It aims to address the most important challenges met by future \lartpc{}s.
 The problematic high fields at the cathodes as well as the scintillation light containment issue are addressed by splitting up the detector into smaller ($\sim{\SI{1}{\metre}}$), self-contained \glspl{tpc} sharing a common \lar{} bath.
-A pixelated charge readout makes the detector capable of true 3D event recording.
+A pixelated charge readout makes the detector capable of true \gls{3d} event recording.
 To keep the dead volume to a minimum, \AL{} is used as the light readout system.
 All of this is described in Chapters~\ref{chap:ac}.
 
 Chapter~\ref{chap:dune-nd} introduces the proposed \AC{} \lartpc{} component for the \dune{} \gls{nd} complex together with a feasibility study of a \lartpc{} in such an environment.
-Combining the knowledge gained from Chapter~\ref{chap:ac} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:studies}, enables the realisation of a true 3D \lartpc{}.
+Combining the knowledge gained from Chapter~\ref{chap:ac} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:studies}, enables the realisation of a true \gls{3d} \lartpc{}.
 However, it remains to be shown that such a detector is actually able to cope with the event rates expected in the \gls{nd}.
 To assess this capability, a metric was needed representative of the physics processes.
 \gls{em} showers produced from the photons originating from \Pgpz decays are notoriously complex to reconstruct.

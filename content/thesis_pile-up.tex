@@ -107,10 +107,10 @@ This allows for convenient further processing using ROOT.
 
 To investigate the effects of pile-up on energy reconstruction, a working reconstruction algorithm is necessary.
 However, at the time of writing, official reconstruction tools were only available for \lartpc{}s read out by wire planes.\footnote{\url{http://larsoft.org}}
-Therefore, a rather primitive algorithm for true 3D space points was implemented, under the assumption that a positive outcome of such a pile-up study would imply an even better performance of a more sophisticated reconstruction.
+Therefore, a rather primitive algorithm for true \gls{3d} space points was implemented, under the assumption that a positive outcome of such a pile-up study would imply an even better performance of a more sophisticated reconstruction.
 This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
-The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous 3D space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
+The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous \gls{3d} space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics_pixel}.
 The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
@@ -132,7 +132,7 @@ The cylinder radius was tuned to optimise the trade-off between missed and misid
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/rel_2d_missed}
-	\caption{2D histogram of missed energy fraction versus true photon energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
+	\caption{\gls{2d} histogram of missed energy fraction versus true photon energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
 		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
 		Under the number of entries, a detailed list of the number of entries inside (centre) and outside (edges and corners) the depicted area of the histogram is given (under- and overflow).}
@@ -347,16 +347,16 @@ On the other hand, the primary goal of this study is to assess the effect of eve
 The misidentified energy is thus compared to the true neutrino energy.
 For this, the total missed energy of each neutrino event is first calculated by summing up the contributions of all descending \Pgpz photons.
 Additionally, it is illustrative to look at the fraction of events with a certain misidentified or missed energy.
-All the aforementioned information is contained in 2D histograms of all events with the true neutrino (photon) energy on one axis and the misidentified (missed) energy on the other axis.
-The energy dependence of the error can be obtained by looking at the true energy axis and calculating the mean misidentified (missed) energy for each bin (a profile of the 2D histogram).
-Looking at the misidentified (missed) energy axis and summing over all true energy bins yields the number of events with the corresponding misidentified (missed) energy (a projection of the 2D histogram).
+All the aforementioned information is contained in \gls{2d} histograms of all events with the true neutrino (photon) energy on one axis and the misidentified (missed) energy on the other axis.
+The energy dependence of the error can be obtained by looking at the true energy axis and calculating the mean misidentified (missed) energy for each bin (a profile of the \gls{2d} histogram).
+Looking at the misidentified (missed) energy axis and summing over all true energy bins yields the number of events with the corresponding misidentified (missed) energy (a projection of the \gls{2d} histogram).
 The corresponding fraction of events is obtained by normalising the histogram, i.e.\ dividing every bin by the total number of entries.
 It should be noted that for the projections all values in the corresponding y-bin are taken into account, including the ones outside the boundaries of the histogram (under- and overflow).
 For the profiles, only events between \SIrange{0}{6}{\giga\electronvolt} absolute and \numrange{0}{1} fractional are taken into account.
 
 The results for a \SI{2}{\mega\watt} beam at \SI{80}{\giga\electronvolt} proton energy are shown in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_misid-rel-y}.
 To illustrate the relation between the different histograms, all of them are shown for the missed energy in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_missed-rel-y}.
-The initial 2D histogram is shown in Figure~\ref{fig:dune-nd_2MW_rel-2d-missed}.
+The initial \gls{2d} histogram is shown in Figure~\ref{fig:dune-nd_2MW_rel-2d-missed}.
 Note that it actually depicts the missed photon energy as a fraction of the true photon energy rather than an absolute value.
 Figure~\ref{fig:dune-nd_2MW_missed-rel-x} is the profile of the x-axis, i.e.\ the mean missed energy fraction for each true energy bin.
 The projection of the y-axis is depicted in Figure~\ref{fig:dune-nd_2MW_missed-rel-y}.
@@ -389,21 +389,21 @@ If it was possible to identify the other \SI{50}{\percent} somehow in the real e
 Given the high event rates in the \gls{nd}, this would be easily affordable.
 Using the cone-base algorithm described here, \gls{em} shower pile-up could be detected via overlapping cones for instance.
 
-To get a rough idea of the performance of a 2D wire readout in an identical environment, the same study was performed ignoring the Y-coordinate completely, leaving everything else untouched.
-Of course, this is a gross underestimation of the capabilities of existing reconstruction algorithms for 2D charge readout data.
-In particular, contemporary experiments use at least three 2D projections whereas only one was used here.
+To get a rough idea of the performance of a \gls{2d} wire readout in an identical environment, the same study was performed ignoring the Y-coordinate completely, leaving everything else untouched.
+Of course, this is a gross underestimation of the capabilities of existing reconstruction algorithms for \gls{2d} charge readout data.
+In particular, contemporary experiments use at least three \gls{2d} projections whereas only one was used here.
 Even though, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ_missed-rel-x} through~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}.
 The fraction of events not suffering from pile-up is below \SI{10}{\percent}, and \SI{50}{\percent} have \SI{10}{\percent} or more misidentified energy (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}).
 Similarly, the error on energy reconstruction has increased to \SIrange{10}{20}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x}).
-On the other hand, the error due to missed energy has improved from \SIrange{3}{2}{\percent} compared to 3D (Figure~\ref{fig:dune-nd_2MW-XZ_missed-rel-x}).
+On the other hand, the error due to missed energy has improved from \SIrange{3}{2}{\percent} compared to \gls{3d} (Figure~\ref{fig:dune-nd_2MW-XZ_missed-rel-x}).
 An explanation for this is that all the energy in Y-direction was summed up, due to the projection on XZ.
 Therefore, the cone (or rather triangle) cannot miss energy in the former direction.
 
-Finally, as a cross-check, the (3D) pile-up study was performed for a hypothetical \SI{10}{\mega\watt} beam in Figures~\ref{fig:dune-nd_10MW_missed-rel-x} through~\ref{fig:dune-nd_10MW_misid-rel-y}.
+Finally, as a cross-check, the (\gls{3d}) pile-up study was performed for a hypothetical \SI{10}{\mega\watt} beam in Figures~\ref{fig:dune-nd_10MW_missed-rel-x} through~\ref{fig:dune-nd_10MW_misid-rel-y}.
 As explained above the missed energy only depends on the geometry of the acceptance volume, in particular, it should be independent of beam intensity.
 Therefore it is expected to be very similar to the \SI{2}{\mega\watt} case as can be confirmed by comparing Figure~\ref{fig:dune-nd_10MW_missed-rel-x} to Figure~\ref{fig:dune-nd_2MW_missed-rel-x}.
 As expected, the error due to misidentified energy is increased to \SIrange{7}{15}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_10MW_misid-rel-x}) but still better than for the XZ projection.
 Similarly, only about \SI{10}{\percent} of the neutrino events remain pile-up free, and \SI{50}{\percent} suffer from more than \SI{4}{\percent} misidentified energy (Figure~\ref{fig:dune-nd_10MW_misid-rel-y}).
 
-In summary, this study shows that even a very primitive \gls{em} shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} \gls{nd}, when fed with unambiguous 3D spatial coordinates of energy depositions.
+In summary, this study shows that even a very primitive \gls{em} shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} \gls{nd}, when fed with unambiguous \gls{3d} spatial coordinates of energy depositions.
 It clearly fails when reduced to two dimensions or presented with a much higher beam intensity.

@@ -6,7 +6,7 @@
 The \gls{tpc} is a derivative of Charpak's Multi-Wire Proportional Chamber (MWPC)\cite{mwpc} developed by Nygren in the late 1970s~\cite{nygrenTPC}.
 Crossing charged particles ionise the detection medium which was gaseous in the original design.
 To prevent the recombination of the ions and electrons, an electric field is applied.
-In this field, the electrons drift towards a two-dimensional readout plane (an MWPC in the original design).
+In this field, the electrons drift towards a \gls{2d} readout plane (an MWPC in the original design).
 The charge readout is triggered by a scintillation light readout which also provides accurate timing of an event.
 Using this, one can measure the time for the ionisation electrons to reach the readout plane.
 As the drift speed of charged particles in the detection medium is constant and if it is known, the coordinate in drift direction can be calculated from the drift time.
@@ -156,10 +156,10 @@ Recharging, in turn, caused a lot of detector down time.
 \label{sec:lartpc_charge-ro}
 
 Classically, the charge readout of a \lartpc{} is done using wires with a diameter of $\sim{\SI{.1}{\milli\metre}}$.
-One wire plane delivers a 2D projection of the ionisation tracks in the detection medium.
+One wire plane delivers a \gls{2d} projection of the ionisation tracks in the detection medium.
 This has two consequences:
 \begin{enumerate}
-	\item At least two parallel wire planes are needed to be able to reconstruct the 3D event topology.
+	\item At least two parallel wire planes are needed to be able to reconstruct the \gls{3d} event topology.
 	\item In theory, the higher the complexity of the event, the more planes would be required to be able to fully reconstruct it.
 \end{enumerate}
 Multiple wire planes can be realised by operating only the last one (in drift direction) in charge collection mode.
@@ -180,7 +180,7 @@ Contemporary detector designs employ \glspl{pmt} for this purpose.
 The light impinging upon a \gls{pmt} is converted to an electron by a photo cathode coated on the sensitive surface of the \gls{pmt}.
 These photo cathodes have a limited absorption spectrum.
 In particular, the scintillation light of \lar{} does not fall inside this spectrum for most photo cathodes.
-That is why the vacuum UV scintillation light needs to be converted to the visible range where it can be efficiently detected by a \gls{pmt}.
+That is why the vacuum \gls{uv} scintillation light needs to be converted to the visible range where it can be efficiently detected by a \gls{pmt}.
 A widespread \gls{wls} capable of achieving this is \gls{tpb}.
 Therefore, a common setup consists of either coating the \gls{pmt}~\cite{icarus}, or a surface in front of it~\cite{uboone} with \gls{tpb}.
 
@@ -247,9 +247,9 @@ This is worsened by the fact that the construction needs to withstand extreme te
 
 The second problem of wires, event pile-up is a consequence of the increased flux required for future experiments.
 It is rooted in the way event reconstruction works for wires.
-As mentioned above, effectively, wire planes do not produce real 3D event topologies but rather multiple 2D projections.
-In order to achieve true 3D events, they need to be disentangled from the 2D projections.
-If an event is complex enough, this cannot be done unambiguously with a limited number of 2D projections.
+As mentioned above, effectively, wire planes do not produce real \gls{3d} event topologies but rather multiple \gls{2d} projections.
+In order to achieve true \gls{3d} events, they need to be disentangled from the \gls{2d} projections.
+If an event is complex enough, this cannot be done unambiguously with a limited number of \gls{2d} projections.
 This problem is especially serious in case of a \gls{nd}.
 The envisioned \dune{} \gls{nd}, for instance, is expected to see a total of \num{3.14e5} neutrino events per tonne of Ar for \SI{1e20}{POT} (protons on target).~\cite{dune2}
 Scaling down this number to one beam spill (\SI{1e14}{POT})\footnote{Assuming a \SI{2}{\mega\watt} beam reaching \SI{2e21}{POT\per a} with a spill cycle of \SI{1.2}{\second} and \SI{66.7}{\percent} beam up-time.~\cite{dune2, dune4}} leads to $\approx \num{0.3}$ neutrino events.\todo{fix}

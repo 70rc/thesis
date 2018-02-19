@@ -177,10 +177,10 @@ Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal 
 \end{table}
 
 
-\subsection{3D track reconstruction}
+\subsection{\glsentryshort{3d} track reconstruction}
 \label{sec:ac_viper_3d}
 
-To demonstrate 3D track reconstruction, several thousand cosmic ray events were collected, many of which are \glspl{mip}, mostly muons.
+To demonstrate \gls{3d} track reconstruction, several thousand cosmic ray events were collected, many of which are \glspl{mip}, mostly muons.
 The charge readout was triggered by the light readout described above.
 
 The reconstruction procedure comprises five steps: noise filtering, hit finding, hit matching, ambiguity rejection, and track fitting.
@@ -240,15 +240,15 @@ The different thresholds employed and samples found by this process are illustra
 	\label{fig:viper_hitFinder}
 \end{figure}
 
-Identified pulses are then combined into 3D hits by matching pixels pulses to \gls{roi} pulses.
+Identified pulses are then combined into \gls{3d} hits by matching pixels pulses to \gls{roi} pulses.
 For this proof of concept, this is done rather primitively by matching any pulses coinciding in time.
 In Figure~\ref{fig:viper_hitFinder}, a pixel and \gls{roi} pulse are matched if their time slices, defined by the vertical dashed lines, overlap.
 This third step results in a rather high amount of ambiguities but assures that no hits are missed.
 
-To resolve the ambiguities, a Principal Component Analysis (PCA) is applied to the 3D space points in a fourth step.
+To resolve the ambiguities, a Principal Component Analysis (PCA) is applied to the \gls{3d} space points in a fourth step.
 This technique is well established and described in literature, e.g.~\cite{pca}.
 Therefore, it shall be explained here only briefly.
-The basic idea is to calculate three orthogonal eigenvectors of the 3D space point cloud.
+The basic idea is to calculate three orthogonal eigenvectors of the \gls{3d} space point cloud.
 A graphic interpretation of these eigenvectors are the three axis of an ellipsoid fitted to the data points.
 In case the points form a track, one of these eigenvectors will have a much higher eigenvalue than the other two.
 This eigenvector is taken as an estimate for the track direction.
@@ -256,7 +256,7 @@ The ambiguities can be resolved by selecting the one closest to the track estima
 Furthermore, this procedure can be used to recursively reject outliers by forming a cylinder around the track estimate with a radius proportional to the second largest eigenvalue.
 All hits outside this cylinder are rejected.
 The procedure can be repeated by rerunning the PCA on the remaining points and performing another outlier rejection.
-In a later stage of reconstructing more complex events, this algorithm can potentially be used to cluster 3D space points in order to separate multiple tracks.
+In a later stage of reconstructing more complex events, this algorithm can potentially be used to cluster \gls{3d} space points in order to separate multiple tracks.
 The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 
 \begin{figure}[htb]
@@ -264,7 +264,7 @@ The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_q} \\
 	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_pca} \\
 	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_det}
-	\caption{Reconstructed 3D hits from the hit finder.
+	\caption{Reconstructed \gls{3d} hits from the hit finder.
 		The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 		Drift direction is from right to left.
 		Pulse shape is encoded as thickness.
@@ -307,7 +307,7 @@ Another explanation might be the hit finder missing hits due to non-optimal tuni
 Proper tuning of the reconstruction requires a full simulation chain of the detector which is not yet available.
 Using data to tune the reconstruction is prone to the introduction of circular biases.
 On the other hand, most of the difficulties emerge from the multiplexing ambiguities and their resolution.
-While the presented almost full 3D readout has already reduced the reconstruction complexity compared to a classical wire readout, an ambiguity-free readout will make reconstruction another big step easier by completely eliminating the need to resolve ambiguities.
+While the presented almost full \gls{3d} readout has already reduced the reconstruction complexity compared to a classical wire readout, an ambiguity-free readout will make reconstruction another big step easier by completely eliminating the need to resolve ambiguities.
 
 
 \section{\pixlar{}}

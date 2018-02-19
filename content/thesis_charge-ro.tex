@@ -73,8 +73,8 @@ Anyhow, the fact that cosmic muons could be seen using this setup proves that th
 	\label{fig:cuoka_event}
 \end{figure}
 
-While this technique can potentially solve the mechanical problems of classical wire readouts, it does not reduce the ambiguities inherent to 2D-projective readouts outlined in Section~\ref{sec:lartpc_challenges}.
-Because of this, it was decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for \lartpc{}s providing real 3D data.
+While this technique can potentially solve the mechanical problems of classical wire readouts, it does not reduce the ambiguities inherent to \gls{2d} projective readouts outlined in Section~\ref{sec:lartpc_challenges}.
+Because of this, it was decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for \lartpc{}s providing real \gls{3d} data.
 
 
 \subsection{Pixel Readout}
@@ -82,7 +82,7 @@ Because of this, it was decided not to further investigate copper on Kapton read
 
 As outlined in Section~\ref{sec:lartpc_challenges}, wire readouts are not suitable for \lartpc{}s the size of the envisioned future neutrino detectors.
 The ambiguities caused by the nature of wire readouts can be eliminated by using a fully pixelated readout.
-Such a readout will record a true 2D image of the charge for every time slice and thus directly produce 3D space points of the event.
+Such a readout will record a true \gls{2d} image of the charge for every time slice and thus directly produce \gls{3d} space points of the event.
 On the other hand, this will increase the required number of \gls{daq} channels and therefore the data throughput.
 To illustrate this, let us imagine a readout plane of \SI{1 x 1}{\metre} and a desired resolution of \SI{5}{\milli\metre}.
 For a conventional wire readout with two planes, this results in
@@ -124,7 +124,7 @@ For simple events, it is possible to recover the full event from the pattern.
 Naturally, this reintroduces new ambiguities.
 Depending on the complexity of the event topology and the degree of multiplexing, they can potentially be resolved during reconstruction.
 In any case, if the event is too complex, it cannot be reconstructed properly.
-While genetic multiplexing has been shown to work for one-dimensional readouts (wires), there is no known solution for two dimensions (pixels).\todo{sauce}
+While genetic multiplexing has been shown to work for \gls{1d} readouts (wires), there is no known solution for two dimensions (pixels).\todo{sauce}
 
 A third technique is to subdivide a pixelated readout plane in so-called \glspl{roi}.
 This scheme was tested for an earlier PhD thesis at \gls{help} using a \gls{micromegas} in a xenon gas \gls{tpc}~\cite{maplesyrup}.

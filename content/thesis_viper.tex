@@ -92,7 +92,7 @@ Each resistor is soldered to its neighbour, and fixed to the field cage at each 
 	\centering
 	\includegraphics[width=0.26\linewidth]{viper/viper_original}
 	\includegraphics[width=0.62\linewidth]{viper/viper_sipm}
-	\caption{\small  Left: Photograph of the  pixel demonstration \gls{tpc} at Bern, with the \gls{hv} feedthrough.
+	\caption{\small  Left: Photograph of the  pixel demonstration \gls{tpc} at \gls{help}, with the \gls{hv} feedthrough.
 	Right: Close-up of the light collection system, showing \gls{wls} fibres coupling \glspl{sipm} to the \gls{tpb}-coated light guides.}
 	\label{fig:viper_v1per}
 \end{figure}
@@ -103,7 +103,7 @@ The coating method is based on~\cite{TPBcoating}.
 Three layers of the coating were applied by hand, with a fine brush. 
 
 \SI{1}{\milli\metre} diameter \gls{wls} fibres (Kuraray Y11(200)M) couple the acrylic rings to the four Hamamatsu S12825-050P \glspl{sipm} mounted close to the anode, see Figure~\ref{fig:viper_v1per}. 
-The \glspl{sipm} and their front-end electronics were adapted from those developed at Bern for the \glspl{crt} used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
+The \glspl{sipm} and their front-end electronics were adapted from those developed at \gls{help} for the \glspl{crt} used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
 For operation in \lar{}, the \gls{sipm} bias voltages had to be reduce from $\approx$~\SI{70}{\volt} to \SI{53}{\volt}, in order to limit the gain.   
 In the front-end electronics, two coincidences of two out of the four \glspl{sipm} are formed and combined by means of a logic \textit{OR} operation. 
 This coincidence is used in order to improve trigger purity.
@@ -147,7 +147,7 @@ Therefore, the MIP signal was estimated from theory assuming an energy loss of \
 This can be converted to charge loss using the energy required to produce one electron-ion pair from Table~\ref{tab:lartpc_larprop}: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$.
 Additionally, charge recombination, diffusion and lifetime need to be taken into account (see Section~\ref{sec:lartpc_lar}).
 The recombination factor was measured by \icarus{}~\cite{icarusReco} and \argoneut{}~\cite{argoneutReco} and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
-With \AT{}~\cite{AT}, Bern measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
+With \AT{}~\cite{AT}, \gls{help} measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
 Even using the more conservative value, this results in a transverse spread of $\approx \SI{0.9}{\milli\metre}$ for the pixel demonstrator drift time of $t = \SI{281}{\micro\second}$, according to Equation~\eqref{eq:lartpc_lar-diff}.
 This value lies well below the pixel pitch of $d_{\m{p}} = \SI{2.54}{\milli\metre}$.
 Considering that the longitudinal component is smaller than the transverse ~\cite{lngDet}, diffusion is neglected completely for these calculations.
@@ -320,7 +320,7 @@ While the presented almost full 3D readout has already reduced the reconstructio
 	\label{fig:pixlar_arclight}
 \end{figure}
 
-After the successful test with cosmic muons at Bern, a bigger prototype of the pixel readout, employing the same multiplexing scheme, was built for a beam exposure in the \lariat{} experiment~\cite{lariat} at \gls{fail}.
+After the successful test with cosmic muons at \gls{help}, a bigger prototype of the pixel readout, employing the same multiplexing scheme, was built for a beam exposure in the \lariat{} experiment~\cite{lariat} at \gls{fail}.
 \lariat{} consists of the former \argoneut{}~\cite{argoneut} cryostat and \lartpc{} put into a test beam.
 The tertiary beam line produces mainly pions and protons as well as electrons, muons and kaons at a lower rate.
 Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt\per\clight}.
@@ -331,7 +331,7 @@ At \SI{3}{\milli\metre} pitch, this gives an instrumented area of \SI{36 x 72}{\
 Due to constraints from the \gls{pcb} manufacturer, the readout plane had to be split into two mirror-symmetric, electrically independent half planes.
 Each \num{120 x 120} pixel half plane is divided into \num{8 x 15} \glspl{roi} of \num{15 x 8} pixels each.
 The \glspl{roi} are oriented with their longer dimension parallel to the beam direction to reduce the multiplexing ambiguities.
-One of the noise mitigation measures implemented for the Bern pixel demonstrator was to use the same differential warm signal path as used by \lariat{}.
+One of the noise mitigation measures implemented for the \gls{help} pixel demonstrator was to use the same differential warm signal path as used by \lariat{}.
 Therefore, the charge readout electronics used in \pixlar{} are quite similar to the \AT{} chain described in Section~\ref{sec:studies_electronics_at} after the upgrades.
 To trigger on scintillation light, one end of the \gls{tpc} is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_light-col_al}), while the other end features an ARAPUCA~\cite{arapuca} detector for comparison.
 Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \AL{} module attached.
@@ -347,5 +347,5 @@ Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \
 Over several weeks, beam and cosmic muon data was taken.
 At the time of this writing, no official results were available.
 Nevertheless, preliminary analyses indicate a successful scale-up of the pixelated \lartpc{} concept.
-The achieved \gls{snr} seems to be comparable to what was reached with the prototype in Bern described above.
+The achieved \gls{snr} seems to be comparable to what was reached with the prototype at \gls{help} described above.
 A recorded beam event is depicted in Figure~\ref{fig:pixlar_event}.

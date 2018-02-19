@@ -60,7 +60,7 @@ An obvious one is shielding all sensitive parts from external magnetic fields us
 Implementing this effectively is extremely complicated and often not practical for small experiments.
 Another approach is hardening the signal path itself by using current-coupled and/or symmetric signals.
 Current-coupled signals are much less sensitive to induced voltages, as long as they are small enough and do not result in significant current across parasitic impedances.
-An example is NIM logic from the Nuclear Instrumentation Module standard.
+An example is \gls{nim} logic.
 
 \begin{figure}[htb]
 	\centering
@@ -123,14 +123,14 @@ Their main features include
 
 The cryogenic preamplifiers are mounted as close as possible to the readout in order to minimise noise pick-up on these very sensitive lines.
 Via an \gls{i2c} bus, LARASICs can be programmed to the different aforementioned configurations.
-For this purpose, they are connected to a bespoke NIM module housing an Arduino which generates the \gls{i2c} signals, a test pulse generator, and multiple low-noise voltage regulators providing power to the LARASICs.
+For this purpose, they are connected to a bespoke \gls{nim} module housing an Arduino which generates the \gls{i2c} signals, a test pulse generator, and multiple low-noise voltage regulators providing power to the LARASICs.
 The output of the preamplifiers is fed to buffer amplifiers mounted on top of the signal feedthrough by means of flexible Kapton ribbon cables.
 The buffers operate at room temperature, have a unity gain, and match the output impedance of the LARASICs to the \SI{50}{\ohm} input impedance of the downstream digitisers.
-From the buffers, the signals are routed via \SI{50}{\ohm} unbalanced coaxial lines to \emph{CAEN V1724}\footnote{\url{http://www.caen.it}} \SI{14}{bit} digitisers mounted in a VME crate.
+From the buffers, the signals are routed via \SI{50}{\ohm} unbalanced coaxial lines to \emph{CAEN V1724}\footnote{\url{http://www.caen.it}} \SI{14}{bit} digitisers mounted in a \gls{vme} crate.
 For debugging purposes, the output of the buffers can be routed to an oscilloscope via a coaxial T-piece.
-Finally, the digital data is read out from the VME crate via a fibre-optic link by a standard PC.
+Finally, the digital data is read out from the \gls{vme} crate via a fibre-optic link by a standard PC.
 Figure~\ref{fig:viper_readoutChain_AT} depicts the entire readout chain.
-The complete analogue signal path from the pixel plane to the VME digitisers is single-ended and thus prone to ground loops and all associated noise problems.
+The complete analogue signal path from the pixel plane to the \gls{vme} digitisers is single-ended and thus prone to ground loops and all associated noise problems.
 
 \begin{figure}[htb]
 	\centering

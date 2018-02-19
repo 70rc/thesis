@@ -181,7 +181,7 @@ The design for the two buffer stages was kindly provided by the \lariat{} collab
 A source of noise was identified in the layout of the pixel readout plane.
 It was found that due to several ground planes and long tracks in the \gls{pcb}, parasitic capacitances are very high.
 Pixel channels are affected particularly due to the increased total track lengths from connecting multiple pixels to the same \gls{daq} channel.
-This is problematic because for high enough frequencies---determined by $RC$---, the input is shorted to ground creating a ground loop again.
+This is problematic because for high enough frequencies (determined by $RC$), the input is shorted to ground creating a ground loop again.
 Through this capacitive coupling to ground, the system can start to oscillate.
 One evidence for this is that the noise is equal over multiple channels, so-called common-mode noise.
 More specifically, the noise is equal for two respective groups of channels (see Figure~\ref{fig:electronics_event-run1}).

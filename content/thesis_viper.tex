@@ -29,7 +29,7 @@ There are \num{6 x 6} pixels per region, giving a total of 1008 pixels.
 Vias were used for pixels instead of pads in order to minimise capacitance.
 As detailed in Section~\ref{sec:studies_electronics}, it is important that capacitance is minimised when amplifying charge.
 To further minimise parasitic capacitance, the \gls{pcb} design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes, and increasing the thickness of the \gls{pcb} to \SI{3.5}{\milli\metre} from an initial \SI{1.75}{\milli\metre}. 
-The resulting capacitance at each pixel is $\order{\SI{50}{\pico\farad}}$.
+The resulting capacitance at each pixel is $\approx \SI{50}{\pico\farad}$.
 
 The pixels are directly connected to the preamplifiers while the inductive focusing grids are decoupled via \SI{10}{\nano\farad} capacitors.
 Additionally, the bias voltage is filtered at the input by another \SI{10}{\nano\farad} and \SI{10}{\mega\ohm}.
@@ -52,7 +52,7 @@ The bias on the inductive focusing grids had to be sufficient to allow full char
 It was increased incrementally until transparency was observed at \SI{300}{\volt}. 
 Simulation suggest this was only \SI{95}{\percent} transparency, with \SI{100}{\percent} at \SI{350}{\volt} (see Figure~\ref{fig:viper_transparency}).
 The simulation available at the time of the measurement contained a bug resulting in an underestimation of the bias voltage required for full transparency.
-During measurments, the bug became apparent and full transparency had to be estimated by looking at live data from the detector.
+During measurements, the bug became apparent and full transparency had to be estimated by looking at live data from the detector.
 Due to the limited accuracy of this method, measurements were not taken up to the bias voltage for full transparency suggested by the (corrected) simulation.~\cite{francypants}
 
 \begin{figure}[htb]
@@ -60,7 +60,7 @@ Due to the limited accuracy of this method, measurements were not taken up to th
 	\includegraphics[width=\textwidth]{viper/transparency}
 	\caption{Measured and simulated transparency versus bias voltage of the \AC{} pixel demonstrator.
 	The simulation available at the time of the measurement contained a bug resulting in an underestimation of the bias voltage required for full transparency.
-	During measurments, the bug became apparent and full transparency had to be estimated by looking at live data from the detector.
+	During measurements, the bug became apparent and full transparency had to be estimated by looking at live data from the detector.
 	Due to the limited accuracy of this method, measurements were not taken up to the bias voltage for full transparency suggested by the (corrected) simulation.~\cite{francypants}}
 	\label{fig:viper_transparency}
 \end{figure}
@@ -116,7 +116,7 @@ The pixel demonstration \gls{tpc} is housed in a double-bath vacuum-insulated cr
 A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of \lar{}.
 This is the same cryostat that was used for the \gls{hv} studies described in Section~\ref{sec:studies_hv}.
 The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with \lar{} filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
-\lar{} purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\order{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
+\lar{} purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\sim{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
 
 The \gls{hv} feedthrough remains unchanged from the breakdown studies (Section~\ref{sec:studies_hv}); a PET-C polymer dielectric capable of potentials as high as \SI{-130}{\kilo\volt}.
 A low-pass filter was added between the power supply and feedthrough, which consists of an \SI{800}{\pico\farad} decoupling capacitor grounded between two \SI{100}{\mega\ohm} resistors connected in series, i.e.\ an RC low-pass filter with an additional protection resistor at the output.

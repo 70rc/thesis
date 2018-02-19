@@ -1,7 +1,7 @@
 \section{Charge Readout Electronics}
 \label{sec:studies_electronics}
 
-For a heavy MIP with $\dv{E}{x} \approx \SI{2.1}{\mega\electronvolt\per\centi\metre}$, a \lartpc{} has a charge yield of $\order{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
+For a heavy MIP with $\dv{E}{x} \approx \SI{2.1}{\mega\electronvolt\per\centi\metre}$, a \lartpc{} has a charge yield of $\sim{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
 The readout electronics need to be able to reliably digitise this charge.
 This chapter aims to outline the challenges based on present designs and then present several tests of future approaches addressing them.
 
@@ -271,7 +271,7 @@ The measurements are shown to illustrate the difficulties of designing a reliabl
 Leaving aside the non-linear response, the BNL ADC ASICs are not suitable for use in conjunction with a pixelated \lartpc{} charge readout.
 Being designed for wire readouts, no strong focus was laid on power dissipation which is $\approx \SI{5}{\milli\watt}$ per channel.
 Combined with the one of the LARASIC (\SI{10}{\milli\watt})~\cite{larasic}, a total of \SI{15}{\milli\watt} is dissipated.
-For a pixelated \dune{} \gls{nd} with $\order{\num{e7}}$ channels, the resulting required cooling power would be \SI{150}{\kilo\watt} for \SI{70}{\tonne} of \lar{} (see Section~\ref{sec:dune-nd_ac}).
+For a pixelated \dune{} \gls{nd} with $\sim{\num{e7}}$ channels, the resulting required cooling power would be \SI{150}{\kilo\watt} for \SI{70}{\tonne} of \lar{} (see Section~\ref{sec:dune-nd_ac}).
 In comparison, \uboone{} has a total cooling power of $\approx \SI{20}{\kilo\watt}$ for \SI{170}{\tonne} of \lar{}.~\cite{uboone}
 
 Due to their smaller geometric extent, pixels have a much lower capacitance than wires.

@@ -117,8 +117,8 @@ A consequence is that higher impurities can be partially compensated by a higher
 In a beam experiment with a given beam timing, increasing the drift time will increase pile-up, i.e. the number of events simultaneously present in the detector.
 Pile-up in turn, complicates event reconstruction.
 On the other hand, the readout electronics need to be fast enough to guarantee the required spatial resolution in the drift coordinate which defines an upper limit for the drift velocity.
-A reasonable value from a purity point of view is a drift time of $\order{\SI{1}{\milli\second}}$.
-For a detector size of $\order{\SI{1}{\metre}}$, the required drift speed is $\order{\SI{1}{\milli\metre\per\micro\second}}$ which requires a field of $\order{\SI{1}{\kilo\volt\per\centi\metre}}$.
+A reasonable value from a purity point of view is a drift time of $\sim{\SI{1}{\milli\second}}$.
+For a detector size of $\sim{\SI{1}{\metre}}$, the required drift speed is $\sim{\SI{1}{\milli\metre\per\micro\second}}$ which requires a field of $\sim{\SI{1}{\kilo\volt\per\centi\metre}}$.
 
 For detectors much larger than \SI{1}{\metre}, a drift field of \SI{1}{\kilo\volt\per\centi\metre} becomes challenging due to the required high cathode voltage.
 Soon after entering \lartpc{} R\&D, the Bern group realised that the reported dielectric strength of \lar{} is much lower~\cite{breakdown_14} than measured by Swan et al.\ in 1960~\cite{swan1, swan2}.
@@ -143,7 +143,7 @@ This led to a very detailed study of breakdowns in \lar{} in the course of this 
 \section{Electric Field Generation}
 \label{sec:lartpc_efield}
 
-For charge separation and drift, an electric field of $\order{\SI{1}{\kilo\volt\per\centi\metre}}$ is needed inside the fiducial volume of a \lartpc{}.
+For charge separation and drift, an electric field of $\sim{\SI{1}{\kilo\volt\per\centi\metre}}$ is needed inside the fiducial volume of a \lartpc{}.
 An easy way to achieve this is by means of field shaping rings fed by a resistive divider between cathode and anode.
 The drawback is the need for a feedthrough capable of withstanding the full cathode voltage.
 One alternative is to generate the \gls{hv} inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the \AT{} experiment at LHEP at the University of Bern~\cite{AT}.
@@ -155,7 +155,7 @@ Recharging, in turn, caused a lot of detector down time.
 \section{Charge Readout}
 \label{sec:lartpc_charge-ro}
 
-Classically, the charge readout of a \lartpc{} is done using wires with a diameter of $\order{\SI{.1}{\milli\metre}}$.
+Classically, the charge readout of a \lartpc{} is done using wires with a diameter of $\sim{\SI{.1}{\milli\metre}}$.
 One wire plane delivers a 2D projection of the ionisation tracks in the detection medium.
 This has two consequences:
 \begin{enumerate}
@@ -201,7 +201,7 @@ Using $W_{\m{i}}$, the energy required to produce one electron ion pair, from Se
 
 as a rough estimation for the charge yield.
 This calculation does not incorporate recombination, diffusion and charge lifetime, meaning that in a real experiment the value will be even lower.
-The result is that the readout electronics need to be capable of detecting $\order{\si{\femto\coulomb}}$ charges.
+The result is that the readout electronics need to be capable of detecting $\sim{\SI{1}{\femto\coulomb}}$ charges.
 
 That is why the charge signal needs to be amplified before digitisation.
 This is achieved by means of an integrating amplifier which also converts the charge to a voltage.

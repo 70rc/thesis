@@ -65,7 +65,9 @@ An example is \gls{nim} logic.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{electronics/DiffSignaling}
-	\caption{Noise reduction using differential signalling.~\cite{diff_signal}}
+	\caption[Differential signalling]{
+		Noise reduction using differential signalling.~\cite{diff_signal}
+	}
 	\label{fig:electronics_diff-signal}
 \end{figure}
 
@@ -116,8 +118,9 @@ Their main features include
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{electronics/ReadoutChain_AT}
-	\caption{Readout chain used for the pixel test.
-		The picture of the LARASIC cryogenic front-end preamplifiers shows them installed in the \AT{} wire readout setup.~\cite{AT_larasic}}
+	\caption[\AT{} readout chain]{
+		\AT{} readout chain.~\cite{AT_larasic}
+	}
 	\label{fig:viper_readoutChain_AT}
 \end{figure}
 
@@ -136,8 +139,10 @@ The complete analogue signal path from the pixel plane to the \gls{vme} digitise
 	\centering
 	\includegraphics[width=\textwidth]{noise/event500_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{noise/event500_rawUnfilteredROI}
-	\caption{Event from the first measurement campaign of the pixel prototype.
-	The top plot shows pixel data while the bottom plot shows \gls{roi} data.}
+	\caption[Event from first pixel prototype measurement campaign]{
+		Event from the first measurement campaign of the pixel prototype.
+		The top plot shows pixel data while the bottom plot shows \acrshort{roi} data.
+	}
 	\label{fig:electronics_event-run1}
 \end{figure}
 
@@ -159,8 +164,10 @@ Furthermore, this decouples the lab grid entirely from the building ground preve
 	\centering
 	\includegraphics[page=4, width=\textwidth]{noise/noise_run1} \\
 	\includegraphics[page=1, width=\textwidth]{noise/noise_run1}
-	\caption{Noise amplitude distributions of pixel (top) and \gls{roi} (bottom) channels of the first measurement campaign.
-	\num{5000} events with \num{1000} \SI{410}{\nano\second} samples each from a \SI{5}{\hertz} random trigger were combined.}
+	\caption[Noise distributions from first pixel prototype measurement campaign]{
+		Noise amplitude distributions of pixel (top) and \acrshort{roi} (bottom) channels of the first measurement campaign.
+		\num{5000} events with \num{1000} \SI{410}{\nano\second} samples each from a \SI{5}{\hertz} random trigger were combined.
+	}
 	\label{fig:electronics_noise-run1}
 \end{figure}
 
@@ -173,8 +180,10 @@ The design for the two buffer stages was kindly provided by the \lariat{} collab
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredROI}
-	\caption{Event from the second measurement campaign of the pixel prototype after improving the readout chain.
-	The top plot shows pixel data while the bottom plot shows \gls{roi} data.}
+	\caption[Event from second pixel prototype measurement campaign]{
+		Event from the second measurement campaign of the pixel prototype after improving the readout chain.
+		The top plot shows pixel data while the bottom plot shows \acrshort{roi} data.
+	}
 	\label{fig:electronics_event-run2}
 \end{figure}
 
@@ -204,8 +213,10 @@ A more detailed assessment of the noise after the implementation of the describe
 	\centering
 	\includegraphics[page=4, width=\textwidth]{noise/noise_run2} \\
 	\includegraphics[page=1, width=\textwidth]{noise/noise_run2}
-	\caption{Noise amplitude distributions of pixel (top) and \gls{roi} (bottom) channels of the second measurement campaign, after implementing hardware noise mitigation measures.
-	\num{2000} events with \num{2000} \SI{210}{\nano\second} samples each from a \SI{5}{\hertz} random trigger were combined.}
+	\caption[Noise distributions from second pixel prototype measurement campaign]{
+		Noise amplitude distributions of pixel (top) and \acrshort{roi} (bottom) channels of the second measurement campaign, after implementing hardware noise mitigation measures.
+		\num{2000} events with \num{2000} \SI{210}{\nano\second} samples each from a \SI{5}{\hertz} random trigger were combined.
+	}
 	\label{fig:electronics_noise-run2}
 \end{figure}
 
@@ -248,9 +259,11 @@ To test this, a voltage ramp is applied to the input and the converted digital v
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{bnl/bnl_adc_lin}
-	\caption{Linearity measurement of the \gls{bnl} cryogenic \gls{adc} \glspl{asic} with input voltage on the x-axis and \gls{adc} value (code) on the y-axis.
-	Color represents the number of measurements.
-	The measurements were performed in liquid nitrogen.}
+	\caption[Linearity measurement of \glsentryshort{bnl} cryogenic \glsentryshort{adc} \glsentryshortpl{asic}]{
+		Linearity measurement of the \acrshort{bnl} cryogenic \acrshort{adc} \acrshortpl{asic} with input voltage on the x-axis and \acrshort{adc} value (code) on the y-axis.
+		Colour represents the number of measurements.
+		The measurements were performed in liquid nitrogen.
+	}
 	\label{fig:bnl_adc_lin}
 \end{figure}
 

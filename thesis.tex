@@ -95,7 +95,12 @@
 
 \usepackage[pdftex, unicode, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % should be last command in preamble
 
-\usepackage[xindy, acronym, nomain]{glossaries} % glossary according go latex wikibooks
+% glossary, should come after hyperref
+\ifoptionfinal{
+	\usepackage[xindy, acronym, nomain, nonumberlist, nopostdot]{glossaries} % suppress page list if final
+}{
+	\usepackage[xindy, acronym, nomain]{glossaries}
+}
 \makeglossaries
 \usepackage[xindy]{imakeidx}
 \makeindex

@@ -391,7 +391,7 @@ An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 	\centering
 	\includegraphics[width=\textwidth]{dune/dune}
 	\caption[\glsentryshort{dune}]{
-		\dune{}~\cite{dune1}
+		\acrshort{dune}~\cite{dune1}
 	}
 	\label{fig:nu-detection_dune}
 \end{figure}
@@ -413,11 +413,11 @@ More information on the beamline can be found in~\cite{dune2}.
 	\begin{minipage}{\textwidth}
 		\centering
 		\caption[\glsentryshort{dune} beam parameters and \glsentryshort{nd} rates]{
-			Summary of the \dune{} proton beam parameters for various configurations.
+			Summary of the \acrshort{dune} proton beam parameters for various configurations.
 			Initially, the beamline will operate with the phase one parameters.
 			Later, it will be upgraded to support the phase two parameters.
 			The pulse duration is \SI{10}{\micro\second} for all configurations.
-			The last column gives the expected total number of neutrino interactions per tonne of \ce{Ar} in the \gls{nd}, excluding rock events.
+			The last column gives the expected total number of neutrino interactions per tonne of \ce{Ar} in the \acrshort{nd}, excluding rock events.
 			It is calculated by multiplying the expected neutrino flux with the cross-section on \ce{Ar} from the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 			Note that these values are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params} because the latter are outdated.
 			Taken from~\cite{dune3, lauraNDRates}.
@@ -443,7 +443,7 @@ More information on the beamline can be found in~\cite{dune2}.
 	\includegraphics[width=.49\textwidth]{dune/FHC_230kA}
 	\includegraphics[width=.49\textwidth]{dune/RHC_230kA}
 	\caption[\glsentryshort{dune} neutrino fluxes.]{
-		Neutrino fluxes for the \dune{} reference beam design operating in neutrino mode (left) and antineutrino mode (right), generated with a \SI{120}{\giga\electronvolt} primary proton beam.~\cite{dune2}
+		Neutrino fluxes for the \acrshort{dune} reference beam design operating in neutrino mode (left) and antineutrino mode (right), generated with a \SI{120}{\giga\electronvolt} primary proton beam.~\cite{dune2}
 	}
 	\label{fig:nu-detection_dune-flux}
 \end{figure}
@@ -461,7 +461,7 @@ For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVoge
 		Muon to electron neutrino (left) and antineutrino (right) oscillation probability for normal (top) and inverted (bottom) mass ordering (hierarchy in the figure).
 		The oscillation probabilities are calculated from equation~\eqref{eq:nu-detection_oscprob}.
 		\dcp{} can be obtained from the difference between neutrino and antineutrino mode.
-		The \gls{msw} effect either enhances the probability in neutrino or antineutrino mode depending on the mass ordering, allowing for a determination or the latter.~\cite{qianVogel}
+		The \acrshort{msw} effect either enhances the probability in neutrino or antineutrino mode depending on the mass ordering, allowing for a determination or the latter.~\cite{qianVogel}
 	}
 	\label{fig:nu-detection_dune-osc}
 \end{figure}
@@ -476,8 +476,8 @@ Therefore, to reach the sensitivity goal earlier, a beam $> \SI{1}{\mega\watt}$ 
 	\includegraphics[width=.49\textwidth]{dune/mh_exp_syst}
 	\includegraphics[width=.49\textwidth]{dune/cpv75_exp_syst}
 	\caption[\glsentryshort{dune} \dcp{} sensitivity]{
-		Expected sensitivity of \dune{} to determination of the neutrino mass ordering (hierarchy, left) and discovery of \gls{cp} violation, i.e.\ $\dcp \neq\ 0\ \m{or}\ \pi$, (right) as a function of exposure in \si{\kilo\tonne\mega\watt.years}, assuming equal running in neutrino and antineutrino mode, for a range of values for the \Pgne and \Pagne signal normalisation uncertainties from $\SI{5}{\percent}\oplus\SI{3}{\percent}$ to $\SI{5}{\percent}\oplus\SI{1}{\percent}$.
-		The sensitivities quoted are the minimum sensitivity for \SI{100}{\percent} of \dcp{} values in the case of mass ordering and \SI{75}{\percent} of \dcp{} values in the case of \gls{cp} violation.
+		Expected sensitivity of \acrshort{dune} to determination of the neutrino mass ordering (hierarchy, left) and discovery of \acrshort{cp} violation, i.e.\ $\dcp \neq\ 0\ \m{or}\ \pi$, (right) as a function of exposure in \si{\kilo\tonne\mega\watt.years}, assuming equal running in neutrino and antineutrino mode, for a range of values for the \Pgne and \Pagne signal normalisation uncertainties from $\SI{5}{\percent}\oplus\SI{3}{\percent}$ to $\SI{5}{\percent}\oplus\SI{1}{\percent}$.
+		The sensitivities quoted are the minimum sensitivity for \SI{100}{\percent} of \dcp{} values in the case of mass ordering and \SI{75}{\percent} of \dcp{} values in the case of \acrshort{cp} violation.
 		The two bands on each plot represent a range of potential beam designs described in \cite{dune2}: the blue hashed band is for the reference design and the solid green band is for the optimized design.
 		Sensitivities are for true normal ordering; neutrino mass ordering and $\theta_{23}$ octant are assumed to be unknown.
 		Taken from~\cite{dune2}.
@@ -501,11 +501,18 @@ Rock events---secondary particles produced by beam neutrino interactions in the 
 
 \section{Neutrino Interaction with Matter}
 \label{sec:nu-detection_interactions}
+\glsreset{cc}
+\glsreset{nc}
+\glsreset{qe}
+\glsreset{res}
+\glsreset{dis}
+\glsreset{coh}
+\glsreset{mec}
 
 \begin{table}[htb]
 	\centering
 	\caption[\glsentryshort{dune} \glsentryshort{nd} event rates]{
-		Estimated number of interactions per tonne of \ce{Ar} at the \dune{} \gls{nd} for approximately one month (\num{1e20}~\gls{pot}) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}, taken from~\cite{dune2}.
+		Estimated number of interactions per tonne of \ce{Ar} at the \acrshort{dune} \acrshort{nd} for approximately one month (\num{1e20}~\acrshort{pot}) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}, taken from~\cite{dune2}.
 		Note that these rates are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params}.
 		The reason for this is that the values below are outdated.
 		However, their order of magnitude is correct and no such detailed breakdown is available for the more recent values.
@@ -514,39 +521,31 @@ Rock events---secondary particles produced by beam neutrino interactions in the 
 	\label{tab:nu-detection_nd-rates}
 	\begin{tabu} to \textwidth {llSS}
 		\toprule
-		Production mode &		Reaction &																										{\Pgngm beam} &		{\Pagngm beam} \\
+		Production mode &		Reaction &																														{\Pgngm beam} &		{\Pagngm beam} \\
 		\midrule
-		\gls{cc} \gls{qe} &			\HepProcess{\Pgngm\Pn \to \Pgmm\Pp} &																			30000 &				13000 \\
-		\gls{nc} elastic &			\HepProcess{\Pgngm\nucleon \to \Pgngm\nucleon} & 																11000 &				6700 \\
-		\gls{cc} \gls{res} &		\HepProcess{\Pgngm\Pp \to \Pgmm\Pp\Pgpp} &																		21000 &				0 \\
-		\gls{cc} \gls{res} &		\HepProcess{\Pgngm\Pn \to \Pgmm\Pn\Pgpp\, (\Pp\Pgpz)} &															23000 &				0 \\
-		\gls{cc} \gls{res} &		\HepProcess{\Pagngm\Pp \to \Pgmp\Pp\Pgpm\, (\Pn\Pgpz)} &														0 &					8300 \\
-		\gls{cc} \gls{res} &		\HepProcess{\Pagngm\Pn \to \Pgmp\Pn\Pgpm} &																		0 &					12000 \\
-		\gls{nc} \gls{res} &		\HepProcess{\Pgngm\Pp \to \Pgngm\Pp\Pgpz\, (\Pn\Pgpp)} &														7000 &				0 \\
-		\gls{nc} \gls{res} &		\HepProcess{\Pgngm\Pn \to \Pgngm\Pn\Pgpp\, (\Pp\Pgpz)} &														9000 &				0 \\
-		\gls{nc} \gls{res} &		\HepProcess{\Pagngm\Pp \to \Pagngm\Pp\Pgpm\, (\Pn\Pgpz)} &														0 &					3900 \\
-		\gls{nc} \gls{res} &		\HepProcess{\Pagngm\Pn \to \Pagngm\Pn\Pgpm} &																	0 &					4700 \\
-		\gls{cc} \gls{dis} &		\HepProcess{\Pgngm\nucleon \to \Pgmm\particles} or \HepProcess{\Pagngm\nucleon \to \Pgmp\particles} &			95000 &				24000 \\
-		\gls{nc} \gls{dis} &		\HepProcess{\Pgngm\nucleon \to \Pgngm\particles} or \HepProcess{\Pagngm\nucleon \to \Pagngm\particles} &		31000 &				10000 \\
-		\gls{cc} \gls{coh} \Pgpp &	\HepProcess{\Pgngm\nucleus \to \Pgmm\nucleus\Pgpp} &															930 &				0 \\
-		\gls{cc} \gls{coh} \Pgpm &	\HepProcess{\Pagngm\nucleus \to \Pgmp\nucleus\Pgpm} &															0 &					800 \\
-		\gls{nc} \gls{coh} \Pgpz &	\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz} or \HepProcess{\Pagngm\nucleus \to \Pagngm\nucleus\Pgpz} &	520 &				450 \\
-		\gls{nc} elastic electron &	\HepProcess{\Pgngm\Pem \to \Pgngm\Pem} or \HepProcess{\Pagngm\Pem \to \Pagngm\Pem} &							16 &				11 \\
-		Inverse muon decay &		\HepProcess{\Pgngm\Pem \to \Pgmm\Pgne} &																		9.5 &				0 \\
+		\acrshort{cc} \acrshort{qe} &			\HepProcess{\Pgngm\Pn \to \Pgmm\Pp} &																			30000 &				13000 \\
+		\acrshort{nc} elastic &					\HepProcess{\Pgngm\nucleon \to \Pgngm\nucleon} & 																11000 &				6700 \\
+		\acrshort{cc} \acrshort{res} &			\HepProcess{\Pgngm\Pp \to \Pgmm\Pp\Pgpp} &																		21000 &				0 \\
+		\acrshort{cc} \acrshort{res} &			\HepProcess{\Pgngm\Pn \to \Pgmm\Pn\Pgpp\, (\Pp\Pgpz)} &															23000 &				0 \\
+		\acrshort{cc} \acrshort{res} &			\HepProcess{\Pagngm\Pp \to \Pgmp\Pp\Pgpm\, (\Pn\Pgpz)} &														0 &					8300 \\
+		\acrshort{cc} \acrshort{res} &			\HepProcess{\Pagngm\Pn \to \Pgmp\Pn\Pgpm} &																		0 &					12000 \\
+		\acrshort{nc} \acrshort{res} &			\HepProcess{\Pgngm\Pp \to \Pgngm\Pp\Pgpz\, (\Pn\Pgpp)} &														7000 &				0 \\
+		\acrshort{nc} \acrshort{res} &			\HepProcess{\Pgngm\Pn \to \Pgngm\Pn\Pgpp\, (\Pp\Pgpz)} &														9000 &				0 \\
+		\acrshort{nc} \acrshort{res} &			\HepProcess{\Pagngm\Pp \to \Pagngm\Pp\Pgpm\, (\Pn\Pgpz)} &														0 &					3900 \\
+		\acrshort{nc} \acrshort{res} &			\HepProcess{\Pagngm\Pn \to \Pagngm\Pn\Pgpm} &																	0 &					4700 \\
+		\acrshort{cc} \acrshort{dis} &			\HepProcess{\Pgngm\nucleon \to \Pgmm\particles} or \HepProcess{\Pagngm\nucleon \to \Pgmp\particles} &			95000 &				24000 \\
+		\acrshort{nc} \acrshort{dis} &			\HepProcess{\Pgngm\nucleon \to \Pgngm\particles} or \HepProcess{\Pagngm\nucleon \to \Pagngm\particles} &		31000 &				10000 \\
+		\acrshort{cc} \acrshort{coh} \Pgpp &	\HepProcess{\Pgngm\nucleus \to \Pgmm\nucleus\Pgpp} &															930 &				0 \\
+		\acrshort{cc} \acrshort{coh} \Pgpm &	\HepProcess{\Pagngm\nucleus \to \Pgmp\nucleus\Pgpm} &															0 &					800 \\
+		\acrshort{nc} \acrshort{coh} \Pgpz &	\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz} or \HepProcess{\Pagngm\nucleus \to \Pagngm\nucleus\Pgpz} &	520 &				450 \\
+		\acrshort{nc} elastic electron &		\HepProcess{\Pgngm\Pem \to \Pgngm\Pem} or \HepProcess{\Pagngm\Pem \to \Pagngm\Pem} &							16 &				11 \\
+		Inverse muon decay &					\HepProcess{\Pgngm\Pem \to \Pgmm\Pgne} &																		9.5 &				0 \\
 		\midrule
-		Total \gls{cc} &			&																												170000 &			59000 \\
-		Total \gls{nc}+\gls{cc} &	&																												230000 &			84000 \\
+		Total \acrshort{cc} &			&																														170000 &			59000 \\
+		Total \acrshort{cc}+\acrshort{nc} &	&																													230000 &			84000 \\
 		\bottomrule
 	\end{tabu}
 \end{table}
-
-\glsreset{cc}
-\glsreset{nc}
-\glsreset{qe}
-\glsreset{res}
-\glsreset{dis}
-\glsreset{coh}
-\glsreset{mec}
 
 Neutrinos cannot be directly detected, they need to pass on some of their energy and momentum to secondary particles that can be detected, i.e.\ they need to interact with a detection medium.
 This chapter will give a brief overview of the different types of these interactions.
@@ -637,7 +636,7 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 		\end{fmfgraph*}
 	\end{fmffile}
 	\caption[Neutrino electron scattering]{
-		\gls{nc} (left) and \gls{cc} (right) neutrino electron scattering.
+		\acrshort{nc} (left) and \acrshort{cc} (right) neutrino electron scattering.
 	}
 	\label{fig:nu-detection_nue-scat}
 \end{figure}
@@ -675,7 +674,7 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 		\end{fmfgraph*}
 	\end{fmffile}
 	\caption[Antineutrino electron scattering]{
-		\gls{nc} (left) and \gls{cc} (right) antineutrino electron scattering.
+		\acrshort{nc} (left) and \acrshort{cc} (right) antineutrino electron scattering.
 	}
 	\label{fig:nu-detection_nueb-scat}
 \end{figure}
@@ -695,8 +694,8 @@ Interactions involving \glspl{mec} are important because they can mimic the dete
 	\caption[Neutrino interaction cross-section]{
 		Neutrino interaction cross-section per nucleon as a function of neutrino energy in \si{\giga\electronvolt}.
 		Overlaid are the flux shapes of various beam experiments in arbitrary units.
-		The cross-section is split into contributions from \gls{cc} and \gls{nc} interactions.
-		For \gls{cc}, the individual contribution from \gls{res} interactions is shown, as well as from the sum of 1p1h and 2p2h. The latter two correspond to the \gls{qe} channel and interactions involving \glspl{mec}, respectively.
+		The cross-section is split into contributions from \acrshort{cc} and \acrshort{nc} interactions.
+		For \acrshort{cc}, the individual contribution from \acrshort{res} interactions is shown, as well as from the sum of 1p1h and 2p2h. The latter two correspond to the \acrshort{qe} channel and interactions involving \acrshortpl{mec}, respectively.
 	}
 	\todo[inline]{sauce}
 	\label{fig:nu-detection_xsec}

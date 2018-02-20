@@ -245,7 +245,7 @@ For this proof of concept, this is done rather primitively by matching any pulse
 In Figure~\ref{fig:viper_hitFinder}, a pixel and \gls{roi} pulse are matched if their time slices, defined by the vertical dashed lines, overlap.
 This third step results in a rather high amount of ambiguities but assures that no hits are missed.
 
-To resolve the ambiguities, a Principal Component Analysis (PCA) is applied to the \gls{3d} space points in a fourth step.
+To resolve the ambiguities, a \gls{pca} is applied to the \gls{3d} space points in a fourth step.
 This technique is well established and described in literature, e.g.~\cite{pca}.
 Therefore, it shall be explained here only briefly.
 The basic idea is to calculate three orthogonal eigenvectors of the \gls{3d} space point cloud.
@@ -255,9 +255,9 @@ This eigenvector is taken as an estimate for the track direction.
 The ambiguities can be resolved by selecting the one closest to the track estimate.
 Furthermore, this procedure can be used to recursively reject outliers by forming a cylinder around the track estimate with a radius proportional to the second largest eigenvalue.
 All hits outside this cylinder are rejected.
-The procedure can be repeated by rerunning the PCA on the remaining points and performing another outlier rejection.
+The procedure can be repeated by rerunning the \gls{pca} on the remaining points and performing another outlier rejection.
 In a later stage of reconstructing more complex events, this algorithm can potentially be used to cluster \gls{3d} space points in order to separate multiple tracks.
-The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
+The \gls{pca} ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 
 \begin{figure}[htb]
 	\centering
@@ -269,7 +269,7 @@ The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 		Drift direction is from right to left.
 		Pulse shape is encoded as thickness.
 		In the top plot, colour codes the amount of collected charge.
-		The middle plot illustrates the ambiguity resolution employing a principal component analysis.
+		The middle plot illustrates the ambiguity resolution employing a \gls{pca}.
 		Green hits are accepted while dark red ones are rejected.
 		This is achieved by selecting the ambiguity closest to the eigenvector of the point cloud with the largest eigenvalue, represented by the blue line.
 		In the bottom plot, the degree of ambiguity is colour-coded: Light green are unambiguous hits while dark green are selected solutions of ambiguous hits.
@@ -281,7 +281,7 @@ The PCA ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 The final step consists of a Kalman filter.
 For this, the well-established \gls{genfit} package~\cite{genfit1, genfit2} was used.
 Ionisation losses and \gls{mcs} are taken into account.
-The particle is assumed to be a minimum-ionising muon with an initial momentum of \SI{260}{\mega\electronvolt\per\clight} in the direction of the track estimate from the PCA.
+The particle is assumed to be a minimum-ionising muon with an initial momentum of \SI{260}{\mega\electronvolt\per\clight} in the direction of the track estimate from the \gls{pca}.
 A recursive algorithm capable of dealing with outliers was chosen, a so-called \emph{deterministic annealing filter}.
 This works by assigning successively lower weights to outliers with each recursion step.
 For more details, see the respective publications~\cite{genfit1, genfit2}.
@@ -294,7 +294,7 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 	The \gls{tpc} volume is shown in faint grey.
 	The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 	Drift direction is from right to left.
-	The yellow points are the input to the Kalman filter, the accepted hits from the principal components analysis.
+	The yellow points are the input to the Kalman filter, the accepted hits from the \gls{pca}.
 	Blue is the output, a fitted track taking into account ionisation losses and \gls{mcs} in \lar{}.}
 	\label{fig:viper_kalman}
 \end{figure}

@@ -29,7 +29,9 @@ The Kapton layer was supported by an \gls{fr4} frame for mounting on the \gls{tp
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{cuoka/readout_plane_bottom}
-	\caption{Copper on Kapton readout plane.}
+	\caption[Copper on Kapton readout plane]{
+		Copper on Kapton readout plane.
+	}
 	\label{fig:cuoka_readout-plane}
 \end{figure}
 
@@ -44,7 +46,9 @@ A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive div
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{cuoka/tpc}
-	\caption{\gls{tpc} used for the copper on Kapton readout test.}
+	\caption[Copper on Kapton test \glsentryshort{tpc}]{
+		\acrshort{tpc} used for the copper on Kapton readout test.
+	}
 	\label{fig:cuoka_tpc}
 \end{figure}
 
@@ -54,9 +58,9 @@ More details can be found in Section~\ref{sec:studies_electronics_at}.
 
 Because of the limited space inside the cryostat, no internal light triggering system could be used.
 Instead, the digitisers were either triggered on one of the charge collection channels or by an external muon telescope.
-The latter was formed of two scintillator panels with \glspl{pmt}s above and below the cryostat, respectively.
+The latter was formed of two scintillator panels with \glspl{pmt} above and below the cryostat, respectively.
 Triggering directly on charge collection channels has the potential disadvantage of recording events only partially.
-If the triggering channel does not receive the first charge pulse of the event, all earlier pulses are lost, unless the \gls{daq} implements a pretrigger ring buffer of sufficient size.
+If the triggering channel does not receive the first charge pulse of the event, all earlier pulses are lost, unless the \gls{daq} implements a pre-trigger ring buffer of sufficient size.
 It is therefore preferable to trigger on the external muon telescope.
 
 Using the above-described setup, cosmic muons were recorded over the course of multiple hours.
@@ -69,7 +73,9 @@ Anyhow, the fact that cosmic muons could be seen using this setup proves that th
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{cuoka/muon_event}
-	\caption{Muon event recorded using the copper on Kapton readout.}
+	\caption[Copper on Kapton test muon event]{
+		Muon event recorded using the copper on Kapton readout.
+	}
 	\label{fig:cuoka_event}
 \end{figure}
 

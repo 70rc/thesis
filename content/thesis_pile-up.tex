@@ -13,10 +13,12 @@ More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} whil
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/charge_flux}
-	\caption{Average current collected by the readout for one spill as a function of time.
-	The current is given in arbitrary but equal units for both plots.
-	Anode and cathode are represented by the vertical red lines, relative to the trigger timestamp.
-	The upper plot assumes the whole charge is deposited instantaneously while for the lower plot, the actual spill duration from~\cite{dune2} is used.}
+	\caption[Average current collected for one spill as a function of time]{%
+		Average current collected for one spill as a function of time.
+		The current is given in arbitrary but equal units for both plots.
+		Anode and cathode are represented by the vertical red lines, relative to the trigger timestamp.
+		The upper plot assumes the whole charge is deposited instantaneously while for the lower plot, the actual spill duration from~\cite{dune2} is used.
+	}
 	\label{fig:dune-nd_charge-flux}
 \end{figure}
 
@@ -75,7 +77,9 @@ This allows for convenient further processing using ROOT.
 
 \begin{table}[htb]
 	\centering
-	\caption{Parameters of the \Pgpz pile-up simulation.}
+	\caption[\glsentryshort{dune} \glsentryshort{nd} pile-up simulation parameters]{%
+		Parameters of the \Pgpz pile-up simulation.
+	}
 	\label{tab:dune-nd_pile-up-params}
 	\begin{tabu} to \textwidth {lSs}
 		\toprule
@@ -132,69 +136,83 @@ The cylinder radius was tuned to optimise the trade-off between missed and misid
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/rel_2d_missed}
-	\caption{\gls{2d} histogram of missed energy fraction versus true photon energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
+	\caption[Pile-up study missed fractional vs.\ true photon energy, \SI{2}{\mega\watt} beam]{%
+		Missed energy fraction versus true photon energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
-		Under the number of entries, a detailed list of the number of entries inside (centre) and outside (edges and corners) the depicted area of the histogram is given (under- and overflow).}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+		Entries: Central cell shows plotted entries, other cells show overflow entries in direction w.r.t.\ central cell.
+	}
 	\label{fig:dune-nd_2MW_rel-2d-missed}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/missed_rel_x}
-	\caption{Missed energy fraction versus true photon energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
+	\caption[Pile-up study mean missed fractional vs.\ true photon energy, \SI{2}{\mega\watt} beam]{%
+		Mean missed energy fraction versus true photon energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_2MW_missed-rel-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/missed_rel_y}
-	\caption{Cumulatetive fraction of photons versus missed energy fraction for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
+	\caption[Pile-up study photon vs.\ missed energy fraction, \SI{2}{\mega\watt} beam]{%
+		Cumulative fraction of photons versus missed energy fraction for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
 		The curve depicts the fraction of photons on the y-axis with a missed energy fraction equal to or lower than the corresponding value on the x-axis.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_2MW_missed-rel-y}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/missed_abs_x}
-	\caption{Missed energy versus true photon energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
+	\caption[Pile-up study mean missed vs.\ true photon energy, \SI{2}{\mega\watt} beam]{%
+		Mean missed energy versus true photon energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_2MW_missed-abs-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/misid_abs_x}
-	\caption{Misidentified energy versus true neutrino energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study mean misidentified vs.\ true neutrino energy, \SI{2}{\mega\watt} beam]{%
+		Mean misidentified energy versus true neutrino energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_2MW_misid-abs-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/misid_rel_x}
-	\caption{Misidentified energy fraction versus true neutrino energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study mean misidentified fractional vs.\ true neutrino energy, \SI{2}{\mega\watt} beam]{%
+		Mean misidentified energy fraction versus true neutrino energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_2MW_misid-rel-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW/misid_rel_y}
-	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study neutrino vs.\ misidentified energy fraction, \SI{2}{\mega\watt} beam]{%
+		Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_2MW_misid-rel-y}
 \end{figure}
 
@@ -259,84 +277,100 @@ Whereas the lower limit excludes charge deposited by photons, neutrons, and any 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/missed_rel_x}
-	\caption{Missed energy fraction versus true photon energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
+	\caption[Pile-up study mean missed fractional vs.\ true photon energy, \SI{2}{\mega\watt} beam, XZ projection]{%
+		Mean missed energy fraction versus true photon energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
-		As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+		As a primitive simulation of a \acrshort{2d} wire readout, only X- and Z-coordinates are used for the energy reconstruction.
+	}
 	\label{fig:dune-nd_2MW-XZ_missed-rel-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/misid_abs_x}
-	\caption{Misidentified energy versus true neutrino energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study mean misidentified vs.\ true neutrino energy, \SI{2}{\mega\watt} beam, XZ projection]{%
+		Mean misidentified energy versus true neutrino energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
-		As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+		As a primitive simulation of a \acrshort{2d} wire readout, only X- and Z-coordinates are used for the energy reconstruction.
+	}
 	\label{fig:dune-nd_2MW-XZ_misid-abs-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/misid_rel_x}
-	\caption{Misidentified energy fraction versus true neutrino energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study mean misidentified fractional vs.\ true neutrino energy, \SI{2}{\mega\watt} beam, XZ projection]{%
+		Mean misidentified energy fraction versus true neutrino energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
-		As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+		As a primitive simulation of a \acrshort{2d} wire readout, only X- and Z-coordinates are used for the energy reconstruction.
+	}
 	\label{fig:dune-nd_2MW-XZ_misid-rel-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/2MW_XZ/misid_rel_y}
-	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study neutrino vs.\ misidentified energy fraction, \SI{2}{\mega\watt} beam, XZ projection]{%
+		Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
-		The simulated beam intensity is \SI{2}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.
-		As a primitive simulation of a wire readout, only X and Z coordinates are used for the energy reconstruction.}
+		\SI{2}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+		As a primitive simulation of a \acrshort{2d} wire readout, only X- and Z-coordinates are used for the energy reconstruction.
+	}
 	\label{fig:dune-nd_2MW-XZ_misid-rel-y}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/10MW/missed_rel_x}
-	\caption{Missed energy fraction versus true photon energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
+	\caption[Pile-up study mean missed fractional vs.\ true photon energy, \SI{10}{\mega\watt} beam]{%
+		Mean missed energy fraction versus true photon energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
 		All energy deposited outside of the cone-cylinder union is counted as missed.
-		The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{10}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_10MW_missed-rel-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/10MW/misid_abs_x}
-	\caption{Misidentified energy versus true neutrino energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study mean misidentified vs.\ true neutrino energy, \SI{10}{\mega\watt} beam]{%
+		Mean misidentified energy versus true neutrino energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
-		The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{10}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_10MW_misid-abs-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/10MW/misid_rel_x}
-	\caption{Misidentified energy fraction versus true neutrino energy for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study mean misidentified fractional vs.\ true neutrino energy, \SI{10}{\mega\watt} beam]{%
+		Mean misidentified energy fraction versus true neutrino energy for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
-		The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{10}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_10MW_misid-rel-x}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pile-up/10MW/misid_rel_y}
-	\caption{Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced \gls{em} shower reconstruction algorithm based on a cone-cylinder union.
-		All energy deposited inside the cone-cylinder union by descendants of parent neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
+	\caption[Pile-up study neutrino vs.\ misidentified energy fraction, \SI{10}{\mega\watt} beam]{%
+		Cumulative fraction of neutrinos versus misidentified energy fraction for a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union.
+		All energy deposited inside the cone-cylinder union by descendants of neutrinos different from the parent of the corresponding \Pgpz photon is counted as misidentified.
 		Colour indicates different selections of misidentified energy: total (cyan); excluding depositions from muons (red); deposition from photons, neutrons, and their descendants only (blue).
 		The curve depicts the fraction of neutrinos on the y-axis with a misidentified energy fraction equal to or lower than the corresponding value on the x-axis.
-		The simulated beam intensity is \SI{10}{\mega\watt} at \SI{80}{\giga\electronvolt} proton energy.}
+		\SI{10}{\mega\watt} beam of \SI{80}{\giga\electronvolt} protons.
+	}
 	\label{fig:dune-nd_10MW_misid-rel-y}
 \end{figure}
 

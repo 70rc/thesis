@@ -74,7 +74,7 @@ For a produced charge $Q_{\m{0}}$ and a collected charge $Q$, the collection rat
 with a parameter $\xi$ depending on the drift field, electron mobility, initial number of ion-electron pairs, chosen size of the box and recombination coefficient.
 Figure~\ref{fig:lartpc_box-model} shows a measurement by \gls{help} of the collected charge in an \SI{8}{\milli\metre} drift \lartpc{} for different drift field intensities and nitrogen concentrations.
 
-\begin{figure}
+\begin{figure}[htb]
 	\centering
 	\includegraphics[viewport=14 5 511 351, clip, width=\textwidth]{lartpc/box-model}
 	\caption[\glsentryshort{lar} recombination measurements]{
@@ -197,7 +197,7 @@ A more detailed review is given in Section~\ref{sec:studies_electronics}.
 Using $W_{\m{i}}$, the energy required to produce one electron ion pair, from Section~\ref{sec:lartpc_lar} and assuming a \gls{mip}, one gets
 
 \begin{IEEEeqnarray*}{rCl}
-	\dv{Q}{x}	= \frac{\eval{\dv{E}{x}}_{\m{MIP}}}{W_{\m{i}}} \si{\elementarycharge}
+	\dv{Q}{x}	= \frac{\eval{\dv{E}{x}}_{\m{\glsentryshort{mip}}}}{W_{\m{i}}} \si{\elementarycharge}
 			&	= & \frac{\SI{210}{\kilo\electronvolt\per\milli\metre}}{\SI{23.6}{\electronvolt}} \si{\elementarycharge}
 				\approx \SI{8900}{\elementarycharge\per\milli\metre}
 				\approx \SI{1.4}{\femto\coulomb\per\milli\metre}
@@ -255,7 +255,7 @@ As mentioned above, effectively, wire planes do not produce real \gls{3d} event 
 In order to achieve true \gls{3d} events, they need to be disentangled from the \gls{2d} projections.
 If an event is complex enough, this cannot be done unambiguously with a limited number of \gls{2d} projections.
 This problem is especially serious in case of a \gls{nd}.
-The envisioned \dune{} \gls{nd}, for instance, is expected to see a total of \num{3.14e5} neutrino events per tonne of Ar for \num{1e20}~\gls{pot}.~\cite{dune2}
+The envisioned \dune{} \gls{nd}, for instance, is expected to see a total of \num{3.14e5} neutrino events per tonne of \ce{Ar} for \num{1e20}~\gls{pot}.~\cite{dune2}
 Scaling down this number to one beam spill (\num{1e14}~\gls{pot})\footnote{Assuming a \SI{2}{\mega\watt} beam reaching \num{2e21}~\gls{pot} per year with a spill cycle of \SI{1.2}{\second} and \SI{66.7}{\percent} beam up-time.~\cite{dune2, dune4}} leads to $\approx \num{0.3}$ neutrino events.\todo{fix}
 For a \SI{30}{\tonne} \gls{nd}, this would result in \num{9} neutrino events per beam spill excluding any additional cosmic-induced events.
 

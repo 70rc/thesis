@@ -140,7 +140,7 @@ Subsequently, all pixel and \gls{roi} channels were combined separately and fill
 Finally, the standard deviation of the noise was calculated by fitting a Gaussian to the amplitude distribution.
 This value was used to calculate the noise for pixel and \gls{roi} channels according to
 \begin{IEEEeqnarray}{rCl}
-	\m{SNR} & = & \frac{S}{\sigma} \qc
+	\m{\glsentryshort{snr}} & = & \frac{S}{\sigma} \qc
 	\label{eq:viper_snr}
 \end{IEEEeqnarray}
 where $S$ is the signal and $\sigma$ is the noise standard deviation from the Gaussian fit.
@@ -161,7 +161,7 @@ Considering that the longitudinal component is smaller than the transverse ~\cit
 Finally, the lifetime of \SI{290}{\micro\second} will result in the reduction of charge by a factor of $\approx\num{0.38}$ over the full drift distance (Equation~\eqref{eq:lartpc_lar-lifetime}).
 Combining this, the signal is 
 \begin{IEEEeqnarray}{rCl}
-	S & = & \dv{E}{x}_{\m{MIP}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge} \qc
+	S & = & \dv{E}{x}_{\m{\glsentryshort{mip}}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge} \qc
 \end{IEEEeqnarray}
 for a charge deposited adjacent to the readout plane, and $S = \SI{6004}{\elementarycharge}$ for a charge deposited adjacent to the cathode.
 

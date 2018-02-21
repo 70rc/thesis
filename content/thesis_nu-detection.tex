@@ -197,7 +197,7 @@ The mass composition of the flavour eigenstates can be written as
 		\Pgngt
 	\end{pmatrix}
 	& = &
-	U_{\m{PMNS}}
+	U_{\m{\glsentryshort{pmns}}}
 	\begin{pmatrix}
 		\HepParticle{\nu}{1}{} \\
 		\HepParticle{\nu}{2}{} \\
@@ -207,7 +207,7 @@ The mass composition of the flavour eigenstates can be written as
 where
 \begin{IEEEeqnarray}{cccCccc}
 	\label{eq:nu-detection_upmns}
-	&&& U_{\m{PMNS}} &&& \\
+	&&& U_{\m{\glsentryshort{pmns}}} &&& \\
 	&&& = &&& \nonumber \\
 	U_{\m{sol}} & \times & U_{\m{rea}} & \times & U_{\m{atm}} & \times & U_{\m{maj}} \nonumber \\
 	&&& = &&& \nonumber \\
@@ -260,14 +260,14 @@ Furthermore, Eq.~\eqref{eq:nu-detection_mixing} can be solved for $\nu_i$
 		\HepParticle{\nu}{3}{}
 	\end{pmatrix}
 	& = &
-	U_{\m{PMNS}}^{\dagger}
+	U_{\m{\glsentryshort{pmns}}}^{\dagger}
 	\begin{pmatrix}
 		\Pgne \\
 		\Pgngm \\
 		\Pgngt
 	\end{pmatrix}
 \end{IEEEeqnarray}
-where $U_{\m{PMNS}}^{\dagger}$ is the adjoint matrix of $U_{\m{PMNS}}$.
+where $U_{\m{\glsentryshort{pmns}}}^{\dagger}$ is the adjoint matrix of $U_{\m{\glsentryshort{pmns}}}$.
 This leads to
 \begin{IEEEeqnarray}{rCl}
 	\begin{pmatrix}
@@ -276,7 +276,7 @@ This leads to
 		\Pgngt
 	\end{pmatrix}
 	& = &
-	U_{\m{PMNS}} D U_{\m{PMNS}}^{\dagger}
+	U_{\m{\glsentryshort{pmns}}} D U_{\m{\glsentryshort{pmns}}}^{\dagger}
 	\begin{pmatrix}
 		\Pgne \\
 		\Pgngm \\
@@ -313,10 +313,10 @@ The phase difference
 	\frac{\dms_{ij}}{2} \frac{L}{E} \qc \nonumber
 \end{IEEEeqnarray}
 depends on the mass splitting $\dms_{ij} = m_i ^ 2 - m_j ^ 2$ and the length of the baseline $L = ct = t$.
-To improve readability, $U_{\m{PMNS}}$ was abbreviated by $U$.
+To improve readability, $U_{\m{\glsentryshort{pmns}}}$ was abbreviated by $U$.
 
 The second term of Eq.~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
-This implies that the frequency of the oscillation is determined by the mass splitting and the amplitude by the matrix elements of $U_{\m{PMNS}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
+This implies that the frequency of the oscillation is determined by the mass splitting and the amplitude by the matrix elements of $U_{\m{\glsentryshort{pmns}}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
 In particular, the consequence of this is that the observation of neutrino oscillation between all three flavours proves a finite mass of at least two of the three neutrinos.
 It is worth noting that this derivation is based on a plain wave approximation which turns out to be wrong in a real localised experiment. A wave packet approach would be needed to address the resulting deficiencies.
 However, it can be shown that the plain wave approximation holds for most real experiments anyway as wave packet effects cancel on average.
@@ -398,9 +398,9 @@ An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 
 The beamline at \gls{fail} produces pions by shooting a pulsed proton beam onto a graphite target.
 A variable proton energy of \SIrange{60}{120}{\giga\electronvolt} allows for the production of different neutrino fluxes.
-Each pulse has a duration of \SI{10}{\micro\second} at a period of \SIrange{0.7}{1.2}{\second}, depending on the proton energy.
-During phase one of the experiment, each pulse will contain \num{7.5e13} protons resulting in an beam power of \SIrange{1.03}{1.2}{\mega\watt}.
-In a later phase two, the number of protons per pulse will be doubled, doubling the power as well as the average number of events per pulse in the detectors.
+One pulse is called a spill and has a duration of \SI{10}{\micro\second} at a period of \SIrange{0.7}{1.2}{\second}, depending on the proton energy.
+During phase one of the experiment, each spill will contain \num{7.5e13} protons resulting in an beam power of \SIrange{1.03}{1.2}{\mega\watt}.
+In a later phase two, the number of protons per spill will be doubled, doubling the power as well as the average number of events per spill in the detectors.
 A summary of the various proton beam configurations is given in Table~\ref{tab:nu-detection_beam-params}.
 The produced pions pass through several \gls{em} focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) according to Equation~\eqref{eq:nu-detection_pion-decay}.
 By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primlarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
@@ -416,7 +416,7 @@ More information on the beamline can be found in~\cite{dune2}.
 			Summary of the \acrshort{dune} proton beam parameters for various configurations.
 			Initially, the beamline will operate with the phase one parameters.
 			Later, it will be upgraded to support the phase two parameters.
-			The pulse duration is \SI{10}{\micro\second} for all configurations.
+			The spill duration is \SI{10}{\micro\second} for all configurations.
 			The last column gives the expected total number of neutrino interactions per tonne of \ce{Ar} in the \acrshort{nd}, excluding rock events.
 			It is calculated by multiplying the expected neutrino flux with the cross-section on \ce{Ar} from the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 			Note that these values are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params} because the latter are outdated.
@@ -425,7 +425,7 @@ More information on the beamline can be found in~\cite{dune2}.
 		\label{tab:nu-detection_beam-params}
 		\begin{tabu} to \textwidth {cSSSSS}
 			\toprule
-			Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per pulse} &	{Pulse period $\qty[\si{\second}]$} &	{Power $\qty[\si{\mega\watt}]$} &	{\acrshort{nd} \si{evt\per\tonne} \ce{Ar}} \\
+			Phase &			{$E_{\Pp} \ \qty[\si{\giga\electronvolt}]$} &	{\Pp per spill} &	{Spill period $\qty[\si{\second}]$} &	{Power $\qty[\si{\mega\watt}]$} &	{\acrshort{nd} \si{evt\per\tonne_{\ce{Ar}}}} \\
 			\midrule
 			\Romannum{1} &	60 &											7.5e13 &			0.7 &									1.03 &								0.078 \\
 			\Romannum{2} &	60 &											1.5e14 &			0.7 &									2.06 &								0.16 \\
@@ -495,7 +495,7 @@ To eliminate the introduction of further extrapolation uncertainties it is impor
 
 As will be explained in Chapter~\ref{chap:lartpc}, \lartpc{}s are slow detectors.
 This is problematic in the high-multiplicity \gls{nd} environment of \dune{} which is the reason why~\cite{dune2} and~\cite{dune4} do not mention an \gls{nd} \lar{} component.
-The aforementioned \si{\mega\watt} beam intensity leads to \gls{nd} event rates $\sim{0.1}$ events per tonne of \lar{} leading to significant event pile-up (see Table~\ref{tab:nu-detection_beam-params}).
+The aforementioned \si{\mega\watt} beam intensity leads to \gls{nd} event rates $\sim{0.1}$ events per tonne of \ce{Ar} leading to significant event pile-up (see Table~\ref{tab:nu-detection_beam-params}).
 Rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector---are not included in this estimate.
 
 
@@ -755,7 +755,7 @@ As the stopping power is proportional to the electron density and thus to the ma
 Thus, Equation~\eqref{eq:nu-detection_bethe-bloch} actually gives the so called mass stopping power.
 The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is $\approx 0.5$ for most light materials, and the mean excitation energy which only contributes logarithmically.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{nu-detection/bethe_bloch}
 	\caption[Stopping power]{
@@ -838,7 +838,7 @@ In addition to the processes described above, charged particles traversing matte
 Accordingly, this process is called \emph{\gls{mcs}}.
 The \gls{rms} of the \emph{scattering-angle distribution}
 \begin{IEEEeqnarray}{rCl}
-	\Theta_{\m{RMS}} & = & \frac{\SI{13.6}{\mega\electronvolt}}{\beta c p} z \sqrt{\frac{2 x}{X_{\m{0}}}} \qty[1 + 0.038 \ln(\frac{x}{X_{\m{0}}})]
+	\Theta_{\m{\glsentryshort{rms}}} & = & \frac{\SI{13.6}{\mega\electronvolt}}{\beta c p} z \sqrt{\frac{2 x}{X_{\m{0}}}} \qty[1 + 0.038 \ln(\frac{x}{X_{\m{0}}})]
 	\label{eq:nu-detection_highland}
 \end{IEEEeqnarray}
 is defined by the momentum $p$, velocity $\beta c$ and charge $z$ of the scattered particle, and the thickness of the scattering medium $\frac{x}{X_{\m{0}}}$ in radiation lengths.

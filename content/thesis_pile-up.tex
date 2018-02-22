@@ -101,10 +101,12 @@ This allows for convenient further processing using ROOT.
 		{Active volume Z} &				\numrange{0}{500} &		\centi\metre \\
 		{Fiducial volume Z} &			\numrange{30}{470} &	\centi\metre \\
 		{Detection threshold} &			0.1 &					\mega\electronvolt \\
-		{Cone extent} &					10 &				 	X_0 \\
+		{Cone extent} &					10 &				 	\radlen \\
 		{Cone aperture (full angle)} &	30 &					\degree \\
 		{Cylinder diameter} &			5 &						\centi\metre \\
-		{Beam intensity} &				2 &						\mega\watt \\
+		{Beam intensity} &				2.14 &					\mega\watt \\
+		{Proton energy} &				80 &					\giga\electronvolt \\
+		{Events per beam spill} &		0.21 &					evt\per\tonne_{\ce{Ar}} \\
 		\bottomrule
 	\end{tabu}
 \end{table}
@@ -235,7 +237,7 @@ These numbers are supported by Geant4 simulations~\cite{hardonContChris}.
 As mentioned in Section~\ref{sec:nu-detection_fs}, \gls{em} interactions happen on smaller scales than hadronic interactions.
 The big exception are muons due to their high range.
 However, as will be explained below, it makes sense to ignore pile-up from muons anyway due to their high reconstruction efficiency.
-Finally, a fiducial volume \SI{30}{\centi\metre} ($\approx 2 X_{\m{0}}$) smaller than the active volume on all six faces is defined.
+Finally, a fiducial volume \SI{30}{\centi\metre} ($\approx \SI{2}{\radlen}$) smaller than the active volume on all six faces is defined.
 Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.

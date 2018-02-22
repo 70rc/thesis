@@ -20,7 +20,7 @@ Our \gls{hv} studies have already influenced the design of \uboone{} and will co
 	\includegraphics[width=0.265\textwidth]{hv/FT}
 	\includegraphics[width=0.39\textwidth]{hv/setup1_lowres}
 	\includegraphics[width=0.295\textwidth]{hv/setup2_lowres}
-	\caption[\glsentryshort{hv} test setup]{
+	\caption[\glsentryshort{hv} test setup]{%
 		Experimental setup.
 		Left: \acrshort{hv} feed-through with the spherical cathode.
 		Middle: the feed-through before insertion into the cryostat.
@@ -42,7 +42,7 @@ The field map was calculated using the COMSOL \gls{fem} package.\footnote{\url{h
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=\textwidth]{hv/EField}
-	\caption[\glsentryshort{hv} test field map]{
+	\caption[\glsentryshort{hv} test field map]{%
 		Calculated electric field amplitude map for the test setup with \SI{-100}{\kilo\volt} at the cathode and cathode-anode distance of \SI{1}{\centi\metre}.
 	}
 	\label{fig:hv_efield}
@@ -65,7 +65,7 @@ Therefore, for the measurement of the discharge current only the voltage drop ac
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{hv/scheme}
-	\caption[\glsentryshort{hv} test schematic]{
+	\caption[\glsentryshort{hv} test schematic]{%
 		Electric schematic of the experimental setup.
 		The oscilloscope is connected to the control circuit of the \acrshort{hv} power supply and to a shunt resistor on the ground return path.
 		From the recorded voltages, the voltage and the current of the discharge can be derived.
@@ -81,7 +81,7 @@ The knowledge of these parameters allows to calculate the voltage across the gap
 
 \begin{table}[htb]
 	\centering
-	\caption[\glsentryshort{hv} test circuit parameters]{
+	\caption[\glsentryshort{hv} test circuit parameters]{%
 		Summary of the measured parameters of the test circuit.
 	}
 	\label{tab:hv_table1}
@@ -124,7 +124,7 @@ No boiling was detected anywhere near the discharge gap region during the measur
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=\textwidth]{hv/montage}
-	\caption[\glsentryshort{hv} test high-speed footage]{
+	\caption[\glsentryshort{hv} test high-speed footage]{%
 		Recorded camera image sequence for a breakdown from a \SI{5}{\centi\metre} diameter cathode at \SI{-100}{\kilo\volt} and \SI{8.8}{\milli\metre} apart from the anode plate.
 		The sequence is taken at \SI{1250}{fps}, each frame takes \SI{0.8}{\milli\second}.
 	}
@@ -142,7 +142,7 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 
 \begin{table}[htb]
 	\centering
-	\caption[\glsentryshort{hv} test summary]{
+	\caption[\glsentryshort{hv} test summary]{%
 		Summary of the breakdown measurement runs.
 	}
 	\label{tab:hv_table2}
@@ -163,7 +163,7 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 	\centering
 	\includegraphics[height=0.43\textheight]{hv/IVuncorr}\\
 	\includegraphics[height=0.43\textheight]{hv/IVcorr}
-	\caption[\glsentryshort{hv} test current-voltage characteristics]{
+	\caption[\glsentryshort{hv} test current-voltage characteristics]{%
 		Measured current through the gap (black) and voltage across the gap (magenta) for a typical breakdown at \SI{6.0}{\milli\metre} distance between a \SI{4}{\centi\metre} diameter cathode and the anode plate. The top plot shows the voltage obtained using the measured values of the protection resistor and the gap capacitance, while the bottom plot uses the tuned values.
 	}
 	\label{fig:hv_iv}
@@ -186,7 +186,7 @@ An example of such a discharge is shown in Figure~\ref{fig:hv_side} and the corr
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=.75\textwidth]{hv/sidespark}
-	\caption[\glsentryshort{hv} test streamer image]{
+	\caption[\glsentryshort{hv} test streamer image]{%
 		An image of the streamer stage of the discharge, initiated at the side surface of a \SI{5}{\centi\metre} cathode sphere at \SI{-121.5}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate.
 		The cone of electrons emitted into liquid from the streamer tip towards the anode (lower edge of the image) produces bright orange luminescence in \acrshort{lar}.
 	}
@@ -207,7 +207,7 @@ Indications for this are the high spread of the points around the fit line and t
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{hv/Area90-1}
-	\caption[\glsentryshort{hv} test breakdown field versus stressed cathode area]{
+	\caption[\glsentryshort{hv} test breakdown field versus stressed cathode area]{%
 		Breakdown field versus stressed area of the cathode.
 		The stressed area $A$ is defined as the area with an electric field intensity greater than \SI{90}{\percent} of the maximum electric field intensity in the gap.
 		The fit line represents the dependence $E_{max}=C\cdot A^p$ with $C = \num{139 +- 5}$ and $p = \num{-0.22 +- 0.01}$.
@@ -229,7 +229,7 @@ Evidence for the presence of ionization comes from the analysis of the emission 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{hv/spectro}
-	\caption[\glsentryshort{hv} test field emission and streamer spectra]{
+	\caption[\glsentryshort{hv} test field emission and streamer spectra]{%
 		Spectra of the field emission cone (blue) and the streamer (red) for a breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{-56.2}{\kilo\volt} and \SI{3.0}{\milli\metre} apart from the anode plate.
 		The spectra were integrated over a time of \SI{1}{\milli\second} with the spectrum of the streamer taken \SI{2}{\milli\second} after the spectrum of the cone.
 		The blue curve is a broad continuum similar to the scintillation spectrum of \acrshort{lar}, while the red curve features a distinct peak around \SI{700}{\nano\metre} which is attributed the the 3p$^5$4p--3p$^5$4s transition of neutral argon gas.
@@ -262,7 +262,7 @@ As only one measurement was taken, it is not possible to state anything about un
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{hv/ConeExpo.png}
-	\caption[\glsentryshort{hv} test electro-luminescence brightness]{
+	\caption[\glsentryshort{hv} test electro-luminescence brightness]{%
 		Increasing brightness of the electro-luminescence cone as it develops towards the anode.
 		The line represents the exponent with a fit avalanche multiplication parameter of $\alpha = \SI{0.15 +- 0.03}{\per\milli\metre}$ for gap conditions: voltage across the \SI{7.0}{\milli\metre} gap $V = \SI{54.0}{\kilo\volt}$, cathode sphere diameter of \SI{4}{\centi\metre}, maximum field in the gap $E_{\m{max}} = \SI{96.1}{\kilo\volt\per\centi\metre}$, mean field in the gap $\expval{E} = \SI{87.0}{\kilo\volt\per\centi\metre}$.
 	}
@@ -284,7 +284,7 @@ The spectrum of the light emission from the streamer has a distinct line at abou
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{hv/spectro_spark}
-	\caption[\glsentryshort{hv} test spark spectrum]{
+	\caption[\glsentryshort{hv} test spark spectrum]{%
 		Spectrum of the spark for a breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{-39.7}{\kilo\volt} and \SI{4.0}{\milli\metre} apart from the anode plate.
 		The spectrum was integrated over a time of \SI{1}{\milli\second}.
 	}
@@ -310,7 +310,7 @@ One possible explanation for this is that, if the filament current exceeds a giv
 	\centering
 	\includegraphics[height=0.43\textheight]{hv/selected_chargeVsVset}
 	\includegraphics[height=0.43\textheight]{hv/allGood_chargeVsVset}
-	\caption[\glsentryshort{hv} test integrated charge versus breakdown voltage]{
+	\caption[\glsentryshort{hv} test integrated charge versus breakdown voltage]{%
 		Correlations between integrated charge and breakdown voltage \emph{Vset} for the selected events with distinguishable slow streamer phase (top) and for all events with recorded current characteristics (bottom).
 		The red line represents the charge stored in the gap capacitance using the tuned value of the latter.
 	}
@@ -320,7 +320,7 @@ One possible explanation for this is that, if the filament current exceeds a giv
 \begin{figure}[p]
 	\centering
 	\includegraphics[height=0.4\textheight]{hv/allGood_IPeakVsE}
-	\caption[\glsentryshort{hv} test peak current versus maximum breakdown field]{
+	\caption[\glsentryshort{hv} test peak current versus maximum breakdown field]{%
 		Correlations between peak current \emph{IPeak} and maximum breakdown field \emph{E} for all events with recorded current characteristics.
 	}
 	\label{fig:hv_IPeakVsE}
@@ -329,7 +329,7 @@ One possible explanation for this is that, if the filament current exceeds a giv
 \begin{figure}[p]
 	\centering
 	\includegraphics[height=.4\textheight]{hv/selected_IPlateauVsE}
-	\caption[\glsentryshort{hv} test plateau current versus maximum breakdown field]{
+	\caption[\glsentryshort{hv} test plateau current versus maximum breakdown field]{%
 		Correlations between plateau current \emph{IPlateau} and maximum breakdown field \emph{E} for the selected events.
 	}
 	\label{fig:hv_IPlateauVsE}
@@ -338,7 +338,7 @@ One possible explanation for this is that, if the filament current exceeds a giv
 \begin{figure}[p]
 	\centering
 	\includegraphics[height=.4\textheight]{hv/selected_IPlateauVsIPeak}
-	\caption[\glsentryshort{hv} test plateau current versus peak current]{
+	\caption[\glsentryshort{hv} test plateau current versus peak current]{%
 		Correlations between plateau current \emph{IPlateau} and peak current \emph{IPeak} for the selected events.
 		}
 	\label{fig:hv_IPlateauVsIPeak}
@@ -347,7 +347,7 @@ One possible explanation for this is that, if the filament current exceeds a giv
 \begin{figure}[p]
 	\centering
 	\includegraphics[height=.4\textheight]{hv/selected_vStreamerVsE}
-	\caption[\glsentryshort{hv} test minimum streamer velocity versus maximum breakdown field]{
+	\caption[\glsentryshort{hv} test minimum streamer velocity versus maximum breakdown field]{%
 		Correlations between minimum streamer velocity \emph{vStreamer} and maximum breakdown field \emph{E} for the selected events with a distinguishable slow streamer phase.
 	}
 	\label{fig:hv_vStreamerVsE}
@@ -411,7 +411,7 @@ A summary of the results is given in Table~\ref{tab:latex_table1}.
 
 \begin{table}[htb]
 	\centering
-	\caption[\glsentryshort{hv} coating test summary]{
+	\caption[\glsentryshort{hv} coating test summary]{%
 		Summary of the breakdown test measurements with \SI{200}{\micro\metre} and \SI{450}{\micro\metre} thick polyisoprene layers coated \SI{5}{\centi\metre} and \SI{4}{\centi\metre} diameter spheric cathodes, respectively.
 	}
 	\label{tab:latex_table1}

@@ -20,7 +20,8 @@ There are \num{6 x 6} pixels per region, giving a total of 1008 pixels.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixies}
-	\caption[Pixel demonstrator readout plane]{Initial (July 2016) pixelated anode \acrshort{pcb}.
+	\caption[Pixel demonstrator readout plane]{%
+		First version of the pixelated anode \acrshort{pcb}.
 		The pixelated readout area is \SI{100}{\milli\metre} in diameter.
 		Each charge collection pixel is a \SI{900}{\micro\metre}, at a pitch of \SI{2.54}{\milli\metre}, inductive focusing grids formed of \SI{152.4}{\micro\metre} copper traces surround the pixels.
 		There are \num{28} inductive focusing grids with \num{36} pixels per region, a total of \num{1008} pixels.
@@ -40,7 +41,7 @@ The full schematic of the bias circuit is depicted in Figure~\ref{fig:viper_pcb_
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixel_pcb_schematic}
-	\caption[Pixel demonstrator bias circuit]{
+	\caption[Pixel demonstrator bias circuit]{%
 		Schematic of the bias circuit for the \AC{} pixel demonstrator \acrshort{pcb}.
 		On the left, the pinheader connected to the bias \acrshort{hv} power supply is shown. In the middle and on the right are the connections to the pixels and inductive \acrshort{roi} grids.
 		The connections to the preamplifier inputs are located at the positions of numbers P1--P36 (pixels) and I1--I28 (\acrshortpl{roi}).
@@ -62,7 +63,7 @@ Due to the limited accuracy of this method, measurements were not taken up to th
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{viper/transparency}
-	\caption[Pixel demonstrator charge readout transparency]{
+	\caption[Pixel demonstrator charge readout transparency]{%
 		Measured and simulated transparency versus bias voltage of the \AC{} pixel demonstrator.~\cite{francypants}
 	}
 	\label{fig:viper_transparency}
@@ -78,7 +79,7 @@ The \gls{tpc} operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre},
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{viper/tpc_cad}
-	\caption[Engineering drawing of pixel demonstrator \glsentryshort{tpc}]{
+	\caption[Engineering drawing of pixel demonstrator \glsentryshort{tpc}]{%
 		Engineering drawing of the pixel demonstration \acrshort{tpc}; \SI{590}{\milli\metre} drift length; \SI{6.25}{\milli\metre} field cage spacing; \SI{101}{\milli\metre} internal diameter.
 	}
 	\label{fig:viper_cad}
@@ -97,7 +98,7 @@ Each resistor is soldered to its neighbour, and fixed to the field cage at each 
 	\centering
 	\includegraphics[width=0.295\textwidth]{viper/viper_original}
 	\includegraphics[width=0.695\textwidth]{viper/viper_sipm}
-	\caption[Pixel demonstrator close-up]{
+	\caption[Pixel demonstrator close-up]{%
 		Left: Photograph of the  pixel demonstrator \acrshort{tpc} at \acrshort{help}, with the \acrshort{hv} feedthrough.
 		Right: Close-up of the light collection system, showing \acrshort{wls} fibres coupling \acrshortpl{sipm} to the \acrshort{tpb}-coated light guides.
 	}
@@ -169,7 +170,7 @@ Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal 
 
 \begin{table}[htb]
 	\centering
-	\caption[Pixel demonstrator \glsentryshort{snr}]{
+	\caption[Pixel demonstrator \glsentryshort{snr}]{%
 		\acrshort{snr} values obtained from Equation~\eqref{eq:viper_snr} using the theoretical signal of a \acrshort{mip} at the readout plane or cathode, respectively combined with the average equivalent noise charge for pixel and \acrshort{roi} channels obtained from measurements.
 	}
 	\label{tab:viper_snr}
@@ -212,7 +213,7 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredROI}
-	\caption[Unfiltered raw data of typical pixel demonstrator event]{
+	\caption[Unfiltered raw data of typical pixel demonstrator event]{%
 		Unfiltered raw data of a typical \acrshort{mip} event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 		The top plot shows pixel data while the bottom plot shows \acrshort{roi} data.
 	}
@@ -223,7 +224,7 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredROI}
-	\caption[Filtered data of typical pixel demonstrator event]{
+	\caption[Filtered data of typical pixel demonstrator event]{%
 		Filtered data of a typical \acrshort{mip} event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 		The top plot shows pixel data while the bottom plot shows \acrshort{roi} data.
 	}
@@ -247,7 +248,7 @@ The different thresholds employed and samples found by this process are illustra
 	\centering
 	\includegraphics[width=\textwidth, page=1]{viper/event967_pixel2_hit8}\\
 	\includegraphics[width=\textwidth, page=3]{viper/event967_pixel2_hit8}
-	\caption[Pulse shapes of typical pixel demonstrator event]{
+	\caption[Pulse shapes of typical pixel demonstrator event]{%
 		Pulse shapes of a single pixel (top) and \acrshort{roi} (bottom) hit of a typical \acrshort{mip} event (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 		Superimposed are the thresholds of the hit finder algorithm. Horizontal lines represent thresholds: the solid is the minimum threshold required to be crossed for a pulse to be detected, and dashed are the thresholds used to detect the pulse edges.
 		Vertical lines represent the corresponding detected peak/edge samples.
@@ -280,7 +281,7 @@ The \gls{pca} ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_q} \\
 	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_pca} \\
 	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_det}
-	\caption[Reconstructed \glsentryshort{3d} hits of typical pixel demonstrator event]{
+	\caption[Reconstructed \glsentryshort{3d} hits of typical pixel demonstrator event]{%
 		Reconstructed \acrshort{3d} hits from the hit finder.
 		The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
 		Drift direction is from right to left.
@@ -308,7 +309,7 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_kalman}
-	\caption[Kalman-fitted track of typical pixel demonstrator event]{
+	\caption[Kalman-fitted track of typical pixel demonstrator event]{%
 		Track fitted by the Kalman filter.
 		The \acrshort{tpc} volume is shown in faint grey.
 		The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
@@ -336,7 +337,7 @@ While the presented almost full \gls{3d} readout has already reduced the reconst
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{pixlar/pixlar_arclight}
-	\caption[\pixlar{} half plane with attached \glsentryshort{arclight} module]{
+	\caption[\pixlar{} half plane with attached \glsentryshort{arclight} module]{%
 		One of the two \pixlar{} readout half planes with the \acrshort{arclight} module attached.
 	}
 	\label{fig:pixlar_arclight}
@@ -362,7 +363,7 @@ Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \
 	\centering
 	\includegraphics[width=.445\textwidth]{pixlar/pixlar_event_side}
 	\includegraphics[width=.545\textwidth]{pixlar/pixlar_event_top}
-	\caption[\pixlar{} beam event]{
+	\caption[\pixlar{} beam event]{%
 		\pixlar{} beam event.
 	}
 	\label{fig:pixlar_event}

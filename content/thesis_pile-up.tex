@@ -1,14 +1,17 @@
 \section{Feasibility Study of a Pixelated \glsentryshort{lartpc} for the \glsentryshort{dune} \glsentrylong{nd}}
 \label{sec:dune-nd_pile-up}
 
-With \AC{} selected as  the \lar{} component of the \dune{} \gls{nd}, there were two main question that needed to be addressed:
+Before \AC{} selected as  the \lar{} component of the \dune{} \gls{nd} complex, there were two main questions that needed to be addressed:
 \begin{enumerate}
 	\item Is a pixelated \lartpc{} feasible?
 	\item Can the \lar{} detector handle the high rates?
 \end{enumerate}
-Number one is addressed in Section~\ref{sec:ac_viper}.
+Number one was addressed in Section~\ref{sec:ac_viper}.
 This chapter will address question number two.
-More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} while the proposed \AC{} \lar{} component of the \gls{nd} is described in Section~\ref{sec:dune-nd_ac_nd}.
+As described in Section~\ref{sec:nu-detection_dune}, the \dune{} beam will have an intensity of \SI{2}{\mega\watt}.
+Paired with the slow (\si{\milli\second}) nature of the \lartpc{} described in Chapter~\ref{chap:lartpc}, this will result in multiple neutrinos interacting inside the detector for each beam spill, so-called event pile-up.
+A more precise phrasing of question number two is therefore: Can a \lartpc{} disentangle these piled up events?
+To assess this, one of the most difficult reconstruction tasks---\Pgpz-induced \gls{em} showers---was simulated in an \AC{} \gls{nd} component (see Section~\ref{sec:dune-nd_ac_nd}).
 
 \begin{figure}[htb]
 	\centering
@@ -22,55 +25,54 @@ More details on \dune{} can be found in Section~\ref{sec:nu-detection_dune} whil
 	\label{fig:dune-nd_charge-flux}
 \end{figure}
 
-\lartpc{}s are intrinsically slow detectors with a readout time of $\approx \SI{0.5}{\milli\second\per\metre}$ drift length for a \SI{1}{\kilo\volt\per\centi\metre} drift field (see Chapter~\ref{chap:lartpc}).
-This causes a pile-up of events in the detector; if the latter was infinitely fast, all neutrino interactions could be separated in time.
-In reality, even the \AC{} \glspl{tpc} with a drift length of only \SI{0.5}{\metre}, corresponding to a full readout cycle of \SI{250}{\micro\second}, are significantly slower than the spill duration of \SI{10}{\micro\second} of the \dune{} beamline reference design.~\cite{dune2}
+\lartpc{}s are intrinsically slow detectors with a readout time of $\approx \SI{0.5}{\milli\second\per\metre}$ for a \SI{1}{\kilo\volt\per\centi\metre} drift field (see Chapter~\ref{chap:lartpc}).
+This causes a pile-up of events in the detector; if the readout was infinitely fast, all neutrino interactions could be separated in time.
+In reality, even the \AC{} \glspl{tpc} with a drift length of only \SI{0.5}{\metre}, corresponding to a full readout cycle of \SI{250}{\micro\second}, are significantly slower than the spill duration of \SI{10}{\micro\second} of the \dune{} beamline reference design (see Table~\ref{tab:nu-detection_beam-params}).
 Figure~\ref{fig:dune-nd_charge-flux} visualises this effect.
-The charge arriving at the readout is represented as an average current in arbitrary units (the same for top and bottom, though).
+The charge arriving at the readout is represented as an average current in arbitrary units (same for both plots).
 Anode and cathode are represented by the vertical red lines, relative to the trigger timestamp.
-The magnitude of the readout current is a direct measure for event pile-up in the corresponding time slice.
+The amplitude of the readout current is a direct measure for event pile-up in the corresponding time slice.
 For simplicity, an infinitely short spill duration was assumed for the pile-up study (top), i.e.\ the whole ionisation charge produced by one beam spill is deposited instantaneously inside the \gls{tpc} volume.
 As the time in between beam spills is $\sim{\SI{1}{\second}}$, all this charge can be read out within one drift time.
 In this case, the average current (pile-up) seen by the readout is constant over the whole readout cycle.
-The realistic case with the spill duration of the reference beam is depicted in the bottom plot.
+The realistic case with the spill duration of the \dune{} reference beam is depicted in the bottom plot.
 At the beginning of the readout cycle, there is no charge deposited yet, the current (pile-up) is zero.
-Over the duration of the beam spill, ionisation charge accumulates inside the \gls{tpc} volume while the exisiting charge is transported towards the readout by the drift field.
+Over the duration of the beam spill, ionisation charge accumulates inside the \gls{tpc} volume while the existing charge is transported towards the readout by the drift field.
 After the beam spill is over, the remainder of the initial drift volume (\SI{240}{\micro\second}) contains a uniform charge density.
-The additional \SI{10}{\micro\second}, now in front of the cathode and part of the next readout cycle, again, contain a ramped charge density with zero charge at the cathode, corresponding to the end of the spill.
-In short, a spill duration shorter than but comparable to the drift time results in the shape of the ionisation current (event pile-up) seen over time to become a trapecoid rather than a square.
+Due to the finite spill duration, there is an additional \SI{10}{\micro\second} (falling) ramp after the first \SI{250}{\micro\second} readout cycle, entering the next readout cycle.
+In short, a spill duration shorter than but comparable to the drift time results in the shape of the ionisation current (event pile-up) seen over time to become a trapezoid rather than a square.
 The integral, i.e.\ the total ionisation charge (deposited energy) is the same but part of it is shifted from the spill time slice to the beginning of the next readout cycle.
-Similarly, the peak current (pile-up) is the same, as long as the spill duration is shorter than the drift time.
-If the spill duration becomes longer than the drift time, the charge is distributed over more then two readout cycles and the peak current (pile-up) begins to decrease.
+In addition, the peak current (pile-up) is the same, as long as the spill duration is shorter than the drift time.
+If the spill duration becomes longer than the drift time, the charge is distributed over more than two readout cycles and the peak current (pile-up) begins to decrease.
 Therefore, the assumption of an infinitely short spill is a worst-case scenario slightly improved by the real, finite spill duration.
-However, for most of the drift time (\SI{240}{\micro\second}), pile-up is the same.
+However, for \SI{96}{\percent} of the drift time (\SI{240}{\micro\second}), pile-up is unchanged.
 
 
 \subsection{\texorpdfstring{\Pgpz}{Pi0} pile-up simulation}
 \label{sec:dune-nd_pile-up_simulation}
 
-One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
-In the simulation, the quantities to be measured by the experiment are known a priori.
-They are called truth information and can be compared to the output of the analysis run on the simulated dataset.
-
-A significant amount of \Pgpz are produced in several \gls{res} and \gls{coh} neutrino interactions (see Table~\ref{tab:nu-detection_nd-rates} Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
+Reconstruction complexity paired with potential impact on physics measurements make photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} \gls{nd} environment.
+Misidentifications lead to a misreconstruction of the neutrino energy.
+The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
+A significant amount of \Pgpz are produced in several \gls{res} and \gls{coh} neutrino interactions (see Table~\ref{tab:nu-detection_nd-rates}, Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
 They decay according to
 \begin{IEEEeqnarray}{C}
 	\HepProcess{\Pgpz \to \Pgg\Pgg}
 \end{IEEEeqnarray}
-with a branching ratio of \SI{98.8}{\percent}\cite{pdg}.
+with a branching ratio of \SI{98.8}{\percent}~\cite{pdg}.
 The photons subsequently produce \gls{em} showers in \lar{} (see Section~\ref{sec:nu-detection_fs}).
 At the energies of the \dune{} beam (see Figure~\ref{fig:nu-detection_dune-flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable \Pepm tracks.
-More importantly, there often are significant gaps in betweend these charge clusters.
+More importantly, there often are significant gaps in between these charge clusters.
 A main challenge of shower reconstruction is to associate these well-separated charge blobs to the correct event.
-Misidentifications lead to a misreconstruction of the neutrino energy.
-The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
-The complexity of reconstruction paired with the potential impact on the physics measurements makes photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} \gls{nd} environment.
 
+One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
+In the simulation, the quantities to be measured by the experiment are known a priori.
+They are called truth information and can be compared to the output of the analysis run on the simulated dataset.
 To simulate the expected neutrino interactions in the \gls{nd}, the Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} simulation tool was used.
 The neutrino group at \gls{lbnl} is developing it with the goal of providing an easy-to-use simulation of particle interactions in the \lar{} component of the \gls{nd}.
 Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file\footnote{A file format standard for passage of particle events between different simulation tools}.
 For this study, \num{6.6e6} neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
-Secondary particle transport and interaction in Argon Box is performed by Geant4.\footnote{\url{http://geant4.cern.ch}}
+Secondary particle transport and interaction in Argon Box is performed by Geant4\footnote{\url{http://geant4.cern.ch}}.
 Finally, the energy deposition in \lar{} is voxelised and stored together with all the necessary ancillary information about the depositing particle.
 The data is stored in the tree format of the ROOT data analysis framework\footnote{\url{https://root.cern}}.
 This allows for convenient further processing using ROOT.
@@ -112,8 +114,8 @@ This allows for convenient further processing using ROOT.
 \end{table}
 
 To investigate the effects of pile-up on energy reconstruction, a working reconstruction algorithm is necessary.
-However, at the time of writing, official reconstruction tools were only available for \lartpc{}s read out by wire planes.\footnote{\url{http://larsoft.org}}
-Therefore, a rather primitive algorithm for true \gls{3d} space points was implemented, under the assumption that a positive outcome of such a pile-up study would imply an even better performance of a more sophisticated reconstruction.
+However, at the time of writing, official reconstruction tools were only available for \lartpc{}s read out by wire planes\footnote{\url{http://larsoft.org}}.
+Therefore, a simple algorithm for true \gls{3d} space points was implemented, under the assumption that a positive outcome of such a pile-up study would imply an even better performance of a more sophisticated reconstruction.
 This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous \gls{3d} space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.

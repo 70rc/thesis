@@ -224,9 +224,11 @@ A more detailed assessment of the noise after the implementation of the describe
 \subsection{Improved Cold Electronics for Pixelated Readouts}
 \label{sec:studies_electronics_pixel}
 
+\glsreset{larpix}
+
 This section describes the challenges met by electronics for pixelated \lartpc{}s and possible solutions.
 First, the cryogenic \glspl{adc} for the \dune{} \gls{fd}, developed by \gls{bnl}, are introduced, and an explanation is given why they are unsuitable for a pixelated \gls{nd}.
-Therefore, the neutrino group at \gls{lbnl} is developing bespoke pixel electronics for the \gls{nd}, called \larpix{}.
+Therefore, the neutrino group at \gls{lbnl} is developing bespoke pixel electronics for the \gls{nd}, the \larpix{}.
 An overview of this effort is given in the second part of this section.
 
 As mentioned in Section~\ref{sec:lartpc_electronics}, cold digitisation can improve noise because of both shorter analogue signal lines and reduced thermal noise of the electronics.
@@ -289,7 +291,7 @@ In comparison, \uboone{} has a total cooling power of $\approx \SI{20}{\kilo\wat
 
 Due to their smaller geometric extent, pixels have a much lower capacitance than wires.
 According to Equation~\eqref{eq:electronics_thermal-noise}, this reduces the intrinsic noise present on a pixelated readout.
-The \emph{\larpix{}} \glspl{asic}, being developed by \gls{lbnl}~\cite{larpix}, exploits this fact to significantly reduce the complexity of the cold electronics.
+\larpix{}, being developed by \gls{lbnl}~\cite{larpix}, exploits this fact to significantly reduce the complexity of the cold electronics.
 Two key points distinguish them from the \gls{bnl} design for the wire-equipped \gls{fd}.
 The complex shaping preamplifier required by wires for noise filtering can be replaced by a simple charge integrator.
 Additionally, the low noise levels allow for a self-triggering scheme; charge arriving at the \larpix{} is only digitised if it is above a prefedined thresholds.

@@ -479,5 +479,10 @@ Therefore it is expected to be very similar to the \SI{2}{\mega\watt} case as ca
 As expected, the error due to misidentified energy is increased to \SIrange{7}{15}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_10MW_misid-rel-x}) but still better than for the XZ projection.
 Similarly, only about \SI{10}{\percent} of the neutrino events remain pile-up free, and \SI{50}{\percent} suffer from more than \SI{4}{\percent} misidentified energy (Figure~\ref{fig:dune-nd_10MW_misid-rel-y}).
 
-In summary, this study shows that even a very primitive \gls{em} shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} \gls{nd}, when fed with unambiguous \gls{3d} spatial coordinates of energy depositions.
-It clearly fails when reduced to two dimensions or presented with a much higher beam intensity.
+In summary, this study shows that even a very simple \gls{em} shower reconstruction algorithm, employing a cone-cylinder union selection, performs well in the high-multiplicity environment of the \dune{} \gls{nd}, when fed with unambiguous \gls{3d} spatial coordinates of energy depositions.
+The mean deposited energy missed by the algorithm is less than \SI{3}{\percent}.
+More importantly, the pile-up-related misidentification of energy depositions from other events has a mean of \SIrange{2}{3}{\percent}.
+For more than \SI{50}{\percent} of the neutrino events, this error is even smaller than \SI{0.1}{\percent}.
+In comparison, the \gls{fd} is required to have an energy resolution for stopping hadrons below \SI{10}{\percent} and an electron energy scale uncertainty of about \SI{5}{\percent}~\cite{dune4}.
+Provided that a successful \larpix{} enables unambiguous \gls{3d} tracking information, \AC{} will be capable of handling the high rates expected in the \dune{} \gls{nd} environment.
+The employed reconstruction algorithm clearly fails when reduced to two dimensions or presented with a much higher beam intensity.

@@ -258,24 +258,24 @@ To get a realistic simulation of beam events in the detector, these events need 
 Beam spills are simulated by drawing the number of events for each spill from a Poisson distribution whose mean is calculated from the beam intensity and the target mass according to the values in Table~\ref{tab:nu-detection_beam-params}.
 The resulting number of events is taken from the Argon Box ROOT tree and their vertices are placed within the \lar{} volume at coordinates drawn from a uniform distribution.
 Combined with the target mass given in Table~\ref{tab:dune-nd_pile-up-params}, this results in an equivalent of $\approx \num{1.5e19}$~\gls{pot}.
-The seemingly low number (compared to Table~\ref{tab:nu-detection_nd-rates} for instance) is the result of many neutrino interactions happening outside of the active detector.
+The seemingly low number (compared to Table~\ref{tab:nu-detection_nd-rates}) is the result of many neutrino interactions happening outside of the active detector.
 
 Three different argon volumes are assumed for the simulation: target, active, and fiducial volume.
 The actual detector dimensions are represented by the active volume.
 It is inside the target volume which is the volume within which the neutrino vertices are placed randomly.
-This is done as a crude emulation of rock events, secondary particles from beam neutrino interactions outside the detector volume.
+This is done to crudely emulate rock events, secondary particles from beam neutrino interactions outside the detector volume.
 The additional target mass is \SI{1}{\metre} in all four directions transverse to the beam, and \SI{4}{\metre} in upstream beam direction.
 According to Equations~\eqref{eq:nu-detection_hardon-long} and~\eqref{eq:nu-detection_hardon-trans}, hadronic showers up to \SI{10}{\giga\electronvolt} are contained $> \SI{95}{\percent}$ longitudinally and $> \SI{50}{\percent}$ transversally (because Equation~\eqref{eq:nu-detection_hardon-trans} gives the radius for \SI{95}{\percent} containment) in the additional volume.
-Or in other words, increasing the target volume further will not result in significantly more rock events entering the active volume.
-For transversal containment, it is enough to use the radius for \SI{95}{\percent} containment because the location of the shower is defined by its centre, i.e.\ showers further away than one \SI{95}{\percent} radius from the detector only deposit a minimal amount of energy inside the latter.
+In other words, increasing the target volume further will not result in significantly more rock events entering the active volume.
+For transversal containment, it is enough to use the radius for \SI{95}{\percent} containment because the location of the shower is defined by its centre, i.e.\ showers further away than one \SI{95}{\percent} radius from the detector only deposit a minimal amount of energy inside the detector.
 These numbers are supported by Geant4 simulations~\cite{hardonContChris}.
 As mentioned in Section~\ref{sec:nu-detection_fs}, \gls{em} interactions happen on smaller scales than hadronic interactions.
 The big exception are muons due to their high range.
-However, as will be explained below, it makes sense to ignore pile-up from muons anyway due to their high reconstruction efficiency.
+However, as will be explained below, it makes sense to ignore pile-up from muons due to their high reconstruction efficiency.
 Finally, a fiducial volume \SI{30}{\centi\metre} ($\approx \SI{2}{\radlen}$) smaller than the active volume on all six faces is defined.
-Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
+Without fiducialisation, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
-Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions, Figure~\ref{fig:dune-nd_example-display} shows and example event with all three volumes drawn.
+Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions, Figure~\ref{fig:dune-nd_example-display} shows an example event with all three volumes drawn.
 
 Active volume dimensions are taken from the preliminary \dune{} \gls{nd} design described in Section~\ref{sec:dune-nd_ac_nd}.
 Note that the height was taken as \SI{2.5}{\metre} as opposed to the \SI{3}{\metre} of the \gls{nd} design.
@@ -300,7 +300,7 @@ However, there are some assumptions that can be taken even without knowing the a
 From results of earlier experiments~\cite{pandora}, the muon reconstruction can be assumed to be very efficient.
 Assuming \SI{100}{\percent} reconstruction efficiency for muons and \SI{0}{\percent} for all other particles can therefore serve as an upper limit for misidentified energy.
 It can be calculated by ignoring energy deposited by muons originating from other parent neutrinos.
-On the other hand, a lower limit for misidentified energy can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles (\Pgpz and \Pgg).
+A lower limit for misidentified energy can be calculated by assuming \SI{100}{\percent} reconstruction efficiency for all charged particles and \SI{0}{\percent} for neutral particles (\Pgg and \Pn).
 This is calculated by only taking into account misidentified energy deposited by neutral particles.
 Even assuming \SI{0}{\percent} reconstruction efficiency for neutral particles is potentially too pessimistic.
 Future, more sophisticated reconstruction algorithms (e.g. based on machine learning) might be able to partially reconstruct the topology of charge depositions originating from neutral particles and thus prevent their misidentification.
@@ -310,6 +310,7 @@ Whereas the lower limit excludes charge deposited by photons, neutrons, and any 
 Figure~\ref{fig:dune-nd_example-display-zoom} illustrates the distinction of various energy depositions for an example event.
 In particular, it can be seen that $\delta$ rays (orange) are not counted towards energy deposited by muons (yellow).
 The long red track is an example of a deposition originating from a photon or neutron (descendant) included in the lower limit sample but very likely reconstructible by future algorithms.
+
 
 \subsection{Results}
 \label{sec:dune-nd_pile-up_results}
@@ -414,7 +415,7 @@ The long red track is an example of a deposition originating from a photon or ne
 	\label{fig:dune-nd_10MW_misid-rel-y}
 \end{figure}
 
-Missed and misidentified energy by the cone-cylinder union are plotted as a function of true photon and neutrino energy, respectively.
+Missed and misidentified energy by the cone-cylinder union are analysed as a function of true photon and neutrino energy, respectively.
 As mentioned above, the missed energy is used to measure the performance of the employed photon reconstruction algorithm.
 Therefore, it is sensible to compare it to the true photon energy rather than the true energy of its parent neutrino.
 On the other hand, the primary goal of this study is to assess the effect of event pile-up on the neutrino energy spectrum.
@@ -426,7 +427,7 @@ The energy dependence of the error can be obtained by looking at the true energy
 Looking at the misidentified (missed) energy axis and summing over all true energy bins yields the number of events with the corresponding misidentified (missed) energy (a projection of the \gls{2d} histogram).
 The corresponding fraction of events is obtained by normalising the histogram, i.e.\ dividing every bin by the total number of entries.
 It should be noted that for the projections all values in the corresponding y-bin are taken into account, including the ones outside the boundaries of the histogram (under- and overflow).
-For the profiles, only events between \SIrange{0}{6}{\giga\electronvolt} absolute and \numrange{0}{1} fractional are taken into account.
+For the profiles, only events with energies from \SIrange{0}{6}{\giga\electronvolt} or energy fractions from \numrange{0}{1} are taken into account.
 
 The results for a \SI{2}{\mega\watt} beam at \SI{80}{\giga\electronvolt} proton energy are shown in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_misid-rel-y}.
 To illustrate the relation between the different histograms, all of them are shown for the missed energy in Figures~\ref{fig:dune-nd_2MW_rel-2d-missed} through~\ref{fig:dune-nd_2MW_missed-rel-y}.
@@ -441,23 +442,22 @@ For reference, Figure~\ref{fig:dune-nd_2MW_missed-abs-x} shows the mean absolute
 
 It can be seen that the absolute missed energy rises more or less linearly with the true energy (Figure~\ref{fig:dune-nd_2MW_missed-abs-x}).
 This indicates that the cone models the shower well, as expected from theory (see Section~\ref{sec:nu-detection_fs}).
-Indeed, it can be seen from Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-x} that the missed energy stays almost constant at \SI{3}{\percent} from \SIrange{1}{6}{\giga\electronvolt}.
-Below, it rises up to \SI{10}{\percent} in the lowest energy bin (\SIrange{0}{125}{\mega\electronvolt}).
+Indeed, it can be seen from Figure~\ref{fig:dune-nd_2MW_missed-rel-x} that the missed energy fraction stays almost constant at \SI{3}{\percent} from \SIrange{1}{6}{\giga\electronvolt}.
+It starts to increase below \SI{1}{\giga\electronvolt}, reaching \SI{10}{\percent} in the lowest energy bin (\SIrange{0}{125}{\mega\electronvolt}).
 This can be explained by the increase in \gls{mcs} at lower momenta.
 Similarly, the Compton scattering cross-section increases as well.
-Both these effects lead to a higher angular distribution of the energy depositions by electrons (and positrons) and photons, respectively.
+Both these effects lead to a higher angular distribution of the energy deposited by electrons (and positrons) and photons.
 Consequentially, more energy is missed because the cone angle is independent of energy.
-From Figure~\ref{fig:dune-nd_2MW_missed-rel-y}, it can be seen that for roughly half of the photons, \SI{3}{\percent} of the energy is missed, indicating a symmetric distribution of missed energy around the mean value.
+From Figure~\ref{fig:dune-nd_2MW_missed-rel-y}, it can be seen that for roughly half of the photons \SI{3}{\percent} of the energy is missed, indicating a symmetric distribution of missed energy around the mean value.
 It should be noted that energy deposited outside the detector, so-called leakage, is included in the missed energy.
 Despite the fiducial volume, some events still exit the detector.
 
 The behaviour of the misidentified energy is almost opposite to the missed energy: The absolute energy is almost constant with the true neutrino energy (Figure~\ref{fig:dune-nd_2MW_misid-abs-x}), while the fraction of the total energy is inversely proportional to the true energy, accordingly (Figure~\ref{fig:dune-nd_2MW_misid-rel-x}).
-Again this is expected as the amount of charge deposited inside the cone originating from other neutrinos should only depend on the geometry of the acceptance volume (i.e.\ the parameters of the cone-cylinder union) and on the event rate but not on the true energy of the reconstructed photon or its parent neutrino.
-Also, the effect of the different selections can be seen well.
+This is expected as the amount of charge deposited inside the cone originating from other neutrinos should only depend on the geometry of the acceptance volume (i.e.\ the parameters of the cone-cylinder union) and on the event rate, but not on the true energy of the reconstructed photon or its parent neutrino.
+The effect of the different misidentified energy selections can be seen well.
 As mentioned above, the actual error on the reconstructed neutrino energy is probably somewhere in between the red curve, only rejecting misidentified energy deposited by muons, and the dark blue curve, rejecting all but misidentified energy deposited by photons and neutrons or any of their descendants.
 From Figure~\ref{fig:dune-nd_2MW_misid-rel-x}, this can be determined to be about \SI{2}{\percent} at the flux peak ($\approx \SI{3}{\giga\electronvolt}$, see Figure~\ref{fig:nu-detection_dune-flux}).
-The cumulative neutrino fraction versus the misidentified energy fraction reveals another interesting fact.
-It can be seen that about \SI{70}{\percent} of the events experience a pile-up-related error on reconstructed neutrino energy of \SI{1}{\percent} or less.
+The cumulative neutrino fraction versus the misidentified energy fraction reveals another interesting fact; it can be seen that about \SI{70}{\percent} of the events experience a pile-up-related error on reconstructed neutrino energy of \SI{1}{\percent} or less.
 For roughly \SI{50}{\percent} of the events, it is even below \SI{0.1}{\percent}.
 If it was possible to identify the other \SI{50}{\percent} somehow in the real experiment, they could be ignored, giving an essentially pile-up-free sample.
 Given the high event rates in the \gls{nd}, this would be easily affordable.
@@ -474,7 +474,7 @@ An explanation for this is that all the energy in Y-direction was summed up, due
 Therefore, the cone (or rather triangle) cannot miss energy in the former direction.
 
 Finally, as a cross-check, the (\gls{3d}) pile-up study was performed for a hypothetical \SI{10}{\mega\watt} beam in Figures~\ref{fig:dune-nd_10MW_missed-rel-x} through~\ref{fig:dune-nd_10MW_misid-rel-y}.
-As explained above the missed energy only depends on the geometry of the acceptance volume, in particular, it should be independent of beam intensity.
+As explained above the missed energy only depends on the geometry of the acceptance volume, it should be independent of beam intensity.
 Therefore it is expected to be very similar to the \SI{2}{\mega\watt} case as can be confirmed by comparing Figure~\ref{fig:dune-nd_10MW_missed-rel-x} to Figure~\ref{fig:dune-nd_2MW_missed-rel-x}.
 As expected, the error due to misidentified energy is increased to \SIrange{7}{15}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_10MW_misid-rel-x}) but still better than for the XZ projection.
 Similarly, only about \SI{10}{\percent} of the neutrino events remain pile-up free, and \SI{50}{\percent} suffer from more than \SI{4}{\percent} misidentified energy (Figure~\ref{fig:dune-nd_10MW_misid-rel-y}).

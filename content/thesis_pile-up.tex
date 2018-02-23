@@ -51,32 +51,6 @@ However, for \SI{96}{\percent} of the drift time (\SI{240}{\micro\second}), pile
 \subsection{\texorpdfstring{\Pgpz}{Pi0} pile-up simulation}
 \label{sec:dune-nd_pile-up_simulation}
 
-Reconstruction complexity paired with potential impact on physics measurements make photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} \gls{nd} environment.
-Misidentifications lead to a misreconstruction of the neutrino energy.
-The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
-A significant amount of \Pgpz are produced in several \gls{res} and \gls{coh} neutrino interactions (see Table~\ref{tab:nu-detection_nd-rates}, Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
-They decay according to
-\begin{IEEEeqnarray}{C}
-	\HepProcess{\Pgpz \to \Pgg\Pgg}
-\end{IEEEeqnarray}
-with a branching ratio of \SI{98.8}{\percent}~\cite{pdg}.
-The photons subsequently produce \gls{em} showers in \lar{} (see Section~\ref{sec:nu-detection_fs}).
-At the energies of the \dune{} beam (see Figure~\ref{fig:nu-detection_dune-flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable \Pepm tracks.
-More importantly, there often are significant gaps in between these charge clusters.
-A main challenge of shower reconstruction is to associate these well-separated charge blobs to the correct event.
-
-One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
-In the simulation, the quantities to be measured by the experiment are known a priori.
-They are called truth information and can be compared to the output of the analysis run on the simulated dataset.
-To simulate the expected neutrino interactions in the \gls{nd}, the Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} simulation tool was used.
-The neutrino group at \gls{lbnl} is developing it with the goal of providing an easy-to-use simulation of particle interactions in the \lar{} component of the \gls{nd}.
-Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file\footnote{A file format standard for passage of particle events between different simulation tools}.
-For this study, \num{6.6e6} neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
-Secondary particle transport and interaction in Argon Box is performed by Geant4\footnote{\url{http://geant4.cern.ch}}.
-Finally, the energy deposition in \lar{} is voxelised and stored together with all the necessary ancillary information about the depositing particle.
-The data is stored in the tree format of the ROOT data analysis framework\footnote{\url{https://root.cern}}.
-This allows for convenient further processing using ROOT.
-
 \begin{table}[htb]
 	\centering
 	\caption[\glsentryshort{dune} \glsentryshort{nd} pile-up simulation parameters]{%
@@ -113,28 +87,87 @@ This allows for convenient further processing using ROOT.
 	\end{tabu}
 \end{table}
 
+Reconstruction complexity paired with potential impact on physics measurements make photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} \gls{nd} environment.
+Misidentifications lead to a misreconstruction of the neutrino energy.
+The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
+A significant amount of \Pgpz are produced in several \gls{res} and \gls{coh} neutrino interactions (see Table~\ref{tab:nu-detection_nd-rates}, Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
+They decay according to
+\begin{IEEEeqnarray}{C}
+	\HepProcess{\Pgpz \to \Pgg\Pgg}
+\end{IEEEeqnarray}
+with a branching ratio of \SI{98.8}{\percent}~\cite{pdg}.
+The photons subsequently produce \gls{em} showers in \lar{} (see Section~\ref{sec:nu-detection_fs}).
+At the energies of the \dune{} beam (see Figure~\ref{fig:nu-detection_dune-flux}), most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable \Pepm tracks.
+More importantly, there often are significant gaps in between these charge clusters.
+A main challenge of shower reconstruction is to associate these well-separated charge blobs to the correct event.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{pile-up/uid0_spill6_event461_gamma19_x}
+	\caption[Pile-up study example event]{%
+		Example event display of a simple \Pgpz-induced \acrshort{em} shower reconstruction algorithm based on a cone-cylinder union, simulated for the \AC{} \acrshort{nd} component.
+		Visible are the three different volumes used for the simulation.
+		The outermost volume is used to simulate rock events.
+		The active detector volume is represented by the intermediate volume, divided into modules by vertical black lines.
+		In order to reduce the number of \acrshort{em} showers not depositing any energy inside the detector, a fiducial volume (the innermost) is defined, and photons are required to be produced therein.
+		Depicted is a side view of the detector, looking in drift direction.
+		The detailed orientation is indicated by the coloured arrows.
+	}
+	\label{fig:dune-nd_example-display}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[viewport=2900 1800 4000 2600, clip, width=\textwidth]{pile-up/uid0_spill6_event461_gamma19_x}
+	\caption[Pile-up study example event zoom]{%
+		Detailed view of the pile-up simulation event shown in Figure~\ref{fig:dune-nd_example-display}.
+		The acceptance volume is defined by the union of cone and cylinder.
+		Charge depositions are depicted by white and coloured squares whose size represents the applied resolution of \SI{3}{\milli\metre} in all directions.
+		Colour indicates type and acceptance of energy deposition.
+		White: Different neutrino event, outside acceptance volume.
+		Cyan: Correct neutrino event but not part of considered \acrshort{em} shower, outside acceptance volume.
+		Dark blue: Correct neutrino event and \acrshort{em} shower, outside acceptance volume (missed energy).
+		Green: Correct neutrino event and \acrshort{em} shower, inside acceptance volume.
+		Magenta: Correct neutrino event but not part of considered \acrshort{em} shower, inside acceptance volume (not present in this example).
+		Yellow (muons), red (\Pgg, \Pn and descendants), orange (neither): Different neutrino event, inside acceptance volume (misidentified energy).
+	}
+	\label{fig:dune-nd_example-display-zoom}
+\end{figure}
+
+One way to assess the performance of an analysis of experimental data is to run it on a simulated dataset.
+In the simulation, the quantities to be measured by the experiment are known a priori.
+They are called truth information and can be compared to the output of the analysis run on the simulated dataset.
+To simulate the expected neutrino interactions in the \gls{nd}, the Argon Box\footnote{\url{https://github.com/dadwyer/argon_box}} simulation tool was used.
+The neutrino group at \gls{lbnl} is developing it with the goal of providing an easy-to-use simulation of particle interactions in the \lar{} component of the \gls{nd}.
+Primary particles can either be provided by a particle gun (e.g.\ \Pem, \Pn, \Pp, \Pgmp) or in form of a \emph{HEPEVT} file\footnote{A file format standard for passage of particle events between different simulation tools}.
+For this study, \num{6.6e6} neutrino events were produced with the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
+Secondary particle transport and interaction in Argon Box is performed by Geant4\footnote{\url{http://geant4.cern.ch}}.
+Finally, the energy deposition in \lar{} is voxelised and stored together with all the necessary ancillary information about the depositing particle.
+The data is stored in the tree format of the ROOT data analysis framework\footnote{\url{https://root.cern}}.
+This allows for convenient further processing using ROOT.
+
 To investigate the effects of pile-up on energy reconstruction, a working reconstruction algorithm is necessary.
 However, at the time of writing, official reconstruction tools were only available for \lartpc{}s read out by wire planes\footnote{\url{http://larsoft.org}}.
 Therefore, a simple algorithm for true \gls{3d} space points was implemented, under the assumption that a positive outcome of such a pile-up study would imply an even better performance of a more sophisticated reconstruction.
-This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}.
+This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}, an example of a simulated event is shown in Figures~\ref{fig:dune-nd_example-display} and~\ref{fig:dune-nd_example-display-zoom}.
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous \gls{3d} space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics_pixel}.
-The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
+The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} in both directions based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
 A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the \gls{tpc}.
-\uboone{} has achieved a resolution in drift direction $< \SI{0.3}{\centi\metre}$~\cite{uboone}, making it safe to assume \larpix{} will have a similar performance, even though not yet fully characterised.
-Finally, a conservative value also accounts for charge diffusion.
+\uboone{} has achieved a resolution in drift direction $< \SI{0.3}{\centi\metre}$~\cite{uboone}, making it safe to assume \larpix{} will enable a similar performance with \AC{}.
+A conservative value also accounts for charge diffusion.
 Furthermore, it is assumed that \gls{em} showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
 In reality, the direction and starting point can be derived from the vertex producing the \Pgpz, and a rough shower direction obtained from a pattern recognition.
 A cone is calculated in the direction of the shower with its tip at the first charge deposition of the initial photon.
-The opening angle and longituginal extent of the cone were optimised by looking at the distributions of the distance from the starting point and angle w.r.t.\ the direction of the shower.
+The opening angle and length of the cone were optimised by looking at the distributions of the distance from the starting point and angle w.r.t.\ the direction of the shower.
 The finite resolution of the detector is emulated by voxelising (via rounding) the charge deposition with the corresponding resolution in all three spatial coordinates.
 This leads to problems near the tip of the cone where the transversal extent is lower than the voxel dimensions.
 In particular, it can happen that most of the initial charge is shifted outside the cone.
 Furthermore, \gls{mcs} at lower energies makes the cone model suboptimal near the tip.
-Therefore, the acceptance volume for the reconstruction is taken as the union of the cone with a cylinder around the direction of the shower of the same longitudinal extent as the cone.
+Therefore, the acceptance volume for the reconstruction is taken as the union of the cone with a cylinder around the direction of the shower of the same length as the cone.
 The cylinder radius was tuned to optimise the trade-off between missed and misidentified energy deposition as defined below.
 
 \begin{figure}[htb]
@@ -242,7 +275,7 @@ However, as will be explained below, it makes sense to ignore pile-up from muons
 Finally, a fiducial volume \SI{30}{\centi\metre} ($\approx \SI{2}{\radlen}$) smaller than the active volume on all six faces is defined.
 Without the latter, there is a significant number of photons produced by \Pgpz decays inside the detector but only showering outside the detector.
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
-Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions.
+Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions, Figure~\ref{fig:dune-nd_example-display} shows and example event with all three volumes drawn.
 
 Active volume dimensions are taken from the preliminary \dune{} \gls{nd} design described in Section~\ref{sec:dune-nd_ac_nd}.
 Note that the height was taken as \SI{2.5}{\metre} as opposed to the \SI{3}{\metre} of the \gls{nd} design.
@@ -274,6 +307,9 @@ Future, more sophisticated reconstruction algorithms (e.g. based on machine lear
 Therefore, it can be assumed that the actual pile-up-related energy reconstruction error is closer to the lower limit and potentially even below.
 It should be noted that the upper limit excludes only energy deposited by muons directly and not by their descendants (e.g.\ $\delta$ rays or Michel electrons).
 Whereas the lower limit excludes charge deposited by photons, neutrons, and any of their descendants.
+Figure~\ref{fig:dune-nd_example-display-zoom} illustrates the distinction of various energy depositions for an example event.
+In particular, it can be seen that $\delta$ rays (orange) are not counted towards energy deposited by muons (yellow).
+The long red track is an example of a deposition originating from a photon or neutron (descendant) included in the lower limit sample but very likely reconstructible by future algorithms.
 
 \subsection{Results}
 \label{sec:dune-nd_pile-up_results}

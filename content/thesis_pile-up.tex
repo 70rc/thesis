@@ -9,7 +9,7 @@ Before \AC{} selected as  the \lar{} component of the \dune{} \gls{nd} complex, 
 Number one was addressed in Section~\ref{sec:ac_viper}.
 This chapter will address question number two.
 As described in Section~\ref{sec:nu-detection_dune}, the \dune{} beam will have an intensity of \SI{2}{\mega\watt}.
-Paired with the slow (\si{\milli\second}) nature of the \lartpc{} described in Chapter~\ref{chap:lartpc}, this will result in multiple neutrinos interacting inside the detector for each beam spill, so-called event pile-up.
+Paired with the slow (\si{\milli\second}) nature of \lartpc{}s described in Chapter~\ref{chap:lartpc}, this will result in multiple neutrinos interacting inside the detector for each beam spill, so-called event pile-up.
 A more precise phrasing of question number two is therefore: Can a \lartpc{} disentangle these piled up events?
 To assess this, one of the most difficult reconstruction tasks---\Pgpz-induced \gls{em} showers---was simulated in an \AC{} \gls{nd} component (see Section~\ref{sec:dune-nd_ac_nd}).
 
@@ -88,7 +88,7 @@ However, for \SI{96}{\percent} of the drift time (\SI{240}{\micro\second}), pile
 \end{table}
 
 Reconstruction complexity paired with potential impact on physics measurements make photons produced by \Pgpz decays a good sample to study the robustness to pile-up of a pixelated \lartpc{} in the \dune{} \gls{nd} environment.
-Misidentifications lead to a misreconstruction of the neutrino energy.
+Energy misidentifications lead to a misreconstructed neutrino energy.
 The resulting discrepancy to the true neutrino energy has the potential to skew the measured energy spectrum and, thus, influence the oscillation measurements.
 A significant amount of \Pgpz are produced in several \gls{res} and \gls{coh} neutrino interactions (see Table~\ref{tab:nu-detection_nd-rates}, Section~\ref{sec:nu-detection_interactions} and~\cite{dune2}).
 They decay according to
@@ -153,8 +153,8 @@ This algorithm is explained in the following, its parameters are listed in Table
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous \gls{3d} space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
 Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics_pixel}.
-The spatial resolution of the pixel readout is assumed to be \SI{0.3}{\centi\metre} in both directions based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
-A conservative value of \SI{0.3}{\centi\meter} was chosen in drift direction.
+The spatial resolution of the pixel readout is assumed to be \SI{3}{\milli\metre} in both directions based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac_nd}\todo{justify!}.
+A conservative value of \SI{3}{\milli\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the \gls{tpc}.
 \uboone{} has achieved a resolution in drift direction $< \SI{0.3}{\centi\metre}$~\cite{uboone}, making it safe to assume \larpix{} will enable a similar performance with \AC{}.

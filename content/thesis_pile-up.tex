@@ -286,6 +286,16 @@ A safety margin was added to account for unknown uncertainties in the simulation
 However, the same simulation framework was used for both the containment and the pile-up study.
 Therefore, the \SI{2.5}{\metre} height is sufficient for the pile-up study.
 
+Cosmic ray induced backgrounds are neglected.
+The \gls{nd} hall will have an overburden of \SI{53}{\metre}, \SI{33}{\metre} of rock (\SI{2.43}{\gram\per\centi\metre\cubed}) plus \SI{20}{\metre} of dirt (\SI{1.7}{\gram\per\centi\metre\cubed}).
+Simulations predict a muon rate of \SI{2.7}{\hertz\per\metre\squared} at the top of the hall~\cite{dune_ndtfr}.
+Scaled up to the \AC{} \gls{nd} footprint of \SI{4 x 5}{\metre}, this results in a rate of \SI{54}{\hertz} for the whole \lartpc{} component.
+However, the majority of these events can be rejected by means of a beam spill trigger gate.
+Looking at Figure~\ref{fig:dune-nd_charge-flux}, the total readout time for one beam spill is \SI{260}{\micro\second}.
+Events outside of this window cannot originate from beam neutrinos.
+On average, this results in \num{0.014} cosmic events per beam spill compared to \num{14.7} beam events in the simulated detector.
+Therefore, contributions from cosmic rays can be safely neglected.
+
 After all events of one spill are placed inside the target volume, all \Pgpz photons produced inside the fiducial volume are reconstructed using the cone algorithm.
 All energy depositions inside the active volume are considered.
 To assess the performance of the algorithm and the influence of pile-up on neutrino energy reconstruction, the following two errors on the reconstructed energy are calculated for each \Pgpz photon:

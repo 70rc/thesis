@@ -3,7 +3,7 @@
 
 For a heavy \gls{mip} with $\dv{E}{x} \approx \SI{2.1}{\mega\electronvolt\per\centi\metre}$, a \lartpc{} has a charge yield of $\sim{\SI{1}{\femto\coulomb\per\milli\metre}}$ as explained in Chapter~\ref{chap:lartpc}.
 The readout electronics need to be able to reliably digitise this charge.
-This chapter aims to outline the challenges based on present designs and then present several tests of future approaches addressing them.
+This section aims to outline the challenges based on present designs and then present several tests of future approaches addressing them.
 
 One of the biggest challenges to detect such low charges is the \gls{snr}.
 Noise can originate from a plethora of sources.
@@ -307,7 +307,7 @@ The result of the skin effect is more power dissipation at higher frequencies.
 By operating at lower frequencies, the power dissipation of \larpix{} can be lowered further.
 The cost is a decrease in data transmission rates.
 
-With its power dissipation (and comsumption) dependent on the charge flux and the lowered data transmission rate, \larpix{} is susceptible to high event rates.
+With its power dissipation (and consumption) dependent on the charge flux and the lowered data transmission rate, \larpix{} is susceptible to high event rates.
 Due to the triggered digitisation, the same goes for noise levels.
 For the successful operation of \larpix{}, it is of paramount importance to keep event rates and noise levels low.
 The latter can be achieved by minimising detector capacitance.
@@ -315,7 +315,19 @@ To lower the susceptibility to high event rates, the \dune{} \gls{nd} design put
 This reduces the amount of charge per event arriving simultaneously at the readout.
 Furthermore, \larpix{} is equipped with a \gls{fifo} buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
 
-To accomodate the elevated number of channels of a pixelated readout, the first \larpix{} prototype chip has \num{32} inputs.
+To accommodate the elevated number of channels of a pixelated readout, the first \larpix{} prototype chip has \num{32} inputs.
 Its resolution in time and charge are \SI{2}{\micro\second} and \SI{8}{bit}, respectively.
 While currently inferior to the \gls{bnl} design, these specifications are planned to be improved in the next design iteration, after a successful initial test.
 One of the goals of the first prototype is to assess the optimal size of the \gls{fifo}.~\cite{danLarpix}
+
+
+\subsection{Charge Readout Electronics Summary}
+\label{sec:studies_electronics_summary}
+
+Pixelated \lartpc{}s place high demands on the charge readout electronics.
+The very high number of readout channels required makes digitisation outside of the cryostat impractical due to the number of cable feedthroughs required.
+Cold digitisation inside the cryostat reduces the number of cables by channel aggregation on digital high-speed links.
+However, this worsens the problem of heat dissipation inside the \lar{}.
+The cold digitisers being developed for the charge readout wire planes of the \dune{} \gls{fd} were evaluated but found unsuitable for a pixelated \lartpc{} due to their high power dissipation.
+\larpix{} is a bespoke cold digitiser for pixelated \lartpc{}s.
+It is currently under development at \gls{lbnl} and designed to meet the stringent heat dissipation requirements by means of a smart zero suppression.

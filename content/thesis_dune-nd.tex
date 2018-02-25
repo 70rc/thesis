@@ -2,7 +2,7 @@
 \label{chap:dune-nd}
 \glsreset{nd}
 
-The \AC{} concept, described in Section~\ref{sec:ac_argoncube}, is aimed at enabling a \lartpc{} component in the \dune{} \gls{nd} complex.
+The \AC{} concept, described in Section~\ref{sec:ac_argoncube}, enables a \lartpc{} component in the \dune{} \gls{nd} complex.
 This chapter will present a more detailed design for the \gls{nd}, together with a feasibility study of a \lartpc{} at the expected rates.
 
 
@@ -20,7 +20,7 @@ Finally, the current status of an \AC{} \lartpc{} component for the \dune{} \gls
 	\centering
 	\includegraphics[width=\textwidth]{ac/2x2/dimensions}
 	\caption[\AC{} \num{2 x 2} prototype module dimensions]{%
-		Dimensions of a \SI{0.67 x 0.67 x 1.81}{\metre} module for the \AC{} \num{2 x 2} module \AC{} prototype at \acrshort{help}.
+		Dimensions of a \SI{0.67 x 0.67 x 1.81}{\metre} module with hanging pixel demonstrator \acrshort{tpc} for the \AC{} \num{2 x 2} module \AC{} prototype at \acrshort{help}.
 	}
 	\label{fig:2x2_dim}
 \end{figure}
@@ -30,7 +30,7 @@ Finally, the current status of an \AC{} \lartpc{} component for the \dune{} \gls
 	\includegraphics[width=.25\textwidth]{ac/2x2/module_closed}
 	\includegraphics[width=.25\textwidth]{ac/2x2/module_open}
 	\caption[\AC{} \num{2 x 2} prototype module engineering drawing]{%
-		Engineering drawing of a \SI{0.67 x 0.67 x 1.81}{\metre} module for the \AC{} \num{2 x 2} module \AC{} prototype at \acrshort{help}.
+		Engineering drawings of a \SI{0.67 x 0.67 x 1.81}{\metre} module with hanging pixel demonstrator \acrshort{tpc} for the \AC{} \num{2 x 2} module \AC{} prototype at \acrshort{help}.
 	}
 	\label{fig:2x2_mod}
 \end{figure}
@@ -39,17 +39,17 @@ The goals of this prototype are testing the mechanical design and cryogenic syst
 For comparison, one of the four modules will be equipped with a classic wire readout.
 To investigate purity, first tests will be performed with the \AC{} demonstrator \gls{tpc} described in Section~\ref{sec:ac_viper}.
 The \gls{tpc} will be mounted inside an otherwise empty module, hanging from an intermediate support layer.
-This will also serve as a first cryogenic stress-test of the module structure.
+This will also serve as a first cryogenic stress-test of the module structure and \lar{} purification.
 
 The four modules will be housed in an existing cylindrical, vacuum-insulated cryostat at \gls{help}.
 With its approximately \SI{2}{\metre} diameter by \SI{2}{\metre} height it provides a \lar{} bath volume of roughly \SI{6}{\metre\cubed}.
 To fit inside the bath, the modules are scaled down to a footprint of \SI{0.67 x 0.67}{\metre} and a height of \SI{1.81}{\metre}.
-Due to the split-\gls{tpc} design, the resulting cathode voltage required for a \SI{1}{\kilo\volt\per\centi\metre} field is below \SI{35}{\kilo\volt}.
-Instead of service modules, cooling is provided by two liquid nitrogen turbo-cooling circuits attached to the inner cryostat wall inside the insulation vacuum.
+Instead of service volumes, cooling is provided by two liquid nitrogen turbo-cooling circuits attached to the inner cryostat wall inside the insulation vacuum.
 They cool the \lar{} bath via evaporation of the liquid nitrogen.
 The nitrogen flow has to be regulated precisely to keep the \lar{} stable and prevent it from boiling or freezing.
 
 The height of the actual \gls{tpc} in a fully equipped module is \SI{1235}{\milli\metre}.
+Due to the split-\gls{tpc} design, the resulting cathode voltage required for a \SI{1}{\kilo\volt\per\centi\metre} field is below \SI{35}{\kilo\volt}.
 On the bottom, \SI{160}{\milli\metre} are occupied by the heat exchanger and check valves for \lar{} exchange with the bath upon insertion and extraction.
 The remaining room on top of the \gls{tpc} is filled up by the \gls{hv} feedthrough, a buffer gas phase, and a potential recirculation pump.
 All support structures except for the flanges at the module top and bottom are made from G10, including most of the screws.
@@ -68,7 +68,7 @@ Readout thicknesses also include the clearance required between adjacent modules
 The resulting total fraction of active volume is \SI{87.0}{\percent} for the \num{2 x 2} prototype.
 
 In a first phase, the \num{2 x 2} prototype will be operated in the Grosslabor of \gls{help}, taking cosmic ray data.
-After a successful test of all subsystems, it is planned to be installed in a charged particle test beam at CERN to investigate the influence of the module walls on calorimetry and tracking.\todo{Is this still valid?}
+After a successful test of all subsystems, it is planned to be installed in a charged particle test beam at either CERN or \gls{fail} to investigate the influence of the module walls on calorimetry and tracking.\todo{Is this still valid?}
 
 \begin{table}[htb]
 	\centering
@@ -161,6 +161,7 @@ Table~\ref{tab:dune-nd_dim} gives an overview of the most important \AC{} \gls{n
 Due to the bigger modules, the total fraction of active volume is increased to \SI{91.2}{\percent}.
 Drift direction is perpendicular to beam direction.
 The reason for this is to reduce the rate on single pixels.
-If drift direction was parallel to beam direction, particle tracks highly parallel to drift direction would lead to a very high rate on single channels potentially leading to a buffer overflow and thus data loss in the \larpix{} chip.
+If drift direction is parallel to beam direction, particle tracks highly parallel to drift direction lead to a very high rate on single channels potentially leading to a buffer overflow and thus data loss in the \larpix{} chip.
+In addition, power dissipation would increase proportionally to the event rate due to the smart zero suppression scheme of \larpix{}.
 Another advantage is that dead space in beam direction between adjacent modules will only be \SI{30}{\milli\metre} due to the very slim dimensions of \AL{}.
 Figure~\ref{fig:dune-nd_ac} shows an artistic view of the \AC{} \gls{nd} component.

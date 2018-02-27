@@ -28,16 +28,16 @@ The \dune{}~\cite{dune1, dune2, dune3, dune4} is a next generation long-baseline
 Neutrino oscillations will be observed over a baseline of \SI{1300}{\kilo\metre}.
 Several implications result from the required number of neutrino interactions to be sensitive to \gls{cp} violation and neutrino mass ordering.
 As mentioned above, a very intense neutrino beam and a large target mass are necessary~\cite{dune3, dune4}.
-However, this is not enough; at the same time, uncertainties have to be kept low.
+However, this is not enough; at the same time, uncertainties have to be kept under control.
 Statistical uncertainties can be lowered by acquiring more neutrino interactions but this is not true for systematic uncertainties which will therefore become the limiting factor.
-To cancel systematic uncertainties, a \emph{\gls{nd}} complex containing a \lartpc{} will be placed in front of the beam facility in addition to the \emph{\gls{fd}} at the end of the baseline.
+To cancel systematic uncertainties, a \emph{\gls{nd}} complex containing a \lartpc{} will be placed in front of the beam facility in addition to the \emph{\gls{fd}} complex at the end of the baseline.
 
-Up until now, \lartpc{} charge readouts have been realised by means of multiple \gls{1d} wire planes---the last of them collecting the charge while the previous ones register the induced voltage pulse by the passing charge---due to technological limitations.
+Up until now, \lartpc{} charge readouts have been realised by means of multiple \gls{1d} wire planes due to technological limitations.
 Combined with the time of the drifting charge, this results in one \gls{2d} image of the event topology per wire plane, effectively reducing the \gls{3d} capabilities of the \gls{tpc} to multiple \gls{2d} projections.
-In this thesis, I will show how to implement a true \gls{3d} charge readout and demonstrate its performance.
+In this thesis, I will show how to implement a true \gls{3d} \lartpc{}, and demonstrate its performance by reconstructing cosmic muon tracks with a Kalman filter.
 
 \lartpc{}s are comparatively slow detectors.
-The minimum drift time of charge in \lar{} (and thus the readout time) is limited to $\sim{\SI{1}{\milli\second\per\metre}}$ by constraints on the maximum cathode voltage.
+The maximum drift velocity of charge in \lar{} (and thus the readout time) is limited to $\sim{\SI{1}{\milli\metre\per\micro\second}}$ by constraints on the maximum cathode voltage.
 Both the above have not prevented the success of \lartpc{}s up to now.
 Due to the low interaction cross-section, event rates in current-generation \lartpc{}s have been low enough to cope with.
 While this still applies to the \dune{} \gls{fd}, it is certainly not true for the \gls{nd}.
@@ -47,11 +47,11 @@ Because these spills are one to two orders of magnitude shorter than a typical \
 Combined with the \gls{2d} projection readout, this leads to significant difficulties in event reconstruction: disentangling the \gls{3d} interaction topologies from the recorded \gls{2d} projections.
 An obvious solution to this challenge is to regain true \gls{3d} information from the \gls{tpc} by replacing the projective \gls{1d} wire planes with a true \gls{2d} pixelated charge readout.
 I will show how the related technological challenges can be addressed.
-In particular, new electronics with a stringent power management are necessary to keep heat dissipation to a minimum and prevent the \lar{} from boiling.
+In particular, new charge readout electronics with a stringent power management are necessary to keep heat dissipation to a minimum and prevent the \lar{} from boiling.
 
 In addition to these readout issues, future large \lartpc{}s face several other challenges.
 In particular for the \gls{hv} and light readout systems.
-Earlier studies by the \gls{help}~\cite{breakdown_14} showed that the dielectric strength of \lar{} is much lower than predicted by studies performed in the fifties.~\cite{swan1, swan2}
+Earlier studies by the \gls{help}~\cite{breakdown_14} showed that the dielectric strength of \lar{} is much lower than predicted by studies performed in the fifties~\cite{swan1, swan2}.
 Currently operating \lartpc{}s are already affected~\cite{uboone}.
 Electronegative impurities present in the \lar{} result in a finite charge lifetime.
 This results in a lower limit on the required drift field and therefore cathode voltage.
@@ -61,36 +61,20 @@ I will present a detailed study of the dielectric strength of \lar{} alongside a
 In order to get proper timing for the third coordinate, the collected scintillation light needs to be matched to the corresponding detected charge.
 This becomes problematic in large monolithic \lartpc{}s with many simultaneous particle interactions.
 
+\AC{} is a new \lartpc{} concept, developed at \gls{help}, addressing all aforementioned issues by means of a modular \gls{tpc} design combined with a pixelated charge readout.
+It remains to be shown that such a detector is actually able to cope with the event rates expected in the \dune{} \gls{nd}.
+At \dune{} energies, \gls{em} showers produced by decaying \Pgpz result in a plethora of apparently unconnected charge clusters.
+Associating all those separate charge clusters to the correct neutrino interaction is one of the most difficult reconstruction tasks, event for a \lartpc{}.
+Energy misidentifications significantly impair the overall energy resolution of the experiment.
+I will use a simulation of such interactions in \AC{} to investigate its behaviour under high event rates as expected in the \dune{} \gls{nd}.
+
 The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component in the \dune{} \gls{nd} complex.
-A introduction to the history and theory of neutrino detection, as well as an overview of \dune{} are given in Chapter~\ref{chap:nu-detection}.
+
+An introduction to the history and theory of neutrino detection as well as an overview of \dune{} are given in Chapter~\ref{chap:nu-detection}.
+The traditional \lartpc{} design is explained in Chapter~\ref{chap:lartpc} including a description of its limitations.
 Chapter~\ref{chap:studies} contains several studies addressing the challenges met by future \lartpc{}s.
 These include a thorough investigation of dielectric breakdowns in \lar{}, the development of new charge and light readout methods, as well as the evaluation of electronics for pixelated charge readouts.
-My main contribution to the \dune{} \gls{nd} complex is the demonstration of a pixelated \lartpc{} in Chapter~\ref{chap.
-Conventional room-temperature digitisers were combined with analogue multiplexing due to the as yet lacking cryogenic electronics.
-Several days of cosmic muon data were collected with a test stand designed and built at \gls{help}.
-A software framework was written to reconstruct \gls{3d} tracks from the data.
-Even though the employed pixelated readout yields \gls{3d} information on charge deposition in the \lartpc{}, the necessary analogue multiplexing introduced a certain amount of ambiguity.
-The latter had to be resolved by the reconstruction algorithm.
-Finally, the unambiguous positional information was fed to a Kalman filter.
-This propagates a cosmic muon hypothesis through all the detector measurements taking into account the various involved charge deposition mechanisms in \lar{}.
-The end result is a completely reconstructed particle track through the detector.
-The combination of all the R\&D presented in this thesis resulted in the development of the \AC{}, a next-generation \lartpc{} concept, at \gls{help}.
-It aims to address the most important challenges met by future \lartpc{}s.
-The problematic high fields at the cathodes as well as the scintillation light containment issue are addressed by splitting up the detector into smaller ($\sim{\SI{1}{\metre}}$), self-contained \glspl{tpc} sharing a common \lar{} bath.
-A pixelated charge readout makes the detector capable of true \gls{3d} event recording.
-To keep the dead volume to a minimum, \AL{} is used as the light readout system.
-All of this is described in Chapters~\ref{chap:ac}.
-
-Chapter~\ref{chap:dune-nd} introduces the proposed \AC{} \lartpc{} component for the \dune{} \gls{nd} complex together with a feasibility study of a \lartpc{} in such an environment.
-Combining the knowledge gained from Chapter~\ref{chap:ac} with the next-generation pixel electronics briefly described in Chapter~\ref{chap:studies}, enables the realisation of a true \gls{3d} \lartpc{}.
-However, it remains to be shown that such a detector is actually able to cope with the event rates expected in the \gls{nd}.
-To assess this capability, a metric was needed representative of the physics processes.
-\gls{em} showers produced from the photons originating from \Pgpz decays are notoriously complex to reconstruct.
-On the other hand, it is important to get their energy reconstruction right in order not to skew the neutrino energy spectrum because they are present in a significant fraction of the neutrino interaction expected in \dune{}.
-At the \dune{} energies, \gls{em} showers deposit a plethora of apparently unconnected charge clusters in a \lartpc{} rather than a homogeneous cone.
-Associating all those separate charge blobs to the correct event is one of the most difficult reconstruction tasks, even for a \lartpc{}.
-Therefore, this type of \gls{em} shower was chosen for this study.
-A rather rudimentary algorithm was employed to assign the deposited charge to the correct \gls{em} shower because all available \lartpc{} reconstruction algorithms are optimised for wire readouts.
-The amount of misidentified charge from other events is a suitable metric to assess the impact of pile-up on the \gls{nd} physics.
-
-Chapter~\ref{chap:conclusion} concludes the thesis.
+My main contribution to \AC{} is the demonstration of a pixelated \lartpc{} in Chapter~\ref{chap:ac}.
+A general description of the \AC{} concept is also given in this chapter.
+Chapter~\ref{chap:dune-nd} introduces the proposed \AC{} component for the \dune{} \gls{nd} complex together with a feasibility study of a \lartpc{} in such an environment.
+The thesis is summarised in Chapter~\ref{chap:conclusion}.

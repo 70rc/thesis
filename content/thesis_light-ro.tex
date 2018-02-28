@@ -11,28 +11,26 @@ After that the \AC{} Light readout, \AL{}, is introduced.
 \subsection{Cryogenic \glsentryshort{sipm} Light Readout}
 \label{sec:studies_light-col_viper}
 
-A novel light readout system based on \glspl{sipm} in \lar{} was implemented for the first pixel prototype described in Section~\ref{sec:ac_viper}.
+A novel light readout system based on \glspl{sipm} in \lar{} was implemented for the pixel demonstrator described in Section~\ref{sec:ac_viper}.
 Acrylic rings placed in between the aluminium field shaping rings of the \gls{tpc} provide the light collection; their inner surfaces are machine-polished and coated with the \gls{wls} \gls{tpb}. 
 The coating method is based on~\cite{TPBcoating}.
 \SI{0.5}{\gram} of \gls{tpb} and \SI{0.5}{\gram} of acrylic flakes were dissolved in \SI{50}{\milli\liter} of toluene and then mixed with \SI{12}{\milli\liter} of ethanol, which serves to increase the coating homogeneity. 
 Three layers of the coating were applied by hand, with a fine brush. 
 
-\SI{1}{\milli\metre} diameter \gls{wls} fibres, \emph{Kuraray Y11(200)M}~\cite{kuraray}, couple the acrylic rings to the four \emph{Hamamatsu S12825-050P} \glspl{sipm}~\cite{crt_sipm} mounted close to the anode (see Figure~\ref{fig:viper_v1per}). 
-The \glspl{sipm} and their front-end electronics were adapted from those developed at \gls{help} for the \glspl{crt} used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
+\SI{1}{\milli\metre} diameter \gls{wls} fibres, \emph{Kuraray Y11(200)M}~\cite{kuraray}, couple the acrylic rings to four \emph{Hamamatsu S12825-050P} \glspl{sipm}~\cite{crt_sipm} mounted close to the anode (see Figure~\ref{fig:viper_v1per}). 
+The \glspl{sipm} and their front-end electronics were adapted from those developed at \gls{help} for the \glspl{crt} used in \uboone{} and the \sbnd{}~\cite{crt, crt_feb}.
 Residing on the cryostat top flange at room temperature, the \gls{feb} is connected to the \glspl{sipm} via Teflon insulated coaxial cables.
 For operation in \lar{}, the \gls{sipm} bias voltages had to be reduce from $\approx \SI{70}{\volt}$ to \SI{53}{\volt}, in order to limit the gain.   
-In the front-end electronics, two coincidences of two out of the four \glspl{sipm} are formed and combined by means of a logic \textit{OR} operation. 
-This coincidence is used in order to improve trigger purity.
 
-The peak of scintillation light emission in \lar{} lies at \SI{128}{\nano\metre}\todo{sauce} while the sensitivity wavelength peak of the \gls{sipm} is at \SI{450}{\nano\metre}.
+The peak of scintillation light emission in \lar{} lies at \SI{128}{\nano\metre} (see Table~\ref{tab:lartpc_larprop}) while the sensitivity wavelength peak of the \gls{sipm} is at \SI{450}{\nano\metre}.
 Therefore, the scintillation light needs to be shifted before it can be detected by the \glspl{sipm}.
 This happens in two stages.
 For the first shift, \gls{tpb} is applied to the inside of the acrylic rings.
 Their outside is not coated to reduce the collected amount of scintillation light that originates outside the \gls{tpc} while their inside is machined to optimise light collection.
-\gls{tpb} absorbs the \SI{128}{\nano\metre} scintillation light an re-emits with a peak at \SI{440}{\nano\metre}~\cite{tpb} which is then propagated through the acrylic and coupled into the \gls{wls} fibre.
-The latter has an absorption peak at \SI{430}{\nano\metre} and an emission peak at \SI{476}{\nano\metre}.\todo{sauce}
+\gls{tpb} absorbs the \SI{128}{\nano\metre} scintillation light an re-emits it with a peak at \SI{440}{\nano\metre}~\cite{tpb}.
+The light emitted by the \gls{tpb} is then propagated through the acrylic and coupled into the \gls{wls} fibre which has an absorption peak at \SI{430}{\nano\metre} and an emission peak at \SI{476}{\nano\metre}.
 
-In the \gls{feb}, two coincidences of two out of four \glspl{sipm} are formed and combined by means of a logic \emph{OR} operation.
+In the \gls{feb}, two coincidences $\qty(\land)$ of two out of four \glspl{sipm} are formed and combined by means of a logic \emph{OR} $\qty(\lor)$ operation.
 The trigger pattern is thus
 \begin{IEEEeqnarray}{rCl}
 	T & = & \qty(S_1 \land S_2) \lor \qty(S_3 \land S_4)
@@ -60,13 +58,13 @@ As a solution, a dedicated light readout system for the \AC{}, \AL{}, was develo
 \label{sec:studies_light-col_al}
 \glsreset{arclight}
 
-The \AL{} aims to minimise the occupied volume by maximising the area coverage of \glspl{sipm}.
+The \AL{} aims to minimise the occupied volume while maximising the area coverage of \glspl{sipm}.
 This is achieved by coupling them to a passive light collector.
 As mentioned above, principles based on full reflection on a polymer-\lar{} interface are not suitable.
 Instead, \AL{} is based on the light trapping principle of the \gls{arapuca} sensor~\cite{arapuca}.
 The latter works by trapping the photons inside a cavity made of walls covered by a highly reflective materials.
 One of the walls is formed from a dichroic film, a material transparent to certain wavelengths while highly reflective to others.
-On the outside, this film is covered by \gls{tpb} with the film transparent to the emitted blue light.
+On the outside, this film is coated with \gls{tpb} which shifts the \lar{} scintillation light to the blue range where the dichroic film is transparent.
 The inside of the film is covered by a second \gls{wls}, shifting the light to green which is reflected by the dichroic film and therefore trapped inside the cavity.
 One or more \glspl{sipm} are mounted inside the cavity to collect the trapped photons.
 In contrast, \AL{} replaces the void of \gls{arapuca} by a solid transparent polymer sheet, doped with a \gls{wls} dye.
@@ -128,19 +126,30 @@ More details on the calculations and the calibration of the measurement can be f
 
 The measurements described above were performed at room temperature.
 A \SI{43 x 15}{\centi\metre} \AL{} module was successfully operated at \lar{} temperatures in the \pixlar{} test beam demonstrator at \gls{fail} described in Section~\ref{sec:ac_pixlar}.
-Figure~\ref{fig:arclight_pixlar} shows the time evolution of the average photo-electron yield per event in beam (red) and cosmic ray (blue) mode.
+Figure~\ref{fig:arclight_pixlar_response} shows the light yield for beam (red) and cosmic events (blue).
+The time evolution of the average photo-electron yield per event in beam (magenta) and cosmic ray (blue) mode is depicted in Figure~\ref{fig:arclight_pixlar_stability}.
 It can be seen that the yield is approximately constant over several weeks.
 The jumps in the beam curve can be explained by the switching between different beam configurations (e.g.\ momentum and intensity).
 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{arclight/light_yield}
+	\caption[\pixlar{} \glsentryshort{arclight} response]{%
+		Distribution of observed number of photo-electrons (N p.e.) per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail}.
+		The response is shown for cosmic (blue) and beam events (red).
+	}
+	\label{fig:arclight_pixlar_response}
+\end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{arclight/stability_cosm_beam}
 	\caption[\pixlar{} \glsentryshort{arclight} response stability]{%
 		Average observed number of photo-electrons (N p.e.) per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail} over several weeks.
-		In addition to the beam response in red, the response to cosmic rays is shown in blue.
+		The response is shown for cosmic (blue) and beam events (magenta).
+		For reference, the primary beam energy (black) and the magnet current (red) are shown.
 	}
-	\label{fig:arclight_pixlar}
+	\label{fig:arclight_pixlar_stability}
 \end{figure}
 
 

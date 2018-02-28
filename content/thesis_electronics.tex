@@ -112,24 +112,26 @@ Their main features include
 	\item per channel programmable gain of \SIlist[list-final-separator = { or }]{4.7; 7.8; 14; 25}{\milli\volt\per\femto\coulomb};
 	\item per channel programmable filter peaking time of \SIlist[list-final-separator = { or }]{0.5; 1.0; 2.0; 3.0}{\micro\second};
 	\item built-in test capacitance connected to dedicated external test pulse input for calibration;
-	\item and a power dissipation \SI{< 10}{\milli\watt} per channel.
+	\item and a power dissipation $< \SI{10}{\milli\watt}$ per channel.
 \end{itemize}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{electronics/ReadoutChain_AT}
-	\caption[\AT{} readout chain]{%
-		\AT{} readout chain.~\cite{AT_larasic}
+	\caption[\AT{} charge readout chain]{%
+		Scheme of the \AT{} charge readout chain.
+		From left to right: preamplifier power and control \acrshort{nim} module, LARASIC preamplifiers on wire readout plane, buffer amplifiers, CAEN V1724 digitisers.
+		The dashed rectangle denotes the cold part of the chain.~\cite{AT_larasic}
 	}
 	\label{fig:viper_readoutChain_AT}
 \end{figure}
 
 The cryogenic preamplifiers are mounted as close as possible to the readout in order to minimise noise pick-up on these very sensitive lines.
-Via an \gls{i2c} bus, LARASICs can be programmed to the different aforementioned configurations.
-For this purpose, they are connected to a bespoke \gls{nim} module housing an Arduino which generates the \gls{i2c} signals, a test pulse generator, and multiple low-noise voltage regulators providing power to the LARASICs.
+Via a \gls{spi}, LARASICs can be programmed to the different aforementioned configurations.
+For this purpose, they are connected to a bespoke \gls{nim} module housing an Arduino which generates the \gls{spi} signals, a test pulse generator, and multiple low-noise voltage regulators providing power to the LARASICs.
 The output of the preamplifiers is fed to buffer amplifiers mounted on top of the signal feedthrough by means of flexible Kapton ribbon cables.
 The buffers operate at room temperature, have a unity gain, and match the output impedance of the LARASICs to the \SI{50}{\ohm} input impedance of the downstream digitisers.
-From the buffers, the signals are routed via \SI{50}{\ohm} unbalanced coaxial lines to \emph{CAEN V1724}\footnote{\url{http://www.caen.it}} \SI{14}{bit} digitisers mounted in a \gls{vme} crate.
+From the buffers, the signals are routed via \SI{50}{\ohm} unbalanced coaxial lines to \emph{CAEN V1724} digitisers~\cite{caen_adc} mounted in a \gls{vme} crate.
 For debugging purposes, the output of the buffers can be routed to an oscilloscope via a coaxial T-piece.
 Finally, the digital data is read out from the \gls{vme} crate via a fibre-optic link by a standard PC.
 Figure~\ref{fig:viper_readoutChain_AT} depicts the entire readout chain.

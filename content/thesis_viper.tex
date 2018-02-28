@@ -106,15 +106,9 @@ Each resistor is soldered to its neighbour, and fixed to the field cage at each 
 \end{figure}
 
 The acrylic rings provide the light collection; their inner surfaces are machine-polished and coated with the \gls{wls} \gls{tpb}. 
-The coating method is based on~\cite{TPBcoating}.
-\SI{0.5}{\gram} of \gls{tpb} and \SI{0.5}{\gram} of acrylic flakes were dissolved in \SI{50}{\milli\liter} of toluene and then mixed with \SI{12}{\milli\liter} of ethanol, which serves to increase the coating homogeneity. 
-Three layers of the coating were applied by hand, with a fine brush. 
-
-\SI{1}{\milli\metre} diameter \gls{wls} fibres (Kuraray Y11(200)M) couple the acrylic rings to the four Hamamatsu S12825-050P \glspl{sipm} mounted close to the anode, see Figure~\ref{fig:viper_v1per}. 
+\SI{1}{\milli\metre} diameter \gls{wls} fibres couple the acrylic rings to four \glspl{sipm} mounted close to the anode, see Figure~\ref{fig:viper_v1per}. 
 The \glspl{sipm} and their front-end electronics were adapted from those developed at \gls{help} for the \glspl{crt} used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
-For operation in \lar{}, the \gls{sipm} bias voltages had to be reduce from $\approx$~\SI{70}{\volt} to \SI{53}{\volt}, in order to limit the gain.   
-In the front-end electronics, two coincidences of two out of the four \glspl{sipm} are formed and combined by means of a logic \textit{OR} operation. 
-This coincidence is used in order to improve trigger purity.
+A more detailed description of the light readout system is given in Section~\ref{sec:studies_light-col_viper}.
 
 
 \subsection{Ancillary Infrastructure}
@@ -198,7 +192,6 @@ These steps are explained in the following and depicted in Figures~\ref{fig:vipe
 
 In the first step, a noise-filtering algorithm is applied to the raw data.
 As can be seen from Figure~\ref{fig:viper_unfilteredRawData}, the noise is largely correlated across all the channels.
-\footnote{Due to the much higher signal levels, the noise is barely visible on the pixel channels on the left.}
 This common-mode correlation can be exploited by the noise filter algorithm.
 The following is done separately for the all pixel and \gls{roi} channels of each event.
 Similarly to the \gls{snr} calculation, all samples are filled into an amplitude distribution histogram for each channel, and subsequently fitted with a Gaussian.

@@ -51,8 +51,8 @@ The field map was calculated using the COMSOL \gls{fem} package.\footnote{\url{h
 The purity of the argon after filling was estimated with a small \gls{tpc} chamber (according to the method described in~\cite{2photonAbs}) to be $\sim{\SI{1}{ppb}}$ of oxygen-equivalent impurity concentration.
 More details of the setup can be found in~\cite{breakdown_14}.
 
-The control circuit of the \emph{Spellman SL150}\footnote{\url{http://www.spellmanhv.com}} \gls{psu} outputs two low voltages proportional to the voltage and the current at the output, respectively.
-These voltages are recorded with a \emph{Tektronix DPO 3054}\footnote{\url{http://www.tek.com}} digital oscilloscope.
+The control circuit of the \emph{Spellman SL130PN150} \gls{hv} \gls{psu}~\cite{hv_psu} outputs two low voltages proportional to the voltage and the current at the output, respectively.
+These voltages are recorded with a \emph{Tektronix DPO 3054} digital oscilloscope~\cite{hv_dpo}.
 The output polarity of the \gls{psu} can be switched by replacing the output \gls{hv} multiplier module.
 To measure the discharge current, a \SI{50}{\ohm} shunt resistor is placed between the anode plate and the vessel ground which is connected to the ground return of the \gls{psu}. The voltage drop across the shunt resistor is transmitted via a matched coaxial line to the oscilloscope.
 The latter is controlled by a LabVIEW program.
@@ -97,7 +97,7 @@ The knowledge of these parameters allows to calculate the voltage across the gap
 	\end{tabu}
 \end{table}
 
-In addition, the setup is equipped with an \emph{AOS Technologies S-PRI\emph{Plus}}\footnote{\url{http://www.aostechnologies.com}} high-speed camera to observe the development of the discharge.
+In addition, the setup is equipped with an \emph{AOS Technologies S-PRI} high-speed camera~\cite{hv_camera} to observe the development of the discharge.
 The camera is capable of recording \num{700 x 400}~pixel \gls{rgb} images at \SI{1230}{fps}.
 The camera comprises a frame ring buffer and is triggerable by an external \gls{ttl} pulse.
 This allows a synchronous recording of the visual appearance of the discharge and its volt-ampere characteristics.

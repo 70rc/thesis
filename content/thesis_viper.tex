@@ -1,12 +1,16 @@
 \chapter{A Novel Implementation of the \glsentryshort{lartpc} Technology}
 \label{chap:ac}
 
+While the theory and improvements of individual \lartpc{} subsystems were discussed in Chapter~\ref{chap:studies}, this chapter presents the amalgamation of all the findings into a new \lartpc{} concept, \AC{}, aligned to the needs of future \lartpc{} neutrino detectors.
+The results of the \AC{} pixel demonstrator are presented, alongside a reconstruction framework yielding fully reconstructed \gls{3d} cosmic muon tracks.
+Afterwards, the \AC{} modular \lartpc{} concept is introduced.
+
 
 \section{First Results from the \AC{} Pixel Demonstrator}
 \label{sec:ac_viper}
 
-This chapter describes the results obtained from the first pixelated \lartpc{} prototype for the \AC{} project (see Chapter~\ref{sec:ac_argoncube}).
-While many of the individual systems, such as the high-voltage system, light and charge readout, have been described in previous chapters, a short overview of the implementation is given here.
+This section describes the results obtained from the pixel demonstrator for the \AC{} project (see Chapter~\ref{sec:ac_argoncube}).
+A particular focus is put on the reconstruction of the recorded cosmic ray events.
 
 
 \subsection{Pixel \glsentryshort{pcb} Design}
@@ -339,7 +343,7 @@ While the presented almost full \gls{3d} readout has already reduced the reconst
 After the successful test with cosmic muons at \gls{help}, a bigger prototype of the pixel readout, employing the same multiplexing scheme, was built for a beam exposure in the \lariat{} experiment~\cite{lariat} at \gls{fail}.
 \lariat{} consists of the former \argoneut{}~\cite{argoneut} cryostat and \lartpc{} put into a test beam.
 The tertiary beam line produces mainly pions and protons as well as electrons, muons and kaons at a lower rate.
-Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt\per\clight}.
+Their momentum spectrum can be tuned from \SIrange{0.2}{2.0}{\giga\electronvolt\per\clight} by means of bending magnets.
 \SI{550}{\litre} of \lar{} are contained in a cylindrical cryostat.
 It houses a \gls{tpc} with \SI{47}{\centi\metre} drift length and a \SI{40 x 90}{\centi\metre} readout plane parallel to the beam direction, resulting in an active volume of \SI{170}{\litre}.
 For the pixel test, called \pixlar{}, the original wire planes were replaced by a \num{120 x 240} pixel readout.

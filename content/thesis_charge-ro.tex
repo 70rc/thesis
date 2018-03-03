@@ -125,12 +125,12 @@ In contrast, genetic multiplexing and \glspl{roi} are forms of analogue multiple
 The difference to digital multiplexing is that multiple readout channels are combined into a single analogue link before digitising them at room temperature outside the cryostat.
 In the two schemes described here, this happens by connecting multiple readout channels to a single \gls{daq} channel.
 
-In genetic multiplexing, the connections are done in a way that a certain event type (a single straight track for instance) forms a distinct pattern of \gls{daq} channels activated.
+In genetic multiplexing~\cite{gen_mux}, the connections are done in a way that a certain event type (a single straight track for instance) forms a distinct pattern of \gls{daq} channels activated.
 For simple events, it is possible to recover the full event from the pattern.
 Naturally, this reintroduces new ambiguities.
 Depending on the complexity of the event topology and the degree of multiplexing, they can potentially be resolved during reconstruction.
 In any case, if the event is too complex, it cannot be reconstructed properly.
-While genetic multiplexing has been shown to work for \gls{1d} readouts (wires), there is no known solution for two dimensions (pixels).\todo{sauce}
+While genetic multiplexing has been shown to work for \gls{1d} readouts (wires), there is no known solution for two dimensions (pixels).
 
 A third technique is to subdivide a pixelated readout plane in so-called \glspl{roi}.
 This scheme was tested for an earlier PhD thesis at \gls{help} using a \gls{micromegas} in a xenon gas \gls{tpc}~\cite{maplesyrup}.

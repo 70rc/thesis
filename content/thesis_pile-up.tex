@@ -1,4 +1,4 @@
-\section{Feasibility Study of a Pixelated \glsentryshort{lartpc} for the \glsentryshort{dune} \glsentrylong{nd}}
+\section{Event Pile-up in the \glsentrylong{nd}}
 \label{sec:dune-nd_pile-up}
 
 Before \AC{} selected as  the \lar{} component of the \dune{} \gls{nd} complex, there were two main questions that needed to be addressed:
@@ -11,7 +11,7 @@ This chapter will address question number two.
 As described in Section~\ref{sec:nu-detection_dune}, the \dune{} beam will have an intensity of \SI{2}{\mega\watt}.
 Paired with the slow (\si{\milli\second}) nature of \lartpc{}s described in Chapter~\ref{chap:lartpc}, this will result in multiple neutrinos interacting inside the detector for each beam spill, so-called event pile-up.
 A more precise phrasing of question number two is therefore: Can a \lartpc{} disentangle these piled up events?
-To assess this, one of the most difficult reconstruction tasks---\Pgpz-induced \gls{em} showers---was simulated in an \AC{} \gls{nd} component (see Section~\ref{sec:dune-nd_ac_nd}).
+To assess this, one of the most difficult reconstruction tasks---\Pgpz-induced \gls{em} showers---was simulated in an \AC{} \gls{nd} component (see Section~\ref{sec:dune-nd_ac-nd}).
 
 \begin{figure}[htb]
 	\centering
@@ -48,8 +48,8 @@ Therefore, the assumption of an infinitely short spill is a worst-case scenario 
 However, for \SI{96}{\percent} of the drift time (\SI{240}{\micro\second}), pile-up is unchanged.
 
 
-\subsection{\texorpdfstring{\Pgpz}{Pi0} pile-up simulation}
-\label{sec:dune-nd_pile-up_simulation}
+\section{Feasibility Study of a Pixelated \glsentryshort{lartpc} in the \glsentrylong{nd}}
+\label{sec:dune-nd_pile-up-study}
 
 \begin{table}[htb]
 	\centering
@@ -152,8 +152,8 @@ Therefore, a simple algorithm for true \gls{3d} space points was implemented, un
 This algorithm is explained in the following, its parameters are listed in Table~\ref{tab:dune-nd_pile-up-params}, an example of a simulated event is shown in Figures~\ref{fig:dune-nd_example-display} and~\ref{fig:dune-nd_example-display-zoom}.
 
 The basic underlying assumption is that a pixel readout without analogue multiplexing will yield unambiguous \gls{3d} space points of charge deposition with a given resolution, depending on the geometry of the pixel plane, time resolution of the readout electronics, and charge transport effects.
-Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_electronics_pixel}.
-The spatial resolution of the pixel readout is assumed to be \SI{3}{\milli\metre} in both directions based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac_nd}.
+Section~\ref{sec:ac_viper} proves that this is feasible provided the current reconstruction ambiguities can eliminated by a successful deployment of the \larpix{} charge readout electronics described in Section~\ref{sec:studies_pixel-electronics}.
+The spatial resolution of the pixel readout is assumed to be \SI{3}{\milli\metre} in both directions based on the \gls{nd} design specified in Section~\ref{sec:dune-nd_ac-nd}.
 A conservative value of \SI{3}{\milli\meter} was chosen in drift direction.
 This has several advantages.
 Choosing the same resolution as the pixel pitch makes the simulation independent of the orientation of the \gls{tpc}.
@@ -277,11 +277,11 @@ Without fiducialisation, there is a significant number of photons produced by \P
 This selection results in $\approx \num{5.5e5}$ processed \Pgpz photons from the initial \num{6.6e6} neutrino events.
 Table~\ref{tab:dune-nd_pile-up-params} contains a summary of all the \lar{} volume dimensions, Figure~\ref{fig:dune-nd_example-display} shows an example event with all three volumes drawn.
 
-Active volume dimensions are taken from the preliminary \dune{} \gls{nd} design described in Section~\ref{sec:dune-nd_ac_nd}.
+Active volume dimensions are taken from the preliminary \dune{} \gls{nd} design described in Section~\ref{sec:dune-nd_ac-nd}.
 Note that the height was taken as \SI{2.5}{\metre} as opposed to the \SI{3}{\metre} of the \gls{nd} design.
 The reason is that another \SI{0.5}{\metre} safety margin were added after this pile-up simulation had been completed.
 However, the influence on the pile-up study should be negligible.
-The hadron containment studies described in Section~\ref{sec:dune-nd_ac_nd} indicated that \SI{2.5}{\metre} height is the bare minimum.
+The hadron containment studies described in Section~\ref{sec:dune-nd_ac-nd} indicated that \SI{2.5}{\metre} height is the bare minimum.
 A safety margin was added to account for unknown uncertainties in the simulation.
 However, the same simulation framework was used for both the containment and the pile-up study.
 Therefore, the \SI{2.5}{\metre} height is sufficient for the pile-up study.
@@ -320,10 +320,6 @@ Whereas the lower limit excludes charge deposited by photons, neutrons, and any 
 Figure~\ref{fig:dune-nd_example-display-zoom} illustrates the distinction of various energy depositions for an example event.
 In particular, it can be seen that $\delta$ rays (orange) are not counted towards energy deposited by muons (yellow).
 The long red track is an example of a deposition originating from a photon or neutron (descendant) included in the lower limit sample but very likely reconstructible by future algorithms.
-
-
-\subsection{Results}
-\label{sec:dune-nd_pile-up_results}
 
 \begin{figure}[htb]
 	\centering

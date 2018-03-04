@@ -6,15 +6,11 @@ The results of the \AC{} pixel demonstrator are presented, alongside a reconstru
 Afterwards, the \AC{} modular \lartpc{} concept is introduced.
 
 
-\section{First Results from the \AC{} Pixel Demonstrator}
+\section{\AC{} Pixel Demonstrator}
 \label{sec:ac_viper}
 
 This section describes the results obtained from the pixel demonstrator for the \AC{} project (see Chapter~\ref{sec:ac_argoncube}).
 A particular focus is put on the reconstruction of the recorded cosmic ray events.
-
-
-\subsection{Pixel \glsentryshort{pcb} Design}
-\label{sec:ac_viper_pcb}
  
 The pixelated anode plane, shown in Figure~\ref{fig:viper_pixies}, was produced as a conventional \gls{pcb}. 
 The pixelated area is \SI{100}{\milli\metre} across, the pixels are formed of \SI{900}{\micro\metre} vias with a pitch of \SI{2.54}{\milli\metre}.
@@ -73,10 +69,6 @@ Due to the limited accuracy of this method, measurements were not taken up to th
 	\label{fig:viper_transparency}
 \end{figure}
 
-
-\subsection{\glsentryshort{tpc}}
-\label{sec:ac_viper_tpc}
-
 The pixel demonstration \gls{tpc}, shown in Figures~\ref{fig:viper_cad}~and~\ref{fig:viper_v1per}, is cylindrical with an inner diameter of \SI{101}{\milli\metre} and a \SI{590}{\milli\metre} drift length. 
 The \gls{tpc} operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre}, corresponding to a total drift time of \SI{281}{\micro\second} at \SI{2.1}{\milli\metre\per\micro\second}.~\cite{protoLASER}
 
@@ -112,26 +104,17 @@ Each resistor is soldered to its neighbour, and fixed to the field cage at each 
 The acrylic rings provide the light collection; their inner surfaces are machine-polished and coated with the \gls{wls} \gls{tpb}. 
 \SI{1}{\milli\metre} diameter \gls{wls} fibres couple the acrylic rings to four \glspl{sipm} mounted close to the anode, see Figure~\ref{fig:viper_v1per}. 
 The \glspl{sipm} and their front-end electronics were adapted from those developed at \gls{help} for the \glspl{crt} used in \uboone{} and \sbnd{}~\cite{crt, crt_feb}.
-A more detailed description of the light readout system is given in Section~\ref{sec:studies_light-col_viper}.
-
-
-\subsection{Ancillary Infrastructure}
-\label{sec:ac_viper_infrastructure}
+A more detailed description of the light readout system is given in Section~\ref{sec:studies_viper-light-ro}.
 
 The pixel demonstration \gls{tpc} is housed in a double-bath vacuum-insulated cryostat with the outer bath open to atmosphere.
 A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give an inner volume of $\approx \SI{200}{\litre}$ of \lar{}.
-This is the same cryostat that was used for the \gls{hv} studies described in Section~\ref{sec:studies_hv}.
+This is the same cryostat that was used for the \gls{hv} studies described in Section~\ref{sec:studies_breakdown}.
 The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with \lar{} filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
 \lar{} purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\sim{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
 
-The \gls{petc} \gls{hv} feedthrough capable of potentials as high as \SI{-130}{\kilo\volt} remains unchanged from the breakdown studies (Section~\ref{sec:studies_hv}).
+The \gls{petc} \gls{hv} feedthrough capable of potentials as high as \SI{-130}{\kilo\volt} remains unchanged from the breakdown studies (Section~\ref{sec:studies_breakdown}).
 A low-pass filter was added between the power supply and feedthrough, which consists of an \SI{800}{\pico\farad} decoupling capacitor grounded between two \SI{100}{\mega\ohm} resistors connected in series, i.e.\ a \gls{rc} low-pass filter with an additional protection resistor at the output.
 For proper insulation, the whole assembly is submerged in transformer oil.
-
-
-\subsection{\glsentrylong{snr}}
-\label{sec:ac_viper_snr}
-\glsreset{snr}
 
 To assess the \gls{snr}, dedicated noise data was taken employing a \SI{5}{\hertz} random trigger.
 The data of \num{5000} events was combined.
@@ -163,7 +146,6 @@ Combining this, the signal is
 	S & = & \dv{E}{x}_{\m{\glsentryshort{mip}}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge} \qc
 \end{IEEEeqnarray}
 for a charge deposited adjacent to the readout plane, and $S = \SI{6004}{\elementarycharge}$ for a charge deposited adjacent to the cathode.
-
 Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:viper_snr}.
 
 \begin{table}[htb]
@@ -185,11 +167,11 @@ Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal 
 \end{table}
 
 
-\subsection{\glsentryshort{3d} track reconstruction}
-\label{sec:ac_viper_3d}
+\section{\glsentryshort{3d} Track Reconstruction}
+\label{sec:ac_reco}
 
-To demonstrate \gls{3d} track reconstruction, several thousand cosmic ray events were collected, many of which are \glspl{mip}, mostly muons.
-The charge readout was triggered by the light readout described above.
+To demonstrate \gls{3d} track reconstruction, several thousand cosmic ray events were collected with the \AC{} pixel demonstrator described in Section~\ref{sec:ac_viper}, many of which are \glspl{mip}, mostly muons.
+The pixelated charge readout was triggered by the cold \gls{sipm} light readout described in Section~\ref{sec:studies_viper-light-ro}.
 
 The reconstruction procedure comprises five steps: noise filtering, hit finding, hit matching, ambiguity rejection, and track fitting.
 These steps are explained in the following and depicted in Figures~\ref{fig:viper_unfilteredRawData} through~\ref{fig:viper_kalman}, all taken from the same \gls{mip} (cosmic muon) event.
@@ -352,8 +334,8 @@ Due to constraints from the \gls{pcb} manufacturer, the readout plane had to be 
 Each \num{120 x 120} pixel half plane is divided into \num{8 x 15} \glspl{roi} of \num{15 x 8} pixels each.
 The \glspl{roi} are oriented with their longer dimension parallel to the beam direction to reduce the multiplexing ambiguities.
 One of the noise mitigation measures implemented for the \gls{help} pixel demonstrator was to use the same differential warm signal path as used by \lariat{}.
-Therefore, the charge readout electronics used in \pixlar{} are quite similar to the \AT{} chain described in Section~\ref{sec:studies_electronics_at} after the upgrades.
-To trigger on scintillation light, one end of the \gls{tpc} is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_light-col_al}), while the other end features an \gls{arapuca}~\cite{arapuca} detector for comparison.
+Therefore, the charge readout electronics used in \pixlar{} are quite similar to the \AT{} chain described in Section~\ref{sec:studies_at-ro} after the upgrades.
+To trigger on scintillation light, one end of the \gls{tpc} is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_arclight}), while the other end features an \gls{arapuca}~\cite{arapuca} detector for comparison.
 Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \AL{} module attached.
 
 \begin{figure}[htb]

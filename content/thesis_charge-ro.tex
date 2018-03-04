@@ -1,15 +1,7 @@
-\section{Charge Readout}
-\label{sec:studies_charge-ro}
+\section{A More Robust Approach to \glsentryshort{tpc} Readout Wires}
+\label{sec:studies_cuoka}
 
 As outlined in Section~\ref{sec:lartpc_challenges}, classical wire readouts pose two big challenges to future \lartpc{}s: ambiguities and mechanical stability.
-Two new charge readout concepts were tested for this work.
-Wires implemented as printed circuits solve the mechanical problems but not the ambiguities.
-A pixelated charge readout solves both problems but introduces a new one of a drastically increased number of reaodut channels.
-
-
-\subsection{A More Robust Approach to \glsentryshort{tpc} Readout Wires}
-\label{sec:studies_charge-ro_cuoka}
-
 A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
 To investigate this solution, a proof of concept was performed at \gls{help}.
 
@@ -54,7 +46,7 @@ A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive div
 
 The charge readout electronics were adopted from \AT{} without modifications.
 Charge signals are amplified by cryogenic charge amplifiers and then digitised at room temperature.
-More details can be found in Section~\ref{sec:studies_electronics_at}.
+More details can be found in Section~\ref{sec:studies_at-ro}.
 
 Because of the limited space inside the cryostat, no internal light triggering system could be used.
 Instead, the digitisers were either triggered on one of the charge collection channels or by an external muon telescope.
@@ -83,8 +75,8 @@ While this technique can potentially solve the mechanical problems of classical 
 Because of this, it was decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for \lartpc{}s providing real \gls{3d} data.
 
 
-\subsection{Pixel Readout}
-\label{sec:studies_charge-ro_pixel}
+\section{Pixelated Charge Readouts}
+\label{sec:studies_pixel-ro}
 
 As outlined in Section~\ref{sec:lartpc_challenges}, wire readouts are not suitable for \lartpc{}s the size of the envisioned future neutrino detectors.
 The ambiguities caused by the nature of wire readouts can be eliminated by using a fully pixelated readout.
@@ -120,7 +112,7 @@ Digital multiplexing means digitising all channels as close as possible to the r
 An advantage of this technique is that the technology for this already exists and is well established in information technology.
 Ideally, one would feed the data stream into an optical fibre which additionally would provide galvanic isolation of the readout from the \gls{daq}.
 The challenging part is that all of this needs to happen at cryogenic temperatures which is far from trivial because most off-the-shelf components are not made for this.
-A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Section~\ref{sec:studies_electronics_pixel}.
+A detailed description of upcoming electronics capable of cold digitisation an multiplexing is given in Section~\ref{sec:studies_pixel-electronics}.
 In contrast, genetic multiplexing and \glspl{roi} are forms of analogue multiplexing.
 The difference to digital multiplexing is that multiple readout channels are combined into a single analogue link before digitising them at room temperature outside the cryostat.
 In the two schemes described here, this happens by connecting multiple readout channels to a single \gls{daq} channel.
@@ -158,13 +150,13 @@ This would require a means to wake up the part of the readout where the charge i
 Provided, the wake-up time is short enough, inductive grids on \glspl{roi} could allow precisely for this.
 
 
-\subsection{Charge Readout Summary}
-\label{sec:studies_charge-ro_summary}
+\section{Charge Readout Summary}
+\label{sec:studies_charge-ro-summary}
 
 Replacing a classical wire readout by copper strips on a thin ($\sim \SI{10}{\micro\metre}$) layer of Kapton can alleviate the mechanical challenges met by the charge readout.
 However, this does not change the projective nature of the readout, introducing ambiguities in event reconstruction.
 A pixelated readout can provide true \gls{3d} information at the price of an increased number of channels.
-Due to the lack of bespoke pixel electronics able to readout so many channels (see Section~\ref{sec:studies_electronics_pixel}), a form of analogue multiplexing had to be employed.
+Due to the lack of bespoke pixel electronics able to readout so many channels (see Section~\ref{sec:studies_pixel-electronics}), a form of analogue multiplexing had to be employed.
 As the \gls{roi} approach had already been demonstrated in a gas \gls{tpc}, it was chosen for the first prototype of a pixelated \lartpc{}.
 The readout plane could be realised as a conventional Printed Circuit Board \gls{pcb} because the detector is a single-phase \lartpc{}, and thus no gas amplification as in \gls{micromegas} is needed.
 Alongside the \gls{pcb}, a new \gls{tpc} was designed which can be reused for future prototyping efforts.

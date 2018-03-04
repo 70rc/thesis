@@ -1,4 +1,4 @@
-\chapter{Experimental Studies on \glsentrylong{hv}, Charge Readout, and Light Collection}
+\chapter{Experimental Studies on \glsentrylong{hv}, Charge and Light Readout}
 \label{chap:studies}
 \glsreset{hv}
 
@@ -9,16 +9,12 @@ Then, the theory of a pixelated charge readout and the resulting requirements fo
 Finally, a new light collection system base on cold \glspl{sipm} coupled with a light trap is introduced.
 
 
-\section{\glsentrylong{hv}}
-\label{sec:studies_hv}
+\section{Study of Electric Breakdowns in \glsentrylong{lar}}
+\label{sec:studies_breakdown}
 
 During the commissioning and operation of the \AT{} experiment~\cite{AT} at \gls{help}, it was found that the dielectric strength of \lar{} was much lower~\cite{breakdown_14} than predicted by earlier studies~\cite{swan1, swan2}.
 Subsequently, a detailed study of dielectric breakdowns in \lar{} was conducted, including high-speed footage, current-voltage characteristics, and optical spectrometry.
 The results are presented in this section, they have been published in~\cite{breakdown_16}.
-
-
-\subsection{Experimental Setup}
-\label{sec:studies_hv_setup}
 
 \begin{figure}[htb]
 	\centering	
@@ -122,10 +118,6 @@ The possibility of creating gas bubbles near the discharge gap is inhibited by k
 The outer bath is opened to the atmosphere, thus keeping the inner vessel temperature constant and well below the boiling point.
 No boiling was detected anywhere near the discharge gap region during the measurements.
 
-
-\subsection{Results}
-\label{sec:studies_hv_results}
-
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=\textwidth]{hv/montage}
@@ -197,10 +189,6 @@ An example of such a discharge is shown in Figure~\ref{fig:hv_side} and the corr
 	}
 	\label{fig:hv_side}
 \end{figure}
-
-
-\subsection{Interpretation}
-\label{sec:studies_hv_interpretation}
 
 As it was shown in \cite{FNAL-hv-paper, he-breakdown}, experimental data on breakdowns in liquefied noble gases suggest the following dependence for the maximum field at the breakdown: $E_{max}=C\cdot A^p$, where $C$ is a material-dependent constant, $A$ is the stressed area with an electric field intensity above \SI{90}{\percent} of its maximum, and $p\approx-0.25$.
 In Figure \ref{fig:hv_powerplot}, data available in literature is combined with those obtained from the measurements performed within the scope of this thesis as well with earlier measurements performed at \gls{help}.
@@ -386,14 +374,14 @@ The knowledge of the streamer velocity can be applied in the design of protectio
 If a breakdown condition is detected during the streamer phase, the \gls{hv} can be killed prior to a disruptive spark phase potentially damaging sensitive detector electronics.
 
 
-\subsection{A Method to Suppress Electric Breakdowns in \glsentrylong{lar}}
-\label{sec:studies_hv_latex}
+\section{A Method to Suppress Electric Breakdowns in \glsentrylong{lar}}
+\label{sec:studies_latex}
 
 As a result of the thorough characterisation of breakdowns in \lar{}, a way was found to suppress them by coating the field cage with latex.
 It was possible to increase the voltage by a factor of \num{10} using this technique.
 This study has been published in~\cite{latex}.
 
-The setup was the same as the one used to study the breakdowns, described in Section~\ref{sec:studies_hv_setup}.
+The setup was the same as the one used to study the breakdowns, described in Section~\ref{sec:studies_breakdown}.
 Additionally, the cathode sphere was coated by a layer of polymer.
 In order to effectively suppress electric breakdowns, the coating needs to have a high dielectric strength while at the same time staying elastic at cryogenic temperatures (\SI{87}{\kelvin} for a \lar{} detector).
 Furthermore, the excess electron mobility of the coating needs to be significantly lower than the one of \lar{}.
@@ -433,8 +421,8 @@ A summary of the results is given in Table~\ref{tab:latex_table1}.
 \end{table}
 
 
-\subsection{\glsentryshort{hv} Summary}
-\label{sec:studies_hv_summary}
+\section{\glsentrylong{hv} Summary}
+\label{sec:studies_hv-summary}
 
 A study of the visible light emission by electrical breakdowns in \lar{} was performed, near its boiling point with cathode-anode distances ranging from \SIrange{0.1}{10.0}{\milli\metre} with a spherical cathode and a plane anode geometry.
 Three distinct discharge development phases were identified by observing the discharge appearance and the time development of the visible light emission.

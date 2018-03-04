@@ -2,19 +2,14 @@
 \label{chap:dune-nd}
 \glsreset{nd}
 
-The \AC{} concept, described in Section~\ref{sec:ac_argoncube}, enables a \lartpc{} component in the \dune{} \gls{nd} complex.
-This chapter will present a more detailed design for the \gls{nd}, together with a feasibility study of a \lartpc{} at the expected rates.
-
-
-\section{\AC{} in the \glsentryshort{dune} \glsentrylong{nd}}
-\label{sec:dune-nd_ac}
-
-While Section~\ref{sec:ac_argoncube} gave a general overview of the \AC{} concept, this section focuses on the detailed implementation for the \dune{} \gls{nd}.
+While Section~\ref{sec:ac_argoncube} gave a general overview of the \AC{} concept, this chapter focuses on the detailed implementation for the \dune{} \gls{nd}.
 After the establishment of the key technologies described in this work, the next step will be a \num{2 x 2} module prototype at \gls{help}.
-Finally, the current status of an \AC{} \lartpc{} component for the \dune{} \gls{nd} complex is given.
+The current status of an \AC{} \lartpc{} component for the \dune{} \gls{nd} complex is also described.
+Finally, a feasibility study of a \lartpc{} at the expected rates is presented.
 
-\subsection{\num{2 x 2} Module Prototype}
-\label{sec:dune-nd_ac_2x2}
+
+\section{\num{2 x 2} Module \AC{} Prototype}
+\label{sec:dune-nd_ac-2x2}
 
 \begin{figure}[htb]
 	\centering
@@ -62,7 +57,7 @@ It depicts the first module that will be equipped with the demonstrator \gls{tpc
 For this test, an internal pump salvaged from \AT{} will be used.
 An engineering drawing together with a picture of the pixel demonstrator module is given in Figure~\ref{fig:2x2_mod}.
 
-Table~\ref{tab:dune-nd_dim} gives an overview of the most important dimensions of the \num{2 x 2} \gls{help} prototype and the preliminary \gls{nd} design (see Section~\ref{sec:dune-nd_ac_nd}).
+Table~\ref{tab:dune-nd_dim} gives an overview of the most important dimensions of the \num{2 x 2} \gls{help} prototype and the preliminary \gls{nd} design (see Section~\ref{sec:dune-nd_ac-nd}).
 In particular the table contains a rough estimate of dead space, caused by the modular design, and the corresponding active volume fraction.
 For these calculations, a total charge readout thickness of \SI{20}{\milli\metre} and a total light readout thickness of \SI{5}{\milli\metre} were assumed.
 The difference is caused by the fact that charge readout electronics are located directly behind the readout while the \glspl{sipm} are only mounted on the edges of the \AL{} modules.
@@ -102,8 +97,8 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 \end{table}
 
 
-\subsection{Preliminary \glsentrylong{nd} Design}
-\label{sec:dune-nd_ac_nd}
+\section{Preliminary \AC{} \glsentrylong{nd} Design}
+\label{sec:dune-nd_ac-nd}
 
 \begin{figure}[htb]
 	\centering
@@ -133,7 +128,7 @@ After a successful test of all subsystems, it is planned to be installed in a ch
 The \AC{} \gls{nd} design is based on a scaled-up version of the \num{2 x 2} module design described above.
 Modules will have a footprint of \SI{1 x 1}{\metre} and a height of \SI{3.5}{\metre}.
 Again, \SI{0.1}{\metre} at the bottom are occupied by the heat exchanger and valves while \SI{0.4}{\metre} at the top are taken up by feedthroughs and the gas phase.
-This results in a \gls{tpc} size of \SI{1 x 1 x 3}{\metre}, split into two halves by the cathode.
+This results in a \gls{tpc} size of \SI{1 x 1 x 3}{\metre}, split into two halves by a cathode at a potential of \SI{50}{\kilo\volt}.
 The full detector will consist of \num{4 x 5} modules with the longer dimension in beam direction.
 These dimensions were optimised for maximum hadron containment by means of simulations done by the neutrino group at \gls{lbnl}~\cite{lartpcSizeChris}.
 While horizontal dimensions are unproblematic, the vertical \SI{3}{\metre} are at the lower limit.
@@ -154,7 +149,7 @@ A height of \SI{3}{\metre} is therefore preferable to have some buffer for yet u
 
 A pixel pitch of \SI{3}{\milli\metre} was chosen.
 This value has been field-tested in a physics experiment, \uboone{}~\cite{uboone}, and is below the $\approx \SI{5}{\milli\metre}$ wire pitch of the \dune{} \glspl{fd}~\cite{dune4}.
-The \larpix{} electronics described in Section~\ref{sec:studies_electronics_pixel} are designed to be capable of handling the data rates and power consumption expected for a \SI{3}{\milli\metre} pixel pitch \AC{} \gls{nd} component.
+The \larpix{} electronics described in Section~\ref{sec:studies_pixel-electronics} are designed to be capable of handling the data rates and power consumption expected for a \SI{3}{\milli\metre} pixel pitch \AC{} \gls{nd} component.
 Therefore, a sufficient spatial resolution from a physics point of view is provided while keeping the power and data rate demands on the readout electronics under control.
 
 Inspired by the design of the \dune{} \SI{35}{\tonne} prototype at \gls{fail}~\cite{dune4}, the \lar{} bath is held in a foam-insulated membrane cryostat.

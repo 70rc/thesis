@@ -3,12 +3,13 @@
 
 \dune{}, a long-baseline neutrino oscillation experiment, aims to discover \gls{cp} violation in the lepton sector and determine the neutrino mass ordering.
 Due to their excellent tracking and calorimetric capabilities \lartpc{}s will be deployed in the \gls{fd} complex.
-To bring beam-related systematic uncertainties below the required \SI{2}{\percent} a \lartpc{} component is required in the \gls{nd} complex.
-This environment will be very challenging due to the slow readout (\SI{0.5}{\milli\second\per\metre}) of \lartpc{}s compared to the beam pulse duration (\SI{10}{\micro\second}).
-The high beam intensity will therefore lead to a pile-up of up to \num{0.2} neutrino events per tonne of argon and beam spill.
-In this thesis most of the relevant challenges for \lartpc{}s in future high-multiplicity environments were studied, namely the dielectric strength of \lar{}, new charge and light readout methods, as well as the required next-generation charge readout electronics.
+To bring beam-related systematic uncertainties below the required \SI{2}{\percent} a \lartpc{} component is also required in the \gls{nd} complex.
+The \gls{nd} environment will be very challenging due to the slow readout (\SI{0.5}{\milli\second\per\metre}) of \lartpc{}s compared to the beam pulse duration (\SI{10}{\micro\second}).
+The high beam intensity will therefore lead to \num{0.2} neutrino events per tonne of argon and beam spill.
+In this thesis most of the relevant challenges for \lartpc{}s in future high-multiplicity environments were studied alongside potential solutions, namely the dielectric strength of \lar{}, new charge and light readout methods, as well as the required next-generation charge readout electronics.
 
-After the \AT{} detector demonstrator~\cite{AT} built at \gls{help} found the dielectric strength of \lar{} to be much lower than the $\approx \SI{1}{\mega\volt\per\centi\metre}$ predicted by studies in the fifties, a systematic study of dielectric breakdowns in \lar{} was undertaken with my relevant contributions.
+The \AT{} detector demonstrator~\cite{AT} built at \gls{help} found the dielectric strength of \lar{} to be much lower than the $\approx \SI{1}{\mega\volt\per\centi\metre}$ predicted by studies in the fifties.
+This led to a systematic study of dielectric breakdowns in \lar{} with my relevant contributions.
 In particular, we found that the dielectric strength is dependent on absolute dimensions~\cite{breakdown_14}.
 I recorded and analysed high-speed footage, current-voltage characteristics, and optical spectrometry of breakdowns.
 From this a conclusive theory of dielectric breakdowns in \lar{} at the centimetre scale was developed~\cite{breakdown_16}.
@@ -16,8 +17,8 @@ The phenomenon is governed by three distinct phases: field emission, streamer, a
 Understanding the process enabled the development of a technique to mitigate the breakdowns~\cite{latex}.
 However, this solution proved to be unreliable.
 Only keeping fields below \SI{40}{\kilo\volt\per\centi\metre} everywhere in the detector guarantees a safe operation.
-This can either be reached by decreasing cathode voltages or increasing uninstrumented clearance volumes around \gls{hv} parts in \lartpc{}s.
-Avoiding additional dead \lar{} volume implies a modular \gls{tpc} design with lower cathode voltages.
+This can either be reached by decreasing cathode voltages or increasing uninstrumented clearance volumes around \gls{hv} components.
+Avoiding additional dead \lar{} volume intrinsically motivates a modular \gls{tpc} design with lower cathode voltages.
 
 Classical wire plane readouts of \lartpc{}s have significant drawbacks.
 Besides their mechanical fragility, they cripple the excellent \gls{3d} tracking capabilities of a \gls{tpc} by reducing it two multiple \gls{2d} projections.
@@ -32,26 +33,27 @@ I evaluated the cold digitisers foreseen for the \dune{} \gls{fd} and found them
 Being optimised for wire readouts their power dissipation is much too high given the required number of channels.
 With no suitable cold electronics at hand I implemented a form of analogue multiplexing to demonstrate a pixelated \lartpc{} at the price of introducing some ambiguities in the \gls{3d} spatial information.
 Like this it was possible to use the existing charge readout electronics from \AT{}.
+This achievement provides the basis for a pixelated charge readout in \AC{}.
 
 I contributed to designing and building a further prototype \gls{tpc} to test the pixelated charge readout scheme.
 I extended the \AT{} readout electronics by a differential warm signal path and reduced the parasitic capacitances in the pixel readout \gls{pcb}.
-With this improvements a \gls{snr} of \num{14} on the pixel channels could be reached proving adequate performance of pixels for operation in a real physics experiment.
+With this improvements a \gls{snr} of \num{14} on the pixel channels was reached, proving pixels feasible for operation in a real physics experiment.
 Together with the \lar{} group of \gls{help} I successfully recorded several thousand cosmic muon tracks.
-These results triggered the development of bespoke cold pixel electronics, \larpix{}, by \gls{lbnl} aimed to eventually enable an ambiguity-free pixelated \lartpc{} charge readout.
-\larpix{} uses a smart zero suppression scheme to meet the stringent power dissipation requirements of pixelated \lartpc{} charge readouts.
+These results triggered the development of bespoke cold pixel electronics, \larpix{}, by \gls{lbnl} aimed to eventually enable an ambiguity-free pixelated charge readout of \AC{}.
+\larpix{} uses a smart zero suppression scheme to meet the stringent power dissipation requirements of a pixelated charge readout..
 
 To reconstruct the cosmic muon tracks recorded with the pixel demonstrator I developed a new software framework.
 The hit finder had to be written from scratch because all existing \lartpc{} reconstruction frameworks are optimised for wire readouts.
 A \gls{pca} was employed to solve the ambiguities stemming from the analogue multiplexing.
 Finally, the unambiguous \gls{3d} measurements were fed to \gls{genfit}, an existing generic track-fitting toolkit based on a Kalman filter.
-Therewith, I obtained fully reconstructed cosmic muon tracks demonstrating the potential of pixelated \lartpc{} charge readouts.
-The developed software framework serves as a starting point for future efforts on the reconstruction of true \gls{3d} spatial information recorded with \lartpc{}s.
+Therewith, I obtained fully reconstructed cosmic muon tracks, illustrating the advantages of the \AC{} approach over existing schemes.
+The developed software framework serves as a starting point for future efforts on the reconstruction of true \gls{3d} spatial information recorded with \AC{}.
 
 The pixel demonstrator \gls{tpc} was also used to test the operation of \glspl{sipm} in \lar{} for the light trigger system.
-Based on the findings \gls{help} developed the \AL{} system, a light trap maximising the area coverage of \glspl{sipm} while minimising the occupied volume.
+Based on the findings \gls{help} developed \AL{}, a light trap maximising the area coverage of \glspl{sipm} while minimising the occupied volume.
 I contributed to the testing and characterisation of \AL{}.
 Scaled up versions of both \AL{} and the pixelated charge readout were successfully tested the \pixlar{} test beam experiment at \gls{fail}.
-These results pave the way for an application of both technologies in physics experiments.
+These results pave the way for an application of both technologies in \AC{}.
 
 Finally, I performed an event pile-up study using simulated \Pgpz decay photons to demonstrate the ability of a pixelated \lartpc{} to cope with the high event rates expected in the \dune{} \gls{nd}.
 At \dune{} energies, these photons produce \gls{em} showers consisting of a plethora of small disconnected charge depositions in the detector.
@@ -62,9 +64,9 @@ I employed a simple cone-based algorithm to associate the charge to the correspo
 The mean deposited energy missed by the algorithm was found to be less than \SI{3}{\percent}.
 More importantly the pile-up-related misidentification of energy depositions from other events was found to have a mean of \SIrange{2}{3}{\percent}.
 For more than \SI{50}{\percent} of the neutrino events this error is even smaller than \SI{0.1}{\percent}.
-If a way is found to flag the other \SI{50}{\percent} as piled up during event reconstruction, a sample of neutrino events almost free of pile-up can be generated.
+If a way is found to flag the other \SI{50}{\percent} as piled up events, a sample of neutrino events almost free of pile-up can be generated.
 In comparison the \gls{fd} is required to have an energy resolution for stopping hadrons below \SI{10}{\percent} and an electron energy scale uncertainty of about \SI{5}{\percent}.
-Therefore, a pixelated \lartpc{} providing unambiguous \gls{3d} tracking information will be capable of handling the high rates expected in the \dune{} \gls{nd} environment.
+Therefore, a pixelated \AC{} providing unambiguous \gls{3d} tracking information will be capable of handling the high rates expected in the \dune{} \gls{nd} environment without significant contributions to the error budget.
 
 The combination of results from all of this work builds the groundwork for the \AC{}, a novel, fully modular \lartpc{} concept, addressing the most important challenges of future neutrino detectors, in particular the \dune{} \gls{nd}.
 High cathode voltages are prevented by splitting the detector into several small, self-contained \glspl{tpc} requiring only a moderate \SI{50}{\kilo\volt} cathode voltage.
@@ -72,7 +74,7 @@ A pixelated charge readout enables the true \gls{3d} tracking required to cope w
 The \AL{} readout~\cite{arclight} minimises the occupied dead volume inside the modules resulting in a similar performance to a monolithic detector.
 At the same time the scintillation light is contained within each module simplifying association to the correct ionisation signals.
 
-With the most important key technologies for \AC{} tested the way is free for the first prototype modules in the \num{2 x 2} module prototype at \gls{help}.
+With the most important key technologies for \AC{} tested the path is clear for the first prototype modules in the \num{2 x 2} module prototype at \gls{help}.
 They will test the unification of all the pieces provided by this work.
 Cosmic ray events will be recorded and analysed with the developed reconstruction framework to characterise the physics performance of \AC{}.
 After successful cosmic tests charged particle beam tests will follow at either CERN or \gls{fail}.

@@ -21,7 +21,7 @@ This can either be reached by decreasing cathode voltages or increasing uninstru
 Avoiding additional dead \lar{} volume intrinsically motivates a modular \gls{tpc} design with lower cathode voltages.
 
 Classical wire plane readouts of \lartpc{}s have significant drawbacks.
-Besides their mechanical fragility, they cripple the excellent \gls{3d} tracking capabilities of a \gls{tpc} by reducing it two multiple \gls{2d} projections.
+Besides their mechanical fragility, they cripple the excellent \gls{3d} tracking capabilities of a \gls{tpc} by reducing it to multiple \gls{2d} projections.
 This is highly problematic in high-multiplicity environments such as the \dune{} \gls{nd} due to the complex event topologies resulting from event pile-up.
 In a preliminary study I showed that the mechanical challenges met by wire plane charge readouts can be alleviated by replacing the wires with copper tracks printed on a thin Kapton layer.
 However, this does not solve the inherent ambiguities caused by wires.
@@ -40,14 +40,14 @@ I extended the \AT{} readout electronics by a differential warm signal path and 
 With this improvements a \gls{snr} of \num{14} on the pixel channels was reached, proving pixels feasible for operation in a real physics experiment.
 Together with the \lar{} group of \gls{help} I successfully recorded several thousand cosmic muon tracks.
 These results triggered the development of bespoke cold pixel electronics, \larpix{}, by \gls{lbnl} aimed to eventually enable an ambiguity-free pixelated charge readout of \AC{}.
-\larpix{} uses a smart zero suppression scheme to meet the stringent power dissipation requirements of a pixelated charge readout..
+\larpix{} uses a smart zero suppression scheme to meet the stringent power dissipation requirements of a pixelated charge readout.
 
 To reconstruct the cosmic muon tracks recorded with the pixel demonstrator I developed a new software framework.
 The hit finder had to be written from scratch because all existing \lartpc{} reconstruction frameworks are optimised for wire readouts.
 A \gls{pca} was employed to solve the ambiguities stemming from the analogue multiplexing.
 Finally, the unambiguous \gls{3d} measurements were fed to \gls{genfit}, an existing generic track-fitting toolkit based on a Kalman filter.
 Therewith, I obtained fully reconstructed cosmic muon tracks, illustrating the advantages of the \AC{} approach over existing schemes.
-The developed software framework serves as a starting point for future efforts on the reconstruction of true \gls{3d} spatial information recorded with \AC{}.
+This software framework serves as a starting point for future efforts on the reconstruction of true \gls{3d} spatial information recorded with \AC{}.
 
 The pixel demonstrator \gls{tpc} was also used to test the operation of \glspl{sipm} in \lar{} for the light trigger system.
 Based on the findings \gls{help} developed \AL{}, a light trap maximising the area coverage of \glspl{sipm} while minimising the occupied volume.

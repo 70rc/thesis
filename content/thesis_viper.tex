@@ -173,6 +173,8 @@ Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal 
 To demonstrate \gls{3d} track reconstruction, several thousand cosmic ray events were collected with the \AC{} pixel demonstrator described in Section~\ref{sec:ac_viper}, many of which are \glspl{mip}, mostly muons.
 The pixelated charge readout was triggered by the cold \gls{sipm} light readout described in Section~\ref{sec:studies_viper-light-ro}.
 
+Official event reconstruction tools were only available for \lartpc{}s read out by wire planes\footnote{\url{http://larsoft.org}}.
+Therefore, a new framework had to be developed\footnote{\url{https://github.com/70rc/pixy_roimux}}.
 The reconstruction procedure comprises five steps: noise filtering, hit finding, hit matching, ambiguity rejection, and track fitting.
 These steps are explained in the following and depicted in Figures~\ref{fig:viper_unfilteredRawData} through~\ref{fig:viper_kalman}, all taken from the same \gls{mip} (cosmic muon) event.
 
@@ -256,24 +258,27 @@ In a later stage of reconstructing more complex events, this algorithm can poten
 The \gls{pca} ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 
 \begin{figure}[htb]
-	\centering
-	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_q} \\
-	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_pca} \\
-	\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_det}
-	\caption[Reconstructed \glsentryshort{3d} hits of typical pixel demonstrator event]{%
-		Reconstructed \acrshort{3d} hits from the hit finder.
-		The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
-		Drift direction is from right to left.
-		Pulse shape is encoded as thickness.
-		In the top plot, colour codes the amount of collected charge.
-		The middle plot illustrates the ambiguity resolution employing a \acrshort{pca}.
-		Green hits are accepted while dark red ones are rejected.
-		This is achieved by selecting the ambiguity closest to the eigenvector of the point cloud with the largest eigenvalue, represented by the blue line.
-		In the bottom plot, the degree of ambiguity is colour-coded: Light green are unambiguous hits while dark green are selected solutions of ambiguous hits.
-		Dark red through black are rejected solutions of ambiguous hits where darker colour represents a higher degree of ambiguity.
-		As this is a quite clean track with only few short $\delta$ rays, there are no outliers rejected other than the multiplexing ambiguities.
-	}
-	\label{fig:viper_pca}
+	\begin{minipage}{\textwidth}
+		\centering
+		\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_q} \\
+		\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_pca} \\
+		\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_det}
+		\caption[Reconstructed \glsentryshort{3d} hits of typical pixel demonstrator event]{%
+			Reconstructed \acrshort{3d} hits from the hit finder.
+			The passing particle is most likely a cosmic \Pgm entering from the left (the same event as in Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+			Drift direction is from right to left.
+			Pulse shape is encoded as thickness.
+			In the top plot, colour codes the amount of collected charge.
+			The middle plot illustrates the ambiguity resolution employing a \acrshort{pca}.
+			Green hits are accepted while dark red ones are rejected.
+			This is achieved by selecting the ambiguity closest to the eigenvector of the point cloud with the largest eigenvalue, represented by the blue line.
+			In the bottom plot, the degree of ambiguity is colour-coded: Light green are unambiguous hits while dark green are selected solutions of ambiguous hits.
+			Dark red through black are rejected solutions of ambiguous hits where darker colour represents a higher degree of ambiguity.
+			As this is a quite clean track with only few short $\delta$ rays, there are no outliers rejected other than the multiplexing ambiguities.
+			Interactive versions of these event displays are available online\footnote{\url{https://70rc.github.io/ac_pix_3d}}.
+		}
+		\label{fig:viper_pca}
+	\end{minipage}
 \end{figure}
 
 The final step consists of a Kalman filter.

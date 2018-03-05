@@ -9,25 +9,27 @@
 
 The \gls{sm} of particle physics has proven to be remarkably precise in its predictions.
 However, there are still some missing pieces like the intriguing nature of neutrinos.
-In particular do their mass eigenstates mix with their flavour eigenstates resulting in oscillation for neutrino masses different from zero.
+In particular, their flavour eigenstates do not coincide with their mass eigenstates.
+Instead, the flavour eigenstates are a mixture of the mass eigenstates resulting in oscillation for non-zero neutrino masses.
 Neutrino mixing and oscillations have been extensively studied during the last few decades probing the parameters of the three flavour model.
-Nevertheless, several unanswered questions remain, in particular the possible existence of a \gls{cp} violating phase in the mixing matrix and the ordering of the neutrino mass eigenstates.
+Nevertheless, several unanswered questions remain: the possible existence of a \gls{cp} violating phase in the mixing matrix and the ordering of the neutrino mass eigenstates.
 The next-generation \dune{} is being built to answer them via a detailed study of long-baseline neutrino oscillations.
+An artificially produced neutrino beam is measured with two detectors: one near the source and one far away.
 Achieving sensitivity to \gls{cp} violation and mass ordering will require a data sample of unprecedented size and precision.
-Therefore, a high-intensity beam (\SI{2}{\mega\watt}) and massive detectors (\SI{40}{\kilo\tonne}) providing excellent tracking and calorimetry are required.
+Therefore, a high-intensity beam (\SI{2}{\mega\watt}) and massive detectors (\SI{40}{\kilo\tonne} at the far site) providing excellent tracking and calorimetry are required.
 \glspl{lartpc} fulfil these requirements excellently and were therefore chosen as \glspl{fd}.
 To bring systematic uncertainties down to the required level of a few percent, a \lartpc{} component in the \gls{nd} complex is necessary.
-Even though, the high-rate \gls{nd} environment poses significant challenges to traditional \lartpc{} designs.
+The high-rate \gls{nd} environment poses significant challenges to traditional \lartpc{} designs:
 Their wire charge readout reduces the excellent \gls{3d} tracking capabilities of a \lartpc{} to a number of \gls{2d} projections.
 Furthermore, \lartpc{}s are comparatively slow detectors due to the finite charge drift velocity ($\sim \SI{1}{\milli\metre\per\micro\second}$).
 To overcome limitations a pixelated charge readout for \lartpc{}s was developed and successfully tested in the framework of this thesis.
 A software framework was established to reconstruct recorded cosmic muon tracks employing a Kalman filter.
 Pixelated charge readout systems represent the single largest advancement in the sensitivity of \lartpc{}s enabling true \gls{3d} tracking, thereby reducing event pile-up and improving background rejection as will be shown.
 The large volumes required by the \dune{} \lartpc{}s result in longer drift distances and thus require higher drift voltages.
-A method was developed to operate \lartpc{}s at electric fields an order of magnitude higher than before.
-It was found however that it is reasonable to keep fields below \SI{40}{\kilo\volt\per\centi\metre} at all points in the detector to guarantee a safe operation.
+A method was developed to operate \lartpc{}s at electric fields an order of magnitude higher than previously achieved.
+It was found however that it is more effective to keep fields below \SI{40}{\kilo\volt\per\centi\metre} at all points in the detector to guarantee a safe operation.
 The work presented here is aimed towards the development of a new fully-modular, pixelated \lartpc{} concept---\AC{}.
-Splitting the detector volume into independent self-contained \glspl{tpc} sharing a common \lar{} bath reduces the required drift voltages to a handleable level.
+Splitting the detector volume into independent self-contained \glspl{tpc} sharing a common \lar{} bath reduces the required drift voltages to a manageable level.
 A pixelated charge readout paired with new electronics will exploit true \gls{3d} tracking to cope with the expected event pile-up.
 Using simulations it was found that the impact of pile-up on the reconstructed neutrino energy in \AC{} has a mean between \SIlist{2;3}{\percent}, and is below \SI{0.1}{\percent} for more than \SI{50}{\percent} of the neutrino events.
 At the time of writing, \AC{} is the top candidate for the \lar{} component in the \dune{} \gls{nd} complex.

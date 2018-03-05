@@ -247,7 +247,7 @@ This is particularly problematic for a pixelated readout that requires a much hi
 
 \gls{bnl} is developing cold charge readout electronics for the \dune{} \gls{fd}~\cite{protodune-sp}.
 In particular, the plan is to accompany the cryogenic LARASIC charge preamplifiers by cryogenic \glspl{adc}.
-They have \num{16} inputs, each capable of digitising the \gls{tpc} signals at \SI{2}{\mega{}S\per\second} and \SI{12}{bit} with input characteristics optimised for the LARASIC output.
+They have \num{16} inputs, each capable of digitising the \gls{tpc} signals at \SI{2}{\mega{}S\per\second} and \SI{12}{\bit} with input characteristics optimised for the LARASIC output.
 A more detailed description is given in~\cite{bnl_adc}.
 
 In the course of this work, the cryogenic \gls{adc} \glspl{asic} developed by \gls{bnl} were evaluated to be used in the \gls{nd} as well.
@@ -292,12 +292,71 @@ Combined with the one of the LARASIC (\SI{10}{\milli\watt})~\cite{larasic}, a to
 For a pixelated \dune{} \gls{nd} with $\gtrsim {\num{e7}}$ channels, the resulting required cooling power would be $\gtrsim \SI{150}{\kilo\watt}$ for \SI{84}{\tonne} of \lar{} (see Section~\ref{sec:dune-nd_ac-nd}).
 In comparison, \uboone{} has a total cooling power of $\approx \SI{20}{\kilo\watt}$ for \SI{170}{\tonne} of \lar{}~\cite{uboone}.
 
-Due to their smaller geometric extent, pixels have a much lower capacitance than wires.
+\begin{table}[htb]
+	\centering
+	\caption[\glsentryshort{larpix} specifications]{%
+		\acrshort{larpix} specifications for a \SI{10}{\mega\hertz} external clock.~\cite{larpix_spec}
+	}
+	\label{tab:larpix_spec}
+	\begin{tabu} to \textwidth {lSs}
+		\toprule
+		Specification &													{Value} &											{Unit} \\
+		\midrule
+		Number of analogue inputs (channels) &							32 &												\\
+		Noise at \SI{88}{\kelvin} &										300 &												\elementarycharge \\
+		Noise at \SI{300}{\kelvin} &									500 &												\elementarycharge \\
+		Channel gain &													{\numlist[list-pair-separator = { or }]{4; 45}} &	\micro\volt\per\elementarycharge \\
+		Time resolution &												2 &													\micro\second \\
+		Analogue dynamic range &										\approx 1300 &										\milli\volt \\
+		\acrshort{adc} resolution &										8 &													\bit \\
+		Threshold range &												\numrange{0}{1.8} &									\volt \\
+		Threshold resolution &											< 1 &												\milli\volt \\
+		Channel linearity &												1 &													\percent \\
+		Operating temperature range &									\numrange{80}{300} &								\kelvin \\
+		Event memory depth &											2048 &												\\
+		Nominal output signalling level (\acrshort{cmos}) &				3.3 &												\volt \\
+		Digital data rate &												5 &													\mega\bit\per\second \\
+		Event readout time &											\approx 11 &										\micro\second \\
+		Power dissipation per channel at \SI{1}{\hertz} event rate &	\sim 100 &											\micro\watt \\
+		\bottomrule
+	\end{tabu}
+\end{table}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{larpix/schematic}
+	\caption[\glsentryshort{larpix} block diagram]{%
+		Conceptual block diagram of a \acrshort{larpix} channel.~\cite{dan_larpix_arcCM}
+	}
+	\label{fig:larpix_schematic}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{larpix/daisy}
+	\caption[\glsentryshort{larpix} daisy chain]{%
+		\acrshort{larpix} daisy chain configuration.~\cite{larpix_spec}
+	}
+	\label{fig:larpix_daisy}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{larpix/example_track}
+	\caption[\glsentryshort{larpix} prototype event]{%
+		Cosmic muon track recorded with the first \acrshort{larpix} prototype.
+		The left projection is perpendicular to the pixel plane while the right one is almost parallel to it.
+		Note that only red pixels are instrumented.~\cite{danLarpix}
+	}
+	\label{fig:larpix_track}
+\end{figure}
+
+Due to their smaller geometric extent, pixels have a much lower capacitance ($\approx \SI{4}{\pico\farad}$~\cite{larpix_spec}) than wires.
 According to Equation~\eqref{eq:electronics_thermal-noise}, this reduces the intrinsic noise present on a pixelated readout.
-\larpix{}, being developed by \gls{lbnl}~\cite{larpix}, exploits this fact to significantly reduce the complexity of the cold electronics.
+\larpix{}, being developed by \gls{lbnl}~\cite{larpix, larpix_spec}, exploits this fact to significantly reduce the complexity of the cold electronics.
 Two key points distinguish them from the \gls{bnl} design for the wire-equipped \gls{fd}.
 The complex shaping preamplifier required by wires for noise filtering can be replaced by a simple charge integrator.
-Additionally, the low noise levels allow for a self-triggering scheme; charge arriving at the \larpix{} is only digitised if it is above a prefedined thresholds.
+Additionally, the low noise levels allow for a smart zero suppression scheme; charge arriving at the \larpix{} is only digitised if it is above a predefined thresholds.
 This, in turn, reduces the duty cycle and thus the power dissipation of the \gls{adc}.
 If noise levels are well below the set threshold, power dissipation becomes primarily a function of charge flux rate in the detector.
 
@@ -306,7 +365,7 @@ For an \gls{ac} of frequency $f$, the resistance presented by a conductor is not
 There is an additional component proportional to $\sqrt{f}$ caused by the \emph{skin effect}~\cite{horowitzHill}.
 High frequency currents no longer flow in the bulk of the conductor but only in a finite layer (skin) at its surface.
 Therefore, the resistance is no longer proportional to the cross-section area but rather the surface area of the conductor.
-The result of the skin effect is more power dissipation at higher frequencies.
+The result of the skin effect is more power dissipation at higher frequencies for the same conductor geometry.
 By operating at lower frequencies, the power dissipation of \larpix{} can be lowered further.
 The cost is a decrease in data transmission rates.
 
@@ -319,10 +378,61 @@ This reduces the amount of charge per event arriving simultaneously at the reado
 Furthermore, \larpix{} is equipped with a \gls{fifo} buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
 
 To accommodate the elevated number of channels of a pixelated readout, the first \larpix{} prototype chip has \num{32} inputs.
-Its resolution in time and charge are \SI{2}{\micro\second} and \SI{8}{bit}, respectively.
+Its resolution in time and charge are \SI{2}{\micro\second} and \SI{8}{\bit}, respectively.
 While currently inferior to the \gls{bnl} design, these specifications are planned to be improved in the next design iteration, after a successful initial test.
-One of the goals of the first prototype is to assess the optimal size of the \gls{fifo}.~\cite{danLarpix}
+One of the goals of the first prototype is to assess the optimal size of the \gls{fifo}~\cite{danLarpix}.
+The most important \larpix{} specifications are given in Table~\ref{tab:larpix_spec}.
 
+Figure~\ref{fig:larpix_schematic} shows the block diagram of a single \larpix{} channel.
+The incoming charge is converted to a voltage by a \gls{csa} via integration on the feedback capacitance $C$.
+To minimise power dissipation the output of the \gls{csa} is only digitised if it is above a digitally configurable threshold.
+This is realised by discriminating the signal against a \gls{dac} output.
+If the signal is above threshold, the discriminator triggers a digitisation and then a reset of the \gls{csa}.
+Each channel can be connected individually to an analogue monitor bus shared between multiple \larpix{} chips (see Figure~\ref{fig:larpix_daisy}).
+The \larpix{} controller outside the cryostat can probe the analogue monitor bus to set the thresholds correctly (see the datasheet~\cite{larpix_spec} for a detailed procedure).
+
+Digitisation is performed by a standard \gls{sar} digitiser.
+It works as follows~\cite{horowitzHill}.
+The input signal is compared to the output of a \gls{dac} controlled by a register.
+At the start of the conversion all bits in the register are set to \num{0}.
+Then, the most significant bit is set to \num{1}.
+If the \gls{dac} output is above the analogue input, the bit is set back to \num{0}.
+Otherwise, it is kept at \num{1}.
+The procedure is successively repeated for all bits.
+After the least significant bit has been set, the conversion is complete and the value of the register is output to the digital event buffer (\gls{fifo}).
+The whole conversion requires the same number of clock cycles as the number of \gls{dac} (and therefore \gls{adc}) bits.
+
+Communication with \larpix{} happens via a \gls{uart} connected by \gls{spi}.
+This allows to daisy chain up to \num{256} \larpix{} chips as depicted in Figure~\ref{fig:larpix_daisy}.
+The daisy chain is connected to a \larpix{} controller outside the cryostat which can be a \gls{fpga} or any other digital controller capable of handling the expected data rate.
+Chips are identified by means of a hard coded \gls{id}.
+During data taking each \larpix{} chip constantly transmits the events present in its \gls{fifo} buffer to the controller via \gls{spi}.
+One data packet or event consists of \SI{54}{\bit} of data containing a single \gls{adc} value together with chip and channel \gls{id}, and a timestamp.
+Configuration of the \larpix{} chips (e.g.\ threshold setting) happens via the same \gls{spi} line.
+
+\larpix{} does not have its own oscillator.
+All timing signals are derived from an external clock signal supplied by the controller and shared between multiple chips.
+In particular, this clock defines the time resolution of the digitisation and the \gls{spi} data rate.
+Furthermore, the event timestamp generated inside \larpix{} is derived from this clock.
+The specifications in Table~\ref{tab:larpix_spec} are given for a \SI{10}{\mega\hertz} clock resulting in a time resolution of \SI{2}{\micro\second}.
+This is the nominal configuration for the first prototype.
+Later chip designs can be optimised to allow for a better time resolution.
+
+Each \larpix{} chip has an integrated test pulse generator.
+It consist of a \gls{dac} that can be connected to one or more inputs via a coupling capacitor.
+By switching the level of the \gls{dac} charge can be injected into the selected inputs.
+This allows to characterise and/or debug the charge readout chain in a similar fashion to the LARASIC preamplifiers described above.
+
+The design goal of \larpix{} is to reach a power dissipation or \SI{100}{\micro\watt} per channel.
+Using the same numbers as above this results in a total power dissipation of $\sim \SI{1}{\kilo\watt}$ for a pixelated \dune{} \gls{nd}.
+Most of the supply voltages of \larpix{} can be reduced from their nominal value.
+This allows to further decrease power dissipation in addition to the smart zero suppression and reduced clock frequency.
+Attention has to be paid to adjust the \gls{spi} signalling levels accordingly.
+More information on this can be found in the datasheet~\cite{larpix_spec}.
+
+The first \larpix{} prototype was successfully tested at \gls{lbnl} in a shorter version of the pixel demonstrator \gls{tpc} described in Section~\ref{sec:ac_viper}.
+Figure~\ref{fig:larpix_track} shows a recorded cosmic muon track.
+Note that only the red pixels are instrumented which explains the gap in the track.
 
 \section{Charge Readout Electronics Summary}
 \label{sec:studies_electronics-summary}

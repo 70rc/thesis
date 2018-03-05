@@ -292,11 +292,11 @@ with the diagonal matrix
 	D_{ij} & = & \delta_{ij} e ^ {- i E_i t}
 \end{IEEEeqnarray}
 where $\delta_{ij}$ is the Kronecker delta.
-For relativistic particles,
+The energy can be replaced by a second order Taylor approximation,
 \begin{IEEEeqnarray}{rCl}
-	E_i = \sqrt{p ^ 2 + m_i ^ 2} & \approx & p + \frac{m_i ^ 2}{2 p} \approx E + \frac{m_i ^ 2}{2 E}
+	E_i = \sqrt{p ^ 2 + m_i ^ 2} & \approx & p + \frac{m_i ^ 2}{2 p} \qc
 \end{IEEEeqnarray}
-can be approximated by the neutrino energy $E \approx p$ for $p \gg m_i$.
+assuming the same momentum $p$ for all mass eigenstates.
 After some further conversions, one obtains
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_oscprob}
@@ -314,16 +314,24 @@ The phase difference
 	& = &
 	\qty(E_i - E_j) t \\
 	& = &
+	\frac{\dms_{ij}}{2} \frac{t}{p} \nonumber \\
+	& \approx &
 	\frac{\dms_{ij}}{2} \frac{L}{E} \qc \nonumber
 \end{IEEEeqnarray}
-depends on the mass splitting $\dms_{ij} = m_i ^ 2 - m_j ^ 2$ and the length of the baseline $L = ct = t$.
+depends on the mass splitting $\dms_{ij} = m_i ^ 2 - m_j ^ 2$.
+The masses of relativistic neutrinos can be neglected, replacing momentum by energy ($p \approx E$) and time by baseline ($t = ct \approx L$).
 To improve readability, $U_{\m{\glsentryshort{pmns}}}$ was abbreviated by $U$.
 
 The second term of Equation~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
 This implies that the frequency of the oscillation is determined by the mass splitting and the amplitude by the matrix elements of $U_{\m{\glsentryshort{pmns}}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
 In particular, the consequence of this is that the observation of neutrino oscillation between all three flavours proves a finite mass of at least two of the three neutrinos.
-It is worth noting that this derivation is based on a plain wave approximation which turns out to be wrong in a real localised experiment. A wave packet approach would be needed to address the resulting deficiencies.
-However, it can be shown that the plain wave approximation holds for most real experiments anyway as wave packet effects cancel on average.
+It is worth noting two important facts at this point.
+First, the same result can be obtained by replacing $- i E_i t$ with $i \va{p_i} \va{x}$ and assuming equal energy instead of momentum for all mass eigenstates.
+Second, both assumptions are wrong from a physics point of view.
+Furthermore, they both assume a plane wave which is also wrong.
+A wave packet approach is required to correctly describe neutrino oscillations.
+However, it can be shown that the plane wave approximation in conjunction with either an equal momentum or equal energy assumption leads to the correct result.
+Both points are proved and illustrated in~\cite{Akhmedov}.
 
 Despite predicting neutrino mixing and oscillation, the theory does not predict the values of the oscillation parameters.
 They need to be measured by experiment.

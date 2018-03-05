@@ -25,7 +25,11 @@ Finally, also trigger purity profits from a modular approach because scintillati
 A module is made of a rectangular box with a square footprint and the height required by physics goals and/or sensitivity constraints.
 The top and bottom flanges are made of stainless steel while the side walls are made from \SI{1}{\centi\metre} G10 sheets.
 G10 is a glass-reinforced epoxy composite formerly used for \glspl{pcb}~\cite{g10}.
-Its low density makes it more transparent for passing particles allowing for a performance comparable to a monolithic detector.
+Due to the low density its \gls{em} radiation length ($X_{\m{0}} = \SI{19.4}{\centi\metre}$) and hadronic interaction length ($\lambda_{\m{int}} = \SI{53.1}{\centi\metre}$)~\cite{pdg_g10} are both comparable to \lar{} (see Table~\ref{tab:lartpc_larprop}).
+This makes G10 almost transparent for passing particles allowing for a performance comparable to a monolithic detector.
+The module walls produce gaps in particle tracks traversing multiple modules similar to dead wires in classic \lartpc{} readouts.
+Algorithms to join such segmented tracks already exist~\cite{pandora}.
+However, a detailed study of the influence of module walls on reconstruction efficiency still needs to be performed.
 At the same time, the dead volume is drastically reduced compared to a monolithic design due to the comparably low cathode voltage.
 The modules are placed side-by-side in a bath of \lar{} where they can be extracted and reinserted as needed.
 Pressure inside the modules is kept close to the bath pressure putting almost no hydrostatic force on the module walls.

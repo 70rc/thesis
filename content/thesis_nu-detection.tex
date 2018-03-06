@@ -420,7 +420,7 @@ The produced pions pass through several \gls{em} focusing horns to enter a decay
 By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primlarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
 Alongside the pions, a small amount of kaons is produced as well.
 These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\SI{5}{\percent}$~\cite{pdg} producing a significant \Pgne (\Pagne) beam contamination.
-The (anti)neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_dune-flux}.
+The neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_xsec_flux}.
 Delivered neutrino flux integrated over time is usually given in \gls{pot} because the effective neutrino flux depends on several factors and can only be precisely assessed by \gls{nd} measurements.
 More information on the beamline can be found in~\cite{dune2}.
 
@@ -453,16 +453,6 @@ More information on the beamline can be found in~\cite{dune2}.
 		\end{tabu}
 	\end{minipage}
 \end{table}
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=.49\textwidth]{dune/FHC_230kA}
-	\includegraphics[width=.49\textwidth]{dune/RHC_230kA}
-	\caption[\glsentryshort{dune} neutrino fluxes.]{%
-		Neutrino fluxes for the \acrshort{dune} reference beam design operating in neutrino mode (left) and antineutrino mode (right), generated with a \SI{120}{\giga\electronvolt} primary proton beam.~\cite{dune2}
-	}
-	\label{fig:nu-detection_dune-flux}
-\end{figure}
 
 The baseline and energy spectrum of \dune{} are optimised to measure \dcp{} and determine the mass ordering.
 Figure~\ref{fig:nu-detection_dune-osc} shows the (anti)neutrino oscillation probability as a function of neutrino energy at the \dune{} baseline for the normal and inverted mass ordering.
@@ -695,8 +685,8 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 \end{figure}
 
 A summary of the expected rates of the different interactions in the \dune{} \gls{nd} is given in Table~\ref{tab:nu-detection_nd-rates}.
-Figure~\ref{fig:nu-detection_xsec} depicts the cross-section (see next paragraph) of neutrino interactions as a function of neutrino energy.
-For comparison, the flux shapes of several experiments are shown (in arbitraty units).
+Figure~\ref{fig:nu-detection_xsec_flux} depicts the cross-section (see next paragraph) of neutrino interactions as a function of neutrino energy.
+For comparison, the flux shapes of several experiments\footnote{The \acrfull{minerna}~\cite{minerna} is a neutrino scattering experiment at \acrshort{fail} measuring neutrino interaction cross-sections on various target materials. \acrfull{nona}~\cite{nona} is a neutrino oscillation experiment at \acrshort{fail}.} are shown (in arbitraty units).
 The cross-section is split into contributions from \gls{cc} and \gls{nc} interactions.
 For \gls{cc}, the individual contributions from \gls{res} and 1p1h+2p2h are shown.
 $x$p$y$h refers to $x$ particles and $y$ holes, i.e.\ the target nucleus is missing $y$ nucleons after the interactions.
@@ -706,16 +696,19 @@ Interactions involving \glspl{mec} are important because they can mimic the dete
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}
-	\caption[Neutrino interaction cross-section]{%
+	\caption[Neutrino interaction cross-section and beam fluxes]{%
 		Neutrino interaction cross-section per nucleon as a function of neutrino energy in \si{\giga\electronvolt}.
-		Overlaid are the flux shapes of various beam experiments in arbitrary units.
 		The cross-section is split into contributions from \acrshort{cc} and \acrshort{nc} interactions.
-		For \acrshort{cc}, the individual contribution from \acrshort{res} interactions is shown, as well as from the sum of 1p1h and 2p2h. The latter two correspond to the \acrshort{qe} channel and interactions involving \acrshortpl{mec}, respectively.~\cite{xsec_luke}
+		For \acrshort{cc}, the individual contribution from \acrshort{res} interactions is shown, as well as from the sum of 1p1h and 2p2h.
+		The latter two correspond to the \acrshort{qe} channel and interactions involving \acrshortpl{mec}, respectively.
+		Overlaid are the flux shapes of various beam experiments in arbitrary units.
+		The \acrshort{dune} flux is drawn for the optimised beam design with an \SI{80}{\giga\electronvolt} proton beam operating in neutrino mode.
+		Kindly provided by L.\ Pickering and C.\ Wilkinson~\cite{xsec_luke} with \acrshort{dune} flux information from L.\ Fields~\cite{lauraNDRates}.
 	}
-	\label{fig:nu-detection_xsec}
+	\label{fig:nu-detection_xsec_flux}
 \end{figure}
 
-To better understand the meaning of Figure~\ref{fig:nu-detection_xsec}, a brief explanation of the cross-section concept is given here.
+To better understand the meaning of Figure~\ref{fig:nu-detection_xsec_flux}, a brief explanation of the cross-section concept is given here.
 For a beam consisting of particles \particlea, incident on a target made of particles \particleb, the rate of the interaction \HepProcess{\particlea\particleb \to \particles} is given by
 \begin{IEEEeqnarray}{rCl}
 	R_{\particles} & = & \phi_{\particlea} N_{\particleb} \sigma_{\particlea\particleb\particles} \qc

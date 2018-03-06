@@ -3,9 +3,48 @@
 \chaptermark{\Chapter}
 
 \todo[inline, color=red]{preface}
-Chapter~\ref{chap:nu-detection} will give an overview of the history of neutrino detectors, describe the current state of the field and then introduce the most relevant physics.
-Giunti and Kim provide a more detailed history of neutrino physics~\cite{giunti}.
 
-The work in Chapter~\ref{chap:dune-nd} was a collaboration with the neutrino group at \gls{lbnl}.
-In particular, they provided the simulation tool, Argon Box, as well as the raw simulation data.
-The \Pgpz pile-up study was done by the author with advice from C.\ Marshall from \gls{lbnl}.
+Chapter~\ref{chap:introduction} sets he stage, it is a combination of various sources.
+
+The theoretical background of neutrino detection and oscillation is elucidated in Chapter~\ref{chap:nu-detection}.
+It is started with a short historical introduction loosely based on Giunti and Kim~\cite{giunti} who also provide a very detailed overview of neutrino physics.
+Details on the detectors used in the historical experiments are taken from Grupen and Schwartz~\cite{grupen} as is the section on final state detection.
+The theory of neutrino oscillations is inspired by Schmitz' book on neutrino physics~\cite{schmitz}.
+
+Chapter~\ref{chap:lartpc} introduces the \lartpc{} detector with all its subsystems and peculiarities.
+It is based on the book on ``Noble Gas Detectors'' by Aprile et al.~\cite{NobleGasDetectors} and the \gls{help} Master thesis of M.\ Schenk~\cite{michu}.
+
+Various studies of the technologies required by \AC{} are presented in Chapter~\ref{chap:studies}.
+Most of this is my work.
+I made crucial contributions to the setup of the electric breakdown measurements and played a leading role in data analysis and writing of the paper presenting the results~\cite{breakdown_16} of which I am corresponding author.
+From these studies a second paper~\cite{latex} resulted on a method to mitigate breakdowns, which I co-authored.
+With the \gls{hv} issues addressed, I started investigating new charge readout technologies.
+Two technologies are presented: a replacement for wires using copper tracks on a thin Kapton layer and a pixelated readout.
+Both ideas are not new but they have never been used in \lar{} before.
+I built, commissioned and operated the test setup including a small \gls{tpc} for the copper on Kapton readout.
+The section on the pixelated readout introduces the theory of the applied analogue multiplexing scheme based on~\cite{maplesyrup}.
+Also described is a composite effort I lead to reduce the noise present in the setup used to test the pixelated readout.
+Crucial input on the electronics modifications was kindly provided by D.\ Shooltz from the \lariat{} collaboration.
+Details on the test setup and results are presented in Chapter~\ref{chap:ac}.
+At \gls{bnl}, NY, USA I tested new cold charge readout electronics.
+Based on the knowledge gained from these tests, I advised the neutrino group at \gls{lbnl} on the testing of their new bespoke pixel electronics, \larpix{}.
+The presented cold \gls{sipm} tests were part of the pixel demonstrator described in Chapter~\ref{chap:ac}.
+They enabled the development of \AL{} by the \gls{help} \lar{} group which I helped testing and characterising.
+
+Chapter~\ref{chap:ac} presents the novel \AC{} \lartpc{} concept developed at \gls{help}.
+A bigger \gls{tpc}, the pixel demonstrator, was built by the \gls{help} \lar{} group to test the pixelated charge readout.
+I was heavily involved in the design and construction and lead the commissioning of the detector as well as the second measurement campaign.
+For the analysis of the recorded cosmic muon tracks I wrote a reconstruction framework from scratch.
+Y.-T.\ Tsai and T.\ Usher from SLAC, CA, USA provided valuable input on the employed reconstruction algorithms.
+Based on these findings, a scaled-up version of the pixelated readout was placed in \lariat{}.
+All the aforementioned work went into the design of \AC{} described in the last section of this chapter.
+The design is the work of the \AC{} collaboration and will be written up in an appropriate document in the near future.
+
+The detailed implementation of \AC{} in the \dune{} \gls{nd} is described in Chapter~\ref{chap:dune-nd}.
+Again, this is the work of the \AC{} collaboration based on the findings presented in this thesis.
+To support our proposal of \AC{} for the \dune{} \gls{nd} we needed to prove its ability to cope with the high rates expected.
+I provide this proof in the last section of this chapter.
+It is was supported by valuable input from C.\ Marshall from \gls{lbnl}, CA, USA who in particular kindly provided the raw simulated neutrino events used for this study.
+
+The thesis is wrapped up in Chapter~\ref{chap:conclusion}.
+This is my work.

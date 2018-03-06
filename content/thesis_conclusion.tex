@@ -12,13 +12,13 @@ The \AT{} detector demonstrator~\cite{AT} built at \gls{help} found the dielectr
 This led to a systematic study of dielectric breakdowns in \lar{} with my relevant contributions.
 In particular, we found that the dielectric strength is dependent on absolute dimensions~\cite{breakdown_14}.
 I recorded and analysed high-speed footage, current-voltage characteristics, and optical spectrometry of breakdowns.
-From this a conclusive theory of dielectric breakdowns in \lar{} at the centimetre scale was developed~\cite{breakdown_16}.
+A conclusive theory of dielectric breakdowns in \lar{} at the centimetre scale was developed~\cite{breakdown_16}.
 The phenomenon is governed by three distinct phases: field emission, streamer, and breakdown.
-Understanding the process enabled the development of a technique to mitigate the breakdowns~\cite{latex}.
+Understanding the process enabled the development of a technique to mitigate breakdowns~\cite{latex}.
 However, this solution proved to be unreliable.
 Only keeping fields below \SI{40}{\kilo\volt\per\centi\metre} everywhere in the detector guarantees a safe operation.
 This can either be reached by decreasing cathode voltages or increasing uninstrumented clearance volumes around \gls{hv} components.
-Avoiding additional dead \lar{} volume intrinsically motivates a modular \gls{tpc} design with lower cathode voltages.
+Avoiding additional dead \lar{} volume intrinsically motivates a segmented \gls{tpc} design with lower cathode voltages.
 
 Classical wire plane readouts of \lartpc{}s have significant drawbacks.
 Besides their mechanical fragility, they cripple the excellent \gls{3d} tracking capabilities of a \gls{tpc} by reducing it to multiple \gls{2d} projections.
@@ -27,19 +27,19 @@ In a preliminary study I showed that the mechanical challenges met by wire plane
 However, this does not solve the inherent ambiguities caused by wires.
 Instead, a true \gls{2d} readout in form of pixels is needed.
 
-Realising a pixelated \lartpc{} is complicated because of the high number of channels.
+Realising a pixelated \lartpc{} is complicated by the high number of channels.
 Cold digitisation can help by aggregating many pixels on a single high-speed digital link reducing the number of required cable feedthroughs out of the cryostat.
 I evaluated the cold digitisers foreseen for the \dune{} \gls{fd} and found them unsuitable for a pixelated \gls{nd}.
 Being optimised for wire readouts their power dissipation is much too high given the required number of channels.
 With no suitable cold electronics at hand I implemented a form of analogue multiplexing to demonstrate a pixelated \lartpc{} at the price of introducing some ambiguities in the \gls{3d} spatial information.
 Like this it was possible to use the existing charge readout electronics from \AT{}.
-This achievement provides the basis for a pixelated charge readout in \AC{}.
+The successful demonstration of pixels provides the basis for the charge readout in \AC{}.
 
 I contributed to designing and building a further prototype \gls{tpc} to test the pixelated charge readout scheme.
 I extended the \AT{} readout electronics by a differential warm signal path and reduced the parasitic capacitances in the pixel readout \gls{pcb}.
-With this improvements a \gls{snr} of \num{14} on the pixel channels was reached, proving pixels feasible for operation in a real physics experiment.
+With this improvements a \gls{snr} of \num{14} on the pixel channels was reached, proving pixels feasible for operation in real physics experiments.
 Together with the \lar{} group of \gls{help} I successfully recorded several thousand cosmic muon tracks.
-These results triggered the development of bespoke cold pixel electronics, \larpix{}, by \gls{lbnl} aimed to eventually enable an ambiguity-free pixelated charge readout of \AC{}.
+These results triggered the development of bespoke cold pixel electronics, \larpix{}, by \gls{lbnl} aimed to eventually enable an ambiguity-free pixelated charge readout in \AC{}.
 \larpix{} uses a smart zero suppression scheme to meet the stringent power dissipation requirements of a pixelated charge readout.
 
 To reconstruct the cosmic muon tracks recorded with the pixel demonstrator I developed a new software framework.
@@ -74,8 +74,7 @@ A pixelated charge readout enables the true \gls{3d} tracking required to cope w
 The \AL{} readout~\cite{arclight} minimises the occupied dead volume inside the modules resulting in a similar performance to a monolithic detector.
 At the same time the scintillation light is contained within each module simplifying association to the correct ionisation signals.
 
-With the most important key technologies for \AC{} tested the path is clear for the first prototype modules in the \num{2 x 2} module prototype at \gls{help}.
-They will test the unification of all the pieces provided by this work.
+With the most important key technologies for \AC{} tested the path is clear for the first modules in the \num{2 x 2} module prototype at \gls{help} which will test the unification of all the pieces provided by this work.
 Cosmic ray events will be recorded and analysed with the developed reconstruction framework to characterise the physics performance of \AC{}.
 After successful cosmic tests charged particle beam tests will follow at either CERN or \gls{fail}.
 The improvements I made allow \lartpc{}s to be operated in high-multiplicity environments and led to \AC{} being the baseline \lar{} component of the \dune{} \gls{nd} complex.

@@ -8,31 +8,40 @@
 \glsreset{cp}
 \glsreset{arclight}
 
-The \gls{sm} of particle physics has proven to be remarkably precise in its predictions with the exception of a few missing pieces like the intriguing nature of neutrinos.
-Particularly neutrino flavour eigenstates do not coincide with their mass eigenstates; the flavour eigenstates are a mixture of the mass eigenstates resulting in oscillations for non-zero neutrino masses.
+The \gls{sm} of particle physics has proven to be remarkably consistent in its explanation of experimental observations.
+An exception is the intriguing nature of neutrinos.
+Particularly, neutrino flavour eigenstates do not coincide with their mass eigenstates.
+The flavour eigenstates are a mixture of the mass eigenstates resulting in oscillations for non-zero neutrino masses.
 Neutrino mixing and oscillations have been extensively studied during the last few decades probing the parameters of the three flavour model.
-Nevertheless, several unanswered questions remain: the possible existence of a \gls{cp} violating phase in the mixing matrix and the ordering of the neutrino mass eigenstates.
-The next-generation \dune{} is being built to answer these questions via a detailed study of long-baseline neutrino oscillations.
-Like any beam experiment, \dune{} requires two detectors: one near the source to characterise the unoscillated beam, and one far away to measure the oscillated beam.
+Nevertheless, unanswered questions remain: the possible existence of a \gls{cp} violating phase in the mixing matrix and the ordering of the neutrino mass eigenstates.
+The \dune{} is being built to answer these questions via a detailed study of long-baseline neutrino oscillations.
+Like any beam experiment, \dune{} requires two detectors: one near the source to characterise the unoscillated beam, and one far away to measure the oscillations.
 Achieving sensitivity to \gls{cp} violation and mass ordering will require a data sample of unprecedented size and precision.
-Therefore, a high-intensity beam (\SI{2}{\mega\watt}) and massive detectors (\SI{40}{\kilo\tonne} at the far site) providing excellent tracking and calorimetry are required.
-\glspl{lartpc} fulfil these requirements excellently and were therefore chosen as \glspl{fd}.
-To bring systematic uncertainties down to the required level of a few percent, a \lartpc{} component in the \gls{nd} complex is also necessary.
-The high-rate \gls{nd} environment poses significant challenges to traditional \lartpc{} designs:
-Their wire charge readout reduces the excellent \gls{3d} tracking capabilities of a \lartpc{} to a number of \gls{2d} projections.
-Furthermore, \lartpc{}s are comparatively slow detectors due to the finite charge drift velocity ($\sim \SI{1}{\milli\metre\per\micro\second}$).
-To overcome limitations a pixelated charge readout for \lartpc{}s was developed and successfully tested in the framework of this thesis.
-This was the first time pixels were deployed in a single-phase \lartpc{} representing the single largest advancement in the sensitivity of \lartpc{}s---enabling true \gls{3d} tracking.
-The development and characterisation of the pixels is described, along with a software framework that was established to reconstruct recorded cosmic muon tracks employing a Kalman filter.
-The pixel demonstrator \gls{tpc} also featured a novel cold \gls{sipm}-based light collection system, which lead to the development of the \AL{}, the characterisation of which is also described.
-The large volumes required by the \dune{} \lartpc{}s result in longer drift distances and thus require higher drift voltages than contemporary detectors.
-World-leading studies of \gls{hv} breakdowns in \lar{} including high-speed footage, current-voltage characteristics, and optical spectrometry are presented. 
+A high-intensity beam (\SI{2}{\mega\watt}) and massive detectors (\SI{40}{\kilo\tonne} at the far site) are required.
+The detectors need to provide excellent tracking and calorimetry.
+\glspl{lartpc} were chosen as \glspl{fd} because they fulfil these requirements.
+A \lartpc{} component is also necessary in the \gls{nd} complex to bring systematic uncertainties down to the required level of a few percent.
+A drawback of \lartpc{}s is their comparatively low speed due to the finite charge drift velocity ($\sim \SI{1}{\milli\metre\per\micro\second}$).
+Coupled with the high beam intensity this results in event rates of \num{0.2} piled-up events per tonne in the \gls{nd}.
+Such a rate poses significant challenges to traditional \lartpc{}s:
+Their \gls{3d} tracking capabilities are limited by wire charge readouts providing only \gls{2d} projections.
+To address this problem a pixelated charge readout was developed and successfully tested as part of this thesis.
+This is the first time pixels were deployed in a single-phase \lartpc{} representing the single largest advancement in the sensitivity of \lartpc{}s---enabling true \gls{3d} tracking.
+A software framework was established to reconstruct cosmic muon tracks recorded with the pixels.
+Another problem with traditional \lartpc{}s is the large volume required by their monolithic design resulting in long drift distances.
+Consequentially, high drift voltages are required.
+Current \lartpc{}s are operating at the limit beyond which electric breakdowns readily occur.
+This prompted world-leading studies of breakdowns in \lar{} including high-speed footage, current-voltage characteristics, and optical spectrometry.
 A breakdown-mitigation method was developed which allows \lartpc{}s to operate at electric fields an order of magnitude higher than previously achieved.
-To guarantee a safe and prolonged operation it was found that it is more effective to keep fields below \SI{40}{\kilo\volt\per\centi\metre} at all points in the detector.
-The comprehensive conclusion of the \gls{hv} and charge readout studies is the development of a new fully modular and pixelated \lartpc{} concept---\AC{}.
+It was found however that a safe and prolonged operation can be achieved more effectively by keeping fields below \SI{40}{\kilo\volt\per\centi\metre} at all points in the detector.
+Therefore, high inactive clearance volumes are required for traditional monolithic \lartpc{}s.
+Avoiding dead \lar{} volume intrinsically motivates a segmented \gls{tpc} design with lower cathode voltages.
+The comprehensive conclusion of the \gls{hv} and charge readout studies is the development of a novel fully modular and pixelated \lartpc{} concept---\AC{}.
 Splitting the detector volume into independent self-contained \glspl{tpc} sharing a common \lar{} bath reduces the required drift voltages to a manageable level and minimises inactive material.
-A pixelated charge readout paired with new electronics will exploit true \gls{3d} tracking, thereby reducing event pile-up and improving background rejection, as will be shown.
-Results of the pixel feasibility study were used to simulate the impact of pile-up for \AC{} in the \dune{} \gls{nd}.
+\AC{} is incompatible with traditional \gls{pmt}-based light readouts occupying large volumes.
+A novel cold \gls{sipm}-based light collection system utilised in the pixel demonstrator \gls{tpc} enabled the development of the compact \AL{}.
+\AC{}s pixelated charge readout will exploit true \gls{3d} tracking, thereby reducing event pile-up and improving background rejection.
+Results of the pixel demonstration were used in simulations of the impact of pile-up for \AC{} in the \dune{} \gls{nd}.
 The influence piled-up \Pgpz-induced \gls{em} showers have on neutrino energy reconstruction was investigated.
 Misidentified neutrino energy in \AC{} is conservatively below \SI{0.1}{\percent} for more than \SI{50}{\percent} of the neutrino events, well within the \dune{} error budget.
 The work described in this thesis has made \AC{} the top candidate for the \lar{} component in the \dune{} \gls{nd} complex.

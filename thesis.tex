@@ -92,7 +92,7 @@
 	\usepackage[pagewise]{lineno}
 	\linenumbers
 }
-\usepackage[colorinlistoftodos, textsize=tiny, obeyFinal]{todonotes}
+\usepackage[disable, colorinlistoftodos, textsize=tiny, obeyFinal]{todonotes}
 \newcommand*{\cjames}[2][]{\todo[author={JRS}, color=green, #1]{#2}}
 
 \usepackage[pdftex, unicode, bookmarks, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}, colorlinks=false]{hyperref} % should be last command in preamble
@@ -101,7 +101,7 @@
 \ifoptionfinal{
 	\usepackage[xindy, acronym, nomain, nonumberlist, nopostdot]{glossaries} % suppress page list if final
 }{
-	\usepackage[xindy, acronym, nomain]{glossaries}
+	\usepackage[xindy, acronym, nomain, nonumberlist, nopostdot]{glossaries}
 }
 \makeglossaries
 \usepackage[xindy]{imakeidx}

@@ -209,7 +209,7 @@ The mass composition of the flavour eigenstates can be written as
 		\HepParticle{\nu}{1}{} \\
 		\HepParticle{\nu}{2}{} \\
 		\HepParticle{\nu}{3}{}
-	\end{pmatrix}
+	\end{pmatrix} \qc
 \end{IEEEeqnarray}
 where
 \begin{IEEEeqnarray}{cccCccc}
@@ -402,7 +402,7 @@ Named after its discoverers, the \gls{msw} effect~\cite{mikheyevSmirnov, wolfens
 \glsreset{pot}
 
 The \dune{}~\cite{dune1, dune2, dune3, dune4} is a long-baseline neutrino oscillation experiment measuring $P \qty(\Pgngm \rightarrow \Pgne)$ and $P \qty(\Pagngm \rightarrow \Pagne)$ planned to start data taking after 2025.
-It consist of a neutrino beamline at \gls{fail} in Illinois, USA and a \lartpc{} \gls{fd} at a baseline of \SI{1300}{\kilo\metre} in the \gls{surf} in South Dakota, USA.
+It consist of a neutrino beamline at \gls{fail} in Illinois, USA and \lartpc{} \glspl{fd} at a baseline of \SI{1300}{\kilo\metre} in the \gls{surf} in South Dakota, USA.
 An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 
 \begin{figure}[htb]
@@ -418,11 +418,11 @@ The beamline at \gls{fail} produces pions by shooting a pulsed proton beam onto 
 A variable proton energy of \SIrange{60}{120}{\giga\electronvolt} allows for the production of different neutrino fluxes.
 One pulse is called a spill and has a duration of \SI{10}{\micro\second} at a period of \SIrange{0.7}{1.2}{\second}, depending on the proton energy.
 During phase one of the experiment, each spill will contain \num{7.5e13} protons resulting in an beam power of \SIrange{1.03}{1.20}{\mega\watt}.
-In a later phase two, the number of protons per spill will be doubled, doubling the power as well as the average number of events per spill in the detectors.
+In the later phase two, the number of protons per spill will be doubled, doubling the power as well as the average number of events per spill in the detectors.
 A summary of the various proton beam configurations is given in Table~\ref{tab:nu-detection_beam-params}.
 In accordance with \cite{dune2}, most calculations in this work assume the \SI{2}{\mega\watt} \SI{80}{\giga\electronvolt} beam, i.e. \num{0.2} events per tonne of argon and beam spill.
 The produced pions pass through several \gls{em} focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) according to Equation~\eqref{eq:nu-detection_pion-decay}.
-By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primlarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
+By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
 Alongside the pions, a small amount of kaons is produced as well.
 These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\SI{5}{\percent}$~\cite{pdg} producing a significant \Pgne (\Pagne) beam contamination.
 The neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_xsec_flux}.
@@ -461,7 +461,7 @@ More information on the beamline can be found in~\cite{dune2}.
 
 The baseline and energy spectrum of \dune{} are optimised to measure \dcp{} and determine the mass ordering.
 Figure~\ref{fig:nu-detection_dune-osc} shows the (anti)neutrino oscillation probability as a function of neutrino energy at the \dune{} baseline for the normal and inverted mass ordering.
-Put into very simple terms, \dcp{} can be derived from the difference in oscillation probability between neutrino and antineutrino mode.
+In very simple terms, \dcp{} can be derived from the difference in oscillation probability between neutrino and antineutrino mode.
 The \gls{msw} effect enhances either neutrino or antineutrino oscillation depending on the mass ordering, allowing for a determination of the latter.
 For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVogel}.
 
@@ -480,7 +480,7 @@ For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVoge
 Figure~\ref{fig:nu-detection_dune-sens} shows the sensitivities of \dune{} to determination of the mass ordering and discovery of \gls{cp} violation.
 To reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the \dcp{} parameter space, an exposure of \SI{1320}{\kilo\tonne\mega\watt.years} is required.
 Assuming the reference design of a \SI{40}{\kilo\tonne} \gls{fd} and a \SI{1}{\mega\watt} beam results in a data taking time of \SI{33}{years}.
-Therefore, to reach the sensitivity goal earlier, a beam $> \SI{1}{\mega\watt}$ is required.
+Therefore, a beam $> \SI{1}{\mega\watt}$ is required to reach the sensitivity goal earlier.
 
 \begin{figure}[htb]
 	\centering
@@ -497,16 +497,17 @@ Therefore, to reach the sensitivity goal earlier, a beam $> \SI{1}{\mega\watt}$ 
 \end{figure}
 
 Another important feature of Figure~\ref{fig:nu-detection_dune-sens} are the indicated signal normalisation uncertainties.
-In particular the second number has a significant influence on sensitivity, the aforementioned exposure assumes an uncertainty of $\SI{5}{\percent}\oplus\SI{2}{\percent}$.
+The aforementioned exposure assumes an uncertainty of $\SI{5}{\percent}\oplus\SI{2}{\percent}$.
+In particular the second number has a significant influence on sensitivity.
 A detailed explanation of this is out of the scope of this work and can be found in~\cite{dune2}.
-What shall be mentioned here however is that these uncertainties can be reached by a precise constraint of the flux rate and shape by means of a \gls{nd}.
-It is placed at a distance of \SI{574}{\metre} downstream of the proton beam target.
-To eliminate the introduction of further extrapolation uncertainties it is important to have a \gls{nd} component employing the same target material and detector technology as the \gls{fd}, i.e.\ a \lartpc{}.
+Precise constraints of neutrino flux rate and shape by means of a \gls{nd} (in addition to hadron measurements with replica targets) are needed to reach the quoted uncertainties.
+The \gls{nd} complex is placed at a distance of \SI{574}{\metre} downstream of the proton beam target.
+It is important to have a \gls{nd} component employing the same target material and detector technology as the \gls{fd}, i.e.\ a \lartpc{} to eliminate the introduction of further extrapolation uncertainties.
 
-As will be explained in Chapter~\ref{chap:lartpc}, \lartpc{}s are slow detectors.
-This is problematic in the high-multiplicity \gls{nd} environment of \dune{} which is the reason why~\cite{dune2} and~\cite{dune4} do not mention an \gls{nd} \lar{} component.
-The aforementioned \si{\mega\watt} beam intensity leads to \gls{nd} event rates of \num{0.2} events per tonne of argon leading to significant event pile-up (see Table~\ref{tab:nu-detection_beam-params}).
-Rock events---secondary particles produced by beam neutrino interactions in the surrounding material, entering the detector---are not included in this estimate.
+\lartpc{}s are slow detectors, as will be explained in Chapter~\ref{chap:lartpc}.
+This is problematic in the high-multiplicity \gls{nd} environment of \dune{}.
+Event rates of \num{0.2} events per tonne of argon lead to significant pile-up (see Table~\ref{tab:nu-detection_beam-params}).
+It is for this reason that~\cite{dune2} does not mention a \gls{nd} \lar{} component.
 
 
 \section{Neutrino Interaction with Matter}
@@ -559,7 +560,7 @@ Rock events---secondary particles produced by beam neutrino interactions in the 
 
 Neutrinos cannot be directly detected, they need to pass on some of their energy and momentum to secondary particles that can be detected, i.e.\ they need to interact with a detection medium.
 This chapter will give a brief overview of the different types of these interactions.
-In general, neutrino interactions are divided into \gls{cc} and \gls{nc} mediated by charged (\PWpm) or neutral (\PZz) gauge bosons.
+In general, neutrino interactions are divided into \gls{cc} and \gls{nc} mediated by charged (\PWpm) or neutral (\PZz) gauge bosons, respectively.
 In a \gls{cc} interaction, the neutrino is transformed into its corresponding charged lepton while it survives an \gls{nc} interaction.
 Furthermore, they can be subdivided according to the type of interaction into \gls{qe}, \gls{res}, \gls{dis}, and \gls{coh}.
 
@@ -567,7 +568,7 @@ Furthermore, they can be subdivided according to the type of interaction into \g
 \begin{IEEEeqnarray}{C}
 	\HepProcess{\Pgnl\Pn \to \Plm\Pp} \qand \HepProcess{\Pagnl\Pp \to \Plp\Pn}
 \end{IEEEeqnarray}
-and the kinematics are similar to that of an elastic collision, hence called \gls{qe}.
+and the kinematics are similar to that of an elastic collision, hence \gls{qe}.
 Apparent from the equation above, this can only happen as a \gls{cc} interaction.
 
 The \gls{nc} equivalent is an actual elastic interaction of a neutrino with a target nucleon according to
@@ -583,12 +584,12 @@ where the \HepParticle{\Delta}{}{++} resonance is too short-lived to be seen by 
 There are a lot of different \gls{res} interactions which all work in a similar manner.
 
 For \gls{dis}, the momentum transfer is high enough to destroy nucleon.
-The neutrino rips a quark out which, in turn, starts to hadronise and form jets.
+The neutrino detaches a quark which in turn starts to hadronise and form jets.
 The reactions are
 \begin{IEEEeqnarray}{C}
 	\HepProcess{\Pgnl\nucleon \to \Pl\particles} \qor \HepProcess{\Pgnl\nucleon \to \Pgnl\particles}
 \end{IEEEeqnarray}
-where \nucleon is the target nucleon and \particles a group of hadrons.
+where \nucleon{} is the target nucleon and \particles{} a group of hadrons.
 This reaction happens in a very similar manner to deep inelastic electron scattering off nucleons.
 
 In a \gls{coh} reaction, the opposite happens.
@@ -599,11 +600,11 @@ Instead, another particle is produced alongside the corresponding lepton. An exa
 \end{IEEEeqnarray}
 where a pion is produced from a muon neutrino interacting with a target nucleus.
 
-The inverse muon decay,
+Inverse muon decay,
 \begin{IEEEeqnarray}{C}
 	\HepProcess{\Pgngm\Pem \to \Pgmm\Pgne} \qc
 \end{IEEEeqnarray}
-requires neutrino energies above \SI{11}{\giga\electronvolt}~\cite{dune2}.
+requires neutrino energies above \SI{11}{\giga\electronvolt}~\cite{dune2}, hence the low rate in Table~\ref{tab:nu-detection_nd-rates}.
 
 Of particular importance is elastic scattering off shell electrons,
 \begin{IEEEeqnarray}{C}
@@ -690,12 +691,11 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 \end{figure}
 
 A summary of the expected rates of the different interactions in the \dune{} \gls{nd} is given in Table~\ref{tab:nu-detection_nd-rates}.
-Figure~\ref{fig:nu-detection_xsec_flux} depicts the cross-section (see next paragraph) of neutrino interactions as a function of neutrino energy.
+Figure~\ref{fig:nu-detection_xsec_flux} depicts the cross-section (explained below) of neutrino interactions as a function of neutrino energy.
 For comparison, the flux shapes of several experiments\footnote{The \acrfull{minerna}~\cite{minerna} is a neutrino scattering experiment at \acrshort{fail} measuring neutrino interaction cross-sections on various target materials. \acrfull{nona}~\cite{nona} is a neutrino oscillation experiment at \acrshort{fail}.} are shown (in arbitraty units).
 The cross-section is split into contributions from \gls{cc} and \gls{nc} interactions.
-For \gls{cc}, the individual contributions from \gls{res} and 1p1h+2p2h are shown.
-$x$p$y$h refers to $x$ particles and $y$ holes, i.e.\ the target nucleus is missing $y$ nucleons after the interactions.
-1p1h corresponds to a \gls{cc} \gls{qe} interaction whereas in 2p2h interactions, a virtual meson is exchanged inside the target nucleus, also called \gls{mec}.
+For \gls{cc}, the individual contributions from \gls{res} and 1p1h+2p2h are shown, where $x$p$y$h refers to $x$ particles and $y$ holes; i.e.\ the target nucleus is missing $y$ nucleons after the interactions.
+1p1h corresponds to a \gls{cc} \gls{qe} interaction whereas in 2p2h interactions a virtual meson is exchanged inside the target nucleus, also called \gls{mec}.
 Interactions involving \glspl{mec} are important because they can mimic the detector response of \gls{cc} \gls{qe} events.
 
 \begin{figure}[htb]
@@ -714,7 +714,7 @@ Interactions involving \glspl{mec} are important because they can mimic the dete
 \end{figure}
 
 To better understand the meaning of Figure~\ref{fig:nu-detection_xsec_flux}, a brief explanation of the cross-section concept is given here.
-For a beam consisting of particles \particlea, incident on a target made of particles \particleb, the rate of the interaction \HepProcess{\particlea\particleb \to \particles} is given by
+For a beam consisting of particles \particlea{} incident on a target made of particles \particleb{}, the rate of the interaction \HepProcess{\particlea\particleb \to \particles} is given by
 \begin{IEEEeqnarray}{rCl}
 	R_{\particles} & = & \phi_{\particlea} N_{\particleb} \sigma_{\particlea\particleb\particles} \qc
 \end{IEEEeqnarray}
@@ -732,7 +732,7 @@ As flux is given in units of inverse time and area, and interaction rate in inve
 
 In order to be able to detect particles, they need to interact with a detection medium.
 This section will describe the most important interaction of charged particles as well as neutral particles with matter.
-A special focus is laid on charged interactions as these are the most important ones for \lartpc{}s.
+It is focused on charged interactions as these are the most important ones for \lartpc{}s.
 As a measure of the interaction strength, the energy loss per distance or stopping power $\dv{E}{x}$ is used.
 Where not otherwise mentioned, this section is based on~\cite{grupen}.
 
@@ -776,11 +776,11 @@ The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is
 	\label{fig:nu-detection_bethe-bloch}
 \end{figure}
 
-Figure~\ref{fig:nu-detection_bethe-bloch} shows the mass stopping power of muons in argon neglecting the $\frac{\delta}{2}$ term.
+Figure~\ref{fig:nu-detection_bethe-bloch} shows the mass stopping power of muons in argon neglecting the $\frac{\delta}{2}$ term for simplicity.
 As can be seen, there is a broad minimum which is characteristic of the Bethe-Bloch formula.
 Particles in this momentum range are called \glspl{mip}.
 They are important for detectors because this energy loss is a measure for the required energy resolution of a detector.
-As mentioned above, the mass stopping power only loosely depends on the absorber material and therefore, its minimum is
+As mentioned, the mass stopping power only loosely depends on the absorber material and therefore, its minimum is
 \begin{IEEEeqnarray}{rCl}
 	\eval{- \frac{1}{\rho} \dv{E}{x}}_{\m{min}} & \approx & \SI{2}{\mega\electronvolt\centi\meter\squared\per\gram}
 \end{IEEEeqnarray}
@@ -792,7 +792,7 @@ After the minimum, the stopping power rises again with a logarithmic dependence 
 The reason for this so called \emph{logarithmic rise} is the extension of the transverse electric field of the incident particle in the relativistic regime.
 Due to increasing shielding of the transverse electric field by the shell electrons of the absorber materials, taken into account by the $\frac{\delta}{2}$ term, the rise is only asymptotic.
 For electrons and positrons, Equation~\eqref{eq:nu-detection_bethe-bloch} does not hold because their mass is equal to the mass of the atomic electrons of the absorber.
-The stopping power changes further for electrons because the incident particle cannot be distinguished form its collision partner in that case.
+The stopping power changes further for electrons because the incident particle cannot be distinguished form its collision partner.
 On the other hand, a positron will be annihilated upon stop by an electron which needs to be taken into account as well.
 The equivalent of Equation~\eqref{eq:nu-detection_bethe-bloch} for \Pepm can be found in~\cite{grupen}.
 
@@ -840,9 +840,9 @@ Using Equations~\eqref{eq:nu-detection_bethe-bloch} and~\eqref{eq:nu-detection_b
 at which radiation losses take over from ionisation losses.
 Similar to the radiation length, the critical energy is proportional to $m ^ 2$.
 Thus, it is most important for electrons while for other particles it becomes significant only at very high energies.
-If we take the example of an iron absorber again for instance, we get $E_c^{\Pe} = \SI{20.7}{\mega\electronvolt}$ and $E_c^{\Pgm} = \SI{890}{\giga\electronvolt}$.
+If we take an iron absorber for instance, we get $E_c^{\Pe} = \SI{20.7}{\mega\electronvolt}$ and $E_c^{\Pgm} = \SI{890}{\giga\electronvolt}$.
 
-At high energies, there are additional types of radiation loss taking place, for instance direct electron-pair production and photonuclear interactions.
+At high energies, there are additional types of radiation loss taking place, for example direct electron-pair production and photonuclear interactions.
 They shall not be described here.
 Instead, only their $\propto E$ relation similar to bremsstrahlung losses shall be mentioned.
 A description of those effects can be found in~\cite{grupen}.
@@ -857,7 +857,7 @@ The \gls{rms} of the \emph{scattering-angle distribution}
 is defined by the momentum $p$, velocity $\beta c$ and charge $z$ of the scattered particle, and the thickness of the scattering medium $\frac{x}{X_{\m{0}}}$ in radiation lengths.
 The distinct momentum dependence of this so-called \emph{Highland formula} can be used to reconstruct the momentum of the incident particle provided the angular resolution of the detector is fine enough.
 
-Concerning the interactions of charged particles with matter, there is one important note regarding detectors.
+Concerning the interactions of charged particles with matter, there is one important note regarding detectors:
 While charge produced in interactions (i.e.\ ionisation) can be detected directly, light (i.e.\ excitation photons and photon radiation) first needs to be converted to charge to be detected.
 
 The three most important interactions converting photons to charge are the \emph{photoelectric effect}, \emph{Compton Scattering}, and \emph{pair production}.
@@ -877,7 +877,7 @@ At low energies (ionisation energy $\le E_{\Pgg} \le \SI{100}{\kilo\electronvolt
 The photon is absorbed by an atom of the absorber which in turn is ionised and thus ejects one of its shell electrons.
 The cross-section is given by
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{photo}} & = & \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\Pe}
+	\sigma_{\m{photo}} & = & \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\Pe} \qc
 \end{IEEEeqnarray}
 where
 \begin{description}
@@ -886,19 +886,19 @@ where
 \end{description}
 
 For energies $\approx \SI{1}{\mega\electronvolt}$, Compton scattering dominates the interaction of photons with matter.
-Thereby, the photon is not absorbed by the atom but just scatters off one of its shell electrons with the cross-section
+Thereby, the photon is not absorbed by the atom but simply scatters off one of its shell electrons with the cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{c}} & = & 2 \pi r_{\Pe} ^ 2 Z \left\{\qty[\frac{1 + \epsilon}{\epsilon ^ 2}] \qty[\frac{2 \qty(1 + \epsilon)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln(1 + 2 \epsilon)]\right.\\
-	& & \left. + \frac{1}{2 \epsilon} \ln(1 + 2 \epsilon) - \frac{1 + 3 \epsilon}{\qty(1 + 2 \epsilon) ^ 2}\right\}
+	& & \left. + \frac{1}{2 \epsilon} \ln(1 + 2 \epsilon) - \frac{1 + 3 \epsilon}{\qty(1 + 2 \epsilon) ^ 2}\right\} \qc
 \end{IEEEeqnarray}
 obtained from the Klein-Nishina formula.
-As only part of the photon's energy is absorbed while the rest is scattered, it makes sense to divide this cross -section into a scattering cross-section
+As only part of the photon's energy is absorbed while the rest is scattered, it makes sense to divide this cross-section into a scattering cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{cs}} & = & \frac{E_{\Pgg}'}{E_{\Pgg}}
 \end{IEEEeqnarray}
 and an absorption cross-section
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{ca}} & = & \sigma_{\m{c}} - \sigma_{\m{cs}}
+	\sigma_{\m{ca}} & = & \sigma_{\m{c}} - \sigma_{\m{cs}} \qc
 	\label{eq:nu-detection_sigma-compton}
 \end{IEEEeqnarray}
 where $E_{\Pgg}$ and $E_{\Pgg}'$ is the energy of the photon before and after scattering, respectively.
@@ -908,14 +908,15 @@ Because of momentum conservation, this process can only happen in the Coulomb fi
 As pair-production in the field of an electron is strongly suppressed, the spectator is usually a nucleus of the absorber material.
 Therefore, the cross-section of pair-production depends on the shielding of the Coulomb field by the shell electrons and thus on the proximity to the nucleus.
 Eventually, this results in an energy dependence.
-For $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross-section is given by
+The cross-section is given by
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{pair}} & = & 4 \alpha r_{\Pe} ^ 2 Z ^ 2 \qty(\frac{7}{9} \ln 2 \epsilon - \frac{109}{54})
 \end{IEEEeqnarray}
-and for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, the cross-section is
+for $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, and
 \begin{IEEEeqnarray}{rCl}
-	\sigma_{\m{pair}} & = & 4 \alpha r_{\Pe} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}] \qq*{.}
+	\sigma_{\m{pair}} & = & 4 \alpha r_{\Pe} ^ 2 Z ^ 2 \qty[\frac{7}{9} \ln(\frac{183}{Z ^ {\frac{1}{3}}}) - \frac{1}{54}]
 \end{IEEEeqnarray}
+for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$.
 
 As mentioned above, for Compton scattering, two different cross-sections are defined, $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.
 Consequentially, there are also different definitions of the coefficient $\mu$ in Equation~\eqref{eq:nu-detection_mass-att-coeff}.
@@ -945,7 +946,7 @@ The \emph{Molière radius}
 is the transversal extent of the shower divided by the the material density.
 Both $t_{\m{max}}^{\m{EM}}$ and $R_{\m{M}}^{\m{EM}}$ are important benchmarks for the dimensioning of \gls{em} calorimeters.
 Naturally, a photon in the energy range where pair production dominates will produce a shower as well.
-On the other hand, also \Pgmpm can start \gls{em} cascades, if there energy is high enough to produce bremsstrahlung.
+On the other hand, \Pgmpm can also start \gls{em} cascades, if their energy is high enough to produce bremsstrahlung.
 
 Similarly, hadrons interacting with matter via the strong force can produce cascades as well.
 As opposed to the \gls{em} showers governed only by \Pepm and \Pgg, the hadronic process is much more complex because many different secondary particle can be involved.

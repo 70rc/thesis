@@ -289,8 +289,9 @@ The measurements are shown to illustrate the difficulties of designing a reliabl
 
 Leaving aside the non-linear response, the \gls{bnl} \gls{adc} \glspl{asic} are not suitable for use in conjunction with a pixelated \lartpc{} charge readout.
 Being designed for wire readouts, no strong focus was laid on power dissipation which is $\approx \SI{5}{\milli\watt}$ per channel.
-Combined with the one of the LARASIC (\SI{10}{\milli\watt})~\cite{larasic}, a total of \SI{15}{\milli\watt} is dissipated.
-For a pixelated \dune{} \gls{nd} with $\gtrsim {\num{e7}}$ channels, the resulting required cooling power would be $\gtrsim \SI{150}{\kilo\watt}$ for \SI{84}{\tonne} of \lar{} (see Section~\ref{sec:dune-nd_ac-nd}).
+Combined with the one of the LARASIC (\SI{10}{\milli\watt})~\cite{larasic}, a total of $\approx \SI{15}{\milli\watt}$ is dissipated.
+A pixelated \dune{} \gls{nd} with a \SI{3}{\milli\metre} pitch and the dimensions given in Section~\ref{sec:dune-nd_ac-nd} will need $\gtrsim {\num{e7}}$ channels.
+The resulting required cooling power would be $\gtrsim \SI{150}{\kilo\watt}$ for \SI{84}{\tonne} of \lar{}.
 In comparison, \uboone{} has a total cooling power of $\approx \SI{20}{\kilo\watt}$ for \SI{170}{\tonne} of \lar{}~\cite{uboone}.
 
 \begin{table}[htb]
@@ -352,7 +353,7 @@ In comparison, \uboone{} has a total cooling power of $\approx \SI{20}{\kilo\wat
 	\label{fig:larpix_track}
 \end{figure}
 
-Due to their smaller geometric extent, pixels have a much lower capacitance ($\approx \SI{4}{\pico\farad}$~\cite{larpix_spec}) than wires.
+Due to their smaller geometric extent, pixels have a much lower capacitance ($\approx \SI{4}{\pico\farad}$ for vias~\cite{larpix_spec}) than wires ($\approx \SI{200}{\pico\farad}$~\cite{protodune-sp}).
 According to Equation~\eqref{eq:electronics_thermal-noise}, this reduces the intrinsic noise present on a pixelated readout.
 \larpix{}, being developed by \gls{lbnl}~\cite{larpix, larpix_spec}, exploits this fact to significantly reduce the complexity of the cold electronics.
 Two key points distinguish them from the \gls{bnl} design for the wire-equipped \gls{fd}.
@@ -374,14 +375,19 @@ With its power dissipation (and consumption) dependent on the charge flux and th
 Due to the triggered digitisation, the same goes for noise levels.
 For the successful operation of \larpix{}, it is of paramount importance to keep event rates and noise levels low.
 The latter can be achieved by minimising detector capacitance.
-To lower the susceptibility to high event rates, the \dune{} \gls{nd} design puts the \gls{tpc} drift direction perpendicular to beam direction.
+To lower the susceptibility to high event rates, the \dune{} \gls{nd} design orientates the \gls{tpc} drift direction perpendicular to beam direction.
 This reduces the amount of charge per event arriving simultaneously at the readout.
 Furthermore, \larpix{} is equipped with a \gls{fifo} buffer capable of holding \num{2048} charge pulses to cope with short peaks in event rate.
 
 To accommodate the elevated number of channels of a pixelated readout, the first \larpix{} prototype chip has \num{32} inputs.
 Its resolution in time and charge are \SI{2}{\micro\second} and \SI{8}{\bit}, respectively.
-While currently inferior to the \gls{bnl} design, these specifications are planned to be improved in the next design iteration, after a successful initial test.
-One of the goals of the first prototype is to assess the optimal size of the \gls{fifo}~\cite{danLarpix}.
+While currently inferior to the \gls{bnl} design, these specifications are planned to be improved in the next design iteration.
+The first \larpix{} version aims to demonstrate two critical aspects~\cite{dan_larpix_arcCM}:
+\begin{enumerate}
+	\item Low noise and low power dissipation (see Table~\ref{tab:larpix_spec})
+	\item \gls{mip} track detection capability in a test \gls{tpc}
+\end{enumerate}
+Another goal is to assess the optimal size of the \gls{fifo} event buffer~\cite{danLarpix}.
 The most important \larpix{} specifications are given in Table~\ref{tab:larpix_spec}.
 
 Figure~\ref{fig:larpix_schematic} shows the block diagram of a single \larpix{} channel.
@@ -403,7 +409,7 @@ The procedure is successively repeated for all bits.
 After the least significant bit has been set, the conversion is complete and the value of the register is output to the digital event buffer (\gls{fifo}).
 The whole conversion requires the same number of clock cycles as the number of \gls{dac} (and therefore \gls{adc}) bits.
 
-Communication with \larpix{} happens via a \gls{uart} connected by \gls{spi}.
+\larpix{} uses a \gls{uart} connected by \gls{spi} for communication.
 This allows to daisy chain up to \num{256} \larpix{} chips as depicted in Figure~\ref{fig:larpix_daisy}.
 The daisy chain is connected to a \larpix{} controller outside the cryostat which can be a \gls{fpga} or any other digital controller capable of handling the expected data rate.
 Chips are identified by means of a hard coded \gls{id}.
@@ -420,11 +426,11 @@ This is the nominal configuration for the first prototype.
 Later chip designs can be optimised to allow for a better time resolution.
 
 Each \larpix{} chip has an integrated test pulse generator.
-It consist of a \gls{dac} that can be connected to one or more inputs via a coupling capacitor.
-By switching the level of the \gls{dac} charge can be injected into the selected inputs.
+It consists of a \gls{dac} that can be connected to one or more inputs via a coupling capacitor.
+Charge can be injected into the selected inputs by switching the level of the \gls{dac}.
 This allows to characterise and/or debug the charge readout chain in a similar fashion to the LARASIC preamplifiers described above.
 
-The design goal of \larpix{} is to reach a power dissipation or \SI{100}{\micro\watt} per channel.
+One design goal of \larpix{} is to reach a power dissipation of \SI{100}{\micro\watt} per channel.
 Using the same numbers as above this results in a total power dissipation of $\sim \SI{1}{\kilo\watt}$ for a pixelated \dune{} \gls{nd}.
 Most of the supply voltages of \larpix{} can be reduced from their nominal value.
 This allows to further decrease power dissipation in addition to the smart zero suppression and reduced clock frequency.
@@ -432,8 +438,9 @@ Attention has to be paid to adjust the \gls{spi} signalling levels accordingly.
 More information on this can be found in the datasheet~\cite{larpix_spec}.
 
 The first \larpix{} prototype was successfully tested at \gls{lbnl} in a shorter version of the pixel demonstrator \gls{tpc} described in Section~\ref{sec:ac_viper}.
+In particular, the noise and power dissipation levels given in Table~\ref{tab:larpix_spec} were reached~\cite{dan_larpix_duneCM}.
 Figure~\ref{fig:larpix_track} shows a recorded cosmic muon track.
-Note that only the red pixels are instrumented which explains the gap in the track.
+Note that only the red pixels are instrumented which explains the segmented track.
 
 \section{Charge Readout Electronics Summary}
 \label{sec:studies_electronics-summary}

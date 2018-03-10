@@ -188,7 +188,7 @@ In particular, Daya Bay and \gls{t2k} measured a non-zero $\theta_{13}$ mixing a
 \label{sec:nu-detection_osc}
 
 \AC{} has been proposed as the \lar{} component of the \gls{nd} for the \dune{} long-baseline neutrino oscillation experiment.
-Therefore, this section will give a basic introduction to neutrino oscillation and \dune{}.
+Therefore, this section will give a basic introduction to neutrino oscillation.
 
 The root cause of neutrino oscillation is that the flavour eigenstates (\HepParticle{\nu}{\alpha}{} with $\alpha = \Pe, \Pgm, \Pgt$) of the three neutrinos are not equal to their three mass eigenstates (\HepParticle{\nu}{i}{} with $i = 1, 2, 3$).
 The mass composition of the flavour eigenstates can be written as
@@ -325,15 +325,16 @@ To improve readability, $U_{\m{\glsentryshort{pmns}}}$ was abbreviated by $U$.
 The second term of Equation~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
 This implies that the frequency of the oscillation is determined by the mass splitting and the amplitude by the matrix elements of $U_{\m{\glsentryshort{pmns}}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
 In particular, the consequence of this is that the observation of neutrino oscillation between all three flavours proves a finite mass of at least two of the three neutrinos.
+
 It is worth noting two important facts at this point.
 First, the same result can be obtained by replacing time propagation $e ^ {- i E_i t}$ with spatial propagation $e ^ {i \va{p_i} \va{x}}$ and assuming equal energy instead of momentum for all mass eigenstates.
 Second, both assumptions are wrong from a physics point of view.
-Furthermore, both are plane wave functions which is also wrong.
+Furthermore, a plane wave function is assumed in both derivations, which is also wrong.
 A wave packet approach is required to correctly describe neutrino oscillations.
 However, it can be shown that the plane wave approximation in conjunction with either an equal momentum or equal energy assumption leads to the correct result.
 Both points have been illustrated by Akhmedov and Smirnov~\cite{Akhmedov}.
 
-Despite predicting neutrino mixing and oscillation, the theory does not predict the values of the oscillation parameters.
+Despite predicting neutrino mixing and oscillation, the model does not predict the values of the oscillation parameters.
 They need to be measured by experiment.
 The three-neutrino paradigm described above is well-established and has withstood tests by many experiments in the last few decades.
 Table~\ref{tab:nu-detection_oscparams} shows the results of a recent global fit~\cite{king}.
@@ -780,8 +781,9 @@ As mentioned above, the mass stopping power only loosely depends on the absorber
 	\eval{- \frac{1}{\rho} \dv{E}{x}}_{\m{min}} & \approx & \SI{2}{\mega\electronvolt\centi\meter\squared\per\gram}
 \end{IEEEeqnarray}
 for singly charged incident particles on most (light) absorbers.
-To the left of the minimum is the \emph{Bragg peak} which is especially important for radiation therapy with heavy charged particles (e.g.\ protons).
-The Bragg peak falls off with a strong $\frac{1}{\beta ^ 2}$ dependence.
+To the left of the minimum, the stopping power rises with a strong $\frac{1}{\beta ^ 2}$ dependence.
+A consequence of this is a pronounced peak in the energy loss as a function of the travelled distance of a particle near its stopping point.
+This \emph{Bragg peak} is especially important for radiation therapy with heavy charged particles (e.g.\ protons).
 After the minimum, the stopping power rises again with a logarithmic dependence on $\beta$ and the mean excitation energy of the absorber $I$.
 The reason for this so called \emph{logarithmic rise} is the extension of the transverse electric field of the incident particle in the relativistic regime.
 Due to increasing shielding of the transverse electric field by the shell electrons of the absorber materials, taken into account by the $\frac{\delta}{2}$ term, the rise is only asymptotic.

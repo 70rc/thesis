@@ -14,7 +14,7 @@ Three layers of the coating were applied by hand, with a fine brush.
 \SI{1}{\milli\metre} diameter \gls{wls} fibres, \emph{Kuraray Y11(200)M}~\cite{kuraray}, couple the acrylic rings to four \emph{Hamamatsu S12825-050P} \glspl{sipm}~\cite{crt_sipm} mounted close to the anode (see Figure~\ref{fig:viper_v1per}). 
 The \glspl{sipm} and their front-end electronics were adapted from those developed at \gls{help} for the \glspl{crt} used in \uboone{} and the \sbnd{}~\cite{crt, crt_feb}.
 Residing on the cryostat top flange at room temperature, the \gls{feb} is connected to the \glspl{sipm} via Teflon insulated coaxial cables.
-For operation in \lar{}, the \gls{sipm} bias voltages had to be reduce from $\approx \SI{70}{\volt}$ to \SI{53}{\volt}, in order to limit the gain.   
+For operation in \lar{}, the \gls{sipm} bias voltages has to be reduced from $\approx \SI{70}{\volt}$ to \SI{53}{\volt}, in order to compensate for change of breakdown voltage.
 
 The peak of scintillation light emission in \lar{} lies at \SI{128}{\nano\metre} (see Table~\ref{tab:lartpc_larprop}) while the sensitivity wavelength peak of the \gls{sipm} is at \SI{450}{\nano\metre}.
 Therefore, the scintillation light needs to be shifted before it can be detected by the \glspl{sipm}.
@@ -30,7 +30,6 @@ The trigger pattern is thus
 	T & = & \qty(S_1 \land S_2) \lor \qty(S_3 \land S_4)
 \end{IEEEeqnarray}
 for \glspl{sipm} $S_1$ through $S_4$.
-This trigger logic originates from the original \gls{crt} system.
 In order to improve trigger purity, it was tried to change the firmware to trigger on the coincidence of all four fibres in the \gls{tpc}.
 Due to a firmware bug however this could not be achieved.
 
@@ -90,7 +89,7 @@ As a solution, a dedicated light readout system for the \AC{}, \AL{}, was develo
 	\centering
 	\includegraphics[width=\textwidth]{arclight/light_yield}
 	\caption[\pixlar{} \glsentryshort{arclight} response]{%
-		Distribution of observed number of photo-electrons (N p.e.) per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail}.
+		Distribution of observed number of photo-electrons (N p.e.)\ per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail}.
 		The response is shown for cosmic (blue) and beam events (red).
 	}
 	\label{fig:arclight_pixlar_response}
@@ -98,11 +97,11 @@ As a solution, a dedicated light readout system for the \AC{}, \AL{}, was develo
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{arclight/stability_cosm_beam}
+	\includegraphics[viewport=0 0 1648 690, clip, width=\textwidth]{arclight/stability_cosm_beam_mod}
 	\caption[\pixlar{} \glsentryshort{arclight} response stability]{%
-		Average observed number of photo-electrons (N p.e.) per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail} over several weeks.
-		The response is shown for cosmic (blue) and beam events (magenta).
-		For reference, the primary beam energy (black) and the bending magnet current (red) are shown.
+		Average observed number of photo-electrons (N p.e.)\ per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail} over several weeks.
+		The response is shown for cosmic (blue) and beam events (black).
+		For reference, the secondary beam energy (green) and the bending magnet current (red) are shown.
 	}
 	\label{fig:arclight_pixlar_stability}
 \end{figure}
@@ -144,7 +143,7 @@ A \SI{43 x 15}{\centi\metre} \AL{} module was successfully operated at \lar{} te
 Figure~\ref{fig:arclight_pixlar_response} shows the light yield for beam (red) and cosmic events (blue).
 Cosmic events yield a mean of \num{115.7} photo-electrons while beam events produce slightly less light with a mean of \num{105.7} photo-electrons.
 The time evolution of the mean photo-electron yield per event in beam (magenta) and cosmic ray (blue) mode is depicted in Figure~\ref{fig:arclight_pixlar_stability}.
-For reference, the current of the bending magnets, selecting the momentum range of the tertiary beam, and the primary beam energy are also plotted.
+For reference, the current of the bending magnets, selecting the momentum range of the tertiary beam, and the secondary beam energy are also plotted.
 It can be seen that the yield is approximately constant over several weeks.
 The jumps in the beam curve can be explained by the switching between different beam configurations.
 

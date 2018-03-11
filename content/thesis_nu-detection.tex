@@ -738,15 +738,14 @@ As flux is given in units of inverse time and area, and interaction rate in unit
 \section{Final State Detection}
 \label{sec:nu-detection_fs}
 
-In order to be able to detect particles, they need to interact with a detection medium.
-This section will describe the most important interaction of charged particles as well as neutral particles with matter.
+Particles need to interact with a detection medium to be detected.
+This section describes the most important interaction of charged particles as well as neutral particles with matter.
 It is focused on charged interactions as these are the most important ones for \lartpc{}s.
-As a measure of the interaction strength, the energy loss per distance or stopping power $\dv{E}{x}$ is used.
-Where not otherwise mentioned, this section is based on~\cite{grupen}.
+The energy loss per distance or stopping power $\dv{E}{x}$ is used as a measure of interaction strength.
 
 The main interaction of charged particles with matter happens on atomic electrons.
-That is why for most of these interactions, one needs to treat the interaction of electrons separately.
-For all other charged particles, the stopping power is described by the Bethe-Bloch formula
+That is why for most of these interactions one needs to treat the interaction of electrons separately.
+For all other charged particles the stopping power is described by the \emph{Bethe-Bloch} formula
 \begin{IEEEeqnarray}{rCl}
 	- \frac{1}{\rho} \dv{E}{x} & = &
 	4 \pi N_{\m{A}} r_{\Pe} ^ 2 m_{\Pe} c ^ 2 z ^ 2 \frac{Z}{A} \frac{1}{\beta ^ 2}
@@ -764,51 +763,51 @@ where
 	\item[$A$] is the atomic weight of the absorber,
 	\item[$\beta = \frac{v}{c}$] with $v$ the velocity of the incident particle,
 	\item[$\gamma = \frac{E}{m_0 c ^ 2}$] with $E$ the energy and $m_0$ the rest mass of the incident particle,
-	\item[$I$] is the mean excitation energy of the absorber material which can be approximated by
+	\item[$I$] is the mean excitation energy of the absorber material, which can be approximated by
 		\begin{IEEEeqnarray}{rCl}
-			I & = & 16 Z ^ {0.9} \si{\electronvolt} \quad \m{for} \quad Z > 1 \qc
+			I & = & 16 Z ^ {0.9} \si{\electronvolt} \qq{for} Z > 1 \qq*{, and}
 		\end{IEEEeqnarray}
 	\item[$\delta$] is a parameter describing the screening of the extended transverse electric field of relativistic incident particles by the charge density of the atomic electrons of the absorber.
 \end{description}
 Equation~\eqref{eq:nu-detection_bethe-bloch} describes the stopping power of particles with $m_0 \gg m_{\Pe}$ by ionisation and excitation of the atoms in the absorber material.
-As the stopping power is proportional to the electron density and thus to the mass density of the absorber material, it is often divided by the latter.
-Thus, Equation~\eqref{eq:nu-detection_bethe-bloch} actually gives the so called mass stopping power.
+As the stopping power is proportional to the electron density and thus the mass density of the absorber material, it is often divided by the latter.
+Therefore, Equation~\eqref{eq:nu-detection_bethe-bloch} more precisely gives the mass stopping power.
 The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is $\approx 0.5$ for most light materials, and the mean excitation energy which only contributes logarithmically.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{nu-detection/bethe_bloch}
 	\caption[Stopping power]{%
-		Bethe-Bloch stopping power of \Pgm in \ce{Ar}.
+		Bethe-Bloch mass stopping power of \Pgm in \ce{Ar}.
 	}
 	\label{fig:nu-detection_bethe-bloch}
 \end{figure}
 
-Figure~\ref{fig:nu-detection_bethe-bloch} shows the mass stopping power of muons in argon neglecting the $\frac{\delta}{2}$ term for simplicity.
-As can be seen, there is a broad minimum which is characteristic of the Bethe-Bloch formula.
+Figure~\ref{fig:nu-detection_bethe-bloch} shows the mass stopping power of muons in argon, neglecting the $\frac{\delta}{2}$ term for simplicity.
+As can be seen, there is a broad minimum, which is characteristic of the Bethe-Bloch formula.
 Particles in this momentum range are called \glspl{mip}.
 They are important for detectors because this energy loss is a measure for the required energy resolution of a detector.
-As mentioned, the mass stopping power only loosely depends on the absorber material and therefore, its minimum is
+As mentioned, the mass stopping power only loosely depends on the absorber material and therefore its minimum is
 \begin{IEEEeqnarray}{rCl}
 	\eval{- \frac{1}{\rho} \dv{E}{x}}_{\m{min}} & \approx & \SI{2}{\mega\electronvolt\centi\meter\squared\per\gram}
 \end{IEEEeqnarray}
 for singly charged incident particles on most (light) absorbers.
-To the left of the minimum, the stopping power rises with a strong $\frac{1}{\beta ^ 2}$ dependence.
+To the left of the minimum the stopping power rises with a strong $\frac{1}{\beta ^ 2}$ dependence.
 A consequence of this is a pronounced peak in the energy loss as a function of the travelled distance of a particle near its stopping point.
 This \emph{Bragg peak} is especially important for radiation therapy with heavy charged particles (e.g.\ protons).
-After the minimum, the stopping power rises again with a logarithmic dependence on $\beta$ and the mean excitation energy of the absorber $I$.
-The reason for this so called \emph{logarithmic rise} is the extension of the transverse electric field of the incident particle in the relativistic regime.
+After the minimum the stopping power rises again with a logarithmic dependence on $\beta$ and the mean excitation energy of the absorber $I$.
+The reason for this \emph{logarithmic rise} is the extension of the transverse electric field of the incident particle in the relativistic regime.
 Due to increasing shielding of the transverse electric field by the shell electrons of the absorber materials, taken into account by the $\frac{\delta}{2}$ term, the rise is only asymptotic.
-For electrons and positrons, Equation~\eqref{eq:nu-detection_bethe-bloch} does not hold because their mass is equal to the mass of the atomic electrons of the absorber.
-The stopping power changes further for electrons because the incident particle cannot be distinguished form its collision partner.
-On the other hand, a positron will be annihilated upon stop by an electron which needs to be taken into account as well.
+For electrons and positrons Equation~\eqref{eq:nu-detection_bethe-bloch} does not hold because their mass is equal to the mass of the atomic electrons of the absorber.
+The stopping power changes further for electrons because the incident particle cannot be distinguished from its collision partner.
+On the other hand, a positron will be annihilated by an electron upon stopping, which needs to be taken into account as well.
 The equivalent of Equation~\eqref{eq:nu-detection_bethe-bloch} for \Pepm can be found in~\cite{grupen}.
 
 At high velocities further effects come into play.
 \emph{Bremsstrahlung} describes the radiation energy loss of a fast charged particle in the Coulomb field of the absorber nuclei.
 It can be described by
 \begin{IEEEeqnarray}{rCl}
-	- \frac{1}{\rho}\dv{E}{x} & = & \frac{E}{X_{\m{0}}}
+	- \frac{1}{\rho}\dv{E}{x} & = & \frac{E}{X_{\m{0}}} \qc
 	\label{eq:nu-detection_bremsstrahlung}
 \end{IEEEeqnarray}
 where
@@ -818,23 +817,23 @@ where
 \end{IEEEeqnarray}
 is the \emph{radiation length} of the absorber material using
 \begin{description}
-	\item[$\alpha$] $\approx \frac{1}{137}$ the fine-structure constant and
-	\item[$m$] the mass of the incident particle.
+	\item[$\alpha \approx \frac{1}{137}$], the fine-structure constant, and
+	\item[$m$], the mass of the incident particle.
 \end{description}
-Again, the energy loss is proportional to the density of the absorber and for convenience, divided by the latter.
+Again, the energy loss is proportional to the density of the absorber and for convenience divided by the latter.
 Bremsstrahlung is emitted in interactions of the incident particle with the absorber nuclei ($\propto Z ^ 2$) as well as with the atomic electrons of the absorber ($\propto Z$).
-By neglecting the latter, one obtains the important relation
+By neglecting the latter one obtains the important relation
 \begin{IEEEeqnarray}{rCl}
 	X_{\m{0}} ^ {- 1} & \propto & Z ^ 2
 \end{IEEEeqnarray}
 as opposed to the $\propto Z$ dependence of the Bethe-Bloch formula.
 Equation~\eqref{eq:nu-detection_bremsstrahlung} also holds for electrons as long as $E \gg \frac{m_{\Pe} c ^ 2}{\alpha Z ^ {\frac{1}{3}}}$.
-Furthermore, looking at the dependence on the mass of the incident particle, one finds
+Looking at the dependence on the mass of the incident particle, one finds
 \begin{IEEEeqnarray}{rCl}
 	X_{\m{0}} & \propto & m ^ 2
 \end{IEEEeqnarray}
 using Equation~\eqref{eq:nu-detection_radiationlength}.
-Therefore, the radiation length of an absorber material is usually given for electrons and the relation
+Therefore, the radiation length of an absorber material is usually given for electrons, and the relation
 \begin{IEEEeqnarray}{rCl}
 	X_{\m{0}} & = & X_{\m{0}}^{\Pe} \frac{m ^ 2}{m_{\Pe} ^ 2}
 \end{IEEEeqnarray}
@@ -846,16 +845,15 @@ Using Equations~\eqref{eq:nu-detection_bethe-bloch} and~\eqref{eq:nu-detection_b
 	\label{eq:nu-detection_ec}
 \end{IEEEeqnarray}
 at which radiation losses take over from ionisation losses.
-Similar to the radiation length, the critical energy is proportional to $m ^ 2$.
+Similar to the radiation length the critical energy is proportional to $m ^ 2$.
 Thus, it is most important for electrons while for other particles it becomes significant only at very high energies.
 If we take an iron absorber for instance, we get $E_c^{\Pe} = \SI{20.7}{\mega\electronvolt}$ and $E_c^{\Pgm} = \SI{890}{\giga\electronvolt}$.
 
-At high energies, there are additional types of radiation loss taking place, for example direct electron-pair production and photonuclear interactions.
-They shall not be described here.
-Instead, only their $\propto E$ relation similar to bremsstrahlung losses shall be mentioned.
+At high energies there are additional types of radiation loss taking place, for example direct electron-pair production and photonuclear interactions.
+They are not described here, but their $\propto E$ relation similar to bremsstrahlung losses is pointed out.
 A description of those effects can be found in~\cite{grupen}.
 
-In addition to the processes described above, charged particles traversing matter also undergo scattering in the Coulomb field of the nuclei of the traversed medium.
+In addition to the processes described above charged particles traversing matter also undergo scattering in the Coulomb field of the nuclei of the traversed medium.
 Accordingly, this process is called \emph{\gls{mcs}}.
 The \gls{rms} of the \emph{scattering-angle distribution}
 \begin{IEEEeqnarray}{rCl}
@@ -863,33 +861,31 @@ The \gls{rms} of the \emph{scattering-angle distribution}
 	\label{eq:nu-detection_highland}
 \end{IEEEeqnarray}
 is defined by the momentum $p$, velocity $\beta c$ and charge $z$ of the scattered particle, and the thickness of the scattering medium $\frac{x}{X_{\m{0}}}$ in radiation lengths.
-The distinct momentum dependence of this so-called \emph{Highland formula} can be used to reconstruct the momentum of the incident particle provided the angular resolution of the detector is fine enough.
+The distinct momentum dependence of this \emph{Highland formula} can be used to reconstruct the momentum of the incident particle, provided the angular resolution of the detector is fine enough.
 
-Concerning the interactions of charged particles with matter, there is one important note regarding detectors:
 While charge produced in interactions (i.e.\ ionisation) can be detected directly, light (i.e.\ excitation photons and photon radiation) first needs to be converted to charge to be detected.
-
 The three most important interactions converting photons to charge are the \emph{photoelectric effect}, \emph{Compton Scattering}, and \emph{pair production}.
 All of them have in common that they attenuate photon beams exponentially according to
 \begin{IEEEeqnarray}{rCl}
-	I & = & I_0 e ^ {- \mu x}
+	I & = & I_0 e ^ {- \mu x} \qc
 \end{IEEEeqnarray}
-where $I_0$ and $I$ is the intensity before and after passing the absorber, respectively.
+where $I_0$ and $I$ denote the intensity before and after passing the absorber, respectively.
 The thickness of the absorber is given by $x$ and
 \begin{IEEEeqnarray}{rCl}
 	\mu & = & \frac{N_A}{A} \sum_i \sigma_i
 	\label{eq:nu-detection_mass-att-coeff}
 \end{IEEEeqnarray}
-is the \emph{mass attenuation coefficient} defined by the sum of the cross-sections $\sigma_i$ of the different interaction processes.
+is the \emph{mass attenuation coefficient}, defined by the sum of the cross-sections $\sigma_i$ of the different interaction processes.
 
-At low energies (ionisation energy $\le E_{\Pgg} \le \SI{100}{\kilo\electronvolt}$), photons primarily undergo conversion to charge by the photoelectric effect.
-The photon is absorbed by an atom of the absorber which in turn is ionised and thus ejects one of its shell electrons.
+At low energies (ionisation energy $\le E_{\Pgg} \le \SI{100}{\kilo\electronvolt}$) photons primarily undergo conversion to charge by the photoelectric effect.
+The photon is absorbed by an atom of the absorber, which in turn is ionised and ejects one of its shell electrons.
 The cross-section is given by
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{photo}} & = & \qty(\frac{32}{\epsilon ^ 7}) ^ \frac{1}{2} \alpha ^ 4 Z ^ 5 \sigma_{\m{Th}}^{\Pe} \qc
 \end{IEEEeqnarray}
 where
 \begin{description}
-	\item[$\epsilon = \frac{E_{\Pgg}}{m_{\Pe} c ^ 2}$] is the reduced photon energy and
+	\item[$\epsilon = \frac{E_{\Pgg}}{m_{\Pe} c ^ 2}$] is the reduced photon energy, and
 	\item[$\sigma_{\m{Th}}^{\Pe} = \frac{8}{3} \pi r_{\Pe} ^ 2 = \SI{6.65e-25}{\centi\meter\squared}$] is the \emph{Thomson cross-section} for elastic scattering of photons on electrons.
 \end{description}
 
@@ -899,7 +895,7 @@ Thereby, the photon is not absorbed by the atom but simply scatters off one of i
 	\sigma_{\m{c}} & = & 2 \pi r_{\Pe} ^ 2 Z \left\{\qty[\frac{1 + \epsilon}{\epsilon ^ 2}] \qty[\frac{2 \qty(1 + \epsilon)}{1 + 2 \epsilon} - \frac{1}{\epsilon} \ln(1 + 2 \epsilon)]\right.\\
 	& & \left. + \frac{1}{2 \epsilon} \ln(1 + 2 \epsilon) - \frac{1 + 3 \epsilon}{\qty(1 + 2 \epsilon) ^ 2}\right\} \qc
 \end{IEEEeqnarray}
-obtained from the Klein-Nishina formula.
+obtained from the \emph{Klein-Nishina} formula.
 As only part of the photon's energy is absorbed while the rest is scattered, it makes sense to divide this cross-section into a scattering cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{cs}} & = & \frac{E_{\Pgg}'}{E_{\Pgg}}
@@ -911,9 +907,9 @@ and an absorption cross-section
 \end{IEEEeqnarray}
 where $E_{\Pgg}$ and $E_{\Pgg}'$ is the energy of the photon before and after scattering, respectively.
 
-At $E_{\Pgg} \ge 2 m_{\Pe} c ^ 2$, photons are capable of producing pairs of \Pep\Pem.
-Because of momentum conservation, this process can only happen in the Coulomb field of a so called spectator particle.
-As pair-production in the field of an electron is strongly suppressed, the spectator is usually a nucleus of the absorber material.
+At $E_{\Pgg} \ge 2 m_{\Pe} c ^ 2$, photons are capable of producing pairs of \Pep and \Pem.
+Due to momentum conservation this process can only happen in the Coulomb field of a so-called spectator particle.
+The spectator is usually a nucleus of the absorber material because pair-production in the field of an electron is strongly suppressed.
 Therefore, the cross-section of pair-production depends on the shielding of the Coulomb field by the shell electrons and thus on the proximity to the nucleus.
 Eventually, this results in an energy dependence.
 The cross-section is given by
@@ -926,7 +922,7 @@ for $1 \ll \epsilon < \frac{1}{\alpha Z ^ {\frac{1}{3}}}$, and
 \end{IEEEeqnarray}
 for $\epsilon \gg \frac{1}{\alpha Z ^ {\frac{1}{3}}}$.
 
-As mentioned above, for Compton scattering, two different cross-sections are defined, $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.
+As mentioned above, for Compton scattering two different cross-sections are defined: $\sigma_{\m{cs}}$ for the scattered energy and $\sigma_{\m{ca}}$ for the absorbed energy.
 Consequentially, there are also different definitions of the coefficient $\mu$ in Equation~\eqref{eq:nu-detection_mass-att-coeff}.
 Replacing the total Compton cross-section $\sigma_{\m{c}}$ by $\sigma_{\m{ca}}$ from Equation~\eqref{eq:nu-detection_sigma-compton}, one gets the \emph{mass absorption coefficient} $\mu_{\m{a}}$, only taking into account photon absorption processes.
 While $\mu$ is more precisely called the \emph{total mass attenuation coefficient}.
@@ -941,8 +937,8 @@ The mean free path of a photon before pair production
 is very close to the mean free path of an \Pepm before bremsstrahlung, the radiation length $X_{\m{0}}$.
 Therefore, the number of particles participating in the shower doubles roughly every radiation length resulting in an exponential growth.
 This allows \gls{em} showers to be approximated by the following rather simple model.
-When the average energy per paticle drops below the critical energy, ionisation losses begin to dominate over radiative losses for \Pepm and Compton and photoelectric effect over pair production for photons.
-At this point, the shower reaches its maximum and
+When the average energy per paticle drops below the critical energy, ionisation losses begin to dominate over radiative losses for \Pepm, and Compton scattering and photoelectric effect over pair production for photons.
+At this point the shower reaches its maximum and
 \begin{IEEEeqnarray}{rCl}
 	t_{\m{max}}^{\m{EM}} & = & \frac{\ln(\frac{E}{E_{\m{c}}})}{\ln(2)}
 \end{IEEEeqnarray}
@@ -951,20 +947,20 @@ The \emph{Molière radius}
 \begin{IEEEeqnarray}{rCl}
 	R_{\m{M}}^{\m{EM}} & = & \frac{\SI{21}{\mega\electronvolt}}{E_{\m{c}}} X_{\m{0}}
 \end{IEEEeqnarray}
-is the transversal extent of the shower divided by the the material density.
+is the transversal extent of the shower.
 Both $t_{\m{max}}^{\m{EM}}$ and $R_{\m{M}}^{\m{EM}}$ are important benchmarks for the dimensioning of \gls{em} calorimeters.
 Naturally, a photon in the energy range where pair production dominates will produce a shower as well.
-On the other hand, \Pgmpm can also start \gls{em} cascades, if their energy is high enough to produce bremsstrahlung.
+On the other hand, \Pgmpm can also start \gls{em} cascades if their energy is high enough to produce bremsstrahlung.
 
 Similarly, hadrons interacting with matter via the strong force can produce cascades as well.
-As opposed to the \gls{em} showers governed only by \Pepm and \Pgg, the hadronic process is much more complex because many different secondary particle can be involved.
+As opposed to the \gls{em} showers governed only by \Pepm and \Pgg the hadronic process is much more complex because many different secondary particle can be involved.
 Hadrons start to shower because they mainly interact inelastically with matter, producing secondary strongly interacting particles.
 That is why the hadronic cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\m{total}} & = & \sigma_{\m{elastic}} + \sigma_{\m{inel}}
 \end{IEEEeqnarray}
 is usually split.
-From $\sigma_{\m{inel}}$, one can derive the \emph{interaction length}
+From $\sigma_{\m{inel}}$ one can derive the \emph{interaction length}
 \begin{IEEEeqnarray}{rCl}
 	\lambda_{\m{int}} & = & \frac{A}{N_{\m{A}} \rho \sigma_{\m{inel}}}
 \end{IEEEeqnarray}
@@ -973,14 +969,14 @@ which describes the absorption of hadrons in matter according to
 	N & = & N_{\m{0}} e ^ {- \frac{x}{\lambda_{\m{int}}}}
 \end{IEEEeqnarray}
 with the initial number of hadrons $N_{\m{0}}$ and number of hadrons $N$ after a distance $x$ of absorber material.
-For absorbers with $Z \geq 6$, the interaction length is much larger than the radiation length $X_{\m{0}}$ meaning that hadronic calorimeters usually need to be much larger than their \gls{em} counterparts.
+For absorbers with $Z \geq 6$ the interaction length is much larger than the radiation length $X_{\m{0}}$ meaning that hadronic calorimeters usually need to be much larger than their \gls{em} counterparts.
 Experimental data shows that hadronic showers from a few \si{\giga\electronvolt} to a few \SI{100}{\giga\electronvolt} can be approximated by similar parameters as \gls{em} showers.
 The shower maximum is reached at
 \begin{IEEEeqnarray}{rCl}
 	t_{\m{max}}^{\m{had}} & = & 0.2 \ln(\frac{E}{\si{\giga\electronvolt}}) + 0.7
 \end{IEEEeqnarray}
 interaction lengths.
-From this, the longitudinal extent containing \SI{95}{\percent} is given by
+From this the longitudinal extent containing \SI{95}{\percent} is given by
 \begin{IEEEeqnarray}{rCl}
 	L_{0.95}^{\m{had}} & = & t_{\m{max}}^{\m{had}} + 2.5 \qty(\frac{E}{\si{\giga\electronvolt}}) ^ {0.13} \qc
 	\label{eq:nu-detection_hardon-long}
@@ -988,7 +984,7 @@ From this, the longitudinal extent containing \SI{95}{\percent} is given by
 in interaction lengths again.
 Transversally, \SI{95}{\percent} of the shower are contained within a cylinder of radius
 \begin{IEEEeqnarray}{rCl}
-	R_{0.95}^{\m{had}} & \leq & \lambda_{\m{int}}
+	R_{0.95}^{\m{had}} & \leq & \lambda_{\m{int}} \qc
 	\label{eq:nu-detection_hardon-trans}
 \end{IEEEeqnarray}
-which is independent of the energy and smaller for high-Z materials~\cite{hardon}.
+which is independent of energy and smaller for high-Z materials~\cite{hardon}.

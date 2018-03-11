@@ -151,9 +151,14 @@ For charge separation and drift, an electric field of $\sim{\SI{1}{\kilo\volt\pe
 An easy way to achieve this is by means of field shaping rings fed by a resistive divider between cathode and anode.
 The drawback is the need for a feedthrough capable of withstanding the full cathode voltage.
 One alternative is to generate the \gls{hv} inside the cryostat, for instance using a Greinacher voltage multiplier circuit as the one used for the \AT{} experiment at \gls{help}~\cite{AT}.
-A Greinacher multiplier works by pumping up a cascade of capacitors and diodes using a high frequency source.
-However, while the voltage generation itself worked well, this approach proved to be impractical because the high frequency voltage needed to charge the multiplier interfered with the readout and therefore had to be turned off during data-taking.
-Recharging, in turn, caused a lot of detector down time.
+A Greinacher multiplier works by pumping up a cascade of capacitors and diodes using a \gls{hf} source.
+While the voltage generation worked well, this approach proved to be impractical because the \gls{hf} charging voltage interfered with the charge readout and therefore had to be turned off during data-taking.
+Charging a Greinacher circuit is an asymptotic process, as can be seen in Figure~\ref{fig:lartpc_greinacher}.
+It depicts voltage and resulting electric field as a function of drift distance for various charging states.
+The characteristic charging time $\tau$ of \AT{} was $\sim \SI{10}{\minute}$.
+Due to leakage currents and protection resistors, the circuit needed frequent recharging: approximately \SI{1}{\minute} every \SI{15}{\minute}.
+This caused a lot of detector down time making a Greinacher circuit impractical for physics experiments.
+More information on the \AT{} Greinacher circuit can be found in~\cite{AT_field, maercu, michu}.
 
 
 \section{Charge Readout}

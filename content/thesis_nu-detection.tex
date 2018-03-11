@@ -250,11 +250,11 @@ where
 is the \gls{pmns} matrix~\cite{pontecorvo, makiNakagawaSakata}.
 It can be written as the product of three rotation matrices corresponding to the three Euler angles in \gls{3d} space, the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
 In Equation~\eqref{eq:nu-detection_upmns} they are represented by $S_{ij} = \sin{\theta_{ij}}$ and $C_{ij} = \cos{\theta_{ij}}$.
-Due to their first measurement with solar, reactor and atmospheric neutrinos, respectively, the matrices and angles are often named accordingly.
-In addition to the mixing angles, there is a Dirac, \dcp, and two Majorana~\cite{mariuana} \gls{cp}-violating phases, $\alpha_1$ and $\alpha_2$.
-An important feature of the Dirac phase is that it is suppressed for $\theta_{13} = 0$ as can be seen from $U_{\m{rea}}$ in Equation~\eqref{eq:nu-detection_upmns}.
+Due to their first measurement with solar, reactor, and atmospheric neutrinos, respectively the matrices and angles are often named accordingly.
+In addition to the mixing angles there is a Dirac, \dcp, and two Majorana~\cite{mariuana} \gls{cp}-violating phases, $\alpha_1$ and $\alpha_2$.
+An important feature of the Dirac phase is that it is suppressed for $\theta_{13} = 0$, as can be seen from $U_{\m{rea}}$ in Equation~\eqref{eq:nu-detection_upmns}.
 The Majorana phases can only be measured by experiments sensitive to a Majorana nature of the neutrinos, such as neutrinoless double beta decay experiments.
-In neutrino oscillation experiments, they cancel out.
+In neutrino oscillation experiments they cancel out.
 Therefore, they are ignored for the rest of this work.
 An illustration of the relation between the mass and flavour neutrino eigenstates is shown in Figure~\ref{fig:nu-detection_mass}.
 
@@ -264,7 +264,7 @@ The mass eigenstates $\nu_i$ from Equation~\eqref{eq:nu-detection_mixing} evolve
 	\ket{\HepParticle{\nu}{i}{} \qty(t)} & = & e ^ {- i E_i t} \ket{\HepParticle{\nu}{i}{}}
 \end{IEEEeqnarray}
 where $E_i$ is the energy of the mass eigenstate $\nu_i$.
-Furthermore, Equation~\eqref{eq:nu-detection_mixing} can be solved for $\nu_i$
+Furthermore, Equation~\eqref{eq:nu-detection_mixing} can be solved for $\nu_i$:
 \begin{IEEEeqnarray}{rCl}
 	\begin{pmatrix}
 		\HepParticle{\nu}{1}{} \\
@@ -277,7 +277,7 @@ Furthermore, Equation~\eqref{eq:nu-detection_mixing} can be solved for $\nu_i$
 		\Pgne \\
 		\Pgngm \\
 		\Pgngt
-	\end{pmatrix}
+	\end{pmatrix} \qc
 \end{IEEEeqnarray}
 where $U_{\m{\glsentryshort{pmns}}}^{\dagger}$ is the adjoint matrix of $U_{\m{\glsentryshort{pmns}}}$.
 This leads to
@@ -297,15 +297,15 @@ This leads to
 \end{IEEEeqnarray}
 with the diagonal matrix
 \begin{IEEEeqnarray}{rCl}
-	D_{ij} & = & \delta_{ij} e ^ {- i E_i t}
+	D_{ij} & = & \delta_{ij} e ^ {- i E_i t} \qc
 \end{IEEEeqnarray}
 where $\delta_{ij}$ is the Kronecker delta.
-The energy can be replaced by a second order Taylor approximation,
+The energy can be replaced by a second-order Taylor approximation,
 \begin{IEEEeqnarray}{rCl}
 	E_i = \sqrt{p ^ 2 + m_i ^ 2} & \approx & p + \frac{m_i ^ 2}{2 p} \qc
 \end{IEEEeqnarray}
 assuming the same momentum $p$ for all mass eigenstates.
-After some further conversions, one obtains
+After some further conversions one obtains
 \begin{IEEEeqnarray}{rCl}
 	\label{eq:nu-detection_oscprob}
 	P \qty(\HepParticle{\nu}{\alpha}{} \rightarrow \HepParticle{\nu}{\beta}{})
@@ -324,15 +324,15 @@ The phase difference
 	& = &
 	\frac{\dms_{ij}}{2} \frac{t}{p} \nonumber \\
 	& \approx &
-	\frac{\dms_{ij}}{2} \frac{L}{E} \qc \nonumber
+	\frac{\dms_{ij}}{2} \frac{L}{E} \nonumber
 \end{IEEEeqnarray}
 depends on the mass splitting $\dms_{ij} = m_i ^ 2 - m_j ^ 2$.
 In the relativistic case $p \gg m_i$ momentum can be approximated by energy ($p \approx E$) and time by baseline ($t = ct \approx L$).
 To improve readability, $U_{\m{\glsentryshort{pmns}}}$ was abbreviated by $U$.
 
 The second term of Equation~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
-This implies that the frequency of the oscillation is determined by the mass splitting and the amplitude by the matrix elements of $U_{\m{\glsentryshort{pmns}}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
-In particular, the consequence of this is that the observation of neutrino oscillation between all three flavours proves a finite mass of at least two of the three neutrinos.
+This implies that the frequency of the oscillation is determined by the mass splitting, and the amplitude by the matrix elements of $U_{\m{\glsentryshort{pmns}}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
+A particular consequence of this is that the observation of neutrino oscillations between all three flavours proves a finite mass of at least two of the three neutrinos.
 
 It is worth noting two important facts at this point.
 First, the same result can be obtained by replacing time propagation $e ^ {- i E_i t}$ with spatial propagation $e ^ {i \va{p_i} \va{x}}$ and assuming equal energy instead of momentum for all mass eigenstates.
@@ -343,12 +343,12 @@ However, it can be shown that the plane wave approximation in conjunction with e
 Both points have been illustrated by Akhmedov and Smirnov~\cite{Akhmedov}.
 
 Despite predicting neutrino mixing and oscillation, the model does not predict the values of the oscillation parameters.
-They need to be measured by experiment.
+They need to be determined experimentally.
 The three-neutrino paradigm described above is well-established and has withstood tests by many experiments in the last few decades.
 Table~\ref{tab:nu-detection_oscparams} shows the results of a recent global fit~\cite{king}.
-In particular, it can be seen, that the uncertainties on \dcp{} are huge and the sign of $\dms_{31}$ is not yet known.
+In particular, it can be seen that the uncertainties on \dcp{} are huge and the sign of $\dms_{31}$ is not yet known.
 The latter gives rise to two different orderings of the neutrino masses as depicted in Figure~\ref{fig:nu-detection_mass}.
-What is needed to determine these parameters, is essentially much higher statistics than were achieved in neutrino experiments so far.
+Much higher statistics than were achieved in neutrino experiments so far are needed to determine these parameters.
 
 \begin{table}[htb]
 	\centering
@@ -371,11 +371,11 @@ What is needed to determine these parameters, is essentially much higher statist
 	\end{tabu}
 \end{table}
 
-However, various effects can be exploited to enhance the oscillation probability from Equation~\eqref{eq:nu-detection_oscprob}, such as $\frac{L}{E}$ tuning, and matter effects.
+Various effects can be exploited to enhance the oscillation probability from Equation~\eqref{eq:nu-detection_oscprob}, such as $\frac{L}{E}$ tuning and matter effects.
 Tuning of $\frac{L}{E}$ is trivial to understand from theory but not so easy to achieve in practice.
 Originally, neutrino oscillations were discovered and characterised using solar and atmospheric neutrinos.
-While neutrinos produced in the Earth atmosphere allow for some $\frac{L}{E}$ tuning by means of a zenith angle selection, and similarly via time of year for solar neutrinos, the gain is limited.
-Much more fine-grained control is possible by directing an artificially produced neutrino beam with a well-defined energy spectrum at an underground detector at a optimised distance $L$.
+While neutrinos produced in the Earth's atmosphere allow for some $\frac{L}{E}$ tuning by means of a zenith angle selection, and similarly via time of year for solar neutrinos, the gain is limited.
+Much more fine-grained control is possible by directing an artificially produced neutrino beam with a well-defined energy spectrum towards an underground detector at an optimised distance $L$.
 
 \begin{figure}[htb]
 	\centering
@@ -392,7 +392,7 @@ Neutrino oscillation is different in matter than in vacuum.
 The neutrinos are coherently scattered off the shell electrons, similar to the propagation of light through matter.
 As will be shown in Section~\ref{sec:nu-detection_interactions}, the interactions of \Pgne and \Pagne differ from the other flavours, they are possible through an additional channel.
 Thus, the interaction probability of electron neutrinos is higher.
-From Figure~\ref{fig:nu-detection_mass}, it can be seen, that \Pgne are primarily present in \HepParticle{\nu}{1}{} and \HepParticle{\nu}{2}{}.
+From Figure~\ref{fig:nu-detection_mass} it can be seen that \Pgne are primarily present in \HepParticle{\nu}{1}{} and \HepParticle{\nu}{2}{}.
 Therefore, the propagation of these two is altered while \HepParticle{\nu}{3}{} is almost unaffected.
 Named after its discoverers, the \gls{msw} effect~\cite{mikheyevSmirnov, wolfenstein} can be exploited to determine the mass ordering with a properly tuned $\frac{L}{E}$.
 
@@ -406,7 +406,7 @@ Named after its discoverers, the \gls{msw} effect~\cite{mikheyevSmirnov, wolfens
 \glsreset{pot}
 
 The \dune{}~\cite{dune1, dune2, dune3, dune4} is a long-baseline neutrino oscillation experiment measuring $P \qty(\Pgngm \rightarrow \Pgne)$ and $P \qty(\Pagngm \rightarrow \Pagne)$ planned to start data taking after 2025.
-It consist of a neutrino beamline at \gls{fail} in Illinois, USA and \lartpc{} \glspl{fd} at a baseline of \SI{1300}{\kilo\metre} in the \gls{surf} in South Dakota, USA.
+It consists of a neutrino beamline at \gls{fail} in Illinois, USA and \lartpc{} \glspl{fd} at a baseline of \SI{1300}{\kilo\metre} in the \gls{surf} in South Dakota, USA.
 An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 
 \begin{figure}[htb]
@@ -421,14 +421,14 @@ An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 The beamline at \gls{fail} produces pions by shooting a pulsed proton beam onto a graphite target.
 A variable proton energy of \SIrange{60}{120}{\giga\electronvolt} allows for the production of different neutrino fluxes.
 One pulse is called a spill and has a duration of \SI{10}{\micro\second} at a period of \SIrange{0.7}{1.2}{\second}, depending on the proton energy.
-During phase one of the experiment, each spill will contain \num{7.5e13} protons resulting in an beam power of \SIrange{1.03}{1.20}{\mega\watt}.
-In the later phase two, the number of protons per spill will be doubled, doubling the power as well as the average number of events per spill in the detectors.
+During phase one of the experiment, each spill will contain \num{7.5e13} protons, resulting in an beam power of \SIrange{1.03}{1.20}{\mega\watt}.
+In the later phase two the number of protons per spill will be doubled, doubling the power as well as the average number of events per spill in the detectors.
 A summary of the various proton beam configurations is given in Table~\ref{tab:nu-detection_beam-params}.
-In accordance with \cite{dune2}, most calculations in this work assume the \SI{2}{\mega\watt} \SI{80}{\giga\electronvolt} beam, i.e. \num{0.2} events per tonne of argon and beam spill.
+In accordance with \cite{dune2} most calculations in this work assume the \SI{2}{\mega\watt} \SI{80}{\giga\electronvolt} beam, i.e.\ \num{0.2} events per tonne of argon and beam spill.
 The produced pions pass through several \gls{em} focusing horns to enter a decay pipe where they decay to \Pgmp(\Pgmm) and \Pgngm(\Pagngm) according to Equation~\eqref{eq:nu-detection_pion-decay}.
-By altering the polarity of the current in the focusing horns, either \Pgpp or \Pgpm can be selected primarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
-Alongside the pions, a small amount of kaons is produced as well.
-These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\SI{5}{\percent}$~\cite{pdg} producing a significant \Pgne (\Pagne) beam contamination.
+By altering the polarity of the current in the focusing horns either \Pgpp or \Pgpm can be selected primarily, enhancing the \Pgngm or \Pagngm content of the beam, respectively.
+Alongside the pions a small amount of kaons is produced as well.
+These in turn can decay to \Pgne and \Pagne with a branching ratio of $\approx\SI{5}{\percent}$~\cite{pdg}, producing a significant \Pgne (\Pagne) beam contamination.
 The neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_xsec_flux}.
 Delivered neutrino flux integrated over time is usually given in \gls{pot} because the effective neutrino flux depends on several factors and can only be precisely assessed by \gls{nd} measurements.
 More information on the beamline can be found in~\cite{dune2}.
@@ -441,10 +441,10 @@ More information on the beamline can be found in~\cite{dune2}.
 			Initially, the beamline will operate with the phase one parameters.
 			Later, it will be upgraded to support the phase two parameters.
 			The spill duration is \SI{10}{\micro\second} for all configurations.
-			The last column gives the expected total number of neutrino interactions per tonne of argon and beam spill in the \acrshort{nd}, excluding rock events.
+			The last column gives the expected total number of neutrino interactions per tonne of argon and beam spill in the \acrshort{nd}.
 			It is calculated by multiplying the expected neutrino flux with the cross-section on argon from the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
 			Note that these values are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params} because the latter are outdated.
-			In accordance with \cite{dune2}, most calculations in this work assume the \SI{2}{\mega\watt} \SI{80}{\giga\electronvolt} beam, i.e. \num{0.2} events per tonne of argon and beam spill.
+			In accordance with \cite{dune2} most calculations in this work assume the \SI{2}{\mega\watt} \SI{80}{\giga\electronvolt} beam, i.e.\ \num{0.2} events per tonne of argon and beam spill.
 			Taken from~\cite{dune3, lauraNDRates}.
 		}
 		\label{tab:nu-detection_beam-params}
@@ -464,7 +464,7 @@ More information on the beamline can be found in~\cite{dune2}.
 \end{table}
 
 The baseline and energy spectrum of \dune{} are optimised to measure \dcp{} and determine the mass ordering.
-Figure~\ref{fig:nu-detection_dune-osc} shows the (anti)neutrino oscillation probability as a function of neutrino energy at the \dune{} baseline for the normal and inverted mass ordering.
+Figure~\ref{fig:nu-detection_dune-osc} shows the (anti)neutrino oscillation probability as a function of neutrino energy at the \dune{} baseline for normal and inverted mass ordering.
 In very simple terms, \dcp{} can be derived from the difference in oscillation probability between neutrino and antineutrino mode.
 The \gls{msw} effect enhances either neutrino or antineutrino oscillation depending on the mass ordering, allowing for a determination of the latter.
 For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVogel}.
@@ -476,14 +476,14 @@ For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVoge
 		Muon to electron neutrino (left) and antineutrino (right) oscillation probability for normal (top) and inverted (bottom) mass ordering (hierarchy in the figure).
 		The oscillation probabilities are calculated from equation~\eqref{eq:nu-detection_oscprob}.
 		\dcp{} can be obtained from the difference between neutrino and antineutrino mode.
-		The \acrshort{msw} effect either enhances the probability in neutrino or antineutrino mode depending on the mass ordering, allowing for a determination or the latter.~\cite{qianVogel}
+		The \acrshort{msw} effect enhances the probability in either neutrino or antineutrino mode depending on the mass ordering, allowing for a determination or the latter.~\cite{qianVogel}
 	}
 	\label{fig:nu-detection_dune-osc}
 \end{figure}
 
 Figure~\ref{fig:nu-detection_dune-sens} shows the sensitivities of \dune{} to determination of the mass ordering and discovery of \gls{cp} violation.
-To reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the \dcp{} parameter space, an exposure of \SI{1320}{\kilo\tonne\mega\watt.years} is required.
-Assuming the reference design of a \SI{40}{\kilo\tonne} \gls{fd} and a \SI{1}{\mega\watt} beam results in a data taking time of \SI{33}{years}.
+An exposure of \SI{1320}{\kilo\tonne\mega\watt.years} is required to reach a $3 \sigma$ sensitivity for a \SI{75}{\percent} coverage of the \dcp{} parameter space.
+Assuming the reference design of a \SI{40}{\kilo\tonne} \gls{fd} complex and a \SI{1}{\mega\watt} beam results in a data-taking time of \SI{33}{years}.
 Therefore, a beam $> \SI{1}{\mega\watt}$ is required to reach the sensitivity goal earlier.
 
 \begin{figure}[htb]
@@ -493,8 +493,8 @@ Therefore, a beam $> \SI{1}{\mega\watt}$ is required to reach the sensitivity go
 	\caption[\glsentryshort{dune} \dcp{} sensitivity]{%
 		Expected sensitivity of \acrshort{dune} to determination of the neutrino mass ordering (hierarchy, left) and discovery of \acrshort{cp} violation, i.e.\ $\dcp \neq\ 0\ \m{or}\ \pi$, (right) as a function of exposure in \si{\kilo\tonne\mega\watt.years}, assuming equal running in neutrino and antineutrino mode, for a range of values for the \Pgne and \Pagne signal normalisation uncertainties from $\SI{5}{\percent}\oplus\SI{3}{\percent}$ to $\SI{5}{\percent}\oplus\SI{1}{\percent}$.
 		The sensitivities quoted are the minimum sensitivity for \SI{100}{\percent} of \dcp{} values in the case of mass ordering and \SI{75}{\percent} of \dcp{} values in the case of \acrshort{cp} violation.
-		The two bands on each plot represent a range of potential beam designs described in \cite{dune2}: the blue hashed band is for the reference design and the solid green band is for the optimized design.
-		For \acrshort{cp} violation sensitivities, true mass ordering is assumed to be normal but unknown.
+		The two bands on each plot represent a range of potential beam designs described in \cite{dune2}: the blue hashed band is for the reference design and the solid green band is for the optimised design.
+		For \acrshort{cp} violation sensitivities true mass ordering is assumed to be normal but unknown.
 		Taken from~\cite{dune2}.
 	}
 	\label{fig:nu-detection_dune-sens}
@@ -506,7 +506,7 @@ In particular the second number has a significant influence on sensitivity.
 A detailed explanation of this is out of the scope of this work and can be found in~\cite{dune2}.
 Precise constraints of neutrino flux rate and shape by means of a \gls{nd} (in addition to hadron measurements with replica targets) are needed to reach the quoted uncertainties.
 The \gls{nd} complex is placed at a distance of \SI{574}{\metre} downstream of the proton beam target.
-It is important to have a \gls{nd} component employing the same target material and detector technology as the \gls{fd}, i.e.\ a \lartpc{} to eliminate the introduction of further extrapolation uncertainties.
+It is important to have a \gls{nd} component employing the same target material and detector technology as the \gls{fd}, i.e.\ a \lartpc{}, to eliminate the introduction of further extrapolation uncertainties.
 
 \lartpc{}s are slow detectors, as will be explained in Chapter~\ref{chap:lartpc}.
 This is problematic in the high-multiplicity \gls{nd} environment of \dune{}.

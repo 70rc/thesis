@@ -2,12 +2,12 @@
 \label{chap:nu-detection}
 
 Neutrino physics has seen an outstanding progress from first detection \num{60}~years ago to planned huge experiments in the near future.
-This chapter will give an overview of the history of neutrino detectors, describe the current state of the field and then introduce the most relevant physics.
+This chapter will give an overview of the history of neutrino detectors, describe the current state of the field, and then introduce the most relevant physics.
 
 \section{History}
 In 1914 Chadwick proved that the energy spectrum of the $\beta$-decay was continuous~\cite{contBeta}.
-As an explanation for this Wolfgang Pauli in 1930 proposed a new neutral, weakly interacting fermion to the \emph{Radioactive Ladies and Gentlemen}~\cite{pauliLetter}, which he called the \emph{neutron}.
-However, the same Chadwick in 1932 discovered the particle we today call neutron~\cite{neutron}.
+To explain this Wolfgang Pauli proposed the \emph{neutron}, a neutral weakly interacting fermion, to the \emph{Radioactive Ladies and Gentlemen} of the Tübingen conference on radioactivity in 1930~\cite{pauliLetter}.
+However, the same Chadwick discovered the particle we today call neutron in 1932~\cite{neutron}.
 Upon this Fermi proposed the name \emph{neutrino} and a little later came up with a new theory for $\beta$-decay~\cite{betaDecay}.
 
 It took almost another quarter of a century until the neutrino was experimentally detected for the first time by Reines and Cowan in 1956~\cite{reinesCowan}.
@@ -19,15 +19,16 @@ They built a detector for the reaction
 and placed it next to a nuclear reactor on the Savannah River Site in South Carolina, USA.
 It consisted of two water tanks sandwiched in between three liquid scintillator tanks with \glspl{pmt} on the sidewalls.
 The water was the target to induce the above reaction while the scintillator tanks had the task of detecting the resulting positron and neutron.
-A free positron slows down in matter and eventually gets captured by a shell electron which produces two back-to-back photons with an energy of \SI{511}{\kilo\electronvolt} each.
-These produce scintillation light in the two adjacent tanks and thus can be detected by forming a coincidence of the \glspl{pmt} of the two tanks.
-Neutron detection is achieved by doping the water target with cadmium which captures the free neutrons producing multiple photons that can again be detected using the coincidence of the two adjacent scintillator tanks.
-The neutron capture is much slower than the positron one.
-Therefore, the process from Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector consisting of a pulse with a lower amplitude from the positron capture and another one with a higher amplitude from the neutron capture a few \si{\micro\second} later.
+A free positron slows down in matter and eventually gets captured by a shell electron, producing two back-to-back photons with an energy of \SI{511}{\kilo\electronvolt} each.
+These produce scintillation light in the two adjacent tanks and thus can be detected by forming a coincidence between \glspl{pmt} of the two tanks.
+Neutron detection is achieved by doping the water target with cadmium which captures the free neutrons.
+This produces multiple photons that can again be detected using the coincidence of the two adjacent scintillator tanks.
+Neutron capture is much slower than positron capture.
+Therefore, the process in Equation~\eqref{eq:nu-detection_reinesCowan} produces a very distinct signal in the detector: a low-amplitude pulse from the positron capture followed by a high-amplitude pulse from the neutron capture a few \si{\micro\second} later.
 Backgrounds can be efficiently rejected employing this technique.
 The drawback is that detection is limited to the \Pagne interaction in Equation~\eqref{eq:nu-detection_reinesCowan}.
 
-In 1962, Lederman et al.\ proved the existence of the \Pgngm at the \gls{ags} at \gls{bnl} in New York, USA~\cite{numu}.
+In 1962 Lederman et al.\ proved the existence of the \Pgngm at the \gls{ags} at \gls{bnl} in New York, USA~\cite{numu}.
 For the first time, they produced \Pgngm using an accelerator.
 The protons from the \gls{ags} were guided onto a beryllium target producing pions which in turn decay according to
 \begin{IEEEeqnarray}{C}
@@ -40,16 +41,16 @@ They were placed behind a \SI{13.5}{\metre} wall of iron shielding used to stop 
 
 A spark chamber consists of several parallel conducting plates immersed in a counting gas, typically a mixture of helium and neon.
 Every other plate is connected to a pulsed \gls{hv} power supply while the rest are grounded.
-At either end of the stack, triggering detectors (usually scintillators coupled to \glspl{pmt}) are placed.
-When two coinciding signals from these are received, a \gls{hv} pulse is applied to the plates.
+Triggering detectors (usually scintillators coupled to \glspl{pmt}) are placed at either end of the stack.
+Whenever two coinciding signals from these are received, a \gls{hv} pulse is applied to the plates.
 If this happens fast enough ($\sim{\SI{10}{\micro\second}}$), a spark forms along the electric field lines where the counting gas has been ionised by the incident particle(s).
-The amplitude and the duration of the \gls{hv} pulse need to be carefully tuned in order to reach the threshold of spark formation but to prevent random sparks on sharp edges and spacers etc.
+Amplitude and duration of the \gls{hv} pulse need to be carefully tuned in order to reach the threshold of spark formation but prevent random sparks on sharp edges and spacers etc.
 A gas amplification of \numrange{e8}{e9} is required to achieve this.
 Furthermore, the rising edge of the \gls{hv} pulse needs to be extremely short ($\sim{\SI{1}{\nano\second}}$).
-If it was too long, it would drift the ionised track towards the electrodes before the field is high enough to initiate a discharge.
+If it is too long, it drifts the ionised track towards the electrodes before the field is high enough to initiate a discharge.
 Switching \gls{hv} at this speed is not easy.
-Additionally, spark chambers have quite high dead times of $\sim{\SI{100}{\milli\second}}$ which is needed for the ionisation charge to clear.
-A \emph{clearing field} or an electronegative quenching gas additive can be used to speed up this process~\cite{grupen}.
+Additionally, spark chambers require quite high dead times of $\sim{\SI{100}{\milli\second}}$ to clear the ionisation charge.
+A \emph{clearing field} or an electronegative quenching gas additive can be used to speed up this process.
 
 In the 1960s, after Davis had failed to measure the lepton-number-violating reaction
 \begin{IEEEeqnarray}{C}
@@ -61,47 +62,48 @@ he decided to replace reactor \Pagne with solar \Pgne and measure
 	\HepProcess{\Pgne\ce{^{37}Cl} \to \Pem\ce{^{37}Ar}}
 \end{IEEEeqnarray}
 instead~\cite{homestake68, homestake98}.
-Surprisingly, they measured a flux approximately on third lower than predicted by the \gls{ssm}.
-This result became famous as the solar neutrino problem only to be resolved more than \num{30} years later by the \gls{sno}.
+Surprisingly, they measured a flux approximately one third lower than predicted by the \gls{ssm}.
+This result became famous as the solar neutrino problem, only to be resolved more than \num{30} years later by the \gls{sno}.
 Davis' experiment was located \SI{1478}{\metre} (\SI{4200}{\metre} water equivalent) underground in the Homestake Gold Mine in South Dakota, USA.
 The detector consisted of a tank filled with \SI{615}{\tonne} of tetrachloroethylene, \ce{C_2Cl_4}.
 As opposed to the two experiments above, this was a \emph{radiochemical} detector which can only detect neutrino interactions offline.
 According to Equation~\eqref{eq:nu-detection_homestake}, an incident neutrino converts one of the chlorine atoms in the detector into an unstable argon isotope.
-After exposure, the tank is purged by pumping helium gas through the liquid which extracts the argon isotopes.
-In order for this to work, a certain amount of \ce{^{36}Ar} is introduced into the tank as a carrier.
-Through a sophisticated system, the argon is purified and finally, its \ce{^{37}Ar} content is measured in a \emph{proportional counter}.
-By counting the number of decaying argon isotopes and extrapolating using its half-life of \num{35} days, it is possible to calculate the number of neutrino interactions during the exposure.
+After exposure, the tank is purged by pumping helium gas through the liquid to extract the argon isotopes.
+In order for this to work a certain amount of \ce{^{36}Ar} is introduced into the tank as a carrier.
+Through a sophisticated system the argon is purified, and finally its \ce{^{37}Ar} content is measured in a \emph{proportional counter}.
+By counting the number of decaying argon isotopes and extrapolating using its half-life of \num{35} days it is possible to calculate the number of neutrino interactions during the exposure.
 
 A proportional counter is a container with two electrodes (usually a cylinder with a wire in its centre) filled with a counting medium (usually gaseous).
 Incident charged particles ionise the counting medium---neutral particles can be detected if they first produce charged particles via interaction with matter in or surrounding the detector.
 If an electric field is applied to the electrodes, the produced electron-ion pairs are separated and drift towards the corresponding electrode.
-By reading out the current on the electrodes, one can measure the amount of ionisation produced inside the detector.
+By reading out the current on the electrodes one can measure the amount of ionisation produced inside the detector.
 Usually, the anode is read out because the drift velocity of electrons in an electric field is much higher than the one of ions.
 If the ionisation charge is simply drifted towards the electrodes, the detector is in fact an ionisation counter rather than a proportional counter.
 The problem is that the charge produced by the ionisation is very low and the current detector needs to be very sensitive.
-By increasing the voltage across the electrodes, the sensitivity can be improved.
-If the field inside the counter is above a certain threshold, the drifting ionisation electrons become energetic enough to ionise the counting medium themselves and thus, start an avalanche and produce more charge.
-In the appropriate voltage range, the produced charge is still proportional to the primary ionisation charge, thus the name proportional counter.
+Sensitivity can be improved by increasing the voltage across the electrodes.
+If the field inside the counter is above a certain threshold, the drifting ionisation electrons become energetic enough to ionise the counting medium themselves and thus start an avalanche that produces more charge.
+In the appropriate voltage range the produced charge is still proportional to the primary ionisation charge, hence the name proportional counter.
 The voltage can be raised further to enter the Geiger regime where the avalanches produce \gls{uv} photons in addition to the ionisation.
 These \gls{uv} photons travel independently of the electric field and can start new avalanches via the photoelectric effect.
 The process can only be stopped by quenching the discharge either electrically (temporary voltage reduction) or chemically (quenching additive).
 
-While the Homestake experiment provided a clean way of counting \Pgne interactions, it provided no information on the timing, direction and kinematics of the interaction.
+While the Homestake experiment provided a clean way of counting \Pgne interactions, it provided no information on timing, direction and, kinematics.
 Only a lower energy threshold is given by the reaction in Equation~\eqref{eq:nu-detection_homestake}.
 Due to this, it was not possible to tell which reaction chain in the sun the detected neutrinos originated from.
 Furthermore, care needs to be taken for a very good understanding of all background processes that can produce \ce{^{37}Ar} or its signature in the counting tube.
-Finally, this experiment was only capable of detecting \Pgne, a limitation that proved to be crucial in the solution of the solar neutrino problem; oscillation.
+Finally, this experiment was only capable of detecting \Pgne, a limitation that proved to be crucial in the solution of the solar neutrino problem: oscillation.
 
-In 1988, the \gls{kamiokande}, in the Kamioka mine in Japan, and the \gls{imb} detector~\cite{imb}, in a Morton Salt mine in Ohio, USA, found a similar deficiency in atmospheric neutrinos which actually were a background for the original experiments looking for proton decays.
+In 1988, the \gls{kamiokande}, in the Kamioka mine in Japan, and the \gls{imb} detector~\cite{imb}, in a Morton Salt mine in Ohio, USA, found a similar deficiency in atmospheric neutrinos.
+These were actually a background for the original experiments looking for proton decays.
 Atmospheric neutrinos are produced in a similar fashion to Lederman et al.\ in their muon neutrino beam experiment.
-Cosmic rays strike the Earth atmosphere and produce secondary particles many of which are pions, in turn, decaying according to Equation~\eqref{eq:nu-detection_pion-decay}.
+Cosmic rays strike the Earth's atmosphere and produce secondary particles many of which are pions subsequently decaying according to Equation~\eqref{eq:nu-detection_pion-decay}.
 Thus, atmospheric neutrinos are mainly \Pgngm/\Pagngm.
-However, the muon neutrino flux measured by \gls{kamiokande} was only \SI{59+-7}{\percent} of the one predicted by Monte Carlo simulations~\cite{kamiokandeAtmos}.
+\gls{kamiokande} measured a muon neutrino flux of only \SI{59+-7}{\percent} of the value predicted by simulations~\cite{kamiokandeAtmos}.
 After an upgrade (\gls{kamiokande}-\Romannum{2}), the collaboration furthermore confirmed the solar neutrino problem discovered by the Homestake experiment~\cite{kamiokandeSolar}.
 The detector was a \SI{3000}{\tonne} water tank equipped with \num{1000} \glspl{pmt} to detect \emph{Cherenkov} radiation produced by incoming charged particles.
 
-Upon passage of a charge particle, the atoms of the medium become electric dipoles by means of polarisation.
-If the velocity of the incident particle $v$ is greater than the the speed of light inside the medium $\frac{c}{n}$, defined by the refractive index $n$, this polarisation is not symmetric anymore, resulting in a non-vanishing dipole moment.
+Upon passage of a charge particle the atoms of the medium become electric dipoles by means of polarisation.
+If the velocity of the incident particle $v$ is greater than the speed of light inside the medium $\frac{c}{n}$, defined by the refractive index $n$, this polarisation is not symmetric anymore, resulting in a non-vanishing dipole moment.
 A characterisitic cone-shaped radiation in the direction of the particle is the result.
 The half opening angle of the cone is given by
 \begin{IEEEeqnarray}{rCl}
@@ -112,11 +114,11 @@ and the radiation spectrum is
 	\dv{N}{x} & = & 2 \pi \alpha z ^ 2 \int_{\lambda_1}^{\lambda_2} \qty(\frac{\sin(\theta_{\m{c}} \qty(\lambda))}{\lambda}) ^ 2 \dd{\lambda} \qc
 \end{IEEEeqnarray}
 with the number of Cherenkov photons $N$, path length $x$, fine-structure constant $\alpha$, and electric charge of the particle $z$.
-By recording the ring produced by this cone with light detectors, it is possible to determine the timing, direction, momentum and type of the incident charged particle within certain restrictions.
-Often employed detection media include water and oil while the photodetectors are usually \glspl{pmt}~\cite{grupen}.
+By recording the ring produced by this cone with light detectors it is possible to determine timing, direction, momentum, and type of the incident charged particle within certain restrictions.
+Often employed detection media include water and oil while the photodetectors are usually \glspl{pmt}.
 
 The charged particles detectable by a Cherenkov detector can be produced by neutrinos in multiple ways.
-Here, only the two most important processes shall be introduced, a more detailed description will be given in Section~\ref{sec:nu-detection_interactions}.
+Only the two most important processes are introduced here, a more detailed description will be given in Section~\ref{sec:nu-detection_interactions}.
 Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all three flavours can interact with nucleons according to
 \begin{IEEEeqnarray}{Cl}
 	\label{eq:nu-detection_CC-nu}
@@ -125,8 +127,8 @@ Analogously to Equation~\eqref{eq:nu-detection_reinesCowan}, neutrinos of all th
 	\HepProcess{\Pagnl\Pp \to \Plp\Pn} & \qc
 \end{IEEEeqnarray}
 with $\Pl = \Pe, \Pgm, \Pgt$.
-It should be noted however, that usually \Pgt leptons are too short-lived and heavy to produce enough Cherenkov radiation to be detected.
-A second interaction path of neutrinos with matter is the scattering off shell electrons according to
+It should be noted however that \Pgt leptons are usually too short-lived and heavy to produce enough Cherenkov radiation to be detected.
+A second interaction path of neutrinos with matter is scattering off shell electrons according to
 \begin{IEEEeqnarray}{Cl}
 	\label{eq:nu-detection_NC-nu}
 	\HepProcess{\Pgnl\Pem \to \Pgnl\Pem} & \qand \\
@@ -135,15 +137,16 @@ A second interaction path of neutrinos with matter is the scattering off shell e
 \end{IEEEeqnarray}
 If the neutrino momentum is high enough, the electron recoil can be detected by a Cherenkov detector for all three flavours.
 
-While registering timing and directionality in addition to being able to detect and distinguish \Pgne and \Pgngm was a huge improvement over the radiochemical Homestake experiment, Cherenkov detectors still suffer from some deficiencies in particle identification.
+Registering timing and directionality in addition to being able to detect and distinguish \Pgne and \Pgngm was a huge improvement over the radiochemical Homestake experiment.
+Still, Cherenkov detectors suffer from some deficiencies in particle identification.
 One of them is that they can only detect charged particles with sufficient momentum to produce Cherenkov radiation rather than detecting the whole event topology.
 The detector cannot distinguish between processes producing the same ring signature.
-An important example is a \Pgpz produced by a \Pgngm which produces a signal in a Cherenkov detector very similar to the one of a \Pgne.
+An important example is a \Pgpz produced by a \Pgngm, inducing a signal in a Cherenkov detector very similar to the one of a \Pgne.
 This is a crucial background for neutrino oscillation experiments.
 
 Super-\gls{kamiokande}, the \SI{50}{\kilo\tonne} successor of \gls{kamiokande}, solved the atmospheric neutrino problem in 1998~\cite{superKAtmos1, superKAtmos2}.
-It measured the flavour ratio of the atmospheric neutrino flux as a function of the zenith angle.
-The ratio of the number of upward to downward muon-like events was found to be $\approx\SI{50}{\percent}$ while from Monte Carlo simulations it was expected to be $\approx\SI{100}{\percent}$.
+It measured the flavour ratio of the atmospheric neutrino flux as a function of zenith angle.
+The number ratio of upward to downward muon-like events was found to be $\approx\SI{50}{\percent}$ while from Monte Carlo simulations it was expected to be $\approx\SI{100}{\percent}$.
 This result suggested a dissappearance of \Pgngm via neutrino oscillations for atmospheric neutrinos that travelled along the much longer baseline through the Earth.
 
 The solar neutrino problem was solved in 2002 by \gls{sno}, in the INCO Ltd.\ Creighton Mine in Ontario, Canada~\cite{snoSolar}.
@@ -157,34 +160,35 @@ Its use of heavy water (\ce{D_2O}) allowed it to detect neutrinos flavour-indepe
 \end{IEEEeqnarray}
 in addition to the interaction channels detectable by light water Cherenkov detectors given by Equations \eqref{eq:nu-detection_CC-nu}, \eqref{eq:nu-detection_CC-antinu}, \eqref{eq:nu-detection_NC-nu}, and \eqref{eq:nu-detection_NC-antinu}.
 For this to work, the emerging neutron needs to be detected which was achieved using \ce{^3He}-filled proportional counters inside the heavy water tank.
-The additional neutrino detection channel allowed \gls{sno} to prove that only the solar \Pgne flux is below the predictions by the \gls{ssm} while the combined flux of all three flavours is consistent with the model, providing direct evidence for neutrino oscillation.
+The additional neutrino detection channel allowed \gls{sno} to prove that only the solar \Pgne flux is below the predictions by the \gls{ssm} while the combined flux of all three flavours is consistent with the model.
+This was a direct evidence for neutrino oscillation.
 
-The \Pgngt was first detected by the \gls{donut} experiment at \gls{fail} in Illinois, USA, in 2001~\cite{donut}.
+The \Pgngt was first detected by the \gls{donut} experiment at \gls{fail} in Illinois, USA in 2001~\cite{donut}.
 Similarly to the \Pgngm discovery, a neutrino beam was produced by shooting \SI{800}{\giga\electronvolt} protons from the Tevatron onto a tungsten beam dump.
 The \Pgngt were detected via the interactions described by Equations~\eqref{eq:nu-detection_CC-nu} and~\eqref{eq:nu-detection_CC-antinu} for $\Pl = \Pgt$.
-Therefore, it was required to detect very short-lived \Pgt requiring a detector with a very good spatial resolution.
+Therefore, it was required to detect very short-lived \Pgt, requiring a detector with a very good spatial resolution.
 
 \emph{Nuclear emulsions} were chosen as the core component of the detector.
 They consist of fine-grained ($\sim \SI{0.1}{\micro\metre}$) silver-halide crystals (\ce{AgBr} and/or \ce{AgCl}) embedded in a gelatine substrate.
 Ionisation by passing charged particles causes some of the silver-halide molecules to be reduced to metallic silver.
 A subsequent development process reduces the silver-halide crystals, preferentially affecting those microcrystals already disturbed and partly reduced by the ionisation.
-Finally, the remaining crystals are dissolved in the fixation process leaving a stable image of elemental silver particles along the ionisation tracks.
-These charge images can be digitised using \gls{ccd} cameras attached to computer controlled microscopes.
-Pattern recognition accelerated by \glspl{gpu} can be employed for event reconstruction.~\cite{grupen}
+Finally, the remaining crystals are dissolved in the fixation process, leaving a stable image of elemental silver particles along the ionisation tracks.
+These charge images can be digitised using \gls{ccd} cameras attached to computer-controlled microscopes.
+Pattern recognition accelerated by \glspl{gpu} can be employed for event reconstruction.
 
-The spatial resolution of the emulsion is limited by the size of the crystals.
-On the other hand, they need to have a certain size in order for ionising particles to be able to reduce enough silver-halide molecules to create a track inside the emulsion.
+The spatial resolution of emulsions is limited by crystal size.
+On the other hand, the crystals need to have a certain size in order for ionising particles to be able to reduce enough silver-halide molecules to create a track inside the emulsion.
 A compromise needs to be found based on the experimental requirements.
-Typically the spatial resolution is $\approx \SI{2}{\micro\metre}$.
+Typically, the spatial resolution is $\approx \SI{2}{\micro\metre}$.
 The price for the high resolution is that emulsions are an offline detector that cannot be triggered or vetoed.
-An external tracking detector (scintillating fibres in the case of \gls{donut}) are required to record event timing.
+An external tracking detector (scintillating fibres in the case of \gls{donut}) is required to record event timing.
 Its data needs to be matched to the emulsion data before the actual analysis.
 
 Nowadays, the concept of neutrino oscillation is well-established and characterised by the Daya~Bay~\cite{dayabayRecent}, \gls{t2k}~\cite{t2kOsc}, \gls{kamland}~\cite{kamland}, \gls{sno}, Super-\gls{kamiokande}, \gls{opera}~\cite{opera}, and many other experiments.
-Daya Bay and \gls{kamland} essentially employ the same technique as Reines and Cowan to look for disappearance of nuclear reactor \Pagne.
-The only difference being that instead of using multiple scintillator tanks in coincidence, they use one big tank shielded and vetoed by water and/or mineral oil Cherenkov detectors.
+Daya Bay and \gls{kamland} employ the same technique as Reines and Cowan to look for disappearance of nuclear reactor \Pagne.
+The only difference being that they use one big scintillator tank shielded and vetoed by water and/or mineral oil Cherenkov detectors instead of multiple tanks in coincidence.
 \gls{t2k} directs a \Pgngm beam similar to the one of Lederman et al.\ towards Super-\gls{kamiokande} to look for \Pgngm disappearance and \Pgne appearance over a long baseline.
-In particular, Daya Bay and \gls{t2k} measured a non-zero $\theta_{13}$ mixing angle which enables a potential discovery of \gls{cp} violation in the lepton sector via neutrino oscillation in matter (see Section~\ref{sec:nu-detection_osc}).
+In particular, Daya Bay and \gls{t2k} measured a non-zero $\theta_{13}$ mixing angle, enabling a potential discovery of \gls{cp} violation in the lepton sector via neutrino oscillation in matter (see Section~\ref{sec:nu-detection_osc}).
 \gls{opera} used an emulsion detector similar to the one of \gls{donut} to observe \Pgngt appearance in a \Pgngm beam.
 
 

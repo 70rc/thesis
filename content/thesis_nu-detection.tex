@@ -527,11 +527,12 @@ It is for this reason that~\cite{dune2} does not mention a \gls{nd} \lar{} compo
 \begin{table}[htb]
 	\centering
 	\caption[\glsentryshort{dune} \glsentryshort{nd} event rates]{%
-		Estimated number of interactions per tonne of argon at the \acrshort{dune} \acrshort{nd} for approximately one month (\num{1e20}~\acrshort{pot}) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}, taken from~\cite{dune2}.
+		Estimated number of interactions per tonne of argon in the \acrshort{dune} \acrshort{nd} for approximately one month (\num{1e20}~\acrshort{pot}) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}.
 		Note that these rates are slightly different from the ones in Table~\ref{tab:nu-detection_beam-params}.
 		The reason for this is that the values below are outdated.
 		However, their order of magnitude is correct and no such detailed breakdown is available for the more recent values.
 		Therefore, they are presented as a rough estimate for the expected rates for the different interaction channels.
+		Taken from~\cite{dune2}.
 	}
 	\label{tab:nu-detection_nd-rates}
 	\begin{tabu} to \textwidth {llSS}
@@ -563,16 +564,16 @@ It is for this reason that~\cite{dune2} does not mention a \gls{nd} \lar{} compo
 \end{table}
 
 Neutrinos cannot be directly detected, they need to pass on some of their energy and momentum to secondary particles that can be detected, i.e.\ they need to interact with a detection medium.
-This chapter will give a brief overview of the different types of these interactions.
+This section will give a brief overview of the different types of these interactions.
 In general, neutrino interactions are divided into \gls{cc} and \gls{nc} mediated by charged (\PWpm) or neutral (\PZz) gauge bosons, respectively.
-In a \gls{cc} interaction, the neutrino is transformed into its corresponding charged lepton while it survives an \gls{nc} interaction.
+In a \gls{cc} interaction the neutrino is transformed into its corresponding charged lepton while it survives an \gls{nc} interaction.
 Furthermore, they can be subdivided according to the type of interaction into \gls{qe}, \gls{res}, \gls{dis}, and \gls{coh}.
 
 \gls{qe} is characterised by the reactions
 \begin{IEEEeqnarray}{C}
-	\HepProcess{\Pgnl\Pn \to \Plm\Pp} \qand \HepProcess{\Pagnl\Pp \to \Plp\Pn}
+	\HepProcess{\Pgnl\Pn \to \Plm\Pp} \qand \HepProcess{\Pagnl\Pp \to \Plp\Pn} \qc
 \end{IEEEeqnarray}
-and the kinematics are similar to that of an elastic collision, hence \gls{qe}.
+and the kinematics are similar to those of an elastic collision, hence \gls{qe}.
 Apparent from the equation above, this can only happen as a \gls{cc} interaction.
 
 The \gls{nc} equivalent is an actual elastic interaction of a neutrino with a target nucleon according to
@@ -582,25 +583,26 @@ The \gls{nc} equivalent is an actual elastic interaction of a neutrino with a ta
 
 \gls{res} involves the excitation of the involved nucleon to a resonant state, e.g.\
 \begin{IEEEeqnarray}{C}
-	\HepProcess{\Pgngm\Pp \to \Pgmm\HepParticle{\Delta}{}{++} \to \Pgmm\Pp\Pgpp}
+	\HepProcess{\Pgngm\Pp \to \Pgmm\HepParticle{\Delta}{}{++} \to \Pgmm\Pp\Pgpp} \qc
 \end{IEEEeqnarray}
 where the \HepParticle{\Delta}{}{++} resonance is too short-lived to be seen by the detectors.
 There are a lot of different \gls{res} interactions which all work in a similar manner.
 
-For \gls{dis}, the momentum transfer is high enough to destroy nucleon.
+In \gls{dis} the momentum transfer is high enough to destroy the nucleon.
 The neutrino detaches a quark which in turn starts to hadronise and form jets.
 The reactions are
 \begin{IEEEeqnarray}{C}
-	\HepProcess{\Pgnl\nucleon \to \Pl\particles} \qor \HepProcess{\Pgnl\nucleon \to \Pgnl\particles}
+	\HepProcess{\Pgnl\nucleon \to \Pl\particles} \qor \HepProcess{\Pgnl\nucleon \to \Pgnl\particles} \qc
 \end{IEEEeqnarray}
 where \nucleon{} is the target nucleon and \particles{} a group of hadrons.
-This reaction happens in a very similar manner to deep inelastic electron scattering off nucleons.
+They happen in a very similar manner to deep inelastic electron scattering off nucleons.
 
-In a \gls{coh} reaction, the opposite happens.
-The neutrino interacts with a target nucleus ($A$) as a whole but the latter is left intact as a spectator.
-Instead, another particle is produced alongside the corresponding lepton. An example reaction is
+In a \gls{coh} reaction the opposite happens.
+The neutrino interacts with a target nucleus \nucleus{} as a whole but the latter is left intact as a spectator.
+Instead, an additional particle is produced.
+An example reaction is
 \begin{IEEEeqnarray}{C}
-	\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz}
+	\HepProcess{\Pgngm\nucleus \to \Pgngm\nucleus\Pgpz} \qc
 \end{IEEEeqnarray}
 where a pion is produced from a muon neutrino interacting with a target nucleus.
 
@@ -703,22 +705,24 @@ For \gls{cc}, the individual contributions from \gls{res} and 1p1h+2p2h are show
 Interactions involving \glspl{mec} are important because they can mimic the detector response of \gls{cc} \gls{qe} events.
 
 \begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}
-	\caption[Neutrino interaction cross-section and beam fluxes]{%
-		Neutrino interaction cross-section per nucleon as a function of neutrino energy in \si{\giga\electronvolt}.
-		The cross-section is split into contributions from \acrshort{cc} and \acrshort{nc} interactions.
-		For \acrshort{cc}, the individual contribution from \acrshort{res} interactions is shown, as well as from the sum of 1p1h and 2p2h.
-		The latter two correspond to the \acrshort{qe} channel and interactions involving \acrshortpl{mec}, respectively.
-		Overlaid are the flux shapes of various beam experiments in arbitrary units.
-		The \acrshort{dune} flux is drawn for the optimised beam design with an \SI{80}{\giga\electronvolt} proton beam operating in neutrino mode.
-		Kindly provided by L.\ Pickering and C.\ Wilkinson~\cite{xsec_luke} with \acrshort{dune} flux information from L.\ Fields~\cite{lauraNDRates}.
-	}
-	\label{fig:nu-detection_xsec_flux}
+	\begin{minipage}{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}
+		\caption[Neutrino interaction cross-section and beam fluxes]{%
+			Neutrino interaction cross-section per nucleon as a function of neutrino energy, from the GENIE\footnote{\url{https://genie.hepforge.org}} neutrino event generator.
+			The cross-section is split into contributions from \acrshort{cc} and \acrshort{nc} interactions.
+			For \acrshort{cc} the individual contribution from \acrshort{res} interactions is shown, as well as from the sum of 1p1h and 2p2h.
+			The latter two correspond to the \acrshort{qe} channel and interactions involving \acrshortpl{mec}, respectively.
+			Overlaid are the flux shapes of various beam experiments in arbitrary units.
+			The \acrshort{dune} neutrino flux is drawn for the optimised beam design with an \SI{80}{\giga\electronvolt} proton beam.
+			Kindly provided by L.\ Pickering and C.\ Wilkinson~\cite{xsec_luke} with \acrshort{dune} flux information from L.\ Fields~\cite{lauraNDRates}.
+		}
+		\label{fig:nu-detection_xsec_flux}
+	\end{minipage}
 \end{figure}
 
-To better understand the meaning of Figure~\ref{fig:nu-detection_xsec_flux}, a brief explanation of the cross-section concept is given here.
-For a beam consisting of particles \particlea{} incident on a target made of particles \particleb{}, the rate of the interaction \HepProcess{\particlea\particleb \to \particles} is given by
+A brief explanation of the cross-section concept is given here to better understand the meaning of Figure~\ref{fig:nu-detection_xsec_flux}.
+For a beam consisting of particles \particlea{} incident on a target made of particles \particleb{} the rate of the interaction \HepProcess{\particlea\particleb \to \particles} is given by
 \begin{IEEEeqnarray}{rCl}
 	R_{\particles} & = & \phi_{\particlea} N_{\particleb} \sigma_{\particlea\particleb\particles} \qc
 \end{IEEEeqnarray}
@@ -727,8 +731,8 @@ Therefore, the cross-section
 \begin{IEEEeqnarray}{rCl}
 	\sigma_{\particlea\particleb\particles} & = & \frac{R_X}{\phi_{\particlea} N_{\particleb}}
 \end{IEEEeqnarray}
-is a measure for the interaction rate $R_{\particles}$ normalised by the number of both, beam and target, particles.
-As flux is given in units of inverse time and area, and interaction rate in inverse time, the cross-section needs to have the dimension of an area.
+is a measure for the interaction rate $R_{\particles}$ normalised by the number of both, beam and target particles.
+As flux is given in units of inverse time and area, and interaction rate in units of inverse time, the cross-section needs to have the dimension of an area.
 
 
 \section{Final State Detection}

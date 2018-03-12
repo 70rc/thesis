@@ -12,9 +12,9 @@ Finally, a new light collection system base on cold \glspl{sipm} coupled with a 
 \section{Study of Electric Breakdowns in \glsentrylong{lar}}
 \label{sec:studies_breakdown}
 
-During the commissioning and operation of the \AT{} experiment~\cite{AT} at \gls{help}, it was found that the dielectric strength of \lar{} was much lower~\cite{breakdown_14} than predicted by earlier studies~\cite{swan1, swan2}.
-Subsequently, a detailed study of dielectric breakdowns in \lar{} was conducted, including high-speed footage, current-voltage characteristics, and optical spectrometry.
-The results are presented in this section, they have been published in~\cite{breakdown_16}.
+During the commissioning and operation of the \AT{} detector demonstrator~\cite{AT} at \gls{help} it was found that the dielectric strength of \lar{} was much lower~\cite{breakdown_14} than predicted by earlier studies~\cite{swan1, swan2}.
+Subsequently, I conducted a detailed study of dielectric breakdowns in \lar{}, including high-speed footage, current-voltage characteristics, and optical spectrometry.
+The results are presented in this section, they have been published in a paper~\cite{breakdown_16}, of which I am corresponding author.
 
 \begin{figure}[htb]
 	\centering	
@@ -22,10 +22,10 @@ The results are presented in this section, they have been published in~\cite{bre
 	\includegraphics[width=0.39\textwidth]{hv/setup1_lowres}
 	\includegraphics[width=0.295\textwidth]{hv/setup2_lowres}
 	\caption[\glsentryshort{hv} test setup]{%
-		Experimental setup.
-		Left: \acrshort{hv} feed-through with the spherical cathode.
-		Middle: the feed-through before insertion into the cryostat.
-		1.~ground shield of the feed-through; 2.~ribbed \acrshort{petc} dielectric; 3.~cathode sphere; 4.~anode plate sitting on a tripod on the grounded bottom of the cryostat; two of the tripod legs are insulated while the third one contains a \SI{50}{\ohm} shunt resistor.
+		Experimental setup used for the breakdown studies.
+		Left: \acrshort{hv} feedthrough with spherical cathode.
+		Middle: feedthrough before insertion into the cryostat.
+		1.~ground shield; 2.~ribbed \acrshort{petc} dielectric; 3.~spherical cathode; 4.~anode plate sitting on a tripod on the grounded cryostat bottom; two of the tripod legs are insulated while the third one contains a \SI{50}{\ohm} shunt resistor.
 		Right: linear translation unit used to set the cathode-anode gap width~(5).
 	}
 	\label{fig:hv_setup1}
@@ -34,9 +34,9 @@ The results are presented in this section, they have been published in~\cite{bre
 The setup used in this study is very similar to the one described in~\cite{breakdown_14} and is shown in Figure~\ref{fig:hv_setup1}.
 A spherical cathode and a plane anode electrode form the discharge gap.
 Three different diameters of the cathode sphere were tested: \SIlist{4; 5; 8}{\centi\metre}.
-Two types of surface treatment were used in the cathode preparation, namely mechanical fine polishing and electro-polishing.
-For the anode, mechanical fine polishing was used for all measurements.
-The anode-cathode gap width can be set in the range of \SI{0}{\milli\metre} to \SI{100}{\milli\metre} with a precision of \SI{0.3}{\milli\metre}.
+Two types of surface treatment were used in the cathode preparation, namely mechanical fine-polishing and electro-polishing.
+For the anode mechanical fine-polishing was used for all measurements.
+The anode-cathode gap width can be set in the range of \SIrange{0}{100}{\milli\metre} with a precision of \SI{0.3}{\milli\metre}.
 An example of the field distribution in the setup is shown in Figure~\ref{fig:hv_efield}.
 The field map was calculated using the COMSOL \gls{fem} package\footnote{\url{https://www.comsol.com}}.
 
@@ -44,24 +44,23 @@ The field map was calculated using the COMSOL \gls{fem} package\footnote{\url{ht
 	\centering	
 	\includegraphics[width=\textwidth]{hv/EField}
 	\caption[\glsentryshort{hv} test field map]{%
-		Calculated electric field amplitude map for the test setup with \SI{-100}{\kilo\volt} at the cathode and cathode-anode distance of \SI{1}{\centi\metre}.
+		Calculated electric field amplitude map for the test setup with \SI{-100}{\kilo\volt} at the cathode and a cathode-anode distance of \SI{1}{\centi\metre}.
 	}
 	\label{fig:hv_efield}
 \end{figure}
 
-The purity of the argon after filling was estimated with a small \gls{tpc} chamber (according to the method described in~\cite{2photonAbs}) to be $\sim{\SI{1}{ppb}}$ of oxygen-equivalent impurity concentration.
-More details of the setup can be found in~\cite{breakdown_14}.
+The argon purity after filling was estimated with a small \gls{tpc} (according to the method described in~\cite{2photonAbs}) to be $\sim{\SI{1}{ppb}}$ of oxygen-equivalent impurity concentration.
+More details on the setup can be found in~\cite{breakdown_14}.
 
 The control circuit of the \emph{Spellman SL130PN150} \gls{hv} \gls{psu}~\cite{hv_psu} outputs two low voltages proportional to the voltage and the current at the output, respectively.
-These voltages are recorded with a \emph{Tektronix DPO 3054} digital oscilloscope~\cite{hv_dpo}.
+These voltages are recorded with a \emph{Tektronix DPO 3054} digital oscilloscope~\cite{hv_dpo} controlled by a LabVIEW\footnote{\url{https://www.ni.com/labview}} program.
 The output polarity of the \gls{psu} can be switched by replacing the output \gls{hv} multiplier module.
-To measure the discharge current, a \SI{50}{\ohm} shunt resistor is placed between the anode plate and the vessel ground which is connected to the ground return of the \gls{psu}. The voltage drop across the shunt resistor is transmitted via a matched coaxial line to the oscilloscope.
-The latter is controlled by a LabVIEW program.
-The equivalent electric schematic of the setup is shown in Figure~\ref{fig:hv_scheme}. 
-The voltage at the $V_{\m{mon}}$ output of the power supply corresponds to the \gls{psu} output voltage divided by a factor $K_{\m{V}}$.
-The voltage at $I_{\m{mon}}$ is related to the \gls{psu} output current.
-However, according to the manufacturer of the \gls{psu}, an accurate reconstruction of the output current for frequencies above \SI{100}{\hertz} is not possible because of a filtering circuit in the current control loop.
-Therefore, for the measurement of the discharge current only the voltage drop across the shunt resistor is used.
+To measure the discharge current a \SI{50}{\ohm} shunt resistor is placed between the anode plate and the vessel ground, which is connected to the ground return of the \gls{psu}.
+The voltage drop across the shunt resistor is transmitted to the oscilloscope via a matched coaxial line.
+Figure~\ref{fig:hv_scheme} shows the equivalent electric schematic of the setup. 
+The voltage at the $V_{\m{mon}}$ output of the power supply corresponds to the \gls{psu} output voltage divided by a factor $K_{\m{V}}$; the voltage at $I_{\m{mon}}$ is related to the \gls{psu} output current.
+However according to the manufacturer of the \gls{psu}, an accurate reconstruction of the output current for frequencies above \SI{100}{\hertz} is not possible because of a filtering circuit in the current control loop.
+Therefore, only the voltage drop across the shunt resistor is used for the measurement of the discharge current.
 
 \begin{figure}[htb]
 	\centering
@@ -69,15 +68,15 @@ Therefore, for the measurement of the discharge current only the voltage drop ac
 	\caption[\glsentryshort{hv} test schematic]{%
 		Electric schematic of the experimental setup.
 		The oscilloscope is connected to the control circuit of the \acrshort{hv} power supply and to a shunt resistor on the ground return path.
-		From the recorded voltages, the voltage and the current of the discharge can be derived.
+		Discharge voltage and current can be derived from the recorded voltages.
 	}
 	\label{fig:hv_scheme}
 \end{figure}
 
 The oscilloscope is triggered by the channel connected to the shunt resistor.
 The breakdown discharge current is composed of the output current of the \gls{psu} and the discharge current of the setup capacitance $C_{\m{gap}}$ as $I_{\m{gap}} = I_{\m{out}} + C_{\m{gap}}\frac{\m{d}V_{\m{gap}}}{\m{d}t}$.
-To limit the \gls{psu} output current an additional resistor R$_{lim}$ is inserted into the \gls{hv} output circuit.
-The measured values for the circuit parameters are summarized in Table~\ref{tab:hv_table1}.
+To limit the \gls{psu} output current an additional resistor R$_{\m{lim}}$ is inserted into the \gls{hv} output circuit.
+The measured values for the circuit parameters are summarised in Table~\ref{tab:hv_table1}.
 The knowledge of these parameters allows to calculate the voltage across the gap during breakdown. 
 
 \begin{table}[htb]
@@ -101,20 +100,20 @@ The knowledge of these parameters allows to calculate the voltage across the gap
 In addition, the setup is equipped with an \emph{AOS Technologies S-PRI} high-speed camera~\cite{hv_camera} to observe the development of the discharge.
 The camera is capable of recording \num{700 x 400}~pixel \gls{rgb} images at \SI{1230}{fps}.
 The camera comprises a frame ring buffer and is triggerable by an external \gls{ttl} pulse.
-This allows a synchronous recording of the visual appearance of the discharge and its volt-ampere characteristics.
+This allows a synchronous recording of the visual appearance of the discharge and its current-voltage characteristics.
 The camera is triggered from the trigger output of the oscilloscope.
 The luminous part of the discharge is analysed for each frame of the recorded sequence.
 
-The camera is mounted above a \SI{5}{\centi\metre} diameter glass view port, located at the top flange of the cryostat and is looking downward.
-To observe a discharge from the side, a glass mirror plate is installed at the edge of the cathode plane located \SI{20}{\centi\metre} from the cathode, in such a way as to not perturb the electric field in the discharge gap. 
+The camera is mounted above a \SI{5}{\centi\metre} diameter glass view port, located at the top flange of the cryostat, and is looking downward.
+To observe a discharge from the side a glass mirror plate is installed at the edge of the cathode plane, located \SI{20}{\centi\metre} from the cathode in such a way as to not perturb the electric field in the discharge gap. 
 
-Finally, a custom built optical spectrometer is used to analyze the light emission of the discharges.
-The spectrometer is connected to an optical fiber entering the cryostat with its other end attached to the anode plate.
-The fiber is aligned such that its end directly faces the discharge gap resulting in a high angular acceptance.
+Finally, a custom built optical spectrometer is used to analyse the light emission of the discharges.
+The spectrometer is connected to an optical fibre entering the cryostat with its other end attached to the anode plate.
+The fibre is aligned such that its end directly faces the discharge gap resulting in a high angular acceptance.
 As will be shown later, the discharge emission spectra allow to better understand the processes at different stages of the discharge.
-This is due to the fact that the emission spectra of excited neutral atomic argon, singly-ionized and multiply-ionized atoms lay in different regions of the visible spectrum.
+This is due to the fact that the emission spectra of excited neutral, singly-ionised, and multiply-ionised argon atoms lay in different regions of the visible spectrum.
 
-The possibility of creating gas bubbles near the discharge gap is inhibited by keeping the pressure in the inner vessel at \SI{100}{\milli\bar} above atmospheric pressure, plus an additional \SI{100}{\milli\bar} due to the hydro-static pressure.
+The possibility of creating gas bubbles near the discharge gap is inhibited by keeping the pressure in the inner vessel at \SI{100}{\milli\bar} above atmospheric pressure, plus an additional \SI{100}{\milli\bar} due to the hydrostatic pressure.
 The outer bath is opened to the atmosphere, thus keeping the inner vessel temperature constant and well below the boiling point.
 No boiling was detected anywhere near the discharge gap region during the measurements.
 
@@ -128,13 +127,13 @@ No boiling was detected anywhere near the discharge gap region during the measur
 	\label{fig:hv_images}
 \end{figure}
 
-In earlier measurements~\cite{breakdown_14}, sporadic discharges were experienced across the ribs of the dielectric of the \gls{hv} feed-through.
-By rising the level of the \lar{} by about \SI{20}{\centi\metre}, it was possible to suppress these discharges completely.
-This improved the cooling of the feed-through and reduced bubble production near the bottom of the feed-through grounded shield, placed \SI{60}{\centi\metre} below the liquid surface. 
+In earlier measurements~\cite{breakdown_14} sporadic discharges were experienced across the ribs of the dielectric of the \gls{hv} feedthrough.
+It was possible to suppress these discharges completely by rising the level of the \lar{} by about \SI{20}{\centi\metre}.
+This improved the cooling of the feedthrough and reduced bubble production near the bottom of the feedthrough grounded shield, placed \SI{60}{\centi\metre} below the liquid surface. 
 
-The measurement campaign comprised \num{5}~runs with a total of more than \num{5000} measured discharges, with varying sphere diameter, surface treatment and polarity.
+The measurement campaign comprised \num{5}~runs with a total of more than \num{5000}~measured discharges, for various sphere diameters, surface treatments, and polarities.
 A summary is shown in Table~\ref{tab:hv_table2}.
-A typical recorded camera image sequence for breakdown from a \SI{5}{\centi\metre} diameter cathode at \SI{-100}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate is shown in Figure~\ref{fig:hv_images}.
+A typical recorded camera image sequence for a breakdown from a \SI{5}{\centi\metre} diameter cathode at \SI{-100}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate is shown in Figure~\ref{fig:hv_images}.
 The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{breakdown_16}\footnote{\url{https://arxiv.org/src/1512.05968v2/anc/movie1.webm}}.
 
 \begin{table}[htb]
@@ -161,38 +160,38 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 	\includegraphics[height=0.43\textheight]{hv/IVuncorr}\\
 	\includegraphics[height=0.43\textheight]{hv/IVcorr}
 	\caption[\glsentryshort{hv} test current-voltage characteristics]{%
-		Measured current through the gap (black) and voltage across the gap (magenta) for a typical breakdown at \SI{6.0}{\milli\metre} distance between a \SI{4}{\centi\metre} diameter cathode and the anode plate. The top plot shows the voltage obtained using the measured values of the protection resistor and the gap capacitance, while the bottom plot uses the tuned values.
+		Measured current through the gap (black) and voltage across the gap (magenta) for a typical breakdown at \SI{6.0}{\milli\metre} distance between a \SI{4}{\centi\metre} diameter cathode and the anode plate. The top plot shows the voltage obtained using the measured values of the protection resistor and the gap capacitance while the bottom plot uses the tuned values.
 	}
 	\label{fig:hv_iv}
 \end{figure}
 
-In Figure~\ref{fig:hv_iv}, the current and voltage features of a similar breakdown is shown from a \SI{4}{\centi\metre} diameter cathode at \SI{6.0}{\milli\metre} from the anode plate.
-The current was directly measured by observing the voltage drop across the shunt resistor, while the voltage was obtained by integrating the current taking into account the gap capacitance, the protection resistor and the output voltage of the power supply.
-When using the measured values of Table~\ref{tab:hv_table1} for capacitance and resistance, this results in a negative voltage at the end of most discharges.
-This is an unphysical result as can be seen in the top plot of Figure~\ref{fig:hv_iv}.
-This behavior may be attributed to poor knowledge of the effective values of the current-limiting resistor and the setup capacitance in the frequency domain of the discharge.
-In order to better approximate these parameters, they are tuned in such a way that the minimum voltage for a maximum number of discharges approaches zero.
-The best result was achieved by lowering the resistance by a factor of 1.7 and increasing the capacitance by the same factor.
+Figure~\ref{fig:hv_iv} shows the current and voltage features of a similar breakdown from a \SI{4}{\centi\metre} diameter cathode at \SI{6.0}{\milli\metre} from the anode plate.
+The current was directly measured by observing the voltage drop across the shunt resistor while the voltage was obtained by integrating the current, taking into account the gap capacitance, protection resistor, and output voltage of the power supply.
+Using the measured values of Table~\ref{tab:hv_table1} for capacitance and resistance results in a negative voltage at the end of most discharges.
+This is an unphysical result, as can be seen in the top plot of Figure~\ref{fig:hv_iv}.
+The behaviour may be attributed to poor knowledge of the effective values of the current-limiting resistor and the setup capacitance in the frequency domain of the discharge.
+In order to better approximate these parameters they are tuned in such a way that the minimum voltage approaches zero for a maximum number of discharges.
+The best result was achieved by lowering the resistance by a factor of \num{1.7} and increasing the capacitance by the same factor.
 Interestingly, this result leaves the $RC$ characteristics of the system unchanged.
 The bottom plot of Figure~\ref{fig:hv_iv} shows the result obtained by using the tuned values for capacitance and resistance.
 
-Most of the discharges are localized in the area of high field concentration between the tip of the sphere and the anode plane.
-However, in rare cases, the discharge is initiated far from that region, sometimes at the side surface of the sphere.
-An example of such a discharge is shown in Figure~\ref{fig:hv_side} and the corresponding movie can be found as \emph{movie2.webm} in the ancillary files of~\cite{breakdown_16}\footnote{\url{https://arxiv.org/src/1512.05968v2/anc/movie2.webm}}.
+Most of the discharges are localised in the area of high field concentration between the tip of the sphere and the anode plane.
+However, in rare cases the discharge is initiated far from that region, sometimes at the side surface of the sphere.
+An example of such a discharge is shown in Figure~\ref{fig:hv_side}, and the corresponding movie can be found as \emph{movie2.webm} in the ancillary files of~\cite{breakdown_16}\footnote{\url{https://arxiv.org/src/1512.05968v2/anc/movie2.webm}}.
 
 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=.75\textwidth]{hv/sidespark}
 	\caption[\glsentryshort{hv} test streamer image]{%
 		An image of the streamer stage of the discharge, initiated at the side surface of a \SI{5}{\centi\metre} cathode sphere at \SI{-121.5}{\kilo\volt} and \SI{8.0}{\milli\metre} apart from the anode plate.
-		The cone of electrons emitted into liquid from the streamer tip towards the anode (lower edge of the image) produces bright orange luminescence in \acrshort{lar}.
+		The cone of electrons emitted from the streamer tip towards the anode (lower edge of the image) produces a bright orange luminescence in \acrshort{lar}.
 	}
 	\label{fig:hv_side}
 \end{figure}
 
-As it was shown in \cite{FNAL-hv-paper, he-breakdown}, experimental data on breakdowns in liquefied noble gases suggest the following dependence for the maximum field at the breakdown: $E_{max}=C A^p$, where $C$ is a material-dependent constant, $A$ is the stressed area with an electric field intensity above \SI{90}{\percent} of its maximum, and $p\approx-0.25$.
-In Figure \ref{fig:hv_powerplot}, data available in literature is combined with those obtained from the measurements performed within the scope of this thesis as well with earlier measurements performed at \gls{help}.
-Each data point is the mean value of all measurements of one run taken at the same gap distance and therefore with the same stressed area.
+As was shown in \cite{FNAL-hv-paper, he-breakdown} experimental data on breakdowns in liquefied noble gases suggest the following dependence for the maximum breakdown field: $E_{\m{max}} = C A ^ p$, where $C$ is a material-dependent constant, $A$ is the stressed cathode area with an electric field intensity above \SI{90}{\percent} of its maximum, and $p \approx -0.25$.
+Figure \ref{fig:hv_powerplot} combines data available in literature with data obtained from the measurements of this thesis and earlier measurements performed at \gls{help}.
+Each data point is the mean value of all measurements of one run taken at the same gap distance and therefore stressed area.
 The global best fit gives the following values for the parameters: $C = \num{139 +- 5}$ and $p = \num{-0.22 +- 0.01}$.
 The statistical uncertainties represented by the error bars (smaller than the marker where not shown) are small compared to the unknown systematic uncertainties.
 Indications for this are the high spread of the points around the fit line and the high reduced chi-square of \num{7283}.
@@ -201,11 +200,11 @@ Indications for this are the high spread of the points around the fit line and t
 	\centering
 	\includegraphics[width=\textwidth]{hv/Area90-1}
 	\caption[\glsentryshort{hv} test breakdown field versus stressed cathode area]{%
-		Breakdown field versus stressed area of the cathode.
+		Breakdown field versus stressed cathode area.
 		The stressed area $A$ is defined as the area with an electric field intensity greater than \SI{90}{\percent} of the maximum electric field intensity in the gap.
 		The fit line represents the dependence $E_{max}=C A^p$ with $C = \num{139 +- 5}$ and $p = \num{-0.22 +- 0.01}$.
 		The colours correspond to different cathode sphere diameters while the marker styles correspond to different oxygen-equivalent impurity concentrations.
-		The data are taken from \cite{FNAL-hv-paper}~(\acrshort{fail}), \cite{breakdown_14}~(\acrshort{help}), and \cite{breakdown_16}~(this work).
+		Data taken from \cite{FNAL-hv-paper}~(\acrshort{fail}), \cite{breakdown_14}~(\acrshort{help}), and \cite{breakdown_16}~(this work).
 	}
 	\label{fig:hv_powerplot}
 \end{figure}
@@ -237,13 +236,13 @@ The energy needed for the excitation of the electrons to the 3p$^5$4p states fro
 The ionization potential of \lar{} is \SI{13.84}{\electronvolt}~\cite{2photonAbs}.
 For the condensed state, only the scintillation spectrum under ionization by high-energy charged particles has been described in literature so far~\cite{Heindl}.
 The electro-luminescence spectrum measured (blue curve in Figure~\ref{fig:hv_spectro}) exhibits a broad continuum, similar to the scintillation spectrum.
-However, the center value at about \SI{580}{\nano\metre} does not correspond to any of the electron transitions of neutral, singly- or doubly-ionized argon atoms.
+However, the center value at about \SI{580}{\nano\metre} does not correspond to any of the electron transitions of neutral, singly- or doubly-ionised argon atoms.
 The nearest candidate for such an emission is the residual oxygen with its strong \SI{557.7}{\nano\metre} emission line.
 However, if attributable to oxygen, this line has to also be observed at the later stages of the discharge, which does not take place in the measurements.
 
 The broad width of the spectrum could be explained by smearing the energy levels into bands due to inter-atomic interactions in liquid and by the formation of exciton clusters~\cite{Bernstorff, Foerstel}.
 If the energy band structure of excitons in \lar{} is continuous, as suggested by the scintillation spectrum, there might be a significant overlap of the band corresponding to the 3p$^5$4p atomic levels and the conduction band above \SI{13.84}{\electronvolt}.
-The presence of an observable emission at about \SI{580}{\nano\metre}, in this case, is inevitably linked to a presence of ionized states.
+The presence of an observable emission at about \SI{580}{\nano\metre}, in this case, is inevitably linked to a presence of ionised states.
 
 Another signature of avalanche ionization in this phase of the breakdown is the increase of the cone brightness as it develops from the cathode towards the anode.
 Figure~\ref{fig:hv_conexpo} shows this increase together with the fit avalanche multiplication parameter $\alpha = \SI{0.15 +- 0.03}{\per\milli\metre}$ for the following gap conditions: voltage across the \SI{7.0}{\milli\metre} gap $V = \SI{54.0}{\kilo\volt}$, cathode sphere diameter of \SI{4}{\centi\metre}, maximum field in the gap $E_{\m{max}} = \SI{96.1}{\kilo\volt\per\centi\metre}$, mean field in the gap $\expval{E} = \SI{87.0}{\kilo\volt\per\centi\metre}$.
@@ -269,7 +268,7 @@ Therefore, the ionization density in the gas bubble quickly rises along with the
 This leads to a decrease of the electric field in the close vicinity of the field emission point and to the suppression of a further growth of the field emission current.
 Accelerated electrons of the gas plasma hit the gas-liquid interface, forcing the bubble to elongate and grow.
 In the region behind the head of the streamer the filament is collapsed to a diameter below \SI{200}{\micro\metre} (the spatial resolution of the camera) by surface tension and electro-striction forces.
-This second phase of the discharge is characterized by the growth of the streamer-like filament in liquid.
+This second phase of the discharge is characterised by the growth of the streamer-like filament in liquid.
 In Figure~\ref{fig:hv_images} (frames \numrange{4}{10}), one can see the development of such a filament.
 Unlike the electrons in the first phase the filament does not follow the electrostatic field lines but it rather rambles around their direction, being subject to thermodynamic fluctuations at the tip of the growing streamer where the liquid-gas transition happens.
 The spectrum of the light emission from the streamer has a distinct line at about \SI{700}{\nano\metre}, a characteristic feature of the plasma in argon gas.
@@ -285,7 +284,7 @@ The spectrum of the light emission from the streamer has a distinct line at abou
 \end{figure}
 
 Finally, when the streamer reaches the anode a short peak of light emission is registered (frame \num{11} in Figure~\ref{fig:hv_images}) with the blue-green spectral component dominating (Figure~\ref{fig:hv_spectro_spark}).
-This phase is characterized by an acoustic shock and a massive production of gas bubbles in the region of the discharge.
+This phase is characterised by an acoustic shock and a massive production of gas bubbles in the region of the discharge.
 These effects are typical for an arc discharge in argon gas.
 The spectrum of the light emission in this phase  is shown in Figure~\ref{fig:hv_spectro_spark}. 
 
@@ -428,7 +427,7 @@ A study of the visible light emission by electrical breakdowns in \lar{} was per
 Three distinct discharge development phases were identified by observing the discharge appearance and the time development of the visible light emission.
 The dependence of several breakdown parameters on the critical field was also studied.
 For the first time, it was found that the streamer propagation velocity is about \SI{300}{\milli\metre\per\second} and independent of the field intensity.
-The streamer phase is characterized by a current peak between \SIlist{5; 15}{\milli\ampere} depending on the breakdown field, followed by a plateau at an approximately ten times lower current level.
+The streamer phase is characterised by a current peak between \SIlist{5; 15}{\milli\ampere} depending on the breakdown field, followed by a plateau at an approximately ten times lower current level.
 
 The deposition of a few hundred \si{\micro\metre} thick polyisoprene (latex) layer on the surface of a spheric stainless steel cathode immersed in \lar{} serves to efficiently suppress field emission of electrons from the cathode surface.
 As a result, significantly higher electric fields intensities can be reached for cathode-ground distances of several \si{\milli\metre}.

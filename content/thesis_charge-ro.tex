@@ -1,22 +1,22 @@
 \section{A More Robust Approach to \glsentryshort{tpc} Readout Wires}
 \label{sec:studies_cuoka}
 
-As outlined in Section~\ref{sec:lartpc_challenges}, classical wire readouts pose two big challenges to future \lartpc{}s: ambiguities and mechanical stability.
+As outlined in Section~\ref{sec:lartpc_challenges} classical wire readouts pose two big challenges to future \lartpc{}s: ambiguities and mechanical stability.
 A possible solution to the mechanical problems with wires is to not use actual wires but instead print thin coper tracks on a support structure.
-To investigate this solution, a proof of concept was performed at \gls{help}.
+I investigated this solution and provide a proof of concept in this section.
 
-In a classical wire readout plane, the induction signal is produce by drifting the charge through one or multiple induction wire grids.
-With the proposed scheme of copper tracks on a support structure, it is no longer possible for the charge to actually drift through the induction plane(s).
+In a classical wire readout plane the induction signal is produced by drifting the charge through one or multiple induction wire grids.
+With the proposed scheme of copper tracks on a support structure it is no longer possible for the charge to actually drift through the induction plane(s).
 Therefore, induction is only produced by the approach of the charge.
-One consequence of this is, that induction signals will no longer bi bipolar.
-As opposed to the classic design, the collection plane will even be in front of the induction plane(s).
+One consequence of this is that induction signals will no longer bi bipolar.
+As opposed to the classic design the collection plane will even be in front of the induction plane(s).
 This means that the charge can only approach the induction plane(s) until it is collected by the collection plane on the top layer of the support structure.
 That is why it is crucial to make the support structure as thin as possible in order to get induction signals as high as possible.
-Using a \gls{fr4} structure as in classical \gls{pcb} designs is therefore not a viable option.
+Using a \gls{fr4} structure as in classical \gls{pcb} designs is not a viable option.
 Very thin support structures can be provided by using a flexible \gls{pcb} made from Kapton instead of \gls{fr4}.
 These can be made as thin as a few \SI{10}{\micro\metre}.
-For this test, a Kapton layer of \SI{50}{\micro\metre} was used with a single induction plane on the back (Fig.~\ref{fig:cuoka_readout-plane}).
-The Kapton layer was supported by an \gls{fr4} frame for mounting on the \gls{tpc}.
+For this test a Kapton layer of \SI{50}{\micro\metre} was used with a single induction plane on the back (Fig.~\ref{fig:cuoka_readout-plane}).
+The Kapton layer is supported by an \gls{fr4} frame for mounting on the \gls{tpc}.
 
 \begin{figure}[htb]
 	\centering
@@ -28,9 +28,9 @@ The Kapton layer was supported by an \gls{fr4} frame for mounting on the \gls{tp
 \end{figure}
 
 The test was performed in a small vacuum-insulated double-bath cryostat with an inner volume of \SI{15}{\centi\metre} diameter and \SI{60.8}{\centi\metre} height.
-Prior to filling, the cryostat was evacuated using a turbo-molecular pump and then purged with argon gas and evacuated a second time.
-From earlier experiments~\cite{2photonAbs}, the purity can be assumed to be $\sim{\SI{1}{ppb}}$ after filling.
-The cryostat is sealed using rubber o-rings which lose tightness at cryogenic temperatures.
+Prior to filling the cryostat was evacuated using a turbo-molecular pump and then purged with argon gas and evacuated a second time.
+From earlier experiments~\cite{2photonAbs} the purity can be assumed to be $\sim{\SI{1}{ppb}}$ after filling.
+The cryostat is sealed using rubber O-rings, which lose tightness at cryogenic temperatures.
 Therefore, and due to the fact that no purification system was available, the purity degraded slowly in the course of the experiment.
 The \SI{8}{\centi\metre} long field cage consists of \num{8} copper rings of \SI{8}{\centi\metre} diameter terminated by a copper plate cathode.
 A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive divider.
@@ -48,31 +48,31 @@ The charge readout electronics were adopted from \AT{} without modifications.
 Charge signals are amplified by cryogenic charge amplifiers and then digitised at room temperature.
 More details can be found in Section~\ref{sec:studies_at-ro}.
 
-Because of the limited space inside the cryostat, no internal light triggering system could be used.
+No internal light triggering system could be used due to the limited space inside the cryostat.
 Instead, the digitisers were either triggered on one of the charge collection channels or by an external muon telescope.
 The latter was formed of two scintillator panels with \glspl{pmt} above and below the cryostat, respectively.
 Triggering directly on charge collection channels has the potential disadvantage of recording events only partially.
 If the triggering channel does not receive the first charge pulse of the event, all earlier pulses are lost, unless the \gls{daq} implements a pre-trigger ring buffer of sufficient size.
 It is therefore preferable to trigger on the external muon telescope.
 
-Using the above-described setup, cosmic muons were recorded over the course of multiple hours.
+Using the above-described setup cosmic muons were recorded over the course of multiple hours.
 A typical event is depicted in Figure~\ref{fig:cuoka_event}.
-It can be seen that due to the event being almost parallel to the induction strips, the induction signal is in fact stronger than the collection signal.
+It can be seen that due to the event being almost parallel to the induction strips the induction signal is in fact stronger than the collection signal.
 The reason for the bad \gls{snr} is improper grounding of the setup and high noise levels in the lab from the nearby train station and air conditioning.
-Due to time constraints and an upcoming test of a pixelated readout described in Chapter~\ref{chap:dune-nd}, no analysis was performed on this data.
+No further analysis was performed on this data due to time constraints and the upcoming test of a pixelated readout described in Chapter~\ref{chap:dune-nd}.
 Anyhow, the fact that cosmic muons could be seen using this setup proves that there is no inherent problem with having the induction plane a few \SI{10}{\micro\metre} behind the collection plane.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{cuoka/muon_event}
 	\caption[Copper on Kapton test muon event]{%
-		Muon event recorded using the copper on Kapton readout.
+		Cosmic muon event recorded using the copper on Kapton readout.
 	}
 	\label{fig:cuoka_event}
 \end{figure}
 
 While this technique can potentially solve the mechanical problems of classical wire readouts, it does not reduce the ambiguities inherent to \gls{2d} projective readouts outlined in Section~\ref{sec:lartpc_challenges}.
-Because of this, it was decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for \lartpc{}s providing real \gls{3d} data.
+Therefore, I decided not to further investigate copper on Kapton readouts and instead focus on pixelated readouts for \lartpc{}s, providing real \gls{3d} data.
 
 
 \section{Pixelated Charge Readouts}

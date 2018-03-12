@@ -59,7 +59,7 @@ To measure the discharge current a \SI{50}{\ohm} shunt resistor is placed betwee
 The voltage drop across the shunt resistor is transmitted to the oscilloscope via a matched coaxial line.
 Figure~\ref{fig:hv_scheme} shows the equivalent electric schematic of the setup. 
 The voltage at the $V_{\m{mon}}$ output of the power supply corresponds to the \gls{psu} output voltage divided by a factor $K_{\m{V}}$; the voltage at $I_{\m{mon}}$ is related to the \gls{psu} output current.
-However according to the manufacturer of the \gls{psu}, an accurate reconstruction of the output current for frequencies above \SI{100}{\hertz} is not possible because of a filtering circuit in the current control loop.
+However, according to the manufacturer of the \gls{psu} an accurate reconstruction of the output current for frequencies above \SI{100}{\hertz} is not possible because of a filtering circuit in the current control loop.
 Therefore, only the voltage drop across the shunt resistor is used for the measurement of the discharge current.
 
 \begin{figure}[htb]
@@ -160,7 +160,8 @@ The movie can be found as \emph{movie1.webm} in the ancillary files of~\cite{bre
 	\includegraphics[height=0.43\textheight]{hv/IVuncorr}\\
 	\includegraphics[height=0.43\textheight]{hv/IVcorr}
 	\caption[\glsentryshort{hv} test current-voltage characteristics]{%
-		Measured current through the gap (black) and voltage across the gap (magenta) for a typical breakdown at \SI{6.0}{\milli\metre} distance between a \SI{4}{\centi\metre} diameter cathode and the anode plate. The top plot shows the voltage obtained using the measured values of the protection resistor and the gap capacitance while the bottom plot uses the tuned values.
+		Measured current through the gap (black) and voltage across the gap (magenta) for a typical breakdown at \SI{6.0}{\milli\metre} distance between a \SI{4}{\centi\metre} diameter cathode and the anode plate.
+		The top plot shows the voltage obtained using the measured values of the protection resistor and the gap capacitance while the bottom plot uses the tuned values.
 	}
 	\label{fig:hv_iv}
 \end{figure}
@@ -211,7 +212,7 @@ Indications for this are the high spread of the points around the fit line and t
 
 Figure~\ref{fig:hv_spectro} shows the recorded spectra of a typical event.
 The spectra are integrated over \SI{1}{\milli\second} and approximately correspond to frames \num{3} (blue) and \num{8} (red) in Figure~\ref{fig:hv_images}.
-Three phases of breakdown development can be distinguished from the observation of the emitted light spectra and the discharge appearance.
+Three phases of breakdown development can be distinguished from the observation of the emitted light spectra and discharge appearance.
 The first phase starts with the field emission of electrons from a point of the cathode metal surface.
 The emitted electrons drift towards the anode, ionising and exciting argon atoms.
 Frames \num{2} and \num{3} of Figure \ref{fig:hv_images}, the broad current peak of the current in Figure~\ref{fig:hv_iv}, and the blue curve in Figure~\ref{fig:hv_spectro} show the development of the emission.
@@ -270,7 +271,7 @@ In the region behind the head of the streamer the filament is collapsed to a dia
 This second phase of the discharge is characterised by the growth of the streamer-like filament in \lar{}.
 In Figure~\ref{fig:hv_images} (frames \numrange{4}{10}) one can see the development of such a filament.
 Unlike the electrons in the first phase the filament does not follow the electrostatic field lines but it rather rambles around their direction, being subject to thermodynamic fluctuations at the tip of the growing streamer, where the liquid-gas transition happens.
-The spectrum of the light emitted by the streamer has a distinct line at about \SI{700}{\nano\metre}, a characteristic feature of argon gas plasma.
+The spectrum of the light emitted by the streamer has a distinct line at about \SI{700}{\nano\metre}, a characteristic feature of plasma in argon gas.
 
 \begin{figure}[htb]
 	\centering
@@ -347,7 +348,7 @@ One possible explanation for this is that, if the filament current exceeds a giv
 In Figures~\ref{fig:hv_chargeVsVset} to~\ref{fig:hv_vStreamerVsE} several correlations of measured and calculated parameters of the breakdowns are shown.
 For some of these plots \num{18} events were selected with recorded current characteristics similar to Figure~\ref{fig:hv_iv}.
 As a comparison the bottom plot of Figure~\ref{fig:hv_chargeVsVset} shows the data of all events with current characteristics including events not possessing a distinct plateau as the one visible in Figure~\ref{fig:hv_iv}.
-The discrepancy to the total number of events in Table~\ref{tab:hv_table2} arises, on one hand, because the shunt resistor was installed only in the last run and, on the other hand, since the resistor was damaged after the events shown in the bottom plot of Figure~\ref{fig:hv_chargeVsVset}.
+The discrepancy to the total number of events in Table~\ref{tab:hv_table2} arises, on the one hand, because the shunt resistor was installed only in the last run and, on the other hand, since the resistor was damaged after the events shown in the bottom plot of Figure~\ref{fig:hv_chargeVsVset}.
 The low number of events in the selection is due to the fact that an automated analysis of the current characteristics can only detect very long streamers.
 This also explains the behaviour of the charge in Figure~\ref{fig:hv_chargeVsVset}.
 The selected streamers last for several \si{\milli\second}, almost always consume the whole charge in the system, and then cease without transitioning to a spark.
@@ -357,11 +358,11 @@ The good match between the red curve and the data points serves as a cross-check
 
 Figure~\ref{fig:hv_IPeakVsE} shows the behavior of the peak current versus the breakdown field, suggesting a proportionality between the two with a coefficient of about \SI{60}{\micro\ampere\centi\metre\per\kilo\volt}.
 The field was calculated by dividing the breakdown voltage by the gap distance.
-Therefore, this is a mean value along the shortest path and not directly applicable to the selected events as most of them emerged from the side of the sphere.
+Therefore, this is a mean value along the shortest path and only an upper limit for most of the selected events because the streamer often emerged from the side of the sphere.
 
 Figures~\ref{fig:hv_IPlateauVsE} and~\ref{fig:hv_IPlateauVsIPeak} show the correlation of the current during the streamer phase (the plateau in Figure~\ref{fig:hv_iv}) with the breakdown field and peak current, respectively.
-The plateau current clearly rises with both, the breakdown field and the peak current.
-Together with Figure~\ref{fig:hv_IPeakVsE} this indicates that for higher fields higher currents flow during both, field emission as well as streamer phase.
+The plateau current clearly rises with both, breakdown field and peak current.
+Together with Figure~\ref{fig:hv_IPeakVsE} this indicates that for higher fields higher currents flow during the field emission phase as well as the streamer phase.
 As mentioned above the plateau current could only be reliably detected for the selected events, which is why these plots are not shown for all events.
 
 Finally, Figure~\ref{fig:hv_vStreamerVsE} depicts the dependence of the streamer velocity on the breakdown field.
@@ -398,13 +399,13 @@ After no breakdown could be observed for several hours, the gap width was decrea
 The voltage was ramped down for the gap adjustment and ramped back up afterwards.
 Again, no breakdown occurred for several hours and subsequently the gap was decreased to \SI{3}{\milli\metre}.
 During the third ramp-up there was a breakdown at \SI{112}{\kilo\volt}.
-This corresponds to a maximum electric field intensity across the gap of \SI{412}{\kilo\volt\per\centi\metre}, which is more than one order of magnitude higher than the required field intensity to provoke breakdowns from an uncoated cathode~\cite{breakdown_14, breakdown_16}.
+This corresponds to a maximum electric field intensity across the gap of \SI{412}{\kilo\volt\per\centi\metre}, which is more than one order of magnitude higher than the required value to provoke breakdowns from an uncoated cathode~\cite{breakdown_14, breakdown_16}.
 A summary of the results is given in Table~\ref{tab:latex_table1}.
 
 \begin{table}[htb]
 	\centering
 	\caption[\glsentryshort{hv} coating test summary]{%
-		Summary of the breakdown test measurements with \SI{200}{\micro\metre} and \SI{450}{\micro\metre} thick polyisoprene layers deposited on \SI{5}{\centi\metre} and \SI{4}{\centi\metre} diameter spheric cathodes, respectively.
+		Summary of the breakdown test measurements with \SI{200}{\micro\metre} and \SI{450}{\micro\metre} thick polyisoprene layers deposited on \SI{5}{\centi\metre} and \SI{4}{\centi\metre} diameter spherical cathodes, respectively.
 	}
 	\label{tab:latex_table1}
 	\begin{tabu} to \textwidth {SSSSl}
@@ -429,7 +430,7 @@ The dependence of several breakdown parameters on the critical field was also st
 For the first time it was found that the streamer propagation velocity is about \SI{300}{\milli\metre\per\second} and independent of the field intensity.
 The streamer phase is characterised by a current peak between \SIlist{5; 15}{\milli\ampere} depending on the breakdown field, followed by a plateau at an approximately ten times lower current level.
 
-The deposition of a few hundred \si{\micro\metre} thick polyisoprene (latex) layer on the surface of a spheric stainless steel cathode immersed in \lar{} serves to efficiently suppress field emission of electrons from the cathode surface.
+The deposition of a few hundred \si{\micro\metre} thick polyisoprene (latex) layer on the surface of a spherical stainless steel cathode immersed in \lar{} serves to efficiently suppress field emission of electrons from the cathode surface.
 As a result significantly higher electric field intensities can be reached for cathode-ground distances of several \si{\milli\metre}.
 A field strength as high as \SI{412}{\kilo\volt\per\centi\metre} was reached.
 This solution enables the operation of \lartpc{}s with a \lar{} volume outside the electron drift region much smaller compared to \lartpc{}s with non-coated cathode surfaces.

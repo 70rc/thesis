@@ -246,8 +246,8 @@ A further important aspect is power dissipation.
 All power dissipated by cryogenic electronics needs to be compensated for in order to prevent the \lar{} from boiling.
 This is particularly problematic for a pixelated readout that requires a much higher number of readout channels than a wire readout (see Section~\ref{sec:studies_pixel-ro}).
 Another problem arises from the fact that digital electronics in general require clocks with sharp edges for proper timing, usually realised as a square wave.
-According to Fourier analysis, a square wave produces a high level of harmonics.
-This is particularly problematic in case of readout wires that act as antennae and can pick up theses clock signals.
+According to Fourier analysis a square wave produces a high level of harmonics.
+This is particularly problematic in case of readout wires that act as antennae which can pick up theses clock signals.
 
 \gls{bnl} is developing cold charge readout electronics for the \dune{} \gls{fd}~\cite{protodune-sp}.
 The plan is to accompany the cryogenic LARASIC charge preamplifiers by cryogenic \glspl{adc}.
@@ -449,9 +449,9 @@ Note that only the red pixels are instrumented, explaining the segmented track.
 \label{sec:studies_electronics-summary}
 
 Pixelated \lartpc{}s place high demands on the charge readout electronics.
-The very high number of readout channels required makes digitisation outside of the cryostat impractical due to the number of cable feedthroughs required.
+The very high number of readout channels required makes digitisation outside of the cryostat impractical due to the resulting number of cable feedthroughs.
 Cold digitisation inside the cryostat reduces the number of cables by channel aggregation on digital high-speed links.
 However, this worsens the problem of heat dissipation inside the \lar{}.
-I evaluated the cold digitisers being developed for the charge readout wire planes of the \dune{} \gls{fd}, but found them to be unsuitable for a pixelated \lartpc{} due to their high power dissipation.
+I evaluated the cold digitisers developed for the charge readout wire planes of the \dune{} \gls{fd}, but found them to be unsuitable for a pixelated \lartpc{} due to their high power dissipation.
 \larpix{} is a bespoke cold digitiser for pixelated \lartpc{}s.
 It is currently under development at \gls{lbnl} and designed to meet the stringent heat dissipation requirements by means of a smart zero suppression.

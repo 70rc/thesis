@@ -120,6 +120,7 @@ I added a low-pass filter between the power supply and feedthrough, which consis
 For proper insulation the filter circuit is submerged in transformer oil.
 
 Dedicated noise data was taken to assess the \gls{snr}, employing a \SI{5}{\hertz} random trigger.
+Drift, focusing, and \gls{sipm} bias voltages were turned off for these measurements.
 The data of \num{5000} events was combined.
 Subsequently, all pixel and \gls{roi} channels were combined separately and filled into respective amplitude distribution histograms.
 Finally, the standard deviation of the noise was calculated by fitting a Gaussian to the amplitude distribution.
@@ -129,7 +130,7 @@ This value was used to calculate the \gls{snr} for pixel and \gls{roi} channels 
 	\label{eq:viper_snr}
 \end{IEEEeqnarray}
 where $S$ is the signal and $\sigma$ is the noise standard deviation from the Gaussian fit.
-As can be seen in the left plot in Figure~\ref{fig:viper_unfilteredRawData} one of the pixel channels is significantly noisier in comparison to the others, likely caused by a broken preamplifier.
+As can be seen in the top plot in Figure~\ref{fig:viper_unfilteredRawData} (and also~\ref{fig:electronics_noise-run2}) one of the pixel channels is significantly noisier in comparison to the others, likely caused by a broken preamplifier.
 Therefore, this channel was blinded for the \gls{snr} calculations.
 The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{982}{\elementarycharge} for the inductive \gls{roi} channels
 
@@ -194,7 +195,7 @@ A noise band is defined per channel with its centre equal to the mean of the Gau
 The amplitudes of all channels within the corresponding noise band are then averaged for each sample.
 Finally, this average is subtracted from each channel at the corresponding sample.
 This technique was chosen because it effectively suppresses the dominating common-mode noise.
-At the same time spurious signals, produced by accidental charge collection signals distorting the average, are kept to a minimum by only accepting values within the noise band.
+At the same time spurious signals, produced by actual charge collection signals distorting the average, are kept to a minimum by only accepting values within the noise band.
 The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filteredRawData}, which shows the same data as Figure~\ref{fig:viper_unfilteredRawData} post filtering.
 
 \begin{figure}[htb]
@@ -253,7 +254,7 @@ The different thresholds employed and samples found by this process are illustra
 	\label{fig:viper_hitFinder}
 \end{figure}
 
-Identified pulses are then combined to \gls{3d} hits by matching pixel pulses to coincident \gls{roi} pulses.
+Identified pulses are then combined to \gls{3d} hit candidates by matching pixel pulses to coincident \gls{roi} pulses.
 Looking at Figure~\ref{fig:viper_hitFinder}, a pixel and \gls{roi} pulse are matched if their time slices, defined by the vertical dashed lines, overlap.
 This matching algorithm minimises the number of missed hits at the price of a rather high number of ambiguous matches.
 
@@ -264,7 +265,7 @@ The basic idea is to calculate three orthogonal eigenvectors of the \gls{3d} spa
 A graphic interpretation of these eigenvectors are the three axes of an ellipsoid fitted to the data points.
 If the points form a track, one of these eigenvectors will have a much higher eigenvalue than the other two.
 This eigenvector is taken as an estimate for the track direction.
-Ambiguities can be resolved by selecting the hits closest to the track estimate.
+Ambiguities can be resolved by selecting the hit candidates closest to the track estimate.
 A similar procedure is used to recursively reject outliers, by forming a cylinder around the track estimate with a radius proportional to the second largest eigenvalue.
 All hits outside the cylinder are rejected.
 The outlier rejection is recursively repeated for an optimal result.
@@ -278,16 +279,16 @@ The \gls{pca} ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 		\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_pca} \\
 		\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_a_det}
 		\caption[Reconstructed \glsentryshort{3d} hits of typical pixel demonstrator event]{%
-			Reconstructed \acrshort{3d} hits from the hit finder.
+			Reconstructed \acrshort{3d} hit candidates from the hit finder.
 			The passing particle is most likely a cosmic \Pgm (the same for Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}) entering from the left.
 			Drift direction is from right to left.
 			Pulse shape is encoded as thickness.
 			In the top plot colour codes the amount of collected charge.
 			The middle plot illustrates the ambiguity resolution employing a \acrshort{pca}.
-			Green hits are accepted while dark red ones are rejected.
-			This is achieved by selecting the ambiguity closest to the eigenvector of the point cloud with the largest eigenvalue, represented by the blue line.
-			In the bottom plot the degree of ambiguity is colour-coded: Light green are unambiguous hits while dark green are selected solutions of ambiguous hits.
-			Dark red through black are rejected solutions of ambiguous hits, where darker colour represents a higher degree of ambiguity.
+			Green hit candidates are accepted while dark red ones are rejected.
+			This is achieved by selecting the candidate closest to the eigenvector of the point cloud with the largest eigenvalue, represented by the blue line.
+			In the bottom plot the degree of ambiguity is colour-coded: Light green are unambiguous hits while dark green are selected candidates of ambiguous hits.
+			Dark red through black are rejected candidates of ambiguous hits, where darker colour represents a higher degree of ambiguity.
 			As this is quite a clean track with only a few short $\delta$ rays, there are no outliers rejected other than the multiplexing ambiguities.
 			Interactive versions of these event displays are available online\footnote{\url{https://70rc.github.io/ac_pix_3d}}.
 		}
@@ -327,7 +328,7 @@ Proper tuning of the reconstruction requires a full simulation chain of the dete
 Using data to tune the reconstruction is prone to the introduction of circular biases.
 On the other hand, most of the difficulties emerge from the multiplexing ambiguities and their resolution.
 While the presented almost full \gls{3d} readout has already reduced the reconstruction complexity compared to a classical wire readout, an ambiguity-free readout will make reconstruction another big step easier by completely eliminating the need to resolve ambiguities.
-My results described above triggered the development of the \larpix{} pixel readout electronics at \gls{lbnl}.
+My results described above triggered the development of the \larpix{} pixel readout electronics at \gls{lbnl}, described in Section~\ref{sec:studies_pixel-electronics}.
 
 
 \section{\pixlar{}}

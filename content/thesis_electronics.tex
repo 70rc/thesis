@@ -149,6 +149,7 @@ The complete analogue signal path from the pixel plane to the \gls{vme} digitise
 	\caption[Event from first pixel demonstrator measurement campaign]{%
 		Event from the first pixel demonstrator measurement campaign.
 		The top plot shows pixel data while the bottom plot shows \acrshort{roi} data.
+		Note that the colour scale does not represent the full available dynamic range.
 	}
 	\label{fig:electronics_event-run1}
 \end{figure}
@@ -190,6 +191,7 @@ The design for the two buffer stages was kindly provided by the \lariat{} collab
 	\caption[Event from second pixel demonstrator measurement campaign]{%
 		Event from the second pixel demonstrator measurement campaign, after implementing hardware noise mitigation measures.
 		The top plot shows pixel data while the bottom plot shows \acrshort{roi} data.
+		Note that the colour scale does not represent the full available dynamic range.
 	}
 	\label{fig:electronics_event-run2}
 \end{figure}
@@ -203,7 +205,7 @@ One evidence for this is that the noise is equal over multiple channels, implyin
 More specifically, the noise is equal for two respective groups of channels (see Figure~\ref{fig:electronics_event-run1}).
 Investigating this, I found out that these groups correspond to channels of roughly equal parasitic capacitance: \SI{150 +- 5}{\pico\farad} and \SI{95 +- 5}{\pico\farad}.
 The noise amplitude is higher on channels with higher capacitance (see Figure~\ref{fig:electronics_noise-run1}).
-To solve this problem the \gls{pcb} design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes and increasing the thickness of the \gls{pcb}.
+To solve this problem the \gls{pcb} design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes, and increasing the thickness of the \gls{pcb}.
 Pixel capacitance could be improved to \SI{65 +- 5}{\pico\farad} for all channels.
 \gls{roi} capacitance improved only slightly from \SI{25 +- 10}{\pico\farad} to \SI{20 +- 10}{\pico\farad}, which confirms the hypothesis that the long traces due to pixel multiplexing were the culprits.
 The reason for the higher spread of the \gls{roi} capacitances is the larger difference in trace length between the different \glspl{roi}.

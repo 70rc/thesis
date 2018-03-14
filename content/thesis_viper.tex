@@ -19,7 +19,7 @@ The pixelated area is \SI{100}{\milli\metre} across, the pixels are formed of \S
 An inductive focusing grid surrounds the pixels, it is made from \SI{152.4}{\micro\metre} copper traces split into 28 regions.
 There are \num{6 x 6} pixels per region, giving a total of 1008 pixels. 
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixies}
 	\caption[Pixel demonstrator readout plane]{%
@@ -41,7 +41,7 @@ The pixels are directly connected to the preamplifiers while the inductive focus
 Additionally, the bias voltage is filtered at the input by another \SI{10}{\nano\farad} and \SI{10}{\mega\ohm}.
 The full schematic of the bias circuit is depicted in Figure~\ref{fig:viper_pcb_schematic}.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixel_pcb_schematic}
 	\caption[Pixel demonstrator bias circuit]{%
@@ -63,7 +63,10 @@ The simulations available at the time of the measurement contained a bug resulti
 During the measurements the bug became apparent and full transparency had to be estimated by looking at live data from the detector.
 Due to the limited accuracy of this method measurements were not taken up to the bias voltage for full transparency suggested by the (corrected) simulation.~\cite{francypants}
 
-\begin{figure}[htb]
+The pixel demonstrator \gls{tpc}, shown in Figures~\ref{fig:viper_cad}~and~\ref{fig:viper_v1per}, is cylindrical with an inner diameter of \SI{101}{\milli\metre} and a \SI{590}{\milli\metre} drift length. 
+The \gls{tpc} operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre}, corresponding to a total drift time of \SI{281}{\micro\second} at \SI{2.1}{\milli\metre\per\micro\second}~\cite{protoLASER}.
+
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{viper/transparency}
 	\caption[Pixel demonstrator charge readout transparency]{%
@@ -72,18 +75,6 @@ Due to the limited accuracy of this method measurements were not taken up to the
 	\label{fig:viper_transparency}
 \end{figure}
 
-The pixel demonstrator \gls{tpc}, shown in Figures~\ref{fig:viper_cad}~and~\ref{fig:viper_v1per}, is cylindrical with an inner diameter of \SI{101}{\milli\metre} and a \SI{590}{\milli\metre} drift length. 
-The \gls{tpc} operated with a drift field of \SI{1}{\kilo\volt\per\centi\metre}, corresponding to a total drift time of \SI{281}{\micro\second} at \SI{2.1}{\milli\metre\per\micro\second}~\cite{protoLASER}.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{viper/tpc_cad}
-	\caption[Engineering drawing of pixel demonstrator \glsentryshort{tpc}]{%
-		Engineering drawing of the pixel demonstration \acrshort{tpc}; \SI{590}{\milli\metre} drift length; \SI{6.25}{\milli\metre} field cage spacing; \SI{101}{\milli\metre} internal diameter.
-	}
-	\label{fig:viper_cad}
-\end{figure}
- 
 The field-cage consists of aluminium rings supported by clear acrylic rings, with a cathode formed of a brass disc. 
 The dimensions of the field-cage and cathode are shown in Figure~\ref{fig:viper_cad}.
 Alternating acrylic rings are split to allow for the circulation of purified \lar{} within the \gls{tpc} volume.
@@ -93,15 +84,13 @@ The four \gls{pai} uprights connect to a \gls{pai} frame which supports the anod
 The resistive divider consists of a chain of \SI{100}{\mega\ohm} \emph{Vishay ROX100100MFKEL} metal oxide resistors~\cite{vishay}.
 Each resistor is soldered to its neighbour and fixed to the field cage at each joint with an M3 screw.   
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
-	\includegraphics[width=0.295\textwidth]{viper/viper_original}
-	\includegraphics[width=0.695\textwidth]{viper/viper_sipm}
-	\caption[Pixel demonstrator close-up]{%
-		Left: Photograph of the  pixel demonstrator \acrshort{tpc} at \acrshort{help}, with the \acrshort{hv} feedthrough.
-		Right: Close-up of the light collection system, showing \acrshort{wls} fibres coupling the \acrshortpl{sipm} to the \acrshort{tpb}-coated light guides.
+	\includegraphics[width=\textwidth]{viper/tpc_cad}
+	\caption[Engineering drawing of pixel demonstrator \glsentryshort{tpc}]{%
+		Engineering drawing of the pixel demonstration \acrshort{tpc}; \SI{590}{\milli\metre} drift length; \SI{6.25}{\milli\metre} field cage spacing; \SI{101}{\milli\metre} internal diameter.
 	}
-	\label{fig:viper_v1per}
+	\label{fig:viper_cad}
 \end{figure}
 
 The acrylic rings provide the light collection; their inner surfaces are machine-polished and coated with the \gls{wls} \gls{tpb}. 
@@ -114,6 +103,17 @@ A diameter of \SI{50}{\centi\metre} and a height of \SI{110}{\centi\metre} give 
 This is the same cryostat that was used for the \gls{hv} studies described in Section~\ref{sec:studies_breakdown}.
 The \lar{} filtering method is the same as described in~\cite{2photonAbs}, with \lar{} filtered first on filling through a pair of Oxysorb-Hydrosorb filters, and then recirculated through a single custom-made filter containing both activated copper and silica gel.
 \lar{} purity is estimated to be in accordance with~\cite{2photonAbs}, with impurity concentrations $\sim{\SI{1}{ppb}}$ of oxygen-equivalent, which corresponds to a charge lifetime of \SI{290+-30}{\micro\second}.
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[height=.45\textheight]{viper/viper_original}
+	\includegraphics[height=.45\textheight]{viper/viper_sipm}
+	\caption[Pixel demonstrator close-up]{%
+		Left: Photograph of the  pixel demonstrator \acrshort{tpc} at \acrshort{help}, with the \acrshort{hv} feedthrough.
+		Right: Close-up of the light collection system, showing \acrshort{wls} fibres coupling the \acrshortpl{sipm} to the \acrshort{tpb}-coated light guides.
+	}
+	\label{fig:viper_v1per}
+\end{figure}
 
 The \gls{petc} \gls{hv} feedthrough capable of potentials as high as \SI{-130}{\kilo\volt} remains unchanged from the breakdown studies (Section~\ref{sec:studies_breakdown}).
 I added a low-pass filter between the power supply and feedthrough, which consists of an \SI{800}{\pico\farad} decoupling capacitor grounded between two \SI{100}{\mega\ohm} resistors connected in series; i.e.\ a \gls{rc} low-pass filter with an additional protection resistor at the output.
@@ -135,25 +135,7 @@ Therefore, this channel was blinded for the \gls{snr} calculations.
 The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{982}{\elementarycharge} for the inductive \gls{roi} channels.
 The noise amplitude distributions are shown in Figure~\ref{fig:electronics_noise-run2}.
 
-The signal $S$ is often taken for a \gls{mip} as this is at the lower end of the signal range interesting for neutrino physics.
-Obtaining a clean \gls{mip} signal from experimental data requires a calibrated reconstruction which was not available at the time of writing.
-Therefore, the \gls{mip} signal is estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre} (see Section~\ref{sec:nu-detection_fs}).
-This can be converted to charge loss using the energy required to produce one electron-ion pair from Table~\ref{tab:lartpc_larprop}: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$.
-Additionally, charge recombination, diffusion, and lifetime need to be taken into account (see Section~\ref{sec:lartpc_lar}).
-The recombination factor was measured by the \icarus{}~\cite{icarusReco} and \argoneut{}~\cite{argoneutReco} experiments, and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
-With \AT{}~\cite{AT} \gls{help} measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
-Even using the more conservative value results in a transverse spread of $\approx \SI{0.9}{\milli\metre}$ for the pixel demonstrator drift time of $t = \SI{281}{\micro\second}$, according to Equation~\eqref{eq:lartpc_lar-diff}.
-This value lies well below the pixel pitch of $d_{\m{p}} = \SI{2.54}{\milli\metre}$.
-Considering that the longitudinal component is smaller than the transverse ~\cite{lngDet}, diffusion is neglected completely for these calculations.
-Finally, the lifetime of \SI{290}{\micro\second} results in the reduction of charge by a factor of $\approx\num{0.38}$ over the full drift distance (Equation~\eqref{eq:lartpc_lar-lifetime}).
-Combining this, the signal is 
-\begin{IEEEeqnarray}{rCl}
-	S & = & \dv{E}{x}_{\m{\glsentryshort{mip}}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge}
-\end{IEEEeqnarray}
-for a charge deposited adjacent to the readout plane, and $S = \SI{6004}{\elementarycharge}$ for a charge deposited adjacent to the cathode.
-Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:viper_snr}.
-
-\begin{table}[htb]
+\begin{table}[tbp]
 	\centering
 	\caption[Pixel demonstrator \glsentryshort{snr}]{%
 		\acrshort{snr} values obtained from Equation~\eqref{eq:viper_snr}.
@@ -173,33 +155,31 @@ Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal 
 	\end{tabu}
 \end{table}
 
+The signal $S$ is often taken for a \gls{mip} as this is at the lower end of the signal range interesting for neutrino physics.
+Obtaining a clean \gls{mip} signal from experimental data requires a calibrated reconstruction which was not available at the time of writing.
+Therefore, the \gls{mip} signal is estimated from theory assuming an energy loss of \SI{2.1}{\mega\electronvolt\per\centi\metre} (see Section~\ref{sec:nu-detection_fs}).
+This can be converted to charge loss using the energy required to produce one electron-ion pair from Table~\ref{tab:lartpc_larprop}: $W_{\m{i}} = \SI{23.6}{\electronvolt\per\elementarycharge}$.
+Additionally, charge recombination, diffusion, and lifetime need to be taken into account (see Section~\ref{sec:lartpc_lar}).
+The recombination factor was measured by the \icarus{}~\cite{icarusReco} and \argoneut{}~\cite{argoneutReco} experiments, and found to be $R_{\m{c}} \approx 0.7$ for a drift field of $\SI{1}{\kilo\volt\per\centi\meter}$.
+With \AT{}~\cite{AT} \gls{help} measured a transverse diffusion coefficient $D_{\m{T}} = \SI{5.3}{\centi\metre\squared\per\second}$ at \SI{0.25}{\kilo\volt\per\centi\metre} while Gushchin et al.~\cite{gushchin} report a value of $D_{\m{T}} = \SI{13}{\centi\metre\squared\per\second}$ at \SI{1}{\kilo\volt\per\centi\metre}.
+Even using the more conservative value results in a transverse spread of $\approx \SI{0.9}{\milli\metre}$ for the pixel demonstrator drift time of $t = \SI{281}{\micro\second}$, according to Equation~\eqref{eq:lartpc_lar-diff}.
+This value lies well below the pixel pitch of $d_{\m{p}} = \SI{2.54}{\milli\metre}$.
+Considering that the longitudinal component is smaller than the transverse ~\cite{lngDet}, diffusion is neglected completely for these calculations.
+Finally, the lifetime of \SI{290}{\micro\second} results in the reduction of charge by a factor of $\approx\num{0.38}$ over the full drift distance (Equation~\eqref{eq:lartpc_lar-lifetime}).
+Combining this, the signal is 
+\begin{IEEEeqnarray}{rCl}
+	S & = & \dv{E}{x}_{\m{\glsentryshort{mip}}} \frac{R_{\m{c}} d_{\m{p}}}{W_{\m{i}}} = \SI{15821}{\elementarycharge}
+\end{IEEEeqnarray}
+for a charge deposited adjacent to the readout plane, and $S = \SI{6004}{\elementarycharge}$ for a charge deposited adjacent to the cathode.
+Table~\ref{tab:viper_snr} lists the \gls{snr} values obtained from these signal values and the aforementioned measured equivalent noise charge, using Equation~\eqref{eq:viper_snr}.
+
 
 \section{\glsentryshort{3d} Track Reconstruction}
 \label{sec:ac_reco}
 
 \glsreset{genfit}
 
-To demonstrate \gls{3d} track reconstruction several thousand cosmic ray events were collected with the \AC{} pixel demonstrator described in Section~\ref{sec:ac_viper}, many of which are \glspl{mip}, mostly muons.
-The pixelated charge readout was triggered by the cold \gls{sipm} light readout described in Section~\ref{sec:studies_viper-light-ro}.
-
-Official event reconstruction tools were only available for \lartpc{}s read out by wire planes\footnote{\url{http://larsoft.org}}.
-Therefore, I developed a new framework from scratch\footnote{\url{https://github.com/70rc/pixy_roimux}}.
-The reconstruction procedure comprises five steps: noise filtering, hit finding, hit matching, ambiguity rejection, and track fitting.
-These steps are explained in the following and depicted in Figures~\ref{fig:viper_unfilteredRawData} through~\ref{fig:viper_kalman}, all taken from the same \gls{mip} (cosmic muon) event.
-
-In the first step a noise-filtering algorithm is applied to the raw data.
-As can be seen from Figure~\ref{fig:viper_unfilteredRawData}, the noise is largely correlated across all the channels.
-This common-mode correlation can be exploited by the noise filter algorithm.
-The following is done separately for the all pixel and \gls{roi} channels of each event.
-Similarly to the \gls{snr} calculation all samples are filled into an amplitude distribution histogram for each channel and subsequently fitted with a Gaussian.
-A noise band is defined per channel with its centre equal to the mean of the Gaussian and its width equal to the standard deviation multiplied by a tunable scaling factor.
-The amplitudes of all channels within the corresponding noise band are then averaged for each sample.
-Finally, this average is subtracted from each channel at the corresponding sample.
-This technique was chosen because it effectively suppresses the dominating common-mode noise.
-At the same time spurious signals, produced by actual charge collection signals distorting the average, are kept to a minimum by only accepting values within the noise band.
-The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filteredRawData}, which shows the same data as Figure~\ref{fig:viper_unfilteredRawData} post filtering.
-
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawUnfilteredROI}
@@ -213,7 +193,15 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 	\label{fig:viper_unfilteredRawData}
 \end{figure}
 
-\begin{figure}[htb]
+To demonstrate \gls{3d} track reconstruction several thousand cosmic ray events were collected with the \AC{} pixel demonstrator described in Section~\ref{sec:ac_viper}, many of which are \glspl{mip}, mostly muons.
+The pixelated charge readout was triggered by the cold \gls{sipm} light readout described in Section~\ref{sec:studies_viper-light-ro}.
+
+Official event reconstruction tools were only available for \lartpc{}s read out by wire planes\footnote{\url{http://larsoft.org}}.
+Therefore, I developed a new framework from scratch\footnote{\url{https://github.com/70rc/pixy_roimux}}.
+The reconstruction procedure comprises five steps: noise filtering, hit finding, hit matching, ambiguity rejection, and track fitting.
+These steps are explained in the following and depicted in Figures~\ref{fig:viper_unfilteredRawData} through~\ref{fig:viper_kalman}, all taken from the same \gls{mip} (cosmic muon) event.
+
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredPixel}\\
 	\includegraphics[width=\textwidth]{viper/event967_rawFilteredROI}
@@ -225,6 +213,31 @@ The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filtered
 		The full range of a typical signal can be seen in Figure~\ref{fig:viper_hitFinder}.
 	}
 	\label{fig:viper_filteredRawData}
+\end{figure}
+
+In the first step a noise-filtering algorithm is applied to the raw data.
+As can be seen from Figure~\ref{fig:viper_unfilteredRawData}, the noise is largely correlated across all the channels.
+This common-mode correlation can be exploited by the noise filter algorithm.
+The following is done separately for the all pixel and \gls{roi} channels of each event.
+Similarly to the \gls{snr} calculation all samples are filled into an amplitude distribution histogram for each channel and subsequently fitted with a Gaussian.
+A noise band is defined per channel with its centre equal to the mean of the Gaussian and its width equal to the standard deviation multiplied by a tunable scaling factor.
+The amplitudes of all channels within the corresponding noise band are then averaged for each sample.
+Finally, this average is subtracted from each channel at the corresponding sample.
+This technique was chosen because it effectively suppresses the dominating common-mode noise.
+At the same time spurious signals, produced by actual charge collection signals distorting the average, are kept to a minimum by only accepting values within the noise band.
+The effectiveness of the filtering can be seen in Figure~\ref{fig:viper_filteredRawData}, which shows the same data as Figure~\ref{fig:viper_unfilteredRawData} post filtering.
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=\textwidth, page=1]{viper/event967_pixel2_hit8}\\
+	\includegraphics[width=\textwidth, page=3]{viper/event967_pixel2_hit8}
+	\caption[Pulse shapes of typical pixel demonstrator event]{%
+		Pulse shapes of a single pixel (top) and \acrshort{roi} (bottom) hit of a typical \acrshort{mip} event (the same for Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
+		Superimposed are the thresholds of the hit finder algorithm. Horizontal lines represent thresholds: solid is the minimum threshold required to be crossed for a pulse to be detected, and dashed are the thresholds used to detect the pulse edges.
+		Vertical lines represent the corresponding detected peak/edge samples.
+		Colour indicates a positive (green) or negative (red) pulse, or a zero crossing (yellow).
+	}
+	\label{fig:viper_hitFinder}
 \end{figure}
 
 The second step applies a recursive pulse finding algorithm.
@@ -242,38 +255,11 @@ For stability reasons the peak threshold relative to noise levels is compared ag
 The search is extended to the negative pulse for the bipolar \gls{roi} pulses, using the zero-crossing threshold and respective negative peak and edge thresholds.
 The different thresholds employed and samples found by this process are illustrated in Figure~\ref{fig:viper_hitFinder}.
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth, page=1]{viper/event967_pixel2_hit8}\\
-	\includegraphics[width=\textwidth, page=3]{viper/event967_pixel2_hit8}
-	\caption[Pulse shapes of typical pixel demonstrator event]{%
-		Pulse shapes of a single pixel (top) and \acrshort{roi} (bottom) hit of a typical \acrshort{mip} event (the same for Figures~\ref{fig:viper_unfilteredRawData}~through~\ref{fig:viper_kalman}).
-		Superimposed are the thresholds of the hit finder algorithm. Horizontal lines represent thresholds: solid is the minimum threshold required to be crossed for a pulse to be detected, and dashed are the thresholds used to detect the pulse edges.
-		Vertical lines represent the corresponding detected peak/edge samples.
-		Colour indicates a positive (green) or negative (red) pulse, or a zero crossing (yellow).
-	}
-	\label{fig:viper_hitFinder}
-\end{figure}
-
 Identified pulses are then combined to \gls{3d} hit candidates by matching pixel pulses to coincident \gls{roi} pulses.
 Looking at Figure~\ref{fig:viper_hitFinder}, a pixel and \gls{roi} pulse are matched if their time slices, defined by the vertical dashed lines, overlap.
 This matching algorithm minimises the number of missed hits at the price of a rather high number of ambiguous matches.
 
-To resolve the ambiguities a \gls{pca} is applied to the \gls{3d} space points in a fourth step.
-This technique is well established and described in literature, e.g.~\cite{pca}.
-Therefore, it is only briefly summarised here.
-The basic idea is to calculate three orthogonal eigenvectors of the \gls{3d} space point cloud.
-A graphic interpretation of these eigenvectors are the three axes of an ellipsoid fitted to the data points.
-If the points form a track, one of these eigenvectors will have a much higher eigenvalue than the other two.
-This eigenvector is taken as an estimate for the track direction.
-Ambiguities can be resolved by selecting the hit candidates closest to the track estimate.
-A similar procedure is used to recursively reject outliers, by forming a cylinder around the track estimate with a radius proportional to the second largest eigenvalue.
-All hits outside the cylinder are rejected.
-The outlier rejection is recursively repeated for an optimal result.
-In a later stage of reconstructing more complex events this algorithm can potentially be used to cluster \gls{3d} space points in order to separate multiple tracks.
-The \gls{pca} ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
-
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[viewport=600 0 1000 2000, clip, height=\textwidth, angle=90]{viper/event967_pulses_q} \\
@@ -297,16 +283,21 @@ The \gls{pca} ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 	\end{minipage}
 \end{figure}
 
-The final step consists of a Kalman filter.
-For this the well-established \gls{genfit}~\cite{genfit1, genfit2} was used.
-Ionisation losses and \gls{mcs} in \lar{} are taken into account.
-The particle is assumed to be a minimum-ionising muon with an initial momentum of \SI{260}{\mega\electronvolt\per\clight} in the direction of the track estimate from the \gls{pca}.
-A recursive algorithm capable of dealing with outliers was chosen, a so-called \emph{deterministic annealing filter}.
-It rejects outliers by assigning successively lower weights to them with each recursion step.
-For more details see the respective publications~\cite{genfit1, genfit2}.
-The resulting track is shown in Figure~\ref{fig:viper_kalman}.
+To resolve the ambiguities a \gls{pca} is applied to the \gls{3d} space points in a fourth step.
+This technique is well established and described in literature, e.g.~\cite{pca}.
+Therefore, it is only briefly summarised here.
+The basic idea is to calculate three orthogonal eigenvectors of the \gls{3d} space point cloud.
+A graphic interpretation of these eigenvectors are the three axes of an ellipsoid fitted to the data points.
+If the points form a track, one of these eigenvectors will have a much higher eigenvalue than the other two.
+This eigenvector is taken as an estimate for the track direction.
+Ambiguities can be resolved by selecting the hit candidates closest to the track estimate.
+A similar procedure is used to recursively reject outliers, by forming a cylinder around the track estimate with a radius proportional to the second largest eigenvalue.
+All hits outside the cylinder are rejected.
+The outlier rejection is recursively repeated for an optimal result.
+In a later stage of reconstructing more complex events this algorithm can potentially be used to cluster \gls{3d} space points in order to separate multiple tracks.
+The \gls{pca} ambiguity rejection is illustrated in Figure~\ref{fig:viper_pca}.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{viper/event967_kalman}
 	\caption[Kalman-fitted track of typical pixel demonstrator event]{%
@@ -319,6 +310,15 @@ The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 	}
 	\label{fig:viper_kalman}
 \end{figure}
+
+The final step consists of a Kalman filter.
+For this the well-established \gls{genfit}~\cite{genfit1, genfit2} was used.
+Ionisation losses and \gls{mcs} in \lar{} are taken into account.
+The particle is assumed to be a minimum-ionising muon with an initial momentum of \SI{260}{\mega\electronvolt\per\clight} in the direction of the track estimate from the \gls{pca}.
+A recursive algorithm capable of dealing with outliers was chosen, a so-called \emph{deterministic annealing filter}.
+It rejects outliers by assigning successively lower weights to them with each recursion step.
+For more details see the respective publications~\cite{genfit1, genfit2}.
+The resulting track is shown in Figure~\ref{fig:viper_kalman}.
 
 Technically, the Kalman filter would be capable of fitting the particle momentum or even particle type to the data.
 At the time of writing this is not implemented yet.
@@ -335,7 +335,7 @@ My results described above triggered the development of the \larpix{} pixel read
 \section{\pixlar{}}
 \label{sec:ac_pixlar}
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{pixlar/pixlar_arclight}\\
 	\includegraphics[width=\textwidth]{pixlar/pixlar_arclight_installed}
@@ -362,10 +362,10 @@ Therefore, the charge readout electronics used in \pixlar{} are quite similar to
 To trigger on scintillation light one end of the \gls{tpc} is equipped with a \SI{43 x 15}{\centi\metre} \AL{} module (see Section~\ref{sec:studies_arclight}) while the other end features an \gls{arapuca}~\cite{arapuca} detector for comparison.
 Figure~\ref{fig:pixlar_arclight} shows one of the readout half planes with the \AL{} module attached.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
-	\includegraphics[width=.445\textwidth]{pixlar/pixlar_event_side}
-	\includegraphics[width=.545\textwidth]{pixlar/pixlar_event_top}
+	\includegraphics[height=.51\textheight]{pixlar/pixlar_event_side}
+	\includegraphics[height=.51\textheight]{pixlar/pixlar_event_top}
 	\caption[\pixlar{} beam event]{%
 		\pixlar{} beam event.
 	}

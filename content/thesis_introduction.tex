@@ -6,14 +6,14 @@ An exception is the intriguing nature of neutrinos.
 Not only are their mass eigenstates a mixture of their flavour eigenstates, but also their masses are smaller than charged lepton masses by several orders of magnitude.
 Measuring these effects is not simplified by the fact that the interaction rates (cross-section) of neutrinos are extremely small, raising the need for high-intensity sources along with extremely massive detectors.
 This is the reason why it took almost \num{25} years from their proposal~\cite{pauliLetter} to the first measurement~\cite{reinesCowan} of neutrinos.
-As of today, neutrino mixing is well-established and their masses have been proven to be non-zero.
+As of today, neutrino mixing is well established and their masses have been proven to be non-zero.
 The basis for this was the discovery of neutrino oscillations~\cite{superKAtmos1, superKAtmos2, snoSolar}, a consequence of neutrino flavour mixing~\cite{pontecorvo, makiNakagawaSakata} paired with non-zero masses.
 However, there are still several unknowns in today's neutrino mixing and oscillation model.
 In particular, a theory exists with three \gls{cp} violation phases that have yet to be measured~\cite{pontecorvo, makiNakagawaSakata, mariuana}.
 The consequences of measuring \gls{cp} violation in neutrino oscillation could be far-reaching.
 Via cosmological models~\cite{pdg}, it could explain the asymmetry between matter and antimatter in the universe.
 Besides, while it is certain that at least two out of the three neutrinos have non-zero masses, their ordering is still unknown.
-Its determination will help to integrate massive neutrinos into the \gls{sm} where they are currently massless.
+Its determination will help to integrate massive neutrinos into the \gls{sm}, where they are currently massless.
 
 Measuring the unknown parameters of the neutrino mixing and oscillation model will require a neutrino interaction sample of unprecedented size.
 Much of today's knowledge was gained from neutrinos produced in the Sun~\cite{homestake68, homestake98, snoSolar} and the Earth's atmosphere~\cite{superKAtmos1, superKAtmos2}.
@@ -22,13 +22,13 @@ The same is true for nuclear reactor neutrinos~\cite{reinesCowan, dayabayRecent}
 Therefore, artificially produced neutrino beams and massive detectors~\cite{t2kOsc} are being deployed.
 Not only are neutrino interactions with matter very rare, they are also very manifold, giving raise to the need for detectors capable of recording complex event topologies and precisely reconstructing the kinematic variables of the events.
 \glspl{lartpc} are prime candidates for the aforementioned requirements.
-They combine a high-density target material with high-precision \gls{3d} tracking and calorimetric capabilities.
+They combine a high-density target material with high-precision \gls{3d} tracking and calorimetry.
 
-The \dune{}~\cite{dune1, dune2, dune3, dune4} is a next generation long-baseline beam neutrino oscillation experiment, placing \lartpc{}s in an accelerator-produced muon neutrino beam.
+The \dune{}~\cite{dune1, dune2, dune3, dune4} is a next generation long-baseline beam neutrino oscillation experiment, placing \lartpc{}s in an accelerator-produced muon (anti)neutrino beam.
 Several implications result from the required number of neutrino interactions to be sensitive to \gls{cp} violation and neutrino mass ordering.
 As mentioned above, a very intense neutrino beam and a large target mass are necessary~\cite{dune3, dune4}.
 However, this is not enough; at the same time, uncertainties have to be kept under control.
-Statistical uncertainties can be lowered by acquiring more neutrino interactions but this is not true for systematic uncertainties, which will therefore become the limiting factor.
+Statistical uncertainties can be lowered by acquiring more neutrino interactions, but this is not true for systematic uncertainties, which will therefore become the limiting factor.
 To largely cancel systematic uncertainties a \emph{\gls{nd}} complex containing a \lartpc{} will be placed close to the neutrino source (\SI{574}{\metre}) in addition to the \emph{\gls{fd}} complex at the end of the baseline, at \SI{1300}{\kilo\metre} distance.
 
 Up until now \lartpc{} charge readouts have been realised by means of multiple \gls{1d} wire planes due to technological limitations.
@@ -38,7 +38,7 @@ In this thesis I will show how to implement a true \gls{3d} \lartpc{} and demons
 \lartpc{}s are comparatively slow detectors.
 The maximum drift velocity of charge in \lar{} (and thus the readout time) is limited to $\sim{\SI{1}{\milli\metre\per\micro\second}}$ by constraints on the maximum cathode voltage.
 Both the above have not prevented the success of \lartpc{}s up to now.
-Due to the low interaction cross-section, event rates in current-generation \lartpc{}s have been low enough to cope with.
+Due to the low interaction cross-section event rates in current-generation \lartpc{}s have been low enough to cope with.
 While this still applies to the \dune{} \gls{fd}, it is certainly not true for the \gls{nd}.
 The high-intensity neutrino beam will result in event rates in the \gls{nd} significantly higher than what contemporary \lartpc{}s have seen.
 Furthermore, the beam is delivered in very short pulses (spills) of very high intensity.
@@ -51,27 +51,28 @@ In particular, new charge readout electronics with a stringent power management 
 
 In addition to these readout issues, future large \lartpc{}s face several other challenges.
 In particular for the \gls{hv} and light readout systems.
-Earlier studies by the \gls{help}~\cite{breakdown_14} showed that the dielectric strength of \lar{} is much lower than predicted by studies performed in the fifties~\cite{swan1, swan2}.
+Earlier studies by the \gls{help}~\cite{breakdown_14} showed that the dielectric strength of \lar{} is much lower than predicted by studies performed in the 1950s~\cite{swan1, swan2}.
 Current \lartpc{}s are already operating at the limit beyond which electric breakdowns readily occur~\cite{uboone}.
 Electronegative impurities present in the \lar{} result in a finite charge lifetime.
 This results in a lower limit on the required drift field and therefore cathode voltage.
 Due to the finite dielectric strength of \lar{} the required clearance volume outside the \gls{tpc} scales with detector size unless accounted for by a modified \gls{hv} system.
 I will also present a detailed study of the dielectric strength of \lar{} alongside a method to increase the cathode voltage without additional clearance.
 
-In order to get proper timing for the third coordinate the collected scintillation light needs to be matched to the corresponding detected charge.
+In order to get proper timing for the third coordinate in a \lartpc{} the collected scintillation light needs to be matched to the corresponding detected charge.
 This becomes problematic in large monolithic \lartpc{}s with many simultaneous particle interactions.
+Traditional light readout systems based on \glspl{pmt} occupy large volumes.
+I will introduce the \gls{arclight}, a novel compact light readout system based on \glspl{sipm}.
 
 \AC{} is a new \lartpc{} concept developed at \gls{help} and addressing all aforementioned issues by means of a modular \gls{tpc} design combined with a pixelated charge readout.
 It remains to be shown that such a detector is actually able to cope with the event rates expected in the \dune{} \gls{nd}.
 At \dune{} energies \gls{em} showers produced by decaying \Pgpz result in a plethora of apparently unconnected charge clusters.
 Associating all those separate charge clusters to the correct neutrino interaction is one of the most difficult reconstruction tasks, even for a \lartpc{}.
 Energy misidentifications significantly impair the overall energy resolution of the experiment.
-I will show a simulation of such interactions in \AC{} to investigate its behaviour under high event rates as expected in the \dune{} \gls{nd}.
+I will show a simulation of such interactions in \AC{} to investigate its behaviour under high event rates, as expected in the \dune{} \gls{nd}.
 
-The goal of this work is to establish the key technologies enabling the successful deployment of a \lartpc{} component in the \dune{} \gls{nd} complex.
-
+The goal of this work is to establish the key technologies enabling the successful deployment of an \AC{} \lartpc{} component in the \dune{} \gls{nd} complex.
 An introduction to the history and theory of neutrino detection as well as an overview of \dune{} are given in Chapter~\ref{chap:nu-detection}.
-The standard \lartpc{} design is explained in Chapter~\ref{chap:lartpc} including a description of its limitations.
+The standard \lartpc{} design is explained in Chapter~\ref{chap:lartpc}, including a description of its limitations.
 Chapter~\ref{chap:studies} contains several studies addressing the challenges met by future \lartpc{}s.
 These include a thorough investigation of dielectric breakdowns in \lar{}, the development of new charge and light readout methods, as well as the evaluation of electronics for pixelated charge readouts.
 My main contribution to \AC{} is the demonstration of a pixelated \lartpc{} readout in Chapter~\ref{chap:ac}.

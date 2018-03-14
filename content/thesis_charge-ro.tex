@@ -15,16 +15,17 @@ That is why it is crucial to make the support structure as thin as possible in o
 Using a \gls{fr4} structure as in classical \gls{pcb} designs is not a viable option.
 Very thin support structures can be provided by using a flexible \gls{pcb} made from Kapton instead of \gls{fr4}.
 These can be made as thin as a few \SI{10}{\micro\metre}.
-For this test a Kapton layer of \SI{50}{\micro\metre} was used with a single induction plane on the back (Fig.~\ref{fig:cuoka_readout-plane}).
+For this test a Kapton layer of \SI{50}{\micro\metre} was used with a single induction plane on the back (Figure~\ref{fig:cuoka_setup}).
 The Kapton layer is supported by an \gls{fr4} frame for mounting on the \gls{tpc}.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
-	\includegraphics[width=0.5\textwidth]{cuoka/readout_plane_bottom}
-	\caption[Copper on Kapton readout plane]{%
-		Copper on Kapton readout plane.
+	\includegraphics[width=0.495\textwidth]{cuoka/readout_plane_bottom}
+	\includegraphics[width=0.495\textwidth]{cuoka/tpc}
+	\caption[Copper on Kapton readout plane and \glsentryshort{tpc}]{%
+		Copper on Kapton readout plane (left) and \acrshort{tpc} used to test it (right).
 	}
-	\label{fig:cuoka_readout-plane}
+	\label{fig:cuoka_setup}
 \end{figure}
 
 The test was performed in a small vacuum-insulated double-bath cryostat with an inner volume of \SI{15}{\centi\metre} diameter and \SI{60.8}{\centi\metre} height.
@@ -32,21 +33,22 @@ Prior to filling the cryostat was evacuated using a turbo-molecular pump and the
 From earlier experiments~\cite{2photonAbs} the purity can be assumed to be $\sim{\SI{1}{ppb}}$ after filling.
 The cryostat is sealed using rubber O-rings, which lose tightness at cryogenic temperatures.
 Therefore, and due to the fact that no purification system was available, the purity degraded slowly in the course of the experiment.
+Figure~\ref{fig:cuoka_setup} shows the \gls{tpc} I built to test the new readout.
 The \SI{8}{\centi\metre} long field cage consists of \num{8} copper rings of \SI{8}{\centi\metre} diameter terminated by a copper plate cathode.
 A field of \SI{1}{\kilo\volt\per\centi\metre} is generated using a resistive divider.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.5\textwidth]{cuoka/tpc}
-	\caption[Copper on Kapton test \glsentryshort{tpc}]{%
-		\acrshort{tpc} used for the copper on Kapton readout test.
-	}
-	\label{fig:cuoka_tpc}
-\end{figure}
 
 The charge readout electronics were adopted from \AT{} without modifications.
 Charge signals are amplified by cryogenic charge amplifiers and then digitised at room temperature.
 More details can be found in Section~\ref{sec:studies_at-ro}.
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=\textwidth]{cuoka/muon_event}
+	\caption[Copper on Kapton test muon event]{%
+		Cosmic muon event recorded using the copper on Kapton readout.
+	}
+	\label{fig:cuoka_event}
+\end{figure}
 
 No internal light trigger system could be used due to the limited space inside the cryostat.
 Instead, the digitisers were either triggered on one of the charge collection channels or by an external muon telescope.
@@ -61,15 +63,6 @@ It can be seen that due to the event being almost parallel to the induction stri
 The reason for the bad \gls{snr} is improper grounding of the setup and high noise levels in the lab from the nearby train station and air conditioning.
 No further analysis was performed on this data due to time constraints and the upcoming test of a pixelated readout described in Chapter~\ref{chap:dune-nd}.
 Anyhow, the fact that cosmic muons could be seen using this setup proves that there is no inherent problem with having the induction plane a few \SI{10}{\micro\metre} behind the collection plane.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{cuoka/muon_event}
-	\caption[Copper on Kapton test muon event]{%
-		Cosmic muon event recorded using the copper on Kapton readout.
-	}
-	\label{fig:cuoka_event}
-\end{figure}
 
 While this technique can potentially solve the mechanical problems of classical wire readouts, it does not reduce the ambiguities inherent to \gls{2d} projective readouts outlined in Section~\ref{sec:lartpc_challenges}.
 Therefore, I decided not to further investigate copper on Kapton readouts, and instead focus on pixelated readouts for \lartpc{}s, providing real \gls{3d} data.

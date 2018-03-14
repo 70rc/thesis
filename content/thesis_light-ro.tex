@@ -54,7 +54,7 @@ A dedicated light readout system for \AC{} was developed at \gls{help} to addres
 \label{sec:studies_arclight}
 \glsreset{arclight}
 
-\begin{figure}[htbp]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=.5\textwidth]{arclight/prototype}
 	\caption[\SI{10 x 10}{\centi\metre} \glsentryshort{arclight} prototype]{%
@@ -63,50 +63,6 @@ A dedicated light readout system for \AC{} was developed at \gls{help} to addres
 		The rest of the sensor area is dielectric.
 	}
 	\label{fig:arclight_prototype}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{arclight/structure}
-	\caption[\glsentryshort{arclight} light collector cross-section]{%
-		\acrshort{arclight} light collector cross-section near a corner.
-		The structure is mechanically supported by a \SI{4}{\milli\metre} thick \acrshort{wls} plastic.
-		Its front is covered with a dichroic mirror film while the edges and the back face are covered with a dielectric specular reflector foil.
-		The outer surface of the dichroic mirror is coated with \acrshort{tpb} to shift the \acrshort{lar} \acrshort{vuv} scintillation light to the blue range, where the dichroic film is transparent.
-		At the bottom of the left picture two of the four \acrshortpl{sipm} mounted to the carrier \acrshort{pcb} are visible.
-	}
-	\label{fig:arclight_structure}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{arclight/PDE}
-	\caption[Measured \glsentryshort{arclight} \glsentryshort{pde}]{%
-		Measured \acrshort{pde} for the \SI{10 x 10}{\centi\metre} \acrshort{arclight} prototype (in the background), at room temperature.
-		The \acrshort{pde} is given in \si{\percent}.
-	}
-	\label{fig:arclight_pde}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{arclight/light_yield}
-	\caption[\pixlar{} \glsentryshort{arclight} response]{%
-		Distribution of observed number of photo-electrons (N p.e.)\ per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail}.
-		The response is shown for cosmic (blue) and beam events (red).
-	}
-	\label{fig:arclight_pixlar_response}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[viewport=0 0 1648 690, clip, width=\textwidth]{arclight/stability_cosm_beam_mod}
-	\caption[\pixlar{} \glsentryshort{arclight} response stability]{%
-		Mean observed number of photo-electrons (N p.e.)\ per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail}, over several weeks.
-		The response is shown for cosmic (blue) and beam events (black).
-		For reference the secondary beam energy (green) and the bending magnet current (red) are shown.
-	}
-	\label{fig:arclight_pixlar_stability}
 \end{figure}
 
 Most of the following has been published in~\cite{arclight}.
@@ -122,6 +78,19 @@ One or more \glspl{sipm} are mounted inside the cavity to collect the trapped ph
 \AL{} improves the \gls{arapuca} design by replacing the empty cavity with a solid transparent polymer sheet doped with a \gls{wls} dye.
 This makes it substantially more robust and compact, especially when scaled up to larger areas.
 
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=\textwidth]{arclight/structure}
+	\caption[\glsentryshort{arclight} light collector cross-section]{%
+		\acrshort{arclight} light collector cross-section near a corner.
+		The structure is mechanically supported by a \SI{4}{\milli\metre} thick \acrshort{wls} plastic.
+		Its front is covered with a dichroic mirror film while the edges and the back face are covered with a dielectric specular reflector foil.
+		The outer surface of the dichroic mirror is coated with \acrshort{tpb} to shift the \acrshort{lar} \acrshort{vuv} scintillation light to the blue range, where the dichroic film is transparent.
+		At the bottom of the left picture two of the four \acrshortpl{sipm} mounted to the carrier \acrshort{pcb} are visible.
+	}
+	\label{fig:arclight_structure}
+\end{figure}
+
 A \SI{10 x 10}{\centi\metre} \AL{} prototype is shown in Figure~\ref{fig:arclight_prototype}.
 The ratio of sensitive area to total area is \SI{98}{\percent} with the remaining \SI{2}{\percent} occupied by a \gls{pcb} carrying four \emph{Hamamatsu S13360-3050VE} \glspl{sipm}~\cite{arclight_sipm} with a sensitive area of \SI{3 x 3}{\milli\metre} each.
 The inside of \AL{} is made of a \SI{4}{\milli\metre} thick \emph{Eljen Technology EJ-280} \gls{wls} plate~\cite{arclight_wls}.
@@ -133,6 +102,16 @@ Both films are held in place by thin layers of transparent adhesive.
 To shift the \gls{vuv} scintillation light produced in \lar{} to the blue transparent range of the dichroic mirror its outer surface is coated with \gls{tpb}.
 A cross-section of the structure of \AL{} is depicted in Figure~\ref{fig:arclight_structure}.
 
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=\textwidth]{arclight/PDE}
+	\caption[Measured \glsentryshort{arclight} \glsentryshort{pde}]{%
+		Measured \acrshort{pde} for the \SI{10 x 10}{\centi\metre} \acrshort{arclight} prototype (in the background), at room temperature.
+		The \acrshort{pde} is given in \si{\percent}.
+	}
+	\label{fig:arclight_pde}
+\end{figure}
+
 The \gls{pde} was measured at room temperature using an \ce{^{241}Am} source, previously calibrated with a \gls{pmt}.
 A \gls{pde} of \SIrange{0.8}{2.2}{\percent} was measured.
 Figure~\ref{fig:arclight_pde} shows \gls{pde} as a function of the position inside the light collector, overlaid on a picture of the prototype for reference.
@@ -142,6 +121,16 @@ Once reflected, a photon is trapped inside the \AL{} because of the specular nat
 Additionally, the average \gls{pde} was calculated from theory to be \SI{0.7 +- 0.4}{\percent}, in agreement with the measurements.
 More details on the calculations and the calibration of the measurement can be found in~\cite{arclight}.
 
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=\textwidth]{arclight/light_yield}
+	\caption[\pixlar{} \glsentryshort{arclight} response]{%
+		Distribution of observed number of photo-electrons (N p.e.)\ per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail}.
+		The response is shown for cosmic (blue) and beam events (red).
+	}
+	\label{fig:arclight_pixlar_response}
+\end{figure}
+
 The measurements described above were performed at room temperature.
 A \SI{43 x 15}{\centi\metre} \AL{} module was successfully operated at \lar{} temperatures in the \pixlar{} test beam demonstrator at \gls{fail}, described in Section~\ref{sec:ac_pixlar}.
 Figure~\ref{fig:arclight_pixlar_response} shows the response for beam (red) and cosmic events (blue).
@@ -150,6 +139,17 @@ The time evolution of the mean photo-electron yield per event in beam (magenta) 
 Secondary beam energy and bending magnet current, selecting the momentum range of the tertiary beam, are also plotted for reference.
 It can be seen that the photo-electron yield is approximately constant over several weeks.
 The jumps in the response to beam events can be explained by the switching between different beam configurations.
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[viewport=0 0 1648 690, clip, width=\textwidth]{arclight/stability_cosm_beam_mod}
+	\caption[\pixlar{} \glsentryshort{arclight} response stability]{%
+		Mean observed number of photo-electrons (N p.e.)\ per event by the \acrshort{arclight} module in the \pixlar{} test beam demonstrator at \acrshort{fail}, over several weeks.
+		The response is shown for cosmic (blue) and beam events (black).
+		For reference the secondary beam energy (green) and the bending magnet current (red) are shown.
+	}
+	\label{fig:arclight_pixlar_stability}
+\end{figure}
 
 
 \section{Light Readout Summary}

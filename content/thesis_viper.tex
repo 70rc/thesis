@@ -33,7 +33,7 @@ There are \num{6 x 6} pixels per region, giving a total of 1008 pixels.
 \end{figure}
 
 Vias were used for pixels instead of pads in order to minimise capacitance.
-As detailed in Section~\ref{sec:studies_electronics} it is important to minimise capacitance of a charge readout.
+As detailed in Section~\ref{sec:studies_electronics}, it is important to minimise capacitance of a charge readout.
 To further minimise parasitic capacitances the \gls{pcb} design was optimised by removing unnecessary ground planes, routing signal tracks outside necessary ground planes, and increasing the thickness of the \gls{pcb} to \SI{3.5}{\milli\metre} from an initial \SI{1.75}{\milli\metre}. 
 The resulting capacitance at each pixel is $\approx \SI{65}{\pico\farad}$ (see Section~\ref{sec:studies_at-ro}).
 
@@ -130,7 +130,7 @@ This value was used to calculate the \gls{snr} for pixel and \gls{roi} channels 
 	\label{eq:viper_snr}
 \end{IEEEeqnarray}
 where $S$ is the signal and $\sigma$ is the noise standard deviation from the Gaussian fit.
-As can be seen in the top plot in Figure~\ref{fig:viper_unfilteredRawData} (and also~\ref{fig:electronics_noise-run2}) one of the pixel channels is significantly noisier in comparison to the others, likely caused by a broken preamplifier.
+As can be seen in the top plot in Figure~\ref{fig:viper_unfilteredRawData} (and also~\ref{fig:electronics_noise-run2}), one of the pixel channels is significantly noisier in comparison to the others, likely caused by a broken preamplifier.
 Therefore, this channel was blinded for the \gls{snr} calculations.
 The resulting equivalent noise charge is \SI{1095}{\elementarycharge} for the pixel channels and \SI{982}{\elementarycharge} for the inductive \gls{roi} channels.
 The noise amplitude distributions are shown in Figure~\ref{fig:electronics_noise-run2}.
@@ -188,7 +188,7 @@ The reconstruction procedure comprises five steps: noise filtering, hit finding,
 These steps are explained in the following and depicted in Figures~\ref{fig:viper_unfilteredRawData} through~\ref{fig:viper_kalman}, all taken from the same \gls{mip} (cosmic muon) event.
 
 In the first step a noise-filtering algorithm is applied to the raw data.
-As can be seen from Figure~\ref{fig:viper_unfilteredRawData} the noise is largely correlated across all the channels.
+As can be seen from Figure~\ref{fig:viper_unfilteredRawData}, the noise is largely correlated across all the channels.
 This common-mode correlation can be exploited by the noise filter algorithm.
 The following is done separately for the all pixel and \gls{roi} channels of each event.
 Similarly to the \gls{snr} calculation all samples are filled into an amplitude distribution histogram for each channel and subsequently fitted with a Gaussian.

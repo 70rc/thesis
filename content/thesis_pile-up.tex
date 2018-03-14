@@ -98,7 +98,7 @@ They decay according to
 with a branching ratio of \SI{98.8}{\percent}~\cite{pdg}.
 The photons subsequently produce \gls{em} showers in \lar{} (see Section~\ref{sec:nu-detection_fs}).
 At the energies of the \dune{} beam (see Figure~\ref{fig:nu-detection_xsec_flux}) most showers do not deposit a homogenous cone of charge but rather a lot of individually resolvable \Pepm tracks.
-More importantly there are often significant gaps in between these charge clusters.
+More importantly, there are often significant gaps in between these charge clusters.
 A main challenge of shower reconstruction is to associate these well separated charge blobs to the correct event.
 
 \begin{figure}[htb]
@@ -163,7 +163,7 @@ A conservative value also accounts for charge diffusion.
 Furthermore, it is assumed that \gls{em} showers can be identified and their starting point and direction reconstructed with negligible errors and inefficiencies, i.e.\ this information is taken from the simulation truth.
 In reality the direction and starting point can be derived from the vertex producing the \Pgpz, and a rough shower direction obtained from a pattern recognition.
 A cone is calculated in the direction of the shower with its tip at the first charge deposition of the initial photon.
-The opening angle and length of the cone were optimised by looking at the distributions of distance from the starting point and angle w.r.t.\ the direction of the shower.
+The opening angle and length of the cone were optimised by looking at the distributions of the distance from the starting point and the angle w.r.t.\ the direction of the shower.
 The finite resolution of the detector is emulated by voxelising (via rounding) the charge deposition with the corresponding resolution in all three spatial coordinates.
 This leads to problems near the tip of the cone, where the transversal extent is lower than the voxel dimensions.
 In particular, it can happen that most of the initial charge is shifted outside the cone.
@@ -470,10 +470,10 @@ It can be seen that about \SI{70}{\percent} of the events experience a pile-up-r
 For roughly \SI{50}{\percent} of the events it is even below \SI{0.1}{\percent}.
 If it was possible to identify the other \SI{50}{\percent} somehow in the real experiment, they could be ignored, giving an essentially pile-up-free sample.
 This would be easily affordable given the high event rates in the \gls{nd}.
-In case of the cone-base algorithm described here, \gls{em} shower pile-up could be detected via overlapping cones for instance.
+In case of the cone-based algorithm described here, \gls{em} shower pile-up could be detected via overlapping cones for instance.
 
 To get a rough idea of the performance of a \gls{2d} wire readout in an identical environment the same study was performed ignoring the Y-coordinate completely, leaving everything else untouched.
-Of course this is a gross underestimation of the capabilities of existing reconstruction algorithms for \gls{2d} charge readout data.
+Of course, this is a gross underestimation of the capabilities of existing reconstruction algorithms for \gls{2d} charge readout data.
 In particular, contemporary experiments use at least three \gls{2d} projections whereas only one was used here.
 Even though, doing this comparison serves to show that the simple cone-cylinder union reconstruction algorithm breaks down for two dimensions as can be seen in Figures~\ref{fig:dune-nd_2MW-XZ_missed-rel-x} through~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}.
 The fraction of events not suffering from pile-up is below \SI{10}{\percent} while \SI{50}{\percent} have \SI{10}{\percent} or more misidentified energy (Figure~\ref{fig:dune-nd_2MW-XZ_misid-rel-y}).
@@ -484,7 +484,7 @@ Therefore, the cone (or rather triangle) cannot miss energy in the former direct
 
 Finally, as a cross-check the (\gls{3d}) pile-up study was performed for a hypothetical \SI{10}{\mega\watt} beam in Figures~\ref{fig:dune-nd_10MW_missed-rel-x} through~\ref{fig:dune-nd_10MW_misid-rel-y}.
 As explained above the missed energy only depends on the geometry of the acceptance volume, it should be independent of beam intensity.
-Therefore it is expected to be very similar to the \SI{2}{\mega\watt} case, as can be confirmed by comparing Figure~\ref{fig:dune-nd_10MW_missed-rel-x} to Figure~\ref{fig:dune-nd_2MW_missed-rel-x}.
+Therefore, it is expected to be very similar to the \SI{2}{\mega\watt} case, as can be confirmed by comparing Figure~\ref{fig:dune-nd_10MW_missed-rel-x} to Figure~\ref{fig:dune-nd_2MW_missed-rel-x}.
 As expected the error due to misidentified energy is increased to \SIrange{8}{15}{\percent} at the flux peak (Figure~\ref{fig:dune-nd_10MW_misid-rel-x}) but still better than for the XZ projection.
 Similarly, only about \SI{10}{\percent} of the neutrino events remain pile-up free while \SI{50}{\percent} suffer from more than \SI{4}{\percent} misidentified energy (Figure~\ref{fig:dune-nd_10MW_misid-rel-y}).
 

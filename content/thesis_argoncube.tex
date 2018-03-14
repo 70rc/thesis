@@ -45,16 +45,6 @@ Then, it is slowly inserted into the argon bath while being filled through a hyd
 As soon as the top flange of the module reaches the top flanges of the other modules, the indium seal is reinstalled.
 Figure~\ref{fig:ac_module-ins-ext} illustrates the sealing of the argon bath for all modules inserted (left) and one module extracted (right), in the \num{2 x 2} prototype at \gls{help} (see Section~\ref{sec:dune-nd_ac-2x2}).
 
-\begin{figure}[tbp]
-	\centering
-	\includegraphics[width=\textwidth]{ac/2x2/BathBathBathBath}
-	\caption[\AC{} module insertion and extraction]{%
-		Inserted (left) and extracted (right) \AC{} module in the \num{2 x 2} module prototype at \acrshort{help} (see Section~\ref{sec:dune-nd_ac-2x2}).
-		The bottom dummy flange of the extracted module seals the \acrshort{lar} bath.
-	}
-	\label{fig:ac_module-ins-ext}
-\end{figure}
-
 During module insertion and extraction the argon flow is controlled by hydrostatic check valves located at the module bottom.
 They require a minimal differential pressure to open.
 Purity inside to modules is maintained by means of continuous \lar{} recirculation through oxygen traps.
@@ -71,6 +61,16 @@ Additionally, the \dune{} \gls{nd} complex is planned to consist of a magnetised
 The resulting magnetic stray fields might interfere with the electric motors of \lar{} pumps on top of the modules.
 Using a shared recirculation circuit is more economic but reduces module autonomy.
 An external system comprising pumps and oxygen traps can be located outside the argon bath (and potential magnetic stray fields), connected to the modules via tubes.
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=\textwidth]{ac/2x2/BathBathBathBath}
+	\caption[\AC{} module insertion and extraction]{%
+		Inserted (left) and extracted (right) \AC{} module in the \num{2 x 2} module prototype at \acrshort{help} (see Section~\ref{sec:dune-nd_ac-2x2}).
+		The bottom dummy flange of the extracted module seals the \acrshort{lar} bath.
+	}
+	\label{fig:ac_module-ins-ext}
+\end{figure}
 
 One big problem that can be solved by a modular \gls{tpc} design is the high cathode voltage required for large monolithic detectors, and the resulting stored energy.
 As each module contains its own \glspl{tpc} independent of all other modules, the required cathode potential only depends on the module size, not the detector size.

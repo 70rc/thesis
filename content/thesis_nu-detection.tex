@@ -330,27 +330,7 @@ depends on the mass splitting $\dms_{ij} = m_i ^ 2 - m_j ^ 2$.
 In the relativistic case $p \gg m_i$ momentum can be approximated by energy ($p \approx E$) and time by baseline ($t = ct \approx L$).
 To improve readability, $U_{\m{\glsentryshort{pmns}}}$ was abbreviated by $U$.
 
-The second term of Equation~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
-This implies that the frequency of the oscillation is determined by the mass splitting, and the amplitude by the matrix elements of $U_{\m{\glsentryshort{pmns}}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
-A particular consequence of this is that the observation of neutrino oscillations between all three flavours proves a finite mass of at least two of the three neutrinos.
-
-It is worth noting two important facts at this point.
-First, the same result can be obtained by replacing time propagation $e ^ {- i E_i t}$ with spatial propagation $e ^ {i \va{p_i} \va{x}}$ and assuming equal energy instead of momentum for all mass eigenstates.
-Second, both assumptions are wrong from a physics point of view.
-Furthermore, a plane wave function is assumed in both derivations, which is also wrong.
-A wave packet approach is required to correctly describe neutrino oscillations.
-However, it can be shown that the plane wave approximation in conjunction with either an equal momentum or equal energy assumption leads to the correct result.
-Both points have been illustrated by Akhmedov and Smirnov~\cite{Akhmedov}.
-
-Despite predicting neutrino mixing and oscillation, the model does not predict the values of the oscillation parameters.
-They need to be determined experimentally.
-The three-neutrino paradigm described above is well-established and has withstood tests by many experiments in the last few decades.
-Table~\ref{tab:nu-detection_oscparams} shows the results of a recent global fit~\cite{king}.
-In particular, it can be seen that the uncertainties on \dcp{} are huge and the sign of $\dms_{31}$ is not yet known.
-The latter gives rise to two different orderings of the neutrino masses as depicted in Figure~\ref{fig:nu-detection_mass}.
-Much higher statistics than were achieved in neutrino experiments so far are needed to determine these parameters.
-
-\begin{table}[htb]
+\begin{table}[tbp]
 	\centering
 	\caption[Neutrino oscillation parameters]{%
 		Oscillation parameters obtained from a recent global fit for the normal mass ordering case.
@@ -371,13 +351,19 @@ Much higher statistics than were achieved in neutrino experiments so far are nee
 	\end{tabu}
 \end{table}
 
-Various effects can be exploited to enhance the oscillation probability from Equation~\eqref{eq:nu-detection_oscprob}, such as $\frac{L}{E}$ tuning and matter effects.
-Tuning of $\frac{L}{E}$ is trivial to understand from theory but not so easy to achieve in practice.
-Originally, neutrino oscillations were discovered and characterised using solar and atmospheric neutrinos.
-While neutrinos produced in the Earth's atmosphere allow for some $\frac{L}{E}$ tuning by means of a zenith angle selection, and similarly via time of year for solar neutrinos, the gain is limited.
-Much more fine-grained control is possible by directing an artificially produced neutrino beam with a well-defined energy spectrum towards an underground detector at an optimised distance $L$.
+The second term of Equation~\eqref{eq:nu-detection_oscprob} is of oscillatory nature.
+This implies that the frequency of the oscillation is determined by the mass splitting, and the amplitude by the matrix elements of $U_{\m{\glsentryshort{pmns}}}$, i.e.\ the mixing angles $\theta_{12}$, $\theta_{13}$ and $\theta_{23}$.
+A particular consequence of this is that the observation of neutrino oscillations between all three flavours proves a finite mass of at least two of the three neutrinos.
 
-\begin{figure}[htb]
+It is worth noting two important facts at this point.
+First, the same result can be obtained by replacing time propagation $e ^ {- i E_i t}$ with spatial propagation $e ^ {i \va{p_i} \va{x}}$ and assuming equal energy instead of momentum for all mass eigenstates.
+Second, both assumptions are wrong from a physics point of view.
+Furthermore, a plane wave function is assumed in both derivations, which is also wrong.
+A wave packet approach is required to correctly describe neutrino oscillations.
+However, it can be shown that the plane wave approximation in conjunction with either an equal momentum or equal energy assumption leads to the correct result.
+Both points have been illustrated by Akhmedov and Smirnov~\cite{Akhmedov}.
+
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{nu-detection/mass}
 	\caption[Neutrino mass ordering]{%
@@ -387,6 +373,20 @@ Much more fine-grained control is possible by directing an artificially produced
 	}
 	\label{fig:nu-detection_mass}
 \end{figure}
+
+Despite predicting neutrino mixing and oscillation, the model does not predict the values of the oscillation parameters.
+They need to be determined experimentally.
+The three-neutrino paradigm described above is well-established and has withstood tests by many experiments in the last few decades.
+Table~\ref{tab:nu-detection_oscparams} shows the results of a recent global fit~\cite{king}.
+In particular, it can be seen that the uncertainties on \dcp{} are huge and the sign of $\dms_{31}$ is not yet known.
+The latter gives rise to two different orderings of the neutrino masses as depicted in Figure~\ref{fig:nu-detection_mass}.
+Much higher statistics than were achieved in neutrino experiments so far are needed to determine these parameters.
+
+Various effects can be exploited to enhance the oscillation probability from Equation~\eqref{eq:nu-detection_oscprob}, such as $\frac{L}{E}$ tuning and matter effects.
+Tuning of $\frac{L}{E}$ is trivial to understand from theory but not so easy to achieve in practice.
+Originally, neutrino oscillations were discovered and characterised using solar and atmospheric neutrinos.
+While neutrinos produced in the Earth's atmosphere allow for some $\frac{L}{E}$ tuning by means of a zenith angle selection, and similarly via time of year for solar neutrinos, the gain is limited.
+Much more fine-grained control is possible by directing an artificially produced neutrino beam with a well-defined energy spectrum towards an underground detector at an optimised distance $L$.
 
 Neutrino oscillation is different in matter than in vacuum.
 The neutrinos are coherently scattered off the shell electrons, similar to the propagation of light through matter.
@@ -409,7 +409,7 @@ The \dune{}~\cite{dune1, dune2, dune3, dune4} is a long-baseline neutrino oscill
 It consists of a neutrino beamline at \gls{fail} in Illinois, USA and \lartpc{} \glspl{fd} at a baseline of \SI{1300}{\kilo\metre} in the \gls{surf} in South Dakota, USA.
 An artistic view of \dune{} is shown in Figure~\ref{fig:nu-detection_dune}.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{dune/dune}
 	\caption[\glsentryshort{dune}]{%
@@ -433,7 +433,7 @@ The neutrino beam flux is depicted in Figure~\ref{fig:nu-detection_xsec_flux}.
 Delivered neutrino flux integrated over time is usually given in \gls{pot} because the effective neutrino flux depends on several factors and can only be precisely assessed by \gls{nd} measurements.
 More information on the beamline can be found in~\cite{dune2}.
 
-\begin{table}[htb]
+\begin{table}[tbp]
 	\begin{minipage}{\textwidth}
 		\centering
 		\caption[\glsentryshort{dune} beam parameters and \glsentryshort{nd} rates]{%
@@ -469,7 +469,7 @@ In very simple terms, \dcp{} can be derived from the difference in oscillation p
 The \gls{msw} effect enhances either neutrino or antineutrino oscillation depending on the mass ordering, allowing for a determination of the latter.
 For more thorough sensitivity treatments, see~\cite{king, duneT2HKSens, qianVogel}.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{dune/LBNE_osc}
 	\caption[Neutrino oscillation probabilities.]{%
@@ -486,11 +486,11 @@ An exposure of \SI{1320}{\kilo\tonne\mega\watt.years} is required to reach a $3 
 Assuming the reference design of a \SI{40}{\kilo\tonne} \gls{fd} complex and a \SI{1}{\mega\watt} beam results in a data-taking time of \SI{33}{years}.
 Therefore, a beam $> \SI{1}{\mega\watt}$ is required to reach the sensitivity goal earlier.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=.49\textwidth]{dune/mh_exp_syst}
 	\includegraphics[width=.49\textwidth]{dune/cpv75_exp_syst}
-	\caption[\glsentryshort{dune} \dcp{} sensitivity]{%
+	\caption[\glsentryshort{dune} sensitivity]{%
 		Expected sensitivity of \acrshort{dune} to determination of the neutrino mass ordering (hierarchy, left) and discovery of \acrshort{cp} violation, i.e.\ $\dcp \neq\ 0\ \m{or}\ \pi$, (right) as a function of exposure in \si{\kilo\tonne\mega\watt.years}, assuming equal running in neutrino and antineutrino mode, for a range of values for the \Pgne and \Pagne signal normalisation uncertainties from $\SI{5}{\percent}\oplus\SI{3}{\percent}$ to $\SI{5}{\percent}\oplus\SI{1}{\percent}$.
 		The sensitivities quoted are the minimum sensitivity for \SI{100}{\percent} of \dcp{} values in the case of mass ordering and \SI{75}{\percent} of \dcp{} values in the case of \acrshort{cp} violation.
 		The two bands on each plot represent a range of potential beam designs described in \cite{dune2}: the blue hashed band is for the reference design and the solid green band is for the optimised design.
@@ -516,6 +516,7 @@ It is for this reason that~\cite{dune2} does not mention a \gls{nd} \lar{} compo
 
 \section{Neutrino Interaction with Matter}
 \label{sec:nu-detection_interactions}
+
 \glsreset{cc}
 \glsreset{nc}
 \glsreset{qe}
@@ -524,7 +525,7 @@ It is for this reason that~\cite{dune2} does not mention a \gls{nd} \lar{} compo
 \glsreset{coh}
 \glsreset{mec}
 
-\begin{table}[htb]
+\begin{table}[tbp]
 	\centering
 	\caption[\glsentryshort{dune} \glsentryshort{nd} event rates]{%
 		Estimated number of interactions per tonne of argon in the \acrshort{dune} \acrshort{nd} for approximately one month (\num{1e20}~\acrshort{pot}) exposure to an (anti)neutrino beam produced from a primary proton beam of \SI{120}{\giga\electronvolt} and \SI{1.2}{\mega\watt}.
@@ -620,7 +621,7 @@ which is possible for all (anti)neutrino flavours.
 For \Pgne/\Pagne, the interaction is also possible in the \gls{cc} channel via the exchange of a \PWpm boson as depicted in Figures~\ref{fig:nu-detection_nue-scat} and~\ref{fig:nu-detection_nueb-scat}.
 This gives rise to a flavour-dependent term in the oscillation probability in matter, the \gls{msw} effect (see Section~\ref{sec:nu-detection_osc}).
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\begin{fmffile}{graphics/fmf/NC-nue-scat}
 		\unitlength=.4\textwidth
@@ -658,7 +659,7 @@ This gives rise to a flavour-dependent term in the oscillation probability in ma
 	\label{fig:nu-detection_nue-scat}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\begin{fmffile}{graphics/fmf/NC-nueb-scat}
 		\unitlength=.4\textwidth
@@ -704,7 +705,7 @@ For \gls{cc}, the individual contributions from \gls{res} and 1p1h+2p2h are show
 1p1h corresponds to a \gls{cc} \gls{qe} interaction whereas in 2p2h interactions a virtual meson is exchanged inside the target nucleus, also called \gls{mec}.
 Interactions involving \glspl{mec} are important because they can mimic the detector response of \gls{cc} \gls{qe} events.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}
@@ -774,7 +775,7 @@ As the stopping power is proportional to the electron density and thus the mass 
 Therefore, Equation~\eqref{eq:nu-detection_bethe-bloch} more precisely gives the mass stopping power.
 The only remaining dependence on the absorber material is $\frac{Z}{A}$ which is $\approx 0.5$ for most light materials, and the mean excitation energy which only contributes logarithmically.
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{nu-detection/bethe_bloch}
 	\caption[Stopping power]{%

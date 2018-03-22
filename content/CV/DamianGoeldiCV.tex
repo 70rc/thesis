@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+
+\usepackage[british]{babel} % set babel to british rather than american
+\usepackage[utf8]{inputenc} % utf8 support in source code
+\usepackage[T1]{fontenc} % better support for special characters in pdf but messes up title fonts, can be fixed by installing the debian package cm-super
+
+\usepackage{siunitx}
+\usepackage{tabu}
+
+\newcommand*{\m}{\mathrm}
+
+\name{Damian Goeldi} % Your name
+\address{Albert Einstein Centre for Fundamental Physics, Laboratory for High Energy Physics} % Your address
+\address{University of Bern, Sidlerstrasse 5, 3012 Bern, Switzerland}
+\address{+41~31~631~4070 \\ goeldi@protonmail.ch} % Your phone number and email
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+	\begin{nlSubsection}{University of Bern}{March 2014--April 2018}{PhD in Physics}{Switzerland}
+	\end{nlSubsection}
+	\begin{rSubsection}{University of Bern}{September 2012--February 2014}{MSc in Physics with special qualification in Applied/Experimental Physics}{Switzerland}
+		\item insigni cum laude
+		\item GPA: \num{5.71} (scale: \numrange{1}{6})
+	\end{rSubsection}
+	\begin{rSubsection}{University of Bern}{September 2009--September 2012}{BSc in Physics with special qualification in Astronomy}{Switzerland}
+		\item insigni cum laude
+		\item GPA: \num{5.65} (scale: \numrange{1}{6})
+	\end{rSubsection}
+	\begin{nlSubsection}{Kantonsschule Heerbrugg}{August 2004--July 2008}{Eidgenössische Matura with major subject Latin}{Switzerland}
+	\end{nlSubsection}
+\end{rSection}
+
+\end{document}

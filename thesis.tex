@@ -45,6 +45,15 @@
 %\setcounter{tocdepth}{1} % only 2 levels in ToC
 
 \addbibresource{thesis.bib} % .bib file for biblatex (.bib is required)
+\defbibenvironment{publications}
+	{\list
+		{}
+		{\setlength{\leftmargin}{\bibhang}%
+		\setlength{\itemindent}{-\leftmargin}%
+		\setlength{\itemsep}{\bibitemsep}%
+		\setlength{\parsep}{\bibparsep}}}
+	{\endlist}
+	{\item}
 
 \pagestyle{headings} % instead of fancyhdr which is not recommended with KOMA script classes
 
@@ -153,6 +162,7 @@
 	\input{content/thesis_dune-nd}
 	\input{content/thesis_pile-up}
 	\input{content/thesis_conclusion}
+	\input{content/thesis_publications}
 	\input{content/thesis_acknowledgements}
 	
 	\printbibliography
@@ -161,5 +171,7 @@
 	
 	\input{content/thesis_appendix_pile-up-data}
 	
-	%\includepdf[pages={{},1}]{erklaerung}
+	\clearpage
+	\includepdf{content/erklaerung_print}
+	\includepdf{content/CV/DamianGoeldiCV}
 \end{document}

@@ -1,4 +1,8 @@
 thesis.*
 !thesis.tex
 !thesis.bib
+co-author.*
+!co-author.bib
+cor-author.*
+!cor-author.bib
 .DS_Store

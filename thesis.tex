@@ -59,9 +59,11 @@
 
 \VerbatimFootnotes % needed for verbatim in footnotes (obviously :)
 
-\hyphenpenalty=1000 % de/increase some formatting penalties to get nicer result
-\tolerance=5000 % tolerance for total badness without line break
-\setlength{\parskip}{0pt plus 3pt} % add some "rubber" space between paragraphs to omit widows and orphans
+% prevent orphans and widows
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom % provide some variability in bottom margins
 
 \sisetup{separate-uncertainty=true, list-final-separator={, and }}
 \DeclareSIUnit\clight{\text{\ensuremath{c}}} % remove 0 subscript from speed of light
@@ -161,7 +163,9 @@
 	\input{content/thesis_publications}
 	\input{content/thesis_acknowledgements}
 	
-	\printbibliography
+	\begin{sloppypar}
+		\printbibliography
+	\end{sloppypar}
 	
 	\appendix
 	

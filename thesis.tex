@@ -19,7 +19,6 @@
 \usepackage{xpatch} % recommended by biblatex
 \usepackage[backend=biber, giveninits, sorting=none, backref=true, style=numeric-comp]{biblatex} % much more flexible than BibTeX
 
-\usepackage{fancyvrb} % advanced verbatim
 \usepackage{mathtools} % math packages
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -30,17 +29,18 @@
 \usepackage[binary-units]{siunitx} % write units properly
 \usepackage{tabu} % much better than tabular
 \usepackage{booktabs} % fancy tables
-\usepackage{listings} % list source code
-\usepackage{chngcntr} % modify counter reset behaviour
 \usepackage{pdfpages} % insert PDF pages
 \usepackage{graphicx} % for graphics, breaks (e)ps support
 \usepackage{xcolor} % colour
-\usepackage{pdflscape} % landscape pages
 \usepackage{feynmp-auto} % feyman graphs
 \usepackage{romannum} % roman numbers
-\usepackage{afterpage} % flush floats in a smarter way
 \usepackage[above, below, section]{placeins} % provides FloatBarrier, option section puts one after each section
-\usepackage{refcheck} % make sure all labels are referenced
+
+%\usepackage{afterpage} % flush floats in a smarter way
+%\usepackage{fancyvrb} % advanced verbatim
+%\usepackage{listings} % list source code
+%\usepackage{chngcntr} % modify counter reset behaviour
+%\usepackage{pdflscape} % landscape pages
 
 %\setcounter{tocdepth}{1} % only 2 levels in ToC
 
@@ -49,15 +49,15 @@
 	{\list
 		{}
 		{\setlength{\leftmargin}{\bibhang}%
-		\setlength{\itemindent}{-\leftmargin}%
-		\setlength{\itemsep}{\bibitemsep}%
-		\setlength{\parsep}{\bibparsep}}}
+		 \setlength{\itemindent}{-\leftmargin}%
+		 \setlength{\itemsep}{\bibitemsep}%
+		 \setlength{\parsep}{\bibparsep}}}
 	{\endlist}
 	{\item}
 
 \pagestyle{headings} % instead of fancyhdr which is not recommended with KOMA script classes
 
-\VerbatimFootnotes % needed for verbatim in footnotes (obviously :)
+%\VerbatimFootnotes % needed for verbatim in footnotes (obviously :)
 
 % prevent orphans and widows
 \clubpenalty=10000
@@ -119,6 +119,11 @@
 \makeindex
 \loadglsentries{content/thesis_glossary}
 
+% make sure all labels are referenced, should come after hyperref
+\ifoptionfinal{}{
+	\usepackage{refcheck}
+}
+
 
 \begin{document}
 	\graphicspath{{graphics/}}
@@ -140,9 +145,6 @@
 	\clearpage % without this, previous page is already arabic; pay attention to twoside layout!
 	\pagenumbering{arabic}
 	
-	\todo[inline, caption={Check preamble}]{Check preamble.
-	In particular, putting hyperref to the end of the preample as suggested by ``The not so short introduction to \LaTeX{}'' produces warnings about duplicate footnote references.
-	Could it also be caused by TODOs?}
 	\cjames{test}
 	\cjames[inline]{inline test}
 	

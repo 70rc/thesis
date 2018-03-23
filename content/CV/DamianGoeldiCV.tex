@@ -26,12 +26,13 @@
 
 \usepackage[british]{babel} % set babel to british rather than american
 \usepackage[utf8]{inputenc} % utf8 support in source code
-\usepackage[T1]{fontenc} % better support for special characters in pdf but messes up title fonts, can be fixed by installing the debian package cm-super
+\usepackage{lmodern} % better support for special characters in pdf
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{microtype} % optimise microtypography
 
 \usepackage{siunitx}
 \usepackage{tabu}
-
-\newcommand*{\m}{\mathrm}
 
 \name{Damian Goeldi} % Your name
 \address{Albert Einstein Centre for Fundamental Physics, Laboratory for High Energy Physics} % Your address
@@ -56,7 +57,7 @@
 		\item insigni cum laude
 		\item GPA: \num{5.65} (scale: \numrange{1}{6})
 	\end{rSubsection}
-	\begin{nlSubsection}{Kantonsschule Heerbrugg}{August 2004--July 2008}{Gymnasiale Matura with major subject Latin}{Switzerland}
+	\begin{nlSubsection}{Kantonsschule Heerbrugg}{August 2004--July 2008}{Swiss Maturity Certificate with major subject Latin}{Switzerland}
 	\end{nlSubsection}
 \end{rSection}
 

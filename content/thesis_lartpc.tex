@@ -216,11 +216,13 @@ That is why the charge signal needs to be amplified before digitisation.
 This is achieved by means of an integrating amplifier, converting the charge to a voltage.
 Early \lartpc{} designs used preamplifiers outside the cryostat at room temperature.
 From a noise point of view though it is beneficial to put the amplifiers inside the cryostat submerged in \lar{} for two reasons.
-First, the closer to the source the amplifier is located, the shorter the low-signal lines will be, resulting in less pick-up noise.
-Second, the temperature-dependent Johnson-Nyquist noise of the amplifiers will be reduced at cryogenic temperatures (see Section~\ref{sec:studies_electronics}).
+First, the closer to the source the amplifier is located, the shorter are the low-signal lines, resulting in less pick-up noise.
+Besides, shorter signal lines introduce less parasitic capacitance, reducing noise further.
+Second, the temperature-dependent Johnson-Nyquist noise of the amplifiers is reduced at cryogenic temperatures.
+Section~\ref{sec:studies_electronics} provides a more detailed treatment of noise in charge readout electronics.
 
 For the same reasons it makes sense to operate the entire analogue signal chain at cryogenic temperatures.
-This would also help to eliminate ground loops, which can pick up noise inductively or provoke self-oscillation of the analogue signal circuitry.
+This would also help eliminate ground loops, which can pick up noise inductively or provoke self-oscillation of the analogue signal circuitry.
 However, it is not easy to operate electronics at cryogenic temperatures.
 Usually, a complete redesign of the circuit is necessary due to most components operating outside their guaranteed temperature range.
 For some complex active components like the amplifiers and digitisers even a redesign of the \gls{ic} might be necessary.

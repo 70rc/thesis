@@ -1,0 +1,86 @@
+\documentclass[]{beamer}
+
+\newcommand*{\Title}{{A Novel Liquid Argon Time Projection Chamber Detector}}
+\newcommand*{\Author}{{Damian Goeldi}}
+\newcommand*{\Date}{{20.04.18}}
+
+\usepackage[british]{babel} % set babel to british rather than american
+\usepackage[utf8]{inputenc} % utf8 support in source code
+\usepackage{lmodern} % better support for special characters in pdf
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+\usepackage[autostyle]{csquotes} % recommended by biblatex
+\usepackage{xpatch} % recommended by biblatex
+\usepackage[backend=biber, giveninits, sorting=none]{biblatex} % much more flexible than BibTeX
+
+\usepackage{mathtools} % math packages
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{hepnames}
+\usepackage[retainorgcmds]{IEEEtrantools} % advanced equation arrays
+\usepackage[binary-units]{siunitx} % write units properly
+\usepackage{tabu} % much better than tabular
+\usepackage{booktabs} % fancy tables
+\usepackage{xcolor} % colour
+\usepackage{feynmp-auto} % feyman graphs
+
+\usefonttheme[onlymath]{serif} % make math font look like in articles
+
+\hypersetup{unicode, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}}
+
+\addbibresource{../thesis.bib}
+
+\usetheme{CambridgeUS}
+
+\title[The ArgonCube Concept]{\Title}
+\subtitle{The ArgonCube Concept}
+\author{\Author}
+\institute[Uni Bern]{Albert Einstein Center, Laboratory for High Energy Physics, University of Bern}
+\date[\Date]{\Date}
+\logo{\includegraphics[height=1cm]{../graphics/defence/LogoAEC}}
+
+\newcommand*{\m}{\mathrm}
+\newcommand*{\Chapter}{{chapter}} % used in starred chapters to store the chapter name to access it conveniently with all the commands needed there
+
+\newcommand*{\AT}{{ARGONTUBE}}
+\newcommand*{\AC}{{ArgonCube}}
+\newcommand*{\AL}{{ArCLight}}
+\newcommand*{\dune}{{DUNE}}
+\newcommand*{\uboone}{{MicroBooNE}}
+\newcommand*{\sbnd}{{SBND}}
+\newcommand*{\icarus}{{ICARUS}}
+\newcommand*{\lariat}{{LARIAT}}
+\newcommand*{\larpix}{{LArPix}}
+\newcommand*{\pixlar}{{PixLAr}}
+\newcommand*{\argoneut}{{ArgoNeuT}}
+
+\newcommand*{\lar}{{LAr}}
+\newcommand*{\lartpc}{{LArTPC}}
+
+\newcommand*{\nucleon}{\HepGenParticle{N}{}{}}
+\newcommand*{\nucleus}{\HepGenParticle{A}{}{}}
+\newcommand*{\particlea}{\HepGenParticle{A}{}{}}
+\newcommand*{\particleb}{\HepGenParticle{B}{}{}}
+\newcommand*{\particles}{\HepGenParticle{X}{}{}}
+\newcommand*{\dcp}{\ensuremath{\delta_{\m{CP}}}}
+\newcommand*{\dms}{\ensuremath{\Delta m ^ 2}}
+
+\DeclareMathOperator{\sgn}{sgn}
+
+
+\begin{document}
+
+\graphicspath{{../graphics/}}
+
+\frame{\titlepage}
+
+%\begin{frame}{Table of contents}
+%	\tableofcontents
+%\end{frame}
+
+\section{\dune}
+
+\end{document}

@@ -197,18 +197,14 @@
 	\end{IEEEeqnarray*}
 \end{frame}
 
-\begin{frame}{Interaction cross sections}
+\begin{frame}{Detecting neutrinos}{A challenging task}
 	\begin{columns}[c]
-		\column{.6\textwidth}
+		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}\\
-		{\tiny L.\ Pickering}\\
-		\column{.4\textwidth}
-		{\color{\emphcol} $\sigma \sim \SI{e-38}{\centi\metre\squared}$}
-		\begin{itemize}
-			\item[$\Rightarrow$] High target mass
-			\item[$\Rightarrow$] High flux
-		\end{itemize}
+		\includegraphics[width=\textwidth]{defence/Astronomical_unit}
+		\column{.5\textwidth}
+		Detecting a single neutrino would require \SI{\approx 8}{au} of liquid argon.
+		This is \num{8} times the distance from the Earth to the Sun.
 	\end{columns}
 \end{frame}
 
@@ -251,7 +247,7 @@
 				\fmfblob{20}{v1}
 			\end{fmfgraph*}
 		\end{fmffile}
-		\includegraphics[width=\textwidth]{defence/uboone_em-shower_mod}\\
+		\includegraphics[width=\textwidth]{defence/uboone_em-shower_gamma}\\
 	\end{columns}
 \end{frame}
 
@@ -267,6 +263,22 @@
 		\item Near detector @ \SI{0.574}{\kilo\metre} baseline
 		\item \SI{40}{\kilo\tonne} \lartpc\ far detector @ \SI{1300}{\kilo\metre} baseline
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Interaction cross sections vs.\ beam flux}
+	\begin{columns}[c]
+		\column{.6\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}\\
+		{\tiny L.\ Pickering}\\
+		\column{.4\textwidth}
+		{\color{\emphcol} $\sigma \sim \SI{e-38}{\centi\metre\squared}$}
+		\begin{itemize}
+			\item[$\Rightarrow$] High target mass
+			\item[$\Rightarrow$] High flux
+		\end{itemize}
+		{\color{\emphcol} \dune{} flux peak \SI{\approx 2.5}{\giga\electronvolt}}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Sensitivity}
@@ -303,6 +315,18 @@
 	\includegraphics[viewport=407 1112 4956 3389, clip, width=\textwidth]{pile-up/uid0_spill6_event461_gamma19_x}
 \end{frame}
 
+\begin{frame}{Neutrino physics summary}{Neutrino detection is hard}
+	\begin{enumerate}
+		\item High beam flux
+		\item High target mass
+		\item High-precision tracking
+		\item High-precision calorimetry
+	\end{enumerate}
+	{\color{\emphcol}A \lartpc{} provides \numrange{2}{4}.\\Theoretically...}
+\end{frame}
+
+\section{The \lartpc{}}
+
 \begin{frame}{The time projection chamber (TPC)}{A detector providing precise tracking and calorimetry}
 	\centering
 	\includegraphics[viewport=35 40 720 540, clip, height=.66\textheight]{defence/TPCprinciple}\\
@@ -316,12 +340,12 @@
 		\includegraphics[width=\textwidth]{defence/ArTube}
 		\column{.7\textwidth}
 		\begin{itemize}
-			\item Dense (\SI{1.4}{\gram\per\cubic\centi\metre}) \emph{$\rightarrow$ tracking \& calorimetry}
-			\item Abundant ($\approx \SI{1}{\percent}$ of the Earth's atmosphere) \emph{$\rightarrow$ cheap}
-			\item High ionisation yield (\SI{8500}{\elementarycharge\per\milli\metre} for a MIP) \emph{$\rightarrow$ calorimetry}
-			\item Prompt scintillation ($\approx \si{\nano\second}$) \emph{$\rightarrow$ tracking (absolute spatial reference)}
+			\item Dense (\SI{1.4e3}{\kilo\gram\per\cubic\metre}) \emph{$\rightarrow$ high event rate}
+			\item Abundant (\SI{\approx 1}{\percent} of the Earth's atmosphere) \emph{$\rightarrow$ cheap}
+			\item High ionisation yield (\SI{8900}{\elementarycharge\per\milli\metre} for a MIP) \emph{$\rightarrow$ tracking \& calorimetry}
+			\item Prompt scintillation ($\sim \si{\nano\second}$) \emph{$\rightarrow$ tracking (absolute spatial reference)}
 			\item Liquid @ \SI{87}{\kelvin}
-			\item Drift speed @ \SI{0.1}{\kilo\volt\per\milli\meter} $\approx \SI{2}{\milli\meter\per\micro\second}$
+			\item Drift speed @ \SI{0.1}{\kilo\volt\per\milli\meter} \SI{\approx 2}{\milli\meter\per\micro\second}
 		\end{itemize}
 		{\color{\emphcol} Meets all the requirements for neutrino detection with a TPC}
 	\end{columns}
@@ -411,11 +435,11 @@
 	{\tiny \uboone{} arXiv:~1612.05824~\cite{uboone}}\\
 \end{frame}
 
-\subsection{Wire readouts}
+\subsection{Wires}
 
 \begin{frame}{Cosmic event}{\color{\emphcol} Effect of dead wires}
 	\centering
-	\includegraphics[width=\textwidth]{defence/uboone_event}
+	\includegraphics[height=.8\textheight]{defence/uboone_em-shower_dead-wires}
 \end{frame}
 
 \begin{frame}{Problems of wire readouts}
@@ -437,29 +461,7 @@
 	\end{columns}
 \end{frame}
 
-\subsection{Practical considerations}
-
-\begin{frame}{Pixelated charge readout}{\color{\emphcol} Enabling true 3D tracking}
-	\begin{columns}[c]
-		\column{.5\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{viper/pixies}\\
-		{\tiny University of Bern, 2016}\\
-		\column{.5\textwidth}
-		\begin{itemize}
-			\item Charge collecting pixels
-			\begin{itemize}
-				\item[$\hookrightarrow$] PCB VIAs
-				\item Low capacitance
-				\item[$\Rightarrow$] Reduce Johnson-Nyquist noise $Q_{\m{Noise}} = \sqrt{k_{\m{B}}TC}$
-			\end{itemize}
-			\item Biased charge focussing grids
-			\begin{itemize}
-				\item[$\hookrightarrow$] PCB traces
-			\end{itemize}
-		\end{itemize}
-	\end{columns}
-\end{frame}
+\subsection{Pixels}
 
 \begin{frame}{Why (not) pixels?}
 	\begin{columns}[c]
@@ -477,8 +479,7 @@
 				\item $\order{\num{e4}}$~wires
 				\item[$\rightarrow$] $\order{\num{e7}}$~pixels
 			\end{itemize}
-			\item High power dissipation
-			\item Many signal feedthroughs
+			\item Extremely high number of cryostat penetrations
 		\end{itemize}
 	\end{columns}
 \end{frame}
@@ -488,16 +489,17 @@
 		\column{.5\textwidth}
 		\centering
 		\includegraphics[page=1, viewport=930 90 1850 800, clip, width=\textwidth]{defence/Pixels}\\
-		Multiplexing\\
-		{\tiny James Sinclair, University of Bern}\\
+		Multiplexing
 		\column{.5\textwidth}
 		\begin{itemize}
 			\item Cold digitisation
 			\begin{itemize}
-				\item[$+$] ideal
+				\item[$+$] high-speed digital links
+				\item[$+$] potentially less noise
 				\item[$-$] complex cold electronics
+				\item[$-$] high power dissipation
 			\end{itemize}
-			\item {\color{\emphcol} Reduce number of DAQ channels by multiplexing}
+			\item {\color{\emphcol} Analogue multiplexing}
 			\begin{itemize}
 				\item[$+$] existing cold electronics
 				\item[$-$] ambiguities
@@ -510,8 +512,7 @@
 
 \begin{frame}{\AC\ pixel demonstrator PCB}{\num{28} ROIs, each \num{6 x 6} pixels $\Rightarrow$ {\color{\emphcol} \num{64} DAQ channels $\rightarrow$ \num{1008} physical pixels} @ \SI{2.54}{\milli\meter} pitch}
 	\centering
-	\includegraphics[height=.75\textheight]{viper/pixies}\\
-	{\tiny University of Bern, 2016}\\
+	\includegraphics[width=\textwidth]{viper/pixies}
 \end{frame}
 
 \begin{frame}{\AC\ pixel demonstrator TPC}
@@ -707,7 +708,7 @@
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{defence/uboone_em-shower_mod}
+		\includegraphics[width=\textwidth]{defence/uboone_em-shower_gamma}
 		\column{.5\textwidth}
 		\begin{itemize}
 			\item \SIrange{10}{20}{\percent} of events involve \Pgpz
@@ -726,17 +727,12 @@
 		\includegraphics[viewport=2900 1800 4000 2600, clip, width=\textwidth]{pile-up/uid0_spill6_event461_gamma19_x}
 		\column{.4\textwidth}
 		\begin{itemize}
-			\item Assume shower location and direction as known
+			\item Assume shower location and direction are known
 			\item Form cone around shower
-			\item Missed energy: Deposited by shower, outside cone
 			\item Misidentified energy: Not deposited by shower, inside cone
+			\item[$\Rightarrow$] Measure for pile-up
 		\end{itemize}
 	\end{columns}
-\end{frame}
-
-\begin{frame}{Missing energy}{Gauging reconstruction efficiency}
-	\centering
-	\includegraphics[width=\textwidth]{pile-up/2MW/missed_rel_x}
 \end{frame}
 
 \begin{frame}{Misidentified energy}{Gauging event pile-up}
@@ -749,9 +745,45 @@
 	\includegraphics[width=\textwidth]{pile-up/2MW/misid_rel_y}
 \end{frame}
 
+\begin{frame}{\AC{} summary}
+	\begin{columns}[c]
+		\column{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\textheight, angle=90]{ac/2x2/module_real}
+		\column{.5\textwidth}
+		\begin{itemize}
+			\item {\color{\emphcol} Enables a \lartpc{} component in the \dune{} near detector}
+			\item Mean pile-up-related error on reconstructed energy: \SIrange{2}{3}{\percent}
+			\item \SI{<0.1}{\percent} for \SI{>50}{\percent} of neutrino events
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
 \appendix
 
 \section{Backup}
+
+\begin{frame}{Pixelated charge readout}{\color{\emphcol} Enabling true 3D tracking}
+	\begin{columns}[c]
+		\column{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{viper/pixies}\\
+		{\tiny University of Bern, 2016}\\
+		\column{.5\textwidth}
+		\begin{itemize}
+			\item Charge collecting pixels
+			\begin{itemize}
+				\item[$\hookrightarrow$] PCB VIAs
+				\item Low capacitance
+				\item[$\Rightarrow$] Reduce Johnson-Nyquist noise $Q_{\m{Noise}} = \sqrt{k_{\m{B}}TC}$
+			\end{itemize}
+			\item Biased charge focussing grids
+			\begin{itemize}
+				\item[$\hookrightarrow$] PCB traces
+			\end{itemize}
+		\end{itemize}
+	\end{columns}
+\end{frame}
 
 \begin{frame}{Cold charge amplifiers}{\color{\emphcol} Warm vs.\ cold}
 	\centering
@@ -783,6 +815,11 @@
 			\end{itemize}
 		\end{itemize}
 	\end{columns}
+\end{frame}
+
+\begin{frame}{Missing energy}{Gauging reconstruction efficiency}
+	\centering
+	\includegraphics[width=\textwidth]{pile-up/2MW/missed_rel_x}
 \end{frame}
 
 \end{document}

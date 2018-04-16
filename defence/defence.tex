@@ -44,7 +44,8 @@
 \logo{\includegraphics[height=1cm]{defence/LogoAEC}}
 
 \newcommand*{\m}{\mathrm}
-\newcommand*{\emphcol}{blue}
+\newcommand*{\emphcol}{red}
+\newcommand*{\emphcoltitle}{blue}
 
 \newcommand*{\AT}{{ARGONTUBE}}
 \newcommand*{\AC}{{ArgonCube}}
@@ -53,7 +54,7 @@
 \newcommand*{\uboone}{{MicroBooNE}}
 \newcommand*{\sbnd}{{SBND}}
 \newcommand*{\icarus}{{ICARUS}}
-\newcommand*{\lariat}{{LARIAT}}
+\newcommand*{\lariat}{{LArIAT}}
 \newcommand*{\larpix}{{LArPix}}
 \newcommand*{\pixlar}{{PixLAr}}
 \newcommand*{\argoneut}{{ArgoNeuT}}
@@ -96,13 +97,6 @@
 	\centering
 	\includegraphics[width=\textwidth]{defence/neutrino-mix_scaled}\\
 	{\tiny\url{http://www.hyper-k.org/en/neutrino.html}}
-\end{frame}
-
-\begin{frame}{Double slit experiment}{Wave interference}
-	\centering
-	\includegraphics[viewport=0 90 560 120, clip, width=\textwidth]{defence/Single_slit_and_double_slit2}\\
-	\includegraphics[width=\textwidth]{defence/Interference_of_two_waves}\\
-	{\tiny\url{https://commons.wikimedia.org}}
 \end{frame}
 
 \begin{frame}{Neutrino oscillation}
@@ -230,7 +224,7 @@
 	\end{IEEEeqnarray*}
 \end{frame}
 
-\begin{frame}{Detecting neutrinos}{A challenging task}
+\begin{frame}{Detecting neutrinos}{A challenging task due to their extremely small interaction cross-section}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
@@ -295,7 +289,7 @@
 		\item Measure $P\qty(\Pgngm \rightarrow \Pgne)$ and $P\qty(\Pagngm \rightarrow \Pagne) \Rightarrow$ {\color{\emphcol}$\dcp$, $\sgn\qty(\dms_{\m{atm}})$}
 		\item High intensity \Pgngm/\Pagngm beam from Fermilab
 		\item Near detector @ \SI{0.574}{\kilo\metre} baseline
-		\item \SI{40}{\kilo\tonne} \lartpc\ far detector @ \SI{1300}{\kilo\metre} baseline
+		\item \SI{40}{\kilo\tonne} \lartpc{} far detector @ \SI{1300}{\kilo\metre} baseline
 	\end{itemize}
 \end{frame}
 
@@ -319,23 +313,21 @@
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{dune/cpv75_exp_syst}\\
+		\includegraphics[width=\textwidth]{defence/cpv75_exp_syst}\\
 		{\tiny Acciarri, Goeldi et al.; \dune{}; arXiv:~1512.06148~\cite{dune2}}\\
-		\num{25} years with \SI{40}{\kilo\tonne}\\
-		{\color{\emphcol} $\Rightarrow$ need beam intensity $> \SI{1}{\mega\watt}$}\\
+		\SI{25}{y} with \SI{40}{\kilo\tonne} {\color{\emphcol} $\Rightarrow$ $> \SI{1}{\mega\watt}$ beam}
 		\column{.5\textwidth}
-		\SI{75}{\percent} CP violation coverage at $\num{3}\sigma$ requires beam related uncorrelated uncertainties $< \SI{2}{\percent}$.\\
-		{\color{\emphcol} Constraining beam at near detector} requires
+		\SI{75}{\percent} coverage at $\num{3}\sigma$ requires:\\
+		{\color{\emphcol} Constraining beam at near detector}
 		\begin{itemize}
 			\item High statistics
 			\item High resolution
 			\item[$\Rightarrow$] Good background rejection
-			\item Ideally, same material and technology as far detector
-			\item[$\Rightarrow$] Cancel uncertainties on
-			\begin{itemize}
-				\item Cross section
-				\item Detector response
-			\end{itemize}
+		\end{itemize}
+		Same detector technology as far site allows cancellation of uncertainties on
+		\begin{itemize}
+			\item Cross section
+			\item Detector response
 		\end{itemize}
 	\end{columns}
 \end{frame}
@@ -343,7 +335,7 @@
 \begin{frame}{Challenges for the near detector}{High multiplicities}
 	\begin{itemize}
 		\item Simulation of a single neutrino beam spill, including backgrounds
-		\item {\color{\emphcol} \num{0.2} beam events per tonne @ \SI{2}{\mega\watt}}
+		\item {\color{\emphcol} \num{0.2} \Pgn events per tonne @ \SI{2}{\mega\watt}}
 	\end{itemize}
 	\centering
 	\includegraphics[viewport=407 1112 4956 3389, clip, width=\textwidth]{pile-up/uid0_spill6_event461_gamma19_x}
@@ -367,7 +359,7 @@
 	{\tiny Acciarri, Goeldi et al.; \uboone{}; arXiv:~1612.05824~\cite{uboone}}
 \end{frame}
 
-\begin{frame}{Why liquid argon?}
+\begin{frame}{Why liquid argon?}{\color{\emphcoltitle} Meets all the requirements for neutrino detection with a TPC}
 	\begin{columns}[c]
 		\column{.3\textwidth}
 		\centering
@@ -379,10 +371,9 @@
 			\item Abundant (\SI{\approx 1}{\percent} of the Earth's atmosphere) \emph{$\rightarrow$ cheap}
 			\item High ionisation yield (\SI{8900}{\elementarycharge\per\milli\metre} for a MIP) \emph{$\rightarrow$ tracking \& calorimetry}
 			\item Prompt scintillation ($\sim \si{\nano\second}$) \emph{$\rightarrow$ tracking (absolute spatial reference)}
-			\item Liquid @ \SI{87}{\kelvin}
-			\item Drift speed @ \SI{0.1}{\kilo\volt\per\milli\meter} \SI{\approx 2}{\milli\meter\per\micro\second}
+			\item Liquid @ \SI{87}{\kelvin} \emph{$\rightarrow$ cooling by L\ce{N_2}}
+			\item Electron drift speed @ \SI{0.1}{\kilo\volt\per\milli\meter} \SI{\approx 2}{\milli\meter\per\micro\second}
 		\end{itemize}
-		{\color{\emphcol} Meets all the requirements for neutrino detection with a TPC}
 	\end{columns}
 \end{frame}
 
@@ -394,7 +385,7 @@
 	{\tiny Acciarri, Goeldi et al.; \uboone{}; arXiv:~1612.05824~\cite{uboone}}
 \end{frame}
 
-\begin{frame}{Dielectric strength of liquid argon}{\color{\emphcol} Lower than expected}
+\begin{frame}{Dielectric strength of liquid argon}{\color{\emphcoltitle} Lower than expected}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
@@ -413,7 +404,7 @@
 	{\tiny Auger, Goeldi et al.; arXiv:~1512.05968~\cite{breakdown_16}}
 \end{frame}
 
-\begin{frame}{Current voltage behaviour of a typical breakdown}{\color{\emphcol} Rather slow process}
+\begin{frame}{Current voltage behaviour of a typical breakdown}{\color{\emphcoltitle} Rather slow process}
 	\centering
 	\includegraphics[height=.75\textheight]{hv/IVcorr}\\
 	{\tiny Auger, Goeldi et al.; arXiv:~1512.05968~\cite{breakdown_16}}
@@ -446,7 +437,7 @@
 	{\tiny Auger, Goeldi et al.; arXiv:~1406.3929~\cite{latex}}\\
 \end{frame}
 
-\begin{frame}{Drift field generation summary}{\color{\emphcol} We need a modular TPC design}
+\begin{frame}{Drift field generation summary}{\color{\emphcoltitle} We need a modular TPC design}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
@@ -456,7 +447,7 @@
 		\begin{itemize}
 			\item Maximum safe electric field in \lar{}: \SI{40}{\kilo\volt\per\centi\metre}
 			\item Can be increased by coating HV components
-			\item Not practical (yet)
+			\item Not practical
 			\item[$\Rightarrow$] Large inactive clearance volumes around HV components
 			\item[$\Rightarrow$] {\color{\emphcol} Segment TPC to keep cathode voltages low}
 		\end{itemize}
@@ -473,7 +464,7 @@
 
 \subsection{Wires}
 
-\begin{frame}{Cosmic event}{\color{\emphcol} Effect of dead wires}
+\begin{frame}{Cosmic event}{\color{\emphcoltitle} Effect of dead wires}
 	\centering
 	\includegraphics[height=.8\textheight]{defence/uboone_em-shower_dead-wires}
 \end{frame}
@@ -487,12 +478,11 @@
 		For decades, sensing wires have done a great job
 		BUT they have many drawbacks:
 		\begin{itemize}
-			\item Only 2D projections of 3D event (either XZ, YZ or UZ, VZ, WZ)
+			\item {\color{\emphcol} Limiting an ideal 3D tracker to multiple 2D projections}
 			\item Ambiguities in reconstruction
-			\item Mechanically highly demanding (design \& production)
+			\item Mechanically highly demanding
 			\item Prone to microphonics
 		\end{itemize}
-		{\color{\emphcol} Reducing an ideal 3D tracker to multiple 2D projections}
 	\end{columns}
 \end{frame}
 
@@ -542,22 +532,20 @@
 	\end{columns}
 \end{frame}
 
-\subsection{\AC\ pixel demonstrator}
+\subsection{\AC{} pixel demonstrator}
 
-\begin{frame}{\AC\ pixel demonstrator PCB}{\num{28} ROIs, each \num{6 x 6} pixels $\Rightarrow$ {\color{\emphcol} \num{64} DAQ channels $\rightarrow$ \num{1008} physical pixels} @ \SI{2.54}{\milli\meter} pitch}
+\begin{frame}{\AC{} pixel demonstrator PCB}{\num{28} ROIs, each \num{6 x 6} pixels $\Rightarrow$ {\color{\emphcoltitle} \num{64} DAQ channels $\rightarrow$ \num{1008} physical pixels}}
 	\centering
 	\includegraphics[width=\textwidth]{viper/pixies}
 \end{frame}
 
-\begin{frame}{\AC\ pixel demonstrator TPC}
+\begin{frame}{\AC{} pixel demonstrator TPC}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
 		\includegraphics[viewport=1200 200 2500 1800, clip, height=\textwidth, angle=-90]{defence/TPC}
 		\column{.5\textwidth}
 		\begin{itemize}
-			\item \SI{200}{\litre} bath cryostat, $\varnothing = \SI{500}{\milli\meter}$, $h = \SI{1100}{\milli\metre}$
-			\item \SI{130}{\kilo\volt} HV feedthrough
 			\item Cylindrical drift volume
 			\item $\varnothing = \SI{100}{\milli\meter}$
 			\item $L = \SI{600}{\milli\meter}$
@@ -569,18 +557,17 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{\AC\ pixel demonstrator readout}
+\begin{frame}{\AC{} pixel demonstrator readout}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{viper/viper_sipm}
 		\column{.5\textwidth}
 		\begin{itemize}
-			\item \num{64} DAQ channels for \num{1008} physical pixels
 			\item {\color{\emphcol} Charge readout by BNL LARASIC4* preamplifiers in LAr}
 			\item[$\hookrightarrow$] CAEN ADCs at room temperature
 			\item Light readout by TPB coated acrylic field cage spacers (inner surface)
-			\item[$\hookrightarrow$] {\color{\emphcol} Hamamatsu S12825-050P SiPMs in LAr}
+			\item[$\hookrightarrow$] {\color{\emphcol} Cold Hamamatsu S12825-050P SiPMs}
 		\end{itemize}
 	\end{columns}
 \end{frame}
@@ -609,7 +596,7 @@
 		\includegraphics[height=.8\textheight]{viper/viper_original}
 		\column{.4\textwidth}
 		\centering
-		\includegraphics[width=.8\textheight, angle=90]{viper/event967_kalman}
+		\includegraphics[width=.8\textheight, angle=-90]{defence/event967_kalman}
 	\end{columns}
 	\centering
 	{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}
@@ -644,16 +631,15 @@
 		\only<1>{\includegraphics[height=.4\textheight]{viper/event967_rawUnfilteredROI}\\\includegraphics[height=.4\textheight]{viper/event967_rawFilteredROI}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
 		\only<2>{\includegraphics[page=1, height=.4\textheight]{viper/event967_pixel2_hit8}\\\includegraphics[page=3, height=.4\textheight]{viper/event967_pixel2_hit8}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
 		\only<3>{\includegraphics[height=.8\textheight]{viper/event967_pulses_a_pca}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
-		\only<4>{\includegraphics[width=.8\textheight, angle=-90]{viper/event967_kalman}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
+		\only<4>{\includegraphics[width=.8\textheight, angle=-90]{defence/event967_kalman}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Charge readout summary}{\color{\emphcol} Demonstrated a pixelated \lartpc{}, enabling true 3D tracking}
+\begin{frame}{Charge readout summary}{\color{\emphcoltitle} Demonstrated a pixelated \lartpc{}, enabling true 3D tracking}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{larpix/schematic}\\
-		{\tiny Lawrence Berkeley National Laboratory}
+		
 		\column{.5\textwidth}
 		\begin{itemize}
 			\item MIP signal-to-noise ratio: \num{14}
@@ -675,16 +661,15 @@
 	{\tiny Acciarri, Goeldi et al.; \uboone{}; arXiv:~1612.05824~\cite{uboone}}
 \end{frame}
 
-\begin{frame}{\AC{} Light readout system (\AL{})}{\color{\emphcol}A SiPM-based compact, robust, scalable \lartpc{} light readout}
+\begin{frame}{\AC{} Light readout system (\AL{})}{\color{\emphcoltitle} A SiPM-based compact, robust, scalable \lartpc{} light readout}
 	\centering
 	\includegraphics[width=\textwidth]{arclight/structure}\\
 	{\tiny Auger, Goeldi et al.; arXiv:~1711.11409~\cite{arclight}}
 \end{frame}
 
-\begin{frame}{\AL{} in operation}{\color{\emphcol} Stable operation over several weeks at \lar{} temperature}
+\begin{frame}{\AL{} in \lariat{}}{\color{\emphcoltitle} Stable operation over several weeks at \lar{} temperature}
 	\centering
-	\includegraphics[viewport=0 0 1648 690, clip, width=\textwidth]{arclight/stability_cosm_beam_mod}\\
-	{\tiny Auger, Goeldi et al.; arXiv:~1711.11409~\cite{arclight}}
+	\includegraphics[viewport=0 0 1648 690, clip, width=\textwidth]{arclight/stability_cosm_beam_mod}
 \end{frame}
 
 \begin{frame}{Light readout summary}{\AL{}, a novel \lartpc{} light readout combining SiPMs with a light trap}
@@ -707,7 +692,7 @@
 
 \section{\AC{}}
 
-\begin{frame}{\AC{}}{\color{\emphcol}A scalable high-precision tracker and calorimeter based on self-contained \lartpc{}s}
+\begin{frame}{\AC{}}{\color{\emphcoltitle}A scalable high-precision tracker and calorimeter based on self-contained \lartpc{}s}
 	\begin{columns}[c]
 		\column{.6\textwidth}
 		\centering
@@ -721,6 +706,17 @@
 			\item \AL{} readout
 			\item[$\Rightarrow$] {\color{\emphcol} Reduce scintillation light pile-up}
 		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{\AC{}}{\color{\emphcoltitle}A scalable high-precision tracker and calorimeter based on self-contained \lartpc{}s}
+	\begin{columns}[c]
+		\column{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{ac/2x2/Normal-Module-4K_labelled}
+		\column{.5\textwidth}
+		\centering
+		\includegraphics[viewport=1450 0 3000 1600, clip, width=\textwidth]{ac/2x2/BathBathBathBath}
 	\end{columns}
 \end{frame}
 
@@ -776,7 +772,7 @@
 
 \begin{frame}{Misidentified energy}{Gauging event pile-up}
 	\centering
-	\includegraphics[width=\textwidth]{pile-up/2MW/misid_rel_y}
+	\includegraphics[width=\textwidth]{defence/misid_rel_y}
 \end{frame}
 
 \begin{frame}{\AC{} summary}
@@ -799,7 +795,7 @@
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{larpix/example_track}
+		\includegraphics[width=\textwidth]{defence/larpix_event}
 		\column{.5\textwidth}
 		\begin{itemize}
 			\item New ambiguity-free pixel readout electronics are being tested right now in our lab.
@@ -810,19 +806,27 @@
 \end{frame}
 
 \begin{frame}{Summary}
-	\AC{} is a novel, enhanced \lartpc{} detector made of self-contained TPC modules sharing a common \lar{} bath.
-	Equipped with a pixelated charge readout, enabling true 3D tracking, it is optimised for the high-multiplicity near detector environment of next-generation beam neutrino oscillation experiments.
+	\begin{block}{}
+		The summation of my work builds the groundwork for \AC{}.
+	\end{block}
+	
+	\begin{block}{}
+		\AC{} is a novel, enhanced \lartpc{} detector made of self-contained TPC modules sharing a common \lar{} bath.
+		Equipped with a pixelated charge readout, enabling true 3D tracking, it is optimised for the high-multiplicity near detector environment of next-generation beam neutrino oscillation experiments.
+	\end{block}
 \end{frame}
+
+\appendix
+
+\section{Bibliography}
 
 \begin{frame}[allowframebreaks]{Bibliography}
 	\printbibliography
 \end{frame}
 
-\appendix
-
 \section{Backup}
 
-\begin{frame}{Pixelated charge readout}{\color{\emphcol} Enabling true 3D tracking}
+\begin{frame}{Pixelated charge readout}{\color{\emphcoltitle} Enabling true 3D tracking}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
@@ -844,16 +848,22 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Cold charge amplifiers}{\color{\emphcol} Warm vs.\ cold}
+\begin{frame}{Cold charge amplifiers}{\color{\emphcoltitle} Warm vs.\ cold}
 	\centering
 	\includegraphics[width=\textwidth]{defence/AT_warmPreamps}\\
 	\includegraphics[width=\textwidth]{defence/AT_coldPreamps}\\
-	{\tiny Ereditato, Goeldi et al.\ arXiv:~1408.7046~\cite{larasic}}\\
+	{\tiny Ereditato, Goeldi et al.\ arXiv:~1408.7046~\cite{AT_larasic}}\\
 \end{frame}
 
-\begin{frame}{Cold charge ADCs}{\color{\emphcol} Linearity issues with current designs}
+\begin{frame}{Cold charge ADCs}{\color{\emphcoltitle} Linearity issues with current designs}
 	\centering
 	\includegraphics[height=.8\textheight]{bnl/bnl_adc_lin}
+\end{frame}
+
+\begin{frame}{Novel ambiguity-free pixelated charge readout electronics}{\larpix{}}
+	\centering
+	\includegraphics[height=.75\textheight]{larpix/schematic}\\
+	{\tiny Lawrence Berkeley National Laboratory}
 \end{frame}
 
 \begin{frame}{Regions of interest (ROI) multiplexing}

@@ -87,26 +87,14 @@
 
 \subsection{Mixing}
 
-\begin{frame}{The three neutrinos}
-	\centering
-	\includegraphics[width=\textwidth]{defence/neutrino-flavor_scaled}\\
-	{\tiny\url{http://www.hyper-k.org/en/neutrino.html}}
-\end{frame}
-
-\begin{frame}{Neutrino mixing}
-	\centering
-	\includegraphics[width=\textwidth]{defence/neutrino-mix_scaled}\\
-	{\tiny\url{http://www.hyper-k.org/en/neutrino.html}}
-\end{frame}
-
 \begin{frame}{Neutrino oscillation}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{defence/waves}
+		\includegraphics[width=\textwidth]{defence/neutrino-mix_scaled}
 		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{defence/neutrino-flavor_scaled}
+		\includegraphics[width=\textwidth]{defence/waves}
 	\end{columns}
 	\centering
 	{\tiny\url{http://www.hyper-k.org/en/neutrino.html}}
@@ -127,9 +115,6 @@
 			\HepParticle{\nu}{3}{}
 		\end{pmatrix}
 	\end{IEEEeqnarray*}
-	\begin{IEEEeqnarray*}{rCl}
-		U_{\m{PMNS}} & = & U_{\m{sol}} \times U_{\m{rea}} \times U_{\m{atm}} \times U_{\m{maj}} =
-	\end{IEEEeqnarray*}
 	\begin{IEEEeqnarray*}{C}
 		\begin{bmatrix}
 			1 &	0 &			0 \\
@@ -139,7 +124,7 @@
 		\begin{bmatrix}
 			c_{13} &									0 &	s_{13} e ^ {- i {\color{\emphcol}\dcp}} \\
 			0 &											1 &	0 \\
-			- s_{13} e ^ {- i {\color{\emphcol}\dcp}} &	0 &	c_{13}
+			- s_{13} e ^ {i {\color{\emphcol}\dcp}} &	0 &	c_{13}
 		\end{bmatrix}
 		\begin{bmatrix}
 			c_{12} &	s_{12} &	0 \\
@@ -152,26 +137,20 @@
 			0 &												0 &												1
 		\end{bmatrix}
 	\end{IEEEeqnarray*}
-\end{frame}
-
-\begin{frame}{Parameters}
-	\begin{itemize}
-		\item \HepParticle{\nu}{\alpha}{} flavour eigenstates for $\alpha = e, \mu, \tau$
-		\item \HepParticle{\nu}{i}{} mass eigenstates for $i = 1, 2, 3$
-		\item $U_{\m{PMNS}}$ Pontecorvo-Maki-Nakagawa-Sakata matrix defined by
-		\begin{itemize}
-			\item \num{3} mixing angles $\theta_{12}$, $\theta_{13}$, and $\theta_{23}$ with $s_{ij} = \sin(\theta_{ij})$ and $c_{ij} = \cos(\theta_{ij})$
-			\item \num{1} Dirac CP violation phase {\color{\emphcol}\dcp}
-			\item \num{2} Majorana CP violation phases {\color{\emphcol}$\alpha_1$} and {\color{\emphcol}$\alpha_2$}
-		\end{itemize}
-		\item 2 mass squared differences $\dms_{\m{sol}} = m_2 ^ 2 - m_1 ^ 2$ and ${\color{\emphcol}\dms_{\m{atm}}} = m_3 ^ 2 - m_2 ^ 2$
-	\end{itemize}
-	\begin{IEEEeqnarray*}{rCl}
-		\label{eq:oscprob}
-		P \qty(\HepParticle{\nu}{\alpha}{} \rightarrow \HepParticle{\nu}{\beta}{})
-		& = &
-		\sum_i \qty|U_{\alpha i} U_{\beta i}^*| + 2 \Re{\sum_{i > j} U_{\alpha i} U_{\alpha j}^* U_{\beta i}^* U_{\beta j} e ^ {- i \frac{\color{\emphcol} \dms_{ij}}{2} {\color{\emphcol} \frac{L}{E}}}}
-	\end{IEEEeqnarray*}
+	\begin{columns}[c]
+		\column{.25\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{defence/sun}
+		\column{.25\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{defence/reactor}
+		\column{.25\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{defence/atmosphere}
+		\column{.25\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{defence/exo}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Mass Ordering}
@@ -189,23 +168,11 @@
 \end{frame}
 
 \begin{frame}{Unknown Parameters}{How to measure them}
-	\begin{itemize}
-		\item {\color{\emphcol} \dcp}
-		\begin{itemize}
-			\item[$\Rightarrow$] $P \qty(\HepParticle{\nu}{\alpha}{} \rightarrow \HepParticle{\nu}{\beta}{}) \neq P\qty(\HepAntiParticle{\nu}{\alpha}{} \rightarrow \HepAntiParticle{\nu}{\beta}{})$ for $\theta_{13} \neq 0$
-			\item[$\Rightarrow$] Potential explanation for baryon asymmetry via leptogenesis
-		\end{itemize}
-		\item {\color{\emphcol}$\sgn\qty(\dms_{\m{atm}})$}
-		\begin{itemize}
-			\item[$\Rightarrow$] Matter effects for non-degenerate value of \dcp
-		\end{itemize}
-		\item $\alpha_{1,2}$
-		\begin{itemize}
-			\item[$\Rightarrow$] Only via neutrinoless double beta decay
-			\item[$\Rightarrow$] Are \Pgn their own antiparticles?
-			\item[$\Rightarrow$] Potential explanation for baryon asymmetry via leptogenesis
-		\end{itemize}
-	\end{itemize}
+	\begin{IEEEeqnarray*}{rCl}
+		P \qty(\Pgngm \rightarrow \Pgne) &	= &	\sin[2](\theta_{23}) \sin[2](2 \theta_{13}) \sin[2](\Delta) \\
+		&									+ &	\alpha \,{\color{\emphcol} \sin(\dcp)} \cos(\theta_{13}) \sin(2 \theta_{12}) \sin(2 \theta_{13}) \sin(2 \theta_{23}) \,{\color{\emphcol}\sin[3](\Delta)} \\
+		&									+ &	\dots
+	\end{IEEEeqnarray*}
 \end{frame}
 
 \subsection{Detection}
@@ -297,7 +264,7 @@
 	\begin{columns}[c]
 		\column{.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{nu-detection/flux_and_xsec_from_luke}\\
+		\includegraphics[width=\textwidth]{defence/xsec_flux_plot/xsec_flux}\\
 		{\tiny L.\ Pickering, Michigan State University}
 		\column{.4\textwidth}
 		{\color{\emphcol} $\sigma \sim \SI{e-38}{\centi\metre\squared}$}

@@ -33,6 +33,7 @@
 \hypersetup{unicode, pdffitwindow, pdftitle={\Title}, pdfauthor={\Author}}
 
 \addbibresource{../thesis.bib}
+\addbibresource{defence.bib}
 
 \usetheme{CambridgeUS}
 
@@ -79,15 +80,16 @@
 
 \frame{\titlepage}
 
-%\begin{frame}{Table of contents}
-%	\tableofcontents
-%\end{frame}
+\begin{frame}{Table of contents}
+	\tableofcontents
+\end{frame}
 
 \section{Neutrino physics}
 
 \subsection{Mixing}
 
-\begin{frame}{Neutrino oscillation}
+\begin{frame}{Neutrino oscillation}{}
+	{\tiny\url{http://www.hyper-k.org/en/neutrino.html}}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
@@ -96,25 +98,35 @@
 		\centering
 		\includegraphics[width=\textwidth]{defence/waves}
 	\end{columns}
-	\centering
-	{\tiny\url{http://www.hyper-k.org/en/neutrino.html}}
 \end{frame}
 
-\begin{frame}{Pontecorvo-Maki-Nakagawa-Sakata matrix}
-	\begin{IEEEeqnarray*}{rCl}
-		\begin{pmatrix}
-			\Pgne \\
-			\Pgngm \\
-			\Pgngt
-		\end{pmatrix}
-		& = &
-		U_{\m{PMNS}}
-		\begin{pmatrix}
-			\HepParticle{\nu}{1}{} \\
-			\HepParticle{\nu}{2}{} \\
-			\HepParticle{\nu}{3}{}
-		\end{pmatrix}
-	\end{IEEEeqnarray*}
+\begin{frame}{Pontecorvo-Maki-Nakagawa-Sakata matrix}{}
+	{\tiny Pictures: \url{https://commons.wikimedia.org}, \url{http://www.nersc.gov}}
+	\begin{columns}[c]
+		\column{.33\textwidth}
+		\begin{IEEEeqnarray*}{rCl}
+			s_{ij} & = & \sin(\theta_{ij})
+		\end{IEEEeqnarray*}
+		\column{.33\textwidth}
+		\begin{IEEEeqnarray*}{rCl}
+			\begin{pmatrix}
+				\Pgne \\
+				\Pgngm \\
+				\Pgngt
+			\end{pmatrix}
+			& = &
+			U_{\m{PMNS}}
+			\begin{pmatrix}
+				\HepParticle{\nu}{1}{} \\
+				\HepParticle{\nu}{2}{} \\
+				\HepParticle{\nu}{3}{}
+			\end{pmatrix}
+		\end{IEEEeqnarray*}
+		\column{.33\textwidth}
+		\begin{IEEEeqnarray*}{rCl}
+			c_{ij} & = & \cos(\theta_{ij})
+		\end{IEEEeqnarray*}
+	\end{columns}
 	\begin{IEEEeqnarray*}{C}
 		\begin{bmatrix}
 			1 &	0 &			0 \\
@@ -153,7 +165,8 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Mass Ordering}
+\begin{frame}{Mass Ordering}{}
+	{\tiny King; Prog.Part.Nucl.Phys.\ 94 (2017) 217-256~\cite{king}}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
@@ -163,95 +176,48 @@
 		Inverted Ordering
 	\end{columns}
 	\centering
-	\includegraphics[height=.8\textheight]{nu-detection/mass}\\
-	{\tiny King; arXiv:~1701.04413~\cite{king}}\\
+	\includegraphics[height=.8\textheight]{nu-detection/mass}
 \end{frame}
 
 \begin{frame}{Unknown Parameters}{How to measure them}
+	{\tiny Freund; Phys.Rev.\ D64 (2001) 053003~\cite{freund}. Qian, Vogel. Prog.Part.Nucl.Phys.\ 83 (2015) 1-30~\cite{qianVogel}}
 	\begin{IEEEeqnarray*}{rCl}
-		P \qty(\Pgngm \rightarrow \Pgne) &	= &	\sin[2](\theta_{23}) \sin[2](2 \theta_{13}) \sin[2](\Delta) \\
-		&									+ &	\alpha \,{\color{\emphcol} \sin(\dcp)} \cos(\theta_{13}) \sin(2 \theta_{12}) \sin(2 \theta_{13}) \sin(2 \theta_{23}) \,{\color{\emphcol}\sin[3](\Delta)} \\
-		&									+ &	\dots
+		P \qty(\Pgngm \rightarrow \Pgne) &	\approx &	\sin[2](\theta_{23}) \sin[2](2 \theta_{13}) \,{\color{blue} \sin[2](\Delta)} \\
+		&									+ &			\alpha \,{\color{\emphcol} \sin(\dcp)} \cos(\theta_{13}) \sin(2 \theta_{12}) \sin(2 \theta_{13}) \sin(2 \theta_{23}) \,{\color{\emphcol} \sin[3](\Delta)} \\
+		&									+ &			\alpha \,{\color{blue} \cos(\dcp)} \cos(\theta_{13}) \sin(2 \theta_{12}) \sin(2 \theta_{13}) \sin(2 \theta_{23}) \,{\color{blue} \sin[2](\Delta) \cos(\Delta)} \\
+		&									+ &			\alpha ^ 2 \cos[2](\theta_{23}) \sin[2](2 \theta_{12}) \,{\color{blue} \sin[2](\Delta)}
 	\end{IEEEeqnarray*}
-\end{frame}
-
-\subsection{Detection}
-
-\begin{frame}{Interaction with Matter}
-	\begin{IEEEeqnarray*}{rCl}
-		\HepProcess{\Pgnl\Pn \to \Plm\Pp} \\
-		\HepProcess{\Pagnl\Pp \to \Plp\Pn}
-	\end{IEEEeqnarray*}
-	\centering
-	\includegraphics[height=.5\textheight]{nu-detection/bethe_bloch}
-	\begin{IEEEeqnarray*}{rCl}
-		- \frac{1}{\color{\emphcol} \rho} \dv{E}{x} & = &
-		4 \pi N_{\m{A}} r_{\m{e}} ^ 2 m_{\m{e}} c ^ 2 z ^ 2 {\color{\emphcol} \frac{Z}{A}} \frac{1}{\beta ^ 2}
-		\qty[\ln(\frac{2 m_{\m{e}} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{D}{2}]
-	\end{IEEEeqnarray*}
+	\begin{columns}
+		\column{.5\textwidth}
+		\centering
+		\includegraphics[viewport=0 183 283 366, clip, width=\textwidth]{dune/LBNE_osc}
+		\column{.5\textwidth}
+		\begin{IEEEeqnarray*}{rCl}
+			\Delta &					= &				{\color{\emphcol} \frac{\dms_{31} L}{4 E}} \\
+			\alpha &					= &				\frac{\dms_{21}}{\dms_{31}} \ll 1 \\
+			\Pgn \rightarrow \Pagn &	\Rightarrow &	\dcp \rightarrow - \dcp
+		\end{IEEEeqnarray*}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Detecting neutrinos}{A challenging task due to their extremely small interaction cross-section}
+	{\tiny Picture: \url{https://commons.wikimedia.org}}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{defence/Astronomical_unit}\\
-		{\tiny\url{https://commons.wikimedia.org}}
 		\column{.5\textwidth}
-		Detecting a single neutrino would require {\color{\emphcol}\SI{\approx 8}{au}} of liquid argon.
+		Reliably detecting a single neutrino would require {\color{\emphcol}\SI{\approx 8}{au}} of liquid argon.
 		This is \num{8} times the distance from the Earth to the Sun.
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Interaction topologies}{Similar detector response for different topologies $\Rightarrow$ {\color{\emphcol} Need a high-resolution tracker}}
-	\begin{columns}[c]
-		\column{.5\textwidth}
-		\centering
-		\begin{fmffile}{fmf/CCQE}
-			\unitlength=\textwidth
-			\begin{fmfgraph*}(1,.5)
-				\fmfpen{thin}
-				\fmfstraight
-				\fmfleftn{i}{2}
-				\fmfrightn{o}{2}
-				\fmf{fermion,label=\Pn,label.side=left}{i1,v1}
-				\fmf{fermion,label=\Pp,label.side=left}{v1,o1}
-				\fmf{fermion,label=\Pgne,label.side=right}{i2,v2}
-				\fmf{fermion,label=\Pem,label.side=right}{v2,o2}
-				\fmf{boson,label=\PWpm,label.side=left}{v1,v2}
-				\fmfdot{v1,v2}
-			\end{fmfgraph*}
-		\end{fmffile}
-		\includegraphics[width=\textwidth]{defence/uboone_em-shower}\\
-		\column{.5\textwidth}
-		\centering
-		\begin{fmffile}{fmf/NCpi0}
-			\unitlength=\textwidth
-			\begin{fmfgraph*}(1,.5)
-				\fmfpen{thin}
-				\fmfstraight
-				\fmfleftn{i}{2}
-				\fmfrightn{o}{4}
-				\fmf{heavy,label=\nucleon,label.side=left}{i1,v1,o3}
-				\fmf{fermion,label=\Pgpz,label.side=right}{v1,v2}
-				\fmf{photon,label=\Pgg,label.side=right}{v2,o1}
-				\fmf{photon,label=\Pgg,label.side=left}{v2,o2}
-				\fmf{fermion,label=\Pgngm,label.side=right}{i2,v3,o4}
-				\fmf{boson,label=\PZz,label.side=left}{v1,v3}
-				\fmfdot{v2,v3}
-				\fmfblob{20}{v1}
-			\end{fmfgraph*}
-		\end{fmffile}
-		\includegraphics[width=\textwidth]{defence/uboone_em-shower_gamma}\\
 	\end{columns}
 \end{frame}
 
 \subsection{\dune}
 
 \begin{frame}{Deep Underground Neutrino Experiment (\dune{})}{A next generation long-baseline neutrino oscillation experiment}
-	\centering
-	\includegraphics[width=\textwidth]{dune/dune}\\
 	{\tiny Acciarri, Goeldi et al.; \dune{}; arXiv:~1601.05471~\cite{dune1}}\\
+	\centering
+	\includegraphics[width=\textwidth]{dune/dune}
 	\begin{itemize}
 		\item Measure $P\qty(\Pgngm \rightarrow \Pgne)$ and $P\qty(\Pagngm \rightarrow \Pagne) \Rightarrow$ {\color{\emphcol}$\dcp$, $\sgn\qty(\dms_{\m{atm}})$}
 		\item High intensity \Pgngm/\Pagngm beam from Fermilab
@@ -260,12 +226,12 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Interaction cross sections vs.\ beam flux}
+\begin{frame}{Interaction cross sections vs.\ beam flux}{}
+	{\tiny Plot: L.\ Pickering, Michigan State University}
 	\begin{columns}[c]
 		\column{.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{defence/xsec_flux_plot/xsec_flux}\\
-		{\tiny L.\ Pickering, Michigan State University}
+		\includegraphics[width=\textwidth]{defence/xsec_flux_plot/xsec_flux}
 		\column{.4\textwidth}
 		{\color{\emphcol} $\sigma \sim \SI{e-38}{\centi\metre\squared}$}
 		\begin{itemize}
@@ -276,12 +242,12 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Sensitivity}
+\begin{frame}{Sensitivity}{}
+	{\tiny Acciarri, Goeldi et al.; \dune{}; arXiv:~1512.06148~\cite{dune2}}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{defence/cpv75_exp_syst}\\
-		{\tiny Acciarri, Goeldi et al.; \dune{}; arXiv:~1512.06148~\cite{dune2}}\\
 		\SI{25}{y} with \SI{40}{\kilo\tonne} {\color{\emphcol} $\Rightarrow$ $> \SI{1}{\mega\watt}$ beam}
 		\column{.5\textwidth}
 		\SI{75}{\percent} coverage at $\num{3}\sigma$ requires:\\
@@ -305,33 +271,39 @@
 		\item {\color{\emphcol} \num{0.2} \Pgn events per tonne @ \SI{2}{\mega\watt}}
 	\end{itemize}
 	\centering
-	\includegraphics[viewport=407 1112 4956 3389, clip, width=\textwidth]{pile-up/uid0_spill6_event461_gamma19_x}
+	\includegraphics[width=\textwidth]{defence/uid0_spill6_event461_gamma19_x}
 \end{frame}
 
 \begin{frame}{Neutrino physics summary}{Neutrino detection is hard}
-	\begin{enumerate}
-		\item High beam flux
-		\item High target mass
-		\item High-precision tracking
-		\item High-precision calorimetry
-	\end{enumerate}
-	{\color{\emphcol}A \lartpc{} provides \numrange{2}{4}.\\Theoretically...}
+	\begin{columns}[c]
+		\column{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\textheight, angle=-90]{defence/sun}
+		\column{.5\textwidth}
+		\begin{enumerate}
+			\item High beam flux
+			\item High target mass
+			\item High-precision tracking
+			\item High-precision calorimetry
+		\end{enumerate}
+		{\color{\emphcol}A \lartpc{} provides \numrange{2}{4}.\\Theoretically...}
+	\end{columns}
 \end{frame}
 
 \section{The \lartpc{}}
 
 \begin{frame}{The time projection chamber (TPC)}{A detector providing precise tracking and calorimetry}
+	{\tiny Acciarri, Goeldi et al.; \uboone{}; JINST 12 (2017) no.02, P02017~\cite{uboone}}\\
 	\centering
-	\includegraphics[viewport=35 40 720 540, clip, height=.66\textheight]{defence/TPCprinciple}\\
-	{\tiny Acciarri, Goeldi et al.; \uboone{}; arXiv:~1612.05824~\cite{uboone}}
+	\includegraphics[viewport=35 40 720 540, clip, height=.75\textheight]{defence/TPCprinciple}
 \end{frame}
 
 \begin{frame}{Why liquid argon?}{\color{\emphcoltitle} Meets all the requirements for neutrino detection with a TPC}
+	{\tiny Picture: \url{https://commons.wikimedia.org}}
 	\begin{columns}[c]
 		\column{.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{defence/ArTube}\\
-		{\tiny\url{https://commons.wikimedia.org}}
 		\column{.7\textwidth}
 		\begin{itemize}
 			\item Dense (\SI{1.4e3}{\kilo\gram\per\cubic\metre}) \emph{$\rightarrow$ high event rate}
@@ -347,12 +319,13 @@
 \section{Drift field generation}
 
 \begin{frame}{The standard \lartpc{} design}{Drift field generation}
+	{\tiny Acciarri, Goeldi et al.; \uboone{}; JINST 12 (2017) no.02, P02017~\cite{uboone}}\\
 	\centering
-	\includegraphics[viewport=35 40 720 540, clip, height=.66\textheight]{defence/TPCprinciple_HV}\\
-	{\tiny Acciarri, Goeldi et al.; \uboone{}; arXiv:~1612.05824~\cite{uboone}}
+	\includegraphics[viewport=35 40 720 540, clip, height=.75\textheight]{defence/TPCprinciple_HV}\\
 \end{frame}
 
 \begin{frame}{Dielectric strength of liquid argon}{\color{\emphcoltitle} Lower than expected}
+	{\tiny Blatter et al.; JINST 9 (2014) P04006~\cite{breakdown_14}}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
@@ -361,23 +334,22 @@
 		\centering
 		\includegraphics[width=\textwidth]{defence/breakdown_summary}
 	\end{columns}
-	\centering
-	{\tiny Blatter et al.; arXiv:~1401.6693~\cite{breakdown_14}}
 \end{frame}
 
 \begin{frame}{Footage of a typical breakdown}{Animated version of another breakdown: \url{http://tinyurl.com/y872x4oq}}
+	{\tiny Auger, Goeldi et al.; JINST 11 (2016) no.03, P03017~\cite{breakdown_16}}\\
 	\centering
-	\includegraphics[width=\textwidth]{hv/montage}\\
-	{\tiny Auger, Goeldi et al.; arXiv:~1512.05968~\cite{breakdown_16}}
+	\includegraphics[width=\textwidth]{hv/montage}
 \end{frame}
 
 \begin{frame}{Current voltage behaviour of a typical breakdown}{\color{\emphcoltitle} Rather slow process}
+	{\tiny Auger, Goeldi et al.; JINST 11 (2016) no.03, P03017~\cite{breakdown_16}}\\
 	\centering
-	\includegraphics[height=.75\textheight]{hv/IVcorr}\\
-	{\tiny Auger, Goeldi et al.; arXiv:~1512.05968~\cite{breakdown_16}}
+	\includegraphics[height=.75\textheight]{hv/IVcorr}
 \end{frame}
 
 \begin{frame}{Preventing breakdowns}{with a polymer coating}
+	{\tiny Auger, Goeldi et al.; JINST 9 (2014) P07023~\cite{latex}}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\begin{itemize}
@@ -400,8 +372,6 @@
 		\centering
 		\includegraphics[height=.95\textwidth, angle=90]{defence/AT_cathode}
 	\end{columns}
-	\centering
-	{\tiny Auger, Goeldi et al.; arXiv:~1406.3929~\cite{latex}}\\
 \end{frame}
 
 \begin{frame}{Drift field generation summary}{\color{\emphcoltitle} We need a modular TPC design}
@@ -424,16 +394,18 @@
 \section{Charge readout}
 
 \begin{frame}{The standard \lartpc{} design}{Charge readout}
+	{\tiny Acciarri, Goeldi et al.; \uboone{}; JINST 12 (2017) no.02, P02017~\cite{uboone}}\\
 	\centering
-	\includegraphics[viewport=35 40 755 540, clip, height=.66\textheight]{defence/TPCprinciple_charge-ro}\\
-	{\tiny Acciarri, Goeldi et al.; \uboone{}; arXiv:~1612.05824~\cite{uboone}}
+	\includegraphics[viewport=35 40 755 540, clip, height=.75\textheight]{defence/TPCprinciple_charge-ro}\\
 \end{frame}
 
 \subsection{Wires}
 
-\begin{frame}{Cosmic event}{\color{\emphcoltitle} Effect of dead wires}
+\begin{frame}{Wire readout ambiguities}{}
+	{\tiny D.\ Dwyer, Lawrence Berkeley National Laboratory}\\
 	\centering
-	\includegraphics[height=.8\textheight]{defence/uboone_em-shower_dead-wires}
+	\includegraphics[height=.6\textheight]{defence/nuecctru}
+	\includegraphics[height=.6\textheight]{defence/nueccamb}
 \end{frame}
 
 \begin{frame}{Problems of wire readouts}
@@ -546,14 +518,15 @@
 	\includegraphics[page=2, viewport=20 0 1770 845, clip, width=\textwidth]{defence/Pixels}
 \end{frame}
 
-\begin{frame}{Raw charge data}
+\begin{frame}{Raw charge data}{}
+	{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}\\
 	\centering
 	\includegraphics[width=\textwidth]{defence/event967_rawFilteredPixel}\\
-	\includegraphics[width=\textwidth]{defence/event967_rawFilteredROI}\\
-	{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}
+	\includegraphics[width=\textwidth]{defence/event967_rawFilteredROI}
 \end{frame}
 
-\begin{frame}{Reconstructed 3D event}
+\begin{frame}{Reconstructed 3D event}{}
+	{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}\\
 	\begin{columns}[c]
 		\column{.4\textwidth}
 		\centering
@@ -565,11 +538,9 @@
 		\centering
 		\includegraphics[width=.8\textheight, angle=-90]{defence/event967_kalman}
 	\end{columns}
-	\centering
-	{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}
 \end{frame}
 
-\begin{frame}{Step-by-step 3D event reconstruction}
+\begin{frame}{Step-by-step 3D event reconstruction}{}
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\begin{enumerate}
@@ -590,15 +561,16 @@
 			\item<4-> Kalman fitter
 			\begin{itemize}
 				\item Fit $\mu$ hypothesis to 3D spacepoints
-				\item GENFIT, arXiv:\\0911.1008~\cite{genfit1}, 1410.3698~\cite{genfit2}
+				\item GENFIT\\{\tiny Rauch, Schlüter; J.Phys.Conf.Ser.\ 608 (2015) no.1, 012042~\cite{genfit2}}
 			\end{itemize}
 		\end{enumerate}
 		\column{.5\textwidth}
+		{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}\\
 		\centering
-		\only<1>{\includegraphics[height=.4\textheight]{viper/event967_rawUnfilteredROI}\\\includegraphics[height=.4\textheight]{viper/event967_rawFilteredROI}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
-		\only<2>{\includegraphics[page=1, height=.4\textheight]{viper/event967_pixel2_hit8}\\\includegraphics[page=3, height=.4\textheight]{viper/event967_pixel2_hit8}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
-		\only<3>{\includegraphics[height=.8\textheight]{viper/event967_pulses_a_pca}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
-		\only<4>{\includegraphics[width=.8\textheight, angle=-90]{defence/event967_kalman}\\{\tiny Asaadi, Goeldi et al.; arXiv:~1801.08884~\cite{pixel_paper}}}
+		\only<1>{\includegraphics[height=.4\textheight]{viper/event967_rawUnfilteredROI}\\\includegraphics[height=.4\textheight]{viper/event967_rawFilteredROI}}
+		\only<2>{\includegraphics[page=1, height=.4\textheight]{viper/event967_pixel2_hit8}\\\includegraphics[page=3, height=.4\textheight]{viper/event967_pixel2_hit8}}
+		\only<3>{\includegraphics[height=.8\textheight]{viper/event967_pulses_a_pca}}
+		\only<4>{\includegraphics[width=.8\textheight, angle=-90]{defence/event967_kalman}}
 	\end{columns}
 \end{frame}
 
@@ -606,7 +578,7 @@
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
-		
+		\includegraphics[width=.8\textheight, angle=90]{defence/viper_cath}
 		\column{.5\textwidth}
 		\begin{itemize}
 			\item MIP signal-to-noise ratio: \num{14}
@@ -705,7 +677,7 @@
 	\begin{columns}[c]
 		\column{.5\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{defence/uboone_em-shower_gamma}
+		\includegraphics[width=\textwidth]{defence/uboone_em-shower}
 		\column{.5\textwidth}
 		\begin{itemize}
 			\item \SIrange{10}{20}{\percent} of events involve \Pgpz
@@ -721,7 +693,7 @@
 	\begin{columns}[c]
 		\column{.6\textwidth}
 		\centering
-		\includegraphics[viewport=2900 1800 4000 2600, clip, width=\textwidth]{pile-up/uid0_spill6_event461_gamma19_x}
+		\includegraphics[viewport=4800 1700 6300 2700, clip, width=\textwidth]{defence/uid0_spill6_event461_gamma19_x}
 		\column{.4\textwidth}
 		\begin{itemize}
 			\item Assume shower location and direction are known
@@ -783,6 +755,11 @@
 	\end{block}
 \end{frame}
 
+\begin{frame}{Thank you!}
+	\centering
+	\includegraphics[width=\textwidth]{viper/event967_kalman}
+\end{frame}
+
 \appendix
 
 \section{Bibliography}
@@ -792,6 +769,63 @@
 \end{frame}
 
 \section{Backup}
+
+\begin{frame}{Interaction with Matter}
+	\begin{IEEEeqnarray*}{rCl}
+		\HepProcess{\Pgnl\Pn \to \Plm\Pp} \\
+		\HepProcess{\Pagnl\Pp \to \Plp\Pn}
+	\end{IEEEeqnarray*}
+	\centering
+	\includegraphics[height=.5\textheight]{nu-detection/bethe_bloch}
+	\begin{IEEEeqnarray*}{rCl}
+		- \frac{1}{\color{\emphcol} \rho} \dv{E}{x} & = &
+		4 \pi N_{\m{A}} r_{\m{e}} ^ 2 m_{\m{e}} c ^ 2 z ^ 2 {\color{\emphcol} \frac{Z}{A}} \frac{1}{\beta ^ 2}
+		\qty[\ln(\frac{2 m_{\m{e}} c ^ 2 \gamma ^ 2 \beta ^ 2}{I}) - \beta ^ 2 - \frac{D}{2}]
+	\end{IEEEeqnarray*}
+\end{frame}
+
+\begin{frame}{Interaction topologies}{Similar detector response for different topologies $\Rightarrow$ {\color{\emphcol} Need a high-resolution tracker}}
+	\begin{columns}[c]
+		\column{.5\textwidth}
+		\centering
+		\begin{fmffile}{fmf/CCQE}
+			\unitlength=\textwidth
+			\begin{fmfgraph*}(1,.5)
+				\fmfpen{thin}
+				\fmfstraight
+				\fmfleftn{i}{2}
+				\fmfrightn{o}{2}
+				\fmf{fermion,label=\Pn,label.side=left}{i1,v1}
+				\fmf{fermion,label=\Pp,label.side=left}{v1,o1}
+				\fmf{fermion,label=\Pgne,label.side=right}{i2,v2}
+				\fmf{fermion,label=\Pem,label.side=right}{v2,o2}
+				\fmf{boson,label=\PWpm,label.side=left}{v1,v2}
+				\fmfdot{v1,v2}
+			\end{fmfgraph*}
+		\end{fmffile}
+		\includegraphics[width=\textwidth]{defence/uboone_em-shower}
+		\column{.5\textwidth}
+		\centering
+		\begin{fmffile}{fmf/NCpi0}
+			\unitlength=\textwidth
+			\begin{fmfgraph*}(1,.5)
+				\fmfpen{thin}
+				\fmfstraight
+				\fmfleftn{i}{2}
+				\fmfrightn{o}{4}
+				\fmf{heavy,label=\nucleon,label.side=left}{i1,v1,o3}
+				\fmf{fermion,label=\Pgpz,label.side=right}{v1,v2}
+				\fmf{photon,label=\Pgg,label.side=right}{v2,o1}
+				\fmf{photon,label=\Pgg,label.side=left}{v2,o2}
+				\fmf{fermion,label=\Pgngm,label.side=right}{i2,v3,o4}
+				\fmf{boson,label=\PZz,label.side=left}{v1,v3}
+				\fmfdot{v2,v3}
+				\fmfblob{20}{v1}
+			\end{fmfgraph*}
+		\end{fmffile}
+		\includegraphics[width=\textwidth]{defence/uboone_em-shower}
+	\end{columns}
+\end{frame}
 
 \begin{frame}{Pixelated charge readout}{\color{\emphcoltitle} Enabling true 3D tracking}
 	\begin{columns}[c]
